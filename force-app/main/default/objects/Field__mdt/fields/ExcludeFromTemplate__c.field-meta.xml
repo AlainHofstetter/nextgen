@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ExcludeFromTemplate__c</fullName>
+    <defaultValue>false</defaultValue>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>If checked, the value will not be copied to a Project or Package using the Project Clone Function. For instance it can be set, that the Budget on the Source Package is not copied to the cloned Package.</inlineHelpText>
+    <label>ExcludeFromTemplate</label>
+    <type>Checkbox</type>
+</CustomField>

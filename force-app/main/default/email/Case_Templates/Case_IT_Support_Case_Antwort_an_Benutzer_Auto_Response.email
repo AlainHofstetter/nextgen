@@ -1,0 +1,12 @@
+Liebe(r) MitarbeiterIn
+
+Wir haben Deine Supportanfrage mit dem Titel “{!Case.Subject}“  erhalten und diese unter der Case-Nr: {!Case.CaseNumber} erfasst. Falls sich die Ausgangslage ändert und/oder Du weitere Informationen hast, teile uns dies bitte als Antwort auf dieses Mail mit.
+
+Freundliche Grüsse
+Dein {!Organization.Name} IT Support
+
+Thread Id: (ref:_{!Organization.Id}._{!Case.Id}:ref)
+
+--- 
+This Email has been sent by Skywalk, do not reply. 
+(Template: 00Xb0000000vCNS)

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACM013_UID_Mussfeld</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,  
+NOT(ISCHANGED( AbacusDebtor__c )),
+ISBLANK(UID__c), 
+ISPICKVAL(LocationCountry__c ,&quot;Switzerland&quot;),
+OR(
+ISPICKVAL(LegalNature__c,&quot;Corporation / Limited Company&quot;),
+ISPICKVAL(LegalNature__c,&quot;Limited Partnership&quot;)
+)
+)</errorConditionFormula>
+    <errorDisplayField>UID__c</errorDisplayField>
+    <errorMessage>Please enter the correct UID for this Legal Entity. You can retrieve it by searching www.zefix.ch.
+(ACM013)</errorMessage>
+</ValidationRule>

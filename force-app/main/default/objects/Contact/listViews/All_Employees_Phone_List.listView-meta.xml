@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Employees_Phone_List</fullName>
+    <columns>CONTACT.SALUTATION</columns>
+    <columns>CONTACT.FIRST_NAME</columns>
+    <columns>CONTACT.LAST_NAME</columns>
+    <columns>JobTitle__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.PHONE3</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.BIRTHDATE</columns>
+    <columns>NextBirthday__c</columns>
+    <columns>StaffNr__c</columns>
+    <columns>User__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CONTACT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contact.InternalContact</value>
+    </filters>
+    <filters>
+        <field>LocationCountry__c</field>
+        <operation>equals</operation>
+        <value>NoCountry</value>
+    </filters>
+    <label>All Employees - Phone List</label>
+</ListView>

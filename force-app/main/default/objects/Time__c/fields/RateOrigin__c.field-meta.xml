@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RateOrigin__c</fullName>
+    <label>Rate Origin</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PackageRate</fullName>
+                <default>false</default>
+                <label>Package Rate</label>
+            </value>
+            <value>
+                <fullName>EmployeeSpecificRate</fullName>
+                <default>false</default>
+                <label>Employee Specific Rate</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

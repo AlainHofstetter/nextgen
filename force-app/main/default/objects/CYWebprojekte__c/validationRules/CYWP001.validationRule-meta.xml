@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CYWP001</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true, 
+SLAVorhanden__c =true,
+OR(
+ISBLANK(SLADatum__c),
+ISBLANK(SLAKosten__c)
+)
+)</errorConditionFormula>
+    <errorDisplayField>SLAVorhanden__c</errorDisplayField>
+    <errorMessage>Wenn ein SLA vorhanden ist, müssen die Felder &quot;SLA Datum&quot; und &quot;SLA Kosten&quot; zwingend befüllt werden.
+(CYWP001)</errorMessage>
+</ValidationRule>

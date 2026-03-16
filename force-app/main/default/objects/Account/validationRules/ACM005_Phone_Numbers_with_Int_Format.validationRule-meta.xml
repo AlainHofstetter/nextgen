@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACM005_Phone_Numbers_with_Int_Format</fullName>
+    <active>false</active>
+    <description>Deaktiviert 03.11.2017, ary: Wird erst relevant bei einer allfälligen Einführung von CTI. Führt so immer wieder zu Fehlern bei der Rechnungserstellung, weil der Account aktualisiert wird und dann nicht gespeichert werden kann.</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+ RecordTypeId !=&quot;012b0000000cEKe&quot;,
+$User.Id != &apos;005b00000014eFb&apos;,
+TEXT(AccountSource) &lt;&gt; &apos;Data.com&apos;, 
+OR(
+AND( 
+NOT(ISBLANK(Phone)), 
+IF(BEGINS(Phone,&quot;+41&quot;),NOT(REGEX(Phone ,&quot;[+41]{3}(\\s){1}(\\d){2}(\\s){1}(\\d){3}(\\s){1}(\\d){2}(\\s){1}(\\d){2}&quot;)),NOT(REGEX(Phone, &quot;[+]{1}[0-9 ]*&quot;))) 
+),
+AND(
+NOT(ISBLANK(Fax)), 
+IF(BEGINS(Fax,&quot;+41&quot;),NOT(REGEX(Fax ,&quot;[+41]{3}(\\s){1}(\\d){2}(\\s){1}(\\d){3}(\\s){1}(\\d){2}(\\s){1}(\\d){2}&quot;)),NOT(REGEX(Fax, &quot;[+]{1}[0-9 ]*&quot;)))
+)
+)
+)</errorConditionFormula>
+    <errorMessage>All Phone and Fax numbers must be in International format, starting with &quot;+&quot; and nothing else that numbers and spaces. IF the number is a Swiss number it has to be in the format &quot;+41 xx xxx xx xx&quot;.
+(ACM005)</errorMessage>
+</ValidationRule>

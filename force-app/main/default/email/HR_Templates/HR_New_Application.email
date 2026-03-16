@@ -1,0 +1,12 @@
+Applicant Name: {!CampaignMember.Lead}
+
+Job Titel: {!CampaignMember.CampaignJobTitle__c}
+
+Date of Application: {!CampaignMember.Date_of_Application__c}
+
+{!CampaignMember.Link}
+
+
+---
+This Email has been sent by Skywalk, do not reply.
+(Template: 00Xb0000000yWyb)

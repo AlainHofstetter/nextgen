@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accounts_AG_GMBH_with_First_Name</fullName>
+    <booleanFilter>1 AND 2 AND (3 OR 4)</booleanFilter>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>UID__c</columns>
+    <columns>LegalNature__c</columns>
+    <columns>FirstName__c</columns>
+    <columns>LastName__c</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>ACCOUNT.LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LegalNature__c</field>
+        <operation>equals</operation>
+        <value>Limited Partnership,Association / Foundation,Individual Company,Natural Entity (Private Person)</value>
+    </filters>
+    <filters>
+        <field>FirstName__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>ACCOUNT.NAME</field>
+        <operation>contains</operation>
+        <value>AG</value>
+    </filters>
+    <filters>
+        <field>AccountName__c</field>
+        <operation>contains</operation>
+        <value>gmbh</value>
+    </filters>
+    <label>Accounts AG / GMBH with First-Name</label>
+    <sharedTo>
+        <group>Skywalk_FIN_Alle</group>
+    </sharedTo>
+</ListView>

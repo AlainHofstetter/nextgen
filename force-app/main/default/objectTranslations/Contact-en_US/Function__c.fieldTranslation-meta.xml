@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Function --></label>
+    <name>Function__c</name>
+    <picklistValues>
+        <masterLabel>Art Director</masterLabel>
+        <translation><!-- Art Director --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Assistant</masterLabel>
+        <translation><!-- Assistant --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Brand Manager</masterLabel>
+        <translation><!-- Brand Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CEO</masterLabel>
+        <translation><!-- CEO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CFO</masterLabel>
+        <translation><!-- CFO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CIO</masterLabel>
+        <translation><!-- CIO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CMO</masterLabel>
+        <translation><!-- CMO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>COO</masterLabel>
+        <translation><!-- COO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CTO</masterLabel>
+        <translation><!-- CTO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chairman</masterLabel>
+        <translation><!-- Chairman --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Consultant</masterLabel>
+        <translation><!-- Consultant --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Creative Director</masterLabel>
+        <translation><!-- Creative Director --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Designer</masterLabel>
+        <translation><!-- Designer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Finance</masterLabel>
+        <translation><!-- Finance --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HR</masterLabel>
+        <translation><!-- HR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Head of Communication</masterLabel>
+        <translation><!-- Head of Communication --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Headmaster</masterLabel>
+        <translation><!-- Headmaster --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Marketing Manager</masterLabel>
+        <translation><!-- Marketing Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Member of the Board</masterLabel>
+        <translation><!-- Member of the Board --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Order Manager</masterLabel>
+        <translation><!-- Order Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Owner</masterLabel>
+        <translation><!-- Owner --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>President</masterLabel>
+        <translation><!-- President --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product Manager</masterLabel>
+        <translation><!-- Product Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Project Manager</masterLabel>
+        <translation><!-- Project Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Public Relation</masterLabel>
+        <translation><!-- Public Relation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sales Manager</masterLabel>
+        <translation><!-- Sales Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unknown</masterLabel>
+        <translation><!-- Unknown --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

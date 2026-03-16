@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Time</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Time</value>
+    </caseValues>
+    <layouts>
+        <layout>Time Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Finance Controlling --></label>
+            <section>Finance Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- HR Controlling --></label>
+            <section>HR Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label><!-- Time Detail --></label>
+            <section>Time Detail</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to create or change a Time Card since the Package or Parent Package is closed. Please contact the Project Manager for assistance.
+(TC001) -->
+        </errorMessage>
+        <name>TC001_TimeCard_No_Change_Package_Closed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You can not add the time card to another package since it is not of same type. Please get in touch with the Project Manager for assistance.
+(TC003) -->
+        </errorMessage>
+        <name>TC003_TimeCard_Same_Service_Type</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You can not add tor edit ime for somebody else.
+(TC004) -->
+        </errorMessage>
+        <name>TC004_Only_Time_For_Yourself</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You can not change the time tracker. Please get in touch with the Super User for assistance.
+(TC005) -->
+        </errorMessage>
+        <name>TC005_Time_Tracker_No_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to validate the time card. Please contact your Super User for assistance.
+(TC006) -->
+        </errorMessage>
+        <name>TC006_PM_Validation_only_PM</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to make changes to validated time cards.
+(TC007) -->
+        </errorMessage>
+        <name>TC007_TimeCard_Validated_No_Changes</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to validate the time card. Please get in touch with HR Management.
+(TC009) -->
+        </errorMessage>
+        <name>TC009_TimeCard_Validation_HR</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You must choose the Service Type.
+(TC010) -->
+        </errorMessage>
+        <name>TC010_Service_Type_Mandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You must choose a Project Currency.
+(TC012) -->
+        </errorMessage>
+        <name>TC012_Currency_Mandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to track Sunday &amp; Holidays 50% Additional Time.
+(TC013) -->
+        </errorMessage>
+        <name>TC013_AbacusTimeType_SundayHolidays</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to track Compensation Time.
+(TC014) -->
+        </errorMessage>
+        <name>TC014_AbacusTimeType_Compensation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Duration is 4.00 for half day, and 8.00 for full day absence.
+(TC015) -->
+        </errorMessage>
+        <name>TC015_Duration_Absence</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to create or change a Time Card since the Project is closed for time tracking. Please contact the Project Manager for assistance. 
+(TC016) -->
+        </errorMessage>
+        <name>TC016_Time_Card_No_Change_Project_Clo</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Duration can not be empty.
+(TC017) -->
+        </errorMessage>
+        <name>TC017_Time_Duration_Numeric_Not_Null</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Please enter time in the format hh:mm (00:01 - 23:59)
+(TC018) -->
+        </errorMessage>
+        <name>TC018_Time_Duration_Format_HH_MM</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The Internal Contact ID is empty. Please get in touch with the System Administrator.
+(TC019) -->
+        </errorMessage>
+        <name>TC019_InternalContactID_Blank</name>
+    </validationRules>
+</CustomObjectTranslation>

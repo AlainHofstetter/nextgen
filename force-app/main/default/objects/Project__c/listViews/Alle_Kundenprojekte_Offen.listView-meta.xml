@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alle_Kundenprojekte_Offen</fullName>
+    <columns>ProjectCurrency__c</columns>
+    <columns>NAME</columns>
+    <columns>ProjectNr__c</columns>
+    <columns>ProjectCostCenter__c</columns>
+    <columns>ContractPartner__c</columns>
+    <columns>ProjectType__c</columns>
+    <columns>ProjectSubType__c</columns>
+    <columns>ProjectStartDate__c</columns>
+    <columns>ProjectStatus__c</columns>
+    <columns>LastTimeEntryDate__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ProjectType__c</field>
+        <operation>notEqual</operation>
+        <value>Internal</value>
+    </filters>
+    <filters>
+        <field>ProjectStatus__c</field>
+        <operation>equals</operation>
+        <value>Open,PartiallOpenWOTimeEntry</value>
+    </filters>
+    <label>Alle Kundenprojekte Offen</label>
+</ListView>

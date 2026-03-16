@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Case: gateB_Support_Case_Auto_Response_EN</name>
+    <style>none</style>
+    <subject>Your Support Request Nr. {!Case.CaseNumber}</subject>
+    <textOnly>Dear user
+
+Your support request {!Case.Subject} has been opened with the following reference number: {!Case.CaseNumber}. We will process your request as soon as possible.
+
+If you have any questions or clarifications on this request, we would kindly ask you to respond to this specific email in order for your request to be reassigned correctly.
+
+Kind regards
+gateB support
+
+gateB AG | Empowering Marketing Performance
+
+Sennweidstrasse 35, CH-6312 Steinhausen
+Phone +41 41 748 64 10, support@gateb.com
+http://www.gateb.com
+
+Our opening hours:
+Mondays to Fridays from 8:00 AM to 12:00 AM and 1:00 PM to 5:00 PM CET
+
+
+Thread Id: (ref:_{!Organization.Id}._{!Case.Id}:ref)</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

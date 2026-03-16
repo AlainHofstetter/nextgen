@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Service Type --></label>
+    <name>ServiceType__c</name>
+    <picklistValues>
+        <masterLabel>Manufaktur</masterLabel>
+        <translation>Manufaktur</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Travel Time</masterLabel>
+        <translation>Tavel Time</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Work Time</masterLabel>
+        <translation>Work Time</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>Case Assignment Rules</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <assignedTo>ITSupportQueue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 AND 2 AND (3 or 4 or 5) AND 6</booleanFilter>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>IT Cases</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Name</field>
+                <operation>notEqual</operation>
+                <value>Nine Internet Solutions AG</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Contact.Email</field>
+                <operation>contains</operation>
+                <value>@knobel,@berry,@screenconcept,@sensorial</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Contact.Email</field>
+                <operation>contains</operation>
+                <value>@hieronymus,@extrablack,@victor-hotz,@gateb,@mondays</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Contact.Email</field>
+                <operation>contains</operation>
+                <value>@brandleadership,@hotzbrandconsultants,@calydo.com</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.SuppliedEmail</field>
+                <operation>notEqual</operation>
+                <value>bitdefender@brandleadership.ch,servicedesk@wide.ch</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>ITSupportQueue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>2 AND (1 OR 3)</booleanFilter>
+            <criteriaItems>
+                <field>Account.Name</field>
+                <operation>equals</operation>
+                <value>Nine Internet Solutions AG</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>IT Cases</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.SuppliedEmail</field>
+                <operation>equals</operation>
+                <value>bitdefender@brandleadership.ch,postini_sync@brandleadership.ch</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>WIDEMonitoringQueue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>IT Cases</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.SuppliedEmail</field>
+                <operation>equals</operation>
+                <value>servicedesk@wide.ch</value>
+            </criteriaItems>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PA004_Recordtype_Change</fullName>
+    <active>true</active>
+    <description>Recordtype can not be changed after Child exist(ed)</description>
+    <errorConditionFormula>AND( 
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+ISCHANGED(RecordTypeId), 
+OR( 
+ValHasPackage__c=true, 
+ValHasTime__c=true, 
+ValHasExpense__c=true, 
+ValHasSupplierCosts__c=true, 
+ValHasInvoicePos__c=true
+)
+)</errorConditionFormula>
+    <errorMessage>The Pacakge Type can not be changed anymore due to existing child objects (time, expense, supplier costs, Invoices). Please contact your Super User for assistance.﻿
+(PA004)</errorMessage>
+</ValidationRule>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ssl_expiration_date__c</fullName>
+    <description>The expiration date of the ssl certificate will be tracked automatically for server type BrandMaker and Magnolia. 
+Set manually for other server types.
+The responsible TC will receive an e-mail notification 30 days prior expiration date.</description>
+    <inlineHelpText>The expiration date of the ssl certificate will be tracked automatically for server type BrandMaker and Magnolia. 
+Set manually for other server types.
+The responsible TC will receive an e-mail notification 30 days prior expiration date.</inlineHelpText>
+    <label>SSL Expiration Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

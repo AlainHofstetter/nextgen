@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>andre.ryf@brandleadership.ch</contactEmail>
+    <label>Office 365</label>
+</ConnectedApp>

@@ -1,0 +1,12 @@
+Dear Inventory Owner
+
+Please review the Inventory of {!Contact.Name}. 
+
+Exit Date: {!Contact.00Nb0000009YFLk}
+Last Day of Work: {!Contact.00Nb0000009YzJH}
+
+Report for check: https://brandleadership.my.salesforce.com/00Ob0000003u1T5
+
+---
+This Email has been sent by Salesforce, do not reply.
+(Template: 00Xb0000000yeaD)

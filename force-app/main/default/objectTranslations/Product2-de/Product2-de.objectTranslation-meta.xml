@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Product Layout</layout>
+        <sections>
+            <label>Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Produktdetail</label>
+            <section>Product Detail</section>
+        </sections>
+        <sections>
+            <label>Beschreibung</label>
+            <section>Product Specification</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <validationRules>
+        <errorMessage>Ungültige Eingabe für Produkt Typ Gruppe. (PR001)</errorMessage>
+        <name>PR001_Entry_Invalid_Group</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Ungültige Eingabe für Produkt Typ Text. (PR002)</errorMessage>
+        <name>PR002_Entry_Invalid_Text</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Produkt kann nicht Intro und Outro sein. (PR003)</errorMessage>
+        <name>PR003_Entry_Invalid_Intro_Outro</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Das Produkt kann nicht die Projektmanagement- oder Spesenpauschale sein. (PR004)</errorMessage>
+        <name>PR004_Entry_Invalid_Allowance</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Produkt kann nicht Option und anderer Typ sein. (PR005)</errorMessage>
+        <name>PR005_Entry_Invalid_Option</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Produktyp &quot;Text&quot; muss Intro oder Outro sein. (PR006)</errorMessage>
+        <name>PR006_Entry_Invalid_Text</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Übergeordnetes Produkt muss vom Typ &quot;Gruppe&quot; sein. (PR007)</errorMessage>
+        <name>PR007_Entry_Invalid_Superior_Product</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Product Type &quot;Group&quot; cannot have a superior Product.
+(PR008) -->
+        </errorMessage>
+        <name>PR008_Entry_Invalid_Superior_Product</name>
+    </validationRules>
+</CustomObjectTranslation>

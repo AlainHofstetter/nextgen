@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IN010_Status_Cancellation_2</fullName>
+    <active>true</active>
+    <description>Checks if the user has the appropriate rights to cancel an invoice.</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+ RecordType.DeveloperName =&quot;Cancellation&quot;,
+ $User.PS460FunctionInvoiceCancel__c =false
+)</errorConditionFormula>
+    <errorMessage>You need the appropriate rights to cancel invoices. Please get in touch with Finance.
+(IN010)</errorMessage>
+</ValidationRule>

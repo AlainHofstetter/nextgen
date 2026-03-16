@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Printer</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>NameCity__c</columns>
+    <columns>Location__c</columns>
+    <columns>Manufacturer__c</columns>
+    <columns>Model__c</columns>
+    <columns>PrintOptions__c</columns>
+    <columns>Description__c</columns>
+    <columns>IPAddressInternal__c</columns>
+    <columns>Subnetmask__c</columns>
+    <columns>PatchNr__c</columns>
+    <columns>Distributor__c</columns>
+    <columns>PurchaseDate__c</columns>
+    <columns>PurchasePrice__c</columns>
+    <columns>SupplierOrderNr__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Inventory__c.Printer</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>In Use</value>
+    </filters>
+    <label>All Printers - In Use</label>
+    <language>en_US</language>
+</ListView>

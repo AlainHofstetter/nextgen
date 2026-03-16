@@ -1,0 +1,10 @@
+Sehr geehrte(r) Herr/Frau {!Case.SuppliedName},
+
+Ihre Case, {!Case.CaseNumber}: {!Case.Subject}, hat einen neuen Kommentar.
+
+Bitte verwenden Sie den folgenden Link um direkt zu der Support Anfrage zu gelangen:
+<SELF SERVICE PORTAL LINK HIER EINFÜGEN>
+
+Mit freundlichen Grüßen,
+
+Ihr {!Organization.Name} Team

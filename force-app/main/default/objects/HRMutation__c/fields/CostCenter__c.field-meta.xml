@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CostCenter__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Cost Center</label>
+    <referenceTo>CostCenter__c</referenceTo>
+    <relationshipLabel>HR Mutation</relationshipLabel>
+    <relationshipName>HRMutation</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

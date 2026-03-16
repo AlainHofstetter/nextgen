@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TalendSyncLogCompactLayout</fullName>
+    <fields>TalendSyncNr__c</fields>
+    <fields>ObjectName__c</fields>
+    <fields>DateTime__c</fields>
+    <fields>Type__c</fields>
+    <label>TalendSyncLogCompactLayout</label>
+</CompactLayout>

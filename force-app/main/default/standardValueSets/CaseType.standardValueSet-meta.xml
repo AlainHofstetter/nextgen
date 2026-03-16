@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>true</sorted>
+    <standardValue>
+        <fullName>AD / Azure AD</fullName>
+        <default>false</default>
+        <label>AD / Azure AD</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Amigo</fullName>
+        <default>false</default>
+        <label>Amigo</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Censhare</fullName>
+        <default>false</default>
+        <label>Censhare</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Certificate</fullName>
+        <default>false</default>
+        <label>Certificate</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Credit Card Receipt</fullName>
+        <default>false</default>
+        <label>Credit Card Receipt</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Desks / Meeting Rooms</fullName>
+        <default>false</default>
+        <label>Desks / Meeting Rooms</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Domain</fullName>
+        <default>false</default>
+        <label>Domain</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Employee Change</fullName>
+        <default>false</default>
+        <label>Employee Change</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Employee Entry</fullName>
+        <default>false</default>
+        <label>Employee Entry</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Employee Exit</fullName>
+        <default>false</default>
+        <label>Employee Exit</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Finance</fullName>
+        <default>false</default>
+        <label>Finance</label>
+    </standardValue>
+    <standardValue>
+        <fullName>FontExplorer / Fonts</fullName>
+        <default>false</default>
+        <label>FontExplorer / Fonts</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Hardware</fullName>
+        <default>false</default>
+        <label>Hardware</label>
+    </standardValue>
+    <standardValue>
+        <fullName>JIRA / Activity Planner</fullName>
+        <default>false</default>
+        <label>JIRA / Activity Planner</label>
+    </standardValue>
+    <standardValue>
+        <fullName>LastPass / Password</fullName>
+        <default>false</default>
+        <label>LastPass / Password</label>
+    </standardValue>
+    <standardValue>
+        <fullName>License</fullName>
+        <default>false</default>
+        <label>License</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Miscellaneous</fullName>
+        <default>false</default>
+        <label>Miscellaneous</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Network / WLAN / VPN</fullName>
+        <default>false</default>
+        <label>Network / WLAN / VPN</label>
+    </standardValue>
+    <standardValue>
+        <fullName>O365 - Exchange</fullName>
+        <default>false</default>
+        <label>O365 - Exchange</label>
+    </standardValue>
+    <standardValue>
+        <fullName>O365 - Intune</fullName>
+        <default>false</default>
+        <label>O365 - Intune</label>
+    </standardValue>
+    <standardValue>
+        <fullName>O365 - Office 2016</fullName>
+        <default>false</default>
+        <label>O365 - Office 2016</label>
+    </standardValue>
+    <standardValue>
+        <fullName>O365 - Other</fullName>
+        <default>false</default>
+        <label>O365 - Other</label>
+    </standardValue>
+    <standardValue>
+        <fullName>O365 - Security</fullName>
+        <default>false</default>
+        <label>O365 - Security</label>
+    </standardValue>
+    <standardValue>
+        <fullName>O365 - SharePoint / OnDrive</fullName>
+        <default>false</default>
+        <label>O365 - SharePoint / OnDrive</label>
+    </standardValue>
+    <standardValue>
+        <fullName>O365 - Teams</fullName>
+        <default>false</default>
+        <label>O365 - Teams</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Opix / SixOMC</fullName>
+        <default>false</default>
+        <label>Opix / SixOMC</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Printer / Scanner / Plotter</fullName>
+        <default>false</default>
+        <label>Printer / Scanner / Plotter</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Purchasing / Billing</fullName>
+        <default>false</default>
+        <label>Purchasing / Billing</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SBB</fullName>
+        <default>false</default>
+        <label>SBB</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Screen / TV / Beamer / Apple TV</fullName>
+        <default>false</default>
+        <label>Screen / TV / Beamer / Apple TV</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Security general</fullName>
+        <default>false</default>
+        <label>Security general</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Server</fullName>
+        <default>false</default>
+        <label>Server</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Skywalk</fullName>
+        <default>false</default>
+        <label>Skywalk</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Software / Updates / OS</fullName>
+        <default>false</default>
+        <label>Software / Updates / OS</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Storage / Backup / Archive</fullName>
+        <default>false</default>
+        <label>Storage / Backup / Archive</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Telephony Aastra</fullName>
+        <default>false</default>
+        <label>Telephony Aastra</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Telephony Mobile</fullName>
+        <default>false</default>
+        <label>Telephony Mobile</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Travel</fullName>
+        <default>false</default>
+        <label>Travel</label>
+    </standardValue>
+</StandardValueSet>

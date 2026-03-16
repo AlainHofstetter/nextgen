@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Datum der zugehörigen Storno Rechnung, sofern diese Rechnung storniert wurde.</help>
+    <label>Stornodatum</label>
+    <name>CancellationDate__c</name>
+</CustomFieldTranslation>

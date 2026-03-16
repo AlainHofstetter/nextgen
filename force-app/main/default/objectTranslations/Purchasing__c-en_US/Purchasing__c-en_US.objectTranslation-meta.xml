@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Purchasing / Order Mgmt.</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Purchasing / Order Mgmt.</value>
+    </caseValues>
+    <layouts>
+        <layout>Purchasing Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

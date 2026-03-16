@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TC007_TimeCard_Validated_No_Changes</fullName>
+    <active>true</active>
+    <description>The Time Card can not be changed when validated.</description>
+    <errorConditionFormula>OR(
+
+AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+NOT($User.IsProjectManager__c),
+NOT($User.IsHRManager__c),
+OR(
+TimeValidatedProjectResponsible__c =true,
+TimeValidatedHumanResources__c =true
+)
+)
+,
+
+
+AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+NOT($User.IsHRManager__c),
+$User.IsProjectManager__c,
+OR(
+ISCHANGED( DateFrom__c ),
+ISCHANGED( DateUntil__c ),
+ISCHANGED( DurationHhMmN__c ),
+ISCHANGED( DurationHhMm__c )
+),
+TimeValidatedHumanResources__c =true
+)
+
+)</errorConditionFormula>
+    <errorMessage>You are not allowed to make changes to validated time cards.
+(TC007)</errorMessage>
+</ValidationRule>

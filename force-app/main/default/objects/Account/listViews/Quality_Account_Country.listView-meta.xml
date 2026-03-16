@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quality_Account_Country</fullName>
+    <booleanFilter>1 AND 2 AND 3</booleanFilter>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>LocationCity__c</columns>
+    <columns>LocationCountry__c</columns>
+    <columns>LocationCountryISO__c</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>ACCOUNT.ADDRESS1_COUNTRY</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.CompanyAccount</value>
+    </filters>
+    <filters>
+        <field>BillingCountry__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>BillingCountryISO__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Quality - Account - Country</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_Skywalk_Data_Quality</group>
+    </sharedTo>
+</ListView>

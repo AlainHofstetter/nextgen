@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Project__c$Name</field>
+    </columns>
+    <columns>
+        <field>Project__c.PackagesProjectName__r.Time__r$Name</field>
+    </columns>
+    <columns>
+        <field>Project__c.PackagesProjectName__r.Time__r$DateFrom__c</field>
+    </columns>
+    <columns>
+        <field>Project__c.PackagesProjectName__r.Time__r$DurationHhMm__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Project__c.PackagesProjectName__r.Time__r$ServiceTotalTime__c</field>
+    </columns>
+    <currency>CHF</currency>
+    <description>Julius Baer - PO_EV 2024/4 Business Analyst</description>
+    <filter>
+        <criteriaItems>
+            <column>Project__c$ProjectNr__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>P-112978</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Project__c.PackagesProjectName__r$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Project__c.PackagesProjectName__r.Time__r$Timetracker__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Varia Project Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Projects_with_Services_with_Time__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Project__c.PackagesProjectName__r.Time__r$DateFrom__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

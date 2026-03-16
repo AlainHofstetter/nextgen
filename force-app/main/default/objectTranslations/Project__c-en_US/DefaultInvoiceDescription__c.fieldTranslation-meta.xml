@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Intro Information for the Invoice Template. Can be switched on/off by the checkbox. --></help>
+    <label><!-- Default Invoice Description --></label>
+    <name>DefaultInvoiceDescription__c</name>
+</CustomFieldTranslation>

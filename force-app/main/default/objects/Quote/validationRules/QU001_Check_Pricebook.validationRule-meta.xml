@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QU001_Check_Pricebook</fullName>
+    <active>true</active>
+    <description>Don&apos;t allow to create a quote with a Pricebook different from the Opportunity</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+Pricebook2Id != Opportunity.Pricebook2Id
+)</errorConditionFormula>
+    <errorMessage>The Quote Pricebook do not match  Opportunity Pricebook</errorMessage>
+</ValidationRule>

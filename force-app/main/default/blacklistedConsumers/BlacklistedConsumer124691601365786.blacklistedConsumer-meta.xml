@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BlacklistedConsumer xmlns="http://soap.sforce.com/2006/04/metadata">
+    <blockedByApiWhitelisting>false</blockedByApiWhitelisting>
+    <consumerKey>3MVG9yZ.WNe6byQDEZA1rEr3cCkChbZAC4k8kSkCPDfjxrwxMZLfJxj7bs_P6KGoblM6MLGSapaO6KVYlXoPT</consumerKey>
+    <consumerName>Cirrus Insight</consumerName>
+    <masterLabel>BlacklistedConsumer124691601225182</masterLabel>
+</BlacklistedConsumer>

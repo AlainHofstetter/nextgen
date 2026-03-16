@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quality_All_Employees_Preparation</fullName>
+    <columns>CONTACT.SALUTATION</columns>
+    <columns>CONTACT.FIRST_NAME</columns>
+    <columns>CONTACT.LAST_NAME</columns>
+    <columns>JobTitle__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>StaffNr__c</columns>
+    <columns>User__c</columns>
+    <columns>CostCenter__c</columns>
+    <columns>EmployeeCosts__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CONTACT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contact.InternalContact</value>
+    </filters>
+    <label>Quality - All Employees Preparation</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_Skywalk_Data_Quality</group>
+    </sharedTo>
+</ListView>

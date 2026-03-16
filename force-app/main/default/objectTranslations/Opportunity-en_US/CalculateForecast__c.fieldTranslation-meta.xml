@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Set project start and end date to split the amount x probability to the project duration --></help>
+    <label><!-- Split forecast automatically --></label>
+    <name>CalculateForecast__c</name>
+</CustomFieldTranslation>

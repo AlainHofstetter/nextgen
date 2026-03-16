@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Computer_w_o_Purchase_Date</fullName>
+    <columns>NAME</columns>
+    <columns>Manufacturer__c</columns>
+    <columns>Username__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PurchaseDate__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>In Use,Storage</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Inventory__c.Device</value>
+    </filters>
+    <label>Computer w/o Purchase Date</label>
+    <language>en_US</language>
+</ListView>

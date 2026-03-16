@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ESRFieldType__c</fullName>
+    <description>Input:
+1) ESR Merchant Nr
+2) Invoice Number
+3) ESR Account Number
+4) Amount
+
+Output:
+5) ESR unformatted
+6) ESR formatted
+7) ESR code line</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Defines which fields contains the relevant information to read and store the ESR Number. All 7 fields have to be set. For more information see also Description of this field.</inlineHelpText>
+    <label>ESR Field Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ESR Merchant Nr</fullName>
+                <default>false</default>
+                <label>ESR Merchant Nr</label>
+            </value>
+            <value>
+                <fullName>Invoice Number</fullName>
+                <default>false</default>
+                <label>Invoice Number</label>
+            </value>
+            <value>
+                <fullName>ESR Account Number</fullName>
+                <default>false</default>
+                <label>ESR Account Number</label>
+            </value>
+            <value>
+                <fullName>Amount</fullName>
+                <default>false</default>
+                <label>Amount</label>
+            </value>
+            <value>
+                <fullName>ESR unformatted</fullName>
+                <default>false</default>
+                <label>ESR unformatted</label>
+            </value>
+            <value>
+                <fullName>ESR formatted</fullName>
+                <default>false</default>
+                <label>ESR formatted</label>
+            </value>
+            <value>
+                <fullName>ESR code line</fullName>
+                <default>false</default>
+                <label>ESR code line</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,16 @@
+The Contact Owner of the following Contact has been changed:
+
+
+Contact Name: {!Contact.Name} / Account Name: {!Account.Name}
+Contact Link: {!Contact.Link}
+
+New Owner: {!Contact.ZEmailCurrentOwner__c}
+Previous Owner: {!Contact.ZEmailPreviousOwner__c}
+
+Modified by: {!Contact.LastModifiedBy}
+
+Please get in touch if you do not agree to the Contact Owner Change.
+
+--- 
+This Email has been sent by Salesforce, do not reply. 
+(Template: 00Xb0000000MwlK)

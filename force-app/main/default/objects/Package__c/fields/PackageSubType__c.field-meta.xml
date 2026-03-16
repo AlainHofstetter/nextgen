@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PackageSubType__c</fullName>
+    <inlineHelpText>Manufaktur only for SVH</inlineHelpText>
+    <label>Package Sub-Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>WorkTime</fullName>
+                <default>false</default>
+                <label>Work Time</label>
+            </value>
+            <value>
+                <fullName>TravelTime</fullName>
+                <default>false</default>
+                <label>Travel Time</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>3rdPartyCosts</fullName>
+                <default>false</default>
+                <label>3rd Party Costs</label>
+            </value>
+            <value>
+                <fullName>ProjectResourceCosts</fullName>
+                <default>false</default>
+                <label>Project Resource Costs</label>
+            </value>
+            <value>
+                <fullName>AbacusInbox</fullName>
+                <default>false</default>
+                <label>Abacus Inbox</label>
+            </value>
+            <value>
+                <fullName>Manufaktur</fullName>
+                <default>false</default>
+                <label>Manufaktur</label>
+            </value>
+            <value>
+                <fullName>Trade</fullName>
+                <default>false</default>
+                <label>Trade</label>
+            </value>
+            <value>
+                <fullName>LicenseDirect</fullName>
+                <default>false</default>
+                <label>License (Direct)</label>
+            </value>
+            <value>
+                <fullName>LicenseProvision</fullName>
+                <default>false</default>
+                <label>License (Provision)</label>
+            </value>
+            <value>
+                <fullName>Expense</fullName>
+                <default>false</default>
+                <label>Expense</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

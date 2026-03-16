@@ -1,0 +1,40 @@
+.THIS .uiInputText {
+    height: 42px;
+}
+
+.THIS .slds-pill {
+    width: 100%;
+}
+
+.THIS .slds-pill__label {
+    margin-left: 10px;
+    width: 85%;
+}
+
+.THIS .slds-picklist {
+	top: -3px;
+}
+
+.THIS .slds-dropdown {
+    width: auto;
+    max-width: 100%;
+    left: 0;
+    right: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+@media all and (max-width: 390px) {
+	.THIS .slds-dropdown {
+	    width: 240px;
+	}
+}
+
+.THIS .slds-dropdown li.slds-selected {
+    /*background-color: rgb(244, 246, 249);*/
+    background-color: rgb(228, 236, 249);
+}
+
+.THIS .slds-dropdown li a {
+	overflow: hidden;
+}

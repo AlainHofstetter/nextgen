@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ReportExpenseMatrix__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;/one/one.app#/sObject/00Ob0000004FiY1EAK/view?fv0=&quot;&amp;  ProjectNr__c , &quot;Open&quot;,&quot;_blank&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Report - Expense (Matrix)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

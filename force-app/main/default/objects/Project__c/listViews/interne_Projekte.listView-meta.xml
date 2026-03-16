@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>interne_Projekte</fullName>
+    <booleanFilter>1 AND 7 AND 8 AND (2 OR 3 OR 4 OR 5 OR 6)</booleanFilter>
+    <columns>BillingViaCompany__c</columns>
+    <columns>ProjectNr__c</columns>
+    <columns>NAME</columns>
+    <columns>ProjectPartner__c</columns>
+    <columns>LastTimeEntryDate__c</columns>
+    <columns>ServicesTotalTimeCHF__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ProjectType__c</field>
+        <operation>contains</operation>
+        <value>extern</value>
+    </filters>
+    <filters>
+        <field>ProjectPartner__c</field>
+        <operation>contains</operation>
+        <value>gateb</value>
+    </filters>
+    <filters>
+        <field>ProjectPartner__c</field>
+        <operation>contains</operation>
+        <value>hotz brand</value>
+    </filters>
+    <filters>
+        <field>ProjectPartner__c</field>
+        <operation>contains</operation>
+        <value>victor hotz</value>
+    </filters>
+    <filters>
+        <field>ProjectPartner__c</field>
+        <operation>contains</operation>
+        <value>calydo</value>
+    </filters>
+    <filters>
+        <field>ProjectPartner__c</field>
+        <operation>contains</operation>
+        <value>brand leadership</value>
+    </filters>
+    <filters>
+        <field>ProjectStatus__c</field>
+        <operation>equals</operation>
+        <value>Open</value>
+    </filters>
+    <filters>
+        <field>NAME</field>
+        <operation>notContain</operation>
+        <value>Akqui</value>
+    </filters>
+    <label>interne Projekte</label>
+</ListView>

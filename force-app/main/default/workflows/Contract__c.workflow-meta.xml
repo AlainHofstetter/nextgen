@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Contract_Action_Email_Reminder_To_Christian_Zuercher</fullName>
+        <ccEmails>contract@brandleadership.ch</ccEmails>
+        <description>Contract: Action Email Reminder To Christian Zürcher</description>
+        <protected>false</protected>
+        <senderAddress>noreply@brandleadership.ch</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>CS_Templates/Contract_Action_Reminder_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Contract_Action_Email_Reminder_To_Contract_Owner</fullName>
+        <description>Contract: Action Email Reminder To Contract Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>noreply@brandleadership.ch</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>CS_Templates/Contract_Action_Reminder_Email</template>
+    </alerts>
+    <rules>
+        <fullName>Contract%3A Action Email Reminder To Contract Owner_0</fullName>
+        <active>true</active>
+        <formula>AND(
+OR(
+ISPICKVAL(Status__c ,&quot;Active&quot;),
+ISPICKVAL(Status__c ,&quot;Draft&quot;)
+),
+NOT(ISBLANK( DateNextContractAction__c )),
+NOT(ISBLANK( ContractPartnerInternal__c )),
+ContractPartnerInternal__r.Inactive__c = false
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Contract_Action_Email_Reminder_To_Contract_Owner</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Contract__c.DateNextContractAction__c</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Contract%3A Action Email Reminder To Contract Owner_3</fullName>
+        <active>true</active>
+        <formula>AND(
+OR(
+ISPICKVAL(Status__c ,&quot;Active&quot;),
+ISPICKVAL(Status__c ,&quot;Draft&quot;)
+),
+NOT(ISBLANK( DateNextContractAction__c )),
+NOT(ISBLANK( ContractPartnerInternal__c )),
+ContractPartnerInternal__r.Inactive__c = false
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Contract_Action_Email_Reminder_To_Contract_Owner</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Contract__c.DateNextContractAction__c</offsetFromField>
+            <timeLength>3</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Contract%3A Action Email Reminder To Contract Owner_6</fullName>
+        <active>true</active>
+        <formula>AND(
+OR(
+ISPICKVAL(Status__c ,&quot;Active&quot;),
+ISPICKVAL(Status__c ,&quot;Draft&quot;)
+),
+NOT(ISBLANK( DateNextContractAction__c )),
+NOT(ISBLANK( ContractPartnerInternal__c )),
+ContractPartnerInternal__r.Inactive__c = false
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Contract_Action_Email_Reminder_To_Contract_Owner</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Contract__c.DateNextContractAction__c</offsetFromField>
+            <timeLength>6</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Contract%3A Action Email Reminder To Patrick Lippuner 0</fullName>
+        <active>true</active>
+        <formula>AND(
+OR(
+ISPICKVAL(Status__c ,&quot;Active&quot;),
+ISPICKVAL(Status__c ,&quot;Draft&quot;)
+),
+NOT(ISBLANK( DateNextContractAction__c )),
+NOT(ISBLANK( ContractPartnerInternal__c )),
+ContractPartnerInternal__r.Inactive__c = true
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Contract_Action_Email_Reminder_To_Christian_Zuercher</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Contract__c.DateNextContractAction__c</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+</Workflow>

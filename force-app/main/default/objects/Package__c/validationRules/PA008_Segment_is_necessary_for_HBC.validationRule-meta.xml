@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PA008_Segment_is_necessary_for_HBC</fullName>
+    <active>false</active>
+    <description>Package Segment is necessary for HBC Projects</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+BEGINS(ProjectCostCenter__c, &quot;HBC&quot;)=true,
+RecordType.DeveloperName  &lt;&gt;  &quot;group&quot;,   
+AbacusInbox__c =false,
+ISBLANK(CostCenterSegment__c ))</errorConditionFormula>
+    <errorMessage>The Package Segment can&apos;t be empty if this is a HBC-Project. Please contact your Super User for assistance.
+(PA008)</errorMessage>
+</ValidationRule>

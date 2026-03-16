@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NewInternalContact</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Internal Contact</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/003/e?retURL=%2F{!Account.Id}&amp;accid={!Account.Id}&amp;RecordType=012b0000000bub1&amp;ent=Contact
+&amp;00Nb0000008vU5x={!Account.LocationStreetNr__c}
+&amp;00Nb0000008vU5O={!Account.LocationAddressLine2__c}
+&amp;00Nb0000008vU5Y={!Account.LocationAddressLine3__c}
+&amp;00Nb0000008an9s={!Account.LocationPoBox__c}
+&amp;00Nb0000008vU9z={!Account.LocationZip__c}
+&amp;00Nb0000008vU5d={!Account.LocationCity__c}
+&amp;00Nb0000008vU5s={!Account.LocationState__c}
+&amp;00Nb0000008vU5n={!Account.LocationCountry__c}
+&amp;con10=
+&amp;con11=</url>
+</WebLink>

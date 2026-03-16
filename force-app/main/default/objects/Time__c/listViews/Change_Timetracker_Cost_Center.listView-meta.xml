@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Change_Timetracker_Cost_Center</fullName>
+    <columns>NAME</columns>
+    <columns>Timetracker__c</columns>
+    <columns>TimetrackerCostCenter__c</columns>
+    <columns>TimetrackerCostCenterNr__c</columns>
+    <columns>StartHhMm__c</columns>
+    <columns>EndHhMm__c</columns>
+    <columns>DurationHhMm__c</columns>
+    <columns>Weekday__c</columns>
+    <columns>WeekdayDate__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>BillingViaCompany__c</columns>
+    <columns>TimetrackerCompany__c</columns>
+    <columns>IsInBillingPeriodYearMonth__c</columns>
+    <columns>ProjectCostCenter__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>TimetrackerCostCenterNr__c</field>
+        <operation>equals</operation>
+        <value>2800</value>
+    </filters>
+    <filters>
+        <field>DateFrom__c</field>
+        <operation>greaterThan</operation>
+        <value>7/1/2022</value>
+    </filters>
+    <label>Change Timetracker Cost Center</label>
+    <sharedTo>
+        <group>Skywalk_FIN_Alle</group>
+        <group>Skywalk_Skywalk_Data_Quality</group>
+    </sharedTo>
+</ListView>

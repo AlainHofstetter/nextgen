@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ITCases</fullName>
+    <active>true</active>
+    <businessProcess>IT Case</businessProcess>
+    <compactLayoutAssignment>CaseCompactLayout</compactLayoutAssignment>
+    <label>IT Cases</label>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Person</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Teams</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>1%2E High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%2E Medium</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>3%2E Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%2E 2 Min Task</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>Complex functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instructions not clear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User didn%27t attend training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Severity__c</picklist>
+        <values>
+            <fullName>Alle Benutzer betroffen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Einzelner Benutzer betroffen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kunden betroffen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schönheitsfehler</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Viele Benutzer betroffen</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>AD %2F Azure AD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amigo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Censhare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Certificate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Desks %2F Meeting Rooms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Domain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Entry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Exit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FontExplorer %2F Fonts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hardware</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JIRA %2F Activity Planner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LastPass %2F Password</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>License</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Miscellaneous</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Network %2F WLAN %2F VPN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>O365 - Exchange</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>O365 - Intune</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>O365 - Office 2016</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>O365 - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>O365 - Security</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>O365 - SharePoint %2F OnDrive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>O365 - Teams</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opix %2F SixOMC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Printer %2F Scanner %2F Plotter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchasing %2F Billing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Screen %2F TV %2F Beamer %2F Apple TV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Security general</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Server</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Skywalk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Software %2F Updates %2F OS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Storage %2F Backup %2F Archive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telephony Aastra</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telephony Mobile</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>UnitSuperuser__c</picklist>
+        <values>
+            <fullName>A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Workaround__c</picklist>
+        <values>
+            <fullName>Workaround nicht verfügbar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workaround nur mit viel Aufwand verfügbar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workaround verfügbar</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TC010_Service_Type_Mandatory</fullName>
+    <active>true</active>
+    <description>Time Card must have Service-Type</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+ISBLANK( TEXT( ServiceType__c  )))</errorConditionFormula>
+    <errorDisplayField>ServiceType__c</errorDisplayField>
+    <errorMessage>You must choose the Service Type.
+(TC010)</errorMessage>
+</ValidationRule>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PA027_Has_Invoice_Or_ILV_Status_Draft_2</fullName>
+    <active>true</active>
+    <description>Proejct has an Invoice and/or an ILV in Status Draft. It is not allowed to create a new package.</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+OR(
+ProjectName__r.ValCountHasInvoiceDraft__c &gt;0,
+ProjectName__r.ValCountHasILVDraft__c &gt;0
+),
+ISNEW()
+)</errorConditionFormula>
+    <errorMessage>You can not create a new service, the project has an Invoice or ILV in status &quot;Draft&quot;. Please finish the Invoice/ILV first.
+(PA027)</errorMessage>
+</ValidationRule>

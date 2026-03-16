@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IN014_Status_Change</fullName>
+    <active>true</active>
+    <description>Checks for allowed Status Changes</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+OR(
+AND(
+TEXT(PRIORVALUE(InvoiceStatus__c))=&quot;Draft&quot;,
+TEXT(InvoiceStatus__c) = &quot;Sent&quot;
+)
+,
+AND(
+TEXT(PRIORVALUE(InvoiceStatus__c))=&quot;Approval&quot;,
+TEXT(InvoiceStatus__c) = &quot;Sent&quot;
+)
+,
+AND(
+TEXT(PRIORVALUE(InvoiceStatus__c))=&quot;Ready&quot;,
+TEXT(InvoiceStatus__c) = &quot;Draft&quot;, 
+$User.IsFinanceManager__c = false
+
+)
+,
+AND(
+TEXT(PRIORVALUE(InvoiceStatus__c))=&quot;Ready&quot;,
+TEXT(InvoiceStatus__c) = &quot;Approval&quot;,
+$User.IsFinanceManager__c = false
+)
+,
+AND(
+TEXT(PRIORVALUE(InvoiceStatus__c))=&quot;Ready&quot;,
+TEXT(InvoiceStatus__c) = &quot;Sent&quot;,
+$User.IsFinanceManager__c = false
+)
+,
+AND(
+TEXT(PRIORVALUE(InvoiceStatus__c))=&quot;Sent&quot;,
+TEXT(InvoiceStatus__c) = &quot;Draft&quot;
+)
+,
+AND(
+TEXT(PRIORVALUE(InvoiceStatus__c))=&quot;Sent&quot;,
+TEXT(InvoiceStatus__c) = &quot;Approval&quot;
+)
+,
+AND(
+TEXT(PRIORVALUE(InvoiceStatus__c))=&quot;Sent&quot;,
+TEXT(InvoiceStatus__c) = &quot;Ready&quot;,
+$User.IsFinanceManager__c = false
+
+)
+)
+)</errorConditionFormula>
+    <errorDisplayField>InvoiceStatus__c</errorDisplayField>
+    <errorMessage>You are not allowed to change to this status of the Invoice. Please contact Finance.
+(IN014)</errorMessage>
+</ValidationRule>

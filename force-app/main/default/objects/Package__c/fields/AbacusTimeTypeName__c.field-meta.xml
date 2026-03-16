@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AbacusTimeTypeName__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( Text(AbacusTimeType__c), 
+&quot;1024&quot;,&quot;Sonn- und Feiertage, 50% Zuschlag Support/Pikett&quot;,
+&quot;1036&quot;,&quot;Pikett regulär (12.50/h)&quot;,
+&quot;1037&quot;,&quot;Pikett kurzfristig (25.00/h)&quot;,
+&quot;105&quot;,&quot;Militär&quot;,
+&quot;110&quot;,&quot;Krankheit&quot;,
+&quot;1100&quot;,&quot;Stundenlohn&quot;,
+&quot;1135&quot;,&quot;Unbezahlte Absenz&quot;,
+&quot;115&quot;,&quot;Mutterschaftsurlaub&quot;,
+&quot;120&quot;,&quot;Unfall&quot;,
+&quot;130&quot;,&quot;Bezahlte Absenz&quot;,
+&quot;140&quot;,&quot;Schule, Kurs (bezahlte Absenz)&quot;,
+&quot;160&quot;,&quot;Ferien&quot;,
+&quot;200&quot;,&quot;Pauschalzeit&quot;,
+&quot;300&quot;,&quot;Absenz Teilzeitarbeit&quot;,
+&quot;Default&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Abacus Time Type Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

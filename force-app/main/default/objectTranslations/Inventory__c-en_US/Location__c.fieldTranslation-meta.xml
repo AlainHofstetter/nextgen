@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Location --></label>
+    <name>Location__c</name>
+    <picklistValues>
+        <masterLabel>CTP</masterLabel>
+        <translation><!-- CTP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Calydo</masterLabel>
+        <translation><!-- Calydo --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Druckerraum</masterLabel>
+        <translation><!-- Druckerraum --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Empfang</masterLabel>
+        <translation><!-- Empfang --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Finance</masterLabel>
+        <translation><!-- Finance --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GL</masterLabel>
+        <translation><!-- GL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HBC</masterLabel>
+        <translation><!-- HBC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HR/OM</masterLabel>
+        <translation><!-- HR/OM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hieronymus</masterLabel>
+        <translation><!-- Hieronymus --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IT</masterLabel>
+        <translation><!-- IT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Keller</masterLabel>
+        <translation><!-- Keller --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Spedition</masterLabel>
+        <translation><!-- Spedition --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VH</masterLabel>
+        <translation><!-- VH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Verlag</masterLabel>
+        <translation><!-- Verlag --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>gateB</masterLabel>
+        <translation><!-- gateB --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

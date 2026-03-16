@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IN024_VAT_not_8_Percent</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(CONTAINS( BillingViaCompany__r.AccountName__c , &quot;gateB (Singpore)&quot;)),
+$User.IsFinanceManager__c = false,
+$User.PS480FunctionValidationRulesActive__c =true, 
+ISPICKVAL(VATPercent__c, &quot;8%&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>VATPercent__c</errorDisplayField>
+    <errorMessage>You are not allowed to choose VAT 8%. Please get in touch with Finance. 
+(IN024)</errorMessage>
+</ValidationRule>

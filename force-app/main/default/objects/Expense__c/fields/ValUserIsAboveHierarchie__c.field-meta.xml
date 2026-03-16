@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValUserIsAboveHierarchie__c</fullName>
+    <formula>OR(
+$User.Id =  Expensetracker__r.User__r.ManagerId ,
+$User.Id =  Expensetracker__r.User__r.Manager.ManagerId,
+$User.Id =  Expensetracker__r.User__r.Manager.Manager.ManagerId,
+$User.Id =  Expensetracker__r.User__r.Manager.Manager.Manager.ManagerId
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ValUserIsAboveHierarchie</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

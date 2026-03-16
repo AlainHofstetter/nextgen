@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TotalLicense__c</fullName>
+    <label>Total License</label>
+    <summarizedField>QuoteLineItem.TotalPriceF__c</summarizedField>
+    <summaryFilterItems>
+        <field>QuoteLineItem.ProductType__c</field>
+        <operation>equals</operation>
+        <value>License (Direct), License (Provision)</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>QuoteLineItem.Option__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

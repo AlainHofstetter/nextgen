@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PR006_Currency_Change</fullName>
+    <active>true</active>
+    <description>Project Currency can not be changed after Child exist(ed)</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+ISCHANGED( ProjectCurrency__c  ),
+OR( 
+ValCountHasPackageCheckbox__c=true, 
+ValHasTime__c=true, 
+ValHasExpense__c=true, 
+ValHasSupplierCosts__c=true, 
+ValCountHasInvoiceCheckbox__c=true
+) 
+)</errorConditionFormula>
+    <errorDisplayField>ProjectCurrency__c</errorDisplayField>
+    <errorMessage>The Project Curency can not be changed anymore due to existing child objects (time, expense, supplier costs, Invoices). Please contact your Super User for assistance.
+(PR006)</errorMessage>
+</ValidationRule>

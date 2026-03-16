@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoResponseRule>
+        <fullName>Case Auto-Response</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <booleanFilter>1 AND 2 AND 3 AND (4 AND 5)</booleanFilter>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>equals</operation>
+                <value>New</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>contains</operation>
+                <value>IT Cases</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.SuppliedEmail</field>
+                <operation>notEqual</operation>
+                <value>servicedesk@wide.ch,bitdefender@brandleadership.ch,digitec@digitec.ch</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>SecurityCenter Report: VHAG</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.SuppliedEmail</field>
+                <operation>notEqual</operation>
+                <value>support@clue.ch</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>itsupport@brandleadership.ch</replyToEmail>
+            <senderEmail>it.case.autoresponse@brandleadership.ch</senderEmail>
+            <senderName>IT Support</senderName>
+            <template>Case_Templates/Case_IT_Support_Case_Antwort_an_Benutzer_Auto_Response</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>SBB Case</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Contact.Language__c</field>
+                <operation>equals</operation>
+                <value>German</value>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <replyToEmail>support@gateb.com</replyToEmail>
+            <senderEmail>it.case.autoresponse@brandleadership.ch</senderEmail>
+            <senderName>gateB Support</senderName>
+            <template>Case_Templates/Case_gateB_Support_Case_Auto_Response_DE</template>
+        </ruleEntry>
+        <ruleEntry>
+            <booleanFilter>(1 AND 2) OR (1 AND 3)</booleanFilter>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>SBB Case</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Contact.Language__c</field>
+                <operation>equals</operation>
+                <value>English,Spanish</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Contact.Language__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <replyToEmail>support@gateb.com</replyToEmail>
+            <senderEmail>it.case.autoresponse@brandleadership.ch</senderEmail>
+            <senderName>gateB Support</senderName>
+            <template>Case_Templates/Case_gateB_Support_Case_Auto_Response_EN</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>SBB Case</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Contact.Language__c</field>
+                <operation>equals</operation>
+                <value>French</value>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <replyToEmail>support@gateb.com</replyToEmail>
+            <senderEmail>it.case.autoresponse@brandleadership.ch</senderEmail>
+            <senderName>gateB Support</senderName>
+            <template>Case_Templates/Case_gateB_Support_Case_Auto_Response_FR</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>SBB Case</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Contact.Language__c</field>
+                <operation>equals</operation>
+                <value>Italian</value>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <replyToEmail>support@gateb.com</replyToEmail>
+            <senderEmail>it.case.autoresponse@brandleadership.ch</senderEmail>
+            <senderName>gateB Support</senderName>
+            <template>Case_Templates/Case_gateB_Support_Case_Auto_Response_IT</template>
+        </ruleEntry>
+    </autoResponseRule>
+</AutoResponseRules>

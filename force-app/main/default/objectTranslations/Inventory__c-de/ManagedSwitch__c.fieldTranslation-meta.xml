@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Managed Switch --></label>
+    <name>ManagedSwitch__c</name>
+    <picklistValues>
+        <masterLabel>-</masterLabel>
+        <translation><!-- - --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VHAG-STI-C2K-01</masterLabel>
+        <translation><!-- VHAG-STI-C2K-01 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VHAG-STI-C2K-02</masterLabel>
+        <translation><!-- VHAG-STI-C2K-02 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VHAG-STI-C2K-03</masterLabel>
+        <translation><!-- VHAG-STI-C2K-03 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VHAG-STI-C2K-04</masterLabel>
+        <translation><!-- VHAG-STI-C2K-04 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VHAG-STI-C2K-05</masterLabel>
+        <translation><!-- VHAG-STI-C2K-05 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VHAG-STI-C2K-06</masterLabel>
+        <translation><!-- VHAG-STI-C2K-06 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VHAG-STI-C2K-07</masterLabel>
+        <translation><!-- VHAG-STI-C2K-07 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VHAG-STI-C2K-08</masterLabel>
+        <translation><!-- VHAG-STI-C2K-08 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VHAG-STI-C2K-09</masterLabel>
+        <translation><!-- VHAG-STI-C2K-09 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VHAG-STI-C2K-10</masterLabel>
+        <translation><!-- VHAG-STI-C2K-10 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VHAG-STI-C2K-11</masterLabel>
+        <translation><!-- VHAG-STI-C2K-11 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VHAG-STI-C2K-12</masterLabel>
+        <translation><!-- VHAG-STI-C2K-12 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VHAG-STI-C2K-13</masterLabel>
+        <translation><!-- VHAG-STI-C2K-13 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X7400_IT_Cases_All_WIDE_Monitoring</fullName>
+    <booleanFilter>1 AND 2</booleanFilter>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>FlagPriority__c</columns>
+    <columns>CASES.LAST_UPDATE_DATE_ONLY</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CASES.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Case.ITCases</value>
+    </filters>
+    <filters>
+        <field>CASES.EMAIL</field>
+        <operation>equals</operation>
+        <value>servicedesk@wide.ch</value>
+    </filters>
+    <label>7400 - IT Cases - All WIDE Monitoring</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_IT_Alle</group>
+    </sharedTo>
+</ListView>

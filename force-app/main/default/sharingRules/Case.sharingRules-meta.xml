@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Finance_Cases</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Finance Cases</label>
+        <sharedTo>
+            <group>Skywalk_FIN_Alle</group>
+        </sharedTo>
+        <booleanFilter>1</booleanFilter>
+        <criteriaItems>
+            <field>Type</field>
+            <operation>equals</operation>
+            <value>Finance</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Case_alle</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Case alle</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>IT</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>BLC</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>IT_Andr_Ryf_with_IT_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>IT André Ryf with IT Team</label>
+        <sharedTo>
+            <group>Skywalk_IT_Alle</group>
+        </sharedTo>
+        <sharedFrom>
+            <queue>ITCasesSammelqueue</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>IT_Cases</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>IT Cases</label>
+        <sharedTo>
+            <group>Skywalk_GBCH_Censhare_Support</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Skywalk_IT_Alle</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>IT_Cases2</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>IT Cases</label>
+        <sharedTo>
+            <group>Skywalk_IT_Alle</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Skywalk_GBCH_Censhare_Support</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>IT_Cases3</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>IT Cases</label>
+        <sharedTo>
+            <group>Skywalk_GBCH_Censhare_Support</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Skywalk_GBCH_Censhare_Support</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>IT_Cases4</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>IT Cases</label>
+        <sharedTo>
+            <group>Skywalk_IT_Alle</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Skywalk_IT_Alle</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>IT_Cases5</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>IT Cases</label>
+        <sharedTo>
+            <group>Skywalk_GBCH_Censhare_Support</group>
+        </sharedTo>
+        <sharedFrom>
+            <queue>ITSupportQueue</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>IT_Cases6</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>IT Cases</label>
+        <sharedTo>
+            <group>Skywalk_IT_Alle</group>
+        </sharedTo>
+        <sharedFrom>
+            <queue>CenshareQueue</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>IT_Cases8</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>IT Cases</label>
+        <sharedTo>
+            <group>Skywalk_GBCH_Censhare_Support</group>
+        </sharedTo>
+        <sharedFrom>
+            <queue>CenshareQueue</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

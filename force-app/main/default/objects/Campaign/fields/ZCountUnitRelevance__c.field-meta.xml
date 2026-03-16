@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ZCountUnitRelevance__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(INCLUDES( UnitRelevance__c , &quot;BLC&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;BY&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;GBUS&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;GBFR&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;GBCH&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;GCH&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;HBC&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;HYS&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;KNO&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;MA&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;ON&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;SC&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;SE&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;VH&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;XB&quot;),1,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ZCountUnitRelevance</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

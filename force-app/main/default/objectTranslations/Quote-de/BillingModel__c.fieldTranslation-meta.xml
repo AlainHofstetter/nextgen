@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Verrechnungsmodell</label>
+    <name>BillingModel__c</name>
+    <picklistValues>
+        <masterLabel>1/3 Invoice Cycle</masterLabel>
+        <translation><!-- 1/3 Invoice Cycle --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Monthly Invoice</masterLabel>
+        <translation><!-- Monthly Invoice --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Prepaid Invoice</masterLabel>
+        <translation><!-- Prepaid Invoice --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Quarterly</masterLabel>
+        <translation><!-- Quarterly --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Special Deal</masterLabel>
+        <translation><!-- Special Deal --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

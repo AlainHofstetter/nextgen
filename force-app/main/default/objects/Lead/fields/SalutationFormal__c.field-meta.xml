@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SalutationFormal__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( AND( ISPICKVAL( Salutation , &quot;Mr.&quot;), ISPICKVAL ( Language__c, &quot;German&quot;)), &quot;Sehr geehrter Herr &quot; &amp;LastName&amp; &quot; &quot; ,
+IF( AND( ISPICKVAL( Salutation , &quot;Ms.&quot;), ISPICKVAL ( Language__c, &quot;German&quot;)), &quot;Sehr geehrte Frau &quot; &amp;LastName&amp; &quot; &quot; ,
+IF( AND( ISPICKVAL( Salutation , &quot;&quot;), ISPICKVAL ( Language__c, &quot;German&quot;)), &quot;Guten Tag &quot; &amp;FirstName&amp;&quot; &quot;&amp;LastName&amp; &quot; &quot; ,
+IF( AND( ISPICKVAL( Salutation , &quot;Mr.&quot;), ISPICKVAL ( Language__c, &quot;English&quot;)), &quot;Dear Mr. &quot; &amp;LastName&amp;&quot; &quot; ,
+IF( AND( ISPICKVAL( Salutation , &quot;Ms.&quot;), ISPICKVAL ( Language__c, &quot;English&quot;)), &quot;Dear Ms. &quot; &amp;LastName&amp;&quot; &quot;,
+IF( AND( ISPICKVAL( Salutation , &quot;&quot;), ISPICKVAL ( Language__c, &quot;English&quot;)), &quot;Hello &quot; &amp;FirstName&amp;&quot; &quot;&amp;LastName&amp;&quot; &quot;,
+IF( AND( ISPICKVAL( Salutation , &quot;Mr.&quot;), ISPICKVAL ( Language__c, &quot;French&quot;)), &quot;Monsieur, &quot; &amp;LastName&amp;&quot; &quot; ,
+IF( AND( ISPICKVAL( Salutation , &quot;Ms.&quot;), ISPICKVAL ( Language__c, &quot;French&quot;)), &quot;Madame, &quot; &amp;LastName&amp;&quot; &quot;,
+IF( AND( ISPICKVAL( Salutation , &quot;&quot;), ISPICKVAL ( Language__c, &quot;French&quot;)), &quot;Bonjour &quot; &amp;FirstName&amp;&quot; &quot;&amp;LastName&amp;&quot; &quot;,
+IF( AND( ISPICKVAL( Salutation , &quot;Mr.&quot;), ISPICKVAL ( Language__c, &quot;Italian&quot;)), &quot;Egregio Signor &quot; &amp;LastName&amp;&quot; &quot; ,
+IF( AND( ISPICKVAL( Salutation , &quot;Ms.&quot;), ISPICKVAL ( Language__c, &quot;Italian&quot;)), &quot;Gentile Signora &quot; &amp;LastName&amp;&quot; &quot;,
+IF( AND( ISPICKVAL( Salutation , &quot;&quot;), ISPICKVAL ( Language__c, &quot;Italian&quot;)), &quot;Buongiorno &quot; &amp;FirstName&amp;&quot; &quot;&amp;LastName&amp;&quot; &quot;,
+IF( AND( ISPICKVAL( Salutation , &quot;Mr.&quot;), ISPICKVAL ( Language__c, &quot;Spanish&quot;)), &quot;Estimado Sr. &quot; &amp;LastName&amp;&quot; &quot; ,
+IF( AND( ISPICKVAL( Salutation , &quot;Ms.&quot;), ISPICKVAL ( Language__c, &quot;Spanish&quot;)), &quot;Estimada Sra. &quot; &amp;LastName&amp;&quot; &quot;,
+IF( AND( ISPICKVAL( Salutation , &quot;&quot;), ISPICKVAL ( Language__c, &quot;Spanish&quot;)), &quot;Buenas dias &quot; &amp;FirstName&amp;&quot; &quot;&amp;LastName&amp;&quot; &quot;
+, &quot;&quot;
+)))))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Salutation (Formal)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

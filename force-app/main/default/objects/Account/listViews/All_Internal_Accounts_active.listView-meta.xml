@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Internal_Accounts_active</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>UID__c</columns>
+    <columns>AbacusAccountNr__c</columns>
+    <columns>AccountNameShort__c</columns>
+    <columns>LegalShort__c</columns>
+    <columns>LegalCode__c</columns>
+    <columns>Inactive__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.InternalAccount</value>
+    </filters>
+    <filters>
+        <field>Inactive__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>All Internal Accounts (active)</label>
+    <language>en_US</language>
+</ListView>

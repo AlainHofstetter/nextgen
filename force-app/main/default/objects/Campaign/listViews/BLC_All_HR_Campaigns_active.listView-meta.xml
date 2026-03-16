@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLC_All_HR_Campaigns_active</fullName>
+    <columns>CAMPAIGN.NAME</columns>
+    <columns>UnitRelevance__c</columns>
+    <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+    <columns>CAMPAIGN.ACTIVE</columns>
+    <columns>CAMPAIGN.STATUS</columns>
+    <columns>JobTitle__c</columns>
+    <columns>CAMPAIGN.START_DATE</columns>
+    <columns>CAMPAIGN.END_DATE</columns>
+    <columns>CAMPAIGN.NUM_LEADS</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>URLApplicationForm__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CAMPAIGN.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Campaign.RecruitingCampaign</value>
+    </filters>
+    <filters>
+        <field>CAMPAIGN.ACTIVE</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>BLC - All HR Campaigns (active)</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_BLC_GL_Assistance</group>
+        <group>Skywalk_HR_OM</group>
+        <group>Skywalk_Recruitement_not_HR</group>
+        <role>CY</role>
+        <role>GBCH</role>
+        <role>HBC</role>
+    </sharedTo>
+</ListView>

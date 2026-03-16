@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SA_Projekt_Restrict_Access_to_Unit</fullName>
+    <columns>NAME</columns>
+    <columns>RestrictAccessToUnit__c</columns>
+    <columns>RestrictAccessToOwner__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Project__c.ExternalServices</value>
+    </filters>
+    <filters>
+        <field>RestrictAccessToUnit__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>SA: Projekt Restrict Access to Unit</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_Skywalk_Data_Quality</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PA020_User_CanNot_Select_Abacus_Inbox</fullName>
+    <active>true</active>
+    <description>A user other than System Administrator and Technical User can not select Abacus Inbox in Package Sub-Type</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =false,
+ISPICKVAL(PackageSubType__c,&quot;AbacusInbox&quot;),
+NOT($Profile.Name = &quot;System Administrator&quot;),
+NOT($Profile.Name = &quot;P300 - Technical User 1&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>PackageSubType__c</errorDisplayField>
+    <errorMessage>You are not allowed to select &quot;Abacus Inbox&quot; for Package Sub-Type. Please contact your Super User for assistance.﻿
+(PA020)</errorMessage>
+</ValidationRule>

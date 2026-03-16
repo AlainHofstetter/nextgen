@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Mobile Payment Agreement --></label>
+    <name>MobilePaymentAgreement__c</name>
+    <picklistValues>
+        <masterLabel>Contract 100.-</masterLabel>
+        <translation><!-- Contract 100.- --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Contract 200.-</masterLabel>
+        <translation><!-- Contract 200.- --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Contract 300.-</masterLabel>
+        <translation><!-- Contract 300.- --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Flat Rate 80.-</masterLabel>
+        <translation><!-- Flat Rate 80.- --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Probation Period 80.-</masterLabel>
+        <translation><!-- Probation Period 80.- --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

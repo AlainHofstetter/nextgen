@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CO005_Unit_Relevance</fullName>
+    <active>true</active>
+    <description>You have to choose at least one Unit</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+RecordType.Id = &apos;012b0000000bub6&apos;,
+ISBLANK( UnitRelevance__c )
+)</errorConditionFormula>
+    <errorDisplayField>UnitRelevance__c</errorDisplayField>
+    <errorMessage>Please chose at least one Unit.
+(CO005)</errorMessage>
+</ValidationRule>

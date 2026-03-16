@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACM003_Inactive_Not_Editable</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+NOT( $Profile.Id=&quot;00eb0000000wkmg&quot;),
+
+PRIORVALUE(Inactive__c) =true, 
+NOT(LastModifiedDate &lt;&gt; LastModifiedDate)
+)</errorConditionFormula>
+    <errorMessage>The Account has been flagged inactive and can therefore not be edited. Please get in touch with Finance if you do not agree with the inactive flag.
+(ACM003)</errorMessage>
+</ValidationRule>

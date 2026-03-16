@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACM002_Can_not_edit_Summary_Accounts</fullName>
+    <active>true</active>
+    <description>Can not edit Summary Accounts</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+OR( 
+PRIORVALUE(Name) =&quot;Summary - Former Employees Company Accounts&quot;,
+PRIORVALUE(Name) =&quot;Summary - Alumni Internal Accounts&quot;,
+PRIORVALUE(Name) =&quot;Summary - Deceased&quot;,
+PRIORVALUE(Name) =&quot;Summary - Private Contacts&quot;
+)
+)</errorConditionFormula>
+    <errorMessage>You can not change Summary Accounts. For questions get in touch with André Ryf.
+(ACM002)</errorMessage>
+</ValidationRule>

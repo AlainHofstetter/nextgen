@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Relevante Module</label>
+    <name>RelevantModules__c</name>
+    <picklistValues>
+        <masterLabel>Brand Management Portal</masterLabel>
+        <translation><!-- Brand Management Portal --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Event Manager</masterLabel>
+        <translation><!-- Event Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Job Manager</masterLabel>
+        <translation><!-- Job Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Language Center</masterLabel>
+        <translation><!-- Language Center --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Marketing PM</masterLabel>
+        <translation><!-- Marketing PM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Marketing Planer</masterLabel>
+        <translation><!-- Marketing Planer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Marketing Shop</masterLabel>
+        <translation><!-- Marketing Shop --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Media Pool</masterLabel>
+        <translation><!-- Media Pool --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reporting Center</masterLabel>
+        <translation><!-- Reporting Center --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Review Manager</masterLabel>
+        <translation><!-- Review Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Smart Access</masterLabel>
+        <translation><!-- Smart Access --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Web-to-Print</masterLabel>
+        <translation><!-- Web-to-Print --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Web-to-Web</masterLabel>
+        <translation><!-- Web-to-Web --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

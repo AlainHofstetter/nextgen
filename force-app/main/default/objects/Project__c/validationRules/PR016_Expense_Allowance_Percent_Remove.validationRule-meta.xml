@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PR016_Expense_Allowance_Percent_Remove</fullName>
+    <active>true</active>
+    <description>Expense Allowance Percent must be removed</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+NOT(ISPICKVAL(  ExpenseBillingType__c  ,&quot;AllowancePercent&quot;)),
+NOT(ISNULL(  ExpenseAllowancePercent__c  ))
+)</errorConditionFormula>
+    <errorDisplayField>ExpenseAllowancePercent__c</errorDisplayField>
+    <errorMessage>Please remove the Expense Allowance %
+(PR016)</errorMessage>
+</ValidationRule>

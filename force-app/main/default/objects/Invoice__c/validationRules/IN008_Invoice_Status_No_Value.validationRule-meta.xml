@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IN008_Invoice_Status_No_Value</fullName>
+    <active>true</active>
+    <description>The Invoice Status can not be empty</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+ISBLANK(TEXT(InvoiceStatus__c)))</errorConditionFormula>
+    <errorDisplayField>InvoiceStatus__c</errorDisplayField>
+    <errorMessage>You have to select an Invoice Status.
+(IN008)</errorMessage>
+</ValidationRule>

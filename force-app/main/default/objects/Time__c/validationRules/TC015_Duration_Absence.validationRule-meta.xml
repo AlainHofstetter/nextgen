@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TC015_Duration_Absence</fullName>
+    <active>true</active>
+    <description>The duration of the absence must be within the range.</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+NOT(Timetracker__r.Id = &quot;003b000001oHTRE&quot;),
+DurationHhMmN__c &lt;&gt;4.00,
+DurationHhMmN__c &lt;&gt;8.00,
+DurationHhMmN__c &lt;&gt;5.00,
+DurationHhMmN__c &lt;&gt;7.50,
+OR(
+ISPICKVAL(Package__r.AbacusTimeType__c,&quot;105&quot;),
+ISPICKVAL(Package__r.AbacusTimeType__c,&quot;1135&quot;),
+ISPICKVAL(Package__r.AbacusTimeType__c,&quot;115&quot;),
+ISPICKVAL(Package__r.AbacusTimeType__c,&quot;130&quot;),
+ISPICKVAL(Package__r.AbacusTimeType__c,&quot;140&quot;),
+ISPICKVAL(Package__r.AbacusTimeType__c,&quot;155&quot;),
+ISPICKVAL(Package__r.AbacusTimeType__c,&quot;160&quot;),
+ISPICKVAL(Package__r.AbacusTimeType__c,&quot;300&quot;)
+)
+)</errorConditionFormula>
+    <errorMessage>Duration is 4.00 for half day, and 8.00 for full day absence.
+(TC015)</errorMessage>
+</ValidationRule>

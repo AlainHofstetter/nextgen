@@ -1,0 +1,4 @@
+The following project has been closed, as 18 months have passed since its Start Date: {!Project__c.Link}
+
+Project: {!Project__c.Name}
+Project Start Date: {!Project__c.ProjectStartDate__c}

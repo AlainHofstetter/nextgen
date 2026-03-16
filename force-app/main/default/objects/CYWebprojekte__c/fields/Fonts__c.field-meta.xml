@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fonts__c</fullName>
+    <label>Fonts</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>LokalGehostet</fullName>
+                <default>false</default>
+                <label>Lokal gehostet</label>
+            </value>
+            <value>
+                <fullName>FontsCom</fullName>
+                <default>false</default>
+                <label>Fonts.com</label>
+            </value>
+            <value>
+                <fullName>Typekit</fullName>
+                <default>false</default>
+                <label>Typekit</label>
+            </value>
+            <value>
+                <fullName>Sonstiges</fullName>
+                <default>false</default>
+                <label>Sonstiges</label>
+            </value>
+            <value>
+                <fullName>Keine</fullName>
+                <default>false</default>
+                <label>Keine</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

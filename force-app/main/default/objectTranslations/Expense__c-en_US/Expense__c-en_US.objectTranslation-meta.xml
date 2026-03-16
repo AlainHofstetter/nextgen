@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Expense</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Expenses</value>
+    </caseValues>
+    <layouts>
+        <layout>Expense Layout Car Travel</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Expense Detail --></label>
+            <section>Expense Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Finance Controlling --></label>
+            <section>Finance Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Finance Validation --></label>
+            <section>Finance Validation</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Expense Layout Receipt</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Expense Detail --></label>
+            <section>Expense Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Finance Controlling --></label>
+            <section>Finance Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Finance Validation --></label>
+            <section>Finance Validation</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Car Travel --></label>
+        <name>CarTravel</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Receipt --></label>
+        <name>Receipt</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to create or change the Expense Card since the Package or Parent Package is closed. Please contact the Project Manager for assistance.
+(EC001) -->
+        </errorMessage>
+        <name>EC001_Expense_Card_No_Change_Package_Clo</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to create or change the Expense Card since the Project is closed. Please contact the Project Manager for assistance.
+(EC002) -->
+        </errorMessage>
+        <name>EC002_Expense_Card_No_Change_Project_Clo</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to change the Expense Card since the Project Manager has already validated the expense. Please contact the Project Manager for assistance.
+(EC003) -->
+        </errorMessage>
+        <name>EC003_Expense_Card_No_Change_Validated_P</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to change the Expense Card since Finance has already validated the expense. Please contact Finance for assistance.
+(EC004) -->
+        </errorMessage>
+        <name>EC004_Expense_Card_No_Change_Validated_F</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Please choose a Package of Type = Expense.
+(EC005) -->
+        </errorMessage>
+        <name>EC005_Package_Same_Type</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You can not change the expensetracker. Please get in touch with the Super User for assistance.
+(EC006) -->
+        </errorMessage>
+        <name>EC006_Expensetracker_No_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You can not add or change expenses for somebody else. 
+(EC007) -->
+        </errorMessage>
+        <name>EC007_Only_Expense_For_Yourself</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Please choose the company credit card used for this expense.
+ (EC008) -->
+        </errorMessage>
+        <name>EC008_Payment_Type_Company_Credit_Card</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Please validate payment type if you choose Credit Card..
+ (EC009) -->
+        </errorMessage>
+        <name>EC009_Payment_Type_Company_Credit_Card2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Please choose the car used for this expense.
+ (EC010) -->
+        </errorMessage>
+        <name>EC010_Payment_Type_Company_Car</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to validate the expense card. Please contact your Super User for assistance.
+(EC011) -->
+        </errorMessage>
+        <name>EC011_PM_Validation_only_PM</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to make changes to validated expense cards.
+(EC012) -->
+        </errorMessage>
+        <name>EC012_ExpenseCard_Validation_PM</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to validate the expense card. Please contact your Super User for assistance.
+(EC013) -->
+        </errorMessage>
+        <name>EC013_PM_Validation_only_Finance</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Expense Gross can not be empty.
+(EC014) -->
+        </errorMessage>
+        <name>EC014_Expense_Gross_Not_Null</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Car Currency must match Local Currency. Please choose the correct car.
+(EC015) -->
+        </errorMessage>
+        <name>EC015_Car_Currency_Match_Local_Currency</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Car Distance and/or Compensation can not be empty.
+(EC016) -->
+        </errorMessage>
+        <name>EC016_Car_Distance_Compensation_Not_Null</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The Internal Contact ID is empty. Please get in touch with the System Administrator.
+(EC017) -->
+        </errorMessage>
+        <name>EC017_InternalContactID_Blank</name>
+    </validationRules>
+</CustomObjectTranslation>

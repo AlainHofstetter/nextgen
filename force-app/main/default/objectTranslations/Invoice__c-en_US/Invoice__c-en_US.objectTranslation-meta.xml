@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Invoice</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Invoices</value>
+    </caseValues>
+    <layouts>
+        <layout>ILV Layout Invoice</layout>
+        <sections>
+            <label><!-- Controlling (Finance) --></label>
+            <section>Controlling (Finance)</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Detail --></label>
+            <section>Invoice Detail</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Invoice Layout Cancellation</layout>
+        <sections>
+            <label><!-- Billing Information --></label>
+            <section>Billing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Finance Controlling --></label>
+            <section>Finance Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Header Information --></label>
+            <section>Header Information</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Detail --></label>
+            <section>Invoice Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Position --></label>
+            <section>Invoice Position</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Invoice Layout Cancellation - Finance</layout>
+        <sections>
+            <label><!-- Billing Information --></label>
+            <section>Billing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Finance Controlling --></label>
+            <section>Finance Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Header Information --></label>
+            <section>Header Information</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Detail --></label>
+            <section>Invoice Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Position --></label>
+            <section>Invoice Position</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Invoice Layout Credit</layout>
+        <sections>
+            <label><!-- Abacus Integration --></label>
+            <section>Abacus Integration</section>
+        </sections>
+        <sections>
+            <label><!-- Billing Information --></label>
+            <section>Billing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Controlling (Finance) --></label>
+            <section>Controlling (Finance)</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- ESR &amp; Bank Information --></label>
+            <section>ESR &amp; Bank Information</section>
+        </sections>
+        <sections>
+            <label><!-- Header Information --></label>
+            <section>Header Information</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Detail --></label>
+            <section>Invoice Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Position --></label>
+            <section>Invoice Position</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Invoice Layout Invoice</layout>
+        <sections>
+            <label><!-- Billing Information --></label>
+            <section>Billing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Finance Controlling --></label>
+            <section>Finance Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Header Information --></label>
+            <section>Header Information</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Detail --></label>
+            <section>Invoice Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Position --></label>
+            <section>Invoice Position</section>
+        </sections>
+        <sections>
+            <label><!-- QR &amp; Bank Informationen --></label>
+            <section>QR &amp; Bank Informationen</section>
+        </sections>
+        <sections>
+            <label><!-- Reminder Information --></label>
+            <section>Reminder Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Invoice Layout Invoice - Finance</layout>
+        <sections>
+            <label><!-- Abacus Integration --></label>
+            <section>Abacus Integration</section>
+        </sections>
+        <sections>
+            <label><!-- Billing Information --></label>
+            <section>Billing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- ESR &amp; Bank Information --></label>
+            <section>ESR &amp; Bank Information</section>
+        </sections>
+        <sections>
+            <label><!-- Finance Controlling --></label>
+            <section>Finance Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Header Information --></label>
+            <section>Header Information</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Detail --></label>
+            <section>Invoice Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Position --></label>
+            <section>Invoice Position</section>
+        </sections>
+        <sections>
+            <label><!-- Reminder Information --></label>
+            <section>Reminder Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Billing (Draft) --></label>
+        <name>Billing_Draft</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Cancel Invoice --></label>
+        <name>CancelInvoice</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Genera new QR Bill --></label>
+        <name>Genera_new_QR_Bill</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Update Invoice --></label>
+        <name>UpdateInvoice</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- Cancellation --></label>
+        <name>Cancellation</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- 15.12.2017, ary: Entscheid Finance, Gutschriften werden als -Minus Rechnungen ins Abacus übertragen. --></description>
+        <label><!-- Credit --></label>
+        <name>Credit</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- ILV --></label>
+        <name>ILV</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Invoice --></label>
+        <name>Invoice</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage>
+            <!-- You can not change the type of the invoice. Please get in touch with Finance.
+(IN002) -->
+        </errorMessage>
+        <name>IN002_Change_Invoice_Type</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You can not attach the invoice to a different project. Please get in touch with your Super User for assistance.
+(IN004) -->
+        </errorMessage>
+        <name>IN004_Change_Project</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You can not set the invoice type to cancellation since the invoice has not been sent to Abacus. Please get in touch with Finance for assistance.
+(IN006) -->
+        </errorMessage>
+        <name>IN006_Status_Cancellation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The invoice Status &quot;Sent&quot; can not be set because Abacus Transfer / Abacus Interface Export ist not correct.
+(IN007) -->
+        </errorMessage>
+        <name>IN007_Change_Invoice_Status_Sent</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You have to select an Invoice Status.
+(IN008) -->
+        </errorMessage>
+        <name>IN008_Invoice_Status_No_Value</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You can not change the status of the invoice anymore since it has been sent. Please get in touch with Finance.
+(IN009) -->
+        </errorMessage>
+        <name>IN009_Change_Status_Sent</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You need the appropriate rights to cancel invoices. Please get in touch with Finance.
+(IN010) -->
+        </errorMessage>
+        <name>IN010_Status_Cancellation_2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You can not set the Invoice to Ready / Sent. Reason: The Invoice Receiver Account has no UID information. Please open the Invoice Receiver Account in a new browser tab and get the UID Information from www.zefix.ch.
+(IN011) -->
+        </errorMessage>
+        <name>IN011_Account_No_UID</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- There is already an Invoice in Status &quot;Draft&quot;. Please complete this invoice first. 
+(IN012) -->
+        </errorMessage>
+        <name>IN012_Count_Status_Draft_Invoice</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- There is already an ILV in Status &quot;Draft&quot;. Please complete this ILV first. 
+(IN013) -->
+        </errorMessage>
+        <name>IN013_Count_Status_Draft_ILV</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to change to this status of the Invoice. Please contact Finance.
+(IN014) -->
+        </errorMessage>
+        <name>IN014_Status_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You need to select the terms of payment. 
+(IN015) -->
+        </errorMessage>
+        <name>IN015_TermsOfPayment_Not_Null</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- This invoice date is not allowed. Please get in touch with Finance.
+(IN016) -->
+        </errorMessage>
+        <name>IN016_Invoice_Date_Not_Allowed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- This finance date is not allowed. Please get in touch with Finance.
+(IN017) -->
+        </errorMessage>
+        <name>IN017_Finance_Date_Not_Allowed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Account Data is missing. Please check for Account Language, VAT %, Terms of Payment etc. 
+(IN018) -->
+        </errorMessage>
+        <name>IN018_Account_Data_Not_Complete</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The Invoice Title must contain either &quot;Rechnung&quot; or &quot;Invoice&quot;
+(IN019) -->
+        </errorMessage>
+        <name>IN019_Invoice_Title_Must_Contain_Rechnun</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The Invoice Title must contain either &quot;Storno&quot; or &quot;Cancellation&quot;
+(IN020) -->
+        </errorMessage>
+        <name>IN020_Cancell_Title_Must_Contain_Cancel</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You must add a Cancellation Reason.
+(IN020) -->
+        </errorMessage>
+        <name>IN020_Invoice_Cancellation_Reason_Must</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The Invoice Title must contain either &quot;Gutschrift&quot; or &quot;Credit Note&quot;
+(IN021) -->
+        </errorMessage>
+        <name>IN021_Credit_Title_Must_Contain_Credit</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- This Invoice is in status &quot;Ready&quot; and can only be changed by Finance.
+(IN021) -->
+        </errorMessage>
+        <name>IN021_Invoice_Status_Ready_No_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- This Invoice is in status &quot;Sent to Abacus&quot; and can only be changed by Finance.
+(IN022) -->
+        </errorMessage>
+        <name>IN022_Invoice_Status_Sent_No_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to choose VAT 2.5%/2.6%. Please get in touch with Finance. 
+(IN023) -->
+        </errorMessage>
+        <name>IN023_VAT_25_Percent</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to choose VAT 8%. Please get in touch with Finance. 
+(IN024) -->
+        </errorMessage>
+        <name>IN024_VAT_not_8_Percent</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to choose VAT 19%. Please get in touch with Finance.
+(IN025) -->
+        </errorMessage>
+        <name>IN025_VAT_not_19_Percent</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to choose VAT 8.1%. Please get in touch with Finance. 
+(IN026) -->
+        </errorMessage>
+        <name>IN026_VAT_not_81_Percent</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to choose VAT 2.6%. Please get in touch with Finance. 
+(IN027) -->
+        </errorMessage>
+        <name>IN027_VAT_26_Percent</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot use 7,7%, 2,5%, 3,7% or 8% as VAT from 01.01.2024 on. Please use instead 8,1%, 2,6%, 3,8% or respectively 9%. (IN028) --></errorMessage>
+        <name>IN028_VAT_NewVATRates</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to choose VAT 9%. Please get in touch with Finance. 
+(IN029) -->
+        </errorMessage>
+        <name>IN029_VAT_Not_9_Percent</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- CreateInvoice --></label>
+        <name>CreateInvoice</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- CreateStorno --></label>
+        <name>CreateStorno</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- DynadocTest --></label>
+        <name>DynadocTest</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Generate_Invoice --></label>
+        <name>Generate_Invoice</name>
+    </webLinks>
+</CustomObjectTranslation>

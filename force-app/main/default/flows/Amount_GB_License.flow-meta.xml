@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Migrated from the: Amount GB - License workflow rule
+Workflow rule description: Calculates the Amount of the Opportunity of GB - License for internal forecast.&quot;</description>
+    <formulas>
+        <name>Amount_GB_LicenseFormula</name>
+        <dataType>Currency</dataType>
+        <expression>IF($Record.ProfessionalServicesGB__c&gt;0, $Record.ModulesEntireTermGB__c + $Record.ProfessionalServicesGB__c + $Record.OneTimeTechinicalSetupGB__c +  $Record.HostingGB__c , $Record.ModulesEntireTermGB__c + $Record.OneTimeTechinicalSetupGB__c + $Record.HostingGB__c)</expression>
+        <scale>0</scale>
+    </formulas>
+    <label>Amount GB - License</label>
+    <migratedFromWorkflowRuleName>Amount GB - License</migratedFromWorkflowRuleName>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Calculates the Amount of the Opportunity of GB - License for internal forecast.</description>
+        <name>mainUpdate</name>
+        <label>mainUpdate</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Amount</field>
+            <value>
+                <elementReference>Amount_GB_LicenseFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>mainUpdate</targetReference>
+        </connector>
+        <filterFormula>{!$Record.RecordTypeId} =&quot;012b0000000cQ3P&quot;</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

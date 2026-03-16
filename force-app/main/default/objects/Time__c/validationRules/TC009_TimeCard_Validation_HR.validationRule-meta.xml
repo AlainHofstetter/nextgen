@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TC009_TimeCard_Validation_HR</fullName>
+    <active>true</active>
+    <description>The Time Card can only be validated by HR</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+ ISCHANGED(TimeValidatedHumanResources__c),
+  $User.IsHRManager__c  =false
+)</errorConditionFormula>
+    <errorDisplayField>TimeValidatedHumanResources__c</errorDisplayField>
+    <errorMessage>You are not allowed to validate the time card. Please get in touch with HR Management.
+(TC009)</errorMessage>
+</ValidationRule>

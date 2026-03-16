@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GFMBLCstatus__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+MPSJury__c=true,&quot;BLC Jury&quot;,
+
+IF(
+MPSChampion__c=true,&quot;BLC Champion&quot;,
+
+IF(
+MPSParticipant__c=true,&quot;BLC Participant&quot;,
+
+IF(
+OR(
+BLCCustomer__c=true,
+NOT(ISBLANK(CustomerActual__c))
+),
+&quot;BLC Customer&quot;,
+
+IF(
+GFMPlatinMember__c=true,&quot;GFM Platin Member&quot;,
+
+IF(
+GFMMember__c=true,&quot;GFM Member&quot;,
+
+IF(
+ GFMContact__c=true,&quot;GFM Contact&quot;,
+
+&quot;No Result&quot;
+)
+)
+)
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>GFM/BLC Status</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Abacus Interface</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Abacus Interface</value>
+    </caseValues>
+    <layouts>
+        <layout>Abacus Interface</layout>
+        <sections>
+            <label><!-- Abacus Interface Detail --></label>
+            <section>Abacus Interface Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Status --></label>
+            <section>Status</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage>
+            <!-- This Account is not a Debtor and can therefore not be transferred to Abacus.
+(ABA001) -->
+        </errorMessage>
+        <name>ABA001_AccountDebtorUpdate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- This Account is not a Supplier and can therefore not be transferred to Abacus.
+(ABA002) -->
+        </errorMessage>
+        <name>ABA002_AccountSupplierUpdate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The Abacus Interface entry is not correct.
+(ABA003) -->
+        </errorMessage>
+        <name>ABA003_AbacusInterfaceValidEntryTalend</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Please choose an internal Account for Invoice Export.
+(ABA004) -->
+        </errorMessage>
+        <name>ABA004_InvoiceAccountInternalOnly</name>
+    </validationRules>
+</CustomObjectTranslation>

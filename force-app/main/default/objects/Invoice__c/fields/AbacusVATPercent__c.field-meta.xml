@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AbacusVATPercent__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(ISPICKVAL(VATPercent__c,&quot;0%&quot;), InvoiceReceiver__r.RecordType.Id !=&quot;012b0000000cLvh&quot;, BillingAddressCountry__c = &quot;SWITZERLAND&quot;),&quot;400&quot;,
+IF(
+AND(ISPICKVAL(VATPercent__c,&quot;0%&quot;), InvoiceReceiver__r.RecordType.Id !=&quot;012b0000000cLvh&quot;, BillingAddressCountry__c != &quot;SWITZERLAND&quot;),&quot;401&quot;,
+IF(
+AND(ISPICKVAL(VATPercent__c,&quot;0%&quot;), InvoiceReceiver__r.RecordType.Id =&quot;012b0000000cLvh&quot;),&quot;410&quot;,
+IF(
+OR(ISPICKVAL(VATPercent__c,&quot;7.7%&quot;), ISPICKVAL(VATPercent__c,&quot;8.1%&quot;),ISPICKVAL(VATPercent__c,&quot;8%&quot;)), &quot;311&quot;,
+IF(
+OR(ISPICKVAL(VATPercent__c,&quot;2.5%&quot;), ISPICKVAL(VATPercent__c,&quot;2.6%&quot;)),&quot;312&quot;,
+IF(
+ISPICKVAL(VATPercent__c,&quot;19%&quot;),&quot;315&quot;,
+&quot;&quot;))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>AbacusVATPercent</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

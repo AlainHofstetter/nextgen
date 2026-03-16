@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Unit Relation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Unit Relations</value>
+    </caseValues>
+    <layouts>
+        <layout>Unit Relation Layout - BLC</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label><!-- Unit Relation Detail --></label>
+            <section>Unit Relation Detail</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Unit Relation Layout - CY</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label><!-- Unit Relation Detail --></label>
+            <section>Unit Relation Detail</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Unit Relation Layout - GB</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- System Administator --></label>
+            <section>System Administator</section>
+        </sections>
+        <sections>
+            <label><!-- Unit Relation Detail --></label>
+            <section>Unit Relation Detail</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Unit Relation Layout - GBDE</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label><!-- Unit Relation Detail --></label>
+            <section>Unit Relation Detail</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Unit Relation Layout - GBSGP</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label><!-- Unit Relation Detail --></label>
+            <section>Unit Relation Detail</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Unit Relation Layout - HBC</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label><!-- Unit Relation Detail --></label>
+            <section>Unit Relation Detail</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Unit Relation Layout - VH</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label><!-- Unit Relation Detail --></label>
+            <section>Unit Relation Detail</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Unit Relation Layout - XB</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label><!-- Unit Relation Detail --></label>
+            <section>Unit Relation Detail</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Unit Relation Layout- HYS</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label><!-- Unit Relation Detail --></label>
+            <section>Unit Relation Detail</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>gateB Test</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label><!-- Unit Relation Detail --></label>
+            <section>Unit Relation Detail</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Unit Relation Number</nameFieldLabel>
+    <recordTypes>
+        <label><!-- BLC --></label>
+        <name>BLC</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- CY --></label>
+        <name>CY</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- GBDE --></label>
+        <name>GBDE</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- GBSGP --></label>
+        <name>GBSGP</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- GBCH --></label>
+        <name>GbCh</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- GBUS --></label>
+        <name>GbUs</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- HBC --></label>
+        <name>Hbc</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- HYS --></label>
+        <name>Hys</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Inaktiviert 17.02.2016, Ryf --></description>
+        <label><!-- MA --></label>
+        <name>Ma</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- VH --></label>
+        <name>Vh</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- XB --></label>
+        <name>Xb</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- gateB Test --></label>
+        <name>gateB_Test</name>
+    </recordTypes>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

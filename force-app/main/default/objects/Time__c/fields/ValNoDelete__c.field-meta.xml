@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValNoDelete__c</fullName>
+    <description>This Checkbox is used by the TimEx App for filtering the icons.</description>
+    <formula>OR( 
+NOT(ISPICKVAL( ProjectName__r.ProjectStatus__c , &quot;Open&quot;)), 
+NOT(ISPICKVAL( Package__r.PackageStatus__c , &quot;Open&quot;)),
+AND( 
+NOT(ISBLANK(Package__r.PackageSuperior__c )), 
+NOT(ISPICKVAL(Package__r.PackageSuperior__r.PackageStatus__c,&quot;Open&quot;))
+), 
+TimeValidatedProjectResponsible__c =true,
+TimeValidatedHumanResources__c =true
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ValNoDelete</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

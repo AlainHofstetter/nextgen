@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IN002_Change_Invoice_Type</fullName>
+    <active>true</active>
+    <description>The invoice type can not be changed.</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+ $User.IsFinanceManager__c =false,
+ISCHANGED(  InvoiceType__c ))</errorConditionFormula>
+    <errorMessage>You can not change the type of the invoice. Please get in touch with Finance.
+(IN002)</errorMessage>
+</ValidationRule>

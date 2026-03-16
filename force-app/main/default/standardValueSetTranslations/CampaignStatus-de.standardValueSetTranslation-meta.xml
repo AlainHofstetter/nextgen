@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Abgemeldet</masterLabel>
+        <translation><!-- Abgemeldet --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Aborted</masterLabel>
+        <translation>Abgebrochen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Angemeldet attended</masterLabel>
+        <translation><!-- Angemeldet attended --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Angemeldet no show</masterLabel>
+        <translation><!-- Angemeldet no show --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Completed</masterLabel>
+        <translation>Fertiggestellt</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Erfasst</masterLabel>
+        <translation><!-- Erfasst --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>In Progress</masterLabel>
+        <translation>In Bearbeitung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Infomail nach Event</masterLabel>
+        <translation><!-- Infomail nach Event --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Infomail vor Event</masterLabel>
+        <translation><!-- Infomail vor Event --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Invitation sent</masterLabel>
+        <translation><!-- Invitation sent --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Planned</masterLabel>
+        <translation>Geplant</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Save the date sent</masterLabel>
+        <translation><!-- Save the date sent --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Unvollständig</masterLabel>
+        <translation><!-- Unvollständig --></translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

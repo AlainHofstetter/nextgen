@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Pricing --></label>
+    <name>Pricing__c</name>
+    <picklistValues>
+        <masterLabel>At Cost</masterLabel>
+        <translation><!-- At Cost --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cost Ceiling</masterLabel>
+        <translation><!-- Cost Ceiling --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Flat Rate</masterLabel>
+        <translation><!-- Flat Rate --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Frame Contract</masterLabel>
+        <translation><!-- Frame Contract --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

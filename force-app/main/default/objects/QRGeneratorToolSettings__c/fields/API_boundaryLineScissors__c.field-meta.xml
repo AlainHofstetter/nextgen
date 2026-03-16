@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>API_boundaryLineScissors__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If scissors should be printed on the boundary lines. Only to be set to true if  Boundary Lines is set to true. - https://rest.qr-invoice.cloud/swagger-ui/index.html#/11%20Payment%20Part%20%26%20Receipt%20(QR%20Bill)/createPaymentPartReceipt</description>
+    <inlineHelpText>Mark as true if scissors should be printed on the boundary lines. This can only be active if Boundary Lines is active.</inlineHelpText>
+    <label>Add Boundary Line Scissors</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

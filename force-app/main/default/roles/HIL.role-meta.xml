@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Read</caseAccessLevel>
+    <contactAccessLevel>Read</contactAccessLevel>
+    <description>Employee of hilda</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>HIL - Hilda</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentRole>A_Companys</parentRole>
+</Role>

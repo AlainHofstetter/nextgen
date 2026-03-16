@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This template is used to inform about Opportunity Stage = WON</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>CS - Opportunity WON</name>
+    <style>none</style>
+    <subject>Opportunity Stage &quot;Closed Won&quot;</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

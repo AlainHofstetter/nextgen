@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Kandidat Ablehnungsstatus</label>
+    <name>Candidate_Refusal_Stage__c</name>
+    <picklistValues>
+        <masterLabel>After 1st Interview</masterLabel>
+        <translation>Nach 1. Interview</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>After 2nd Interview</masterLabel>
+        <translation>Nach 2. Interview</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>After 3rd Interview</masterLabel>
+        <translation>Nach 3. Interview</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>After 4th Interview</masterLabel>
+        <translation>Nach 4. Interview</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>After Telephone Interview</masterLabel>
+        <translation>Nach Telefon Interview</translation>
+    </picklistValues>
+</CustomFieldTranslation>

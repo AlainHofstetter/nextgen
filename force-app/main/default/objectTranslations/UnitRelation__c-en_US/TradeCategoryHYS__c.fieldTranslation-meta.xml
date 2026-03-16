@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Trade Category - HYS --></label>
+    <name>TradeCategoryHYS__c</name>
+    <picklistValues>
+        <masterLabel>-----------------</masterLabel>
+        <translation><!-- - - - - - - - - - - - - - - - - - --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>------------------</masterLabel>
+        <translation><!-- - - - - - - - - - - - - - - - - - -  --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>-----------------------</masterLabel>
+        <translation><!-- - - - - - - - - - - - - - - - - - - - - - - - --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Boutique Hotel</masterLabel>
+        <translation><!-- Boutique Hotel --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Consulting Companies</masterLabel>
+        <translation><!-- Consulting Companies --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cultural Institution</masterLabel>
+        <translation><!-- Cultural Institution --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Department Store</masterLabel>
+        <translation><!-- Department Store --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Design Store</masterLabel>
+        <translation><!-- Design Store --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Editing House</masterLabel>
+        <translation><!-- Editing House --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Event Planner</masterLabel>
+        <translation><!-- Event Planner --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Flower Shop</masterLabel>
+        <translation><!-- Flower Shop --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hotel Association</masterLabel>
+        <translation><!-- Hotel Association --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Law Firm</masterLabel>
+        <translation><!-- Law Firm --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Luxury Brand</masterLabel>
+        <translation><!-- Luxury Brand --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Luxury Hotel</masterLabel>
+        <translation><!-- Luxury Hotel --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Magazines</masterLabel>
+        <translation><!-- Magazines --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Online Blog</masterLabel>
+        <translation><!-- Online Blog --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Online Retail</masterLabel>
+        <translation><!-- Online Retail --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Private Bank</masterLabel>
+        <translation><!-- Private Bank --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Stationary Store</masterLabel>
+        <translation><!-- Stationary Store --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tax Advisers</masterLabel>
+        <translation><!-- Tax Advisers --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Travel Retail</masterLabel>
+        <translation><!-- Travel Retail --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wedding Planner</masterLabel>
+        <translation><!-- Wedding Planner --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

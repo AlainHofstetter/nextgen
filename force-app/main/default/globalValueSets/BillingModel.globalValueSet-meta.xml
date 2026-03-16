@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>MonthlyInvoice</fullName>
+        <default>false</default>
+        <label>Monthly Invoice</label>
+    </customValue>
+    <customValue>
+        <fullName>PrepaidInvoice</fullName>
+        <default>false</default>
+        <label>Prepaid Invoice</label>
+    </customValue>
+    <customValue>
+        <fullName>13InvoiceCycle</fullName>
+        <default>false</default>
+        <label>1/3 Invoice Cycle</label>
+    </customValue>
+    <customValue>
+        <fullName>Quarterly</fullName>
+        <default>false</default>
+        <label>Quarterly</label>
+    </customValue>
+    <customValue>
+        <fullName>SpecialDeal</fullName>
+        <default>false</default>
+        <label>Special Deal</label>
+    </customValue>
+    <masterLabel>Billing Model</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

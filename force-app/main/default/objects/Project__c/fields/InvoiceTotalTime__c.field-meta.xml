@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InvoiceTotalTime__c</fullName>
+    <label>Invoice - Total Time</label>
+    <summarizedField>Invoice__c.InvoicePOSTotalTime__c</summarizedField>
+    <summaryFilterItems>
+        <field>Invoice__c.InvoiceInvalid__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Invoice__c.ProjectName__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

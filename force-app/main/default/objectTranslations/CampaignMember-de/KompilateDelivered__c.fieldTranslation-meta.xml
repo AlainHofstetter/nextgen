@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Kompilate Delivered --></label>
+    <name>KompilateDelivered__c</name>
+    <picklistValues>
+        <masterLabel>FLO</masterLabel>
+        <translation><!-- FLO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HFP</masterLabel>
+        <translation><!-- HFP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LAS</masterLabel>
+        <translation><!-- LAS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Online Portal</masterLabel>
+        <translation><!-- Online Portal --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

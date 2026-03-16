@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Opportunity Bundle</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Opportunity Bundles</value>
+    </caseValues>
+    <layouts>
+        <layout>Opportunity Bundle Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Dashboard --></label>
+            <section>Dashboard</section>
+        </sections>
+        <sections>
+            <label><!-- Description Information --></label>
+            <section>Description Information</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Bundle Name --></label>
+            <section>Opportunity Bundle Name</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage>
+            <!-- Please change the Name of the Opportunity Bundle.
+(OBU001) -->
+        </errorMessage>
+        <name>OBU001_Replace_Default_Name</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TotalExpenseAllowance__c</fullName>
+    <label>Total Expense Allowance</label>
+    <summarizedField>QuoteLineItem.TotalPriceF__c</summarizedField>
+    <summaryFilterItems>
+        <field>QuoteLineItem.ProductType__c</field>
+        <operation>equals</operation>
+        <value>Expense</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>QuoteLineItem.ExpenseAllowancePackage__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>QuoteLineItem.Option__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

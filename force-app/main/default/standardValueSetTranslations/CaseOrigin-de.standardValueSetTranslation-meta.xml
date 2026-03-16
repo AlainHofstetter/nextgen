@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Email</masterLabel>
+        <translation>E-Mail</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>In Person</masterLabel>
+        <translation>Persönlich</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Phone</masterLabel>
+        <translation>Telefon</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Slack</masterLabel>
+        <translation><!-- Slack --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Teams</masterLabel>
+        <translation><!-- Teams --></translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

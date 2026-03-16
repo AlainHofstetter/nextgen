@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>BLC - Alumnis Campaign Member</layout>
+        <sections>
+            <label>Mitgliederdetail</label>
+            <section>Campaign Member Detail</section>
+        </sections>
+        <sections>
+            <label>Unternehmensinformation</label>
+            <section>Company Information</section>
+        </sections>
+        <sections>
+            <label>Privatinformation</label>
+            <section>Private Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>BLC - Event Campaign Member</layout>
+        <sections>
+            <label>Mitgliederdetail</label>
+            <section>Campaign Member Detail</section>
+        </sections>
+        <sections>
+            <label>Kontaktinformation</label>
+            <section>Contact Information</section>
+        </sections>
+        <sections>
+            <label>Eventinformation</label>
+            <section>Event Information</section>
+        </sections>
+        <sections>
+            <label><!-- Follow-Up --></label>
+            <section>Follow-Up</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>BLC - Mailing Campaign Member</layout>
+        <sections>
+            <label>Mitgliederdetail</label>
+            <section>Campaign Member Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Marketing --></label>
+            <section>Marketing</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>CS - Candidate Campaign Member</layout>
+        <sections>
+            <label>1. Interview</label>
+            <section>1st Interview</section>
+        </sections>
+        <sections>
+            <label>2. Interview</label>
+            <section>2nd Interview</section>
+        </sections>
+        <sections>
+            <label>Mitgliederdetail</label>
+            <section>Campaign Member Detail</section>
+        </sections>
+        <sections>
+            <label>Bestätigungsmail</label>
+            <section>Confirmation Email</section>
+        </sections>
+        <sections>
+            <label>Anstellung</label>
+            <section>Employment</section>
+        </sections>
+        <sections>
+            <label><!-- Evaluation --></label>
+            <section>Evaluation</section>
+        </sections>
+        <sections>
+            <label>Abgelehnt durch BLC</label>
+            <section>Refusal by BLC</section>
+        </sections>
+        <sections>
+            <label>Abgelehnt durch Kandidat</label>
+            <section>Refusal by Candidate</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label>Telefoninterview</label>
+            <section>Telephone Interview</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>XB - Kompendium Beta Test Campaign Member</layout>
+        <sections>
+            <label>Mitgliederdetail</label>
+            <section>Campaign Member Detail</section>
+        </sections>
+        <sections>
+            <label>Feedbackformular</label>
+            <section>Feedback Form</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <description><!-- Used for events of all kind such as Seminar, Fair, Networking Event --></description>
+        <label><!-- BLC - Event --></label>
+        <name>BLCEvent</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Used for News, Information, Letters, Email, ... --></description>
+        <label><!-- BLC - Mailing --></label>
+        <name>BLCMailing</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- BLC - Alumnis --></label>
+        <name>BLC_Alumnis</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Used to track candidate --></description>
+        <label>CS - Kandidat</label>
+        <name>CorporateCandidate</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- XB - Kompendium Beta Test --></label>
+        <name>XBKompendiumBetaTest</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage>Dieser Wert kann nicht zurückgesetzt werden - das Email wurde verschickt. (CM001)</errorMessage>
+        <name>CM001_Confirmation_Email_Checkbox_Active</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Der Status wird automatisch durch einen Workflow gesetzt auf Basis der Datumfelder. (CM002)</errorMessage>
+        <name>CM002_Status_not_changed_manually</name>
+    </validationRules>
+</CustomObjectTranslation>

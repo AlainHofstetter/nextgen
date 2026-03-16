@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Die Projektdauer muss gesetzt werden, damit der gewichtete Forecast (Ammount exkl. ILV/Fremdkosten x Wahrscheinlichkeit) automatisch auf die Projektdauer aufteilen zu können.</help>
+    <label><!-- Split forecast automatically --></label>
+    <name>CalculateForecast__c</name>
+</CustomFieldTranslation>

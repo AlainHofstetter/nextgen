@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QU001_PM_Percent_1</fullName>
+    <active>true</active>
+    <errorConditionFormula>CountProjectManagementAllowancePercent__c &gt;1</errorConditionFormula>
+    <errorMessage>Only one Product can reflect the Project Management Allowance %
+(QU001)</errorMessage>
+</ValidationRule>

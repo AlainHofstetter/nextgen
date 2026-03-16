@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Freelancer__c</fullName>
+    <inlineHelpText>This field can only be edited by the Finance Department.</inlineHelpText>
+    <label>Freelancer</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Freelancer Registered</fullName>
+                <default>false</default>
+                <label>Freelancer Registered</label>
+            </value>
+            <value>
+                <fullName>Freelancer Not Registered</fullName>
+                <default>false</default>
+                <label>Freelancer Not Registered</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

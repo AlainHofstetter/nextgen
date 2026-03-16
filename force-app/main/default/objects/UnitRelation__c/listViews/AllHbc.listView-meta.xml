@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllHbc</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>AccountAddress__c</columns>
+    <columns>AccountManager__c</columns>
+    <columns>Deputy__c</columns>
+    <columns>Customer__c</columns>
+    <columns>Supplier__c</columns>
+    <columns>Partner__c</columns>
+    <columns>Comment__c</columns>
+    <columns>AccountRecordType__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>UnitRelation__c.Hbc</value>
+    </filters>
+    <filters>
+        <field>Customer__c</field>
+        <operation>equals</operation>
+        <value>Actual</value>
+    </filters>
+    <label>All HBC</label>
+    <language>en_US</language>
+</ListView>

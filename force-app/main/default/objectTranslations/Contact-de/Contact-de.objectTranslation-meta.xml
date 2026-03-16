@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Company Contact Layout</layout>
+        <sections>
+            <label>Adresse</label>
+            <section>Address</section>
+        </sections>
+        <sections>
+            <label>Kommunikation</label>
+            <section>Communication</section>
+        </sections>
+        <sections>
+            <label>Kontaktdetail</label>
+            <section>Contact Detail</section>
+        </sections>
+        <sections>
+            <label>Beschreibung</label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Marketing --></label>
+            <section>Marketing</section>
+        </sections>
+        <sections>
+            <label>Privatinformation</label>
+            <section>Private Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Internal Contact Layout</layout>
+        <sections>
+            <label>Kommunikation</label>
+            <section>Communication</section>
+        </sections>
+        <sections>
+            <label>Kontaktdetail</label>
+            <section>Contact Detail</section>
+        </sections>
+        <sections>
+            <label>Beschreibung</label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label>Finanzinformation</label>
+            <section>Finance Information</section>
+        </sections>
+        <sections>
+            <label><!-- HR Information --></label>
+            <section>HR Information</section>
+        </sections>
+        <sections>
+            <label>Privatinformation</label>
+            <section>Private Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Internal Contact Layout - HR &amp; Sysadmin</layout>
+        <sections>
+            <label>Kommunikation</label>
+            <section>Communication</section>
+        </sections>
+        <sections>
+            <label>Kontaktdetail</label>
+            <section>Contact Detail</section>
+        </sections>
+        <sections>
+            <label>Beschreibung</label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label>Finanzinformation</label>
+            <section>Finance Information</section>
+        </sections>
+        <sections>
+            <label><!-- HR Information --></label>
+            <section>HR Information</section>
+        </sections>
+        <sections>
+            <label>Privatinformation</label>
+            <section>Private Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Administration --></label>
+            <section>System Administration</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Summary Contact Layout</layout>
+        <sections>
+            <label>Komunnikation</label>
+            <section>Communication</section>
+        </sections>
+        <sections>
+            <label>Kontaktdetail</label>
+            <section>Contact Detail</section>
+        </sections>
+        <sections>
+            <label>Beschreibung</label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- HR Information --></label>
+            <section>HR Information</section>
+        </sections>
+        <sections>
+            <label>Marketing</label>
+            <section>Marketing</section>
+        </sections>
+        <sections>
+            <label>Privatinformation</label>
+            <section>Private Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <description><!-- Use this Record Type for Contacts attached to Company Accounts --></description>
+        <label>Unternehmenskontakt</label>
+        <name>CompanyContact</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Use this Record Type to add an internal contact to a BLC Unit --></description>
+        <label>Interner Kontakt</label>
+        <name>InternalContact</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Use this Record Type to add a new contact to the Summary Account --></description>
+        <label>Summary Kontakt</label>
+        <name>SummaryContact</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage>Die Kostenstelle stimmt nicht mit dem internen Account überein. (CO001)</errorMessage>
+        <name>CO001_Billing_Account_Cost_Center_Match</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte eines der folgenden Felder befüllen: Strasse, Telefon, Mobil, Email. (CO002)</errorMessage>
+        <name>CO002_Communication_required_fields</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Alle Telefon- und Faxnummern müssen im internationalen Format erfasst werden, beginnend mit &quot;+&quot;. Nur Zahlen und Leerzeichen. Eine CH Nummer immer im Format +41 xx xxx xx xx erfassen. (CO003)</errorMessage>
+        <name>CO003_Phone_Numbers_with_Int_Format</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte mindestens eine Unit wählen. (CO005)</errorMessage>
+        <name>CO005_Unit_Relevance</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Jobtitel müssen durch HR geändert werden. (CO006)</errorMessage>
+        <name>CO006_Job_Title_Employee</name>
+    </validationRules>
+    <webLinks>
+        <label>Account Beziehungen</label>
+        <name>AccountRelations</name>
+    </webLinks>
+    <webLinks>
+        <label>Kontakt Account Beziehungen</label>
+        <name>ContactAccountRelations</name>
+    </webLinks>
+    <webLinks>
+        <label>Adresse Account übernehmen</label>
+        <name>GetAddressFromAccount</name>
+    </webLinks>
+    <webLinks>
+        <label>Neuer Company Kontakt</label>
+        <name>NewCompanyContact</name>
+    </webLinks>
+    <webLinks>
+        <label>Neuer Interner Kontakt</label>
+        <name>NewInternalContact</name>
+    </webLinks>
+    <webLinks>
+        <label>Neuer Privatkontakt</label>
+        <name>NewPrivateContact</name>
+    </webLinks>
+    <webLinks>
+        <label>Neuer Summary Kontakt</label>
+        <name>NewSummaryContact</name>
+    </webLinks>
+</CustomObjectTranslation>

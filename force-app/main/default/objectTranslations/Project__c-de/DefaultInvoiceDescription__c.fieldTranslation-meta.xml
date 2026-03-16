@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Einleitende Informationen, die auf der Rechnung angedruckt werden. Kann über Checkbox ein-/ausgeschaltet werden.</help>
+    <label>Rechnungsbeschreibung (Default)</label>
+    <name>DefaultInvoiceDescription__c</name>
+</CustomFieldTranslation>

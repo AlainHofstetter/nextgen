@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EC014_Expense_Gross_Not_Null</fullName>
+    <active>true</active>
+    <description>Expense Gross can not be null</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true, 
+ISNULL(ExpenseGross__c)
+)</errorConditionFormula>
+    <errorDisplayField>ExpenseGross__c</errorDisplayField>
+    <errorMessage>Expense Gross can not be empty.
+(EC014)</errorMessage>
+</ValidationRule>

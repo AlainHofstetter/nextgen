@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Du/Sie (Inhaber)</label>
+    <name>DuSieOwner__c</name>
+    <picklistValues>
+        <masterLabel>Du</masterLabel>
+        <translation><!-- Du --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sie</masterLabel>
+        <translation><!-- Sie --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

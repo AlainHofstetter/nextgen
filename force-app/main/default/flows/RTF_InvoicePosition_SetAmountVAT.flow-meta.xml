@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Dec_UpdateREcord</name>
+        <label>Dec_UpdateRecord?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Values_different</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.InvoicePositionVATAmount__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>f_InvPosVatAmount</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.InvoicePositionVATAmountCHF__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>f_InvoiceVATCHF</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.InvoicePositionVATAmountSGP__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>f_InvoiceVATSGP</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.InvoicePositionVATAmountGBP__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>f_InvoiceVATGBP</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CurrencyRateToSGP__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.InvoiceName__r.CurrencyRateToSGP__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CurrencyRateToCHF__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.InvoiceName__r.CurrencyRateToCHF__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CurrencyRateToGBP__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.InvoiceName__r.CurrencyRateToGBP__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_InvoicePos</targetReference>
+            </connector>
+            <label>Yes, Values different</label>
+        </rules>
+    </decisions>
+    <description>This flow updates the Currency Rates based on the Invoice Record, and calculates and updates VAT Amounts fields.  
+After-save flow (due to lookup field restrictions) The flow dynamically converts the VAT % amount from picklist value to a number, so that future values can be accommodated. 
+Start Criteria:  After Save flow, Run Always</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>JC Updated this formula to convert the VAT% picklist values to Number, so that we can use it directly (This allows future VAT %&apos;s to be included)
+
+IF( 
+ISPICKVAL({!GET_Invoice.VATPercent__c} ,&quot;8%&quot;),
+ROUND({!$Record.InvoicePositionAmountCHF__c/100*8*20},0)/20,
+
+IF(
+ISPICKVAL({!GET_Invoice.VATPercent__c}   ,&quot;8.1%&quot;),
+ROUND({!$Record.InvoicePositionAmountCHF__c/100*8.1*20},0)/20,
+
+IF(
+ISPICKVAL({!GET_Invoice.VATPercent__c}   ,&quot;9%&quot;),
+ROUND({!$Record.InvoicePositionAmountCHF__c/100*9*20},0)/20,
+
+IF(
+ISPICKVAL({!GET_Invoice.VATPercent__c}   ,&quot;2.6%&quot;),
+ROUND({!$Record.InvoicePositionAmountCHF__c/100*2.6*20},0)/20,
+
+
+IF(
+ISPICKVAL({!GET_Invoice.VATPercent__c}   ,&quot;7.7%&quot;),
+ROUND({!$Record.InvoicePositionAmountCHF__c/100*7.7*20},0)/20,
+
+IF(
+ISPICKVAL({!GET_Invoice.VATPercent__c}   ,&quot;2.5%&quot;),
+ROUND({!$Record.InvoicePositionAmountCHF__c/100*2.5*20},0)/20,
+
+IF(
+ISPICKVAL({!GET_Invoice.VATPercent__c}   ,&quot;19%&quot;),
+ROUND({!$Record.InvoicePositionAmountCHF__c/100*19*20},0)/20,
+
+0)))))))</description>
+        <name>f_InvoiceVATCHF</name>
+        <dataType>Number</dataType>
+        <expression>ROUND(({!$Record.InvoicePositionAmountCHF__c}*{!f_InvoiceVATPercentage})*20,0)/20</expression>
+        <scale>10</scale>
+    </formulas>
+    <formulas>
+        <description>New formula for GBP VAT Updates</description>
+        <name>f_InvoiceVATGBP</name>
+        <dataType>Number</dataType>
+        <expression>ROUND({!$Record.InvoicePositionAmountGBP__c}*{!f_InvoiceVATPercentage}*{!$Record.InvoiceName__r.CurrencyRateToGBP__c}*20,0)/20</expression>
+        <scale>10</scale>
+    </formulas>
+    <formulas>
+        <description>JC - Updated formula to dynamically get VAT from picklist (not mapping values), so that updates to picklist will be accommodated.</description>
+        <name>f_InvoiceVATPercentage</name>
+        <dataType>Number</dataType>
+        <expression>(VALUE(SUBSTITUTE(TEXT({!$Record.InvoiceName__r.VATPercent__c}), &quot;%&quot;, &quot;&quot;)))/100</expression>
+        <scale>10</scale>
+    </formulas>
+    <formulas>
+        <description>New Formula to include SGP VAT amount - calculated as InvPos VAT Amt * SGP Currency Rate</description>
+        <name>f_InvoiceVATSGP</name>
+        <dataType>Number</dataType>
+        <expression>ROUND(({!$Record.InvoicePositionAmount__c}*{!$Record.InvoiceName__r.CurrencyRateToSGP__c}*{!f_InvoiceVATPercentage}*20),0)/20</expression>
+        <scale>10</scale>
+    </formulas>
+    <formulas>
+        <name>f_InvPosVatAmount</name>
+        <dataType>Number</dataType>
+        <expression>ROUND(({!$Record.InvoicePositionAmount__c}*{!f_InvoiceVATPercentage})*20,0)/20</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>RTF_InvoicePosition_SetAmountVAT {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RTF_InvoicePosition_SetAmountVAT</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Updates the VAT Fields</description>
+        <name>Update_InvoicePos</name>
+        <label>Update Invoice Pos</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>CurrencyRateToCHF__c</field>
+            <value>
+                <elementReference>$Record.CurrencyRateToCHF__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CurrencyRateToGBP__c</field>
+            <value>
+                <elementReference>$Record.InvoiceName__r.CurrencyRateToGBP__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CurrencyRateToSGP__c</field>
+            <value>
+                <elementReference>$Record.InvoiceName__r.CurrencyRateToSGP__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>InvoicePositionVATAmountCHF__c</field>
+            <value>
+                <elementReference>f_InvoiceVATCHF</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>InvoicePositionVATAmountGBP__c</field>
+            <value>
+                <elementReference>f_InvoiceVATGBP</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>InvoicePositionVATAmountSGP__c</field>
+            <value>
+                <elementReference>f_InvoiceVATSGP</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>InvoicePositionVATAmount__c</field>
+            <value>
+                <elementReference>f_InvPosVatAmount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VATPercent__c</field>
+            <value>
+                <elementReference>$Record.InvoiceName__r.VATPercent__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Dec_UpdateREcord</targetReference>
+        </connector>
+        <object>InvoicePos__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

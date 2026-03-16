@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BlacklistedConsumer xmlns="http://soap.sforce.com/2006/04/metadata">
+    <blockedByApiWhitelisting>false</blockedByApiWhitelisting>
+    <consumerKey>3MVG9y6x0357HlecQiuwgKUj.pQThj3XI39ghY5ZHJa7OW2dzvqmk4GcXxMKqs1cST5KYxYdyMIAbOkiyiXCS</consumerKey>
+    <consumerName>RocketSales</consumerName>
+    <masterLabel>BlacklistedConsumer124617559605896</masterLabel>
+</BlacklistedConsumer>

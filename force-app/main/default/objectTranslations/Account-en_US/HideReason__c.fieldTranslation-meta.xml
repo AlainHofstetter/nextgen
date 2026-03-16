@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Hide Reason --></label>
+    <name>HideReason__c</name>
+    <picklistValues>
+        <masterLabel>Duplicate</masterLabel>
+        <translation><!-- Duplicate --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Duplicate (Internal Account)</masterLabel>
+        <translation><!-- Duplicate (Internal Account) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Liquidation of the Business</masterLabel>
+        <translation><!-- Liquidation of the Business --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Relevant (Manually)</masterLabel>
+        <translation><!-- Not Relevant (Manually) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Print Plus Non Relevant</masterLabel>
+        <translation><!-- Print Plus Non Relevant --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

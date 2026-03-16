@@ -1,0 +1,9 @@
+The owner for contact {!Contact.Name} / {!Account.Name} has been updated by user: {!Contact.LastModifiedBy}
+
+Old Owner: You
+New Owner: {!Contact.OwnerFullName}
+
+
+--- 
+This Email has been sent by Salesforce, do not reply.
+(Template: 00Xb0000000Ex1Z)

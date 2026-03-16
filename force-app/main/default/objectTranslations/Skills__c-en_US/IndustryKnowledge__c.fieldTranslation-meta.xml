@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Industry Knowledge --></label>
+    <name>IndustryKnowledge__c</name>
+    <picklistValues>
+        <masterLabel>Agriculture</masterLabel>
+        <translation><!-- Agriculture --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Association / Not for Profit</masterLabel>
+        <translation><!-- Association / Not for Profit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Automotive</masterLabel>
+        <translation><!-- Automotive --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Banking / Finance / Insurance</masterLabel>
+        <translation><!-- Banking / Finance / Insurance --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Beauty / Fashion / Luxury Goods</masterLabel>
+        <translation><!-- Beauty / Fashion / Luxury Goods --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Communication / Media / Social Media</masterLabel>
+        <translation><!-- Communication / Media / Social Media --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Construction / Real Estate</masterLabel>
+        <translation><!-- Construction / Real Estate --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Consulting / Service Provider / Agency</masterLabel>
+        <translation><!-- Consulting / Service Provider / Agency --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Consumer Packaged Goods</masterLabel>
+        <translation><!-- Consumer Packaged Goods --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Education</masterLabel>
+        <translation><!-- Education --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Energy / Utilities</masterLabel>
+        <translation><!-- Energy / Utilities --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Entertainment / Sports / Films</masterLabel>
+        <translation><!-- Entertainment / Sports / Films --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Environmental</masterLabel>
+        <translation><!-- Environmental --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Food &amp; Beverage</masterLabel>
+        <translation><!-- Food &amp; Beverage --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Government</masterLabel>
+        <translation><!-- Government --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Healthcare / Pharma / Chemicals</masterLabel>
+        <translation><!-- Healthcare / Pharma / Chemicals --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hospitality / Hotel / Tourism</masterLabel>
+        <translation><!-- Hospitality / Hotel / Tourism --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Industry / Manufacturing / Printing</masterLabel>
+        <translation><!-- Industry / Manufacturing / Printing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Private Person</masterLabel>
+        <translation><!-- Private Person --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Retail</masterLabel>
+        <translation><!-- Retail --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technology / IT / Engineering / Electro</masterLabel>
+        <translation><!-- Technology / IT / Engineering / Electro --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Transportation / Shipping</masterLabel>
+        <translation><!-- Transportation / Shipping --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

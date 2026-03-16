@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LabeledInventoryId__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Device has a new label sticker with the Skywalk Inventory Id (IN-xxxxxx).</inlineHelpText>
+    <label>Labeled (Inventory Id)</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

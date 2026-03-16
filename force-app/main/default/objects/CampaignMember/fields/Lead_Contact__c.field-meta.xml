@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Contact__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( 
+ISBLANK(ContactId)=false, &quot;Contact&quot;, 
+IF( 
+ISBLANK( LeadId )=false, &quot;Lead&quot;, &quot;&quot;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Lead/Contact</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

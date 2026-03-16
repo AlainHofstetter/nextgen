@@ -1,0 +1,9 @@
+*** CASE ESKALATION ZUWEISUNGSBENACHRICHTIGUNG ***
+
+Der folgende Kundenvorgang wurde eskaliert:
+
+Geschäft: {!Account.Name}
+Kundenvorgang: {!Case.CaseNumber}: {!Case.Subject}
+Owner: {!Case.OwnerFullName}
+
+Bitte verwenden Sie den folgenden Link um direkt zur Kundenvorgang zu gelangen: {!Case.Link}

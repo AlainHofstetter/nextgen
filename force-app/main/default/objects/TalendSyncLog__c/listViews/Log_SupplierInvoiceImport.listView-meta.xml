@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Log_SupplierInvoiceImport</fullName>
+    <columns>NAME</columns>
+    <columns>FullStackTrace__c</columns>
+    <columns>TalendSyncNr__c</columns>
+    <columns>DateTime__c</columns>
+    <columns>Type__c</columns>
+    <columns>NumberOfRecords__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>SupplierInvoiceImport</value>
+    </filters>
+    <filters>
+        <field>DateTime__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>12/12/2017 12:00 AM</value>
+    </filters>
+    <label>Log: SupplierInvoiceImport</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_Skywalk_Data_Quality</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CY_Forecast_Externer_Serv</fullName>
+    <columns>ProjectCostCenter__c</columns>
+    <columns>ContractPartner__c</columns>
+    <columns>NAME</columns>
+    <columns>ServicesTotalAmount__c</columns>
+    <columns>BudgetAssignTotalAmount__c</columns>
+    <columns>InvoiceTotalAmount__c</columns>
+    <columns>InvoiceOpenToBudget__c</columns>
+    <columns>SupplierCostsForecast__c</columns>
+    <columns>ILVForecast__c</columns>
+    <columns>AprForecast__c</columns>
+    <columns>MayForecast__c</columns>
+    <columns>JunForecast__c</columns>
+    <columns>JulForecast__c</columns>
+    <columns>AugForecast__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Project__c.ExternalServices</value>
+    </filters>
+    <filters>
+        <field>ProjectStatus__c</field>
+        <operation>notEqual</operation>
+        <value>Closed</value>
+    </filters>
+    <filters>
+        <field>NAME</field>
+        <operation>notContain</operation>
+        <value>Template</value>
+    </filters>
+    <filters>
+        <field>ProjectCostCenter__c</field>
+        <operation>contains</operation>
+        <value>Calydo</value>
+    </filters>
+    <label>CY - Forecast (Externer Serv)</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_CY_Alle</group>
+    </sharedTo>
+</ListView>

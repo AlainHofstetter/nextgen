@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PR003_Cost_Center_Active</fullName>
+    <active>true</active>
+    <description>Project Cost Center must be active.</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+ProjectCostCenter__r.Active__c =false)</errorConditionFormula>
+    <errorDisplayField>ProjectCostCenter__c</errorDisplayField>
+    <errorMessage>This Project is related to an inaktive Cost Center. Please contact your Super User for assistance.
+(PR003)</errorMessage>
+</ValidationRule>

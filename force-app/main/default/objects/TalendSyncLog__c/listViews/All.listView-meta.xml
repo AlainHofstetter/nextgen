@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>DateTime__c</columns>
+    <columns>TalendSyncNr__c</columns>
+    <columns>NAME</columns>
+    <columns>Type__c</columns>
+    <columns>NumberOfRecords__c</columns>
+    <columns>FullStackTrace__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterThan</operation>
+        <value>2/23/2026 12:00 AM</value>
+    </filters>
+    <label>All</label>
+</ListView>

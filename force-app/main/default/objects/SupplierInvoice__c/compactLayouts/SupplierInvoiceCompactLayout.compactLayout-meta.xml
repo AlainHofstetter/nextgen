@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SupplierInvoiceCompactLayout</fullName>
+    <fields>Name</fields>
+    <fields>SupplierInvoiceDate__c</fields>
+    <fields>BillerAccount__c</fields>
+    <fields>SupplierInvoiceTotal__c</fields>
+    <fields>AbacusDocumentNr__c</fields>
+    <fields>Status__c</fields>
+    <fields>Source__c</fields>
+    <label>SupplierInvoiceCompactLayout</label>
+</CompactLayout>

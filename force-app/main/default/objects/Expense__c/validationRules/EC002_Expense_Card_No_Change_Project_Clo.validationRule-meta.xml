@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EC002_Expense_Card_No_Change_Project_Clo</fullName>
+    <active>true</active>
+    <description>The Expense Card can not be changed anymore.</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+ISPICKVAL(  ProjectName__r.ProjectStatus__c  , &quot;Closed&quot;))</errorConditionFormula>
+    <errorMessage>You are not allowed to create or change the Expense Card since the Project is closed. Please contact the Project Manager for assistance.
+(EC002)</errorMessage>
+</ValidationRule>

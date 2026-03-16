@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OP007_Project_StartsInTheFuture</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+ NOT(ISPICKVAL( StageName , &apos;Closed Won&apos;)),  
+ NOT(ISPICKVAL( StageName , &apos;Closed Lost&apos;)),  
+ ProjectStart__c &lt;  TODAY()
+)</errorConditionFormula>
+    <errorDisplayField>ProjectStart__c</errorDisplayField>
+    <errorMessage>The Start Date of the Project has to be a date in the future. If the the project already started please close opportunity and create a project accordingly (Opp007).</errorMessage>
+</ValidationRule>

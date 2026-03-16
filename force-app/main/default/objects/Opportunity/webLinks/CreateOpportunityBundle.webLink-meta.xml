@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CreateOpportunityBundle</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Create Opportunity Bundle</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&apos;/soap/ajax/29.0/connection.js&apos;)}
+{!REQUIRESCRIPT(&apos;//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&apos;)}
+
+if({!ISBLANK(Opportunity.OpportunityBundleId__c)})
+{
+	var opptyBundle = new sforce.SObject(&apos;OpportunityBundle__c&apos;);
+	opptyBundle.OpportunityBundleName__c = &apos;Please fill in the name for this Opportunity Bundle&apos;;
+	var result = sforce.connection.create([opptyBundle]);
+	if(result[0].success == &apos;true&apos;)
+	{
+		 var o = new sforce.SObject(&quot;Opportunity&quot;);
+		o.id = &apos;{!Opportunity.Id}&apos;;
+		// make the field change
+		o.OpportunityBundle__c = result[0].id;
+		 
+		// save the change
+		sforce.connection.update([o]);
+		window.location = &apos;../&apos; +result[0].id + &apos;/e?retURL=/{!Opportunity.Id}&apos;;
+	}
+} else
+{
+	var error = document.getElementById(&apos;errorDiv_ep&apos;);
+	if (error == null)
+	{
+		alert(&apos;Opportunity is already assigned to an Opportunity Bundle, remove the lookup to the Opportunity Bundle if you have to create a new Bundle.&apos;);
+	} else
+	{
+		var removeLink = $(&quot;&lt;a id=&apos;remove&apos; href=&apos;#&apos; style=&apos;color:#c00&apos;&gt;Cancel&lt;/a&gt;&quot;).click(function(e) {
+			var errorelem = document.getElementById(&apos;errorDiv_ep&apos;);
+			errorelem.innerHTML = &apos;Error: Invalid Data. &lt;br/&gt;Review all error messages below to correct your data.&apos;;
+			error.style.display=&apos;none&apos;;
+		});
+		error.innerHTML = &apos;Error: Opportunity is already assigned to an Opportunity Bundle, remove the lookup to the Opportunity Bundle if you have to create a new Bundle. &apos;;
+		error.style.display=&apos;block&apos;;
+		$(&quot;#errorDiv_ep&quot;).append(removeLink);
+	}
+}</url>
+</WebLink>

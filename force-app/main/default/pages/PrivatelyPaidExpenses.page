@@ -1,0 +1,31 @@
+<apex:page showHeader="false">
+    <apex:includeLightning />
+
+    <div id="lightning" />
+    
+    <script>
+        var magicURLmatches = window.location.href.match(/\?localCurrency=(.+)&userId=(.+)&endDate=(.+)&startDate=(.+)&grandTotalExpenses=(.+)/);
+        if(magicURLmatches) {
+
+            $Lightning.use("c:PrivatelyPaidExpensesOverview", function() {
+
+                $Lightning.createComponent("c:PrivatelyPaidExpensesOverviewComponent",
+                {
+                    'localCurrency': magicURLmatches[1],
+                    'userId': magicURLmatches[2],
+                    'endDate': magicURLmatches[3],
+                    'startDate': magicURLmatches[4],
+                    'grandTotalExpenses' : magicURLmatches[5]
+                },
+                'lightning',
+                function(cmp) {
+
+                });
+                
+            });
+
+        }
+        
+    </script>
+    
+</apex:page>

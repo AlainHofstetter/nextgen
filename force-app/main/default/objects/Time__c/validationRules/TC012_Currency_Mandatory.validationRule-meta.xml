@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TC012_Currency_Mandatory</fullName>
+    <active>true</active>
+    <description>Time Card must have Currency</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+ISBLANK( TEXT(ProjectCurrency__c )))</errorConditionFormula>
+    <errorDisplayField>ProjectCurrency__c</errorDisplayField>
+    <errorMessage>You must choose a Project Currency.
+(TC012)</errorMessage>
+</ValidationRule>

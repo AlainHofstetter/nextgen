@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ClientName__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>Unique device name (company network)</description>
+    <externalId>true</externalId>
+    <inlineHelpText>Unique device name (company network)</inlineHelpText>
+    <label>Client Name</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

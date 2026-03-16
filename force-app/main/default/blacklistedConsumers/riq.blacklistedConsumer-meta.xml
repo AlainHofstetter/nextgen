@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BlacklistedConsumer xmlns="http://soap.sforce.com/2006/04/metadata">
+    <blockedByApiWhitelisting>false</blockedByApiWhitelisting>
+    <consumerKey>3MVG9sG9Z3Q1RlbeV1Znl3pDrvCvMQj.94lKg0gC7ve0BPEHZlQCqPGcVoCp8ECOmBo4uG874hS40.W7q7gHm</consumerKey>
+    <consumerName>Salesforce Email Connector</consumerName>
+    <masterLabel>riq</masterLabel>
+</BlacklistedConsumer>

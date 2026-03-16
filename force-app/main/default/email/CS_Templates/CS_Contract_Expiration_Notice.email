@@ -1,0 +1,9 @@
+Contract Name: {!Contract__c.ContractName__c}
+Contract Partner: {!Contract__c.ContractPartnerExternal__c}
+Contract End Date: {!Contract__c.ContractEndDate__c}
+
+{!Contract__c.Link}
+
+---
+This Email has been sent by Salesforce, do not reply.
+(Template: 00Xb0000000yWtg)

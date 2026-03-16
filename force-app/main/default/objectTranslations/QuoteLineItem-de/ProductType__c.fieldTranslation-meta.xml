@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Produkttyp</label>
+    <name>ProductType__c</name>
+    <picklistValues>
+        <masterLabel>Expense</masterLabel>
+        <translation>Spesen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Group</masterLabel>
+        <translation>Gruppe</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>License (Direct) / Trade</masterLabel>
+        <translation>Lizenzen (Direkt) / Handel</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>License (Provision)</masterLabel>
+        <translation>Lizenzen (Provision)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Supplier Costs</masterLabel>
+        <translation>Drittkosten</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Text</masterLabel>
+        <translation>Text</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Time</masterLabel>
+        <translation>Zeit</translation>
+    </picklistValues>
+</CustomFieldTranslation>

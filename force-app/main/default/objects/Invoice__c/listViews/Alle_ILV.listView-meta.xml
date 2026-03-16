@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alle_ILV</fullName>
+    <columns>NAME</columns>
+    <columns>InvoiceDocumentNr__c</columns>
+    <columns>InvoiceReceiver__c</columns>
+    <columns>InvoiceDate__c</columns>
+    <columns>FinanceDate__c</columns>
+    <columns>InvoiceType__c</columns>
+    <columns>InvoiceStatus__c</columns>
+    <columns>ProjectInvoiceCurrency__c</columns>
+    <columns>ILVPOSTotalTimeCHF__c</columns>
+    <columns>TotalInvoiceInclCancellationCHF__c</columns>
+    <columns>AbacusTransfer__c</columns>
+    <columns>AbacusInterfaceExport__c</columns>
+    <columns>AbacusUebernahmeTransferiert__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Invoice__c.ILV</value>
+    </filters>
+    <filters>
+        <field>FinanceDate__c</field>
+        <operation>greaterThan</operation>
+        <value>1/1/2018</value>
+    </filters>
+    <filters>
+        <field>InvoiceStatus__c</field>
+        <operation>equals</operation>
+        <value>Draft,Approval,Ready</value>
+    </filters>
+    <label>Alle ILV</label>
+</ListView>

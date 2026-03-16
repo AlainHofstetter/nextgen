@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Dieses Feld wird durch Finance verwaltet.</help>
+    <label><!-- Freelancer --></label>
+    <name>Freelancer__c</name>
+    <picklistValues>
+        <masterLabel>Freelancer Not Registered</masterLabel>
+        <translation>Freelancer Nicht Registriert</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Freelancer Registered</masterLabel>
+        <translation>Freelancer Registriert</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,44 @@
+<aura:component >
+
+    <!--
+        ATTRIBUTES
+    -->
+    <aura:attribute name="label" type="String" />
+    <aura:attribute name="variant" type="String" />
+    <aura:attribute name="name" type="String" />
+    <aura:attribute name="data" type="Object" />
+    <aura:attribute name="class" type="String" />
+    <aura:attribute name="iconName" type="String" />
+    <aura:attribute name="isLink" type="Boolean"/>
+    <aura:attribute name="action" type="Aura.Action"/>
+
+    <!--
+        HANDLERS
+    -->
+    <!-- <aura:handler name="init" action="{!c.init}" value="{!this}"/> -->
+
+    <!--
+        EVENTS
+    -->
+    <aura:registerEvent name="onButtonWithDataClick" type="c:onButtonWithDataClick"/>
+
+    <!--
+        MARKUP
+    -->
+    <aura:if isTrue="{!and(v.iconName == null, !v.isLink)}">
+        <lightning:button variant="{!v.variant}" class="{!v.class}" onclick="{!c.onButtonPress}">{!v.label}</lightning:button>
+    </aura:if>
+
+    <aura:if isTrue="{!and(v.iconName != null, !v.isLink)}">
+        <lightning:buttonIcon onclick="{!c.onButtonPress}" iconName="{!v.iconName}" class="{!v.class}" />
+    </aura:if>
+
+    <aura:if isTrue="{!v.isLink}">
+        <a onclick="{!c.onButtonPress}" class="{!v.class}">{!v.label}</a>
+    </aura:if>
+
+    <aura:if isTrue="{!v.body}">
+        {!v.body}
+    </aura:if>
+
+</aura:component>

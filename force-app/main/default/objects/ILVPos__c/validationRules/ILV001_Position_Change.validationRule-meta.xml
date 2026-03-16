@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ILV001_Position_Change</fullName>
+    <active>true</active>
+    <description>The ILV Position can not be changed anymore</description>
+    <errorConditionFormula>IF(
+ISPICKVAL(InvoiceName__r.InvoiceStatus__c,&quot;Draft&quot;),false,
+IF(
+ OR(
+ ISCHANGED( RelevantToRevenue__c ),
+ ISCHANGED(  ILVPositionDate__c  ),
+ ISCHANGED ( CurrencyRateToCHF__c ),
+ $User.PS480FunctionValidationRulesActive__c =true
+ )
+,false
+,true))</errorConditionFormula>
+    <errorMessage>The ILV Position can not be changed anymore since the Invoice is not in Draft anymore. Please get in touch with your Project Manager for assistance.
+(ILV001)</errorMessage>
+</ValidationRule>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value><!-- Resource Forecast --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value><!-- Resource Forecast --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value><!-- Resource Forecast --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- Resource Forecast --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value><!-- Resource Forecast --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- Resource Forecast --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value><!-- Resource Forecast --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- Resource Forecast --></value>
+    </caseValues>
+    <gender><!-- Neuter --></gender>
+    <layouts>
+        <layout>Resource Forecast Layout</layout>
+        <sections>
+            <label>Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Forecast Information --></label>
+            <section>Forecast Information</section>
+        </sections>
+        <sections>
+            <label><!-- Resource Forecast Detail --></label>
+            <section>Resource Forecast Detail</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Resource Forecast Nr. --></nameFieldLabel>
+</CustomObjectTranslation>

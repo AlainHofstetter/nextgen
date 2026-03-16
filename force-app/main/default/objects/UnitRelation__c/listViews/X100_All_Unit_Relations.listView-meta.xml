@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X100_All_Unit_Relations</fullName>
+    <columns>NAME</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Account__c</columns>
+    <columns>AccountManager__c</columns>
+    <columns>Customer__c</columns>
+    <columns>Supplier__c</columns>
+    <columns>Partner__c</columns>
+    <columns>AccountRecordType__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>100 - All Unit Relations</label>
+    <language>en_US</language>
+</ListView>

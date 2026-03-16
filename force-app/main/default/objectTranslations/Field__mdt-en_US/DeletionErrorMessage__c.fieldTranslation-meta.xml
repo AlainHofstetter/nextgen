@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>
+        <!-- Error message that is presented to the user in case the deletion is not allowed.
+Used in Combination with the &quot;Controls deletion&quot; Checkbox -->
+    </help>
+    <label><!-- Deletion error message --></label>
+    <name>DeletionErrorMessage__c</name>
+</CustomFieldTranslation>

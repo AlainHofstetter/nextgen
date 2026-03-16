@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TotalForecast__c</fullName>
+    <externalId>false</externalId>
+    <formula>JanForecast__c+FebForecast__c+MarForecast__c+AprForecast__c+MayForecast__c+JunForecast__c+JulForecast__c+AugForecast__c+SepForecast__c+OctForecast__c+NovForecast__c+DecForecast__c+x12Forecast__c+
+ILVForecast__c+SupplierCostsForecast__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Forecast</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

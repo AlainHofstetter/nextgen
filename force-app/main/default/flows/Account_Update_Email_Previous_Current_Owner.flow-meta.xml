@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Migrated from the: Account: Update Email Previous &amp; Current Owner workflow rule
+Workflow rule description: &quot;</description>
+    <formulas>
+        <name>Account_Update_Email_Previous_OwnerFormula</name>
+        <dataType>String</dataType>
+        <expression>PRIORVALUE( $Record.ZEmailCurrentOwner__c )</expression>
+    </formulas>
+    <label>Account: Update Email Previous &amp; Current Owner</label>
+    <migratedFromWorkflowRuleName>Account: Update Email Previous &amp; Current Owner</migratedFromWorkflowRuleName>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>mainUpdate</name>
+        <label>mainUpdate</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>ZEmailCurrentOwner__c</field>
+            <value>
+                <elementReference>$Record.Owner.Email</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ZEmailPreviousOwner__c</field>
+            <value>
+                <elementReference>Account_Update_Email_Previous_OwnerFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>mainUpdate</targetReference>
+        </connector>
+        <filterFormula>ISCHANGED({!$Record.OwnerId})</filterFormula>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

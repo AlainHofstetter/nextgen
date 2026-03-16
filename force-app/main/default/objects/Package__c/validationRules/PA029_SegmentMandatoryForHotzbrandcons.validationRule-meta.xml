@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PA029_SegmentMandatoryForHotzbrandcons</fullName>
+    <active>true</active>
+    <description>The segment field is mandatory for the users with the domain @hotzbrandconsultants.ch</description>
+    <errorConditionFormula>ISNEW()
+&amp;&amp;
+CONTAINS( $User.Email, &apos;@hotzbrandconsultants.ch&apos; )
+&amp;&amp;
+ISBLANK(CostCenterSegment__c )
+&amp;&amp;
+NOT(ISPICKVAL( ProjectName__r.ProjectSubType__c , &apos;Absence&apos;))</errorConditionFormula>
+    <errorDisplayField>CostCenterSegment__c</errorDisplayField>
+    <errorMessage>Please inform the Segment field (PA029).</errorMessage>
+</ValidationRule>

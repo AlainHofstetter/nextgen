@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stornos_nicht_bergeben_D_A_R</fullName>
+    <columns>NAME</columns>
+    <columns>InvoiceDocumentNr__c</columns>
+    <columns>CancellationInvoiceRelation__c</columns>
+    <columns>InvoiceReceiver__c</columns>
+    <columns>InvoiceDate__c</columns>
+    <columns>FinanceDate__c</columns>
+    <columns>InvoiceType__c</columns>
+    <columns>InvoiceStatus__c</columns>
+    <columns>ProjectInvoiceCurrency__c</columns>
+    <columns>InvoiceTotalAmountNet__c</columns>
+    <columns>InvoiceTotalAmountGross__c</columns>
+    <columns>CancellationTotalAmountNetCHF__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Invoice__c.Cancellation</value>
+    </filters>
+    <filters>
+        <field>InvoiceStatus__c</field>
+        <operation>equals</operation>
+        <value>Draft,Approval,Ready</value>
+    </filters>
+    <filters>
+        <field>ProjectName__c</field>
+        <operation>notContain</operation>
+        <value>test</value>
+    </filters>
+    <label>A08_Stornos_nicht übergeben (D,A,R)</label>
+    <sharedTo>
+        <group>Skywalk_FIN_Alle</group>
+    </sharedTo>
+</ListView>

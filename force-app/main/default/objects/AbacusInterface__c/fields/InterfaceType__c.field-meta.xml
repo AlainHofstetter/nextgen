@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InterfaceType__c</fullName>
+    <label>Interface Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Account Debtor Upsert</fullName>
+                <default>false</default>
+                <label>Account Debtor Upsert</label>
+            </value>
+            <value>
+                <fullName>Account Supplier Upsert</fullName>
+                <default>false</default>
+                <label>Account Supplier Upsert</label>
+            </value>
+            <value>
+                <fullName>Invoice Export</fullName>
+                <default>false</default>
+                <label>Invoice Export</label>
+            </value>
+            <value>
+                <fullName>Cancellation Export</fullName>
+                <default>false</default>
+                <label>Cancellation Export</label>
+            </value>
+            <value>
+                <fullName>Staff Hour Export</fullName>
+                <default>false</default>
+                <label>Staff Hour Export</label>
+            </value>
+            <value>
+                <fullName>Currency Import</fullName>
+                <default>false</default>
+                <label>Currency Import</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

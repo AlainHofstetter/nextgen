@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Project__c.PackagesProjectName__r.Time__r$DurationHhMmN__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Project__c.PackagesProjectName__r.Time__r$ServiceTotalTimeCHF__c</field>
+    </columns>
+    <columns>
+        <field>Project__c.PackagesProjectName__r$Name</field>
+    </columns>
+    <columns>
+        <field>Project__c.PackagesProjectName__r.Time__r$Timetracker__c</field>
+    </columns>
+    <currency>CHF</currency>
+    <filter>
+        <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+        <criteriaItems>
+            <column>Project__c.PackagesProjectName__r.Time__r$Timetracker__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Marceline Iten,André Seiler,Bojan Ambroz,Carlo Laffranchi</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Project__c.PackagesProjectName__r.Time__r$Timetracker__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Lukas Hotz,Serge Djoungong,Patrick Ensslin,Jon Wirthner</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Project__c$ProjectSubType__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Project,Support,Acquisition,Licence</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Project__c$ProjectResponsibilityCompany__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Project__c$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>CY - Movie Projekte Marceline</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Projects_with_Services_with_Time__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Project__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

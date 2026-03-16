@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Project_Management</fullName>
+    <active>true</active>
+    <errorConditionFormula>if(ProjectManagementFee__c &gt;0 &amp;&amp; AllowforProjectmanagement__c=false ,true,false )</errorConditionFormula>
+    <errorMessage>This Product is not allowed for Project management</errorMessage>
+</ValidationRule>

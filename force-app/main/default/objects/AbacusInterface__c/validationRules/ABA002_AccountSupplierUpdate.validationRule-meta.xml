@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ABA002_AccountSupplierUpdate</fullName>
+    <active>true</active>
+    <description>Account = Supplier Flag True</description>
+    <errorConditionFormula>AND( 
+$User.PS480FunctionValidationRulesActive__c =true, 
+ISPICKVAL( InterfaceType__c ,&quot;Account Supplier Upsert&quot;),
+Account__r.AbacusSupplier__c = false
+)</errorConditionFormula>
+    <errorMessage>This Account is not a Supplier and can therefore not be transferred to Abacus.
+(ABA002)</errorMessage>
+</ValidationRule>

@@ -1,0 +1,567 @@
+<aura:component controller="InvoiceController">
+
+    <!-- load momentjs -->
+    <ltng:require scripts="{!$Resource.momentjs}" afterScriptsLoaded="{!c.init}"/>
+
+    <!--
+        Attributes!
+    -->
+    <aura:attribute name="projectId" type="Id" />
+
+    <!-- one array to error them all -->
+    <aura:attribute name="errors" type="Array" description="List of validation errors" />
+    <aura:attribute name="showSuccessMessage" type="Boolean"/>
+
+    <!-- the big data object -->
+    <aura:attribute name="data" type="Object" />
+    <aura:attribute name="totalsRow" type="Array" />
+    <aura:attribute name="totalFirstRows" type="Array" />
+
+    <!--
+        Lights will guide you home
+        And ignite your bones
+        And I will try to fix you
+    -->
+    <aura:attribute name="fixedHeaderOptions" type="Object"/>
+
+    <!-- sometimes we want to load the date range from SF, sometimes we'd like to keep it when we load data -->
+    <aura:attribute name="keepUserEnteredDateRange" type="Boolean" default="false" />
+
+    <!-- invoice preview -->
+    <aura:attribute name="packagesForPreview" type="Array" />
+    <aura:attribute name="showInvoicePreview" type="Boolean" default="false"/>
+
+    <!-- rich text, but not in the preview -->
+    <aura:attribute name="formattedInvoiceTitle" type="String" />
+    <aura:attribute name="formattedBillingNotes" type="String" />
+    <aura:attribute name="formattedInvoiceDescription" type="String" />
+
+    <!--
+        HANDLERS!
+    -->
+    <aura:handler name="onButtonWithDataClick" event="c:onButtonWithDataClick" action="{!c.dataButtonWasPressed}" includeFacets="true" />
+
+    <!--
+        Markup!
+    -->
+    <!-- errors! -->
+    <c:outputError errors="{!v.errors}"></c:outputError>
+
+    <!-- modals! -->
+    <c:inputModal aura:id="modalForInvoiceTitle__c" value="{!v.data.invoice.InvoiceTitle__c}" formattedValue="{!v.formattedInvoiceTitle}" label="{!$Label.c.SkyInvoiceTitle}" richText="false" />
+    <c:inputModal aura:id="modalForBillingNotes__c" value="{!v.data.project.BillingNotes__c}" formattedValue="{!v.formattedBillingNotes}" label="{!$Label.c.SkyBillingNotes}" editable="false" richText="false"/>
+    <c:inputModal aura:id="modalForInvoiceDescription__c" value="{!v.data.invoice.InvoiceDescription__c}" formattedValue="{!v.formattedInvoiceDescription}" label="{!$Label.c.SkyInvoiceDescription}" />
+
+    <!-- invoice preview modal! -->
+    <div class="{!v.showInvoicePreview ? '' : 'hidden'}">
+
+        <div role="dialog" tabindex="-1" aria-labelledby="modal_heading" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <div class="slds-modal__header slds-text-align--right">
+                    <lightning:button variant="brand" onclick="{!c.onInvoicePreviewDoneClick}">{!$Label.c.SkyDone}</lightning:button>
+                </div>
+                <div class="slds-modal__content modal-content-preview">
+                    <div class="slds-scrollable--y slds-p-around--medium">
+                        <div class="slds-grid slds-p-bottom--medium">
+                            <div class="slds-size--1-of-2">
+                                <strong>Billing Address</strong>
+                                <address>
+                                    <aura:if isTrue="{!v.data.invoice.AccountNameLegal__c}">{!v.data.invoice.AccountNameLegal__c}<br/></aura:if>
+                                    <aura:if isTrue="{!v.data.invoice.BillingNameAddition__c}">{!v.data.invoice.BillingNameAddition__c}<br/></aura:if>
+                                    <aura:if isTrue="{!v.data.invoice.BillingAddressStreetNr__c}">{!v.data.invoice.BillingAddressStreetNr__c}<br/></aura:if>
+                                    <aura:if isTrue="{!v.data.invoice.BillingAddressAddition__c}">{!v.data.invoice.BillingAddressAddition__c}<br/></aura:if>
+                                    <aura:if isTrue="{!v.data.invoice.BillingAddressPOBox__c}">{!v.data.invoice.BillingAddressPOBox__c}<br/></aura:if>
+                                    <aura:if isTrue="{!v.data.invoice.BillingAddressZIP__c}">{!v.data.invoice.BillingAddressZIP__c}<br/></aura:if>
+                                    <aura:if isTrue="{!v.data.invoice.BillingAddressCity__c}">{!v.data.invoice.BillingAddressCity__c}<br/></aura:if>
+                                    <aura:if isTrue="{!v.data.invoice.BillingAddressState__c}">{!v.data.invoice.BillingAddressState__c}<br/></aura:if>
+                                    <aura:if isTrue="{!v.data.invoice.BillingAddressCountry__c}">{!v.data.invoice.BillingAddressCountry__c}<br/></aura:if>
+                                </address>
+                                <br />
+
+                                <p>{!v.data.project.Name}</p>
+                                <p>Invoice Title: {!v.data.invoice.InvoiceTitle__c}</p>
+                            </div>
+                            <div class="slds-size--1-of-2">
+                                <dl class="slds-dl_horizontal slds-dl--horizontal-50-50">
+                                    <dt class="slds-dl_horizontal__label">Invoice Date:</dt>
+                                    <dd class="slds-dl_horizontal__detail"><ui:outputDateTime value="{! v.data.invoice.InvoiceDate__c}" format="dd.MM.yyyy" /></dd>
+                                    <dt class="slds-dl_horizontal__label">Finance Date:</dt>
+                                    <dd class="slds-dl_horizontal__detail"><ui:outputDateTime value="{! v.data.invoice.FinanceDate__c}" format="dd.MM.yyyy" /></dd>
+                                    <dt class="slds-dl_horizontal__label">Period (From):</dt>
+                                    <dd class="slds-dl_horizontal__detail"><ui:outputDateTime value="{! v.data.invoice.PeriodFrom__c}" format="dd.MM.yyyy" /></dd>
+                                    <dt class="slds-dl_horizontal__label">Period (Until):</dt>
+                                    <dd class="slds-dl_horizontal__detail"><ui:outputDateTime value="{! v.data.invoice.PeriodUntil__c}" format="dd.MM.yyyy" /></dd>
+                                    <dt class="slds-dl_horizontal__label">Currency:</dt>
+                                    <dd class="slds-dl_horizontal__detail">{! v.data.invoice.ProjectInvoiceCurrency__c}</dd>
+                                    <dt class="slds-dl_horizontal__label">VAT%:</dt>
+                                    <dd class="slds-dl_horizontal__detail">{! v.data.invoice.VATPercent__c}</dd>
+                                    <dt class="slds-dl_horizontal__label">Terms of Payment:</dt>
+                                    <dd class="slds-dl_horizontal__detail">{! v.data.invoice.TermsOfPayment2__c}</dd>
+                                    <dt class="slds-dl_horizontal__label">Customer Order Nr.:</dt>
+                                    <dd class="slds-dl_horizontal__detail">{! v.data.invoice.CustomerOrderNr__c}</dd>
+                                    <dt class="slds-dl_horizontal__label">Customer Reference:</dt>
+                                    <dd class="slds-dl_horizontal__detail">{! v.data.invoice.CustomerReference__c}</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <table class="slds-table slds-table--bordered slds-no-row-hover slds-table--col-bordered">
+                            <tbody>
+                                <aura:iteration items="{!v.packagesForPreview}" var="p">
+                                    <tr class="{!p.pck.PackageType__c == 'Group' ? 'grouped-row' : ''}">
+                                        <td colspan="2" class="wrap-contents">
+                                            {!p.pck.Name}
+                                            <br />
+                                            <aura:if isTrue="{!p.showInvoiceText == true}">
+                                                <div class="slds-m-left--large"><ui:outputRichText value="{!p.packageBillingPositionText}" /></div>
+                                            </aura:if>
+                                        </td>
+                                        <td class="slds-text-align--right">
+                                            <aura:if isTrue="{!p.showPositionAmount == true}">
+                                                <ui:outputCurrency value="{!p.invoiceInProgress}" format="#,##0.00"/>
+                                            </aura:if>
+                                        </td>
+                                    </tr>
+                                </aura:iteration>
+                                <aura:if isTrue="{!v.packagesForPreview.length == 0}">
+                                    <tr>
+                                        <td colspan="3">{!$Label.c.SkyNoinvoicepositionstoshow}</td>
+                                    </tr>
+                                </aura:if>
+                                <tr>
+                                    <td colspan="3"></td>
+                                </tr>
+                                <tr>
+                                    <td width="50%"></td>
+                                    <td><strong>GRAND TOTAL</strong></td>
+                                    <td class="slds-text-align--right">
+                                        <ui:outputCurrency value="{!v.data.invoice.InvoiceTotalAmountNet__c}" format="#,##0.00"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="50%"></td>
+                                    <td><strong>VAT %</strong></td>
+                                    <td class="slds-text-align--right">
+                                        <ui:outputCurrency value="{!v.data.invoice.InvoiceVATAmount__c}" format="#,##0.00"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="50%"></td>
+                                    <td><strong>GRAND TOTAL incl. VAT</strong></td>
+                                    <td class="slds-text-align--right">
+                                        <ui:outputCurrency value="{!v.data.invoice.InvoiceTotalAmountGross__c}" format="#,##0.00"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slds-backdrop slds-backdrop--open"></div>
+
+    </div>
+
+    <!-- the loading spinner! -->
+    <div class="slds-spinner_container hidden" aura:id="spinner">
+        <div class="slds-spinner--brand slds-spinner slds-spinner--large" role="alert">
+            <span class="slds-assistive-text">Loading</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+        </div>
+    </div>
+
+    <div class="blc-content">
+        <!-- info boxes and date range filter -->
+        <div class="slds-m-bottom--medium slds-grid slds-wrap slds-box">
+
+            <div class="slds-p-left--medium slds-grid slds-size--1-of-1 slds-wrap slds-grid--pull-padded">
+                <div class="slds-size--1-of-5 border-right">
+                    <dl class="slds-list--horizontal slds-dl--horizontal-50-50 slds-wrap slds-p-right--medium">
+                        <dt class="slds-item--label"><strong>{!$Label.c.SkyProject}</strong></dt>
+                        <dd class="slds-item--detail slds-truncate">{!v.data.project.Name}</dd>
+                        <dt class="slds-item--label"><strong>{!$Label.c.SkyProjectNr}</strong></dt>
+                        <dd class="slds-item--detail slds-truncate">{!v.data.project.ProjectNr__c}</dd>
+                        <dt class="slds-item--label"><strong>{!$Label.c.SkyInvoiceReceiver}</strong></dt>
+                        <dd class="slds-item--detail slds-truncate">{!v.data.project.InvoiceReceiver__r.Name}</dd>
+                        <dt class="slds-item--label"><strong>{!$Label.c.SkyPMBillingType}</strong></dt>
+                        <dd class="slds-item--detail slds-truncate">{!v.data.project.ProjectManagementBillingType__c}</dd>
+                        <dt class="slds-item--label"><strong>{!$Label.c.SkyExpenseBillingType}</strong></dt>
+                        <dd class="slds-item--detail slds-truncate">{!v.data.project.ExpenseBillingType__c}</dd>
+                    </dl>
+                </div>
+                <div class="slds-size--1-of-5 slds-p-left--medium border-right">
+                    <dl class="slds-list--horizontal slds-dl--horizontal-50-50 slds-wrap">
+                        <dt class="slds-item--label"><strong>{!$Label.c.SkyCurrency}</strong></dt>
+                        <dd class="slds-item--detail slds-truncate">{!v.data.project.ProjectCurrency__c}</dd>
+                        <dt class="slds-item--label"><strong>{!$Label.c.SkyProjectRate}</strong></dt>
+                        <dd class="slds-item--detail slds-truncate">{!v.data.project.ProjectRateHour__c}</dd>
+                        <dt class="slds-item--label"><strong>{!$Label.c.SkyVAT}</strong></dt>
+                        <dd class="slds-item--detail slds-truncate">{!v.data.project.VATPercent__c}</dd>
+                        <dt class="slds-item--label"><strong>{!$Label.c.SkyCostCentre}</strong></dt>
+                        <dd class="slds-item--detail slds-truncate">{!v.data.project.ProjectCostCenter__r.Name}</dd>
+                    </dl>
+                </div>
+
+                <div class="slds-size--3-of-5 slds-p-left--medium">
+
+                    <dl class="slds-list--horizontal">
+                        <dt class="slds-item--label"><strong>{!$Label.c.SkyInvoiceTitle}</strong></dt>
+                        <dd class="slds-item--detail slds-grid">
+                            <span class="slds-truncate">{!v.formattedInvoiceTitle}</span>
+                            <lightning:buttonIcon onclick="{!c.onModalEditOpenClick}" iconName="utility:edit" class="slds-no-flex slds-m-left--x-small small-button" aura:id="buttonForInvoiceTitle__c" />
+                        </dd>
+                    </dl>
+                    <dl class="slds-list--horizontal">
+                        <dt class="slds-item--label"><strong>{!$Label.c.SkyInvoiceDescription }</strong></dt>
+                        <dd class="slds-item--detail slds-grid">
+                            <span class="slds-truncate">{!v.formattedInvoiceDescription}</span>
+                            <lightning:buttonIcon onclick="{!c.onModalEditOpenClick}" iconName="utility:edit" class="slds-no-flex slds-m-left--x-small small-button" aura:id="buttonForInvoiceDescription__c" />
+                        </dd>
+                    </dl>
+                    <dl class="slds-list--horizontal">
+                        <dt class="slds-item--label"><strong>{!$Label.c.SkyBillingNotes }</strong></dt>
+                        <dd class="slds-item--detail slds-grid">
+                            <span class="slds-truncate">{!v.formattedBillingNotes}</span>
+                            <lightning:buttonIcon onclick="{!c.onModalEditOpenClick}" iconName="utility:preview" class="slds-no-flex slds-m-left--x-small small-button" aura:id="buttonForBillingNotes__c" />
+                        </dd>
+                    </dl>
+
+                    <div class="slds-grid slds-p-top--small">
+
+                        <div class="slds-grid slds-size--2-of-3 slds-p-right--x-small border-right">
+
+                            <div class="slds-col slds-size--3-of-8 slds-p-right--small">
+                                <ui:inputDate aura:id="DateFrom" value="{!v.data.invoice.PeriodFrom__c}" label="{!$Label.c.SkyFrom}" displayDatePicker="true" blur="{!c.onDateRangeBlurred}" />
+                            </div>
+
+                            <div class="slds-col slds-size--3-of-8 slds-p-left--x-small slds-p-right--x-small">
+                                <ui:inputDate aura:id="DateUntil" value="{!v.data.invoice.PeriodUntil__c}" label="{!$Label.c.SkyUntil}" displayDatePicker="true" blur="{!c.onDateRangeBlurred}" />
+                            </div>
+
+                            <div class="slds-col slds-size--2-of-8 slds-p-left--x-small">
+                                <lightning:button class="just-a-little-bit-offset-from-top" variant="brand" label="{!$Label.c.SkyLoadPackages}" onclick="{!c.onLoadPackagesClick}" />
+                            </div>
+
+                        </div>
+
+                        <div class="slds-grid slds-size--1-of-3 slds-p-left--small">
+
+                            <div class="slds-col slds-size--1-of-3 slds-p-right--x-small">
+                                <ui:inputDate value="{!v.data.invoice.InvoiceDate__c}" label="{!$Label.c.SkyInvoiceDate}" displayDatePicker="true" />
+                            </div>
+
+                            <div class="slds-col slds-size--1-of-3 slds-p-left--x-small slds-p-right--x-small">
+                                <ui:inputDate value="{!v.data.invoice.FinanceDate__c}" label="{!$Label.c.SkyFinanceDate}" displayDatePicker="true" />
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <!-- the big spreadsheet -->
+        <aura:if isTrue="{!v.data.packages}">
+
+            <div class="slds-box section-body slds-grid">
+
+                <table class="slds-table slds-table--bordered slds-no-row-hover slds-table--col-bordered">
+                    <thead class="{! (v.fixedHeaderOptions.fixed != true ) ? 'hidden' : '' }">
+                        <tr class="title-row first-title-row">
+                            <th class="actually-not-titled" colspan="3">fixed</th>
+                            <th class="slds-text-align--right" colspan="2"><strong>{!$Label.c.SkyALLOWANCE}</strong></th>
+                            <th class="slds-text-align--right"><strong>{!$Label.c.SkyBUDGET}</strong></th>
+                            <th class="slds-text-align--right"><strong>{!$Label.c.SkyINVOICE}</strong></th>
+                            <th class="slds-text-align--right"><strong>{!$Label.c.SkyBUDGET}</strong></th>
+                            <th class="slds-text-align--right"><strong>{!$Label.c.SkySERVICES}</strong><br />{!$Label.c.SkyInclSC}</th>
+                            <th class="slds-text-align--right"><strong>{!$Label.c.SkySERVICES}</strong><br />{!$Label.c.SkyInclSC}</th>
+                            <th class="slds-text-align--right"><strong>{!$Label.c.SkyINVOICE}</strong><br />{!$Label.c.SkyWithoutDRAFT}</th>
+                            <th style="width: 6%;" class="slds-text-align--right"><strong>{!$Label.c.SkyINVOICE}</strong><br />{!$Label.c.SkyDRAFT}</th>
+                            <th class="slds-text-align--right"><strong>{!$Label.c.SkyALLOWANCE}</strong></th>
+                            <th colspan="4"></th>
+                        </tr>
+                        <tr class="title-row">
+                            <th class="actually-not-titled" style="width: 310px;"><strong style="width: 310px; display: inline-block;">{!$Label.c.SkyPackage} test</strong></th>
+                            <th class="actually-not-titled" style="width: 6.1%;"><strong style="width:98px; display:inline-block;">{!$Label.c.SkyType}</strong></th>
+                            <th class="actually-not-titled" style="width: 5%;"><strong style="width:32px; display:inline-block;">{!$Label.c.SkySort}</strong></th>
+                            <th class="slds-text-align--right" style="width: 2.8%;"><strong style="width: 32px; display: inline-block;">{!$Label.c.SkyPM}</strong></th>
+                            <th class="slds-text-align--right" style="width: 3%;"><strong>{!$Label.c.SkyEXPENSE}</strong></th>
+                            <th class="slds-text-align--right" style="width: 6%;"><strong style="width: 89px; display:inline-block;">{!$Label.c.SkyTotal}</strong></th>
+                            <th class="slds-text-align--right" style="width: 6%;"><strong style="width: 89px; display:inline-block;">{!$Label.c.SkyTotal}</strong></th>
+                            <th class="slds-text-align--right" style="width: 6%;"><strong style="width: 89px; display:inline-block;">{!$Label.c.SkyDIFF}</strong></th>
+                            <th class="slds-text-align--right" style="width: 6%;"><strong style="width: 89px; display:inline-block;">{!$Label.c.SkyTotal}</strong></th>
+                            <th class="slds-text-align--right" style="width: 6%;"><strong style="width: 89px; display:inline-block;">{!$Label.c.SkyDATERANGE}</strong></th>
+                            <th class="slds-text-align--right" style="width: 6%;"><strong style="width: 89px; display:inline-block;">{!$Label.c.SkyTotal}</strong></th>
+                            <th class="slds-text-align--right" style="width: 6%;"><strong style="width: 89px; display:inline-block;">{!$Label.c.SkyTotal}</strong></th>
+                            <th class="slds-text-align--right" style="width: 6%;"><strong style="width: 89px; display:inline-block;">{!$Label.c.SkyTotal}</strong></th>
+                            <th style="width: 2%;"><strong>{!$Label.c.SkyPos}</strong></th>
+                            <th style="width: 2%;"><strong style="width: 17px; display: inline-block;">$</strong></th>
+                            <th style="width: 2%;"><strong>{!$Label.c.SkyText}</strong></th>
+                            <th style="width: 11%;"><strong>{!$Label.c.SkyInvoiceText}</strong></th>
+                        </tr>
+                    </thead>
+                    <!-- I know... this hurts me as much as it hurts you... -->
+                    <thead class="{! (v.fixedHeaderOptions.fixed == true ) ? 'fixedHeader' : '' }" style="{!v.fixedHeaderOptions.offsetLeft}">
+                        <tr class="title-row first-title-row">
+                            <th class="actually-not-titled" colspan="3"></th>
+                            <th class="slds-text-align--right" colspan="2"><strong>{!$Label.c.SkyALLOWANCE}</strong></th>
+                            <th class="slds-text-align--right"><strong>{!$Label.c.SkyBUDGET}</strong></th>
+                            <th class="slds-text-align--right"><strong>{!$Label.c.SkyINVOICE}</strong></th>
+                            <th class="slds-text-align--right"><strong>{!$Label.c.SkyBUDGET}</strong></th>
+                            <th class="slds-text-align--right"><strong>{!$Label.c.SkySERVICES}</strong><br />{!$Label.c.SkyInclSC}</th>
+                            <th class="slds-text-align--right"><strong>{!$Label.c.SkySERVICES}</strong><br />{!$Label.c.SkyInclSC}</th>
+                            <th class="slds-text-align--right"><strong>{!$Label.c.SkyINVOICE}</strong><br />{!$Label.c.SkyWithoutDRAFT}</th>
+                            <th style="width: 6%;" class="slds-text-align--right"><strong>{!$Label.c.SkyINVOICE}</strong><br />{!$Label.c.SkyDRAFT}</th>
+                            <th class="slds-text-align--right"><strong>{!$Label.c.SkyALLOWANCE}</strong></th>
+                            <th colspan="4"></th>
+                        </tr>
+                        <tr class="title-row">
+                            <th class="actually-not-titled" style="width: 310px;"><strong style="width: 310px; display: inline-block;">{!$Label.c.SkyPackage}</strong></th>
+                            <th class="actually-not-titled" style="width: 6.1%;"><strong style="width:98px; display:inline-block;">{!$Label.c.SkyType}</strong></th>
+                            <th class="actually-not-titled" style="width: 5%;"><strong style="width:32px; display:inline-block;">{!$Label.c.SkySort}</strong></th>
+                            <th class="slds-text-align--right" style="width: 2.8%;"><strong style="width: 32px; display: inline-block;">{!$Label.c.SkyPM}</strong></th>
+                            <th class="slds-text-align--right" style="width: 3%;"><strong>{!$Label.c.SkyEXPENSE}</strong></th>
+                            <th class="slds-text-align--right" style="width: 6%;"><strong style="width: 89px; display:inline-block;">{!$Label.c.SkyTotal}</strong></th>
+                            <th class="slds-text-align--right" style="width: 6%;"><strong style="width: 89px; display:inline-block;">{!$Label.c.SkyTotal}</strong></th>
+                            <th class="slds-text-align--right" style="width: 6%;"><strong style="width: 89px; display:inline-block;">{!$Label.c.SkyDIFF}</strong></th>
+                            <th class="slds-text-align--right" style="width: 6%;"><strong style="width: 89px; display:inline-block;">{!$Label.c.SkyTotal}</strong></th>
+                            <th class="slds-text-align--right" style="width: 6%;"><strong style="width: 89px; display:inline-block;">{!$Label.c.SkyDATERANGE}</strong></th>
+                            <th class="slds-text-align--right" style="width: 6%;"><strong style="width: 89px; display:inline-block;">{!$Label.c.SkyTotal}</strong></th>
+                            <th class="slds-text-align--right" style="width: 6%;"><strong style="width: 89px; display:inline-block;">{!$Label.c.SkyTotal}</strong></th>
+                            <th class="slds-text-align--right" style="width: 6%;"><strong style="width: 89px; display:inline-block;">{!$Label.c.SkyTotal}</strong></th>
+                            <th style="width: 2%;"><strong>{!$Label.c.SkyPos}</strong></th>
+                            <th style="width: 2%;"><strong style="width: 17px; display: inline-block;">$</strong></th>
+                            <th style="width: 2%;"><strong>{!$Label.c.SkyText}</strong></th>
+                            <th style="width: 11%;"><strong>{!$Label.c.SkyInvoiceText}</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <aura:iteration items="{!v.data.packages}" var="p" indexVar="index">
+
+                            <tr class="{!and(p.pck.PackageSuperior__c == null, index != 0) ? 'emtpy-row' : 'hidden'}">
+                                <td colspan="17"></td>
+                            </tr>
+
+                            <tr class="{!p.pck.PackageType__c == 'Group' ? 'grouped-row' : ''}">
+
+                                <td class="hoverable">
+
+                                    <span class="table-truncate slds-truncate">{!p.pck.Name}</span>
+
+                                    <div class="hover-box slds-popover slds-nubbin--top-left">
+
+                                        <h3 class="slds-text-title--caps hoverable-title slds-m-vertical--small">{!p.pck.Name}</h3>
+
+                                        <div class="slds-wrap slds-grid">
+                                            <div class="slds-size--1-of-2 border-right">
+                                                <p><strong>{!$Label.c.SkyPackageStatus}:</strong></p>
+                                                <p class="slds-m-bottom--x-small">{!p.pck.PackageStatus__c}</p>
+                                                <aura:if isTrue="{!p.pck.PackageResponsibleBusiness__r}">
+                                                    <p><strong>{!$Label.c.SkyResponsibleBusiness}:</strong></p>
+                                                    <p class="slds-m-bottom--x-small">{!p.pck.PackageResponsibleBusiness__r.Name}</p>
+                                                </aura:if>
+                                                <aura:if isTrue="{!p.pck.ExpenseDescription__c}">
+                                                    <p><strong>{!$Label.c.SkyExpenseDescription}:</strong></p>
+                                                    <p class="slds-m-bottom--x-small">{!p.pck.ExpenseDescription__c}</p>
+                                                </aura:if>
+                                            </div>
+                                            <div class="slds-size--1-of-2">
+                                                <div class="slds-m-horizontal--medium">
+                                                    <p><strong>{!$Label.c.SkyProjectNr}:</strong></p>
+                                                    <p class="slds-m-bottom--x-small"><a href="{!'/' + p.pck.ProjectName__r.Id}" target="_blank">{!p.pck.ProjectName__r.ProjectNr__c}</a></p>
+                                                    <p><strong>{!$Label.c.SkyPackageNr}:</strong></p>
+                                                    <p><a href="{!'/' + p.pck.Id}" target="_blank">{!p.pck.PackageNr__c}</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </td>
+
+                                <td style="width: 6%;">
+
+                                    <aura:if isTrue="{! p.pck.RecordType.Name == 'Group' || p.pck.RecordType.Name == 'Leistungsgruppe' || p.pck.RecordType.Name == 'Expense' || p.pck.RecordType.Name == 'Spesen' }">
+
+                                        {!p.pck.RecordType.Name}
+
+                                        <aura:set attribute="else">
+
+                                            <aura:if isTrue="{! p.pck.RecordType.Name == 'Time' || p.pck.RecordType.Name == 'Zeit' || p.pck.RecordType.Name == 'Supplier Costs' || p.pck.RecordType.Name == 'Drittkosten' || p.pck.RecordType.Name == 'Travel' }">
+
+                                                {!p.pck.PackageSubType__c}
+
+                                                <aura:set attribute="else">
+
+                                                    {!p.pck.PackageType__c}
+
+                                                </aura:set>
+
+                                            </aura:if>
+
+                                        </aura:set>
+
+                                    </aura:if>
+
+                                </td>
+                                <td style="width: 5%;">{!p.pck.PackageSortNr__c}</td>
+                                <aura:if isTrue="{!p.pck.RecordType.Name == 'Time' || p.pck.RecordType.Name == 'Zeit' || p.pck.RecordType.Name == 'Supplier Costs' || p.pck.RecordType.Name == 'Drittkosten'}">
+                                    <td>
+                                        <aura:if isTrue="{!p.pck.ProjectManagementAllowancePackage__c}">
+                                            {!v.data.project.ProjectManagementAllowancePercent__c}%
+                                            <aura:set attribute="else">
+                                                <aura:if isTrue="{!p.pck.ExcludeFromProjectMgmtAllowance__c == false}">
+                                                    <ui:inputCheckbox value="true" change="{!c.dontMakeThisCheckboxActuallyWork}" />
+                                                    <aura:set attribute="else">
+                                                        <ui:inputCheckbox value="false" change="{!c.dontMakeThisCheckboxActuallyWork}" />
+                                                    </aura:set>
+                                                </aura:if>
+                                            </aura:set>
+                                        </aura:if>
+                                    </td>
+
+                                    <td>
+                                        <aura:if isTrue="{!p.pck.ExcludeFromExpenseAllowance__c == false}">
+                                            <ui:inputCheckbox value="true" change="{!c.dontMakeThisCheckboxActuallyWork}" />
+                                            <aura:set attribute="else">
+                                                <ui:inputCheckbox value="false" change="{!c.dontMakeThisCheckboxActuallyWork}" />
+                                            </aura:set>
+                                        </aura:if>
+                                    </td>
+                                </aura:if>
+
+                                <aura:if isTrue="{!p.pck.RecordType.Name == 'Expense' || p.pck.RecordType.Name == 'Spesen'}">
+                                    <aura:if isTrue="{!p.pck.ExpenseAllowancePackage__c}">
+                                        <td colspan="2" class="slds-text-align--right">
+                                            {!v.data.project.ExpenseAllowancePercent__c}%
+                                        </td>
+                                        <aura:set attribute="else">
+                                            <td colspan="2">
+                                                {!p.pck.ExpenseBillingType__c}
+                                            </td>
+                                        </aura:set>
+                                    </aura:if>
+                                </aura:if>
+
+                                <aura:if isTrue="{!
+                                    p.pck.RecordType.Name != 'Time'
+                                    &amp;&amp; p.pck.RecordType.Name != 'Zeit'
+                                    &amp;&amp; p.pck.RecordType.Name != 'Expense'
+                                    &amp;&amp; p.pck.RecordType.Name != 'Spesen'
+                                    &amp;&amp; p.pck.RecordType.Name != 'Supplier Costs'
+                                    &amp;&amp; p.pck.RecordType.Name != 'Drittkosten'
+                                    }">
+                                    <td></td>
+                                    <td></td>
+                                </aura:if>
+
+                                <td class="slds-text-align--right"><ui:outputCurrency value="{!p.budget}" format="#,##0.00"/></td>
+                                <td class="slds-text-align--right"><ui:outputCurrency value="{!p.invoice}" format="#,##0.00"/></td>
+                                <td class="slds-text-align--right"><ui:outputCurrency value="{!p.calculatedAvailableFunds}" format="#,##0.00"/></td>
+                                <td class="slds-text-align--right"><ui:outputCurrency value="{!p.servicesTotal}" format="#,##0.00"/></td>
+                                <td class="slds-text-align--right"><ui:outputCurrency value="{!p.servicesTotalDR}" format="#,##0.00"/></td>
+                                <td class="slds-text-align--right"><ui:outputCurrency value="{!p.invoiceNoDraft}" format="#,##0.00"/></td>
+                                <aura:if isTrue="{!p.pck.PackageType__c == 'Group'}">
+                                    <td class="slds-text-align--right">
+                                        <ui:outputCurrency value="{!p.invoiceInProgress}" format="#,##0.00"/>
+                                    </td>
+                                </aura:if>
+                                <aura:if isTrue="{!p.pck.PackageType__c != 'Group'}">
+                                    <td class="table-cell-with-input-field slds-text-align--right">
+                                        <ui:inputText value="{!p.invoiceInProgress}" keyup="{!c.onInvoiceInProgressUpdated}" blur="{!c.onInvoiceInProgressBlurred}" focus="{!c.onInvoiceProgressFocus}" updateOn="keyup" />
+                                    </td>
+                                </aura:if>
+                                <td class="slds-text-align--right"><ui:outputCurrency value="{!p.allowanceTotal}" format="#,##0.00"/></td>
+                                <td>
+                                    <ui:inputCheckbox value="{!p.showPosition}" />
+                                </td>
+                                <td>
+                                    <ui:inputCheckbox value="{!p.showPositionAmount}" />
+                                </td>
+                                <td>
+                                    <ui:inputCheckbox value="{!p.showInvoiceText}" />
+                                </td>
+                                <aura:if isTrue="{!p.showInvoiceText == true}">
+                                    <td style="max-width: 200px;">
+                                        <!-- <ui:inputText value="{!p.PackageBillingPositionText__c}" change="{!c.test}" /> -->
+
+                                        <div class="slds-grid">
+                                            <span class="slds-truncate slds-m-right--small">{!p.formattedPackageBillingPositionText}</span>
+                                            <c:buttonWithData class="slds-no-flex small-button" iconName="utility:edit" label="{!$Label.c.SkyEdit}" data="{!index}" name="showModalForBillingPositionText"></c:buttonWithData>
+                                        </div>
+
+                                        <div class="{!p.showModalForBillingPositionText ? '' : 'hidden'}">
+
+                                            <div role="dialog" tabindex="-1" aria-labelledby="modal_heading" class="slds-modal slds-fade-in-open">
+                                                <div class="slds-modal__container">
+                                                    <div class="slds-modal__content slds-p-around--medium">
+                                                        <div>
+                                                            <lightning:inputRichText value="{!p.packageBillingPositionText}" disabledCategories="FORMAT_FONT,ALIGN_TEXT"/>
+                                                            <!-- <lightning:textarea label="{!$Label.c.SkyInvoiceText}" value="{!p.packageBillingPositionText}" /> -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="slds-modal__footer">
+                                                        <c:buttonWithData variant="brand" label="{!$Label.c.SkyDone}" data="{!index}" name="closeModalForBillingPositionText"></c:buttonWithData>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="slds-backdrop slds-backdrop--open"></div>
+
+                                        </div>
+
+                                    </td>
+                                </aura:if>
+                                <aura:if isTrue="{!p.showInvoiceText == false}">
+                                    <td></td>
+                                </aura:if>
+
+                            </tr>
+
+                        </aura:iteration>
+
+                        <tr class="emtpy-row">
+                            <td colspan="17"></td>
+                        </tr>
+
+                        <tr class="footer-row title-row">
+                            <td colspan="5">{!$Label.c.SkyTotal}</td>
+                            <aura:iteration items="{!v.totalsRow}" indexVar="totalsIndex" var="value">
+                                <td class="slds-text-align--right">
+                                    {!value}
+                                </td>
+                            </aura:iteration>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="slds-box slds-theme--shade section-footer">
+
+                <div class="slds-float--left">
+                    <lightning:button variant="brand" label="{!$Label.c.SkyUpdateInvoice}" onclick="{!c.onUpdateInvoiceClick}" />
+                    <lightning:button label="{!$Label.c.SkyPreviewInvoice}" onclick="{!c.onPreviewInvoiceClick}" />
+                </div>
+
+                <aura:if isTrue="{!and(v.showSuccessMessage, v.data.invoice.Id != undefined)}">
+                    <p class="slds-float--left slds-m-top--x-small slds-m-left--x-small">{!$Label.c.SkyTheInvoicehasbeencreatedwithstatusDraft} <a href="{! '/' + v.data.invoice.Id }" target="_blank">{!$Label.c.SkyGotoInvoice}</a></p>
+                </aura:if>
+
+                <div class="slds-clearfix"></div>
+
+            </div>
+
+        </aura:if>
+
+    </div>
+
+</aura:component>

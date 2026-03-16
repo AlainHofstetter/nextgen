@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email for Data Quality Check of new Accounts created automatically from PrintPlus (Talend)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>CS - New Account from PrintPlus</name>
+    <style>none</style>
+    <subject>Data Qualty Check of new Account from Print Plus</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LicenseContract</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>ContractCompactLayout</compactLayoutAssignment>
+    <label>License Contract</label>
+    <picklistValues>
+        <picklist>ContractType__c</picklist>
+        <values>
+            <fullName>Banking Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Frame Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>License Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Media Subscription</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non Disclosure Agreement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rental Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Works Contract</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>InvoiceCycle__c</picklist>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yearly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LicenseType__c</picklist>
+        <values>
+            <fullName>Direct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indirect</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OriginOfContract__c</picklist>
+        <values>
+            <fullName>BLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New through Employee</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pricing__c</picklist>
+        <values>
+            <fullName>At Cost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cost Ceiling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flat Rate</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RGProfil__c</picklist>
+        <values>
+            <fullName>5%2E13098 %28BLC Allgemein%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%2E13098%2E11 %28gateB%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%2E13098%2E13 %28Calydo%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SalesCommission__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SignedContractExists__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Software__c</picklist>
+        <values>
+            <fullName>BrandMaker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Censhare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Simplex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>officeatwork</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Draft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Terminated</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

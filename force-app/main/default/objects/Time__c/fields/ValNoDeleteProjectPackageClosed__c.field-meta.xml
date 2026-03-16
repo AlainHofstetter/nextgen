@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValNoDeleteProjectPackageClosed__c</fullName>
+    <formula>OR( 
+  NOT(ISPICKVAL( ProjectName__r.ProjectStatus__c , &quot;Open&quot;)), 
+  NOT(ISPICKVAL( Package__r.PackageStatus__c , &quot;Open&quot;)),
+  AND( 
+    NOT(ISBLANK(Package__r.PackageSuperior__c )),  
+    NOT(ISPICKVAL(Package__r.PackageSuperior__r.PackageStatus__c,&quot;Open&quot;))
+   )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ValNoDeleteProjectPackageClosed</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

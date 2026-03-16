@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type --></label>
+    <name>Type__c</name>
+    <picklistValues>
+        <masterLabel>Active Directory</masterLabel>
+        <translation><!-- Active Directory --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Amigo</masterLabel>
+        <translation><!-- Amigo --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Censhare</masterLabel>
+        <translation><!-- Censhare --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Credit card receipt</masterLabel>
+        <translation><!-- Credit card receipt --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Employee Entry</masterLabel>
+        <translation><!-- Employee Entry --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Employee Exit</masterLabel>
+        <translation><!-- Employee Exit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Exchange / Mail</masterLabel>
+        <translation><!-- Exchange / Mail --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Facility</masterLabel>
+        <translation><!-- Facility --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Font Explorer / Schriften</masterLabel>
+        <translation><!-- Font Explorer / Schriften --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Former Employees</masterLabel>
+        <translation><!-- Former Employees --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hardware</masterLabel>
+        <translation><!-- Hardware --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Laptop DELL</masterLabel>
+        <translation><!-- Laptop DELL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>License</masterLabel>
+        <translation><!-- License --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Login</masterLabel>
+        <translation><!-- Login --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MacBook</masterLabel>
+        <translation><!-- MacBook --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Network / WLAN / VPN</masterLabel>
+        <translation><!-- Network / WLAN / VPN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New Employee</masterLabel>
+        <translation><!-- New Employee --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Office supplies</masterLabel>
+        <translation><!-- Office supplies --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Opix / SixOMC</masterLabel>
+        <translation><!-- Opix / SixOMC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Others</masterLabel>
+        <translation><!-- Others --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Outlook</masterLabel>
+        <translation><!-- Outlook --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PrintPlus</masterLabel>
+        <translation><!-- PrintPlus --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Printer / Scanner</masterLabel>
+        <translation><!-- Printer / Scanner --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Purchase / Invoice</masterLabel>
+        <translation><!-- Purchase / Invoice --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Restore Data</masterLabel>
+        <translation><!-- Restore Data --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Screen / TV / Projector</masterLabel>
+        <translation><!-- Screen / TV / Projector --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Security / Lastpass / Password</masterLabel>
+        <translation><!-- Security / Lastpass / Password --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Server / Backup</masterLabel>
+        <translation><!-- Server / Backup --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Skywalk</masterLabel>
+        <translation><!-- Skywalk --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Software / Updates</masterLabel>
+        <translation><!-- Software / Updates --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Telephone / Smartphone / Tablet</masterLabel>
+        <translation><!-- Telephone / Smartphone / Tablet --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VM Ware</masterLabel>
+        <translation><!-- VM Ware --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Work Station / Meetingroom</masterLabel>
+        <translation><!-- Work Station / Meetingroom --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

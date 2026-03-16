@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Vertrag.</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Verträge.</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Vertrag.</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Verträge.</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Vertrag.</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Verträge.</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Vertrag.</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Verträge.</value>
+    </caseValues>
+    <gender>Masculine</gender>
+    <layouts>
+        <layout>Contract Layout</layout>
+        <sections>
+            <label>Vertragsdetail</label>
+            <section>Contract Detail</section>
+        </sections>
+        <sections>
+            <label>Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Beschreibung</label>
+            <section>Description</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>License Layout</layout>
+        <sections>
+            <label>Vertragsdetail</label>
+            <section>Contract Detail</section>
+        </sections>
+        <sections>
+            <label>Vertragsbedingungen</label>
+            <section>Contract Terms Information</section>
+        </sections>
+        <sections>
+            <label>Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Beschreibung</label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label>Unterschrift</label>
+            <section>Signature Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Telco Subscription Layout</layout>
+        <sections>
+            <label>Vertragsdetail</label>
+            <section>Contract Detail</section>
+        </sections>
+        <sections>
+            <label>Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Beschreibung</label>
+            <section>Description</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Vertrag Nr.</nameFieldLabel>
+    <recordTypes>
+        <label>Vertrag</label>
+        <name>Contract</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Lizenzvertrag</label>
+        <name>LicenseContract</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Telekommunikationsvertrag</label>
+        <name>TelecommunicationContract</name>
+    </recordTypes>
+</CustomObjectTranslation>

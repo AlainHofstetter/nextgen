@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CurrencyManagementFieldType__c</fullName>
+    <description>Currency to CHF exchange rate field =&gt; In this field the Conversion Rate XYZ to CHF on Date ABC is stored
+Currency to SDG exchange rate field =&gt; In this field the Conversion Rate XYZ to SGD on Date ABC is stored
+Date of exchange rate field =&gt; Field that contains the date ABC used to get conversion rate
+Currency field  =&gt; Field that contains the currency XYZ used to get conversion rate</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Turns Dated Currency Management on for this Object. All the Picklist fields have then be to assigned exactly once to one field</inlineHelpText>
+    <label>Currency management field type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Currency to CHF exchange rate field</fullName>
+                <default>false</default>
+                <label>Currency to CHF exchange rate field</label>
+            </value>
+            <value>
+                <fullName>Date of exchange rate field</fullName>
+                <default>false</default>
+                <label>Date of exchange rate field</label>
+            </value>
+            <value>
+                <fullName>Currency field</fullName>
+                <default>false</default>
+                <label>Currency field</label>
+            </value>
+            <value>
+                <fullName>Currency to SGD exchange rate field</fullName>
+                <default>false</default>
+                <label>Currency to SGD exchange rate field</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

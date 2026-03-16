@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Verwendet für Logo-Bild für verbundene Anwendungen</description>
+    <internalUseOnly>false</internalUseOnly>
+    <name>LogoUrlName:06Pb0000000fxwf</name>
+    <public>true</public>
+</Document>

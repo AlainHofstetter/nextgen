@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PA009_Billing_Template_Match</fullName>
+    <active>true</active>
+    <description>The Billing Template Checkboxes must match</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+
+OR(
+  AND(
+  ShowPositionAmount__c=true,
+  ShowPosition__c=false
+  ),
+
+  AND(
+  ShowInvoiceText__c=true,
+  ShowPosition__c=false
+  )
+))</errorConditionFormula>
+    <errorDisplayField>ShowInvoiceText__c</errorDisplayField>
+    <errorMessage>Checkboxes are not in line for billing template.
+(PA009)</errorMessage>
+</ValidationRule>

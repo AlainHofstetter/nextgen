@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ContactAddressUpdateFromAccount__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>If clicked, all Contacts are updated with this Accounts Location Address.</inlineHelpText>
+    <label>Contact Address Update From Account</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

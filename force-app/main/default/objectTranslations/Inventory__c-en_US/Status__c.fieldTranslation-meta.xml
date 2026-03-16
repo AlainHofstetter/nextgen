@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Status --></label>
+    <name>Status__c</name>
+    <picklistValues>
+        <masterLabel>Broken</masterLabel>
+        <translation><!-- Broken --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Disposed</masterLabel>
+        <translation><!-- Disposed --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Expired</masterLabel>
+        <translation><!-- Expired --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>In Home Office</masterLabel>
+        <translation><!-- In Home Office --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>In Use</masterLabel>
+        <translation><!-- In Use --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lost</masterLabel>
+        <translation><!-- Lost --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Returned</masterLabel>
+        <translation><!-- Not Returned --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Used</masterLabel>
+        <translation><!-- Not Used --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ordered</masterLabel>
+        <translation><!-- Ordered --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Returned</masterLabel>
+        <translation><!-- Returned --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Stolen</masterLabel>
+        <translation><!-- Stolen --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Storage</masterLabel>
+        <translation><!-- Storage --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Schreibt beim Speichern die Adresse auf alle Kontakte.</help>
+    <label>Kontaktadresse aus Account übernehmen</label>
+    <name>ContactAddressUpdateFromAccount__c</name>
+</CustomFieldTranslation>

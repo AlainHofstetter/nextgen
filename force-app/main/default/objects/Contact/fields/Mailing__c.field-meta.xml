@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mailing__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Important Contacts for Mailings.
+14.03.2017, ary: Dieses Feld wird nicht mehr gebraucht, durch Kampagnen ersetzt</description>
+    <label>Mailing</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

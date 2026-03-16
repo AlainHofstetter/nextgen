@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TC004_Only_Time_For_Yourself</fullName>
+    <active>true</active>
+    <description>The Time Tracker can only track time for himself if not permission set available</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+Timetracker__r.User__r.Id &lt;&gt; $User.Id,
+$User.CanTrackTimeForOthers__c =false,
+ TimeValidatedHumanResources__c =false,
+ TimeValidatedProjectResponsible__c  = false,
+OR(
+ ISNEW() ,
+ ISCHANGED(Timetracker__c),
+ ISCHANGED(DateFrom__c),
+ ISCHANGED(DateUntil__c),
+ ISCHANGED(DurationHhMm__c),
+ ISCHANGED(DurationHhMmN__c),
+ ISCHANGED(OutOfScope__c),
+ ISCHANGED(Description__c)
+)
+)</errorConditionFormula>
+    <errorMessage>You can not add tor edit ime for somebody else.
+(TC004)</errorMessage>
+</ValidationRule>

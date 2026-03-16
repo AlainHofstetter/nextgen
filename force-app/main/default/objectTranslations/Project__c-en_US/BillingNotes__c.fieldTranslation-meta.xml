@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Internal Information for the billing process. --></help>
+    <label><!-- Billing Notes --></label>
+    <name>BillingNotes__c</name>
+</CustomFieldTranslation>

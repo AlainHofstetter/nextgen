@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACM008_AbacusDebtorTrue</fullName>
+    <active>true</active>
+    <description>All Data ready for Flag AbacusDeptor=True</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+ AbacusDebtor__c = True,
+
+OR(
+ISBLANK (BillingZip__c),
+ISBLANK (BillingCity__c),
+ISBLANK (TEXT (CurrencyIsoCode))
+)
+)</errorConditionFormula>
+    <errorMessage>The Invoice Receiver Account is not complete. Please adjust in a new tab to complete data and then save again.
+(ACM008)</errorMessage>
+</ValidationRule>

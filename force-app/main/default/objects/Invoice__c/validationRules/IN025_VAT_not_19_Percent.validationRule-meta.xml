@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IN025_VAT_not_19_Percent</fullName>
+    <active>true</active>
+    <description>Nur Rechnungen, welche von der &quot;gateB GmbH&quot; ausgestellt werden, dürfen mit VAT 19% besteuert werden --&gt; Deutschland&apos;s Standard-Steuersatz beträgt 19%.</description>
+    <errorConditionFormula>AND(
+NOT(CONTAINS( BillingViaCompany__r.AccountName__c , &quot;gateB GmbH&quot;)),
+$User.IsFinanceManager__c = false,
+ISPICKVAL(VATPercent__c, &quot;19%&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>VATPercent__c</errorDisplayField>
+    <errorMessage>You are not allowed to choose VAT 19%. Please get in touch with Finance.
+(IN025)</errorMessage>
+</ValidationRule>

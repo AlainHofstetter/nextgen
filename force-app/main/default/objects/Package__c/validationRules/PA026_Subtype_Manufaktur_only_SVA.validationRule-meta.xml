@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PA026_Subtype_Manufaktur_only_SVA</fullName>
+    <active>true</active>
+    <description>Package Subtype Manufaktur kann nur an SVH Projekten hängen</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+Text(PackageSubType__c) = &quot;Manufaktur&quot;,
+ProjectName__r.ProjectCostCenter__r.CostCenterNr__c &lt;&gt;&quot;4820&quot;
+)</errorConditionFormula>
+    <errorDisplayField>PackageSubType__c</errorDisplayField>
+    <errorMessage>The Service Sub-Type can not be &quot;Manufaktur&quot; for non SVA Projects
+(PA026)</errorMessage>
+</ValidationRule>

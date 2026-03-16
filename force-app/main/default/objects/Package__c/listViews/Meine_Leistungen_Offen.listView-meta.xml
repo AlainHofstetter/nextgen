@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Meine_Leistungen_Offen</fullName>
+    <columns>NAME</columns>
+    <columns>PackageNr__c</columns>
+    <columns>ProjectName__c</columns>
+    <columns>PackageStatus__c</columns>
+    <columns>PackageType__c</columns>
+    <columns>PackageSubType__c</columns>
+    <columns>ProjectNr__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>PackageStatus__c</field>
+        <operation>equals</operation>
+        <value>Open,Partially open</value>
+    </filters>
+    <label>Meine Leistungen Offen</label>
+    <language>en_US</language>
+</ListView>

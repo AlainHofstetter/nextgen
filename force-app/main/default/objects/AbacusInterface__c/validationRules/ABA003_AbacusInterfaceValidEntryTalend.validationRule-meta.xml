@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ABA003_AbacusInterfaceValidEntryTalend</fullName>
+    <active>true</active>
+    <description>Checks if the entry is valid for Talend</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true, 
+
+OR(
+AND(
+ISPICKVAL( InterfaceType__c ,&quot;Account Debtor Upsert&quot;),
+ISBLANK( Account__c )
+),
+OR(
+AND(
+ISPICKVAL( InterfaceType__c ,&quot;Account Supplier Upsert&quot;),
+ISBLANK( Account__c )
+)),
+OR(
+AND(
+ISPICKVAL( InterfaceType__c ,&quot;Invoice Export&quot;),
+OR(
+ISBLANK(Account__c)
+)
+)),
+OR(
+AND(
+ISPICKVAL( InterfaceType__c ,&quot;Cancellation Export&quot;),
+OR(
+ISBLANK(Account__c),
+ISBLANK(DateTimeFrom__c),
+ISBLANK(DateTimeUntil__c)
+)
+)),
+OR(
+AND(
+ISPICKVAL( InterfaceType__c ,&quot;Staff Hour Export&quot;),
+OR(
+ISBLANK(DateTimeFrom__c),
+ISBLANK(DateTimeUntil__c)
+))
+)
+)
+)</errorConditionFormula>
+    <errorMessage>The Abacus Interface entry is not correct.
+(ABA003)</errorMessage>
+</ValidationRule>

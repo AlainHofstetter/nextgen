@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Fonts --></label>
+    <name>Fonts__c</name>
+    <picklistValues>
+        <masterLabel>Fonts.com</masterLabel>
+        <translation><!-- Fonts.com --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Keine</masterLabel>
+        <translation><!-- Keine --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lokal gehostet</masterLabel>
+        <translation><!-- Lokal gehostet --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sonstiges</masterLabel>
+        <translation><!-- Sonstiges --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Typekit</masterLabel>
+        <translation><!-- Typekit --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

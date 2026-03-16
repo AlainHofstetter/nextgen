@@ -1,0 +1,9 @@
+Hello
+
+This is a birthday reminder.
+
+The birthday of {!Contact.Name} is coming up on {!Contact.NextBirthday__c}.
+
+---
+This Email has been sent by Salesforce, do not reply.
+(Template: 00Xb0000000yea3)

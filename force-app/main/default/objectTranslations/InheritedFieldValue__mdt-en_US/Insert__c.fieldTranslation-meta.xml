@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Functions executes on record creation. --></help>
+    <label><!-- Insert --></label>
+    <name>Insert__c</name>
+</CustomFieldTranslation>

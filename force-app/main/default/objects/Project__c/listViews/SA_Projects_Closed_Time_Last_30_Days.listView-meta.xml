@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SA_Projects_Closed_Time_Last_30_Days</fullName>
+    <columns>NAME</columns>
+    <columns>ProjectStatus__c</columns>
+    <columns>ProjectResponsibleBusiness__c</columns>
+    <columns>LastTimeEntryDate__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ProjectStatus__c</field>
+        <operation>equals</operation>
+        <value>Closed</value>
+    </filters>
+    <filters>
+        <field>LastTimeEntryDate__c</field>
+        <operation>greaterThan</operation>
+        <value>3/31/2017</value>
+    </filters>
+    <label>SA: Projects Closed &amp; Time Last 30 Days</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_Skywalk_Data_Quality</group>
+    </sharedTo>
+</ListView>

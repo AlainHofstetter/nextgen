@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Parent object update</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Parent object updates</value>
+    </caseValues>
+    <layouts>
+        <layout>UpdateParentObject Layout</layout>
+        <sections>
+            <label><!-- Condition --></label>
+            <section>Condition</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Relation --></label>
+            <section>Relation</section>
+        </sections>
+        <sections>
+            <label><!-- Source --></label>
+            <section>Source</section>
+        </sections>
+        <sections>
+            <label><!-- Target --></label>
+            <section>Target</section>
+        </sections>
+        <sections>
+            <label><!-- Trigger --></label>
+            <section>Trigger</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

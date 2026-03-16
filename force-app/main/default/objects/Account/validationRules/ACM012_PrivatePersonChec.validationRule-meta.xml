@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACM012_PrivatePersonChec</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+OR(
+ISPICKVAL( LegalNature__c ,&quot;Individual Company&quot;),
+ISPICKVAL( LegalNature__c, &quot;Natural Entity (Private Person)&quot;)
+), 
+OR(
+ISBLANK(LastName__c),
+ISBLANK(FirstName__c)
+)
+)</errorConditionFormula>
+    <errorDisplayField>LastName__c</errorDisplayField>
+    <errorMessage>Please fill out First- &amp; Last Name.
+(ACM012)</errorMessage>
+</ValidationRule>

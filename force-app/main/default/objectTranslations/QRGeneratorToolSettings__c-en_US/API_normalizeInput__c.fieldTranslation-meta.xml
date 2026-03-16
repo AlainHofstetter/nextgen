@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>
+        <!-- If true, the input gets normalized. This means strings are trimmed, special quotations replaced with ASCII ones, and special characters replaced with semantically equal ones (e.g. œ -&gt; oe)
+Documentation: https://rest.qr-invoice.cloud/swagger-ui/index.html#/11%20Payment%20Part%20%26%20Receipt%20(QR%20Bill)/createPaymentPartReceipt -->
+    </help>
+    <label><!-- Normalize Input --></label>
+    <name>API_normalizeInput__c</name>
+</CustomFieldTranslation>

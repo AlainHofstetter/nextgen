@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Lizenztyp</label>
+    <name>LicenseType__c</name>
+    <picklistValues>
+        <masterLabel>Direct</masterLabel>
+        <translation>Direkt</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Indirect</masterLabel>
+        <translation>Indirekt</translation>
+    </picklistValues>
+</CustomFieldTranslation>

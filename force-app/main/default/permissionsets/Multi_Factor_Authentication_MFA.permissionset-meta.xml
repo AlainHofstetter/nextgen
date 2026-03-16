@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Für alle Benutzer, die diesen Berechtiungssatz besitzen, ist MFA aktiviert.
+Standardmässig verwenden wir den Microsoft Authenticator.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>PS001 - MultiFaktorAuth</label>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ForceTwoFactor</name>
+    </userPermissions>
+</PermissionSet>

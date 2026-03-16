@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Click this flag if you do want to present this service within the separate section below the total on the invoice. --></help>
+    <label><!-- Supplier Costs Group --></label>
+    <name>SupplierCostsGroup__c</name>
+</CustomFieldTranslation>

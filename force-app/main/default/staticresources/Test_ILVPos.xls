@@ -1,0 +1,2 @@
+Id,CreditToCostCenter__c,CurrencyIsoCode,CurrencyRateToCHF__c,DatedExchangeRateToEUR__c,DatedExchangeRateToUSD__c,FinanceAccountNr__c,Name,ILVPositionDate__c,ILVPositionSortNr__c,ILVPositionText__c,InvoiceName__c,PackageName__c,PackageSubType__c,ProjectCurrency__c
+a0f26000000IUSnAAO,,CHF,,,,,IL-000001,2016-08-25,,,a0X260000015mNVEAY,a0K26000000bA1cEAE,,CHF

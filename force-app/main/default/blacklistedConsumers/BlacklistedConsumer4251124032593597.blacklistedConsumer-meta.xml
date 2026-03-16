@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BlacklistedConsumer xmlns="http://soap.sforce.com/2006/04/metadata">
+    <blockedByApiWhitelisting>false</blockedByApiWhitelisting>
+    <consumerKey>3MVG9QDx8IX8nP5RLsuE6flEePXUrr19IkyaQOr6McBGDG4Xwn1h473CUQn655sn3mjuCflbi9oE3lDwoiDdf</consumerKey>
+    <consumerName>Zapier</consumerName>
+    <masterLabel>BlacklistedConsumer4251124032511495</masterLabel>
+</BlacklistedConsumer>

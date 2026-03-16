@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CY_Opp_Forecast_Dienstleistungen</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.PROBABILITY</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>SupplierCostsForecast__c</columns>
+    <columns>ILVForecast__c</columns>
+    <columns>ProjectStart__c</columns>
+    <columns>ProjectEnd__c</columns>
+    <columns>Q1Forecast__c</columns>
+    <columns>Q2Forecast__c</columns>
+    <columns>Q3Forecast__c</columns>
+    <columns>Q4Forecast__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>notEqual</operation>
+        <value>Closed Won,Closed Lost</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.BLC_Services</value>
+    </filters>
+    <filters>
+        <field>UnitRelevance__c</field>
+        <operation>equals</operation>
+        <value>CY</value>
+    </filters>
+    <label>CY Opp. - Forecast Dienstleistungen</label>
+    <sharedTo>
+        <group>Skywalk_CY_Alle</group>
+        <roleAndSubordinates>CY</roleAndSubordinates>
+        <roleAndSubordinatesInternal>CY</roleAndSubordinatesInternal>
+        <roleAndSubordinatesInternal>CY_Team_Digital_Motion</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

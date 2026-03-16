@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>TalendSyncLog__c.Type__c</field>
+    </columns>
+    <columns>
+        <field>TalendSyncLog__c.ObjectName__c</field>
+    </columns>
+    <columns>
+        <field>TalendSyncLog__c.DateTime__c</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$AbacusInterface__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>FK_$AbacusInterface__c.LastRunDateTime__c</field>
+    </columns>
+    <currency>CHF</currency>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_$AbacusInterface__c.InterfaceType__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Talend Sync Log Status Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$TalendSyncLog__c@TalendSyncLog__c.AbacusInterface__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>TalendSyncLog__c.DateTime__c</dateColumn>
+        <interval>INTERVAL_YESTERDAY</interval>
+    </timeFrameFilter>
+</Report>

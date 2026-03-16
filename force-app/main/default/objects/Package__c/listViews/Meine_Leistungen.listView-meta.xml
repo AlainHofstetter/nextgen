@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Meine_Leistungen</fullName>
+    <columns>NAME</columns>
+    <columns>PackageNr__c</columns>
+    <columns>ProjectName__c</columns>
+    <columns>PackageStatus__c</columns>
+    <columns>PackageType__c</columns>
+    <columns>PackageSubType__c</columns>
+    <columns>ProjectNr__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>Meine Leistungen</label>
+    <language>en_US</language>
+</ListView>

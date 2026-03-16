@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>finance@brandleadership.ch</email>
+    <name>Finance Queue</name>
+    <queueMembers>
+        <users>
+            <user>besa.veseli@brandleadership.ch</user>
+            <user>christian.rohrer@brandleadership.ch</user>
+            <user>corinne.meyer@brandleadership.ch</user>
+            <user>flavia.husmann@brandleadership.ch</user>
+            <user>patrick.lippuner@brandleadership.ch</user>
+            <user>christian.zuercher@brandleadership.ch</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

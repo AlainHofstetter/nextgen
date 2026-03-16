@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IN020_Cancell_Title_Must_Contain_Cancel</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true, 
+ RecordType.Id =&quot;012b0000000oQiv&quot;,
+ $User.IsFinanceManager__c =false,
+NOT(CONTAINS( InvoiceTitle__c ,&quot;Storno&quot;)),
+NOT(CONTAINS( InvoiceTitle__c ,&quot;storno&quot;)),
+NOT(CONTAINS( InvoiceTitle__c ,&quot;STORNO&quot;)),
+NOT(CONTAINS( InvoiceTitle__c ,&quot;Cancellation&quot;)),
+NOT(CONTAINS( InvoiceTitle__c ,&quot;cancellation&quot;)),
+NOT(CONTAINS( InvoiceTitle__c ,&quot;CANCELLATION&quot;))
+)</errorConditionFormula>
+    <errorDisplayField>InvoiceTitle__c</errorDisplayField>
+    <errorMessage>The Invoice Title must contain either &quot;Storno&quot; or &quot;Cancellation&quot;
+(IN020)</errorMessage>
+</ValidationRule>

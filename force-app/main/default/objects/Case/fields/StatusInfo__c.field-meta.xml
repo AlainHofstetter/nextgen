@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>StatusInfo__c</fullName>
+    <defaultValue>&quot;Forwarded 2nd Level = Polygraphen&quot; &amp; BR() &amp; &quot;Forwarded 3rd Level = Projektleiter &amp; Systemverantwortliche&quot; &amp; BR() &amp; &quot;Forwarded 4th Level = Systemanbieter&quot;</defaultValue>
+    <label>Status Info</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

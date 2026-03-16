@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CY_Projects_2018_ohne_Segmente</fullName>
+    <columns>NAME</columns>
+    <columns>ProjectNr__c</columns>
+    <columns>ProjectResponsibleBusiness__c</columns>
+    <columns>ContractPartner__c</columns>
+    <columns>ProjectStatus__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ProjectCostCenter__c</field>
+        <operation>equals</operation>
+        <value>Calydo</value>
+    </filters>
+    <filters>
+        <field>ProjectStatus__c</field>
+        <operation>equals</operation>
+        <value>Open</value>
+    </filters>
+    <filters>
+        <field>CostCenterSegment__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>LAST_UPDATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>1/1/2018 12:00 AM</value>
+    </filters>
+    <label>CY Projects 2018 (ohne Segmente)</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_CY_MD</group>
+    </sharedTo>
+</ListView>

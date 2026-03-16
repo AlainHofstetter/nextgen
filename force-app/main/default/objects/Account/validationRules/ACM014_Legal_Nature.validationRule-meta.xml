@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACM014_Legal_Nature</fullName>
+    <active>true</active>
+    <description>Please fill out the Legal Nature</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+ISNEW(),
+RecordType.Id &lt;&gt; &apos;012b0000000cEKe&apos;,
+TEXT(AccountSource) &lt;&gt; &apos;Data.com&apos;, 
+ISBLANK(TEXT(LegalNature__c))
+)</errorConditionFormula>
+    <errorDisplayField>LegalNature__c</errorDisplayField>
+    <errorMessage>Please fill out the Legal Nature of this Account.
+(ACM014)</errorMessage>
+</ValidationRule>

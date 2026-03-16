@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>List all the relevant fields of a object and if they have any special function
+&gt; currency mgmt, 
+&gt; deletion control
+&gt; ESR Number
+&gt; Template Copy (Project / Package)
+Also used to reference fields used on other MTD functions</description>
+    <label>Field</label>
+    <pluralLabel>Fields</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

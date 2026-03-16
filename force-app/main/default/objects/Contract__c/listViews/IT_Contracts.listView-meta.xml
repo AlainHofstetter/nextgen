@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IT_Contracts</fullName>
+    <columns>NAME</columns>
+    <columns>ContractName__c</columns>
+    <columns>ContractOwnerInternal__c</columns>
+    <columns>ContractPartnerInternal__c</columns>
+    <columns>ContractOwnerExternal__c</columns>
+    <columns>Costs__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <label>IT Contracts</label>
+    <sharedTo>
+        <group>Skywalk_IT_Alle</group>
+    </sharedTo>
+</ListView>

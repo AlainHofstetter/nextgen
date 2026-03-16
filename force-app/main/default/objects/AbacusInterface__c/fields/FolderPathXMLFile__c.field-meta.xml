@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FolderPathXMLFile__c</fullName>
+    <label>Folder Path XML File</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>InterfaceType__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>\\BLC-ABA-01\SkywalkAbacusIntegration\Export\Account\Queue</fullName>
+                <default>false</default>
+                <label>\\BLC-ABA-01\SkywalkAbacusIntegration\Export\Account\Queue</label>
+            </value>
+            <value>
+                <fullName>\\BLC-ABA-01\SkywalkAbacusIntegration\Export\Project\Queue</fullName>
+                <default>false</default>
+                <label>\\BLC-ABA-01\SkywalkAbacusIntegration\Export\Project\Queue</label>
+            </value>
+            <value>
+                <fullName>\\BLC-ABA-01\SkywalkAbacusIntegration\Export\Invoice\Queue</fullName>
+                <default>false</default>
+                <label>\\BLC-ABA-01\SkywalkAbacusIntegration\Export\Invoice\Queue</label>
+            </value>
+            <value>
+                <fullName>\\BLC-ABA-01\SkywalkAbacusIntegration\Export\StaffHour\Queue</fullName>
+                <default>false</default>
+                <label>\\BLC-ABA-01\SkywalkAbacusIntegration\Export\StaffHour\Queue</label>
+            </value>
+            <value>
+                <fullName>\\BLC-ABA-01\SkywalkAbacusIntegration\Import\Currency\Queue</fullName>
+                <default>false</default>
+                <label>\\BLC-ABA-01\SkywalkAbacusIntegration\Import\Currency\Queue</label>
+            </value>
+            <value>
+                <fullName>\\BLC-ABA-01\SkywalkAbacusIntegration\Import\SupplierInvoice\Queue</fullName>
+                <default>false</default>
+                <label>\\BLC-ABA-01\SkywalkAbacusIntegration\Import\SupplierInvoice\Queue</label>
+            </value>
+            <value>
+                <fullName>none</fullName>
+                <default>false</default>
+                <label>none</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Invoice Export</controllingFieldValue>
+            <controllingFieldValue>Cancellation Export</controllingFieldValue>
+            <valueName>\\BLC-ABA-01\SkywalkAbacusIntegration\Export\Invoice\Queue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Staff Hour Export</controllingFieldValue>
+            <valueName>\\BLC-ABA-01\SkywalkAbacusIntegration\Export\StaffHour\Queue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Debtor Upsert</controllingFieldValue>
+            <controllingFieldValue>Account Supplier Upsert</controllingFieldValue>
+            <valueName>\\BLC-ABA-01\SkywalkAbacusIntegration\Export\Account\Queue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Currency Import</controllingFieldValue>
+            <valueName>none</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

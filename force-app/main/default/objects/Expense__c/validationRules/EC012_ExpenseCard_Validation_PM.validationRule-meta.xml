@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EC012_ExpenseCard_Validation_PM</fullName>
+    <active>true</active>
+    <description>The Expense Card can not be changed when validated.</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+NOT($User.IsProjectManager__c),
+NOT($User.PS180RoleFinanceApprover__c )
+,
+OR(
+ ExpenseValidatedFinance__c  =true ,
+ ExpenseValidatedProjectResponsible__c  =true
+)
+)</errorConditionFormula>
+    <errorMessage>You are not allowed to make changes to validated expense cards.
+(EC012)</errorMessage>
+</ValidationRule>

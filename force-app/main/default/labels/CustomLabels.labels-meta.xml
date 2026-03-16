@@ -1,0 +1,2314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>BLC_Footer1</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BLC_Footer1</shortDescription>
+        <value>BRAND LEADERSHIP MANAGEMENT AG</value>
+    </labels>
+    <labels>
+        <fullName>BLC_Footer2</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BLC_Footer2</shortDescription>
+        <value>SENNWEIDSTRASSE 35 – 6312 STEINHAUSEN – SWITZERLAND – T +41 41 748 44 00</value>
+    </labels>
+    <labels>
+        <fullName>BLC_Footer3</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BLC_Footer3</shortDescription>
+        <value>INFO@BRANDLEADERSHIP.CH – WWW.BRANDLEADERSHIP.CH</value>
+    </labels>
+    <labels>
+        <fullName>Bank_Account</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Bank_Account</shortDescription>
+        <value>Bank Account:</value>
+    </labels>
+    <labels>
+        <fullName>Bank_Clearing</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Bank_Clearing</shortDescription>
+        <value>Bank Clearing</value>
+    </labels>
+    <labels>
+        <fullName>BillingAddressCity</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BillingAddressCity</shortDescription>
+        <value>Billing Address City</value>
+    </labels>
+    <labels>
+        <fullName>BillingAddressStreetNr</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Address Street, Nr</shortDescription>
+        <value>Billing Address Street Nr</value>
+    </labels>
+    <labels>
+        <fullName>BillingAddressZIP</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BillingAddressZIP</shortDescription>
+        <value>Billing Address ZIP</value>
+    </labels>
+    <labels>
+        <fullName>CHF</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHF</shortDescription>
+        <value>CHF</value>
+    </labels>
+    <labels>
+        <fullName>CancelationInvoice</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DocumentNr</shortDescription>
+        <value>Cancellation Number</value>
+    </labels>
+    <labels>
+        <fullName>Cancellation_Invoice</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancellation Invoice</shortDescription>
+        <value>CANCELLATION-INVOICE</value>
+    </labels>
+    <labels>
+        <fullName>Cancellation_reason</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>cancellation reason</shortDescription>
+        <value>Cancellation reason:</value>
+    </labels>
+    <labels>
+        <fullName>DocumentNr</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DocumentNr</shortDescription>
+        <value>Document No.</value>
+    </labels>
+    <labels>
+        <fullName>Focusnext_Footer1</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Focusnext_Footer1</shortDescription>
+        <value>FOCUSNEXT - EINE INITIATIVE DER BRAND LEADERSHIP MANAGEMENT AG</value>
+    </labels>
+    <labels>
+        <fullName>Focusnext_Footer3</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Focusnext_Footer3</shortDescription>
+        <value>TEAM@FOCUSNEXT.CH-WWW.FOCUSNEXT.CH</value>
+    </labels>
+    <labels>
+        <fullName>FooterLine1</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FooterLine1</shortDescription>
+        <value>gateB AG, Sennweidstrasse 35, CH-6312 Steinhausen</value>
+    </labels>
+    <labels>
+        <fullName>FooterLine2</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FooterLine2</shortDescription>
+        <value>+41 41 748 64 00, info@gateB.com, www.gateb.com</value>
+    </labels>
+    <labels>
+        <fullName>FooterLine3</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FooterLine3</shortDescription>
+        <value>Member of the Brand Leadership Circle</value>
+    </labels>
+    <labels>
+        <fullName>Footer_GateB_Singapore_1</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Footer GateB Singapore 1</shortDescription>
+        <value>gateB Singapore Pte Ltd</value>
+    </labels>
+    <labels>
+        <fullName>Footer_GateB_Singapore_2</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Footer GateB Singapore 2</shortDescription>
+        <value>4, Battery Road, #25-01 Bank of China Building, Singapore 049908</value>
+    </labels>
+    <labels>
+        <fullName>GST</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GST</shortDescription>
+        <value>GST</value>
+    </labels>
+    <labels>
+        <fullName>GateB_footer</fullName>
+        <categories>Invoice PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GateB footer</shortDescription>
+        <value>BRAND LEADERSHIP MANAGEMENT AG</value>
+    </labels>
+    <labels>
+        <fullName>GateB_footer2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GateB footer2</shortDescription>
+        <value>BRAND LEADERSHIP MANAGEMENT AG</value>
+    </labels>
+    <labels>
+        <fullName>Grand_Total</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Grand_Total</shortDescription>
+        <value>GRAND TOTAL</value>
+    </labels>
+    <labels>
+        <fullName>Grand_TotalGST</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Grand_TotalGST</shortDescription>
+        <value>GRAND TOTAL SGD INCL. GST</value>
+    </labels>
+    <labels>
+        <fullName>HRB</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HRB</shortDescription>
+        <value>HRB: 172838</value>
+    </labels>
+    <labels>
+        <fullName>Hilda_message_de</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Hilda_message_de</shortDescription>
+        <value>We take the liberty of invoicing our expenses as follows</value>
+    </labels>
+    <labels>
+        <fullName>HouseManus_Footer1</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HouseManus_Footer1</shortDescription>
+        <value>HOUSE OF MANUS AG</value>
+    </labels>
+    <labels>
+        <fullName>HouseManus_Footer2</fullName>
+        <categories>Invoice PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HouseManus_Footer2</shortDescription>
+        <value>SENNWEIDSTRASSE 35 – 6312 STEINHAUSEN – SWITZERLAND – T +41 41 748 44 00</value>
+    </labels>
+    <labels>
+        <fullName>HouseManus_Footer3</fullName>
+        <categories>Invoice PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HouseManus_Footer3</shortDescription>
+        <value>WORKSHOP@HOUSEOFMANUS.CH – WWW.HOUSEOFMANUS.CH</value>
+    </labels>
+    <labels>
+        <fullName>IBAN</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IBAN</shortDescription>
+        <value>IBAN</value>
+    </labels>
+    <labels>
+        <fullName>IBAN_CostCenter_Invoice</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IBAN_CostCenter Invoice</shortDescription>
+        <value>Cost Center CHF QR IBAN</value>
+    </labels>
+    <labels>
+        <fullName>IBAN_Invoice</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IBAN</shortDescription>
+        <value>IBAN</value>
+    </labels>
+    <labels>
+        <fullName>INKL_VAT</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>INKL_VAT</shortDescription>
+        <value>incl. VAT</value>
+    </labels>
+    <labels>
+        <fullName>IntermediateTotal</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IntermediateTotal</shortDescription>
+        <value>Intermediate total</value>
+    </labels>
+    <labels>
+        <fullName>Invoice</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invoice</shortDescription>
+        <value>INVOICE</value>
+    </labels>
+    <labels>
+        <fullName>InvoiceContact</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InvoiceContact</shortDescription>
+        <value>Your contact</value>
+    </labels>
+    <labels>
+        <fullName>InvoiceDocNumber</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InvoiceDocNumber</shortDescription>
+        <value>Cancellation for Document No.</value>
+    </labels>
+    <labels>
+        <fullName>InvoiceNr</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InvoiceNr</shortDescription>
+        <value>Invoice number</value>
+    </labels>
+    <labels>
+        <fullName>Invoice_EN</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invoice EN</shortDescription>
+        <value>Invoice</value>
+    </labels>
+    <labels>
+        <fullName>Invoice_Generation_Notification</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invoice Generation Notification</shortDescription>
+        <value>Your Invoice is being generated and will be attached to the invoice record page soon. Click here to go the invoice detail page.</value>
+    </labels>
+    <labels>
+        <fullName>MD_de</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MD_de</shortDescription>
+        <value>Managing directors: Christian Hessdörfer, Olaf Gijseman</value>
+    </labels>
+    <labels>
+        <fullName>Offert_Nr</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Offert_Nr</shortDescription>
+        <value>OFFER-NR.</value>
+    </labels>
+    <labels>
+        <fullName>Offertnummer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Offertnummer</shortDescription>
+        <value>Offertnummer</value>
+    </labels>
+    <labels>
+        <fullName>OrganizationCity</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrganizationCity</shortDescription>
+        <value>Organization City</value>
+    </labels>
+    <labels>
+        <fullName>OrganizationName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrganizationName</shortDescription>
+        <value>Organization Name</value>
+    </labels>
+    <labels>
+        <fullName>OrganizationPostalCode</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrganizationPostalCode</shortDescription>
+        <value>Organization Postal Code</value>
+    </labels>
+    <labels>
+        <fullName>OrganizationStreet</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrganizationStreet</shortDescription>
+        <value>Organization Street</value>
+    </labels>
+    <labels>
+        <fullName>Period</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Period</shortDescription>
+        <value>Performance period</value>
+    </labels>
+    <labels>
+        <fullName>Period_Service</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Period_Service</shortDescription>
+        <value>Period of Services</value>
+    </labels>
+    <labels>
+        <fullName>ProjectInvoiceCurrency</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProjectInvoiceCurrency</shortDescription>
+        <value>Project / Invoice Currency</value>
+    </labels>
+    <labels>
+        <fullName>ProjectName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProjectName</shortDescription>
+        <value>Project Name</value>
+    </labels>
+    <labels>
+        <fullName>QRInvoicePrefix</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QRInvoicePrefix</shortDescription>
+        <value>QR_Invoice</value>
+    </labels>
+    <labels>
+        <fullName>QR_Bill_Code_Generic_Error</fullName>
+        <categories>QR Bill Code</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QR Bill Code - Generic Error</shortDescription>
+        <value>An error occurred while generating the document. Please contact a system administrator.</value>
+    </labels>
+    <labels>
+        <fullName>QuoteNo</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuoteNo</shortDescription>
+        <value>Quote No.</value>
+    </labels>
+    <labels>
+        <fullName>QuoteNr</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuoteNr</shortDescription>
+        <value>Quote No.</value>
+    </labels>
+    <labels>
+        <fullName>Rechnungs_Nr</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Rechnungs-Nr</shortDescription>
+        <value>INVOICE NUMBER</value>
+    </labels>
+    <labels>
+        <fullName>Reference</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Reference</shortDescription>
+        <value>Your Reference / PO Number</value>
+    </labels>
+    <labels>
+        <fullName>Refernznummer_lang</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Refernznummer_lang</shortDescription>
+        <value>Your Reference / PO-Number</value>
+    </labels>
+    <labels>
+        <fullName>SWIFT</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SWIFT</shortDescription>
+        <value>SWIFT/BIC</value>
+    </labels>
+    <labels>
+        <fullName>SkyALLOWANCE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ALLOWANCE</shortDescription>
+        <value>ALLOWANCE</value>
+    </labels>
+    <labels>
+        <fullName>SkyAbacusTimeType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Abacus Time Type</shortDescription>
+        <value>Abacus Time Type</value>
+    </labels>
+    <labels>
+        <fullName>SkyAbort</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Abort</shortDescription>
+        <value>Abort</value>
+    </labels>
+    <labels>
+        <fullName>SkyAbsence</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Absence</shortDescription>
+        <value>Absence</value>
+    </labels>
+    <labels>
+        <fullName>SkyActual</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Actual</shortDescription>
+        <value>Actual</value>
+    </labels>
+    <labels>
+        <fullName>SkyAllcostcentresinvolved</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>All cost centres involved</shortDescription>
+        <value>All cost centres involved</value>
+    </labels>
+    <labels>
+        <fullName>SkyAllowanceLower</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SkyAllowanceLower</shortDescription>
+        <value>Allowance</value>
+    </labels>
+    <labels>
+        <fullName>SkyAreyousureyouwanttocancelthisInvoice</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Are you sure you want to cancel this Invoice?</shortDescription>
+        <value>Are you sure you want to cancel this Invoice?</value>
+    </labels>
+    <labels>
+        <fullName>SkyAreyousureyouwanttodeletethisexpense</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Are you sure you want to delete this expense?</shortDescription>
+        <value>Are you sure you want to delete this expense?</value>
+    </labels>
+    <labels>
+        <fullName>SkyAreyousureyouwanttodeletethispackage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Are you sure you want to delete this package?</shortDescription>
+        <value>Are you sure you want to delete this service?</value>
+    </labels>
+    <labels>
+        <fullName>SkyAreyousureyouwanttodeletethistimeentry</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Are you sure you want to delete this time entry?</shortDescription>
+        <value>Are you sure you want to delete this time entry?</value>
+    </labels>
+    <labels>
+        <fullName>SkyBUDGET</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BUDGET</shortDescription>
+        <value>BUDGET</value>
+    </labels>
+    <labels>
+        <fullName>SkyBillerAccount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Biller Account</shortDescription>
+        <value>Biller Account</value>
+    </labels>
+    <labels>
+        <fullName>SkyBilling</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing</shortDescription>
+        <value>Billing</value>
+    </labels>
+    <labels>
+        <fullName>SkyBillingNotes</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Notes</shortDescription>
+        <value>Billing Notes</value>
+    </labels>
+    <labels>
+        <fullName>SkyBillingRate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Rate</shortDescription>
+        <value>Billing Rate</value>
+    </labels>
+    <labels>
+        <fullName>SkyBudgetAssign</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Budget - Assign</shortDescription>
+        <value>Budget - Assign</value>
+    </labels>
+    <labels>
+        <fullName>SkyBusinessReason</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Business Reason</shortDescription>
+        <value>Business Reason</value>
+    </labels>
+    <labels>
+        <fullName>SkyCancelInvoice</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancel Invoice</shortDescription>
+        <value>Cancel Invoice</value>
+    </labels>
+    <labels>
+        <fullName>SkyCar</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Car</shortDescription>
+        <value>Car</value>
+    </labels>
+    <labels>
+        <fullName>SkyCarTravel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Car Travel</shortDescription>
+        <value>Car Travel</value>
+    </labels>
+    <labels>
+        <fullName>SkyCompany</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SkyCompany</shortDescription>
+        <value>Company</value>
+    </labels>
+    <labels>
+        <fullName>SkyCostCentre</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cost Centre</shortDescription>
+        <value>Cost Centre</value>
+    </labels>
+    <labels>
+        <fullName>SkyCosts</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Costs</shortDescription>
+        <value>Costs</value>
+    </labels>
+    <labels>
+        <fullName>SkyCurr</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SkyCurr</shortDescription>
+        <value>Curr.</value>
+    </labels>
+    <labels>
+        <fullName>SkyCurrency</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Currency</shortDescription>
+        <value>Currency</value>
+    </labels>
+    <labels>
+        <fullName>SkyCustomer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Customer</shortDescription>
+        <value>Customer</value>
+    </labels>
+    <labels>
+        <fullName>SkyDATERANGE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DATE RANGE</shortDescription>
+        <value>Date Range</value>
+    </labels>
+    <labels>
+        <fullName>SkyDIFF</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DIFF</shortDescription>
+        <value>DIFF</value>
+    </labels>
+    <labels>
+        <fullName>SkyDRAFT</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DRAFT</shortDescription>
+        <value>DRAFT</value>
+    </labels>
+    <labels>
+        <fullName>SkyDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Date</shortDescription>
+        <value>Date</value>
+    </labels>
+    <labels>
+        <fullName>SkyDateFrom</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Date From</shortDescription>
+        <value>Date From</value>
+    </labels>
+    <labels>
+        <fullName>SkyDateUntil</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Date Until</shortDescription>
+        <value>Date Until</value>
+    </labels>
+    <labels>
+        <fullName>SkyDelete</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Delete</shortDescription>
+        <value>Delete</value>
+    </labels>
+    <labels>
+        <fullName>SkyDescription</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Description</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>SkyDifference</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Difference</shortDescription>
+        <value>Difference</value>
+    </labels>
+    <labels>
+        <fullName>SkyDistance</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Distance</shortDescription>
+        <value>Distance</value>
+    </labels>
+    <labels>
+        <fullName>SkyDone</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Done</shortDescription>
+        <value>Done</value>
+    </labels>
+    <labels>
+        <fullName>SkyDuration</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Duration (HH:MM)</shortDescription>
+        <value>Duration (HH:MM)</value>
+    </labels>
+    <labels>
+        <fullName>SkyDurationOnly</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Duration</shortDescription>
+        <value>Duration</value>
+    </labels>
+    <labels>
+        <fullName>SkyEXPENSE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EXPENSE</shortDescription>
+        <value>Expense</value>
+    </labels>
+    <labels>
+        <fullName>SkyEdit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Edit</shortDescription>
+        <value>Edit</value>
+    </labels>
+    <labels>
+        <fullName>SkyEmployee</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Employee</shortDescription>
+        <value>Employee</value>
+    </labels>
+    <labels>
+        <fullName>SkyEmployeeName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SkyEmployeeName</shortDescription>
+        <value>Employee Name</value>
+    </labels>
+    <labels>
+        <fullName>SkyEndTime</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>End Time</shortDescription>
+        <value>End Time</value>
+    </labels>
+    <labels>
+        <fullName>SkyExpenseAllowance</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Expense Allowance %</shortDescription>
+        <value>Expense Allowance %</value>
+    </labels>
+    <labels>
+        <fullName>SkyExpenseBillingType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Expense Billing Type</shortDescription>
+        <value>Expense Billing Type</value>
+    </labels>
+    <labels>
+        <fullName>SkyExpenseDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Expense Date</shortDescription>
+        <value>Expense Date</value>
+    </labels>
+    <labels>
+        <fullName>SkyExpenseDescription</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Expense Description</shortDescription>
+        <value>Expense Description</value>
+    </labels>
+    <labels>
+        <fullName>SkyExpenseGross</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Expense Gross</shortDescription>
+        <value>Expense Gross</value>
+    </labels>
+    <labels>
+        <fullName>SkyExpenseNr</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Expense Nr.</shortDescription>
+        <value>Expense Nr.</value>
+    </labels>
+    <labels>
+        <fullName>SkyExpenseSubType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Expense Sub-Type</shortDescription>
+        <value>Expense Sub-Type</value>
+    </labels>
+    <labels>
+        <fullName>SkyExpenseTracker</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Expense Tracker</shortDescription>
+        <value>Expense Tracker</value>
+    </labels>
+    <labels>
+        <fullName>SkyExpenseType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Expense Type</shortDescription>
+        <value>Expense Type</value>
+    </labels>
+    <labels>
+        <fullName>SkyFilter</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Filter</shortDescription>
+        <value>Filter</value>
+    </labels>
+    <labels>
+        <fullName>SkyFinanceDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Finance Date</shortDescription>
+        <value>Finance Date</value>
+    </labels>
+    <labels>
+        <fullName>SkyFrom</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>From</shortDescription>
+        <value>Date From</value>
+    </labels>
+    <labels>
+        <fullName>SkyGotoILV</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Go to ILV.</shortDescription>
+        <value>Go to ILV.</value>
+    </labels>
+    <labels>
+        <fullName>SkyGotoInvoice</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Go to Invoice.</shortDescription>
+        <value>Go to Invoice.</value>
+    </labels>
+    <labels>
+        <fullName>SkyHumanResources</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Human Resources</shortDescription>
+        <value>Human Resources</value>
+    </labels>
+    <labels>
+        <fullName>SkyILV</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ILV</shortDescription>
+        <value>ILV</value>
+    </labels>
+    <labels>
+        <fullName>SkyINVOICE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>INVOICE</shortDescription>
+        <value>INVOICE</value>
+    </labels>
+    <labels>
+        <fullName>SkyInclSC</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Incl. SC</shortDescription>
+        <value>incl. SC</value>
+    </labels>
+    <labels>
+        <fullName>SkyInvoiceDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invoice Date</shortDescription>
+        <value>Invoice Date</value>
+    </labels>
+    <labels>
+        <fullName>SkyInvoiceDescription</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invoice Description</shortDescription>
+        <value>Invoice Description</value>
+    </labels>
+    <labels>
+        <fullName>SkyInvoiceReceiver</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invoice Receiver</shortDescription>
+        <value>Invoice Receiver</value>
+    </labels>
+    <labels>
+        <fullName>SkyInvoiceText</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invoice Text</shortDescription>
+        <value>Invoice Text</value>
+    </labels>
+    <labels>
+        <fullName>SkyInvoiceTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invoice Title</shortDescription>
+        <value>Invoice Title</value>
+    </labels>
+    <labels>
+        <fullName>SkyInvoiced</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invoiced</shortDescription>
+        <value>Invoiced</value>
+    </labels>
+    <labels>
+        <fullName>SkyLegal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Legal</shortDescription>
+        <value>Legal</value>
+    </labels>
+    <labels>
+        <fullName>SkyListCosts</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>List Costs</shortDescription>
+        <value>List Costs</value>
+    </labels>
+    <labels>
+        <fullName>SkyListTime</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>List Time</shortDescription>
+        <value>List Time</value>
+    </labels>
+    <labels>
+        <fullName>SkyListofNames</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>List of Names</shortDescription>
+        <value>List of Names</value>
+    </labels>
+    <labels>
+        <fullName>SkyLoadPackages</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Load Packages</shortDescription>
+        <value>Load Costs</value>
+    </labels>
+    <labels>
+        <fullName>SkyLocalCurrency</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Local Currency</shortDescription>
+        <value>Local Currency</value>
+    </labels>
+    <labels>
+        <fullName>SkyLocationDate</fullName>
+        <language>de</language>
+        <protected>false</protected>
+        <shortDescription>SkyLocationDate</shortDescription>
+        <value>Location, Date</value>
+    </labels>
+    <labels>
+        <fullName>SkyNEW</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NEW</shortDescription>
+        <value>NEW</value>
+    </labels>
+    <labels>
+        <fullName>SkyNext</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Next</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>SkyNoinvoicepositionstoshow</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No invoice positions to show.</shortDescription>
+        <value>No invoice positions to show.</value>
+    </labels>
+    <labels>
+        <fullName>SkyNoresultsfound</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No results found</shortDescription>
+        <value>No results found</value>
+    </labels>
+    <labels>
+        <fullName>SkyNoresultsfoundforthisdaterange</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No results found for this date range.</shortDescription>
+        <value>No results found for this date range.</value>
+    </labels>
+    <labels>
+        <fullName>SkyNr</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SkyNr</shortDescription>
+        <value>Nr</value>
+    </labels>
+    <labels>
+        <fullName>SkyOrderReference</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order / Reference</shortDescription>
+        <value>Order / Reference</value>
+    </labels>
+    <labels>
+        <fullName>SkyOutofScope</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Out of Scope?</shortDescription>
+        <value>Out of Scope?</value>
+    </labels>
+    <labels>
+        <fullName>SkyPM</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PM</shortDescription>
+        <value>PM</value>
+    </labels>
+    <labels>
+        <fullName>SkyPMAllowance</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PM Allowance %</shortDescription>
+        <value>PM Allowance %</value>
+    </labels>
+    <labels>
+        <fullName>SkyPMBillingType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PM Billing Type</shortDescription>
+        <value>PM Billing Type</value>
+    </labels>
+    <labels>
+        <fullName>SkyPackage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package</shortDescription>
+        <value>Service</value>
+    </labels>
+    <labels>
+        <fullName>SkyPackageName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package Name</shortDescription>
+        <value>Service Name</value>
+    </labels>
+    <labels>
+        <fullName>SkyPackageNr</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package Nr</shortDescription>
+        <value>Service Nr.</value>
+    </labels>
+    <labels>
+        <fullName>SkyPackageStatus</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package Status</shortDescription>
+        <value>Service Status</value>
+    </labels>
+    <labels>
+        <fullName>SkyPackageType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package Type</shortDescription>
+        <value>Service Type</value>
+    </labels>
+    <labels>
+        <fullName>SkyPaymentType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Payment Type</shortDescription>
+        <value>Payment Type</value>
+    </labels>
+    <labels>
+        <fullName>SkyPermissionError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Permission Error</shortDescription>
+        <value>Permission Error</value>
+    </labels>
+    <labels>
+        <fullName>SkyPleasefilloutthesefieldscorrectly</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please fill out these fields correctly:</shortDescription>
+        <value>Please fill out these fields correctly:</value>
+    </labels>
+    <labels>
+        <fullName>SkyPleasemakesureallfieldsarefilledout</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please make sure all fields are filled out</shortDescription>
+        <value>Please make sure all fields are filled out</value>
+    </labels>
+    <labels>
+        <fullName>SkyPos</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pos</shortDescription>
+        <value>Pos</value>
+    </labels>
+    <labels>
+        <fullName>SkyPreviewInvoice</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Preview Invoice</shortDescription>
+        <value>Preview Invoice</value>
+    </labels>
+    <labels>
+        <fullName>SkyPrevious</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Previous</shortDescription>
+        <value>Previous</value>
+    </labels>
+    <labels>
+        <fullName>SkyPrint</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SkyPrint</shortDescription>
+        <value>Print</value>
+    </labels>
+    <labels>
+        <fullName>SkyProject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Project</shortDescription>
+        <value>Project</value>
+    </labels>
+    <labels>
+        <fullName>SkyProjectBilling</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Project Billing</shortDescription>
+        <value>Project Billing</value>
+    </labels>
+    <labels>
+        <fullName>SkyProjectManager</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Project Manager</shortDescription>
+        <value>Project Manager</value>
+    </labels>
+    <labels>
+        <fullName>SkyProjectName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Project Name</shortDescription>
+        <value>Project Name</value>
+    </labels>
+    <labels>
+        <fullName>SkyProjectNr</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Project-Nr.</shortDescription>
+        <value>Project Nr.</value>
+    </labels>
+    <labels>
+        <fullName>SkyProjectRate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Project Rate</shortDescription>
+        <value>Project Rate</value>
+    </labels>
+    <labels>
+        <fullName>SkyProjectStructure</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Project Structure</shortDescription>
+        <value>Project Structure</value>
+    </labels>
+    <labels>
+        <fullName>SkyProjectSubType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SkyProjectSubType</shortDescription>
+        <value>Project Subtype</value>
+    </labels>
+    <labels>
+        <fullName>SkyProjectType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SkyProjectType</shortDescription>
+        <value>Project Type</value>
+    </labels>
+    <labels>
+        <fullName>SkyProjectValidation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Project Validation</shortDescription>
+        <value>Project Validation</value>
+    </labels>
+    <labels>
+        <fullName>SkyREVENUE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>REVENUE</shortDescription>
+        <value>REVENUE</value>
+    </labels>
+    <labels>
+        <fullName>SkyRate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SkyRate</shortDescription>
+        <value>Rate</value>
+    </labels>
+    <labels>
+        <fullName>SkyRateHour</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Rate (Hour)</shortDescription>
+        <value>Rate (Hour)</value>
+    </labels>
+    <labels>
+        <fullName>SkyReceipt</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Receipt</shortDescription>
+        <value>Receipt</value>
+    </labels>
+    <labels>
+        <fullName>SkyRemove</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Remove</shortDescription>
+        <value>Remove</value>
+    </labels>
+    <labels>
+        <fullName>SkyResponsibleBusiness</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Responsible Business</shortDescription>
+        <value>Responsible Business</value>
+    </labels>
+    <labels>
+        <fullName>SkyRevenueRate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Revenue Rate</shortDescription>
+        <value>Revenue Rate</value>
+    </labels>
+    <labels>
+        <fullName>SkySERVICES</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SERVICES</shortDescription>
+        <value>SERVICES</value>
+    </labels>
+    <labels>
+        <fullName>SkySave</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Save</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>SkySearchAccounts</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search Accounts</shortDescription>
+        <value>Search Customer</value>
+    </labels>
+    <labels>
+        <fullName>SkySearchCars</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search Cars</shortDescription>
+        <value>Search Cars</value>
+    </labels>
+    <labels>
+        <fullName>SkySearchCreditCards</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search Credit Cards</shortDescription>
+        <value>Search Credit Cards</value>
+    </labels>
+    <labels>
+        <fullName>SkySearchPackages</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search Packages</shortDescription>
+        <value>Search Service</value>
+    </labels>
+    <labels>
+        <fullName>SkySearchProjects</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search Projects</shortDescription>
+        <value>Search Projects</value>
+    </labels>
+    <labels>
+        <fullName>SkySearchTravelPackages</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search Travel Packages</shortDescription>
+        <value>Search Services</value>
+    </labels>
+    <labels>
+        <fullName>SkySearchUsers</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search Users</shortDescription>
+        <value>Search Users</value>
+    </labels>
+    <labels>
+        <fullName>SkySearchWorkPackages</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search Work Packages</shortDescription>
+        <value>Search Services</value>
+    </labels>
+    <labels>
+        <fullName>SkySelectCar</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select Car</shortDescription>
+        <value>Select Car</value>
+    </labels>
+    <labels>
+        <fullName>SkySelectCreditCard</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select Credit Card</shortDescription>
+        <value>Select Credit Card</value>
+    </labels>
+    <labels>
+        <fullName>SkySelectCustomer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select Customer</shortDescription>
+        <value>Select Customer</value>
+    </labels>
+    <labels>
+        <fullName>SkySelectPackage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select Package</shortDescription>
+        <value>Select Service</value>
+    </labels>
+    <labels>
+        <fullName>SkySelectProject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select Project</shortDescription>
+        <value>Select Project</value>
+    </labels>
+    <labels>
+        <fullName>SkyService</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Service</shortDescription>
+        <value>Service</value>
+    </labels>
+    <labels>
+        <fullName>SkyServiceSubType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Service Sub-Type</shortDescription>
+        <value>Service Sub-Type</value>
+    </labels>
+    <labels>
+        <fullName>SkyServiceType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Service Type</shortDescription>
+        <value>Service Type</value>
+    </labels>
+    <labels>
+        <fullName>SkyShowClosedProjects</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Show Closed Projects</shortDescription>
+        <value>Show Closed Projects</value>
+    </labels>
+    <labels>
+        <fullName>SkyShowMyPrivateExpensesForSubmitting</fullName>
+        <language>de</language>
+        <protected>false</protected>
+        <shortDescription>SkyShowMyPrivateExpensesForSubmitting</shortDescription>
+        <value>Show my private expenses for submitting</value>
+    </labels>
+    <labels>
+        <fullName>SkyShowValidatedInvoicedCosts</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Show Validated / Invoiced Costs</shortDescription>
+        <value>Show Validated / Invoiced Costs</value>
+    </labels>
+    <labels>
+        <fullName>SkySignatureEmployee</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SkySignatureEmployee</shortDescription>
+        <value>Signature Employee</value>
+    </labels>
+    <labels>
+        <fullName>SkySignatureManager</fullName>
+        <language>de</language>
+        <protected>false</protected>
+        <shortDescription>SkySignatureManager</shortDescription>
+        <value>Signature Manager</value>
+    </labels>
+    <labels>
+        <fullName>SkySomethingwentwrongandwewerenotable</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Something went wrong and we were not able to save the time entry.</shortDescription>
+        <value>Something went wrong and we were not able to save the time entry.</value>
+    </labels>
+    <labels>
+        <fullName>SkySomethingwentwrongandwewerenotabletoloadthecosts</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Something went wrong and we were not able to load the costs.</shortDescription>
+        <value>Something went wrong and we were not able to load the costs.</value>
+    </labels>
+    <labels>
+        <fullName>SkySomethingwentwrongandwewerenotabletosavetheabsencetimeentry</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Something went wrong and we were not able to save the absence time entry.</shortDescription>
+        <value>Something went wrong and we were not able to save the absence time entry.</value>
+    </labels>
+    <labels>
+        <fullName>SkySomethingwentwrongandwewerenotabletosavetheinvoice</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Something went wrong and we were not able to save the invoice.</shortDescription>
+        <value>Something went wrong and we were not able to save the invoice.</value>
+    </labels>
+    <labels>
+        <fullName>SkySomethingwentwrongandwewerenotabletovalidatetheselectedcosts</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Something went wrong and we were not able to validate the selected costs.</shortDescription>
+        <value>Something went wrong and we were not able to validate the selected costs.</value>
+    </labels>
+    <labels>
+        <fullName>SkySomethingwentwrongandwewerenotabletovalidatethetimeentries</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Something went wrong and we were not able to validate the time entries.</shortDescription>
+        <value>Something went wrong and we were not able to validate the time entries.</value>
+    </labels>
+    <labels>
+        <fullName>SkySomethingwentwrongwithretrievingthedata</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Something went wrong with retrieving the data.</shortDescription>
+        <value>Something went wrong with retrieving the data.</value>
+    </labels>
+    <labels>
+        <fullName>SkySort</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sort</shortDescription>
+        <value>Sort</value>
+    </labels>
+    <labels>
+        <fullName>SkySpecific</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SkySpecific</shortDescription>
+        <value>Specific</value>
+    </labels>
+    <labels>
+        <fullName>SkySpecificRate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Specific Rate</shortDescription>
+        <value>Specific Rate</value>
+    </labels>
+    <labels>
+        <fullName>SkyStartTime</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Start Time</shortDescription>
+        <value>Start Time</value>
+    </labels>
+    <labels>
+        <fullName>SkySubType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sub-Type</shortDescription>
+        <value>Sub-Type</value>
+    </labels>
+    <labels>
+        <fullName>SkySubmit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Submit</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>SkySubtotal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SkySubtotal</shortDescription>
+        <value>Subtotal</value>
+    </labels>
+    <labels>
+        <fullName>SkySupplierCosts</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Supplier Costs</shortDescription>
+        <value>Supplier Costs</value>
+    </labels>
+    <labels>
+        <fullName>SkySupplierCostsNr</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Supplier Costs Nr.</shortDescription>
+        <value>Supplier Costs Nr.</value>
+    </labels>
+    <labels>
+        <fullName>SkySupplierReceiverLocation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Supplier / Receiver / Location</shortDescription>
+        <value>Supplier / Receiver / Location</value>
+    </labels>
+    <labels>
+        <fullName>SkyTarget</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Target</shortDescription>
+        <value>Target</value>
+    </labels>
+    <labels>
+        <fullName>SkyText</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Text</shortDescription>
+        <value>Text</value>
+    </labels>
+    <labels>
+        <fullName>SkyTextPosition</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Text Position</shortDescription>
+        <value>Text Position</value>
+    </labels>
+    <labels>
+        <fullName>SkyTheILVhasbeencreatedwithstatusDraft</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The ILV has been created with status &quot;Draft&quot;.</shortDescription>
+        <value>The ILV has been created with status &quot;Draft&quot;.</value>
+    </labels>
+    <labels>
+        <fullName>SkyTheInvoicehasbeencreatedwithstatusDraft</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The Invoice has been created with status &quot;Draft&quot;.</shortDescription>
+        <value>The Invoice has been created with status &quot;Draft&quot;.</value>
+    </labels>
+    <labels>
+        <fullName>SkyThechangeshavebeensaved</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The changes have been saved.</shortDescription>
+        <value>The changes have been saved.</value>
+    </labels>
+    <labels>
+        <fullName>SkyThecostshavebeenvalidatedThepagehasbeenrefreshed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The costs have been validated. The page has been refreshed.</shortDescription>
+        <value>The costs have been validated. The page has been refreshed.</value>
+    </labels>
+    <labels>
+        <fullName>SkyThetimeentriesforthisemployeehavebeenvalidated</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The time entries for this employee have been validated. The page has been refres</shortDescription>
+        <value>The time entries for this employee have been validated. The page has been refreshed.</value>
+    </labels>
+    <labels>
+        <fullName>SkyThisprojecthasincompletedataPleaseverifyandrefreshthepage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>This project has incomplete data. Please verify and refresh the page.</shortDescription>
+        <value>This project has incomplete data. Please verify and refresh the page.</value>
+    </labels>
+    <labels>
+        <fullName>SkyTime</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Time</shortDescription>
+        <value>Time</value>
+    </labels>
+    <labels>
+        <fullName>SkyTimeNr</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Time Nr.</shortDescription>
+        <value>Time Nr.</value>
+    </labels>
+    <labels>
+        <fullName>SkyTimetracker</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Timetracker</shortDescription>
+        <value>Timetracker</value>
+    </labels>
+    <labels>
+        <fullName>SkyToday</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Today</shortDescription>
+        <value>Today</value>
+    </labels>
+    <labels>
+        <fullName>SkyTotal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Total</shortDescription>
+        <value>Total</value>
+    </labels>
+    <labels>
+        <fullName>SkyTrackExpensefor</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Track Expense for</shortDescription>
+        <value>Track Expense for</value>
+    </labels>
+    <labels>
+        <fullName>SkyTrackTimefor</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Track Time for</shortDescription>
+        <value>Track Time for</value>
+    </labels>
+    <labels>
+        <fullName>SkyTrackfor</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Track for</shortDescription>
+        <value>Track for</value>
+    </labels>
+    <labels>
+        <fullName>SkyTravel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Travel</shortDescription>
+        <value>Travel</value>
+    </labels>
+    <labels>
+        <fullName>SkyType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Type</shortDescription>
+        <value>Type</value>
+    </labels>
+    <labels>
+        <fullName>SkyUntil</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Until</shortDescription>
+        <value>Date Until</value>
+    </labels>
+    <labels>
+        <fullName>SkyUpdateILV</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Update ILV</shortDescription>
+        <value>Create / Update Draft ILV</value>
+    </labels>
+    <labels>
+        <fullName>SkyUpdateInvoice</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Update Invoice</shortDescription>
+        <value>Create / Update Draft Invoice</value>
+    </labels>
+    <labels>
+        <fullName>SkyVAT</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VAT %</shortDescription>
+        <value>VAT %</value>
+    </labels>
+    <labels>
+        <fullName>SkyVal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SkyVal</shortDescription>
+        <value>Val.</value>
+    </labels>
+    <labels>
+        <fullName>SkyValidate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Validate</shortDescription>
+        <value>Validate</value>
+    </labels>
+    <labels>
+        <fullName>SkyValidateSelectedCosts</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Validate Selected Costs</shortDescription>
+        <value>Validate Selected Costs</value>
+    </labels>
+    <labels>
+        <fullName>SkyValidateTime</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Validate Time</shortDescription>
+        <value>Validate Time</value>
+    </labels>
+    <labels>
+        <fullName>SkyValidated</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Validated</shortDescription>
+        <value>Validated</value>
+    </labels>
+    <labels>
+        <fullName>SkyView</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>View</shortDescription>
+        <value>View</value>
+    </labels>
+    <labels>
+        <fullName>SkyWithoutDRAFT</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>w/o DRAFT</shortDescription>
+        <value>w/o DRAFT</value>
+    </labels>
+    <labels>
+        <fullName>SkyWork</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Work</shortDescription>
+        <value>Work</value>
+    </labels>
+    <labels>
+        <fullName>SkyYouarenotallowedtoopentheProjectStructure</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>You are not allowed to open the Project Structure. Please get in touch with your</shortDescription>
+        <value>You do not have the permission for this function. Please get in touch with your Super User</value>
+    </labels>
+    <labels>
+        <fullName>Skywalk_PackageSpecificRateToTrue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Skywalk_Package Specific Rate&quot; to TRUE</shortDescription>
+        <value>You must set the checkbox &quot;Service Specific Rate&quot; to TRUE if you want to assign a different Rate to the Service than to the Project (Custom Trigger)</value>
+    </labels>
+    <labels>
+        <fullName>Studio_Hotz_Footer1</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Studio_Hotz_Footer1</shortDescription>
+        <value>Victor Hotz AG · Sennweidstrasse 35 · CH-6312 Steinhausen</value>
+    </labels>
+    <labels>
+        <fullName>Studio_Hotz_Footer2</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Studio_Hotz_Footer2</shortDescription>
+        <value>T +41 41 748 44 44 · mail@studiovictorhotz.com · studiovictorhotz.com</value>
+    </labels>
+    <labels>
+        <fullName>Tax_Id</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Tax Id</shortDescription>
+        <value>Your TAX ID</value>
+    </labels>
+    <labels>
+        <fullName>TermsPayment</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TermsPayment</shortDescription>
+        <value>Terms of payment</value>
+    </labels>
+    <labels>
+        <fullName>Total</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Total</shortDescription>
+        <value>Invoice total</value>
+    </labels>
+    <labels>
+        <fullName>Total_Amount</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Total Amount</shortDescription>
+        <value>Total</value>
+    </labels>
+    <labels>
+        <fullName>Total_Amount_Gross</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Total Amount Gross</shortDescription>
+        <value>TOTAL INCL. VAT</value>
+    </labels>
+    <labels>
+        <fullName>Total_Gross</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Total_Gross</shortDescription>
+        <value>Total</value>
+    </labels>
+    <labels>
+        <fullName>Total_including_VAT</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Total including VAT</shortDescription>
+        <value>Total invoice including VAT in</value>
+    </labels>
+    <labels>
+        <fullName>VAT_7</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VAT_7</shortDescription>
+        <value>VAT 7.7%</value>
+    </labels>
+    <labels>
+        <fullName>VAT_Amount</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VAT Amount</shortDescription>
+        <value>VAT</value>
+    </labels>
+    <labels>
+        <fullName>VAT_Footer</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VAT_Footer</shortDescription>
+        <value>Our VAT Nr. CHE-143.204.439 VAT</value>
+    </labels>
+    <labels>
+        <fullName>VAT_Footer_DE</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VAT_Footer_DE</shortDescription>
+        <value>Unsere MwSt-Nr. CHE-143.204.439 MWST</value>
+    </labels>
+    <labels>
+        <fullName>VAT_inkl</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VAT_inkl</shortDescription>
+        <value>incl. value-added tax</value>
+    </labels>
+    <labels>
+        <fullName>Vat_Number</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Vat Number</shortDescription>
+        <value>Your Vat Number</value>
+    </labels>
+    <labels>
+        <fullName>agency_services</fullName>
+        <categories>Invoice_Pdf</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>agency_services</shortDescription>
+        <value>Agency Services</value>
+    </labels>
+    <labels>
+        <fullName>bank_connection</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>bank_connection</shortDescription>
+        <value>Bank Connection</value>
+    </labels>
+    <labels>
+        <fullName>blc_Cancel_Footerline2</fullName>
+        <categories>Invoice PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>blc_Cancel_Footerline2</shortDescription>
+        <value>SENNWEIDSTRASSE 35 - 6312 STEINHAUSEN - SWITZERLAND - T +41 41 748 44 00</value>
+    </labels>
+    <labels>
+        <fullName>blc_Cancel_Footerline3</fullName>
+        <categories>Invoice PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>blc_Cancel_Footerline3</shortDescription>
+        <value>INFO@BRANDLEADERSHIP.CH - WWW.BRANDLEADERSHIP.CH</value>
+    </labels>
+    <labels>
+        <fullName>blc_Footerline1</fullName>
+        <categories>Invoice PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>blc_Footerline1</shortDescription>
+        <value>BRAND LEADERSHIP MANAGEMENT AG</value>
+    </labels>
+    <labels>
+        <fullName>calydo_line1</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>calydo_line1</shortDescription>
+        <value>Calydo AG</value>
+    </labels>
+    <labels>
+        <fullName>calydo_line2</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>calydo_line2</shortDescription>
+        <value>Sennweidstrasse 35</value>
+    </labels>
+    <labels>
+        <fullName>calydo_line3</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>calydo_line3</shortDescription>
+        <value>6312 Steinhausen</value>
+    </labels>
+    <labels>
+        <fullName>calydo_line4</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>calydo_line4</shortDescription>
+        <value>Switzerland</value>
+    </labels>
+    <labels>
+        <fullName>calydo_line5</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>calydo_line5</shortDescription>
+        <value>calydo.com</value>
+    </labels>
+    <labels>
+        <fullName>cancellation_title</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancellation title</shortDescription>
+        <value>Cancellation</value>
+    </labels>
+    <labels>
+        <fullName>fflib_QueryFactory_crossobject_fieldsets_not_allowed_error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error when selecting a cross-object fieldsset is not allowed and attempted.</shortDescription>
+        <value>Cross-object fields not allowed and field &quot;{0}&quot; is a cross-object field.</value>
+    </labels>
+    <labels>
+        <fullName>fflib_QueryFactory_fieldset_wrong_sobject_error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error when selecting a field set for a different sobject type.</shortDescription>
+        <value>Field set &quot;{0}&quot; is not for SObject type &quot;{1}&quot;</value>
+    </labels>
+    <labels>
+        <fullName>fflib_QueryFactory_recursive_subquery_error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Presented when attempting to nest subqueries.</shortDescription>
+        <value>Invalid call to subselectQuery.  You may not add a subselect query to a subselect query.</value>
+    </labels>
+    <labels>
+        <fullName>fflib_QueryFactory_subquery_invalid_relationship</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Presented when attempting to create a subquery from an invalid relationship.</shortDescription>
+        <value>Invalid call to subselectQuery.  Invalid relationship for table.</value>
+    </labels>
+    <labels>
+        <fullName>fflib_security_error_field_not_insertable</fullName>
+        <categories>security,error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>fflib_security_error_field_not_insertable</shortDescription>
+        <value>You do not have permission to insert field {1} on {0}</value>
+    </labels>
+    <labels>
+        <fullName>fflib_security_error_field_not_readable</fullName>
+        <categories>security,error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>fflib_security_error_field_not_readable</shortDescription>
+        <value>You do not have permission to read the field {1} on {0}</value>
+    </labels>
+    <labels>
+        <fullName>fflib_security_error_field_not_updateable</fullName>
+        <categories>security,error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>fflib_security_error_field_not_updateable</shortDescription>
+        <value>You do not have permission to update the field {1} on {0}</value>
+    </labels>
+    <labels>
+        <fullName>fflib_security_error_object_not_deletable</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>fflib_security_error_object_not_deletable</shortDescription>
+        <value>You do not have permission to delete {0}</value>
+    </labels>
+    <labels>
+        <fullName>fflib_security_error_object_not_insertable</fullName>
+        <categories>security,error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>fflib_security_error_object_not_insertable</shortDescription>
+        <value>You do not have permission to insert {0}</value>
+    </labels>
+    <labels>
+        <fullName>fflib_security_error_object_not_readable</fullName>
+        <categories>security,error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>fflib_security_error_object_not_readable</shortDescription>
+        <value>You do not have permission to read {0}</value>
+    </labels>
+    <labels>
+        <fullName>fflib_security_error_object_not_updateable</fullName>
+        <categories>security,error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>fflib_security_error_object_not_updateable</shortDescription>
+        <value>You do not have permission to update {0}</value>
+    </labels>
+    <labels>
+        <fullName>gb_de_footer1</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>gb_de_footer1</shortDescription>
+        <value>gateB GmbH, Großer Burstah 42, 20457 Hamburg</value>
+    </labels>
+    <labels>
+        <fullName>gb_de_footer2</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>gb_de_footer2</shortDescription>
+        <value>finance-de@gateb.com, www.gateb.com</value>
+    </labels>
+    <labels>
+        <fullName>gst_label</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>gst_label</shortDescription>
+        <value>GST</value>
+    </labels>
+    <labels>
+        <fullName>gstregnr</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GST Reg Nr for Singapore</shortDescription>
+        <value>GST Reg No.: 201733512Z</value>
+    </labels>
+    <labels>
+        <fullName>hilda_1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>hilda_1</shortDescription>
+        <value>Hilda Ltd.</value>
+    </labels>
+    <labels>
+        <fullName>hilda_7</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>hilda_7</shortDescription>
+        <value>CH-6312 Steinhausen/Zug</value>
+    </labels>
+    <labels>
+        <fullName>hilda_8</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>hilda_8</shortDescription>
+        <value>Sennweidstrasse 35</value>
+    </labels>
+    <labels>
+        <fullName>hilda_contact_header</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>hilda_contact_header1</shortDescription>
+        <value>hilda ltd.</value>
+    </labels>
+    <labels>
+        <fullName>hilda_contact_header2</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>hilda_contact_header2</shortDescription>
+        <value>kontakt@hilda.ch</value>
+    </labels>
+    <labels>
+        <fullName>hilda_contact_header3</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>hilda_contact_header3</shortDescription>
+        <value>T+41 43 317 18 18</value>
+    </labels>
+    <labels>
+        <fullName>hilda_contact_header4</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>hilda_contact_header4</shortDescription>
+        <value>Zweierstrasse 25</value>
+    </labels>
+    <labels>
+        <fullName>hilda_contact_header5</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>hilda_contact_header5</shortDescription>
+        <value>CH-8004 Zürich</value>
+    </labels>
+    <labels>
+        <fullName>hilda_contact_header6</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>hilda_contact_header6</shortDescription>
+        <value>www.hilda.ch</value>
+    </labels>
+    <labels>
+        <fullName>hotz_header1</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>hotz_header1</shortDescription>
+        <value>Hotz Brand Consultants AG</value>
+    </labels>
+    <labels>
+        <fullName>hotz_header2</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>hotz_header2</shortDescription>
+        <value>Sennweidstrasse 35, CH-6312 Steinhausen/Zug</value>
+    </labels>
+    <labels>
+        <fullName>hotz_header3</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>hotz_header3</shortDescription>
+        <value>www.hotzbrandconsultants.ch</value>
+    </labels>
+    <labels>
+        <fullName>hotz_header4</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>hotz_header4</shortDescription>
+        <value>Member of the Brand Leadership Circle</value>
+    </labels>
+    <labels>
+        <fullName>incl_GST</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>incl_gst</shortDescription>
+        <value>INCL. GST</value>
+    </labels>
+    <labels>
+        <fullName>offer_nr</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>offer_nr</shortDescription>
+        <value>Offer Number</value>
+    </labels>
+    <labels>
+        <fullName>order_thanks</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>order_thanks</shortDescription>
+        <value>Thank you very much for your order.</value>
+    </labels>
+    <labels>
+        <fullName>period_summary</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>period_summary</shortDescription>
+        <value>Period summary</value>
+    </labels>
+    <labels>
+        <fullName>po_nr</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>po_nr</shortDescription>
+        <value>PO-Number</value>
+    </labels>
+    <labels>
+        <fullName>register_court</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>register_court</shortDescription>
+        <value>Register court Hamburg</value>
+    </labels>
+    <labels>
+        <fullName>reverse_charge</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>reverse_charge</shortDescription>
+        <value>All prices listed are in euros and net, i.e. any applicable taxes are not included (in particular VAT). The invoiced service is subject to the reverse charge procedure.</value>
+    </labels>
+    <labels>
+        <fullName>storno_reason</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>storno_reason</shortDescription>
+        <value>Stornogrund</value>
+    </labels>
+    <labels>
+        <fullName>tax_nr_de</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>tax_nr_de</shortDescription>
+        <value>Tax number  48/723/03877</value>
+    </labels>
+    <labels>
+        <fullName>test1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>test1</shortDescription>
+        <value>test1</value>
+    </labels>
+    <labels>
+        <fullName>ust</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ust</shortDescription>
+        <value>USt.-ID: DE348826331</value>
+    </labels>
+    <labels>
+        <fullName>your_reference</fullName>
+        <categories>Invoice_PDF</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>your_reference</shortDescription>
+        <value>Your Reference</value>
+    </labels>
+</CustomLabels>

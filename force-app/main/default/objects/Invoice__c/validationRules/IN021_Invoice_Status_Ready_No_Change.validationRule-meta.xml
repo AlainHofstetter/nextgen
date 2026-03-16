@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IN021_Invoice_Status_Ready_No_Change</fullName>
+    <active>true</active>
+    <description>The Invoice is ready, change only by Finance</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true, 
+ISPICKVAL(InvoiceStatus__c,&quot;Ready&quot;),
+PRIORVALUE(InvoiceStatus__c)=&quot;Ready&quot;,
+NOT(ISCHANGED( RelevantToRevenue__c )),
+NOT(ISCHANGED(  CancellationDate__c  )),
+DATEVALUE(LastModifiedDate) &lt;= today(),
+$User.IsFinanceManager__c = false
+)</errorConditionFormula>
+    <errorMessage>This Invoice is in status &quot;Ready&quot; and can only be changed by Finance.
+(IN021)</errorMessage>
+</ValidationRule>

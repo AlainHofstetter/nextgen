@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- If the user provides a value in the user interface when creating a new record, the value will not be inherited from the parent record. --></help>
+    <label><!-- User values wins (on insert) --></label>
+    <name>UserValuesWinsOnInsert__c</name>
+</CustomFieldTranslation>

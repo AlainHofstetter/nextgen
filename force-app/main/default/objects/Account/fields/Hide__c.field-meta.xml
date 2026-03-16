@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hide__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Feld aus Layout ausgeblendet. Nach der Datenpflege wurden alle verbleibenden Hide = True wieder auf False gesetzt. Feld kann gelegentlich gelöscht werden. 07.11.2014, ary</description>
+    <label>Hide</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

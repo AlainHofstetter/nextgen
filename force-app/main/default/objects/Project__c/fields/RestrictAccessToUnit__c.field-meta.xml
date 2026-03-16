@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RestrictAccessToUnit__c</fullName>
+    <defaultValue>true</defaultValue>
+    <inlineHelpText>Check this box if you want to restrict access to this project and all related packages &amp; invoices to your Unit.</inlineHelpText>
+    <label>Restrict Access to Unit</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TC003_TimeCard_Same_Service_Type</fullName>
+    <active>true</active>
+    <description>The Time Card needs to be of same Service Type as Package</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+TEXT(ServiceType__c) &lt;&gt; TEXT(Package__r.PackageSubType__c ))</errorConditionFormula>
+    <errorMessage>You can not add the time card to another package since it is not of same type. Please get in touch with the Project Manager for assistance.
+(TC003)</errorMessage>
+</ValidationRule>

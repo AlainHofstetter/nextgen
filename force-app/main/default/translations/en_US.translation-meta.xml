@@ -1,0 +1,2079 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customApplications>
+        <label><!-- Console App --></label>
+        <name>Console_App</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- BLC-Project Controlling --></label>
+        <name>GroupFinance</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- BLC-Human Resources --></label>
+        <name>GroupHR</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- BLC-Salesforce --></label>
+        <name>GroupIT</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- BLC-Marketing &amp; Sales --></label>
+        <name>GroupMarketing</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- BLC-Reporting App --></label>
+        <name>GroupReports</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Quote Management --></label>
+        <name>QuoteManagement</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Skywalk - Classic --></label>
+        <name>SkywalkClassic</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- gateB Reporting App --></label>
+        <name>gateBReportingApp</name>
+    </customApplications>
+    <customLabels>
+        <label><!-- BLC_Footer1 --></label>
+        <name>BLC_Footer1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- BLC_Footer2 --></label>
+        <name>BLC_Footer2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- BLC_Footer3 --></label>
+        <name>BLC_Footer3</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Bank_Account --></label>
+        <name>Bank_Account</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Bank_Clearing --></label>
+        <name>Bank_Clearing</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- BillingAddressCity --></label>
+        <name>BillingAddressCity</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Billing Address Street, Nr --></label>
+        <name>BillingAddressStreetNr</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- BillingAddressZIP --></label>
+        <name>BillingAddressZIP</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- CHF --></label>
+        <name>CHF</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DocumentNr --></label>
+        <name>CancelationInvoice</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Cancellation Invoice --></label>
+        <name>Cancellation_Invoice</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- cancellation reason --></label>
+        <name>Cancellation_reason</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DocumentNr --></label>
+        <name>DocumentNr</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Focusnext_Footer1 --></label>
+        <name>Focusnext_Footer1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Focusnext_Footer3 --></label>
+        <name>Focusnext_Footer3</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FooterLine1 --></label>
+        <name>FooterLine1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FooterLine2 --></label>
+        <name>FooterLine2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FooterLine3 --></label>
+        <name>FooterLine3</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Footer GateB Singapore 1 --></label>
+        <name>Footer_GateB_Singapore_1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Footer GateB Singapore 2 --></label>
+        <name>Footer_GateB_Singapore_2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- GST --></label>
+        <name>GST</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- GateB footer --></label>
+        <name>GateB_footer</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- GateB footer2 --></label>
+        <name>GateB_footer2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Grand_Total --></label>
+        <name>Grand_Total</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Grand_TotalGST --></label>
+        <name>Grand_TotalGST</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- HRB --></label>
+        <name>HRB</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Hilda_message_de --></label>
+        <name>Hilda_message_de</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- HouseManus_Footer1 --></label>
+        <name>HouseManus_Footer1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- HouseManus_Footer2 --></label>
+        <name>HouseManus_Footer2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- HouseManus_Footer3 --></label>
+        <name>HouseManus_Footer3</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- IBAN --></label>
+        <name>IBAN</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- IBAN_CostCenter Invoice --></label>
+        <name>IBAN_CostCenter_Invoice</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- IBAN --></label>
+        <name>IBAN_Invoice</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- INKL_VAT --></label>
+        <name>INKL_VAT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- IntermediateTotal --></label>
+        <name>IntermediateTotal</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Invoice --></label>
+        <name>Invoice</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- InvoiceContact --></label>
+        <name>InvoiceContact</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- InvoiceDocNumber --></label>
+        <name>InvoiceDocNumber</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- InvoiceNr --></label>
+        <name>InvoiceNr</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Invoice EN --></label>
+        <name>Invoice_EN</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Invoice Generation Notification --></label>
+        <name>Invoice_Generation_Notification</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- MD_de --></label>
+        <name>MD_de</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Offert_Nr --></label>
+        <name>Offert_Nr</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Offertnummer --></label>
+        <name>Offertnummer</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- OrganizationCity --></label>
+        <name>OrganizationCity</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- OrganizationName --></label>
+        <name>OrganizationName</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- OrganizationPostalCode --></label>
+        <name>OrganizationPostalCode</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- OrganizationStreet --></label>
+        <name>OrganizationStreet</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Period --></label>
+        <name>Period</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Period_Service --></label>
+        <name>Period_Service</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ProjectInvoiceCurrency --></label>
+        <name>ProjectInvoiceCurrency</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ProjectName --></label>
+        <name>ProjectName</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- QRInvoicePrefix --></label>
+        <name>QRInvoicePrefix</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- QR Bill Code - Generic Error --></label>
+        <name>QR_Bill_Code_Generic_Error</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- QuoteNo --></label>
+        <name>QuoteNo</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- QuoteNr --></label>
+        <name>QuoteNr</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Rechnungs-Nr --></label>
+        <name>Rechnungs_Nr</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Reference --></label>
+        <name>Reference</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Refernznummer_lang --></label>
+        <name>Refernznummer_lang</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SWIFT --></label>
+        <name>SWIFT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ALLOWANCE --></label>
+        <name>SkyALLOWANCE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Abacus Time Type --></label>
+        <name>SkyAbacusTimeType</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Abort --></label>
+        <name>SkyAbort</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Absence --></label>
+        <name>SkyAbsence</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Actual --></label>
+        <name>SkyActual</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- All cost centres involved --></label>
+        <name>SkyAllcostcentresinvolved</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SkyAllowanceLower --></label>
+        <name>SkyAllowanceLower</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Are you sure you want to cancel this Invoice? --></label>
+        <name>SkyAreyousureyouwanttocancelthisInvoice</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Are you sure you want to delete this expense? --></label>
+        <name>SkyAreyousureyouwanttodeletethisexpense</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Are you sure you want to delete this package? --></label>
+        <name>SkyAreyousureyouwanttodeletethispackage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Are you sure you want to delete this time entry? --></label>
+        <name>SkyAreyousureyouwanttodeletethistimeentry</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- BUDGET --></label>
+        <name>SkyBUDGET</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Biller Account --></label>
+        <name>SkyBillerAccount</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Billing --></label>
+        <name>SkyBilling</name>
+    </customLabels>
+    <customLabels>
+        <label>Billing Notes</label>
+        <name>SkyBillingNotes</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Billing Rate --></label>
+        <name>SkyBillingRate</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Budget - Assign --></label>
+        <name>SkyBudgetAssign</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Business Reason --></label>
+        <name>SkyBusinessReason</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Cancel Invoice --></label>
+        <name>SkyCancelInvoice</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Car --></label>
+        <name>SkyCar</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Car Travel --></label>
+        <name>SkyCarTravel</name>
+    </customLabels>
+    <customLabels>
+        <label>Company</label>
+        <name>SkyCompany</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Cost Centre --></label>
+        <name>SkyCostCentre</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Costs --></label>
+        <name>SkyCosts</name>
+    </customLabels>
+    <customLabels>
+        <label>Curr.</label>
+        <name>SkyCurr</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Currency --></label>
+        <name>SkyCurrency</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Customer --></label>
+        <name>SkyCustomer</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DATE RANGE --></label>
+        <name>SkyDATERANGE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DIFF --></label>
+        <name>SkyDIFF</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DRAFT --></label>
+        <name>SkyDRAFT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Date --></label>
+        <name>SkyDate</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Date From --></label>
+        <name>SkyDateFrom</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Date Until --></label>
+        <name>SkyDateUntil</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete --></label>
+        <name>SkyDelete</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Description --></label>
+        <name>SkyDescription</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Difference --></label>
+        <name>SkyDifference</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Distance --></label>
+        <name>SkyDistance</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Done --></label>
+        <name>SkyDone</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Duration (HH:MM) --></label>
+        <name>SkyDuration</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Duration --></label>
+        <name>SkyDurationOnly</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- EXPENSE --></label>
+        <name>SkyEXPENSE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Edit --></label>
+        <name>SkyEdit</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Employee --></label>
+        <name>SkyEmployee</name>
+    </customLabels>
+    <customLabels>
+        <label>Employee Name</label>
+        <name>SkyEmployeeName</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- End Time --></label>
+        <name>SkyEndTime</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Expense Allowance % --></label>
+        <name>SkyExpenseAllowance</name>
+    </customLabels>
+    <customLabels>
+        <label>Expense Billing Type</label>
+        <name>SkyExpenseBillingType</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Expense Date --></label>
+        <name>SkyExpenseDate</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Expense Description --></label>
+        <name>SkyExpenseDescription</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Expense Gross --></label>
+        <name>SkyExpenseGross</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Expense Nr. --></label>
+        <name>SkyExpenseNr</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Expense Sub-Type --></label>
+        <name>SkyExpenseSubType</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Expense Tracker --></label>
+        <name>SkyExpenseTracker</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Expense Type --></label>
+        <name>SkyExpenseType</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Filter --></label>
+        <name>SkyFilter</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Finance Date --></label>
+        <name>SkyFinanceDate</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- From --></label>
+        <name>SkyFrom</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Go to ILV. --></label>
+        <name>SkyGotoILV</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Go to Invoice. --></label>
+        <name>SkyGotoInvoice</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Human Resources --></label>
+        <name>SkyHumanResources</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ILV --></label>
+        <name>SkyILV</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- INVOICE --></label>
+        <name>SkyINVOICE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Incl. SC --></label>
+        <name>SkyInclSC</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Invoice Date --></label>
+        <name>SkyInvoiceDate</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Invoice Description --></label>
+        <name>SkyInvoiceDescription</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Invoice Receiver --></label>
+        <name>SkyInvoiceReceiver</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Invoice Text --></label>
+        <name>SkyInvoiceText</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Invoice Title --></label>
+        <name>SkyInvoiceTitle</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Invoiced --></label>
+        <name>SkyInvoiced</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Legal --></label>
+        <name>SkyLegal</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- List Costs --></label>
+        <name>SkyListCosts</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- List Time --></label>
+        <name>SkyListTime</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- List of Names --></label>
+        <name>SkyListofNames</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Load Packages --></label>
+        <name>SkyLoadPackages</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Local Currency --></label>
+        <name>SkyLocalCurrency</name>
+    </customLabels>
+    <customLabels>
+        <label>Location, Date</label>
+        <name>SkyLocationDate</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- NEW --></label>
+        <name>SkyNEW</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Next --></label>
+        <name>SkyNext</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- No invoice positions to show. --></label>
+        <name>SkyNoinvoicepositionstoshow</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- No results found --></label>
+        <name>SkyNoresultsfound</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- No results found for this date range. --></label>
+        <name>SkyNoresultsfoundforthisdaterange</name>
+    </customLabels>
+    <customLabels>
+        <label>Nr.</label>
+        <name>SkyNr</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Order / Reference --></label>
+        <name>SkyOrderReference</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Out of Scope? --></label>
+        <name>SkyOutofScope</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- PM --></label>
+        <name>SkyPM</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- PM Allowance % --></label>
+        <name>SkyPMAllowance</name>
+    </customLabels>
+    <customLabels>
+        <label>PM Billing Type</label>
+        <name>SkyPMBillingType</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Package --></label>
+        <name>SkyPackage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Package Name --></label>
+        <name>SkyPackageName</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Package Nr --></label>
+        <name>SkyPackageNr</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Package Status --></label>
+        <name>SkyPackageStatus</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Package Type --></label>
+        <name>SkyPackageType</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Payment Type --></label>
+        <name>SkyPaymentType</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Permission Error --></label>
+        <name>SkyPermissionError</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Please fill out these fields correctly: --></label>
+        <name>SkyPleasefilloutthesefieldscorrectly</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Please make sure all fields are filled out --></label>
+        <name>SkyPleasemakesureallfieldsarefilledout</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Pos --></label>
+        <name>SkyPos</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Preview Invoice --></label>
+        <name>SkyPreviewInvoice</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Previous --></label>
+        <name>SkyPrevious</name>
+    </customLabels>
+    <customLabels>
+        <label>Print</label>
+        <name>SkyPrint</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Project --></label>
+        <name>SkyProject</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Project Billing --></label>
+        <name>SkyProjectBilling</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Project Manager --></label>
+        <name>SkyProjectManager</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Project Name --></label>
+        <name>SkyProjectName</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Project-Nr. --></label>
+        <name>SkyProjectNr</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Project Rate --></label>
+        <name>SkyProjectRate</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Project Structure --></label>
+        <name>SkyProjectStructure</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SkyProjectSubType --></label>
+        <name>SkyProjectSubType</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SkyProjectType --></label>
+        <name>SkyProjectType</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Project Validation --></label>
+        <name>SkyProjectValidation</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- REVENUE --></label>
+        <name>SkyREVENUE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SkyRate --></label>
+        <name>SkyRate</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Rate (Hour) --></label>
+        <name>SkyRateHour</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Receipt --></label>
+        <name>SkyReceipt</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Remove --></label>
+        <name>SkyRemove</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Responsible Business --></label>
+        <name>SkyResponsibleBusiness</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Revenue Rate --></label>
+        <name>SkyRevenueRate</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SERVICES --></label>
+        <name>SkySERVICES</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Save --></label>
+        <name>SkySave</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search Accounts --></label>
+        <name>SkySearchAccounts</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search Cars --></label>
+        <name>SkySearchCars</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search Credit Cards --></label>
+        <name>SkySearchCreditCards</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search Packages --></label>
+        <name>SkySearchPackages</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search Projects --></label>
+        <name>SkySearchProjects</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search Travel Packages --></label>
+        <name>SkySearchTravelPackages</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search Users --></label>
+        <name>SkySearchUsers</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search Work Packages --></label>
+        <name>SkySearchWorkPackages</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Select Car --></label>
+        <name>SkySelectCar</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Select Credit Card --></label>
+        <name>SkySelectCreditCard</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Select Customer --></label>
+        <name>SkySelectCustomer</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Select Package --></label>
+        <name>SkySelectPackage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Select Project --></label>
+        <name>SkySelectProject</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Service --></label>
+        <name>SkyService</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Service Sub-Type --></label>
+        <name>SkyServiceSubType</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Service Type --></label>
+        <name>SkyServiceType</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Show Closed Projects --></label>
+        <name>SkyShowClosedProjects</name>
+    </customLabels>
+    <customLabels>
+        <label>Submit private expenses</label>
+        <name>SkyShowMyPrivateExpensesForSubmitting</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Show Validated / Invoiced Costs --></label>
+        <name>SkyShowValidatedInvoicedCosts</name>
+    </customLabels>
+    <customLabels>
+        <label>Signature Employee</label>
+        <name>SkySignatureEmployee</name>
+    </customLabels>
+    <customLabels>
+        <label>Signature Manager</label>
+        <name>SkySignatureManager</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Something went wrong and we were not able to save the time entry. --></label>
+        <name>SkySomethingwentwrongandwewerenotable</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Something went wrong and we were not able to load the costs. --></label>
+        <name>SkySomethingwentwrongandwewerenotabletoloadthecosts</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Something went wrong and we were not able to save the absence time entry. --></label>
+        <name>SkySomethingwentwrongandwewerenotabletosavetheabsencetimeentry</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Something went wrong and we were not able to save the invoice. --></label>
+        <name>SkySomethingwentwrongandwewerenotabletosavetheinvoice</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Something went wrong and we were not able to validate the selected costs. --></label>
+        <name>SkySomethingwentwrongandwewerenotabletovalidatetheselectedcosts</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Something went wrong and we were not able to validate the time entries. --></label>
+        <name>SkySomethingwentwrongandwewerenotabletovalidatethetimeentries</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Something went wrong with retrieving the data. --></label>
+        <name>SkySomethingwentwrongwithretrievingthedata</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Sort --></label>
+        <name>SkySort</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SkySpecific --></label>
+        <name>SkySpecific</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Specific Rate --></label>
+        <name>SkySpecificRate</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Start Time --></label>
+        <name>SkyStartTime</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Sub-Type --></label>
+        <name>SkySubType</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Submit --></label>
+        <name>SkySubmit</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SkySubtotal --></label>
+        <name>SkySubtotal</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Supplier Costs --></label>
+        <name>SkySupplierCosts</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Supplier Costs Nr. --></label>
+        <name>SkySupplierCostsNr</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Supplier / Receiver / Location --></label>
+        <name>SkySupplierReceiverLocation</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Target --></label>
+        <name>SkyTarget</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Text --></label>
+        <name>SkyText</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Text Position --></label>
+        <name>SkyTextPosition</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The ILV has been created with status &quot;Draft&quot;. --></label>
+        <name>SkyTheILVhasbeencreatedwithstatusDraft</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The Invoice has been created with status &quot;Draft&quot;. --></label>
+        <name>SkyTheInvoicehasbeencreatedwithstatusDraft</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The changes have been saved. --></label>
+        <name>SkyThechangeshavebeensaved</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The costs have been validated. The page has been refreshed. --></label>
+        <name>SkyThecostshavebeenvalidatedThepagehasbeenrefreshed</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The time entries for this employee have been validated. The page has been refres --></label>
+        <name>SkyThetimeentriesforthisemployeehavebeenvalidated</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This project has incomplete data. Please verify and refresh the page. --></label>
+        <name>SkyThisprojecthasincompletedataPleaseverifyandrefreshthepage</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Time --></label>
+        <name>SkyTime</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Time Nr. --></label>
+        <name>SkyTimeNr</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Timetracker --></label>
+        <name>SkyTimetracker</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Today --></label>
+        <name>SkyToday</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Total --></label>
+        <name>SkyTotal</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Track Expense for --></label>
+        <name>SkyTrackExpensefor</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Track Time for --></label>
+        <name>SkyTrackTimefor</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Track for --></label>
+        <name>SkyTrackfor</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Travel --></label>
+        <name>SkyTravel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Type --></label>
+        <name>SkyType</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Until --></label>
+        <name>SkyUntil</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Update ILV --></label>
+        <name>SkyUpdateILV</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Update Invoice --></label>
+        <name>SkyUpdateInvoice</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- VAT % --></label>
+        <name>SkyVAT</name>
+    </customLabels>
+    <customLabels>
+        <label>Val.</label>
+        <name>SkyVal</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Validate --></label>
+        <name>SkyValidate</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Validate Selected Costs --></label>
+        <name>SkyValidateSelectedCosts</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Validate Time --></label>
+        <name>SkyValidateTime</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Validated --></label>
+        <name>SkyValidated</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- View --></label>
+        <name>SkyView</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- w/o DRAFT --></label>
+        <name>SkyWithoutDRAFT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Work --></label>
+        <name>SkyWork</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- You are not allowed to open the Project Structure. Please get in touch with your --></label>
+        <name>SkyYouarenotallowedtoopentheProjectStructure</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Skywalk_Package Specific Rate&quot; to TRUE --></label>
+        <name>Skywalk_PackageSpecificRateToTrue</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Studio_Hotz_Footer1 --></label>
+        <name>Studio_Hotz_Footer1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Studio_Hotz_Footer2 --></label>
+        <name>Studio_Hotz_Footer2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Tax Id --></label>
+        <name>Tax_Id</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TermsPayment --></label>
+        <name>TermsPayment</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Total --></label>
+        <name>Total</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Total Amount --></label>
+        <name>Total_Amount</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Total Amount Gross --></label>
+        <name>Total_Amount_Gross</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Total_Gross --></label>
+        <name>Total_Gross</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Total including VAT --></label>
+        <name>Total_including_VAT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- VAT_7 --></label>
+        <name>VAT_7</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- VAT Amount --></label>
+        <name>VAT_Amount</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- VAT_Footer --></label>
+        <name>VAT_Footer</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- VAT_Footer_DE --></label>
+        <name>VAT_Footer_DE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- VAT_inkl --></label>
+        <name>VAT_inkl</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Vat Number --></label>
+        <name>Vat_Number</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- agency_services --></label>
+        <name>agency_services</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- bank_connection --></label>
+        <name>bank_connection</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- blc_Cancel_Footerline2 --></label>
+        <name>blc_Cancel_Footerline2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- blc_Cancel_Footerline3 --></label>
+        <name>blc_Cancel_Footerline3</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- blc_Footerline1 --></label>
+        <name>blc_Footerline1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- calydo_line1 --></label>
+        <name>calydo_line1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- calydo_line2 --></label>
+        <name>calydo_line2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- calydo_line3 --></label>
+        <name>calydo_line3</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- calydo_line4 --></label>
+        <name>calydo_line4</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- calydo_line5 --></label>
+        <name>calydo_line5</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Cancellation title --></label>
+        <name>cancellation_title</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error when selecting a cross-object fieldsset is not allowed and attempted. --></label>
+        <name>fflib_QueryFactory_crossobject_fieldsets_not_allowed_error</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error when selecting a field set for a different sobject type. --></label>
+        <name>fflib_QueryFactory_fieldset_wrong_sobject_error</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Presented when attempting to nest subqueries. --></label>
+        <name>fflib_QueryFactory_recursive_subquery_error</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Presented when attempting to create a subquery from an invalid relationship. --></label>
+        <name>fflib_QueryFactory_subquery_invalid_relationship</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- fflib_security_error_field_not_insertable --></label>
+        <name>fflib_security_error_field_not_insertable</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- fflib_security_error_field_not_readable --></label>
+        <name>fflib_security_error_field_not_readable</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- fflib_security_error_field_not_updateable --></label>
+        <name>fflib_security_error_field_not_updateable</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- fflib_security_error_object_not_deletable --></label>
+        <name>fflib_security_error_object_not_deletable</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- fflib_security_error_object_not_insertable --></label>
+        <name>fflib_security_error_object_not_insertable</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- fflib_security_error_object_not_readable --></label>
+        <name>fflib_security_error_object_not_readable</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- fflib_security_error_object_not_updateable --></label>
+        <name>fflib_security_error_object_not_updateable</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- gb_de_footer1 --></label>
+        <name>gb_de_footer1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- gb_de_footer2 --></label>
+        <name>gb_de_footer2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- gst_label --></label>
+        <name>gst_label</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- GST Reg Nr for Singapore --></label>
+        <name>gstregnr</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- hilda_1 --></label>
+        <name>hilda_1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- hilda_7 --></label>
+        <name>hilda_7</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- hilda_8 --></label>
+        <name>hilda_8</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- hilda_contact_header1 --></label>
+        <name>hilda_contact_header</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- hilda_contact_header2 --></label>
+        <name>hilda_contact_header2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- hilda_contact_header3 --></label>
+        <name>hilda_contact_header3</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- hilda_contact_header4 --></label>
+        <name>hilda_contact_header4</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- hilda_contact_header5 --></label>
+        <name>hilda_contact_header5</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- hilda_contact_header6 --></label>
+        <name>hilda_contact_header6</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- hotz_header1 --></label>
+        <name>hotz_header1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- hotz_header2 --></label>
+        <name>hotz_header2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- hotz_header3 --></label>
+        <name>hotz_header3</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- hotz_header4 --></label>
+        <name>hotz_header4</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- incl_gst --></label>
+        <name>incl_GST</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- offer_nr --></label>
+        <name>offer_nr</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- order_thanks --></label>
+        <name>order_thanks</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- period_summary --></label>
+        <name>period_summary</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- po_nr --></label>
+        <name>po_nr</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- register_court --></label>
+        <name>register_court</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- reverse_charge --></label>
+        <name>reverse_charge</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- storno_reason --></label>
+        <name>storno_reason</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- tax_nr_de --></label>
+        <name>tax_nr_de</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- test1 --></label>
+        <name>test1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ust --></label>
+        <name>ust</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- your_reference --></label>
+        <name>your_reference</name>
+    </customLabels>
+    <customTabs>
+        <label><!-- Erste Schritte --></label>
+        <name>Erste_Schritte</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- Metadata Browser --></label>
+        <name>MetadataBrowser</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- Metadata Deploy Demo --></label>
+        <name>MetadataDeployDemo</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- Metadata Retrieve Demo --></label>
+        <name>MetadataRetrieveDemo</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- Privately Paid Expenses Overview --></label>
+        <name>Privately_Paid_Expenses_Overview</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- SIM Analytics --></label>
+        <name>SIMAnalytics</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- TimEx 1.0 --></label>
+        <name>SkywalkApp</name>
+    </customTabs>
+    <flowDefinitions>
+        <flows/>
+        <fullName>AbacusInterfaceAccountUpsert</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>AbacusInterfaceAccountUpsertSupplier</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>AccountBillingAddress</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>AccountContactAddressUpdateMass</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>AccountDataComLocationiAddress</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>AccountNameUpdatePrivateAccount</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>AccountShortNameUpdate</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>Account_Update_Account_Owner_Send_Email</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>Account_Update_Email_Previous_Current_Owner</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>Amount_GB_License</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>CaseQueueAssign</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>CaseQueueAssignmentOwner</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>ContactAddressUpdateFromAccount</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>ContactInternalEmployeeCostsCreate</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>ContactInternalUpdateRelatedUser</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>ContactRecordTypeUpdateSummaryAccount</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>ContactSummary</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>ContractOwnerUpdate</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>ContractUpdateOwnerWithContractPartnerInternal</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>EmployeeCostsUpdateContacts</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>ExpenseCarTravelPaymentTypePrivate</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>ExpenseIsInBillingPeriod</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <screens>
+                <fields>
+                    <name>ConfirmationMsg</name>
+                </fields>
+                <name>QR_Bill_Creation</name>
+            </screens>
+        </flows>
+        <fullName>GenerateNewQrBillInvoice</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>HRMutation</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>ILVDocumentNrSearch</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>InvoiceAbacusPaymentInformation</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>InvoiceCancellation</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>InvoiceCancellationFinanceDateToday</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>InvoiceCancellationTotalAmountNetCHF</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>InvoiceContractPartnerAbacusDebtorTrue</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>InvoiceInvoiceReceiverUpdateGetAddress</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>InvoiceIsInBilliingPeriod</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>InvoiceNrSearch</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>InvoicePosInheritSupplierGroupFlagFromPackageOnInvoiceCreation</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>InvoicePosServiceNameInherit</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>InvoicePositionAmountVAT</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>InvoiceStatusSentToAbacusWhenTransferDateNotNull</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>InvoiceVATPercent</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>OpportunityCalcuateForeCastingCurrentYear</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>OpportunitySetProjectStartToCloseDateIfEmpty</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>PackageGroupShowFieldsTrue</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>PackageGroupStatusClosedInheritToServices</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>PackageGroupStatusClosedInheritToServices_1</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>PackageSupplierCostsAbacusInbox</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>ProjectCYProjectStatusClosed</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>ProjectContractPartnerSearch</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>ProjectDefaultInvoiceTitleNull</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>ProjectForecastMoveMonth</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>ProjectInheritResponisbleToPackage</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>ProjectInvoiceContactInternalNull</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>ProjectOwnerUpdateWithResponsible</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>ProjectResponsible</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>ProjectStatusClosedInheritToServices</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>ProjectUpdateInvoiceReceiverProjectPartner</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>ProjectUpdateProjectNameToService</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>QLI_Calculate_PM_fee</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>QuoteLineItemCopyProductInformation</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>QuoteLineItemExpenseAllowanceCalc2</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>QuoteLineItemProjectManagementAllowanceCalc2</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>RTF_InvoicePosition_SetAmountVAT</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>RTF_Invoice_AfterSave_AbacusPaymentInformation</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>RTF_Invoice_AfterSave_UpdateCancellationTotalAmountNetCHF</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>RTF_Invoice_BeforeSave_InvoiceReceiverUpdateGetAddress</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>RTF_Invoice_BeforeSave_IsInBillingPeriod</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>RTF_Invoice_BeforeSave_UpdateFinanceDate</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>RTF_ProjectAutomaticClosure</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>RTF_ServiceUpdateProjectNameSearch</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>RTF_UpdateBillingAccountDetails</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <screens>
+                <fields>
+                    <name>errorMessageScreen</name>
+                </fields>
+                <name>Error_Screen</name>
+            </screens>
+        </flows>
+        <fullName>ScreenFlowInvoiceButton</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>ServiceUpdateProjectNameSearch</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>SupplierCostsAutoFill</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>SupplierCostsEmailInformationAbacusVISA</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>SupplierCostsEmailInformationProjectManager</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>SupplierCostsIsInBillingPeriod</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>TalendExchangeRateNotImported</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>TimeIsInBillingPeriod</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>TimeUpdateLastTimeCardContact</fullName>
+    </flowDefinitions>
+    <quickActions>
+        <label><!-- New Case --></label>
+        <name>CreateCase</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Contract --></label>
+        <name>CreateContract</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- LogACall --></label>
+        <name>LogACall</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewEvent --></label>
+        <name>NewEvent</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewNote --></label>
+        <name>NewNote</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Purchasing --></label>
+        <name>NewPurchase</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewTask --></label>
+        <name>NewTask</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- SendEmail --></label>
+        <name>SendEmail</name>
+    </quickActions>
+    <reportTypes>
+        <description><!-- CR: Contracts with Contacts --></description>
+        <label><!-- CR: Contracts with Contacts --></label>
+        <name>CR_Contracts_with_Contacts</name>
+        <sections>
+            <label><!-- Contacts --></label>
+            <name>Contacts</name>
+        </sections>
+        <sections>
+            <label><!-- Contract Admin (User) --></label>
+            <name>Contract Admin (User)</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- CR: Projects with Services w/o Time --></description>
+        <label><!-- CR: Projects with Services w/o Time --></label>
+        <name>CR_Projects_with_Services_w_o_Time</name>
+        <sections>
+            <label><!-- Projects --></label>
+            <name>Projects</name>
+        </sections>
+        <sections>
+            <label><!-- Services --></label>
+            <name>Services</name>
+        </sections>
+        <sections>
+            <label><!-- Time --></label>
+            <name>Time</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- CR: Report --></description>
+        <label><!-- CR: Report --></label>
+        <name>CR_Report</name>
+        <sections>
+            <label><!-- Reports --></label>
+            <name>Reports</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- CR: Supplier Invoice with Supplier Costs --></description>
+        <label><!-- CR: Supplier Invoice with Supplier Costs --></label>
+        <name>CR_Supplier_Invoice_with_Supplier_Costs</name>
+        <sections>
+            <label><!-- Supplier Costs --></label>
+            <name>Supplier Costs</name>
+        </sections>
+        <sections>
+            <label><!-- Supplier Invoices --></label>
+            <name>Supplier Invoices</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- CR: Time Tracker w/o Time --></description>
+        <label><!-- CR: Time Tracker w/o Time --></label>
+        <name>CR_Time_Tracker_w_o_Time</name>
+        <sections>
+            <label><!-- Contacts --></label>
+            <name>Contacts</name>
+        </sections>
+        <sections>
+            <label><!-- Time --></label>
+            <name>Time</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- CR: gateB Server Relations --></description>
+        <label><!-- CR: gateB Server Relations --></label>
+        <name>CRgateBServerRelationsReport</name>
+        <sections>
+            <label><!-- gateB Server Module Relations --></label>
+            <name>gateB Server Module Relations</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Contacts with Times --></description>
+        <label><!-- Contacts with Times --></label>
+        <name>Contacts_with_Times</name>
+        <sections>
+            <label><!-- Contacts --></label>
+            <name>Contacts</name>
+        </sections>
+        <sections>
+            <label><!-- Time --></label>
+            <name>Time</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- NextGen_Accounts with Projects or Opps --></description>
+        <label><!-- NextGen_Accounts with Projects or Opps --></label>
+        <name>NextGen_Accounts_with_Projects_or_Opps</name>
+        <sections>
+            <label><!-- Accounts --></label>
+            <name>Accounts</name>
+        </sections>
+        <sections>
+            <label><!-- Opportunities --></label>
+            <name>Opportunities</name>
+        </sections>
+        <sections>
+            <label><!-- Projects --></label>
+            <name>Projects</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- NextGen Project - Accounts with Contacts and Opportunities --></description>
+        <label><!-- NextGen Project - Accounts with Contacts and Opportunities --></label>
+        <name>NextGen_Project_Accounts_with_Contacts_and_Opportunities</name>
+        <sections>
+            <label><!-- Accounts --></label>
+            <name>Accounts</name>
+        </sections>
+        <sections>
+            <label><!-- Contacts --></label>
+            <name>Contacts</name>
+        </sections>
+        <sections>
+            <label><!-- Opportunities --></label>
+            <name>Opportunities</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- NextGen Project - Accounts with Projects or Opportunities --></description>
+        <label><!-- NextGen Project - Accounts with Projects or Opportunities --></label>
+        <name>NextGen_Project_Accounts_with_projects_or_Opportunities</name>
+        <sections>
+            <label><!-- Accounts --></label>
+            <name>Accounts</name>
+        </sections>
+        <sections>
+            <label><!-- Contacts --></label>
+            <name>Contacts</name>
+        </sections>
+        <sections>
+            <label><!-- Opportunities --></label>
+            <name>Opportunities</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Project with Resource Forecast --></description>
+        <label><!-- Project with Resource Forecast --></label>
+        <name>Project_with_Resource_Forecast</name>
+        <sections>
+            <label><!-- Projects --></label>
+            <name>Projects</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Projects with Invoice with ILV Pos --></description>
+        <label><!-- Projects with Invoice with ILV Pos --></label>
+        <name>Projects_with_Invoice_with_ILV_Pos</name>
+        <sections>
+            <label><!-- ILV Pos --></label>
+            <name>ILV Pos</name>
+        </sections>
+        <sections>
+            <label><!-- Invoices --></label>
+            <name>Invoices</name>
+        </sections>
+        <sections>
+            <label><!-- Projects --></label>
+            <name>Projects</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Projects with Invoices with Invoice Pos --></description>
+        <label><!-- Projects with Invoices with Invoice Pos --></label>
+        <name>Projects_with_Invoices_with_Invoice_Pos</name>
+        <sections>
+            <label><!-- Invoice Pos --></label>
+            <name>Invoice Pos</name>
+        </sections>
+        <sections>
+            <label><!-- Invoices --></label>
+            <name>Invoices</name>
+        </sections>
+        <sections>
+            <label><!-- Projects --></label>
+            <name>Projects</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Projects with Services with Expenses --></description>
+        <label><!-- Projects with Services with Expenses --></label>
+        <name>Projects_with_Services_with_Expenses</name>
+        <sections>
+            <label><!-- Expenses --></label>
+            <name>Expenses</name>
+        </sections>
+        <sections>
+            <label><!-- Packages --></label>
+            <name>Packages</name>
+        </sections>
+        <sections>
+            <label><!-- Projects --></label>
+            <name>Projects</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Projects with Services with Invoice Positions --></description>
+        <label><!-- Projects with Services with Invoice Positions --></label>
+        <name>Projects_with_Services_with_Invoice_Positions</name>
+        <sections>
+            <label><!-- Invoice Pos --></label>
+            <name>Invoice Pos</name>
+        </sections>
+        <sections>
+            <label><!-- Projects --></label>
+            <name>Projects</name>
+        </sections>
+        <sections>
+            <label><!-- Services --></label>
+            <name>Services</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Projects with Services with Supplier Costs --></description>
+        <label><!-- Projects with Services with Supplier Costs --></label>
+        <name>Projects_with_Services_with_Supplier_Costs</name>
+        <sections>
+            <label><!-- Projects --></label>
+            <name>Projects</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Sv: Costs - Total Amount (CHF) --></label>
+                <name>Sv: Costs - Total Amount (CHF)</name>
+            </columns>
+            <columns>
+                <label><!-- Sv: Costs - Total Supplier Costs (CHF) --></label>
+                <name>Sv: Costs - Total Supplier Costs (CHF)</name>
+            </columns>
+            <label><!-- Services --></label>
+            <name>Services</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- SC: Service -  Supplier Costs Net (CHF) --></label>
+                <name>SC: Service -  Supplier Costs Net (CHF)</name>
+            </columns>
+            <columns>
+                <label><!-- SC: Service - Supplier Costs Net --></label>
+                <name>SC: Service - Supplier Costs Net</name>
+            </columns>
+            <label><!-- Supplier Costs --></label>
+            <name>Supplier Costs</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Projects with Services with Time --></description>
+        <label><!-- Projects with Services with Time --></label>
+        <name>Projects_with_Services_with_Time</name>
+        <sections>
+            <label><!-- Packages --></label>
+            <name>Packages</name>
+        </sections>
+        <sections>
+            <label><!-- Projects --></label>
+            <name>Projects</name>
+        </sections>
+        <sections>
+            <label><!-- Time --></label>
+            <name>Time</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Projects with or without Services --></description>
+        <label><!-- Projects with or without Services --></label>
+        <name>Projects_with_or_without_Services</name>
+        <sections>
+            <label><!-- Projects --></label>
+            <name>Projects</name>
+        </sections>
+        <sections>
+            <label><!-- Services --></label>
+            <name>Services</name>
+        </sections>
+        <sections>
+            <label><!-- Time --></label>
+            <name>Time</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Subscriptions with Actions --></description>
+        <label><!-- Subscriptions with Actions --></label>
+        <name>Subscriptions_with_Actions</name>
+        <sections>
+            <label><!-- Analytic Notification Action Configurations --></label>
+            <name>Analytic Notification Action Configurations</name>
+        </sections>
+        <sections>
+            <label><!-- Analytic Notification Actions --></label>
+            <name>Analytic Notification Actions</name>
+        </sections>
+        <sections>
+            <label><!-- Analytic Notification Thresholds --></label>
+            <name>Analytic Notification Thresholds</name>
+        </sections>
+        <sections>
+            <label><!-- Analytic Notifications --></label>
+            <name>Analytic Notifications</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Time --></description>
+        <label><!-- Time --></label>
+        <name>Time</name>
+        <sections>
+            <label><!-- Time --></label>
+            <name>Time</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Orchestration Run Logs Spring &apos;24 --></description>
+        <label><!-- Orchestration Run Logs Spring &apos;24 --></label>
+        <name>flow_orchestration_log_ootb_crt_two_four_eight</name>
+        <sections>
+            <label><!-- Orchestration Run Log --></label>
+            <name>Orchestration Run Log</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Orchestration Runs Spring &apos;24 --></description>
+        <label><!-- Orchestration Runs Spring &apos;24 --></label>
+        <name>flow_orchestration_run_ootb_crt_two_four_eight</name>
+        <sections>
+            <label><!-- Orchestration Runs --></label>
+            <name>Orchestration Runs</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Orchestration Stage Runs Spring &apos;24 --></description>
+        <label><!-- Orchestration Stage Runs Spring &apos;24 --></label>
+        <name>flow_orchestration_stage_run_ootb_crt_two_four_eight</name>
+        <sections>
+            <label><!-- Orchestration Stage Runs --></label>
+            <name>Orchestration Stage Runs</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Orchestration Step Runs Spring &apos;24 --></description>
+        <label><!-- Orchestration Step Runs Spring &apos;24 --></label>
+        <name>flow_orchestration_step_run_ootb_crt_two_four_eight</name>
+        <sections>
+            <label><!-- Orchestration Step Runs --></label>
+            <name>Orchestration Step Runs</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Orchestration Work Items Spring &apos;24 --></description>
+        <label><!-- Orchestration Work Items Spring &apos;24 --></label>
+        <name>flow_orchestration_work_item_ootb_crt_two_four_eight</name>
+        <sections>
+            <columns>
+                <label><!-- Orchestration Step Run: Label --></label>
+                <name>Orchestration Step Run: Label</name>
+            </columns>
+            <columns>
+                <label><!-- Orchestration Step Run: Name --></label>
+                <name>Orchestration Step Run: Name</name>
+            </columns>
+            <columns>
+                <label><!-- Orchestration Step Run: Status --></label>
+                <name>Orchestration Step Run: Status</name>
+            </columns>
+            <label><!-- Orchestration Step Runs --></label>
+            <name>Orchestration Step Runs</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Assigned Group or Queue --></label>
+                <name>Assigned Group or Queue</name>
+            </columns>
+            <columns>
+                <label><!-- Assigned User --></label>
+                <name>Assigned User</name>
+            </columns>
+            <label><!-- Orchestration Work Items --></label>
+            <name>Orchestration Work Items</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Screen Flows --></description>
+        <label><!-- Screen Flows --></label>
+        <name>screen_flows_prebuilt_crt</name>
+        <sections>
+            <label><!-- Flow Interview Log Entries --></label>
+            <name>Flow Interview Log Entries</name>
+        </sections>
+        <sections>
+            <label><!-- Flow Interview Logs --></label>
+            <name>Flow Interview Logs</name>
+        </sections>
+    </reportTypes>
+</Translations>

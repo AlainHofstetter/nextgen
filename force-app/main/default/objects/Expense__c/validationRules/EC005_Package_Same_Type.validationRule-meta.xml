@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EC005_Package_Same_Type</fullName>
+    <active>true</active>
+    <description>The Expense card can only be attached to a Package of correct type.</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+Package__r.RecordType.DeveloperName &lt;&gt;&quot;Expense&quot;)</errorConditionFormula>
+    <errorMessage>Please choose a Package of Type = Expense.
+(EC005)</errorMessage>
+</ValidationRule>

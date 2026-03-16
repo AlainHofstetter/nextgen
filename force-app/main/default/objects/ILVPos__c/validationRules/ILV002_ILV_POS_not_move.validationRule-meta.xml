@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ILV002_ILV_POS_not_move</fullName>
+    <active>true</active>
+    <description>The ILV Postiion can not be attached to another invoice.</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+ISCHANGED( InvoiceName__c ))</errorConditionFormula>
+    <errorMessage>You can not attach an ILV position to another invoice. Please get in touch with your Super User for assistance.
+(ILV002)</errorMessage>
+</ValidationRule>

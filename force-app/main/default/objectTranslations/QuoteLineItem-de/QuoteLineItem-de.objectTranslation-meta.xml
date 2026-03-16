@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Quote Line Item Layout</layout>
+        <sections>
+            <label><!-- EMPAUA Test fields --></label>
+            <section>EMPAUA Test fields</section>
+        </sections>
+        <sections>
+            <label>Offertprodukt Information</label>
+            <section>Quote Line Item Product Information</section>
+        </sections>
+        <sections>
+            <label>Offertprodukt Spezifikation</label>
+            <section>Quote Line Item Product Specification</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <validationRules>
+        <errorMessage><!-- This Product is not allowed for Project management --></errorMessage>
+        <name>Check_Project_Management</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Produkt Gruppe muss einen Verkaufspreis von 0 haben. (QL001)</errorMessage>
+        <name>QL001_Group_Must_Be_Zero</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Intro oder Outro Produkte müssen einen Verkaufspreis von 0 haben. (QL002)</errorMessage>
+        <name>QL002_Intro_Outro_Must_Be_Zero</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Text Produkte müssen den Preis 0 haben. (QL003)</errorMessage>
+        <name>QL003_Text_Must_Be_Zero</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Ungültiger Eintrag für Produkt Gruppe. (QL004)</errorMessage>
+        <name>QL004_Entry_Invalid_Group</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Ungültiger Eintrag für Produkt Text. (QL005)</errorMessage>
+        <name>QL005_Entry_Invalid_Text</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Das Produkt kann nicht Intro und Outro sein. (QL006)</errorMessage>
+        <name>QL006_Entry_Invalid_Intro_Outro</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Das Produkt kann nicht die Projektmanagement- oder Spesenpauschale sein. (QL007)</errorMessage>
+        <name>QL007_Entry_Invalid_Allowance</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Das Produkt kann nicht Option und anderer Typ sein. (QL008)</errorMessage>
+        <name>QL008_Entry_Invalid_Option</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Das Projektmanagementpauschale Produkt kann nicht im Betrag angepasst werden, da dieses automatisch kalkuliert wird. (QL009)</errorMessage>
+        <name>QL009_PM_Allowance_Not_Manual_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Das Spesenpauschale Produkt kann nicht im Betrag angepasst werden, da dieses automatisch kalkuliert wird. (QL009)</errorMessage>
+        <name>QL010_ExpenseAllowance_Not_Manual_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Produkt Text muss Intro oder Outro sein. (QL011)</errorMessage>
+        <name>QL011_Entry_Invalid_Text</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Übergeordnete Produkte müssen vom Typ &quot;Gruppe&quot; sein. (QL012)</errorMessage>
+        <name>QL012_Entry_Invalid_Superior_Line_Item</name>
+    </validationRules>
+</CustomObjectTranslation>

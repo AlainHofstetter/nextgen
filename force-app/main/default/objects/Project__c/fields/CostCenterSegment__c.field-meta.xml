@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CostCenterSegment__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Segment</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>CostCenterSegment__c.SegmentType__c</field>
+            <operation>equals</operation>
+            <value>SegmentProject</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>CostCenterSegment__c</referenceTo>
+    <relationshipLabel>Projects</relationshipLabel>
+    <relationshipName>Projects</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

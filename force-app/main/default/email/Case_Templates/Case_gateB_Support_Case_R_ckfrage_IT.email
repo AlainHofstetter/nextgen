@@ -1,0 +1,42 @@
+<html>
+<head>
+<style type="text/css">
+p { font-size:11px;
+      font-family:verdana, geneva, sans-serif; }
+</style>
+</head>
+<body>
+<span style="font-family: verdana, geneva, sans-serif; font-size: 11px;">
+<table align="left" border="0" cellpadding="1" cellspacing="1" style="width: 600px;">
+<tbody>
+<tr>
+<td style="text-align: right;" height=65">
+<img alt="" src="http://media.gateb.com/gateb/topdesk/gateb.jpg" alt="Logo" style="width: 100px; height: 37px;" /></td>
+</tr>
+<tr>
+<td>
+<p>Per poter trattare la Sua richiesta di supporto con il numero {!Case.CaseNumber} {!Case.Subject}, ci servono ulteriori informazioni:</p>
+<p><strong><span style="color:#666666;">Bitte hier Text erfassen</span></strong></p>
+<p>La preghiamo cordialmente di rispondere a questa e-mail, di modo che la Sua richiesta possa essere assegnata correttamente.</p>
+<p>Gentili saluti</p>
+<p><strong>gateB Support</strong><br />
+{!Case.OwnerFullName}</p><br />
+<hr />
+<p><strong><span lang="DE">gateB AG | Empowering Marketing Performance</span></strong></b><br />
+<br />
+Sennweidstrasse 35, CH-6312 Steinhausen<br />
+Phone +41 41 748 64 10, support@gateb.com<br />
+http://www.gateb.com<br />
+<br />
+I nostri orari di supporto:
+<br />
+lunedì a venerdì dalle 8.00 alle 12.00 et dalle 13.00 alle 17.00
+</p>
+<br/>
+<p>Thread Id: (ref:_{!Organization.Id}._{!Case.Id}:ref)</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table></body>
+</html>

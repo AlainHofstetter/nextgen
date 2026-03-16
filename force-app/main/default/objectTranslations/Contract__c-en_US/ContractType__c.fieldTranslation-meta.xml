@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Contract Type --></label>
+    <name>ContractType__c</name>
+    <picklistValues>
+        <masterLabel>BLC - Internal</masterLabel>
+        <translation><!-- BLC - Internal --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Banking Contract</masterLabel>
+        <translation><!-- Banking Contract --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer - SLA reimbursement</masterLabel>
+        <translation><!-- Customer - SLA reimbursement --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer - direct reimbursement</masterLabel>
+        <translation><!-- Customer - direct reimbursement --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>External - no reimbursemeent</masterLabel>
+        <translation><!-- External - no reimbursemeent --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Frame Contract</masterLabel>
+        <translation><!-- Frame Contract --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Insurance Contract</masterLabel>
+        <translation><!-- Insurance Contract --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>License Contract</masterLabel>
+        <translation><!-- License Contract --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Media Subscription</masterLabel>
+        <translation><!-- Media Subscription --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NATEL Business data XL</masterLabel>
+        <translation><!-- NATEL Business data XL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NATEL Office light</masterLabel>
+        <translation><!-- NATEL Office light --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NATEL business data M</masterLabel>
+        <translation><!-- NATEL business data M --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NATEL business infinity L</masterLabel>
+        <translation><!-- NATEL business infinity L --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NATEL business infinity M</masterLabel>
+        <translation><!-- NATEL business infinity M --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NATEL business infinity S</masterLabel>
+        <translation><!-- NATEL business infinity S --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NATEL business infinity XL</masterLabel>
+        <translation><!-- NATEL business infinity XL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NATEL company</masterLabel>
+        <translation><!-- NATEL company --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NATEL company basic</masterLabel>
+        <translation><!-- NATEL company basic --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NATEL data M</masterLabel>
+        <translation><!-- NATEL data M --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Non Disclosure Agreement</masterLabel>
+        <translation><!-- Non Disclosure Agreement --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rental Contract</masterLabel>
+        <translation><!-- Rental Contract --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service Contract</masterLabel>
+        <translation><!-- Service Contract --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Works Contract</masterLabel>
+        <translation><!-- Works Contract --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>inOne KMU mobile L</masterLabel>
+        <translation><!-- inOne KMU mobile L --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>inOne KMU mobile M</masterLabel>
+        <translation><!-- inOne KMU mobile M --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>inOne KMU mobile S</masterLabel>
+        <translation><!-- inOne KMU mobile S --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>inOne KMU mobile XL</masterLabel>
+        <translation><!-- inOne KMU mobile XL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>inOne KMU mobile XS</masterLabel>
+        <translation><!-- inOne KMU mobile XS --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

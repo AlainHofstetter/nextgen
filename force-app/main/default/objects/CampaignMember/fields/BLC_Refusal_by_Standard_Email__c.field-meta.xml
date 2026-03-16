@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLC_Refusal_by_Standard_Email__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>BLC Refusal by Standard Email</label>
+    <type>Checkbox</type>
+</CustomField>

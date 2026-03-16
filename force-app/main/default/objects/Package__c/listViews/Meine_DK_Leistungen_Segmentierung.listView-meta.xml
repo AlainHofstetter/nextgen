@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Meine_DK_Leistungen_Segmentierung</fullName>
+    <columns>NAME</columns>
+    <columns>ProjectName__c</columns>
+    <columns>CostCenterSegment__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Package__c.SupplierCosts</value>
+    </filters>
+    <filters>
+        <field>PackageStatus__c</field>
+        <operation>equals</operation>
+        <value>Open,PartiallyOpen</value>
+    </filters>
+    <filters>
+        <field>CostCenterSegment__c</field>
+        <operation>notContain</operation>
+        <value>supplier</value>
+    </filters>
+    <label>Meine DK-Leistungen - Segmentierung</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_FIN_Alle</group>
+    </sharedTo>
+</ListView>

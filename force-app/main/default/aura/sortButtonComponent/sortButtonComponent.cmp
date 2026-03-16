@@ -1,0 +1,24 @@
+<aura:component >
+
+    <!--
+        ATTRIBUTES
+    -->
+    <aura:attribute name="label" type="String" />
+    <aura:attribute name="section" type="String" />
+    <aura:attribute name="field" type="String" />
+    <aura:attribute name="sortOptions" type="Object" />
+
+    <c:buttonWithData class="column-heading-sort-button" label="{!v.label}" data="{! v.section + ':' + v.field }" name="sortColumn" isLink="true">
+        <aura:if isTrue="{!v.sortOptions.field == v.field}">
+
+            <aura:if isTrue="{!v.sortOptions.desc}">
+                <lightning:icon iconName="utility:chevrondown" class="slds-float--right" size="xx-small" />
+            </aura:if>
+            <aura:if isTrue="{!v.sortOptions.desc == false}">
+                <lightning:icon iconName="utility:chevronup" class="slds-float--right" size="xx-small" />
+            </aura:if>
+
+        </aura:if>
+    </c:buttonWithData>
+
+</aura:component>

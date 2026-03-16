@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IBAN__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+ ProjectInvoiceCurrency__c =&quot;CHF&quot;, ProjectCostCenter__r.CHFIBAN__c ,
+IF( 
+ProjectInvoiceCurrency__c =&quot;EUR&quot;, ProjectCostCenter__r.EURIBAN__c ,
+IF( 
+ProjectInvoiceCurrency__c =&quot;USD&quot;, ProjectCostCenter__r.USDIBAN__c ,
+IF(
+ ProjectInvoiceCurrency__c =&quot;SGD&quot;, ProjectCostCenter__r.SGDIBAN__c ,
+IF(
+ ProjectInvoiceCurrency__c =&quot;GBP&quot;, ProjectCostCenter__r.GBPIBAN__c ,
+&quot;&quot;)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>IBAN</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

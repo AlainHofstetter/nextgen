@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Check this box if you want to restrict access to this project and all related packages &amp; invoices to the Owner. --></help>
+    <label><!-- Restrict Access to Owner --></label>
+    <name>RestrictAccessToOwner__c</name>
+</CustomFieldTranslation>

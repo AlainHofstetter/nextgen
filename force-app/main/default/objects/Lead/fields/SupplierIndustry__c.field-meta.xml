@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SupplierIndustry__c</fullName>
+    <label>Supplier - Industry</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>3D Visualisierungen</fullName>
+                <default>false</default>
+                <label>3D Visualisierungen</label>
+            </value>
+            <value>
+                <fullName>Aufnahmeleitung</fullName>
+                <default>false</default>
+                <label>Aufnahmeleitung</label>
+            </value>
+            <value>
+                <fullName>Ausstatter</fullName>
+                <default>false</default>
+                <label>Ausstatter</label>
+            </value>
+            <value>
+                <fullName>Beleuchter</fullName>
+                <default>false</default>
+                <label>Beleuchter</label>
+            </value>
+            <value>
+                <fullName>Brennen/Drucken – CD/DVD</fullName>
+                <default>false</default>
+                <label>Brennen/Drucken – CD/DVD</label>
+            </value>
+            <value>
+                <fullName>Digitalisierung Filmmaterial</fullName>
+                <default>false</default>
+                <label>Digitalisierung Filmmaterial</label>
+            </value>
+            <value>
+                <fullName>Drehbuchautor</fullName>
+                <default>false</default>
+                <label>Drehbuchautor</label>
+            </value>
+            <value>
+                <fullName>Druck</fullName>
+                <default>false</default>
+                <label>Druck</label>
+            </value>
+            <value>
+                <fullName>Editor</fullName>
+                <default>false</default>
+                <label>Editor</label>
+            </value>
+            <value>
+                <fullName>Equipment Verleih</fullName>
+                <default>false</default>
+                <label>Equipment Verleih</label>
+            </value>
+            <value>
+                <fullName>Flugobjekte</fullName>
+                <default>false</default>
+                <label>Flugobjekte</label>
+            </value>
+            <value>
+                <fullName>Grading</fullName>
+                <default>false</default>
+                <label>Grading</label>
+            </value>
+            <value>
+                <fullName>Kamera Assistenz</fullName>
+                <default>false</default>
+                <label>Kamera Assistenz</label>
+            </value>
+            <value>
+                <fullName>Kameramann</fullName>
+                <default>false</default>
+                <label>Kameramann</label>
+            </value>
+            <value>
+                <fullName>Licht Assistenz</fullName>
+                <default>false</default>
+                <label>Licht Assistenz</label>
+            </value>
+            <value>
+                <fullName>Maske</fullName>
+                <default>false</default>
+                <label>Maske</label>
+            </value>
+            <value>
+                <fullName>Materialhersteller</fullName>
+                <default>false</default>
+                <label>Materialhersteller</label>
+            </value>
+            <value>
+                <fullName>Motion Designer</fullName>
+                <default>false</default>
+                <label>Motion Designer</label>
+            </value>
+            <value>
+                <fullName>Packaging</fullName>
+                <default>false</default>
+                <label>Packaging</label>
+            </value>
+            <value>
+                <fullName>Papierhandel</fullName>
+                <default>false</default>
+                <label>Papierhandel</label>
+            </value>
+            <value>
+                <fullName>Papierhersteller</fullName>
+                <default>false</default>
+                <label>Papierhersteller</label>
+            </value>
+            <value>
+                <fullName>Produktionsleitung</fullName>
+                <default>false</default>
+                <label>Produktionsleitung</label>
+            </value>
+            <value>
+                <fullName>Regie/Realisation</fullName>
+                <default>false</default>
+                <label>Regie/Realisation</label>
+            </value>
+            <value>
+                <fullName>Requisiteur</fullName>
+                <default>false</default>
+                <label>Requisiteur</label>
+            </value>
+            <value>
+                <fullName>Runner</fullName>
+                <default>false</default>
+                <label>Runner</label>
+            </value>
+            <value>
+                <fullName>Schauspieler</fullName>
+                <default>false</default>
+                <label>Schauspieler</label>
+            </value>
+            <value>
+                <fullName>Sound Engineers</fullName>
+                <default>false</default>
+                <label>Sound Engineers</label>
+            </value>
+            <value>
+                <fullName>Sprecher</fullName>
+                <default>false</default>
+                <label>Sprecher</label>
+            </value>
+            <value>
+                <fullName>Storyboard</fullName>
+                <default>false</default>
+                <label>Storyboard</label>
+            </value>
+            <value>
+                <fullName>Stylist</fullName>
+                <default>false</default>
+                <label>Stylist</label>
+            </value>
+            <value>
+                <fullName>Ton</fullName>
+                <default>false</default>
+                <label>Ton</label>
+            </value>
+            <value>
+                <fullName>Übersetzer</fullName>
+                <default>false</default>
+                <label>Übersetzer</label>
+            </value>
+            <value>
+                <fullName>Veredelung</fullName>
+                <default>false</default>
+                <label>Veredelung</label>
+            </value>
+            <value>
+                <fullName>Werkzeughersteller</fullName>
+                <default>false</default>
+                <label>Werkzeughersteller</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>7</visibleLines>
+</CustomField>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ILV Pos</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ILV Pos</value>
+    </caseValues>
+    <layouts>
+        <layout>ILV Pos Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Finance Controlling --></label>
+            <section>Finance Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Transfer Information --></label>
+            <section>Financial Transfer Information</section>
+        </sections>
+        <sections>
+            <label><!-- ILV Position Detail --></label>
+            <section>ILV Position Detail</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage>
+            <!-- The ILV Position can not be changed anymore since the Invoice is not in Draft anymore. Please get in touch with your Project Manager for assistance.
+(ILV001) -->
+        </errorMessage>
+        <name>ILV001_Position_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You can not attach an ILV position to another invoice. Please get in touch with your Super User for assistance.
+(ILV002) -->
+        </errorMessage>
+        <name>ILV002_ILV_POS_not_move</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The invoice position Package Type Name does not match the Package Record Type Name. Please get in touch with your Super User.
+(ILV003) -->
+        </errorMessage>
+        <name>ILV003_ILV_Position_Package_Type</name>
+    </validationRules>
+</CustomObjectTranslation>

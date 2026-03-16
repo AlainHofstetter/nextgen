@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HBC_Business_Campaigns</fullName>
+    <columns>CAMPAIGN.NAME</columns>
+    <columns>UnitRelevance__c</columns>
+    <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+    <columns>CAMPAIGN.ACTIVE</columns>
+    <columns>CAMPAIGN.STATUS</columns>
+    <columns>CAMPAIGN.START_DATE</columns>
+    <columns>CAMPAIGN.END_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CAMPAIGN.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Campaign.BusinessCampaign</value>
+    </filters>
+    <filters>
+        <field>UnitRelevance__c</field>
+        <operation>equals</operation>
+        <value>HBC</value>
+    </filters>
+    <label>HBC - Business Campaigns</label>
+    <language>en_US</language>
+</ListView>

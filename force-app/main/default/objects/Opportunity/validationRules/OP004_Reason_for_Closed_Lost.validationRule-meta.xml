@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OP004_Reason_for_Closed_Lost</fullName>
+    <active>true</active>
+    <description>All Opportunities with the Status Closed Lost need to have a Reason for the Lose.</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+  ZImportSource__c != &quot;Print Plus - Talend Job #1020&quot;,
+ISPICKVAL(
+  StageName , &quot;Closed Lost&quot;),
+ISBLANK(
+ReasonWonLost__c)
+)</errorConditionFormula>
+    <errorDisplayField>ReasonWonLost__c</errorDisplayField>
+    <errorMessage>Every Opportunity with the Stage &apos;Close Lost&apos; needs a &apos;Reason Won/Lost&apos;.
+(OP004)</errorMessage>
+</ValidationRule>

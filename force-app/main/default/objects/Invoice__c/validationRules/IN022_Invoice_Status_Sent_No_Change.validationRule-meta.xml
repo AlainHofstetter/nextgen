@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IN022_Invoice_Status_Sent_No_Change</fullName>
+    <active>true</active>
+    <description>The Invoice is in status &quot;Sent to Abacus&quot; and can therefore only be changed by Finance.</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true, 
+$User.IsFinanceManager__c = false,
+ISPICKVAL(InvoiceStatus__c,&quot;Sent&quot;),
+DATEVALUE(LastModifiedDate) &lt;= today(),
+OR(
+ISCHANGED(InvoiceReceiver__c),
+ISCHANGED(BillingNameAddition__c),
+ISCHANGED(InvoiceDate__c),
+ISCHANGED(InvoiceSentDate__c),
+ISCHANGED(FinanceDate__c),
+ISCHANGED(PeriodFrom__c),
+ISCHANGED(PeriodUntil__c),
+ISCHANGED(CustomerOrderNr__c),
+ISCHANGED(CustomerReference__c),
+ISCHANGED(TermsOfPayment__c),
+ISCHANGED(InvoiceContact__c),
+ISCHANGED(BillingModel__c),
+ISCHANGED(InvoiceTitle__c),
+ISCHANGED(InvoiceDescription__c),
+ISCHANGED(ShowProjectInvoiceDescription__c),
+ISCHANGED(OpportunityQuoteNr__c),
+ISCHANGED(VATPercent__c),
+ISCHANGED(ContractPartner__c),
+ISCHANGED(InvoiceDocumentNr__c),
+ISCHANGED(InvoiceTotalAmountGross__c)
+)
+)</errorConditionFormula>
+    <errorMessage>This Invoice is in status &quot;Sent to Abacus&quot; and can only be changed by Finance.
+(IN022)</errorMessage>
+</ValidationRule>

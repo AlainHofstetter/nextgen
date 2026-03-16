@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>lisis.rodriguez@empaua.com</contactEmail>
+    <label>My Vacation</label>
+    <logoUrl>https://brandleadership.file.force.com/servlet/servlet.ImageServer?id=015Vj000001bzn8&amp;oid=00Db0000000cbJ7</logoUrl>
+    <startUrl>https://brandleadership.lightning.force.com/lightning/r/Report/00O0X000004KVQcUAO/view</startUrl>
+</ConnectedApp>

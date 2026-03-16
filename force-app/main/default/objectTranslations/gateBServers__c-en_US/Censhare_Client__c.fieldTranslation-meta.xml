@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Censhare Client --></label>
+    <name>Censhare_Client__c</name>
+    <picklistValues>
+        <masterLabel>Citrix</masterLabel>
+        <translation><!-- Citrix --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Local (Java) Client</masterLabel>
+        <translation><!-- Local (Java) Client --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Web Client</masterLabel>
+        <translation><!-- Web Client --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

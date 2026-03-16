@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Credit_Cards</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Type__c</columns>
+    <columns>CreditCard__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>User__c</columns>
+    <columns>ValAvailableInApp__c</columns>
+    <columns>CreditCardNrLast4Digits__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Inventory__c.CreditCard</value>
+    </filters>
+    <filters>
+        <field>ValAvailableInApp__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>All Credit Cards</label>
+</ListView>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Template Legal --></label>
+    <name>TemplateLegal__c</name>
+    <picklistValues>
+        <masterLabel>BLC</masterLabel>
+        <translation><!-- BLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CY</masterLabel>
+        <translation><!-- CY --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GBCH</masterLabel>
+        <translation><!-- GBCH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GBDE</masterLabel>
+        <translation><!-- GBDE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GBSG</masterLabel>
+        <translation><!-- GBSG --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GBUS</masterLabel>
+        <translation><!-- GBUS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HBC</masterLabel>
+        <translation><!-- HBC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HILDA</masterLabel>
+        <translation><!-- HILDA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HoM</masterLabel>
+        <translation><!-- HoM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SVH</masterLabel>
+        <translation><!-- SVH --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PR002_RecordType_Change</fullName>
+    <active>true</active>
+    <description>Project Record Type cannot be changed if related objects are available.</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+ $User.IsSuperUser__c = false,
+ISCHANGED(RecordTypeId)
+)</errorConditionFormula>
+    <errorMessage>The Project Type can not be changed. Please contact your Super User for assistance.
+(PR002)</errorMessage>
+</ValidationRule>

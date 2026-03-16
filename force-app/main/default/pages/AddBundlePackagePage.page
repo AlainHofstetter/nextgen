@@ -1,0 +1,539 @@
+<!--
+   *   @Name : AddBundlePackagePage
+   *
+   *   @Author             :  Francisco Javier Sanz <javier.sanz@empaua.com>
+   *   @Created            :  06 Nov 2018
+   *   @Description        :   
+   *
+   *   Modification Log
+   *   ============================================================================================================================
+   *   #   Developer                                  Date          Description
+   *  
+
+--> 
+<apex:page standardController="Opportunity" extensions="AddBundlePackageController" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0" sidebar="false" showHeader="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <apex:slds />
+        </head>
+        <body> 
+            <div class="slds-scope">
+                <div id="error-messages-div" class="slds-box slds-theme--error slds-hide"></div>
+                <div id="sucess-messages-div" class="slds-box slds-theme--success slds-hide"></div>             
+                <apex:form id="theForm">
+                    <table data-role="targetComTable" class="slds-table slds-table--bordered slds-no-row-hover slds-table_cell-buffer slds-table_striped">
+
+                        <thead>
+                            <tr class="slds-text-title_caps">
+                                <th scope="col" class="tableHeader" data-priority="1" style="width:250px;">
+                                    <div class="slds-truncate" title="{!$ObjectType.Pack__c.fields.name.Label}">
+                                        {!$ObjectType.Pack__c.fields.name.Label}
+                                    </div>
+                                </th>
+                                <th scope="col" class="tableHeader" data-priority="1">
+                                    <div class="slds-truncate" title="{!$ObjectType.Pack__c.fields.SortNumber__c.Label}">
+                                        {!$ObjectType.Pack__c.fields.SortNumber__c.Label}
+                                    </div>
+                                </th>
+                                
+                                <th scope="col" class="tableHeader" data-priority="1">
+                                </th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody id="targetComTbody2">
+                           
+                            <tr id="TargetCompanyInput" class="slds-hint-parent">
+                             
+                                <td valign="bottom">
+                                    <input type="text" id="nameinput" class="slds-input"/>
+                                </td>
+                                <td valign="bottom">
+                                    <input type="string" id="SortNumberInput" class="slds-input"/>
+                                </td>                             
+                                <td valign="bottom">
+                                    <button class="slds-button slds-button_outline-brand" onclick="getPackages(); return false;">Get Packages</button>
+                                </td>
+                                <td valign="bottom">
+                                    <button class="slds-button slds-button_outline-brand" onclick="addPackages(); return false;">Add Packages</button>
+                                </td>
+                                <td valign="bottom">
+                                    <button class="slds-button slds-button_outline-brand" value="Back" onclick="window.history.back()">Back</button>
+                                </td>
+                             
+                            </tr>
+
+                            <tr class="slds-hint-parent" data-role="listRow">
+                                
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                    <table class="slds-table slds-table--bordered slds-no-row-hover slds-table_cell-buffer slds-table_striped packageTable" id ='test' >
+                    <tbody id="targetComTbody">
+                    	<thead>
+                            <tr class="slds-text-title_caps">
+                            	<th scope="col" class="tableHeader" data-priority="1" style="width:1%;">
+                                   
+                                </th>
+                                
+                                <th scope="col" class="tableHeader" data-priority="1" style="width:24%;">
+                                    <div class="slds-truncate" title="PackageName">
+                                        Name
+                                    </div>
+                                </th>
+                                <th scope="col" class="tableHeader" data-priority="1" style="width:24%;">
+                                    <div class="slds-truncate" title="SortNumber">
+                                        SortNumber
+                                    </div>
+                                </th>
+                                <th scope="col" class="tableHeader" data-priority="1" style="width:24%;">
+                                    <div class="slds-truncate" title="Description">
+                                        Description
+                                    </div>
+                                </th>
+                               	 <th scope="col" class="tableHeader" data-priority="1" style="width:24%;">
+                                    <div class="slds-truncate" title="TotalPrice">
+                                        Total Price
+                                    </div>
+                                </th> 
+                                 <th scope="col" class="tableHeader slds-hide" data-priority="1" style="width:24%;">
+                                    <div class="slds-truncate" title="bundlePackage">
+                                        BundlePackage ID
+                                    </div>
+                                </th> 
+                                
+                            </tr>
+                        </thead>
+                    </tbody>
+                    
+                    	
+                    </table>
+                </apex:form>
+            </div>
+         </body>
+         
+         <script>
+			 /*
+        	  * Saves created Target Company
+         	*/ 
+         	var myJq = jQuery.noConflict();
+         	var packagestoadd = [];
+         	var line = {
+         		
+         	}
+         	
+         	var PackageTemplates = [];
+         	
+         	
+         	var opportunityId = '{!opportunityId}';
+         	var pricebookEntry = '{!PricebookId}'; 
+         	console.log(opportunityId);
+         	console.log(pricebookEntry);
+			
+			
+            var filterFields = {
+            		
+            		name: myJq('#nameinput').val(),            		
+            		SortNumber: myJq('#SortNumberInput').val(),
+            		pricebookEntry : '{!PricebookId}',
+            		Opportunity : '{!opportunityId}',
+            		
+           };
+
+
+
+/******************************************************************************/
+//GET PACKAGES FUNCTION 
+
+         	function getPackages() {
+         	
+         		var nameSearch = myJq('#nameinput').val();
+         		var SortNumber = myJq('#SortNumberInput').val();
+         		
+         		if(nameSearch != null) { filterFields.name = nameSearch;}
+         		if(SortNumber != null) { filterFields.SortNumber = SortNumber;}
+         		       	
+         		AddBundlePackageController.queriePackages(JSON.stringify(filterFields),
+		        	function(result, event){
+			        	if(event.status){
+			            	if (result == null || result.startsWith("ERROR|")){
+			                   	var errorMsg;
+                               	if (result)
+                               		errorMsg = result.split("|")[1];
+                               	else
+                               		errorMsg = 'test';
+
+                                   showError("#error-messages-div",errorMsg);
+                                   
+                                   return true;
+                             }else {                
+                             		PackageTemplates = JSON.parse(cleanJSON(result));            		  
+                                 	buildTable(PackageTemplates);                                 	
+                                	showError("#sucess-messages-div",PackageTemplates.length + " Packages found");
+                                	PackageTemplates = null;
+                                	return true;
+                             }
+                        }
+			             	
+			              }                    
+			       );
+		
+		       	return false;
+         	        		
+         	}
+   	
+/******************************************************************************/
+//BUILD TABLE FUNCTION 
+      	
+         	function buildTable(PackageTemplates) {
+				var tableHTML = '';
+
+				// console.log('------------------------buildTable---------------------------------');
+				// console.log(PackageTemplates);
+				// console.log('-------------------------------------------------------------------');
+			              
+				for (i = 0; i < PackageTemplates.length ; i++) {
+			    	var row = PackageTemplates[i];
+					var tablename = "'"+'packageItemsTable'+i+"'";
+					
+			    	tableHTML +=
+			    		'<tr class="slds-hint-parent packagerow" id ="parent'+i+'" data-role="listRow" data-sonsLenght = "'+row.listPackageItems.length+'">' +
+					    '   <td>'+
+					    '		<a href="" onclick="ColapseMenu('+tablename+');return false;" aria-controls="expando-unique-id" aria-expanded="true" class="slds-button slds-section__title-action" id="search-section-button">'+
+			            '       	<svg class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">'+
+			            '   	       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS246, '/assets/icons/utility-sprite/svg/symbols.svg#switch')}" />'+
+			            ' 			</svg>'+
+			            '    	</a>'+
+					    '	</td>'+                            
+                        '   <td>'+ 
+                     	'        <input type="checkbox" class ="packageInputSelect" data-i='+i+' id="selected'+i+'"' + 'onchange="selectSons('+tablename+');return false;"  />'+                     
+                        '        <label  class="slds-truncate packageName" title="name">'+replaceUndefined(row.name)+'</label>'+
+                        '   </td>'+
+                        '   <td>'+
+                        '        <label class="slds-truncate packagesortNumber" title="sortNumber">'+replaceUndefined(row.sortNumber)+'</label>'+
+                        '   </td>'+
+                        '   <td>'+
+                        '        <div class="slds-truncate packageDescription" title="description">'+replaceUndefined(row.description)+'</div>'+
+                        '   </td>'+   
+                        '   <td>'+
+                        '        <div class="slds-truncate packagetotalPrice" title="totalPrice" id= "TotalPriceParent' +i+'">'+replaceUndefined(row.totalPrice)+'</div>'+
+                        '   </td>'+ 
+                        '   <td>'+
+                        '        <div class="slds-truncate packageID slds-hide" title="bundlePackage">'+replaceUndefined(row.bundlePackage)+'</div>'+
+                        '   </td>'+                         
+                        '</tr>';
+                       
+                        if(row.listPackageItems.length != 0) {
+                       	   tableHTML +='<tr><td colspan="4"><table class = "slds-section slds-is-open slds-show packageitems"  data-i='+i+' id = "packageItemsTable'+i+'">'+                  	   
+	                       '	 <thead>'+
+	                       ' 		<tr class="slds-text-title_caps tableHeader">'+	                       			
+	                       ' 			<th scope="col" class="tableHeader" data-priority="1" style="width:24%;">'+
+	                       '   				<div class="slds-truncate" title="Name">'+
+	                       '        			Name'+
+	                       '   				</div>'+
+	                       '  			</th>'+
+	                       '  			<th scope="col" class="tableHeader" data-priority="1" style="width:24%;">'+
+	                       '    			<div class="slds-truncate" title="ProductType">'+
+	                       '       				Fraction'+
+	                       '   				</div>'+
+	                   	   '            </th>'+
+	                   	   '            <th scope="col" class="tableHeader" data-priority="1" style="width:24%;">'+
+	                       '               <div class="slds-truncate" title="Defaultprice">'+
+	                       '                  Default price'+
+	                       '               </div>'+
+	                       '        	</th>'+
+	                       '       		<th scope="col" class="tableHeader" data-priority="1" style="width:24%;">'+
+	                       '          		<div class="slds-truncate" title="Defaultquantity">'+
+	                       '             		Default quantity'+
+	                       '        		</div>'+
+	                       '   			</th>'+
+	                       '  			<th scope="col" class="tableHeader" data-priority="1" style="width:24%;">'+
+	                       '                <div class="slds-truncate" title="Totalprice">'+
+	                       '                   Total price'+
+	                       '              </div>'+
+	                       '         	</th>'+  
+	                       '  			<th scope="col" class="tableHeader slds-hide" data-priority="1" style="width:24%;">'+
+	                       '                <div class="slds-truncate" title="ProductID">'+
+	                       '                   PRODUCTID'+
+	                       '              </div>'+
+	                       '         	</th>'+     
+	                       '  		</tr>'+
+	                       '	</thead>'+
+	                       '	<tbody id="Itemsbody'+i+'">';
+	                       
+                      	   for (j = 0; j < row.listPackageItems.length ; j++) {
+                      	   
+				    			var rowitems = row.listPackageItems[j];
+				    			var sonrowname = "'"+"sonRow"+i+j+"'";
+				    			tableHTML +=
+					    		'<tr class="slds-hint-parent  sonsData " data-parent= "'+i+'" data-son ="'+j+'" data-role="listRow" id="sonRow'+i+j+'">' +
+		                        '   <td class ="sonName">'+
+		                        '		 <input type="checkbox" data-i='+i+' data-j='+j+' id="selected'+i+j+'" onchange="calculateTotalPriceParent('+i+');return false;"/>'+	
+		                        '        <label class="slds-truncate" title="Name">'+replaceUndefined(rowitems.name)+'</label>'+
+		                        '   </td>'+
+		                        '   <td class ="sonProductType">'+
+		                        '        <label class="slds-truncate sonProductType" title="ProductType">'+replaceUndefined(rowitems.ProductType)+'</label>'+
+		                        '   </td>'+
+		                        '   <td class ="sonDefaultPrice">'+
+		                        '		<input class="tableLine sonDefaultPrice" type="number"'+ 'onchange="calculateTotalLineSon('+sonrowname+');return false;"'+' id= "Defaultprice" value="'+replaceUndefined(rowitems.Defaultprice)+'" />'+	
+		                        '   </td>'+   
+		                        '   <td class ="sonDefaultQuantity">'+
+		                        '		 <input class="tableLine sonDefaultQuantity" type="number"'+ 'onchange="calculateTotalLineSon('+sonrowname+');return false;"'+' id= Defaultquantity'+i+j+' value="'+replaceUndefined(rowitems.Defaultquantity)+'" />'+
+		                        '   </td>'+
+		                        '   <td class ="sonTotalPrice">'+
+		                        '        <div class="slds-truncate sonTotalPrice" title="Totalprice">'+replaceUndefined(rowitems.Totalprice)+'</div>'+
+		                        '   </td>'+  
+		                        '   <td class ="sonID">'+
+		                        '        <div class="slds-truncate slds-hide" title="sonId">'+replaceUndefined(rowitems.productId)+'</div>'+
+		                        '   </td>'+                           
+		                        '</tr>';
+		                       
+		                      }	
+                        
+	                      tableHTML +=  '</tbody>';  	                      
+	                      tableHTML +=  '</table></td></tr>';
+	                 	}  
+			    	
+                        
+			    }
+
+			   var tBody = myJq('#targetComTbody');
+			   myJq("#targetComTbody").find("tr").remove();
+			   myJq('#targetComTbody').append(tableHTML);
+			}
+			
+		
+/******************************************************************************/
+// ADD PACKAGES FUNCTION 
+ 			function addPackages(){
+ 			
+ 				var myjson = [];
+ 				var WrapperPackage;		
+ 				var newwrapperpackage = true;	
+ 				
+ 				myJq(".packageTable").find('tr').each(function(i, el) {
+ 				 		 				
+	 				var row = myJq(this);
+				    
+			        if (row.find('input[type="checkbox"]').is(':checked')) {
+			        			        	
+			        	if(row.hasClass('packagerow') && newwrapperpackage) {
+			        		console.log(opportunityId);
+			        		console.log('{!opportunityId}');        				        					        		
+			        		WrapperPackage = {"selected":"true",
+				        						"name":"name",
+				        						"sortNumber":"sortNumber",
+				        						"description":"description",
+				        						"totalPrice":"totalPrice",	
+				        						"bundlePackage":"bundlePackage",
+				        						"OpportunityId":opportunityId,
+				        						"PricebookId":pricebookEntry,
+				        						"listPackageItems":[]};	
+			        		
+			        		WrapperPackage.name = row.find('.packageName').text().trim();
+			        		WrapperPackage.sortNumber = row.find('.packagesortNumber').text().trim();
+			        		WrapperPackage.description = row.find('.packageDescription').text().trim();
+			        		WrapperPackage.totalPrice = row.find('.packagetotalPrice').text().trim();
+			        		WrapperPackage.bundlePackage = row.find('.packageID').text().trim();
+							
+			        		newwrapperpackage = false;
+			         	}
+			        				        				        	
+			        	row.find('tr').each(function(i, el) {
+			        					        					    		
+			        		var line = myJq(this);   				
+			        				       		
+			        		if (line.hasClass('sonsData') && line.find('input[type="checkbox"]').is(':checked') ){
+			        			
+			        			var WrapperPackageItem = {
+			        						"selected":"true",
+			        						"name":"name",
+			        						"ProductType":"ProductType",
+			        						"Defaultprice":"Defaultprice",
+			        						"Defaultquantity":"Defaultquantity",	
+			        						"Totalprice":"Totalprice"
+			        			};
+			        			
+			        			WrapperPackageItem.name = line.find('td.sonName').text().trim();
+			        			WrapperPackageItem.ProductType = line.find('td.sonProductType').text().trim();
+			        			WrapperPackageItem.Defaultprice = line.find('td.sonDefaultPrice input').val();
+			        			WrapperPackageItem.Defaultquantity = line.find('td.sonDefaultQuantity input').val();
+			        			WrapperPackageItem.Totalprice = line.find('td.sonTotalPrice').text().trim();
+			        			WrapperPackageItem.productId = line.find('td.sonID').text().trim();	
+			        				        					        			
+			        			WrapperPackage.listPackageItems.push(WrapperPackageItem);
+			        			
+			            		newwrapperpackage = true;			            	
+			            	}
+			            });
+		           
+		        	}
+		        	
+		        	 if(newwrapperpackage) {
+		        	 	if(WrapperPackage!=null){
+		        	 		myjson.push(WrapperPackage);
+		        	 	}
+			         	WrapperPackage = null;
+
+		        	 }
+		        	
+		                    	
+				});
+				
+				
+				
+				AddBundlePackageController.addToOpportunity(JSON.stringify(myjson),
+		        	
+		        	function(result, event){
+			        	if(event.status){
+			            	if (result == null || result.startsWith("ERROR|")){
+			                   	var errorMsg;
+                               	if (result)
+                               		errorMsg = result.split("|")[1];
+                               	else
+                               		errorMsg = 'test';
+
+                                   showError("#error-messages-div",errorMsg);
+                                   
+                                   return true;
+                             }else {                
+                             		                                	
+                                	showError("#sucess-messages-div",result +"");
+                                	
+                                	return true;
+                             }
+                        }
+			             	
+			              }                    
+			       );
+ 				
+ 				return false;
+ 			}
+ /******************************************************************************/
+//recalculate total functions
+	
+
+	
+	function calculateTotalLineSon(idpackageItemsTr) {
+		
+		var line = myJq('#'+idpackageItemsTr);
+		line.find('td.sonTotalPrice').text(line.find('td.sonDefaultPrice input').val() *line.find('td.sonDefaultQuantity input').val() * 1);
+		   			
+		if (line.find('input[type="checkbox"]').is(':checked')) {
+
+			var parent = document.getElementById(idpackageItemsTr);
+			calculateTotalPriceParent(parent.dataset.parent);
+		}
+		return null;
+	}
+		
+
+	function calculateTotalPriceParent(dataparentnumber) {
+
+		var parent = document.getElementById('parent'+dataparentnumber);
+		var sonlenght = parent.dataset.sonslenght;
+		console.log('entro');
+		var newTotal = Number(0);
+		for( j = 0; j<sonlenght; j++) {
+			
+			console.log(myJq('#'+'sonRow'+dataparentnumber + j));
+			if( myJq('#'+'sonRow'+dataparentnumber + j).find('input[type="checkbox"]').is(':checked')) {				
+				newTotal += Number(myJq('#sonRow'+dataparentnumber + j).find('td.sonTotalPrice').text());
+				console.log('checked');				
+			}else {
+				console.log('NOT checked');	
+			}		
+		}
+		console.log(newTotal);
+		myJq('#TotalPriceParent'+dataparentnumber).text(newTotal);
+
+		return null;
+	}
+
+		      						
+/******************************************************************************/
+//SELECT SONS FUNCTION
+
+		function selectSons(parentname){
+		
+			myJq.find(parentname)
+			myJq("#"+parentname ).find("input:checkbox").prop('checked', true);
+			
+			return false;
+						
+		}				
+			
+			
+/******************************************************************************/						
+			
+//COLAPSABLE FUNCTION
+			
+			function ColapseMenu(obj) {
+	        
+		        if (myJq("#"+obj).hasClass('slds-show')){
+		          
+		            myJq('#'+obj).removeClass('slds-show');
+	                myJq('#'+obj).addClass('slds-hide');
+	             }else {
+	            	myJq('#'+obj).removeClass('slds-hide');
+	             	myJq('#'+obj).addClass('slds-show');
+	                
+	             
+	            }                                    
+	         	return false;  
+	        }
+					
+/******************************************************************************/			
+//STANDARD UTILITY FUNCTIONS
+         	
+ 
+            /*
+             * Clears error message from the provided div and hides div
+             */
+            function clearErrors(errorDiv) {
+            	myJq(errorDiv).addClass("slds-hide");
+   				myJq(errorDiv).html("");
+            }
+              /*
+             * Replaces undefined or null strings with an empty string.
+             */
+            function replaceUndefined(str) {
+            
+            	if (!str)
+            		return 'aaaaaaaaa';
+            	else
+            		return str;
+            }
+            
+            function deleteTargetCom(index) {
+            	addedcallitems.splice(index,1);
+            	buildTable(addedcallitems);
+            }
+            
+            /*
+             * Cleans JSON string
+             */
+            function cleanJSON(jsonStr) {
+              	return jsonStr.replace(/&quot\;/g,"\"")
+                  .replace(/\n/g,"")
+                  .replace(/\r/g,"")
+                  .replace(/&amp\;/g,"&");
+            }
+            	/*
+             * Displays given error message at the provided div and shows div
+             */
+            function showError(errorDiv, errorMsg) {
+				
+				
+				myJq(errorDiv).removeClass('slds-hide');
+				myJq(errorDiv).html(errorMsg);
+				return false;
+            }
+         	
+         
+        </script>
+            
+    </html>
+</apex:page>

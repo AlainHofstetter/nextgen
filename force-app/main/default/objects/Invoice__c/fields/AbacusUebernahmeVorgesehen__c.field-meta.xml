@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AbacusUebernahmeVorgesehen__c</fullName>
+    <formula>AND(
+ISNULL(AbacusTransfer__c),
+AbacusInterfaceExport__c = true,
+ISPICKVAL( InvoiceStatus__c ,&quot;Ready&quot;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Abacus Übernahme: Vorgesehen</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

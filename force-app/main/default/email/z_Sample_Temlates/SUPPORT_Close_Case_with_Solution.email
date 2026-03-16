@@ -1,0 +1,10 @@
+Liebe(r) MitarbeiterIn
+Deine Supportanfrage mit der Case-Nr. {!Case.CaseNumber} und dem Betreff "{!Case.Subject}" vom {!Case.CreatedDate} wurde abgeschlossen.
+
+Folgende Lösung wurde angegeben:
+{!Case.Solution__c}
+
+Freundliche Grüsse 
+Dein {!Organization.Name} IT Support 
+
+Thread Id: (ref:_{!Organization.Id}._{!Case.Id}:ref)

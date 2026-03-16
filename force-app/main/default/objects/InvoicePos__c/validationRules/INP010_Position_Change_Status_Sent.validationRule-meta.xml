@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>INP010_Position_Change_Status_Sent</fullName>
+    <active>true</active>
+    <description>The Invoice Position can not be changed anymore</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+$User.IsFinanceManager__c = false,
+DATEVALUE(LastModifiedDate) &lt;= today(),
+ISPICKVAL(InvoiceName__r.InvoiceStatus__c,&quot;Sent&quot;)
+)</errorConditionFormula>
+    <errorMessage>The Invoice Position can not be changed anymore since the Invoice is in status &quot;Sent&quot;. Please get in touch with Finance.
+(INP010)</errorMessage>
+</ValidationRule>

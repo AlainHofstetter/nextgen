@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Finance_Nicht_an_Leistung_zugewiesen</fullName>
+    <columns>NAME</columns>
+    <columns>SupplierInvoice__c</columns>
+    <columns>SupplierCostsDate__c</columns>
+    <columns>AbacusDocumentNrPosNr__c</columns>
+    <columns>ProjectNr__c</columns>
+    <columns>VisaNr__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PackageName__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Finance - Nicht an Leistung zugewiesen</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_FIN_Alle</group>
+    </sharedTo>
+</ListView>

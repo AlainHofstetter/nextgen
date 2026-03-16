@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PR019_No_PM_No_Change</fullName>
+    <active>true</active>
+    <description>Only PM is allowed to change this information</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+$User.IsProjectManager__c=false,
+OR(
+ ISCHANGED(ContractPartner__c),
+ ISCHANGED(RecordTypeId), 
+ ISCHANGED(OwnerId),
+ ISCHANGED(ProjectCostCenter__c), 
+ ISCHANGED(ProjectResponsibleBusiness__c), 
+ ISCHANGED(ProjectStartDate__c),
+ ISCHANGED(ProjectStatus__c),
+ ISCHANGED(ProjectStatus__c),
+ ISCHANGED(ProjectSubType__c),
+ ISCHANGED(Name),
+ ISCHANGED(ProjectCurrency__c)
+)
+)</errorConditionFormula>
+    <errorMessage>You do not have the permission to change this information. Please get in touch with the Project Manager.
+(PR019)</errorMessage>
+</ValidationRule>

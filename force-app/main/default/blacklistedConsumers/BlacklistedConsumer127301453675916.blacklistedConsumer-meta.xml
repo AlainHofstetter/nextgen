@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BlacklistedConsumer xmlns="http://soap.sforce.com/2006/04/metadata">
+    <blockedByApiWhitelisting>false</blockedByApiWhitelisting>
+    <consumerKey>3MVG9A2kN3Bn17htXcFhZnrGqfbFNRGqPtHX5XLKaoBW3MPgxXnuoy.ybHnFoe2EvyFp4rvcMoEwcj3oVL1mL</consumerKey>
+    <consumerName>Vision-e Scan App</consumerName>
+    <masterLabel>BlacklistedConsumer127301453557384</masterLabel>
+</BlacklistedConsumer>

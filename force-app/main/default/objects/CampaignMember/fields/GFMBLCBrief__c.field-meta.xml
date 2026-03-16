@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GFMBLCBrief__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+OR(MPSJury__c = true,MPSChampion__c=true,MPSParticipant__c=true,BLCCustomer__c=true,NOT(ISBLANK(CustomerActual__c))),&quot;BLC Brief&quot;,
+
+IF(
+OR(GFMPlatinMember__c=true,GFMMember__c=true,GFMContact__c=true),&quot;GFM Brief&quot;,&quot;NONE&quot;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>GFM/BLC Brief</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

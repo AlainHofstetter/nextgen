@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>US004_NoChanges</fullName>
+    <active>true</active>
+    <description>This prevents users who are not from the HR or IT team from updating the users&apos; details.</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+$User.IsHRManager__c = false,
+$User.PS160RoleITManager__c = false,
+OR(
+ISCHANGED( Department ),
+ISCHANGED( Division ),
+ISCHANGED( Extension ),
+ISCHANGED( Fax ),
+ISCHANGED( MobilePhone ),
+ISCHANGED( EmployeeNumber ),
+ISCHANGED( StartDay ),
+ISCHANGED( EndDay ),
+ISCHANGED( Street ),
+ISCHANGED( PostalCode ),
+ISCHANGED( City ),
+ISCHANGED( State ),
+ISCHANGED( Country ),
+ISCHANGED( TimeZoneSidKey ),
+ISCHANGED( LocaleSidKey )
+)
+)</errorConditionFormula>
+    <errorMessage>You are not allowed to change the data of your User Profile. Please get in touch with HR or IT (US004).</errorMessage>
+</ValidationRule>

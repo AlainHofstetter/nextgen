@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLC_Test_Pricebook</fullName>
+    <columns>PRODUCT.NAME</columns>
+    <columns>PRODUCT.DEFAULT_PRICE</columns>
+    <columns>PB_ENTRY.USE_STANDARD_PRICE</columns>
+    <columns>PRODUCT.ACTIVE</columns>
+    <columns>Product2.ProductType__c</columns>
+    <columns>Product2.ProductSubType__c</columns>
+    <columns>Product2.SuperiorProduct__c</columns>
+    <columns>Product2.ProjectManagementAllowanceProduct__c</columns>
+    <columns>Product2.ExpenseAllowanceProduct__c</columns>
+    <columns>Product2.Legal__c</columns>
+    <columns>PRODUCT2.ACTIVE</columns>
+    <columns>Product2.SortNr__c</columns>
+    <filterScope>Queue</filterScope>
+    <label>BLC - Test Pricebook</label>
+    <language>en_US</language>
+    <queue>BLC - Test Pricebook</queue>
+</ListView>

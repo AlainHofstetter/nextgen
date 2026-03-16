@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Call for Entry</masterLabel>
+        <translation>Anzeige</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cold Calling</masterLabel>
+        <translation>Sonstiges</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Event</masterLabel>
+        <translation>E-Mail</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>HR Campaign</masterLabel>
+        <translation>HR Kampagne</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mailing (Digital)</masterLabel>
+        <translation><!-- Mailing (Digital) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mailing (Print)</masterLabel>
+        <translation>Telemarketing</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other</masterLabel>
+        <translation>Andere</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>PR Activity</masterLabel>
+        <translation>PR Aktivität</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Tradeshow</masterLabel>
+        <translation>Messe</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

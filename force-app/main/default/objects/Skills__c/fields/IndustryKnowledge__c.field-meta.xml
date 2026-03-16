@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IndustryKnowledge__c</fullName>
+    <label>Industry Knowledge</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Agriculture</fullName>
+                <default>false</default>
+                <label>Agriculture</label>
+            </value>
+            <value>
+                <fullName>Association / Not for Profit</fullName>
+                <default>false</default>
+                <label>Association / Not for Profit</label>
+            </value>
+            <value>
+                <fullName>Automotive</fullName>
+                <default>false</default>
+                <label>Automotive</label>
+            </value>
+            <value>
+                <fullName>Banking / Finance / Insurance</fullName>
+                <default>false</default>
+                <label>Banking / Finance / Insurance</label>
+            </value>
+            <value>
+                <fullName>Beauty / Fashion / Luxury Goods</fullName>
+                <default>false</default>
+                <label>Beauty / Fashion / Luxury Goods</label>
+            </value>
+            <value>
+                <fullName>Communication / Media / Social Media</fullName>
+                <default>false</default>
+                <label>Communication / Media / Social Media</label>
+            </value>
+            <value>
+                <fullName>Construction / Real Estate</fullName>
+                <default>false</default>
+                <label>Construction / Real Estate</label>
+            </value>
+            <value>
+                <fullName>Consulting / Service Provider / Agency</fullName>
+                <default>false</default>
+                <label>Consulting / Service Provider / Agency</label>
+            </value>
+            <value>
+                <fullName>Consumer Packaged Goods</fullName>
+                <default>false</default>
+                <label>Consumer Packaged Goods</label>
+            </value>
+            <value>
+                <fullName>Education</fullName>
+                <default>false</default>
+                <label>Education</label>
+            </value>
+            <value>
+                <fullName>Energy / Utilities</fullName>
+                <default>false</default>
+                <label>Energy / Utilities</label>
+            </value>
+            <value>
+                <fullName>Entertainment / Sports / Films</fullName>
+                <default>false</default>
+                <label>Entertainment / Sports / Films</label>
+            </value>
+            <value>
+                <fullName>Environmental</fullName>
+                <default>false</default>
+                <label>Environmental</label>
+            </value>
+            <value>
+                <fullName>Food &amp; Beverage</fullName>
+                <default>false</default>
+                <label>Food &amp; Beverage</label>
+            </value>
+            <value>
+                <fullName>Government</fullName>
+                <default>false</default>
+                <label>Government</label>
+            </value>
+            <value>
+                <fullName>Healthcare / Pharma / Chemicals</fullName>
+                <default>false</default>
+                <label>Healthcare / Pharma / Chemicals</label>
+            </value>
+            <value>
+                <fullName>Hospitality / Hotel / Tourism</fullName>
+                <default>false</default>
+                <label>Hospitality / Hotel / Tourism</label>
+            </value>
+            <value>
+                <fullName>Industry / Manufacturing / Printing</fullName>
+                <default>false</default>
+                <label>Industry / Manufacturing / Printing</label>
+            </value>
+            <value>
+                <fullName>Private Person</fullName>
+                <default>false</default>
+                <label>Private Person</label>
+            </value>
+            <value>
+                <fullName>Retail</fullName>
+                <default>false</default>
+                <label>Retail</label>
+            </value>
+            <value>
+                <fullName>Technology / IT / Engineering / Electro</fullName>
+                <default>false</default>
+                <label>Technology / IT / Engineering / Electro</label>
+            </value>
+            <value>
+                <fullName>Transportation / Shipping</fullName>
+                <default>false</default>
+                <label>Transportation / Shipping</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Check this box if you want to exclude this package from the calculation towards the Expense allowance %. --></help>
+    <label><!-- Exclude from Expense Allowance --></label>
+    <name>ExcludeFromExpenseAllowance__c</name>
+</CustomFieldTranslation>

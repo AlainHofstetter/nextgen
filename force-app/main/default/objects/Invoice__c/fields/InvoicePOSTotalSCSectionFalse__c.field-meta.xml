@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InvoicePOSTotalSCSectionFalse__c</fullName>
+    <label>Invoice POS - Total SC Section False</label>
+    <summarizedField>InvoicePos__c.InvoicePositionAmount__c</summarizedField>
+    <summaryFilterItems>
+        <field>InvoicePos__c.SupplierCostsGroup__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>InvoicePos__c.PackageType__c</field>
+        <operation>equals</operation>
+        <value>SupplierCosts</value>
+    </summaryFilterItems>
+    <summaryForeignKey>InvoicePos__c.InvoiceName__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

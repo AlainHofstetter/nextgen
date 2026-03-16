@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LegalNature__c</fullName>
+    <label>Legal Nature</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Corporation / Limited Company</fullName>
+                <default>false</default>
+                <label>Corporation / Limited Company</label>
+            </value>
+            <value>
+                <fullName>Limited Partnership</fullName>
+                <default>false</default>
+                <label>Limited Partnership</label>
+            </value>
+            <value>
+                <fullName>Association / Foundation</fullName>
+                <default>false</default>
+                <label>Association / Foundation</label>
+            </value>
+            <value>
+                <fullName>Individual Company</fullName>
+                <default>false</default>
+                <label>Individual Company</label>
+            </value>
+            <value>
+                <fullName>Natural Entity (Private Person)</fullName>
+                <default>false</default>
+                <label>Natural Entity (Private Person)</label>
+            </value>
+            <value>
+                <fullName>Public Administration / Other</fullName>
+                <default>false</default>
+                <label>Public Administration / Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

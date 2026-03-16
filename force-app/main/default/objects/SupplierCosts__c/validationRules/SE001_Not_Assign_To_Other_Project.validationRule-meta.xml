@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SE001_Not_Assign_To_Other_Project</fullName>
+    <active>true</active>
+    <description>Validates that the Supplier Costs can not be assigned to another Project.</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+ISCHANGED(  PackageName__c  ),
+PRIORVALUE(ProjektName__c ) = &quot;Drittkosten Inbox für nicht zuweisbare Drittkosten - do not delete&quot;
+
+)</errorConditionFormula>
+    <errorMessage>You cannot assign the Supplier Costs to a Service of another Project.
+(SE001)</errorMessage>
+</ValidationRule>

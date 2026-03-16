@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SA_Projekte_Offen_ohne_Stundensatz</fullName>
+    <columns>NAME</columns>
+    <columns>ProjectResponsibleBusiness__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ProjectStatus__c</field>
+        <operation>notEqual</operation>
+        <value>Closed</value>
+    </filters>
+    <filters>
+        <field>ProjectRateHour__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>SA: Projekte Offen ohne Stundensatz</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_Skywalk_Data_Quality</group>
+    </sharedTo>
+</ListView>

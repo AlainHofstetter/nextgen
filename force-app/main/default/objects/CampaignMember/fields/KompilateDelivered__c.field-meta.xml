@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>KompilateDelivered__c</fullName>
+    <label>Kompilate Delivered</label>
+    <required>false</required>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>LAS</fullName>
+                <default>false</default>
+                <label>LAS</label>
+            </value>
+            <value>
+                <fullName>FLO</fullName>
+                <default>false</default>
+                <label>FLO</label>
+            </value>
+            <value>
+                <fullName>HFP</fullName>
+                <default>false</default>
+                <label>HFP</label>
+            </value>
+            <value>
+                <fullName>Online Portal</fullName>
+                <default>false</default>
+                <label>Online Portal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

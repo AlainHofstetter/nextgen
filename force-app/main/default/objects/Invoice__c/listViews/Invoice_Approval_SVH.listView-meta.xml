@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_Approval_SVH</fullName>
+    <columns>NAME</columns>
+    <columns>InvoiceDocumentNr__c</columns>
+    <columns>InvoiceReceiver__c</columns>
+    <columns>ProjectName__c</columns>
+    <columns>InvoiceTotalAmountNet__c</columns>
+    <columns>InvoiceDate__c</columns>
+    <columns>FinanceDate__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>InvoiceStatus__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Invoice__c.Invoice</value>
+    </filters>
+    <filters>
+        <field>BillingViaCompany__c</field>
+        <operation>equals</operation>
+        <value>Victor Hotz AG</value>
+    </filters>
+    <filters>
+        <field>InvoiceStatus__c</field>
+        <operation>equals</operation>
+        <value>Approval</value>
+    </filters>
+    <label>Invoice Approval - SVH</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_FIN_Alle</group>
+        <group>Skywalk_SVH_Alle</group>
+    </sharedTo>
+</ListView>

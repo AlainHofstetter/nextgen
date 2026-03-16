@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>ExpenseDate__c</columns>
+    <columns>ExpenseType__c</columns>
+    <columns>ExpenseSubType__c</columns>
+    <columns>SupplierReceiverLocation__c</columns>
+    <columns>ExpenseGross__c</columns>
+    <columns>Expensetracker__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LocalCurrency__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>contains</operation>
+        <value>Jochen</value>
+    </filters>
+    <label>All</label>
+    <sharedTo>
+        <group>Skywalk_Skywalk_Data_Quality</group>
+    </sharedTo>
+</ListView>

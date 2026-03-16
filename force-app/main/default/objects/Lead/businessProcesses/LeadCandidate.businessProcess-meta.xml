@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LeadCandidate</fullName>
+    <description>Used for employee candidates.</description>
+    <isActive>true</isActive>
+    <values>
+        <fullName>Employed</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>In Progress</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Not Employed - No Potential</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Not Employed - Potential</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Open</fullName>
+        <default>true</default>
+    </values>
+</BusinessProcess>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FlagPriority__c</fullName>
+    <externalId>false</externalId>
+    <formula>Case(Priority,
+&quot;1. High&quot;,IMAGE(&quot;/resource/1504676861000/Case_Flag_Red&quot;,&quot;Red&quot;),
+&quot;2. Medium&quot;,IMAGE(&quot;/resource/1504676913000/Case_Flag_Orange&quot;,&quot;Yellow&quot;),
+&quot;3. Low&quot;,IMAGE (&quot;/resource/1504676950000/Case_Flag_Yellow&quot;,&quot;Green&quot;),
+&quot;4. 2 Min Task&quot;,IMAGE (&quot;/resource/1504676988000/Case_Flag_2&quot;,&quot;2Min&quot;),
+&quot;Red&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Flag: Priority</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

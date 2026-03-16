@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InvoiceDueDate__c</fullName>
+    <formula>Case( TermsOfPayment2__c ,
+&quot;1&quot;, InvoiceDate__c +30,
+&quot;2&quot;, InvoiceDate__c +30,
+&quot;3&quot;, InvoiceDate__c +10,
+&quot;4&quot;, InvoiceDate__c +30,
+&quot;5&quot;, InvoiceDate__c +60,
+&quot;7&quot;, InvoiceDate__c +30,
+&quot;8&quot;, InvoiceDate__c +90,
+&quot;9&quot;, InvoiceDate__c +30,
+&quot;10&quot;, InvoiceDate__c +15,
+&quot;13&quot;, InvoiceDate__c +20,
+&quot;15&quot;, InvoiceDate__c +45,
+InvoiceDate__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Invoice Due Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

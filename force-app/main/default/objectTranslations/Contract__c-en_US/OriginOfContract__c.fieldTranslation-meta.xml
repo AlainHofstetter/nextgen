@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Origin of Contract --></label>
+    <name>OriginOfContract__c</name>
+    <picklistValues>
+        <masterLabel>BLC</masterLabel>
+        <translation><!-- BLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New through Employee</masterLabel>
+        <translation><!-- New through Employee --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IN028_VAT_NewVATRates</fullName>
+    <active>true</active>
+    <description>You cannot use 7,7%, 2,5%, 3,7% or 8% as VAT from 01.01.2024 on. Please use instead 8,1%, 2,6%, 3,8% or respectively 9%</description>
+    <errorConditionFormula>ISCHANGED( VATPercent__c ) &amp;&amp; 
+FinanceDate__c &gt;  DATE(2024,01,01) &amp;&amp;
+( ISPICKVAL(VATPercent__c, &quot;7.7%&quot;) ||
+ISPICKVAL(VATPercent__c, &quot;2.5%&quot;) ||
+ISPICKVAL(VATPercent__c, &quot;3.7%&quot;) ||
+ISPICKVAL(VATPercent__c, &quot;8%&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>VATPercent__c</errorDisplayField>
+    <errorMessage>You cannot use 7,7%, 2,5%, 3,7% or 8% as VAT from 01.01.2024 on. Please use instead 8,1%, 2,6%, 3,8% or respectively 9%. (IN028)</errorMessage>
+</ValidationRule>

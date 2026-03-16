@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_CY</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>AccountAddress__c</columns>
+    <columns>AccountManager__c</columns>
+    <columns>Deputy__c</columns>
+    <columns>Customer__c</columns>
+    <columns>Supplier__c</columns>
+    <columns>Partner__c</columns>
+    <columns>Comment__c</columns>
+    <columns>AccountRecordType__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>UnitRelation__c.CY</value>
+    </filters>
+    <label>All CY</label>
+    <language>en_US</language>
+</ListView>

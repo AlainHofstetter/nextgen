@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>A10_Sent_to_Abacus_allUnits_BP</fullName>
+    <columns>NAME</columns>
+    <columns>InvoiceDocumentNr__c</columns>
+    <columns>AbacusInterfaceExport__c</columns>
+    <columns>ProjectName__c</columns>
+    <columns>ProjectNr__c</columns>
+    <columns>ProjectCostCenter__c</columns>
+    <columns>InvoiceReceiver__c</columns>
+    <columns>InvoiceStatus__c</columns>
+    <columns>InvoiceDate__c</columns>
+    <columns>FinanceDate__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>InvoiceTotalAmountGross__c</columns>
+    <columns>ValHasAttachment__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>InvoiceStatus__c</field>
+        <operation>equals</operation>
+        <value>Sent</value>
+    </filters>
+    <filters>
+        <field>ProjectCostCenter__c</field>
+        <operation>notEqual</operation>
+        <value>gateb usa</value>
+    </filters>
+    <filters>
+        <field>ProjectName__c</field>
+        <operation>notContain</operation>
+        <value>test</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Invoice__c.Invoice</value>
+    </filters>
+    <filters>
+        <field>AbacusUebernahmeVorgesehen__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>IsInBillingPeriod__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>A10_Sent to Abacus_allUnits_BP</label>
+    <sharedTo>
+        <group>Skywalk_FIN_Alle</group>
+    </sharedTo>
+</ListView>

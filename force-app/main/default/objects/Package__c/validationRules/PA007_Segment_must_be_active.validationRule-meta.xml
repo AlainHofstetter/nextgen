@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PA007_Segment_must_be_active</fullName>
+    <active>true</active>
+    <description>Package Segment must be active</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+Segment__r.Active__c =FALSE)</errorConditionFormula>
+    <errorDisplayField>Segment__c</errorDisplayField>
+    <errorMessage>The Package Segment must be active. Please contact your Super User for assistance.
+(PA007)</errorMessage>
+</ValidationRule>

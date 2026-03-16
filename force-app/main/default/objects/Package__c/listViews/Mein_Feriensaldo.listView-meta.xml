@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mein_Feriensaldo</fullName>
+    <columns>NAME</columns>
+    <columns>ProjectName__c</columns>
+    <columns>EmployeeVacationCredit__c</columns>
+    <columns>EmployeeVacationBalance__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>equals</operation>
+        <value>Ferien,Vacation</value>
+    </filters>
+    <label>Mein Feriensaldo</label>
+    <language>en_US</language>
+</ListView>

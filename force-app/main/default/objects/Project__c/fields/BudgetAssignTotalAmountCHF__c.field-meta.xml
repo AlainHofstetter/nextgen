@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BudgetAssignTotalAmountCHF__c</fullName>
+    <externalId>false</externalId>
+    <formula>BudgetAssignTotalExpenseCHF__c + BudgetAssignTotalTimeCHF__c+ BudgetAssignTotalSupCostsCHF__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Budget Assign - Total Amount (CHF)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

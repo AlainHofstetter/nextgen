@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACM018_CorporationNoFirstnameCheck</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+OR(
+ISPICKVAL( LegalNature__c ,&quot;Corporation / Limited Company&quot;),
+ISPICKVAL( LegalNature__c, &quot;Limited Partnership&quot;),
+ISPICKVAL( LegalNature__c, &quot;Association / Foundation&quot;),
+ISPICKVAL( LegalNature__c, &quot;Public Administration / Other&quot;)
+),
+OR(
+NOT(ISBLANK(LastName__c)),
+NOT(ISBLANK(FirstName__c))
+)
+)</errorConditionFormula>
+    <errorDisplayField>FirstName__c</errorDisplayField>
+    <errorMessage>For the following Legal Natures: Corporation/Limited Company, Limited Partnership, Association/Foundation and Public Administration. Please don&apos;t fill out First- &amp; Last Name.
+(ACM018)</errorMessage>
+</ValidationRule>

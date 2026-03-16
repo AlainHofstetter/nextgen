@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EmployeeVacationTotalHours__c</fullName>
+    <label>Employee Vacation Total Hours 2025</label>
+    <summarizedField>Time__c.DurationHhMmN__c</summarizedField>
+    <summaryFilterItems>
+        <field>Time__c.DateFrom__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>1/1/2025</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Time__c.DateFrom__c</field>
+        <operation>lessOrEqual</operation>
+        <value>12/31/2025</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Time__c.Package__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

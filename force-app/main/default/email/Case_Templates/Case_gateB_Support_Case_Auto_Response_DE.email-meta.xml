@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Case: gateB_Support_Case_Auto_Response_DE</name>
+    <style>none</style>
+    <subject>Ihre Supportanfrage Nr. {!Case.CaseNumber}</subject>
+    <textOnly>Guten Tag
+
+Ihre Support-Anfrage wurde mit der Nummer {!Case.CaseNumber} {!Case.Subject} eröffnet. Ihr Incident wird so schnell wie möglich bearbeitet.
+
+Für Rückfragen oder Ergänzungen, antworten Sie bitte auf diese E-Mail, damit Ihre Rückmeldung zugeordnet werden kann.
+
+Freundliche Grüsse
+Ihr Marketing Services Team
+
+gateB AG | Empowering Marketing Performance
+
+Sennweidstrasse 35, CH-6312 Steinhausen
+Phone +41 41 748 64 10, support@gateb.com
+http://www.gateb.com
+
+Unsere Öffnungszeiten:
+Montag–Freitag 8.00–12.00 Uhr / 13.00–17.00 Uhr
+
+
+Thread Id: (ref:_{!Organization.Id}._{!Case.Id}:ref)</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

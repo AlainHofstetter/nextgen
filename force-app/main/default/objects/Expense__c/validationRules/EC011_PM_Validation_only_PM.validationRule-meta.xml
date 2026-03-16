@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EC011_PM_Validation_only_PM</fullName>
+    <active>true</active>
+    <description>The Expense Card can only be validated by PM</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+ ISCHANGED( ExpenseValidatedProjectResponsible__c ),
+ $User.IsProjectManager__c =false
+)</errorConditionFormula>
+    <errorMessage>You are not allowed to validate the expense card. Please contact your Super User for assistance.
+(EC011)</errorMessage>
+</ValidationRule>

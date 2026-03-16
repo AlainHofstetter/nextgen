@@ -1,0 +1,21 @@
+Lieber Mitarbeiter
+
+Auf einem Projekt wurden neue Drittkosten zugewiesen:
+
+Lieferant: {!SupplierInvoice__c.BillerAccount__c}
+Rechnungs-Nr. Kreditorenbeleg: {!SupplierInvoice__c.AbacusDocumentNr__c}
+Betrag: {!SupplierCosts__c.CostsSupplierCostsGross__c}
+Projekt-Nr. / Projektname: {!SupplierCosts__c.ProjectNr__c} / {!SupplierCosts__c.ProjektName__c}
+Servicename: {!SupplierCosts__c.PackageName__c}
+{!SupplierCosts__c.Link}
+
+Bitte prüfe die korrekte Zuweisung der Drittkosten. 
+
+Die Drittkostenposition kann innerhalb des Projekts einem anderen Service zugewiesen werden. Eine detaillierte Anleitung findest du hier: 
+
+onenote:https://brandleadership.sharepoint.com/sites/BLC/SiteAssets/BLC%20Notebook/Finance/Anleitungen%20Finance/ANL%20Verarbeitung%20Drittkosten%20im%20Abacus%20u%20Skywalk.one#section-id={693498EA-DE29-1A41-B021-DF26B0E03254}&end
+
+
+--- 
+This Email has been sent by Salesforce, do not reply. 
+(Template: 00Xb0000001EVLr)

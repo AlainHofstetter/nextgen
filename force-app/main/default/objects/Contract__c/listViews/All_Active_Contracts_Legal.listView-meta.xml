@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Active_Contracts_Legal</fullName>
+    <columns>NAME</columns>
+    <columns>ContractName__c</columns>
+    <columns>ContractPartnerExternal__c</columns>
+    <columns>ContractType__c</columns>
+    <columns>ContractEndDate__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>ZAccountOwner__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Active,Draft</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contract__c.Contract</value>
+    </filters>
+    <label>All Active Contracts (Legal)</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>B_Group_Services</role>
+    </sharedTo>
+</ListView>

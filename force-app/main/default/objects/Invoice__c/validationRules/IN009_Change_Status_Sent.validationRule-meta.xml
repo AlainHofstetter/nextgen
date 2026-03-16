@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IN009_Change_Status_Sent</fullName>
+    <active>true</active>
+    <description>The invoice Status &quot;Sent&quot; can not be changed from sent.</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+ISPICKVAL(InvoiceStatus__c ,&quot;Ready&quot;),
+ PRIORVALUE(InvoiceStatus__c) =&quot;Sent&quot;
+)</errorConditionFormula>
+    <errorMessage>You can not change the status of the invoice anymore since it has been sent. Please get in touch with Finance.
+(IN009)</errorMessage>
+</ValidationRule>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SupplierInvoiceTotalCHF__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+LEFT( DocumentCode__c ,1)=&quot;F&quot;,  AbacusSupplierInvoiceTotalCHF__c , AbacusSupplierInvoiceTotalCHF__c*-1)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Supplier Invoice - Total (CHF)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

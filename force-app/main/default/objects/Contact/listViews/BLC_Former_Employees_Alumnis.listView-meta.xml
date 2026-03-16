@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLC_Former_Employees_Alumnis</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>FULL_NAME</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>StaffNr__c</columns>
+    <columns>Language__c</columns>
+    <columns>CONTACT.BIRTHDATE</columns>
+    <filterScope>Everything</filterScope>
+    <label>BLC - Former Employees - Alumnis</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_HR_OM</group>
+    </sharedTo>
+</ListView>

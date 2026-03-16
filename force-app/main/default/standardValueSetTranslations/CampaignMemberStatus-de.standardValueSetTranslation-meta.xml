@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>&quot;told&quot;</masterLabel>
+        <translation><!-- &quot;told&quot; --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>(naja)</masterLabel>
+        <translation><!-- (naja) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>*ok</masterLabel>
+        <translation><!-- *ok --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>+ tja</masterLabel>
+        <translation><!-- + tja --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>0. Potential</masterLabel>
+        <translation><!-- 0. Potential --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>0A. Potential</masterLabel>
+        <translation><!-- 0A. Potential --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>0B. Potential</masterLabel>
+        <translation><!-- 0B. Potential --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>0C. Potential</masterLabel>
+        <translation><!-- 0C. Potential --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>1. First Contact</masterLabel>
+        <translation><!-- 1. First Contact --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>1. Kontakt aufnehmen</masterLabel>
+        <translation><!-- 1. Kontakt aufnehmen --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>1. Meeting</masterLabel>
+        <translation><!-- 1. Meeting --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>1a. Kontaktieren durch BLC</masterLabel>
+        <translation><!-- 1a. Kontaktieren durch BLC --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>1b. Kontaktieren</masterLabel>
+        <translation><!-- 1b. Kontaktieren --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>2. Material schicken</masterLabel>
+        <translation><!-- 2. Material schicken --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>2. Material sent</masterLabel>
+        <translation><!-- 2. Material sent --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>3. Follow-up</masterLabel>
+        <translation><!-- 3. Follow-up --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>3. Nachfragen</masterLabel>
+        <translation><!-- 3. Nachfragen --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>????</masterLabel>
+        <translation><!-- ???? --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Abgelehnt</masterLabel>
+        <translation><!-- Abgelehnt --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Abgemeldet</masterLabel>
+        <translation><!-- Abgemeldet --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Abgesagt</masterLabel>
+        <translation><!-- Abgesagt --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Aborted</masterLabel>
+        <translation><!-- Aborted --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Absage</masterLabel>
+        <translation><!-- Absage --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Accepted</masterLabel>
+        <translation><!-- Accepted --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Accepted invitation</masterLabel>
+        <translation><!-- Accepted invitation --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Accepted terms for pilot phase</masterLabel>
+        <translation><!-- Accepted terms for pilot phase --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Angemeldet</masterLabel>
+        <translation><!-- Angemeldet --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Angemeldet attended</masterLabel>
+        <translation><!-- Angemeldet attended --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Angemeldet no show</masterLabel>
+        <translation><!-- Angemeldet no show --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Attended</masterLabel>
+        <translation><!-- Attended --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Bereits besucht</masterLabel>
+        <translation><!-- Bereits besucht --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Besuchen</masterLabel>
+        <translation><!-- Besuchen --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Called</masterLabel>
+        <translation><!-- Called --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Certain Potential</masterLabel>
+        <translation><!-- Certain Potential --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Closed Lost</masterLabel>
+        <translation><!-- Closed Lost --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Closed Won</masterLabel>
+        <translation><!-- Closed Won --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cold</masterLabel>
+        <translation><!-- Cold --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Contacted</masterLabel>
+        <translation><!-- Contacted --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Contacted - follow up</masterLabel>
+        <translation><!-- Contacted - follow up --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Contacted - no interest</masterLabel>
+        <translation><!-- Contacted - no interest --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Contacted - not reached</masterLabel>
+        <translation><!-- Contacted - not reached --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Contacted - visit</masterLabel>
+        <translation><!-- Contacted - visit --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Deceased</masterLabel>
+        <translation><!-- Deceased --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Declined</masterLabel>
+        <translation><!-- Declined --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Declined terms for pilot phase</masterLabel>
+        <translation><!-- Declined terms for pilot phase --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Delivered personally</masterLabel>
+        <translation><!-- Delivered personally --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Design Draft Sent</masterLabel>
+        <translation><!-- Design Draft Sent --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Do Follow-up at end of year</masterLabel>
+        <translation><!-- Do Follow-up at end of year --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>E-Mail Sent</masterLabel>
+        <translation><!-- E-Mail Sent --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Einfach erschienen</masterLabel>
+        <translation><!-- Einfach erschienen --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Eingeladen</masterLabel>
+        <translation><!-- Eingeladen --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Employed</masterLabel>
+        <translation><!-- Employed --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Erfasst</masterLabel>
+        <translation><!-- Erfasst --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Erhält Kompendium</masterLabel>
+        <translation><!-- Erhält Kompendium --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Evaluation HR</masterLabel>
+        <translation><!-- Evaluation HR --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Evaluation MD</masterLabel>
+        <translation><!-- Evaluation MD --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>First Visit</masterLabel>
+        <translation><!-- First Visit --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Follow up</masterLabel>
+        <translation><!-- Follow up --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Follow-Up Call</masterLabel>
+        <translation><!-- Follow-Up Call --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Follow-up at end of year</masterLabel>
+        <translation><!-- Follow-up at end of year --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Follow-up done</masterLabel>
+        <translation><!-- Follow-up done --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Follow-up scheduled</masterLabel>
+        <translation><!-- Follow-up scheduled --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Geantwortet</masterLabel>
+        <translation><!-- Geantwortet --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Geplant</masterLabel>
+        <translation><!-- Geplant --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Gesendet</masterLabel>
+        <translation><!-- Gesendet --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>High Potential</masterLabel>
+        <translation><!-- High Potential --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Hinzugefügt</masterLabel>
+        <translation><!-- Hinzugefügt --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Ich</masterLabel>
+        <translation><!-- Ich --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Identified</masterLabel>
+        <translation><!-- Identified --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>In Progress</masterLabel>
+        <translation><!-- In Progress --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Infomail nach Event</masterLabel>
+        <translation><!-- Infomail nach Event --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Infomail vor Event</masterLabel>
+        <translation><!-- Infomail vor Event --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Interessiert</masterLabel>
+        <translation><!-- Interessiert --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Interested</masterLabel>
+        <translation><!-- Interested --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Interested - Visit</masterLabel>
+        <translation><!-- Interested - Visit --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Interesting</masterLabel>
+        <translation><!-- Interesting --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Interview scheduled</masterLabel>
+        <translation><!-- Interview scheduled --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Interviewed and closed</masterLabel>
+        <translation><!-- Interviewed and closed --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Invitation Card Sent</masterLabel>
+        <translation><!-- Invitation Card Sent --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Invitation Mail</masterLabel>
+        <translation><!-- Invitation Mail --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Invitation sent</masterLabel>
+        <translation><!-- Invitation sent --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Invited</masterLabel>
+        <translation><!-- Invited --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Invited 1st Interview</masterLabel>
+        <translation><!-- Invited 1st Interview --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Invited 2nd Interview</masterLabel>
+        <translation><!-- Invited 2nd Interview --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Invited 3rd Interview</masterLabel>
+        <translation><!-- Invited 3rd Interview --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Invited to workshop</masterLabel>
+        <translation><!-- Invited to workshop --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Keep informed</masterLabel>
+        <translation><!-- Keep informed --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Keep me posted</masterLabel>
+        <translation><!-- Keep me posted --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kein Interesse</masterLabel>
+        <translation><!-- Kein Interesse --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Keine Antwort</masterLabel>
+        <translation><!-- Keine Antwort --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kontaktiert</masterLabel>
+        <translation><!-- Kontaktiert --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Kontaktiert / nochmals nachfassen</masterLabel>
+        <translation><!-- Kontaktiert / nochmals nachfassen --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Lettered</masterLabel>
+        <translation><!-- Lettered --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mail gesendet</masterLabel>
+        <translation><!-- Mail gesendet --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mailing Sent</masterLabel>
+        <translation><!-- Mailing Sent --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Mailing received</masterLabel>
+        <translation><!-- Mailing received --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Meeting</masterLabel>
+        <translation><!-- Meeting --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Meeting Scheduled</masterLabel>
+        <translation><!-- Meeting Scheduled --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Meeting durchgeführt</masterLabel>
+        <translation><!-- Meeting durchgeführt --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Meeting vereinbart</masterLabel>
+        <translation><!-- Meeting vereinbart --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Met at R. Event</masterLabel>
+        <translation><!-- Met at R. Event --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>NO LETTER</masterLabel>
+        <translation><!-- NO LETTER --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Nachgefasst</masterLabel>
+        <translation><!-- Nachgefasst --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>New</masterLabel>
+        <translation><!-- New --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Nicht gesendet</masterLabel>
+        <translation><!-- Nicht gesendet --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Nicht interessiert</masterLabel>
+        <translation><!-- Nicht interessiert --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>No Interest</masterLabel>
+        <translation><!-- No Interest --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>No show</masterLabel>
+        <translation><!-- No show --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>No-show</masterLabel>
+        <translation><!-- No-show --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Not Contacted</masterLabel>
+        <translation><!-- Not Contacted --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Not Interested</masterLabel>
+        <translation><!-- Not Interested --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Not reachable</masterLabel>
+        <translation><!-- Not reachable --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Not responded</masterLabel>
+        <translation><!-- Not responded --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Not sent</masterLabel>
+        <translation><!-- Not sent --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Not-Interesting</masterLabel>
+        <translation><!-- Not-Interesting --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Open</masterLabel>
+        <translation><!-- Open --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Ordered</masterLabel>
+        <translation><!-- Ordered --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Package shipped</masterLabel>
+        <translation><!-- Package shipped --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Participated</masterLabel>
+        <translation><!-- Participated --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Participated in workshop</masterLabel>
+        <translation><!-- Participated in workshop --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Pers. Contacted (Phone/Meeting)</masterLabel>
+        <translation><!-- Pers. Contacted (Phone/Meeting) --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Planned</masterLabel>
+        <translation><!-- Planned --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Planned for Invitation</masterLabel>
+        <translation><!-- Planned for Invitation --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Planned for Mailing</masterLabel>
+        <translation><!-- Planned for Mailing --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Planned for Subscription</masterLabel>
+        <translation><!-- Planned for Subscription --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Planned for Visit</masterLabel>
+        <translation><!-- Planned for Visit --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Project identified</masterLabel>
+        <translation><!-- Project identified --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Projects Realized</masterLabel>
+        <translation><!-- Projects Realized --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Projekt erhalten</masterLabel>
+        <translation><!-- Projekt erhalten --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Proposal Requested</masterLabel>
+        <translation><!-- Proposal Requested --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>QUalified</masterLabel>
+        <translation><!-- QUalified --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Ready for Mailing</masterLabel>
+        <translation><!-- Ready for Mailing --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Ready for delivery</masterLabel>
+        <translation><!-- Ready for delivery --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Ready for shipment</masterLabel>
+        <translation><!-- Ready for shipment --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Received</masterLabel>
+        <translation><!-- Received --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Received - Confirmation Sent</masterLabel>
+        <translation><!-- Received - Confirmation Sent --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Refused by BLC</masterLabel>
+        <translation><!-- Refused by BLC --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Refused by Candidate</masterLabel>
+        <translation><!-- Refused by Candidate --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Registered</masterLabel>
+        <translation><!-- Registered --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Rejected</masterLabel>
+        <translation><!-- Rejected --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Reminded</masterLabel>
+        <translation><!-- Reminded --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Responded</masterLabel>
+        <translation>Hat reagiert</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Responded - Change of Address</masterLabel>
+        <translation><!-- Responded - Change of Address --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Responded - Competition</masterLabel>
+        <translation><!-- Responded - Competition --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Responded - Returned</masterLabel>
+        <translation><!-- Responded - Returned --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Responded - Visit</masterLabel>
+        <translation><!-- Responded - Visit --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Retired</masterLabel>
+        <translation><!-- Retired --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Save the date sent</masterLabel>
+        <translation><!-- Save the date sent --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Save-the-Date Sent</masterLabel>
+        <translation><!-- Save-the-Date Sent --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Sent</masterLabel>
+        <translation>Gesendet</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Subscribed</masterLabel>
+        <translation><!-- Subscribed --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Targets</masterLabel>
+        <translation><!-- Targets --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Teilgenommen</masterLabel>
+        <translation><!-- Teilgenommen --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Teilnahme</masterLabel>
+        <translation><!-- Teilnahme --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Telephone Interview</masterLabel>
+        <translation><!-- Telephone Interview --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Test &amp; so</masterLabel>
+        <translation><!-- Test &amp; so --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Testing</masterLabel>
+        <translation><!-- Testing --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>To Contact</masterLabel>
+        <translation><!-- To Contact --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>To Validate</masterLabel>
+        <translation><!-- To Validate --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>USE PRIVAT ADDRESS</masterLabel>
+        <translation><!-- USE PRIVAT ADDRESS --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Unqualified</masterLabel>
+        <translation><!-- Unqualified --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Unsubscribed</masterLabel>
+        <translation><!-- Unsubscribed --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Unterlagen senden</masterLabel>
+        <translation><!-- Unterlagen senden --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Unvollständig</masterLabel>
+        <translation><!-- Unvollständig --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Verschickt</masterLabel>
+        <translation><!-- Verschickt --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Visit Booth</masterLabel>
+        <translation><!-- Visit Booth --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Vorgesehen</masterLabel>
+        <translation><!-- Vorgesehen --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Weiss es noch nicht</masterLabel>
+        <translation><!-- Weiss es noch nicht --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Xb intrested</masterLabel>
+        <translation><!-- Xb intrested --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Zugesagt</masterLabel>
+        <translation><!-- Zugesagt --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Zusage</masterLabel>
+        <translation><!-- Zusage --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>alles</masterLabel>
+        <translation><!-- alles --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>du</masterLabel>
+        <translation><!-- du --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>extra - ja</masterLabel>
+        <translation><!-- extra - ja --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>getroffen</masterLabel>
+        <translation><!-- getroffen --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>noch kontaktieren</masterLabel>
+        <translation><!-- noch kontaktieren --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>not available</masterLabel>
+        <translation><!-- not available --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>on hold</masterLabel>
+        <translation><!-- on hold --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>undesired</masterLabel>
+        <translation><!-- undesired --></translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

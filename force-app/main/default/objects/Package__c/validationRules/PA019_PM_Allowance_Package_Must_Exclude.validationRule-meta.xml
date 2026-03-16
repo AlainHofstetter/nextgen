@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PA019_PM_Allowance_Package_Must_Exclude</fullName>
+    <active>true</active>
+    <description>Project Management Allowance Package must be excluded from Project Mgmt Allowance</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+ ProjectManagementAllowancePackage__c =true,
+ ExcludeFromProjectMgmtAllowance__c =false
+)</errorConditionFormula>
+    <errorDisplayField>ExcludeFromProjectMgmtAllowance__c</errorDisplayField>
+    <errorMessage>The Project Allowance Package must be excluded from the Project Mgmt Allowance.
+(PA019)</errorMessage>
+</ValidationRule>

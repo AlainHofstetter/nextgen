@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PA000_Package_Max_Level</fullName>
+    <active>true</active>
+    <description>Package can not be assigend &gt; Level 2</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+NOT(ISBLANK( PackageSuperior__r.PackageSuperior__c )))</errorConditionFormula>
+    <errorDisplayField>PackageSuperior__c</errorDisplayField>
+    <errorMessage>You can not assign to a package that is already level 2. Please contact your Super User for assistance.
+(PA000)</errorMessage>
+</ValidationRule>

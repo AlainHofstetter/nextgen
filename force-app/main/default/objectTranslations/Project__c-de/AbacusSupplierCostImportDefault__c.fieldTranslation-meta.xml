@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Dieses Feld ist angewählt für die Schnittstelle, um nicht zuweisbare Abacus Fremdkosten einem Projekt zuzuweisen.</help>
+    <label>Abacus Drittkosten Import Default</label>
+    <name>AbacusSupplierCostImportDefault__c</name>
+</CustomFieldTranslation>

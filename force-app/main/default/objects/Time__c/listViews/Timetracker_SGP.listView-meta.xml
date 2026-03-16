@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Timetracker_SGP</fullName>
+    <columns>NAME</columns>
+    <columns>Timetracker__c</columns>
+    <columns>TimetrackerCostCenter__c</columns>
+    <columns>StartHhMm__c</columns>
+    <columns>EndHhMm__c</columns>
+    <columns>DurationHhMm__c</columns>
+    <columns>WeekdayDate__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>TimetrackerCompany__c</columns>
+    <columns>IsInBillingPeriodYearMonth__c</columns>
+    <columns>AbacusTimeType__c</columns>
+    <columns>ProjectName__c</columns>
+    <columns>Package__c</columns>
+    <columns>ServiceType__c</columns>
+    <columns>Description__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>DateFrom__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>1/1/2022</value>
+    </filters>
+    <filters>
+        <field>TimetrackerCostCenterNr__c</field>
+        <operation>equals</operation>
+        <value>2040</value>
+    </filters>
+    <filters>
+        <field>AbacusTimeType__c</field>
+        <operation>notEqual</operation>
+        <value>160</value>
+    </filters>
+    <filters>
+        <field>ProjectCostCenter__c</field>
+        <operation>notEqual</operation>
+        <value>gateb singapore</value>
+    </filters>
+    <label>Timetracker_SGP</label>
+    <sharedTo>
+        <group>Skywalk_FIN_Alle</group>
+    </sharedTo>
+</ListView>

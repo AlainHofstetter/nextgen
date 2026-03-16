@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rechnungen_Finanzdatum_Mai_2017</fullName>
+    <columns>BillingViaCompany__c</columns>
+    <columns>AccountNameLegal__c</columns>
+    <columns>ProjectNr__c</columns>
+    <columns>ProjectName__c</columns>
+    <columns>NAME</columns>
+    <columns>InvoiceStatus__c</columns>
+    <columns>FinanceDate__c</columns>
+    <columns>InvoiceTotalAmountNetCHF__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>InvoiceType__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>InvoiceStatus__c</field>
+        <operation>notEqual</operation>
+        <value>Sent</value>
+    </filters>
+    <filters>
+        <field>IsInBillingPeriod__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>ProjectName__c</field>
+        <operation>notContain</operation>
+        <value>test</value>
+    </filters>
+    <label>A03_Rechnungen Finanzdatum NICHT BP</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_FIN_Alle</group>
+    </sharedTo>
+</ListView>

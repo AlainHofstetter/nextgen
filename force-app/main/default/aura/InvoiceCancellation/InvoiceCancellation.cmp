@@ -1,0 +1,21 @@
+<aura:component controller="InvoiceController" implements="force:lightningQuickActionWithoutHeader,force:hasRecordId">
+    <aura:attribute name="recordId" type="String" />
+	<div class="slds-grid slds-grid--align-center slds-m-bottom_large">
+      <div class="slds-form-element">
+          <label class="slds-form-element__label">{!$Label.c.SkyAreyousureyouwanttocancelthisInvoice}</label>
+      </div>
+    </div>
+    <div class="slds-grid slds-grid--align-center slds-is-relative">
+        <div class="slds-spinner_container slds-hide slds-m-top_large" aura:id="spinner">
+            <div class="slds-spinner--brand slds-spinner slds-spinner--large" role="alert">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    	<div class="slds-form-element" aura:id="btns">
+            <ui:button label="{!$Label.c.SkyAbort}" class="slds-button" press="{!c.close}"/>
+            <ui:button label="{!$Label.c.SkyCancelInvoice}" class="slds-button slds-button--brand" press="{!c.go}"/>
+        </div>
+    </div>
+</aura:component>

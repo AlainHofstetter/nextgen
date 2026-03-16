@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SourceQuery__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>API Name to the referenced Field. 
+Hint: As you can use a also a reference like &quot;ProjectName__r.BillingViaCompany__c&quot; it is possible to achieve a relation more then one level deep.</inlineHelpText>
+    <label>SourceQuery</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

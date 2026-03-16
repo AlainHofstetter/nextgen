@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Schweregrad</label>
+    <name>Severity__c</name>
+    <picklistValues>
+        <masterLabel>All users affected</masterLabel>
+        <translation>Alle Benutzer betroffen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Blemish</masterLabel>
+        <translation>Schönheitsfehler</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer affected</masterLabel>
+        <translation>Kunden betroffen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Induvidual users affected</masterLabel>
+        <translation>Einzelner Benutzer betroffen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Many users affected</masterLabel>
+        <translation>Viele Benutzer betroffen</translation>
+    </picklistValues>
+</CustomFieldTranslation>

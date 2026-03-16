@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProjectCloneExcludeFromTemplate</fullName>
+    <columns>MasterLabel</columns>
+    <columns>DeveloperName</columns>
+    <columns>Object__c</columns>
+    <columns>APIName__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ExcludeFromTemplate__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>ProjectCloneExcludeFromTemplate</label>
+    <language>en_US</language>
+</ListView>

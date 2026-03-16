@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACM009_AbacusSupplierTrue</fullName>
+    <active>true</active>
+    <description>All Data ready for Flag AbacusSupplierr=True</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+ AbacusSupplier__c = True,
+
+OR(
+ISBLANK (BillingZip__c),
+ISBLANK (BillingCity__c),
+ISBLANK (TEXT (CurrencyIsoCode))
+)
+)</errorConditionFormula>
+    <errorMessage>The Account Supplier not complete. Please adjust and then save again.
+(ACM009)</errorMessage>
+</ValidationRule>

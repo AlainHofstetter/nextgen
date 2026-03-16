@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>CS_Opportunity_LOST</fullName>
+        <description>CS - Opportunity LOST</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>chris.steinacker@hotzbrandconsultants.ch</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>christian.hessdoerfer@gateb.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>daniel.baerlocher@hilda.ch</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>fabian.hotz@brandleadership.ch</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>marco.wyler@gateb.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>olaf.gijseman@gateb.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>pascal.charriere@brandleadership.ch</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rene.affolter@gateb.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sven.lareida@calydo.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>noreply@brandleadership.ch</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>CS_Templates/CS_Opportunity_LOST</template>
+    </alerts>
+    <alerts>
+        <fullName>CS_Opportunity_WON</fullName>
+        <ccEmails>finance@brandleadership.ch</ccEmails>
+        <description>CS - Opportunity WON</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>chris.steinacker@hotzbrandconsultants.ch</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>christian.hessdoerfer@gateb.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>daniel.baerlocher@hilda.ch</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>fabian.hotz@brandleadership.ch</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>marco.wyler@gateb.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>olaf.gijseman@gateb.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>pascal.charriere@brandleadership.ch</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rene.affolter@gateb.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sven.lareida@calydo.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>noreply@brandleadership.ch</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>CS_Templates/CS_Opportunity_WON</template>
+    </alerts>
+    <alerts>
+        <fullName>VH_Opportunity_LOST</fullName>
+        <description>VH - Opportunity LOST</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>fabian.hotz@brandleadership.ch</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>noreply@brandleadership.ch</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>CS_Templates/CS_Opportunity_LOST</template>
+    </alerts>
+    <alerts>
+        <fullName>VH_Opportunity_WON</fullName>
+        <description>VH - Opportunity WON</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>fabian.hotz@brandleadership.ch</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>noreply@brandleadership.ch</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>CS_Templates/CS_Opportunity_WON</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Amount_GB_License</fullName>
+        <description>Calculates the Amount of the Opportunity of GB - License for internal forecast.</description>
+        <field>Amount</field>
+        <formula>IF(ProfessionalServicesGB__c&gt;0, ModulesEntireTermGB__c + ProfessionalServicesGB__c + OneTimeTechinicalSetupGB__c +  HostingGB__c , ModulesEntireTermGB__c + OneTimeTechinicalSetupGB__c + HostingGB__c)</formula>
+        <name>Amount GB-License</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Amount_GB_SAS_License</fullName>
+        <field>Amount</field>
+        <formula>AmountSAS__c * LicencePercentageGB__c</formula>
+        <name>Amount GB - SAS License</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Amount GB - License</fullName>
+        <actions>
+            <name>Amount_GB_License</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Calculates the Amount of the Opportunity of GB - License for internal forecast.</description>
+        <formula>RecordTypeId =&quot;012b0000000cQ3P&quot;</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Amount GB - SAS License</fullName>
+        <actions>
+            <name>Amount_GB_SAS_License</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Calculates the Amount of the Opportunity of GB - SAS License for internal forecast.</description>
+        <formula>RecordTypeId =&quot;012b0000000cWvc&quot;</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>CS - Opportunity LOST</fullName>
+        <actions>
+            <name>CS_Opportunity_LOST</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>This Workflow is used to inform about Opportunity Stage = LOST</description>
+        <formula>AND(
+ispickval(StageName,&quot;Closed Lost&quot;),
+ischanged( StageName )
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>CS - Opportunity WON</fullName>
+        <actions>
+            <name>CS_Opportunity_WON</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>This Workflow is used to inform about Opportunity Stage = WON</description>
+        <formula>AND(
+ispickval(StageName,&quot;Closed Won&quot;),
+ischanged( StageName )
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

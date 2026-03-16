@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InvoicePOSTotalSupplierCostsCHF__c</fullName>
+    <label>Invoice POS - Total Supplier Costs (CHF)</label>
+    <summarizedField>InvoicePos__c.InvoicePositionAmountCHF__c</summarizedField>
+    <summaryFilterItems>
+        <field>InvoicePos__c.PackageType__c</field>
+        <operation>equals</operation>
+        <value>SupplierCosts, LicenseDirect, LicenseProvision</value>
+    </summaryFilterItems>
+    <summaryForeignKey>InvoicePos__c.PackageName__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

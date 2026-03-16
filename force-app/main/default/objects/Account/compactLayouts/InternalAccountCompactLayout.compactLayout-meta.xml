@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InternalAccountCompactLayout</fullName>
+    <fields>Name</fields>
+    <fields>AbacusAccountNr__c</fields>
+    <fields>Phone</fields>
+    <fields>OwnerId</fields>
+    <fields>AccountType__c</fields>
+    <label>InternalAccountCompactLayout</label>
+</CompactLayout>

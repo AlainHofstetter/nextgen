@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PA021_Abacus_TimeType_Must_Internal</fullName>
+    <active>true</active>
+    <description>Packages for Internal Projects must have an Abacus Time Type</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+ ProjectName__r.RecordType.DeveloperName = &quot;Internal&quot;,
+ ISBLANK(TEXT(AbacusTimeType__c))
+)</errorConditionFormula>
+    <errorDisplayField>AbacusTimeType__c</errorDisplayField>
+    <errorMessage>You must choose an Abacus Time Type for an Internal Project.
+(PA021)</errorMessage>
+</ValidationRule>

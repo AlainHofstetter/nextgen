@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Magnolia_modules__c</fullName>
+    <label>Magnolia Modules</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Brand Portal</fullName>
+                <default>false</default>
+                <label>Brand Portal</label>
+            </value>
+            <value>
+                <fullName>Digital Marketing Center</fullName>
+                <default>false</default>
+                <label>Digital Marketing Center</label>
+            </value>
+            <value>
+                <fullName>Event Manager</fullName>
+                <default>false</default>
+                <label>Event Manager</label>
+            </value>
+            <value>
+                <fullName>Job Manager</fullName>
+                <default>false</default>
+                <label>Job Manager</label>
+            </value>
+            <value>
+                <fullName>Language Center</fullName>
+                <default>false</default>
+                <label>Language Center</label>
+            </value>
+            <value>
+                <fullName>Marketing Planner</fullName>
+                <default>false</default>
+                <label>Marketing Planner</label>
+            </value>
+            <value>
+                <fullName>Media Pool</fullName>
+                <default>false</default>
+                <label>Media Pool</label>
+            </value>
+            <value>
+                <fullName>PIM</fullName>
+                <default>false</default>
+                <label>PIM</label>
+            </value>
+            <value>
+                <fullName>Reporting Center</fullName>
+                <default>false</default>
+                <label>Reporting Center</label>
+            </value>
+            <value>
+                <fullName>Review Manager</fullName>
+                <default>false</default>
+                <label>Review Manager</label>
+            </value>
+            <value>
+                <fullName>Shop</fullName>
+                <default>false</default>
+                <label>Shop</label>
+            </value>
+            <value>
+                <fullName>Smart Access</fullName>
+                <default>false</default>
+                <label>Smart Access</label>
+            </value>
+            <value>
+                <fullName>W2P</fullName>
+                <default>false</default>
+                <label>W2P</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

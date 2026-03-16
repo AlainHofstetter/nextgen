@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Update_Quote_Line_total_Fee</fullName>
+        <field>ProjectManagementAmount__c</field>
+        <formula>ProjectManagementFee__c *Quantity*UnitPrice /100</formula>
+        <name>Update Quote Line total Fee</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>QLI-Calculate PM fee</fullName>
+        <actions>
+            <name>Update_Quote_Line_total_Fee</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuoteLineItem.ProjectManagementFee__c</field>
+            <operation>notEqual</operation>
+            <value>0</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

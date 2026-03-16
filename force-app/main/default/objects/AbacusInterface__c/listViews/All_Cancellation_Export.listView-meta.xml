@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Cancellation_Export</fullName>
+    <columns>NAME</columns>
+    <columns>InterfaceType__c</columns>
+    <columns>Status__c</columns>
+    <columns>Account__c</columns>
+    <columns>DateTimeFrom__c</columns>
+    <columns>DateTimeUntil__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>LastRunDateTime__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>InterfaceType__c</field>
+        <operation>equals</operation>
+        <value>Cancellation Export</value>
+    </filters>
+    <label>All Cancellation Export</label>
+    <language>en_US</language>
+</ListView>

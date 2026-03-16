@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PA013_Package_Move_to_other_Project</fullName>
+    <active>true</active>
+    <description>Do not allow Reparenting: Superior Package can not be changed after Child exist(ed)</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+ISCHANGED(  ProjectName__c  ))</errorConditionFormula>
+    <errorMessage>Package can not be reassigned to another Project.
+(PA013)</errorMessage>
+</ValidationRule>

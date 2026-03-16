@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CAS002_Type_must_be_added_for_Closed</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+RecordType.DeveloperName = &quot;ITCases&quot;,
+ISPICKVAL( Status,&quot;Closed&quot;),
+OR(
+LEN(TEXT(Type))=0 ,
+LEN(Solution__c)=0
+)
+)</errorConditionFormula>
+    <errorMessage>Please choose the case type and/or add the solution to the case.
+(CAS002)</errorMessage>
+</ValidationRule>

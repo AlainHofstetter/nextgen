@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TC019_InternalContactID_Blank</fullName>
+    <active>true</active>
+    <description>Prüft ob der Timetracker und der Erfasser eine gültige InternalContactID haben</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+ Timetracker__r.User__r.IsActive =true,
+OR(
+ISBLANK( Timetracker__r.User__r.InternalContactID__c ),
+ISBLANK(  $User.InternalContactID__c )
+)
+)</errorConditionFormula>
+    <errorMessage>The Internal Contact ID is empty. Please get in touch with the System Administrator.
+(TC019)</errorMessage>
+</ValidationRule>

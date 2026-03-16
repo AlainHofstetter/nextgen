@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLC_Alle_Projekte_Offen</fullName>
+    <columns>NAME</columns>
+    <columns>ProjectNr__c</columns>
+    <columns>ProjectResponsibleBusiness__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>ContractPartner__c</columns>
+    <columns>ProjectStatus__c</columns>
+    <columns>CURRENCY_ISO_CODE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ProjectCostCenter__c</field>
+        <operation>contains</operation>
+        <value>leadership</value>
+    </filters>
+    <filters>
+        <field>ProjectStatus__c</field>
+        <operation>equals</operation>
+        <value>Open</value>
+    </filters>
+    <filters>
+        <field>NAME</field>
+        <operation>notContain</operation>
+        <value>Absence</value>
+    </filters>
+    <label>BLC - Alle Projekte Offen</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>A_Companys</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

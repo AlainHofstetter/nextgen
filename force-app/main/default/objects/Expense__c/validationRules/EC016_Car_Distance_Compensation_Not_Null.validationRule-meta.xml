@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EC016_Car_Distance_Compensation_Not_Null</fullName>
+    <active>true</active>
+    <description>Car Distance &amp; Compensation not Null</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true, 
+ RecordType.DeveloperName =&quot;CarTravel&quot;,
+OR(
+ISNULL(Distance__c),
+ISNULl( DistanceCompensation__c )
+))</errorConditionFormula>
+    <errorDisplayField>Distance__c</errorDisplayField>
+    <errorMessage>Car Distance and/or Compensation can not be empty.
+(EC016)</errorMessage>
+</ValidationRule>

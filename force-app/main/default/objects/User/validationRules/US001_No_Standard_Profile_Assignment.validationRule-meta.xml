@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>US001_No_Standard_Profile_Assignment</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+OR(
+CONTAINS(Profile.Name ,&quot;Contract Manager&quot;),
+CONTAINS(Profile.Name ,&quot;Force.com - App Subscription User&quot;),
+CONTAINS(Profile.Name ,&quot;Marketing User&quot;),
+CONTAINS(Profile.Name ,&quot;Read Only&quot;),
+CONTAINS(Profile.Name ,&quot;Solution Manager&quot;),
+CONTAINS(Profile.Name ,&quot;Standard User&quot;)
+))</errorConditionFormula>
+    <errorMessage>Please do not assign a user to a Salesforce Standard CRM Profile</errorMessage>
+</ValidationRule>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Premium__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Please select the Checkbox if you think this account is a Premium Account. Premium defines the high class segment the firm is working in.</inlineHelpText>
+    <label>Premium</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

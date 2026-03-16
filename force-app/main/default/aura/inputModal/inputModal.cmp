@@ -1,0 +1,56 @@
+<aura:component >
+
+    <!-- 
+        ATTRIBUTES
+    -->
+    <aura:attribute name="label" type="String" />
+    <aura:attribute name="value" type="String" />
+    <aura:attribute name="formattedValue" type="String" />
+    <aura:attribute name="open" type="Boolean" default="false" />
+    <aura:attribute name="richText" type="Boolean" default="true" />
+    <aura:attribute name="editable" type="Boolean" default="true" />
+
+    <!-- 
+        HANDLERS
+    -->
+    <aura:handler name="init" action="{!c.init}" value="{!this}"/>
+    <aura:handler name="change" value="{!v.open}" action="{!c.modalHasOpenedOrClosed}"/>
+
+    <!-- 
+        MARKUP
+    -->
+    <div class="{!v.open ? '' : 'hidden'}">
+
+        <div role="dialog" tabindex="-1" aria-labelledby="modal_heading" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <div class="slds-modal__content slds-p-around--medium">
+                    <div>
+                        <aura:if isTrue="{!v.editable}">
+                            <aura:if isTrue="{!v.richText}">
+                                <lightning:inputRichText value="{!v.value}" disabledCategories="FORMAT_FONT,ALIGN_TEXT"/>
+                            </aura:if>
+                            <aura:if isTrue="{! v.richText == false }">
+                                <lightning:textarea value="{!v.value}"/>
+                            </aura:if>
+                        </aura:if>
+                        <aura:if isTrue="{!v.editable == false}">
+                            <aura:if isTrue="{!v.richText}">
+                                <ui:outputRichText class="slds-text-longform" value="{!v.value}"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.richText == false}">
+                                <ui:outputTextArea value="{!v.value}"/>
+                            </aura:if>
+                        </aura:if>
+                    </div>
+                </div>
+                <div class="slds-modal__footer">
+                    <lightning:button variant="brand" onclick="{!c.closeModal}">{!$Label.c.SkyDone}</lightning:button>
+                </div>
+            </div>
+        </div>
+
+        <div class="slds-backdrop slds-backdrop--open"></div>
+
+    </div>
+
+</aura:component>

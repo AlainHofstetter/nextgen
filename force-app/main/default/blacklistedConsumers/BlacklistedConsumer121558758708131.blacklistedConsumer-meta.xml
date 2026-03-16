@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BlacklistedConsumer xmlns="http://soap.sforce.com/2006/04/metadata">
+    <blockedByApiWhitelisting>false</blockedByApiWhitelisting>
+    <consumerKey>3MVG9y6x0357HlecLNZjx.wV5wzU4q4tK6AwaIZpUD4UYq4pEfH8v7pwB8dqH.x5X3DCj2sFpMAtjf.i_wI15</consumerKey>
+    <consumerName>ScanBizCards Business Card Reader</consumerName>
+    <masterLabel>BlacklistedConsumer121558758613786</masterLabel>
+</BlacklistedConsumer>

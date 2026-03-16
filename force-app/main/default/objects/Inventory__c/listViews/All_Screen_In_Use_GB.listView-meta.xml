@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Screen_In_Use_GB</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Condition__c</columns>
+    <columns>ScreenSize__c</columns>
+    <columns>Model__c</columns>
+    <columns>User__c</columns>
+    <columns>Description__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Inventory__c.Peripherie</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>In Use</value>
+    </filters>
+    <filters>
+        <field>Company__c</field>
+        <operation>contains</operation>
+        <value>gateB</value>
+    </filters>
+    <label>All Screen - In Use - GB</label>
+    <language>en_US</language>
+</ListView>

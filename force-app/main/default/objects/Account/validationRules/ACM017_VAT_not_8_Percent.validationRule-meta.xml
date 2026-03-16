@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACM017_VAT_not_8_Percent</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+$User.IsFinanceManager__c = false,
+ISPICKVAL( VATPercent__c, &quot;8%&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>VATPercent__c</errorDisplayField>
+    <errorMessage>You are not allowed to choose VAT 8%. Please get in touch with Finance.
+(ACM017)</errorMessage>
+</ValidationRule>

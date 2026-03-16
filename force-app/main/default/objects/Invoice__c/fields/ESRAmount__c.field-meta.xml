@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ESRAmount__c</fullName>
+    <externalId>false</externalId>
+    <formula>TEXT(FLOOR( InvoiceTotalAmountGross__c )) &amp; &quot;   &quot; &amp; LPAD(TEXT(MOD(ABS(100*InvoiceTotalAmountGross__c), 100)), 2, &apos;0&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ESR Amount</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

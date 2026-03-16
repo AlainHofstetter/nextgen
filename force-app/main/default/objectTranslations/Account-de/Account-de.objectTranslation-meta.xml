@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Company Account Layout</layout>
+        <sections>
+            <label><!-- Account Detail --></label>
+            <section>Account Detail</section>
+        </sections>
+        <sections>
+            <label>Accountinformation</label>
+            <section>Account Information</section>
+        </sections>
+        <sections>
+            <label>Adresse</label>
+            <section>Address</section>
+        </sections>
+        <sections>
+            <label>Kommunikation</label>
+            <section>Communication</section>
+        </sections>
+        <sections>
+            <label>Default Finanzinformation</label>
+            <section>Default Finance Information</section>
+        </sections>
+        <sections>
+            <label>Beschreibung Information 2</label>
+            <section>Description Information 2</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Internal Account Layout</layout>
+        <sections>
+            <label><!-- Account Detail --></label>
+            <section>Account Detail</section>
+        </sections>
+        <sections>
+            <label>Accountinformation</label>
+            <section>Account Information</section>
+        </sections>
+        <sections>
+            <label>Adresse</label>
+            <section>Address</section>
+        </sections>
+        <sections>
+            <label>Kommunikation</label>
+            <section>Communication</section>
+        </sections>
+        <sections>
+            <label>Default Finanzinformation</label>
+            <section>Default Finance Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Summary Account Layout</layout>
+        <sections>
+            <label><!-- Account Detail --></label>
+            <section>Account Detail</section>
+        </sections>
+        <sections>
+            <label>Beschreibung</label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <description><!-- Create a company (legal entity // Unternehmensaccount erstellen --></description>
+        <label>Unternehmen</label>
+        <name>CompanyAccount</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Use this record type to create a BLC Unit --></description>
+        <label>Intern</label>
+        <name>InternalAccount</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Do not use this record type to create any accounts --></description>
+        <label>Summary</label>
+        <name>Summary_Account</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage>Der Summary Account kann nicht editiert werden. Bei Fragen André Ryf kontaktieren. (ACM002)</errorMessage>
+        <name>ACM002_Can_not_edit_Summary_Accounts</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The Account has been flagged inactive and can therefore not be edited. Please get in touch with Finance if you do not agree with the inactive flag.
+(ACM003) -->
+        </errorMessage>
+        <name>ACM003_Inactive_Not_Editable</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte die folgenden Felder ausfüllen: Strasse oder Postfach, PLZ, Ort, Land, Sprache, Juristische Einheit. (ACM004)</errorMessage>
+        <name>ACM004_Location_Address</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Alle Telefon- und Faxnummern müssen im internationalen Format erfasst werden, beginnend mit &quot;+&quot;. Nur Zahlen und Leerzeichen. Eine CH Nummer immer im Format +41 xx xxx xx xx erfassen. (ACM005)</errorMessage>
+        <name>ACM005_Phone_Numbers_with_Int_Format</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Account Debtor kann nicht verändert werden. Bitte FInance kontaktieren. (ACM006)</errorMessage>
+        <name>ACM006_Account_Debtor_No_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Account Supplier kann nicht verändert werden. Bitte Finance kontaktieren. (ACM007)</errorMessage>
+        <name>ACM007_Account_Supplier_No_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Der Rechnngsempfänger ist nicht komplett. Bitte anpassen (in neuem Tab) und erneut speichern. (ACM008)</errorMessage>
+        <name>ACM008_AbacusDebtorTrue</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Der Lieferant ist nicht komplett. Bitte anpassen und erneut speichern. (ACM009)</errorMessage>
+        <name>ACM009_AbacusSupplierTrue</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Der Accountname darf nicht länger als 100 Zeichen sein. (ACM010)</errorMessage>
+        <name>ACM010_AccountName_Max_100</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Die PLZ ist nicht korrekt, bitte anpassen. (ACM011)</errorMessage>
+        <name>ACM011_ZIP_Length_Check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Nachname muss mindestens erfasst werden bei einem Privataccount. (ACM012)</errorMessage>
+        <name>ACM012_PrivatePersonChec</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte die korrekte UID erfassen für diese Rechtsformen. Du kannst diese auf www.zefix.ch suchen. (ACM013)</errorMessage>
+        <name>ACM013_UID_Mussfeld</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte Juristische Einheit ausfüllen. (ACM014)</errorMessage>
+        <name>ACM014_Legal_Nature</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte Accountsprache ausfüllen (ACM015)</errorMessage>
+        <name>ACM015_Account_Language</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to choose VAT 2.5%/2.6%. Please get in touch with Finance.
+(ACM016) -->
+        </errorMessage>
+        <name>ACM016_Trade_25_VAT</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to choose VAT 8%. Please get in touch with Finance.
+(ACM017) -->
+        </errorMessage>
+        <name>ACM017_VAT_not_8_Percent</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- For the following Legal Natures: Corporation/Limited Company, Limited Partnership, Association/Foundation and Public Administration. Please don&apos;t fill out First- &amp; Last Name.
+(ACM018) -->
+        </errorMessage>
+        <name>ACM018_CorporationNoFirstnameCheck</name>
+    </validationRules>
+    <webLinks>
+        <label>Finde Duplikate</label>
+        <name>FindDuplicates</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- HELP --></label>
+        <name>HELP</name>
+    </webLinks>
+</CustomObjectTranslation>

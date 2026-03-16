@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>
+        <!-- API Name to the referenced Field. 
+Hint: As you can use a also a reference like &quot;ProjectName__r.BillingViaCompany__c&quot; it is possible to achieve a relation more then one level deep. -->
+    </help>
+    <label><!-- SourceQuery --></label>
+    <name>SourceQuery__c</name>
+</CustomFieldTranslation>

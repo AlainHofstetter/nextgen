@@ -1,0 +1,21 @@
+Liebe(r) MitarbeiterIn
+
+Deine Supportanfrage mit der Ticket-Nr. {!BLCTickets__c.Name} und dem Betreff "{!BLCTickets__c.Subject__c}" vom {!BLCTickets__c.CreatedDate} wurde abgeschlossen.
+
+Folgende Lösung wurde angegeben:
+{!BLCTickets__c.Solution__c}
+
+Freundliche Grüsse 
+Dein {!Organization.Name} IT Support
+
+------------------------------------------------------------------------------------------------------------
+
+Dear Employee 
+
+Your Support Request with Ticket number: {!BLCTickets__c.Name} and subject "{!BLCTickets__c.Subject__c}" from {!BLCTickets__c.CreatedDate} was closed. 
+
+Following solution was given: 
+{!BLCTickets__c.Solution__c} 
+
+Kind regards 
+Your {!Organization.Name} IT Support

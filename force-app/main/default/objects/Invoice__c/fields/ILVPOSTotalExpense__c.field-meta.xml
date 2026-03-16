@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ILVPOSTotalExpense__c</fullName>
+    <label>ILV POS - Total Expense</label>
+    <summarizedField>ILVPos__c.ILVPositionAmount__c</summarizedField>
+    <summaryFilterItems>
+        <field>ILVPos__c.ILVType__c</field>
+        <operation>equals</operation>
+        <value>Expense</value>
+    </summaryFilterItems>
+    <summaryForeignKey>ILVPos__c.InvoiceName__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

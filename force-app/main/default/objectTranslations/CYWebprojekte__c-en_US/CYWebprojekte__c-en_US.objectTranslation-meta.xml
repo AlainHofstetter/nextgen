@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CY - Webprojekte</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CY - Webprojekte</value>
+    </caseValues>
+    <layouts>
+        <layout>CY - Webprojekte Layout</layout>
+        <sections>
+            <label><!-- Bemerkungen --></label>
+            <section>Bemerkungen</section>
+        </sections>
+        <sections>
+            <label><!-- CY - Webprojekte Detail --></label>
+            <section>CY - Webprojekte Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Kontakte --></label>
+            <section>Kontakte</section>
+        </sections>
+        <sections>
+            <label><!-- URLS &amp; Hosting --></label>
+            <section>URLS &amp; Hosting</section>
+        </sections>
+        <sections>
+            <label><!-- Weiteres --></label>
+            <section>Weiteres</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage>
+            <!-- Wenn ein SLA vorhanden ist, müssen die Felder &quot;SLA Datum&quot; und &quot;SLA Kosten&quot; zwingend befüllt werden.
+(CYWP001) -->
+        </errorMessage>
+        <name>CYWP001</name>
+    </validationRules>
+</CustomObjectTranslation>

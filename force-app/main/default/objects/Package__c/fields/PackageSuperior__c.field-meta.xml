@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PackageSuperior__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Hint: Filter must be optional, otherwise Template Clone will not run (Project Name)</description>
+    <label>Package (Superior)</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>$Source.ProjectName__c</field>
+            <operation>equals</operation>
+            <valueField>Package__c.ProjectName__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>Package__c.RecordType.DeveloperName</field>
+            <operation>equals</operation>
+            <value>Group</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>Package__c</referenceTo>
+    <relationshipName>PackagesSuperior</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

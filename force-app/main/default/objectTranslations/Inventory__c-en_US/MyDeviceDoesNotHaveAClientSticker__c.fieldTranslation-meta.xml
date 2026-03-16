@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Please check the box if your device does NOT have the sticker with the client number (e.g. mc-client_006. By laptops it&apos;s normally on the left side of the keyboard) --></help>
+    <label><!-- My Device does NOT have a client sticker --></label>
+    <name>MyDeviceDoesNotHaveAClientSticker__c</name>
+</CustomFieldTranslation>

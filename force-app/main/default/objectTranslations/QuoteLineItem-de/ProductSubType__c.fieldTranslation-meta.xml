@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Produktsubtyp</label>
+    <name>ProductSubType__c</name>
+    <picklistValues>
+        <masterLabel>3rd Party Costs</masterLabel>
+        <translation>Drittkosten</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Expense</masterLabel>
+        <translation>Spesen</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>License (Direct)</masterLabel>
+        <translation>Lizenzen (Direkt)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>License (Provision)</masterLabel>
+        <translation>Lizenzen (Provision)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>None</masterLabel>
+        <translation><!-- None --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Project Resource Costs</masterLabel>
+        <translation>Ressourcen Kosten</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Trade</masterLabel>
+        <translation>Handel</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Travel Time</masterLabel>
+        <translation>Reisezeit</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Work Time</masterLabel>
+        <translation>Arbeitszeit</translation>
+    </picklistValues>
+</CustomFieldTranslation>

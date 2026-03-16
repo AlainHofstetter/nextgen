@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SA_Projekte_Owner_to_be_defined</fullName>
+    <columns>NAME</columns>
+    <columns>ProjectCostCenter__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ProjectResponsibleBusiness__c</field>
+        <operation>equals</operation>
+        <value>Owner to be defined</value>
+    </filters>
+    <filters>
+        <field>ProjectStatus__c</field>
+        <operation>notEqual</operation>
+        <value>Closed</value>
+    </filters>
+    <label>SA: Projekte &quot;Owner to be defined&quot;</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_Skywalk_Data_Quality</group>
+    </sharedTo>
+</ListView>

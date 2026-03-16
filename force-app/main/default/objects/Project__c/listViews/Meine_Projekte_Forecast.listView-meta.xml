@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Meine_Projekte_Forecast</fullName>
+    <columns>ProjectCostCenter__c</columns>
+    <columns>ContractPartner__c</columns>
+    <columns>NAME</columns>
+    <columns>ServicesTotalAmount__c</columns>
+    <columns>ServiceTotalAmountCHFBP__c</columns>
+    <columns>BudgetAssignTotalAmount__c</columns>
+    <columns>InvoiceTotalAmount__c</columns>
+    <columns>InvoiceOpenToBudget__c</columns>
+    <columns>SupplierCostsForecast__c</columns>
+    <columns>ILVForecast__c</columns>
+    <columns>FebForecast__c</columns>
+    <columns>MarForecast__c</columns>
+    <columns>AprForecast__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Project__c.ExternalServices</value>
+    </filters>
+    <filters>
+        <field>ProjectStatus__c</field>
+        <operation>equals</operation>
+        <value>Open,PartiallOpenWOTimeEntry</value>
+    </filters>
+    <label>MY Projects - Forecast (Externe Serv)</label>
+</ListView>

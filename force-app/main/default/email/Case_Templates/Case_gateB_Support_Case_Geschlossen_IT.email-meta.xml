@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Case: gateB_Support_Case_Geschlossen_IT</name>
+    <style>none</style>
+    <subject>Richiesta di supporto numero {!Case.CaseNumber}</subject>
+    <textOnly>La Sua richiesta di supporto con il numero {!Case.CaseNumber} {!Case.Subject} é stata completata:
+
+Per ulteriori chiarimenti o specificazioni, La preghiamo cordialmente di rispondere a questa e-mail, di modo che la Sua richiesta possa essere assegnata correttamente.
+
+Gentili saluti
+
+gateB Support
+{!Case.OwnerFullName}
+
+
+gateB AG | Empowering Marketing Performance
+
+Sennweidstrasse 35, CH-6312 Steinhausen
+Phone +41 41 748 64 10, support@gateb.com
+http://www.gateb.com
+
+I nostri orari di supporto:
+lunedì a venerdì dalle 8.00 alle 12.00 et dalle 13.00 alle 17.00
+
+
+Thread Id: (ref:_{!Organization.Id}._{!Case.Id}:ref)</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

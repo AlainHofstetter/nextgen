@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Solution --></label>
+    <name>Solution__c</name>
+    <picklistValues>
+        <masterLabel>Brandmaker</masterLabel>
+        <translation><!-- Brandmaker --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Censhare</masterLabel>
+        <translation><!-- Censhare --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SAS</masterLabel>
+        <translation><!-- SAS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Selligent</masterLabel>
+        <translation><!-- Selligent --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tableau</masterLabel>
+        <translation><!-- Tableau --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Talkwalker</masterLabel>
+        <translation><!-- Talkwalker --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

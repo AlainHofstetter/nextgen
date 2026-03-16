@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>gateBServerModuleRelation__c$moduleRelation__c.moduleType__c</field>
+    </columns>
+    <columns>
+        <field>gateBServerModuleRelation__c$moduleRelation__c.moduleDescription__c</field>
+    </columns>
+    <columns>
+        <field>gateBServerModuleRelation__c$moduleRelation__c.moduleVersion__c</field>
+    </columns>
+    <columns>
+        <field>gateBServerModuleRelation__c$LastModifiedDate</field>
+    </columns>
+    <currency>CHF</currency>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>gateBServerModuleRelation__c$serverRelation__c.customer__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>gateBServerModuleRelation__c$serverRelation__c.systemBaseURL__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>gateBServerModuleRelation__c$serverRelation__c.serverType__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>gateB Server Module Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CRgateBServerRelationsReport__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>gateBServerModuleRelation__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

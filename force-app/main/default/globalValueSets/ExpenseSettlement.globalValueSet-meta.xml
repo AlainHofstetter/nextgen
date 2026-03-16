@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>AtCost</fullName>
+        <default>false</default>
+        <label>At Cost</label>
+    </customValue>
+    <customValue>
+        <fullName>AllowancePercent</fullName>
+        <default>true</default>
+        <label>Allowance %</label>
+    </customValue>
+    <customValue>
+        <fullName>FlatRate</fullName>
+        <default>false</default>
+        <label>Flat Rate</label>
+    </customValue>
+    <customValue>
+        <fullName>SpecialDeal</fullName>
+        <default>false</default>
+        <label>Special Deal</label>
+    </customValue>
+    <masterLabel>Expense Settlement</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

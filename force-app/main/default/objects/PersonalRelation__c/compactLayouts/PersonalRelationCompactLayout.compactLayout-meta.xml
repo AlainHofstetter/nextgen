@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PersonalRelationCompactLayout</fullName>
+    <fields>Name</fields>
+    <fields>InternalContact__c</fields>
+    <fields>InernalAccount__c</fields>
+    <fields>Relation__c</fields>
+    <label>PersonalRelationCompactLayout</label>
+</CompactLayout>

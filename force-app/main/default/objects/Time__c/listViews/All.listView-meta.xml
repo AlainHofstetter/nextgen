@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>ProjectName__c</columns>
+    <columns>Package__c</columns>
+    <columns>Timetracker__c</columns>
+    <columns>DateFrom__c</columns>
+    <columns>DateUntil__c</columns>
+    <columns>DurationHhMm__c</columns>
+    <columns>DurationHhMmN__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>DateFrom__c</field>
+        <operation>greaterThan</operation>
+        <value>1/1/2024</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>contains</operation>
+        <value>Victoria</value>
+    </filters>
+    <label>All</label>
+    <sharedTo>
+        <group>Skywalk_Skywalk_Data_Quality</group>
+    </sharedTo>
+</ListView>

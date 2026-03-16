@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SupplierCostsCompactLayout</fullName>
+    <fields>Name</fields>
+    <fields>PackageName__c</fields>
+    <fields>SupplierCostsDate__c</fields>
+    <fields>SupplierCostsType__c</fields>
+    <fields>ServiceSupplierCostsNetPM__c</fields>
+    <fields>Source__c</fields>
+    <label>SupplierCostsCompactLayout</label>
+</CompactLayout>

@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Inventar</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Inventar</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Inventar</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Inventar</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Inventar</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Inventar</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Inventar</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Inventar</value>
+    </caseValues>
+    <gender>Neuter</gender>
+    <layouts>
+        <layout>Accessories Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Equipment Information --></label>
+            <section>Equipment Information</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- Maintanance --></label>
+            <section>Maintanance</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Usage --></label>
+            <section>Usage</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Badge Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Usage --></label>
+            <section>Usage</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Books VH Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- Sales Information --></label>
+            <section>Sales Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Car Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Car Information --></label>
+            <section>Car Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Maintanance --></label>
+            <section>Maintanance</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Computer Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Equipment Information --></label>
+            <section>Equipment Information</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- Laptop --></label>
+            <section>Laptop</section>
+        </sections>
+        <sections>
+            <label><!-- Maintanance --></label>
+            <section>Maintanance</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Credentials Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Credential Application / Service --></label>
+            <section>Credential Application / Service</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Credit Card Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label><!-- Usage --></label>
+            <section>Usage</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Key Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Usage --></label>
+            <section>Usage</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Mobile Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Equipment Information --></label>
+            <section>Equipment Information</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- Maintanance --></label>
+            <section>Maintanance</section>
+        </sections>
+        <sections>
+            <label><!-- Private Information --></label>
+            <section>Private Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Usage --></label>
+            <section>Usage</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Printer Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Technical Information --></label>
+            <section>Technical Information</section>
+        </sections>
+        <sections>
+            <label><!-- Toner Information --></label>
+            <section>Toner Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Screen Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Equipment Information --></label>
+            <section>Equipment Information</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- Maintanance --></label>
+            <section>Maintanance</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Usage --></label>
+            <section>Usage</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Server Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Equipment Information --></label>
+            <section>Equipment Information</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- Maintanance --></label>
+            <section>Maintanance</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Tablet Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Maintanance --></label>
+            <section>Maintanance</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Usage --></label>
+            <section>Usage</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Telephone Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Equipment Information --></label>
+            <section>Equipment Information</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- Maintanance --></label>
+            <section>Maintanance</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Usage --></label>
+            <section>Usage</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Toner Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- Sales Information --></label>
+            <section>Sales Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Workplace Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Equipment Information --></label>
+            <section>Equipment Information</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- Maintanance --></label>
+            <section>Maintanance</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Usage --></label>
+            <section>Usage</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Inventar Nr.</nameFieldLabel>
+    <recordTypes>
+        <label>Zubehör</label>
+        <name>Accessories</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Badge --></label>
+        <name>Badge</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Bücher VH</label>
+        <name>BooksVH</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Fahrzeug</label>
+        <name>Car</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Zugriffsberechtigung</label>
+        <name>Credentials</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Kreditkarte</label>
+        <name>CreditCard</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- (IT) Notebook --></description>
+        <label><!-- Device --></label>
+        <name>Device</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Schlüssel</label>
+        <name>Key</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- (HR) Smartphone, Tablet --></description>
+        <label><!-- Mobile --></label>
+        <name>Mobile</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- (IT) Switch, Access Point, Network Peripherie --></description>
+        <label><!-- Network --></label>
+        <name>Network</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- (IT) Screens, Docking, Headset, IT-Peripherie --></description>
+        <label>Bildschirm</label>
+        <name>Peripherie</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- (IT) Printer, Plotter, Scanner etc. --></description>
+        <label>Drucker</label>
+        <name>Printer</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- (IT) On-Premises Storage, NAS, Server --></description>
+        <label><!-- Storage --></label>
+        <name>Storage</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Tablet --></label>
+        <name>Tablet</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Telefon</label>
+        <name>Telephone</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Toner --></label>
+        <name>Toner</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Record Type to track workplaces via office management --></description>
+        <label><!-- Workplace --></label>
+        <name>Workplace</name>
+    </recordTypes>
+</CustomObjectTranslation>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Allfsdfsd</fullName>
+    <columns>NAME</columns>
+    <columns>AbacusDocumentNr__c</columns>
+    <columns>AbacusSupplierInvoiceTotal__c</columns>
+    <columns>AbacusSupplierInvoiceTotalCHF__c</columns>
+    <columns>BillerAccount__c</columns>
+    <columns>SupplierCostsDescription__c</columns>
+    <columns>Source__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>AbacusDocumentNr__c</field>
+        <operation>equals</operation>
+        <value>53604</value>
+    </filters>
+    <label>Allfdsfdsfsd</label>
+    <language>en_US</language>
+</ListView>

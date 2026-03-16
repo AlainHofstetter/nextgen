@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pricing__c</fullName>
+    <label>Pricing</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>At Cost</fullName>
+                <default>false</default>
+                <label>At Cost</label>
+            </value>
+            <value>
+                <fullName>Flat Rate</fullName>
+                <default>false</default>
+                <label>Flat Rate</label>
+            </value>
+            <value>
+                <fullName>Cost Ceiling</fullName>
+                <default>false</default>
+                <label>Cost Ceiling</label>
+            </value>
+            <value>
+                <fullName>Frame Contract</fullName>
+                <default>false</default>
+                <label>Frame Contract</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

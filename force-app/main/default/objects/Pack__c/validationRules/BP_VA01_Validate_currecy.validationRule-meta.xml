@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BP_VA01_Validate_currecy</fullName>
+    <active>true</active>
+    <description>Check if the Bundle currency matches the price book currency</description>
+    <errorConditionFormula>Text(PriceBook__r.CurrencyIsoCode) != Text(CurrencyIsoCode)</errorConditionFormula>
+    <errorMessage>The packe currency must mach the selected Pricebook currency</errorMessage>
+</ValidationRule>

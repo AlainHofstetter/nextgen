@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Checkbox wählen um diese Leistung als Projektmanagementpauschale zu definieren. Diese Leistungen kalkuliert dann die Pauschale auf Basis aller relevanter Leistungen.</help>
+    <label>Projektmanagementpauschale Leistung</label>
+    <name>ProjectManagementAllowancePackage__c</name>
+</CustomFieldTranslation>

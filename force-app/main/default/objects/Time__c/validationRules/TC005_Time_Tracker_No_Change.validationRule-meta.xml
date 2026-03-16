@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TC005_Time_Tracker_No_Change</fullName>
+    <active>true</active>
+    <description>The Timer Tracker can not be changed anymore</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+ISCHANGED( Timetracker__c ))</errorConditionFormula>
+    <errorMessage>You can not change the time tracker. Please get in touch with the Super User for assistance.
+(TC005)</errorMessage>
+</ValidationRule>

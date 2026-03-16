@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Meine_Zeit_Leistungen_Segmentierung</fullName>
+    <columns>ProjectName__c</columns>
+    <columns>ProjectNr__c</columns>
+    <columns>PackageSortNr__c</columns>
+    <columns>NAME</columns>
+    <columns>CostCenterSegment__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>PackageStatus__c</field>
+        <operation>equals</operation>
+        <value>Open,PartiallyOpen</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Package__c.Time</value>
+    </filters>
+    <filters>
+        <field>ProjectName__c</field>
+        <operation>notContain</operation>
+        <value>Absence,Intern,Abwesenheit,Hilfszeit</value>
+    </filters>
+    <label>Meine Projekte - Segmentierung Services</label>
+</ListView>

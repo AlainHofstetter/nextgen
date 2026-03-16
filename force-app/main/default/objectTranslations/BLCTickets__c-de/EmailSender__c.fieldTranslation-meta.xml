@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Dieses Feld wird automatisch befüllt mit der E-Mail Adresse des &quot;Email-To-BLC-Ticket&quot; Absenders.</help>
+    <label>E-Mail Absender</label>
+    <name>EmailSender__c</name>
+</CustomFieldTranslation>

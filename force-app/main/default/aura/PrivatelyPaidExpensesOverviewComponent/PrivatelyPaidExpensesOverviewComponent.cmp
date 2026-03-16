@@ -1,0 +1,126 @@
+<aura:component controller="TimeExpensesController">
+
+	<ltng:require scripts="{!$Resource.momentjs}" afterScriptsLoaded="{!c.init}"/>
+
+	<aura:attribute name="userId" type="String" />
+	<aura:attribute name="startDate" type="String" />
+	<aura:attribute name="endDate" type="String" />
+
+	<aura:attribute name="employee" type="Object" />
+	<aura:attribute name="formattedStartDate" type="String" />
+	<aura:attribute name="formattedEndDate" type="String" />
+
+	<aura:attribute name="entries" type="Array" />
+	<aura:attribute name="localCurrency" type="String" />
+	<aura:attribute name="dateRangeTotalExpenses" type="Integer" />
+	<aura:attribute name="grandTotalExpenses" type="Integer" />
+	
+
+	<div>
+
+		<p class="hidden slds-p-around--x-large" aura:id="noEntriesError">{!$Label.c.SkyNoresultsfoundforthisdaterange}</p>
+
+		<aura:if isTrue="{!v.entries.length > 0}">
+
+			<div class="slds-p-around--x-large">
+
+				<h1 class="slds-text-heading_large slds-m-bottom--large">Expense Report</h1>
+
+	            <div class="slds-p-left--medium slds-grid slds-size--1-of-1 slds-wrap slds-grid--pull-padded">
+
+	            	<!-- inline width because the layout is being weird! -->
+					<dl class="slds-list--horizontal slds-wrap" style="max-width:400px;">
+						<dt class="slds-item--label"><strong>{!$Label.c.SkyEmployeeName}</strong></dt>
+						<dd class="slds-item--detail">{!v.employee.Name}</dd>
+						<dt class="slds-item--label"><strong>{!$Label.c.SkyDateFrom}</strong></dt>
+						<dd class="slds-item--detail">{!v.formattedStartDate}</dd>
+						<dt class="slds-item--label"><strong>{!$Label.c.SkyDateUntil}</strong></dt>
+						<dd class="slds-item--detail">{!v.formattedEndDate}</dd>
+					</dl>
+
+	            	<!-- inline width because the layout is being weird! -->
+					<dl class="slds-list--horizontal slds-wrap" style="min-width:400px;">
+						<dt class="slds-item--label"><strong>{!$Label.c.SkyCompany}</strong></dt>
+						<dd class="slds-item--detail">
+							{!v.employee.CostCenter__r.LegalAccount__r.Name}<br/>
+							{!v.employee.CostCenter__r.LegalAccount__r.BillingStreetNr__c}<br/>
+							{!v.employee.CostCenter__r.LegalAccount__r.BillingZip__c}&nbsp;{!v.employee.CostCenter__r.LegalAccount__r.BillingCity__c}
+						</dd>
+					</dl>
+
+				</div>
+
+			</div>
+
+			<table class="slds-table slds-table--bordered slds-no-row-hover slds-table--col-bordered">
+				<thead class="styled">
+					<tr>
+						<th>{!$Label.c.SkyNr}</th>
+						<th>{!$Label.c.SkyExpenseNr}</th>
+						<th>{!$Label.c.SkyExpenseDate}</th>
+						<th>{!$Label.c.SkyExpenseType}</th>
+						<th>{!$Label.c.SkyExpenseSubType}</th>
+						<th>{!$Label.c.SkyProjectName}</th>
+						<th>{!$Label.c.SkyProjectNr}</th>
+						<th>{!$Label.c.SkyBusinessReason}</th>
+						<th>{!$Label.c.SkySupplierReceiverLocation}</th>
+						<th>{!$Label.c.SkyListofNames}</th>
+						<th>{!$Label.c.SkyDistance}</th>
+						<th>{!$Label.c.SkyCurr}</th>
+						<th>{!$Label.c.SkyExpenseGross}</th>
+						<th>{!$Label.c.SkyVal}</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					
+					<aura:iteration items="{!v.entries}" var="entry" indexVar="index">
+
+						<tr>
+
+							<td>{!index + 1}.</td>
+							<td><a href="{! '/' + entry.Id}" target="_blank">{!entry.Name}</a></td>
+							<td>{!entry.formattedExpenseDate}</td>
+							<td>{!entry.ExpenseType__c}</td>
+							<td>{!entry.ExpenseSubType__c}</td>
+							<td><span class="table-truncation slds-truncate"><a href="{! '/' + entry.ProjectName__r.Id}" target="_blank">{!entry.ProjectName__r.AbacusProjectName__c}</a></span></td>
+							<td>{!entry.ProjectName__r.ProjectNr__c}</td>
+							<td class="wrappable-cell">{!entry.BusinessReason__c}</td>
+							<td>{!entry.SupplierReceiverLocation__c}</td>
+							<td class="wrappable-cell">{!entry.ListOfNames__c}</td>
+							<td>{!entry.Distance__c}</td>
+							<td>{!entry.LocalCurrency__c}</td>
+							<td>{!entry.displayGross}</td>
+							<td><ui:inputCheckbox value="{!entry.ExpenseValidatedFinance__c}" change="{!c.dontMakeThisCheckboxActuallyWork}" /></td>
+
+						</tr>
+
+					</aura:iteration>
+
+				</tbody>
+
+				<tfoot>
+
+					<tr>
+						<td class="slds-text-align--right" colspan="12">{!$Label.c.SkyTotal}</td>
+						<!-- <td>{!v.localCurrency}&nbsp;{!v.dateRangeTotalExpenses}</td> common total -->
+						<td><lightning:formattedNumber value="{!v.grandTotalExpenses}" style="currency" currencyCode="CHF"/></td>
+						<td></td>
+					</tr>
+
+				</tfoot>
+
+			</table>
+
+			<div class="slds-grid slds-p-around--x-large">
+
+				<div class="slds-col">{!$Label.c.SkyLocationDate}: <span class="write-here-please"></span></div>
+				<div class="slds-col">{!$Label.c.SkySignatureEmployee}: <span class="write-here-please"></span></div>
+				<div class="slds-col">{!$Label.c.SkySignatureManager}: <span class="write-here-please"></span></div>
+
+			</div>
+
+		</aura:if>
+	</div>
+
+</aura:component>

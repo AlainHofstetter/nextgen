@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PackageName__c</fullName>
+    <label>Package Name</label>
+    <lookupFilter>
+        <active>false</active>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <filterItems>
+            <field>Package__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Supplier Costs, License (Provision), License (Direct)</value>
+        </filterItems>
+        <filterItems>
+            <field>Package__c.ProjectName__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.ProjektName__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>Package__c.ProjectName__r.ProjectNr__c</field>
+            <operation>notEqual</operation>
+            <value>P-105657</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>Package__c</referenceTo>
+    <relationshipLabel>Supplier Costs</relationshipLabel>
+    <relationshipName>SupplierCosts</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>true</writeRequiresMasterRead>
+</CustomField>

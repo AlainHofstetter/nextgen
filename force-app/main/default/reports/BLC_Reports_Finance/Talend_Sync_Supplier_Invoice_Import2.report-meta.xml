@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>TalendSyncLog__c.DateTime__c</field>
+    </columns>
+    <columns>
+        <field>TalendSyncLog__c.Type__c</field>
+    </columns>
+    <columns>
+        <field>TalendSyncLog__c.FullStackTrace__c</field>
+    </columns>
+    <currency>CHF</currency>
+    <filter>
+        <criteriaItems>
+            <column>TalendSyncLog__c.ObjectName__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Supplier Invoice</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Talend Sync Supplier Invoice Import</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$TalendSyncLog__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>TalendSyncLog__c.DateTime__c</dateColumn>
+        <interval>INTERVAL_YESTERDAY</interval>
+    </timeFrameFilter>
+</Report>

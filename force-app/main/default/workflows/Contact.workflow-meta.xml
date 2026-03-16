@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>CS_Birthday_of_Internal_Contact</fullName>
+        <description>CS - Birthday of Internal Contact</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ReportsToId</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <recipient>Skywalk_HR_OM</recipient>
+            <type>group</type>
+        </recipients>
+        <senderAddress>noreply@brandleadership.ch</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>CS_Templates/CS_Birthday_of_Internal_Contact</template>
+    </alerts>
+    <alerts>
+        <fullName>CS_Birthday_of_Internal_Contact_OM_14_DAYS</fullName>
+        <description>CS - Birthday of Internal Contact OM 14 DAYS</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Skywalk_HR_OM</recipient>
+            <type>group</type>
+        </recipients>
+        <senderAddress>noreply@brandleadership.ch</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>CS_Templates/CS_Birthday_of_Internal_Contact</template>
+    </alerts>
+    <alerts>
+        <fullName>CS_Inventory_Exit_Notification</fullName>
+        <description>CS - Inventory Exit Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>antonio.farati@gateb.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sabrina.wettach@brandleadership.ch</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sara.tau@gateb.ch</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>skywalk@brandleadership.ch</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>CS_Templates/CS_Inventory_Exit_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Contact_Update_Previous_Owner_Change</fullName>
+        <description>Contact: Update Previous Owner Change</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ZEmailCurrentOwner__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>ZEmailPreviousOwner__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>skywalk@brandleadership.ch</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>CS_Templates/Contact_Update_Contact_Owner_Change</template>
+    </alerts>
+    <alerts>
+        <fullName>HR_Check_Mobile_Payment</fullName>
+        <ccEmails>bewerbung@brandleadership.ch</ccEmails>
+        <ccEmails>it@brandleadership.ch</ccEmails>
+        <description>HR - Check Mobile Payment</description>
+        <protected>false</protected>
+        <senderAddress>noreply@brandleadership.ch</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>HR_Templates/HR_Check_Mobile_Payment</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>CS_Calculate_Next_Birthday</fullName>
+        <field>NextBirthday__c</field>
+        <formula>IF(DATE(YEAR(TODAY()),MONTH( Birthdate ),DAY( Birthdate )) &lt;= TODAY(), DATE(YEAR(TODAY())+1,MONTH( Birthdate ),DAY( Birthdate )), DATE(YEAR(TODAY()),MONTH( Birthdate ),DAY( Birthdate )))</formula>
+        <name>CS - Calculate Next Birthday</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Next_Birthday</fullName>
+        <field>NextBirthday__c</field>
+        <formula>(IF(DATE(YEAR(TODAY()),MONTH(Birthdate),DAY(Birthdate)) &lt;= TODAY(), DATE(YEAR(TODAY())+1,MONTH(Birthdate),DAY(Birthdate)), DATE(YEAR(TODAY()),MONTH(Birthdate),DAY(Birthdate))
+))</formula>
+        <name>Change Next Birthday</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContactLocationCity</fullName>
+        <field>LocationCity__c</field>
+        <formula>MailingCity</formula>
+        <name>ContactLocationCity</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContactLocationCountryCanada</fullName>
+        <field>LocationCountry__c</field>
+        <literalValue>CANADA</literalValue>
+        <name>ContactLocationCountryCanada</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContactLocationCountryUnitedStates</fullName>
+        <field>LocationCountry__c</field>
+        <literalValue>UNITED STATES</literalValue>
+        <name>ContactLocationCountryUnitedStates</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContactLocationState</fullName>
+        <field>LocationState__c</field>
+        <formula>MailingState</formula>
+        <name>ContactLocationState</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContactLocationStreetNr</fullName>
+        <field>LocationStreetNr__c</field>
+        <formula>MailingStreet</formula>
+        <name>ContactLocationStreetNr</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContactLocationZIP</fullName>
+        <field>LocationZip__c</field>
+        <formula>MailingPostalCode</formula>
+        <name>ContactLocationZIP</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_Update_Email_Current_Owner</fullName>
+        <field>ZEmailCurrentOwner__c</field>
+        <formula>Owner.Email</formula>
+        <name>Contact: Update Email Current Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_Update_Email_Previous_Owner</fullName>
+        <field>ZEmailPreviousOwner__c</field>
+        <formula>Priorvalue( ZEmailCurrentOwner__c )</formula>
+        <name>Contact: Update Email Previous Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reset_Next_Birthday</fullName>
+        <field>NextBirthday__c</field>
+        <formula>IF(DATE(YEAR(TODAY()),MONTH( Birthdate ),DAY( Birthdate )) &lt;= TODAY(), DATE(YEAR(TODAY())+1,MONTH( Birthdate ),DAY( Birthdate )), DATE(YEAR(TODAY()),MONTH( Birthdate ),DAY( Birthdate )))</formula>
+        <name>Reset Next Birthday</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>CS - Birthday Reminder - 1%2E Set Next Birthday</fullName>
+        <actions>
+            <name>CS_Calculate_Next_Birthday</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(
+ RecordType.Id = &quot;012b0000000bub1&quot;,
+(OR(
+ISNEW(),
+ISCHANGED( Birthdate ) 
+)
+)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>CS - Birthday Reminder - 2%2E Send Emails</fullName>
+        <active>false</active>
+        <formula>AND(
+ RecordType.Id = &quot;012b0000000bub1&quot;,
+NextBirthday__c &gt; Today()
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>CS_Birthday_of_Internal_Contact</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Contact.NextBirthday__c</offsetFromField>
+            <timeLength>-1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>CS_Birthday_of_Internal_Contact_OM_14_DAYS</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Contact.NextBirthday__c</offsetFromField>
+            <timeLength>-14</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>CS_Calculate_Next_Birthday</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Contact.NextBirthday__c</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Contact%3A Update Email Previous %26 Current Owner</fullName>
+        <actions>
+            <name>Contact_Update_Email_Current_Owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Contact_Update_Email_Previous_Owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED(OwnerId)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A Update Owner Send Email</fullName>
+        <actions>
+            <name>Contact_Update_Previous_Owner_Change</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED( ZEmailPreviousOwner__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>ContactDataComAddressCopyCanada</fullName>
+        <actions>
+            <name>ContactLocationCity</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ContactLocationCountryCanada</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ContactLocationState</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ContactLocationStreetNr</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ContactLocationZIP</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.LeadSource</field>
+            <operation>equals</operation>
+            <value>Jigsaw</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.MailingCountry</field>
+            <operation>equals</operation>
+            <value>Canada</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>ContactDataComAddressCopyUnitedStates</fullName>
+        <actions>
+            <name>ContactLocationCity</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ContactLocationCountryUnitedStates</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ContactLocationState</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ContactLocationStreetNr</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ContactLocationZIP</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.LeadSource</field>
+            <operation>equals</operation>
+            <value>Jigsaw</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.MailingCountry</field>
+            <operation>equals</operation>
+            <value>United States</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>HR - Check Mobile Payment</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Internal Contact</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.MobilePaymentValidFromDate__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.MobilePaymentAgreement__c</field>
+            <operation>equals</operation>
+            <value>Probation Period 80.-</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>HR_Check_Mobile_Payment</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Contact.MobilePaymentValidFromDate__c</offsetFromField>
+            <timeLength>70</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+</Workflow>

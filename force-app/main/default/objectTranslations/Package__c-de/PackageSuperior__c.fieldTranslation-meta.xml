@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Übergeordnete Leistung</label>
+    <name>PackageSuperior__c</name>
+    <relationshipLabel>Leistungen (Übergeordnet)</relationshipLabel>
+</CustomFieldTranslation>

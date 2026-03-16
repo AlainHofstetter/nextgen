@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Mail für einem Projekt zugewiesene Drittkosten an Projektleiter</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Drittkosten_Zugewiesen_Projekt</name>
+    <style>none</style>
+    <subject>Skywalk-Info: Neue Drittkosten auf Projekt {!SupplierCosts__c.ProjectNr__c} – {!SupplierInvoice__c.BillerAccount__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

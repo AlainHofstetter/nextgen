@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Freelancer_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Freelancer__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>ACCOUNT.CREATED_DATE</columns>
+    <columns>BillingCity__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Freelancer__c</field>
+        <operation>equals</operation>
+        <value>Freelancer Registered,Freelancer Not Registered</value>
+    </filters>
+    <label>All Freelancer Accounts</label>
+</ListView>

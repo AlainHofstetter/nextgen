@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexEmailNotifications xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apexEmailNotification>
+        <email>exceptions+BLC@inspireai.com</email>
+    </apexEmailNotification>
+    <apexEmailNotification>
+        <email>itsupport@brandleadership.ch</email>
+    </apexEmailNotification>
+    <apexEmailNotification>
+        <user>maria+blc@inspireai.com</user>
+    </apexEmailNotification>
+</ApexEmailNotifications>

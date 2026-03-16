@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Articel</masterLabel>
+        <translation>Artikel</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>BLC Network</masterLabel>
+        <translation>Seminar - Intern</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cold Call</masterLabel>
+        <translation><!-- Cold Call --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Customer Success</masterLabel>
+        <translation><!-- Customer Success --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Data.com</masterLabel>
+        <translation><!-- Data.com --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Direct Sales</masterLabel>
+        <translation><!-- Direct Sales --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Employee Referral</masterLabel>
+        <translation>Mitarbeiter Verweisung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Event / Conference</masterLabel>
+        <translation>Seminar - Extern</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>External Partner</masterLabel>
+        <translation>Partner</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>External Referral</masterLabel>
+        <translation>Externe Verweisung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Inbound / Call</masterLabel>
+        <translation><!-- Inbound / Call --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Inbound / Mail</masterLabel>
+        <translation><!-- Inbound / Mail --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Inbound / Web</masterLabel>
+        <translation><!-- Inbound / Web --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Newsletter</masterLabel>
+        <translation><!-- Newsletter --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other</masterLabel>
+        <translation>Sonstiges</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Outbound / Sales Lead Generation Team</masterLabel>
+        <translation><!-- Outbound / Sales Lead Generation Team --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Partner- / Co-Marketing</masterLabel>
+        <translation><!-- Partner- / Co-Marketing --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Professional Services</masterLabel>
+        <translation><!-- Professional Services --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Referral</masterLabel>
+        <translation>Empfehlung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Trade Show</masterLabel>
+        <translation>Messe</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Web</masterLabel>
+        <translation>Internet</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Webinar</masterLabel>
+        <translation><!-- Webinar --></translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

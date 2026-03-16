@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Juristische Einheit</label>
+    <name>LegalNature__c</name>
+    <picklistValues>
+        <masterLabel>Association / Foundation</masterLabel>
+        <translation>Verein / Stiftung</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Corporation / Limited Company</masterLabel>
+        <translation>AG / GmbH / Genossenschaft</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Individual Company</masterLabel>
+        <translation>Einzelfirma</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Limited Partnership</masterLabel>
+        <translation>Kollektivgesellschaft</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Natural Entity (Private Person)</masterLabel>
+        <translation>Natürliche Person (Privatperson)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Public Administration / Other</masterLabel>
+        <translation>Öffentliche Verwaltung / Sonstige</translation>
+    </picklistValues>
+</CustomFieldTranslation>

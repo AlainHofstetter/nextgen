@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>SupplierInvoice__c.SupplierCosts__r$ProjektName__c</field>
+    </columns>
+    <columns>
+        <field>SupplierInvoice__c.SupplierCosts__r$EmailAbacusVisa__c</field>
+    </columns>
+    <columns>
+        <field>SupplierInvoice__c$BillerAccount__c</field>
+    </columns>
+    <columns>
+        <field>SupplierInvoice__c$Name</field>
+    </columns>
+    <columns>
+        <field>SupplierInvoice__c.SupplierCosts__r$FinanceDate__c</field>
+    </columns>
+    <columns>
+        <field>SupplierInvoice__c.SupplierCosts__r$Name</field>
+    </columns>
+    <columns>
+        <field>SupplierInvoice__c.SupplierCosts__r$CostsSupplierCostsNetCHF__c</field>
+    </columns>
+    <columns>
+        <field>SupplierInvoice__c.SupplierCosts__r$SupplierInvoicePositionText__c</field>
+    </columns>
+    <currency>CHF</currency>
+    <description>Bericht über alle einem Projekt nicht zuweisbaren Drittkosten.</description>
+    <filter>
+        <criteriaItems>
+            <column>SupplierInvoice__c.SupplierCosts__r$PackageName__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Drittkosten Inbox für nicht zuweisbare Drittkosten - do not delete</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>FIN - Nicht zuweisbare Drittkosten</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CR_Supplier_Invoice_with_Supplier_Costs__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>SupplierInvoice__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

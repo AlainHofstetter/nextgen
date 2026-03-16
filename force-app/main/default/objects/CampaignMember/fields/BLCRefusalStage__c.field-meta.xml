@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLCRefusalStage__c</fullName>
+    <label>BLC Refusal Stage</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Right Away</fullName>
+                <default>false</default>
+                <label>Right Away</label>
+            </value>
+            <value>
+                <fullName>By MD</fullName>
+                <default>false</default>
+                <label>By MD</label>
+            </value>
+            <value>
+                <fullName>After Telephone Interview</fullName>
+                <default>false</default>
+                <label>After Telephone Interview</label>
+            </value>
+            <value>
+                <fullName>After 1st Interview</fullName>
+                <default>false</default>
+                <label>After 1st Interview</label>
+            </value>
+            <value>
+                <fullName>After 2nd Interview</fullName>
+                <default>false</default>
+                <label>After 2nd Interview</label>
+            </value>
+            <value>
+                <fullName>After 3rd Interview</fullName>
+                <default>false</default>
+                <label>After 3rd Interview</label>
+            </value>
+            <value>
+                <fullName>After 4th Interview</fullName>
+                <default>false</default>
+                <label>After 4th Interview</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Mail für nicht zugewiesene einem Projekt zugewiesene Drittkosten an Abacus Visumgeber</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Drittkosten_Nicht_Zuweisbar_Projekt</name>
+    <style>none</style>
+    <subject>Skywalk-Task: Neue Drittkostenrechnung ohne Projektzuweisung</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CAS001_Third_Party_Service_Provider</fullName>
+    <active>true</active>
+    <description>Muss ausgefüllt sein bei Status Forwarded</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+ RecordTypeId = &quot;012b0000000cWrn&quot;,
+OR(
+ISPICKVAL( Status ,&quot;Forwarded 2nd level&quot;),
+ISPICKVAL( Status ,&quot;Forwarded 3rd level&quot;)
+),
+
+ ISBLANK( ThirdPartyServiceProvider__c )
+)</errorConditionFormula>
+    <errorDisplayField>ThirdPartyServiceProvider__c</errorDisplayField>
+    <errorMessage>For Status &quot;Forwarded 2nd / 3rd level&quot;, please choose Third Party Service Provider.
+(CAS001)</errorMessage>
+</ValidationRule>

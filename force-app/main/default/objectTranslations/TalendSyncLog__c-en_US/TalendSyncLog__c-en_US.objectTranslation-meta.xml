@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Talend Sync Log</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Talend Sync Logs</value>
+    </caseValues>
+    <layouts>
+        <layout>Talend Sync Log Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Talend Sync Log Detail --></label>
+            <section>Talend Sync Log Detail</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

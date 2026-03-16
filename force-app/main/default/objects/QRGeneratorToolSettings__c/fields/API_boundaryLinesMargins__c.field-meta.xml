@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>API_boundaryLinesMargins__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If the boundary lines should include a margin and not extend to the border of the page. Printers usually are unable to print the lines completely otherwise. - https://rest.qr-invoice.cloud/swagger-ui/index.html#/11%20Payment%20Part%20%26%20Receipt%20(QR%20Bill)/createPaymentPartReceipt</description>
+    <inlineHelpText>If the boundary lines should include a margin and not extend to the border of the page. Printers usually are unable to print the lines completely otherwise.</inlineHelpText>
+    <label>Add Boundary Lines Margins</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

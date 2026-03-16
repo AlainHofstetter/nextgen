@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Interface Type --></label>
+    <name>InterfaceType__c</name>
+    <picklistValues>
+        <masterLabel>Account Debtor Upsert</masterLabel>
+        <translation><!-- Account Debtor Upsert --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Account Supplier Upsert</masterLabel>
+        <translation><!-- Account Supplier Upsert --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cancellation Export</masterLabel>
+        <translation><!-- Cancellation Export --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Currency Import</masterLabel>
+        <translation><!-- Currency Import --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Invoice Export</masterLabel>
+        <translation><!-- Invoice Export --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Staff Hour Export</masterLabel>
+        <translation><!-- Staff Hour Export --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

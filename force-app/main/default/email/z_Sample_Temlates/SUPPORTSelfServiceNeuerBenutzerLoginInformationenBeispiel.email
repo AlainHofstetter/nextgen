@@ -1,0 +1,7 @@
+Sehr geehrte(r) {!Contact.Title} {!Contact.LastName},
+
+Ihr {!Organization.Name} Self-Service Benutzername und Kennwort Details befinden sich im Anhang.
+
+Mit freundlichen Grüßen,
+
+Ihr {!Organization.Name} Team

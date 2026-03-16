@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EC001_Expense_Card_No_Change_Package_Clo</fullName>
+    <active>true</active>
+    <description>The Expense Card can not be changed anymore.</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+OR(
+ISPICKVAL( Package__r.PackageStatus__c , &quot;Closed&quot;),
+AND(
+Package__r.ValHasPackage__c =true,
+ISPICKVAL( Package__r.PackageSuperior__r.PackageStatus__c,&quot;Closed&quot;)
+)
+))</errorConditionFormula>
+    <errorMessage>You are not allowed to create or change the Expense Card since the Package or Parent Package is closed. Please contact the Project Manager for assistance.
+(EC001)</errorMessage>
+</ValidationRule>

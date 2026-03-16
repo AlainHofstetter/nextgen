@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Bundle Package</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Bundle Packages</value>
+    </caseValues>
+    <layouts>
+        <layout>Package Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- The packe currency must mach the selected Pricebook currency --></errorMessage>
+        <name>BP_VA01_Validate_currecy</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- PersonalInfo_EPIM --></label>
+        <name>PersonalInfo_EPIM</name>
+    </fieldSets>
+    <layouts>
+        <layout>Community Member Layout</layout>
+        <layoutType>CommunityMemberLayout</layoutType>
+        <sections>
+            <label><!-- Basic Information --></label>
+            <section>Basic Information</section>
+        </sections>
+        <sections>
+            <label><!-- Chatter Settings --></label>
+            <section>Chatter Settings</section>
+        </sections>
+        <sections>
+            <label><!-- Language And Locale Settings --></label>
+            <section>Language And Locale Settings</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>User Layout</layout>
+        <sections>
+            <label>Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Human Resources / Skywalk --></label>
+            <section>Human Resources / Skywalk</section>
+        </sections>
+        <sections>
+            <label><!-- Permission Set Assignments via Meta Data Trigger --></label>
+            <section>Permission Set Assignments via Meta Data Trigger</section>
+        </sections>
+        <sections>
+            <label><!-- User Detail --></label>
+            <section>User Detail</section>
+        </sections>
+        <sections>
+            <label><!-- User Validation Rule Assignments --></label>
+            <section>User Validation Rule Assignments</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>User Profile Layout</layout>
+        <layoutType>UserAlt</layoutType>
+        <sections>
+            <label>Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Personal --></label>
+            <section>Personal</section>
+        </sections>
+        <sections>
+            <label><!-- Professional --></label>
+            <section>Professional</section>
+        </sections>
+        <sections>
+            <label><!-- User Detail --></label>
+            <section>User Detail</section>
+        </sections>
+    </layouts>
+    <validationRules>
+        <errorMessage>Bitte keine User an CRM Standard Profile zuweisen. (US001)</errorMessage>
+        <name>US001_No_Standard_Profile_Assignment</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Du darfst keine User Daten anpassen. Bitte mit HR Kontakt aufnehmen. (US002)</errorMessage>
+        <name>US002_No_Change_1</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to change telecommunication data of your User Profile. Please get in touch with HR or IT.
+(US003) -->
+        </errorMessage>
+        <name>US003_No_Change_2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are not allowed to change the data of your User Profile. Please get in touch with HR or IT (US004). --></errorMessage>
+        <name>US004_NoChanges</name>
+    </validationRules>
+</CustomObjectTranslation>

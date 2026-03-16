@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TC014_AbacusTimeType_Compensation</fullName>
+    <active>true</active>
+    <description>Only user with rights can change Abacus Time Type</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+ $User.CompensationTime__c ,
+ISCHANGED(AbacusTimeType__c),
+ISPICKVAL(AbacusTimeType__c,&quot;155&quot;)
+)</errorConditionFormula>
+    <errorMessage>You are not allowed to track Compensation Time.
+(TC014)</errorMessage>
+</ValidationRule>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DynadocTest</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Dynadoc Test</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>https://dynadoc-parx.herokuapp.com/rest/service?userName={!User.Username}
+&amp;serverUrl={!API.Partner_Server_URL_330}
+&amp;queryId=a0Fb000000VmDnX
+&amp;p=InvoiceId::{!Invoice__c.Id}
+&amp;targetId={!Invoice__c.Id}
+&amp;singleResult=true
+&amp;outputFormat=default
+&amp;attach=false
+&amp;documentName={!Invoice__c.PrintInvoiceDocumentNr__c}
+&amp;develop=true</url>
+</WebLink>

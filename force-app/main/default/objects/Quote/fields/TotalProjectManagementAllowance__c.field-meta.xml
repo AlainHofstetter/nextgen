@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TotalProjectManagementAllowance__c</fullName>
+    <label>Total Project Management Allowance</label>
+    <summarizedField>QuoteLineItem.TotalPriceF__c</summarizedField>
+    <summaryFilterItems>
+        <field>QuoteLineItem.ProductType__c</field>
+        <operation>equals</operation>
+        <value>Time</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>QuoteLineItem.ProjectManagementAllowancePackage__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>QuoteLineItem.Option__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

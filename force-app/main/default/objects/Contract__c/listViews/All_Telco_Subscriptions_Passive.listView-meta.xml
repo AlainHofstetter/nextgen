@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Telco_Subscriptions_Passive</fullName>
+    <columns>NAME</columns>
+    <columns>Phone__c</columns>
+    <columns>User__c</columns>
+    <columns>ContractPartnerExternal__c</columns>
+    <columns>Status__c</columns>
+    <columns>ContractType__c</columns>
+    <columns>ContractStartDate__c</columns>
+    <columns>ContractEndDate__c</columns>
+    <columns>OriginOfContract__c</columns>
+    <columns>Description__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contract__c.TelecommunicationContract</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Terminated,Expired,Running Out,Transferred</value>
+    </filters>
+    <label>All Telco Subscriptions (Passive)</label>
+    <language>en_US</language>
+</ListView>

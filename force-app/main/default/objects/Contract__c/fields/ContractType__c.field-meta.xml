@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ContractType__c</fullName>
+    <label>Contract Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Non Disclosure Agreement</fullName>
+                <default>false</default>
+                <label>Non Disclosure Agreement</label>
+            </value>
+            <value>
+                <fullName>Frame Contract</fullName>
+                <default>false</default>
+                <label>Frame Contract</label>
+            </value>
+            <value>
+                <fullName>Service Contract</fullName>
+                <default>false</default>
+                <label>Service Contract</label>
+            </value>
+            <value>
+                <fullName>Works Contract</fullName>
+                <default>false</default>
+                <label>Works Contract</label>
+            </value>
+            <value>
+                <fullName>License Contract</fullName>
+                <default>false</default>
+                <label>License Contract</label>
+            </value>
+            <value>
+                <fullName>Insurance Contract</fullName>
+                <default>false</default>
+                <label>Insurance Contract</label>
+            </value>
+            <value>
+                <fullName>Banking Contract</fullName>
+                <default>false</default>
+                <label>Banking Contract</label>
+            </value>
+            <value>
+                <fullName>Rental Contract</fullName>
+                <default>false</default>
+                <label>Rental Contract</label>
+            </value>
+            <value>
+                <fullName>Media Subscription</fullName>
+                <default>false</default>
+                <label>Media Subscription</label>
+            </value>
+            <value>
+                <fullName>NATEL business infinity S</fullName>
+                <default>false</default>
+                <label>NATEL business infinity S</label>
+            </value>
+            <value>
+                <fullName>NATEL business infinity M</fullName>
+                <default>false</default>
+                <label>NATEL business infinity M</label>
+            </value>
+            <value>
+                <fullName>NATEL business infinity L</fullName>
+                <default>false</default>
+                <label>NATEL business infinity L</label>
+            </value>
+            <value>
+                <fullName>NATEL business infinity XL</fullName>
+                <default>false</default>
+                <label>NATEL business infinity XL</label>
+            </value>
+            <value>
+                <fullName>NATEL business data M</fullName>
+                <default>false</default>
+                <label>NATEL business data M</label>
+            </value>
+            <value>
+                <fullName>NATEL Business data XL</fullName>
+                <default>false</default>
+                <label>NATEL Business data XL</label>
+            </value>
+            <value>
+                <fullName>NATEL data M</fullName>
+                <default>false</default>
+                <label>NATEL data M</label>
+            </value>
+            <value>
+                <fullName>NATEL company</fullName>
+                <default>false</default>
+                <label>NATEL company</label>
+            </value>
+            <value>
+                <fullName>NATEL Office light</fullName>
+                <default>false</default>
+                <label>NATEL Office light</label>
+            </value>
+            <value>
+                <fullName>NATEL company basic</fullName>
+                <default>false</default>
+                <label>NATEL company basic</label>
+            </value>
+            <value>
+                <fullName>BLC - Internal</fullName>
+                <default>false</default>
+                <label>BLC - Internal</label>
+            </value>
+            <value>
+                <fullName>Customer - direct reimbursement</fullName>
+                <default>false</default>
+                <label>Customer - direct reimbursement</label>
+            </value>
+            <value>
+                <fullName>Customer - SLA reimbursement</fullName>
+                <default>false</default>
+                <label>Customer - SLA reimbursement</label>
+            </value>
+            <value>
+                <fullName>External - no reimbursemeent</fullName>
+                <default>false</default>
+                <label>External - no reimbursemeent</label>
+            </value>
+            <value>
+                <fullName>inOne KMU mobile XL</fullName>
+                <default>false</default>
+                <label>inOne KMU mobile XL</label>
+            </value>
+            <value>
+                <fullName>inOne KMU mobile L</fullName>
+                <default>false</default>
+                <label>inOne KMU mobile L</label>
+            </value>
+            <value>
+                <fullName>inOne KMU mobile M</fullName>
+                <default>false</default>
+                <label>inOne KMU mobile M</label>
+            </value>
+            <value>
+                <fullName>inOne KMU mobile S</fullName>
+                <default>false</default>
+                <label>inOne KMU mobile S</label>
+            </value>
+            <value>
+                <fullName>inOne KMU mobile XS</fullName>
+                <default>false</default>
+                <label>inOne KMU mobile XS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

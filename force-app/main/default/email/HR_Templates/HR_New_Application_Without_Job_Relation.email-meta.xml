@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to HR if an application comes in that is not related to Job Campaign</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>HR - New Application without Job Relation</name>
+    <style>none</style>
+    <subject>New Application without Job Relation</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

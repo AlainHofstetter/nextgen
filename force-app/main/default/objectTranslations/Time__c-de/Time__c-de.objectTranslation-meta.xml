@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Zeit</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Zeit</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Zeit</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Zeit</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Zeit</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Zeit</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Zeit</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Zeit</value>
+    </caseValues>
+    <gender>Masculine</gender>
+    <layouts>
+        <layout>Time Layout</layout>
+        <sections>
+            <label>LInks</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Finanzcontrolling</label>
+            <section>Finance Controlling</section>
+        </sections>
+        <sections>
+            <label>HR Controlling</label>
+            <section>HR Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label>Zeit Beschreibung</label>
+            <section>Time Detail</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Zeit Eintrag Nr.</nameFieldLabel>
+    <validationRules>
+        <errorMessage>Der Zeiteintrag kann nicht verändert werden, weil die Leistung auf Status &quot;Geschlossen&quot; ist. (TC001)</errorMessage>
+        <name>TC001_TimeCard_No_Change_Package_Closed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Der Zeiteintrag kann nicht an diese Leistung gehängt werden, weil der Typ nicht übereinstimmt. (TC003)</errorMessage>
+        <name>TC003_TimeCard_Same_Service_Type</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Du hast keine Berechtigung Zeit für jemand anders zu erfassen/mutieren. (TC004)</errorMessage>
+        <name>TC004_Only_Time_For_Yourself</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Der Zeiterfasser kann nicht verändert werden. (TC005)</errorMessage>
+        <name>TC005_Time_Tracker_No_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Du hast keine Berechtigung Zeitkarten zu validieren. (TC006)</errorMessage>
+        <name>TC006_PM_Validation_only_PM</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Validierte Zeiteinträge können nicht verändert werden. (TC007)</errorMessage>
+        <name>TC007_TimeCard_Validated_No_Changes</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Du hast keine Berechtigung Zeitkarten zu validieren. (TC009)</errorMessage>
+        <name>TC009_TimeCard_Validation_HR</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte Leistungstyp wählen. (TC010)</errorMessage>
+        <name>TC010_Service_Type_Mandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte Projektwährung wählen. (TC012)</errorMessage>
+        <name>TC012_Currency_Mandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Du hast keine Berechtigung Überzeit zu erfassen. (TC013)</errorMessage>
+        <name>TC013_AbacusTimeType_SundayHolidays</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Du hast keine Berechtigung Kompensation zu erfassen. (TC014)</errorMessage>
+        <name>TC014_AbacusTimeType_Compensation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Die Dauer muss 4:00 oder 8:00 für eine Absenz sein. (TC015)</errorMessage>
+        <name>TC015_Duration_Absence</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Der Zeiteintrag kann nicht verändert werden, weil das Projekt auf Status &quot;Geschlossen&quot; ist. (TC001)</errorMessage>
+        <name>TC016_Time_Card_No_Change_Project_Clo</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Die Dauer darf nicht leer sein. (TC017)</errorMessage>
+        <name>TC017_Time_Duration_Numeric_Not_Null</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Das Zeitformat muss hh:mm erfasst werden (00:01 - 23:59).(TC018)</errorMessage>
+        <name>TC018_Time_Duration_Format_HH_MM</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Die interne Kontakt ID ist leer. Bitte an den System Administrator wenden. (TC019)</errorMessage>
+        <name>TC019_InternalContactID_Blank</name>
+    </validationRules>
+</CustomObjectTranslation>

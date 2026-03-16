@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Manufacturer --></label>
+    <name>Manufacturer__c</name>
+    <picklistValues>
+        <masterLabel>Acer</masterLabel>
+        <translation><!-- Acer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Apple</masterLabel>
+        <translation><!-- Apple --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Belinea</masterLabel>
+        <translation><!-- Belinea --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BenQ</masterLabel>
+        <translation><!-- BenQ --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Brentford</masterLabel>
+        <translation><!-- Brentford --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Canon</masterLabel>
+        <translation><!-- Canon --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cisco</masterLabel>
+        <translation><!-- Cisco --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Compaq</masterLabel>
+        <translation><!-- Compaq --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dell</masterLabel>
+        <translation><!-- Dell --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Eizo</masterLabel>
+        <translation><!-- Eizo --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Epson</masterLabel>
+        <translation><!-- Epson --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HP</masterLabel>
+        <translation><!-- HP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HTC</masterLabel>
+        <translation><!-- HTC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Konica</masterLabel>
+        <translation><!-- Konica --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lenovo</masterLabel>
+        <translation><!-- Lenovo --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Microsoft</masterLabel>
+        <translation><!-- Microsoft --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NEC</masterLabel>
+        <translation><!-- NEC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nokia</masterLabel>
+        <translation><!-- Nokia --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Samsung</masterLabel>
+        <translation><!-- Samsung --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sony</masterLabel>
+        <translation><!-- Sony --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VMWare</masterLabel>
+        <translation><!-- VMWare --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Xerox</masterLabel>
+        <translation><!-- Xerox --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Xiaomi</masterLabel>
+        <translation><!-- Xiaomi --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Zebra</masterLabel>
+        <translation><!-- Zebra --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

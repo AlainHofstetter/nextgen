@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ILVCompactLayout</fullName>
+    <fields>Name</fields>
+    <fields>ProjectName__c</fields>
+    <fields>InvoiceType__c</fields>
+    <fields>InvoiceDate__c</fields>
+    <fields>ILVPOSTotalTime__c</fields>
+    <fields>ProjectInvoiceCurrency__c</fields>
+    <fields>Source__c</fields>
+    <label>ILV Compact Layout</label>
+</CompactLayout>

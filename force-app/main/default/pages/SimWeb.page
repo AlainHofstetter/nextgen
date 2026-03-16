@@ -1,0 +1,33 @@
+<apex:page standardController="Contact" extensions="SIMControllerSimWeb">
+<apex:includeScript value="{!URLFOR($Resource.SIM, '/js/jquery-1.6.min.js')}"  />
+ <apex:pageBlock >
+<iframe id="SimWebFrame" scrolling="no" height="20px" width="100%" frameborder="0"></iframe>
+</apex:pageBlock>
+<script type="text/javascript">
+    var j$ = jQuery.noConflict();
+    if (window.addEventListener) //DOM method for binding an event
+        window.addEventListener('message', SIMReceiver, false);
+    else if (window.attachEvent) //IE exclusive method for binding an event
+        window.attachEvent('onmessage', SIMReceiver);
+    else if (document.getElementById) //support older modern browsers
+        window.onload = SIMReceiver;
+
+    function SIMReceiver(event) {
+        var simUrl = '{!simUrl}';
+        if (simUrl.indexOf(event.origin) != -1) {
+            if (event.data.substr(0, 12) == 'resizeIframe') {
+                var $height = event.data.substr(event.data.indexOf("height=") + 7);
+                resizeThisFrame($height);
+           }
+        }
+    }
+
+    function resizeThisFrame(height) {
+        j$("#SimWebFrame").attr("height", height+"px");
+    }
+    
+    j$("#SimWebFrame").attr("src", "{!url}&crmglobal=s4ce&domain=" + encodeURIComponent(location.protocol + '//' + location.hostname));
+    j$('.tab').find('.currentTab').removeClass('currentTab primaryPalette');
+    j$("a[title='SIM Analytics Tab']").parent().parent().addClass("currentTab primaryPalette");
+</script>
+</apex:page>

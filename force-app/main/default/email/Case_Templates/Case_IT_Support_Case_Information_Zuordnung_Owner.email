@@ -1,0 +1,13 @@
+Folgender Kundenvorgang wurde zugewiesen:
+
+Firma: {!Account.Name}
+Kontakt Name: {!Contact.Name}
+Kundenvorgang #: {!Case.CaseNumber}
+Thema: {!Case.Subject}
+Beschreibung: {!Case.Description}
+
+Skywalk Link: {!Case.Link}
+
+--- 
+This Email has been sent by Skywalk, do not reply. 
+(Template: 00Xb0000000vCNP)

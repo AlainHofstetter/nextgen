@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Books_VH</fullName>
+    <columns>NAME</columns>
+    <columns>BookTitle__c</columns>
+    <columns>Stock__c</columns>
+    <columns>SoldTo__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>SalesPrice__c</columns>
+    <columns>EditionYear__c</columns>
+    <columns>Edition__c</columns>
+    <columns>IMEINr__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Inventory__c.BooksVH</value>
+    </filters>
+    <label>All Books VH</label>
+    <sharedTo>
+        <group>Skywalk_Inventory_Books_VH</group>
+    </sharedTo>
+</ListView>

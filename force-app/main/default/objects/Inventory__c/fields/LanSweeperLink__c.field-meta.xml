@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LanSweeperLink__c</fullName>
+    <description>Direct Link to Lan Sweeper&apos;s device detail page (if available)</description>
+    <externalId>false</externalId>
+    <formula>if (
+  or (  ISBLANK(LanSweeperAssetId__c),  ISNULL(LanSweeperAssetId__c) ),
+  &quot;n/a&quot;,
+  HYPERLINK(&quot;http://inventory:81/asset.aspx?AssetID=&quot; &amp; LanSweeperAssetId__c, &quot;Asset #&quot; &amp; LanSweeperAssetId__c, &quot;_lanSweeperDetail&quot;)
+)</formula>
+    <inlineHelpText>Direct Link to Lan Sweeper&apos;s device detail page (if available)</inlineHelpText>
+    <label>LanSweeper (Link)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

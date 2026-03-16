@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Calls__c</fullName>
+    <formula>IF(
+ISBLANK(ContactId)=false, Contact.NoCalls__c,
+IF(
+ISBLANK( LeadId )=false,  Lead.NoCalls__c  ,false))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>No Calls</label>
+    <type>Checkbox</type>
+</CustomField>

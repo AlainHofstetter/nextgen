@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PR001_Entry_Invalid_Group</fullName>
+    <active>true</active>
+    <description>Checks for valid product combination data.</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(ProductType__c, &quot;Group&quot;),
+OR(
+ProjectManagementAllowanceProduct__c=true,
+ExpenseAllowanceProduct__c=true,
+Option__c=true,
+Intro__c=true,
+Outro__c=true
+)
+)</errorConditionFormula>
+    <errorMessage>Invalid entry for Product Type &quot;Group&quot;
+(PR001)</errorMessage>
+</ValidationRule>

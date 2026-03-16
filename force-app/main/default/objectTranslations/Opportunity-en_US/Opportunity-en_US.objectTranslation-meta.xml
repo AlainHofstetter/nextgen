@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>BLC - Services Layout</layout>
+        <sections>
+            <label><!-- Forecast current year --></label>
+            <section>Forecast current year</section>
+        </sections>
+        <sections>
+            <label><!-- Forecast next year --></label>
+            <section>Forecast next year</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Detail --></label>
+            <section>Opportunity Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Information --></label>
+            <section>Opportunity Information</section>
+        </sections>
+        <sections>
+            <label><!-- Pricebook --></label>
+            <section>Pricebook</section>
+        </sections>
+        <sections>
+            <label><!-- Project Information --></label>
+            <section>Project Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>GB - Brandmaker License  Layout</layout>
+        <sections>
+            <label><!-- BrandMaker Information --></label>
+            <section>BrandMaker Information</section>
+        </sections>
+        <sections>
+            <label><!-- Description and Close Plan --></label>
+            <section>Description and Close Plan</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Detail --></label>
+            <section>Opportunity Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Information --></label>
+            <section>Opportunity Information</section>
+        </sections>
+        <sections>
+            <label><!-- Pricebook --></label>
+            <section>Pricebook</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>GB - SAS License Layout</layout>
+        <sections>
+            <label><!-- Description and Close Plan --></label>
+            <section>Description and Close Plan</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Detail --></label>
+            <section>Opportunity Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Information --></label>
+            <section>Opportunity Information</section>
+        </sections>
+        <sections>
+            <label><!-- SAS Information --></label>
+            <section>SAS Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Add Packages --></label>
+        <name>Add_Packages</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- BLC - Services --></label>
+        <name>BLC_Services</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- GB CH - Lizenzen --></label>
+        <name>GB_CH_Lizenzen</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage>
+            <!-- Every Opportunity with the Status &apos;Closed Lost&apos; and the Reason Won/Lost &apos;Other&apos; need to have a Reason Won/Lost Comment.
+(OP002) -->
+        </errorMessage>
+        <name>OP002_Comment_for_Closed_Lost</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Project Start Date must be prior to Project End Date.
+(OP003) -->
+        </errorMessage>
+        <name>OP003_Project_End_Date_after_Start_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Every Opportunity with the Stage &apos;Close Lost&apos; needs a &apos;Reason Won/Lost&apos;.
+(OP004) -->
+        </errorMessage>
+        <name>OP004_Reason_for_Closed_Lost</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The Forecast exceeds the Opportunity Amount. Please validate.
+(OP005) -->
+        </errorMessage>
+        <name>OP005_Forecast_Exceeds_Amount</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- This Contract Partner is Inactive, therefore you can not create a new Project. Please get in touch with Finance. 
+(OP006) -->
+        </errorMessage>
+        <name>OP006_Account_Inactive</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Start Date of the Project has to be a date in the future. If the the project already started please close opportunity and create a project accordingly (Opp007). --></errorMessage>
+        <name>OP007_Project_StartsInTheFuture</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Add_Packages --></label>
+        <name>Add_Packages</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- CreateOpportunityBundle --></label>
+        <name>CreateOpportunityBundle</name>
+    </webLinks>
+</CustomObjectTranslation>

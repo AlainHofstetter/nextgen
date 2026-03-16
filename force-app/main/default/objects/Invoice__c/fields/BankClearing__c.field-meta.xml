@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BankClearing__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+ ProjectInvoiceCurrency__c =&quot;CHF&quot;, ProjectCostCenter__r.CHFBankClearing__c ,
+IF( 
+ProjectInvoiceCurrency__c =&quot;EUR&quot;, ProjectCostCenter__r.EURBankClearing__c ,
+IF(
+ ProjectInvoiceCurrency__c =&quot;USD&quot;, ProjectCostCenter__r.USDBankClearing__c ,&quot;&quot;)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Bank Clearing</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

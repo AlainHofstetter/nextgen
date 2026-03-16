@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PA016_Package_Superior_Same_Project</fullName>
+    <active>true</active>
+    <description>The superior Package must be linked to the same project as the package.</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+  NOT(ISBLANK(PackageSuperior__c)),
+  PackageSuperior__r.ProjectName__c &lt;&gt; ProjectName__c
+  )</errorConditionFormula>
+    <errorMessage>You can only attach packages to superior packages linked to the same project.
+(PA016)</errorMessage>
+</ValidationRule>

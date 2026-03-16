@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Before a record is inserted or / and updated (depending on the metadata settings) values from parent (source) object is populate to child (target) object. 
+
+If the value on the Target Object changes, the Child record will not update automatically. It only updates if it is manually edited. So this function is typically used to freeze a certain value on a child object at the time a record is created or / and updated.
+
+Example: Save the current timekeeper cost center on a time record at creation.</description>
+    <label>Inherited field value</label>
+    <pluralLabel>Inherited field values</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PR009_Project_Sub_Type_Mandatory</fullName>
+    <active>true</active>
+    <description>Project must have Subtype</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+ISBLANK( TEXT( ProjectSubType__c  )))</errorConditionFormula>
+    <errorDisplayField>ProjectSubType__c</errorDisplayField>
+    <errorMessage>You must choose a Project Sub-Type.
+(PR009)</errorMessage>
+</ValidationRule>

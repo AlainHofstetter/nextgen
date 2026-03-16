@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProjectCompactLayoutGroup</fullName>
+    <fields>Name</fields>
+    <fields>PackageNr__c</fields>
+    <fields>PackageSuperior__c</fields>
+    <fields>ProjectName__c</fields>
+    <fields>PackageType2__c</fields>
+    <fields>Source__c</fields>
+    <label>ProjectCompactLayoutGroup</label>
+</CompactLayout>

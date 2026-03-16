@@ -1,0 +1,3 @@
+Id,CurrencyIsoCode,CurrencyRateReceiptToRefund__c,IsDeleted,ExpenseDate__c,Name,ExpenseSpendingOnReceiptGross__c,ExpenseSubType__c,ExpenseValidatedFinance__c,Expensetracker__c,ExpensetrackerCompany__c,PackageName__c,PaymentType__c,RecordTypeId,SupplierReceiverLocation__c
+a0N26000000k07wEAA,CHF,125,FALSE,2016-08-24,EE-100003,125,Food,FALSE,,,a0K26000000bA1mEAE,Company (Credit Card),012260000008pRkAAI,Tramways
+a0N26000000k08BEAQ,CHF,600,FALSE,,EE-100005,600,Car (Rental),FALSE,0032600000EGQVtAAP,0012600000FtQprAAF,a0K26000000bA1mEAE,Company (Credit Card),012260000008pRkAAI,

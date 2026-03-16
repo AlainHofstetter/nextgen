@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Lead_Business_Holding</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Lead Business Holding</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BLC</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Business</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Skywalk_HR_MD_Assistant_Recruiting_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Skywalk - HR MD Assistant - Recruiting - RW</label>
+        <sharedTo>
+            <group>Skywalk_BLC_GL_Assistance</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Recruiting</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Skywalk_HR_Recruiting_RW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Skywalk - HR - Recruiting - RW</label>
+        <sharedTo>
+            <group>Skywalk_HR_Recruiting</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Recruiting</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>GBCH_with_GBUS</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>GBCH with GBUS</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>GBUS_gateB_US</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>GBCH</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>GBUS_with_GBCH</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>GBUS with GBCH</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>GBCH</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>GBUS_gateB_US</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

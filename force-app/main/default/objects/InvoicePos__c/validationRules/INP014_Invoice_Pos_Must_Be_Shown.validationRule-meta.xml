@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>INP014_Invoice_Pos_Must_Be_Shown</fullName>
+    <active>true</active>
+    <description>If the invoice position contains a value &gt;0, either the Position must be shown or the Group that the Position belongs to must be shown.</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+ InvoiceName__r.RecordType.Id !=&quot;012b0000000oQiv&quot;,
+
+PackageType__c &lt;&gt;&quot;Group&quot;,
+InvoicePositionAmount__c &gt;0,
+ShowPosition__c = false,
+ISBLANK( PackageName__r.PackageSuperior__c )
+
+)</errorConditionFormula>
+    <errorMessage>The Invoice Position with an Amount must be shown on the invoice. Please correct the checkboxes. 
+(INP014)</errorMessage>
+</ValidationRule>

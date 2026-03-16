@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>SBB Cases Queue</name>
+    <queueMembers>
+        <users>
+            <user>angela.buchser@gateb.com</user>
+            <user>antonio.farati@gateb.com</user>
+            <user>burak.demiryuerek@gateb.com</user>
+            <user>fabrizio.marra@gateb.com</user>
+            <user>myrta.zemp@gateb.com</user>
+            <user>reto.zwahlen@gateb.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

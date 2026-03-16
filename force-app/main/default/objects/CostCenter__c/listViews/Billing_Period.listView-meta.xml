@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Period</fullName>
+    <columns>NAME</columns>
+    <columns>DateFromBillingPeriod__c</columns>
+    <columns>DateUntilBillingPeriod__c</columns>
+    <columns>BillingPeriod__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Billing Period</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_FIN_Alle</group>
+    </sharedTo>
+</ListView>

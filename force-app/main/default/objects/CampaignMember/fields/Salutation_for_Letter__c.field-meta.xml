@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Salutation_for_Letter__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(
+ DuSieOwner__c =&quot;Du&quot;,
+ TEXT(Contact.Salutation) = &quot;Mr.&quot;
+),
+
+&quot;Lieber &quot; &amp; Contact.FirstName,
+
+IF(
+AND(
+ DuSieOwner__c =&quot;Du&quot;,
+ TEXT(Contact.Salutation) = &quot;Ms.&quot;
+),
+
+&quot;Liebe &quot; &amp; Contact.FirstName,
+
+IF(
+AND(
+ DuSieOwner__c =&quot;Sie&quot;,
+ TEXT(Contact.Salutation) = &quot;Mr.&quot;
+),
+
+&quot;Sehr geehrter Herr &quot; &amp; Contact.LastName,
+
+IF(
+AND(
+ DuSieOwner__c =&quot;Sie&quot;,
+ TEXT(Contact.Salutation) = &quot;Ms.&quot;
+),
+
+&quot;Sehr geehrte Frau &quot; &amp; Contact.LastName,
+
+&quot;&quot;
+))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Salutation for Letter</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,32 @@
+<aura:component >
+
+
+	<ltng:require scripts="{!$Resource.dragulajs}" afterScriptsLoaded="{!c.init}"/>
+
+	<aura:attribute name="rows" type="Array" description="List of rows" />
+
+
+	<a href="javascript://" onclick="{!c.click}">Click me</a>
+
+	<table id="theTable">
+		<tr>
+			<td>sup 4</td>
+		</tr>
+		<tr>
+			<td>sup 2</td>
+		</tr>
+		<tr>
+			<td>sup 1</td>
+		</tr>
+		<tr  onclick="{!c.click}">
+			<td>sup 2</td>
+		</tr>
+		<aura:iteration items="{!v.rows}" var="row">
+			<tr onmousedown="{!c.onMouseDown}">
+				<td>{!row}</td>
+				<td>        <ui:button aura:id="button1" label="Click me" press="{!c.specialClickFunction}"/> </td>
+			</tr>
+		</aura:iteration>
+	</table>
+
+</aura:component>

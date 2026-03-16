@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Quote Layout</layout>
+        <sections>
+            <label>Verrechnungsinformation</label>
+            <section>Billing Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label>Konditionen</label>
+            <section>Terms &amp; Conditions</section>
+        </sections>
+        <sections>
+            <label>Summen</label>
+            <section>Totals</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Add Packages --></label>
+        <name>Add_Packages_for_Quote</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- SendEmail --></label>
+        <name>SendEmail</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Sync --></label>
+        <name>Sync</name>
+    </quickActions>
+    <validationRules>
+        <errorMessage><!-- The Quote Pricebook do not match  Opportunity Pricebook --></errorMessage>
+        <name>QU001_Check_Pricebook</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Es kann nur ein Produkt das Projektmanagementpauschale Produkt sein. (QU001)</errorMessage>
+        <name>QU001_PM_Percent_1</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Es kann nur ein Produkt das Spesenpauschale Produkt sein. (QU002)</errorMessage>
+        <name>QU002_Expense_Percent_1</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Add_Packages_For_Quote --></label>
+        <name>Add_Packages_For_Quote</name>
+    </webLinks>
+    <webLinks>
+        <label>Duplizieren</label>
+        <name>Clone</name>
+    </webLinks>
+    <webLinks>
+        <label>Offerte erstellen</label>
+        <name>CreateQuote</name>
+    </webLinks>
+    <webLinks>
+        <label>Offerte generieren</label>
+        <name>GenerateQuote</name>
+    </webLinks>
+</CustomObjectTranslation>

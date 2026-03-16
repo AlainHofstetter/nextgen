@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_QR_Bank_Information</fullName>
+    <columns>NAME</columns>
+    <columns>BankName__c</columns>
+    <columns>BankLocation__c</columns>
+    <columns>CHFBankClearing__c</columns>
+    <columns>CHFIBAN__c</columns>
+    <columns>CHFSWIFT__c</columns>
+    <columns>CHFQRIBAN__c</columns>
+    <columns>EURQRIBAN__c</columns>
+    <columns>LegalAccount__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All QR_Bank Information</label>
+    <sharedTo>
+        <group>Skywalk_FIN_Alle</group>
+    </sharedTo>
+</ListView>

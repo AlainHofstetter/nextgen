@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PR006_Entry_Invalid_Text</fullName>
+    <active>true</active>
+    <description>Checks for valid product combination data.</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(ProductType__c,&quot;Text&quot;),
+Intro__c=false,
+Outro__c=false
+)</errorConditionFormula>
+    <errorMessage>Product Text must be of Intro or Outro.
+(PR006)</errorMessage>
+</ValidationRule>

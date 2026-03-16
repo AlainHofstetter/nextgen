@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TC006_PM_Validation_only_PM</fullName>
+    <active>true</active>
+    <description>The Time Card can only be validated by PM</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+ ISCHANGED(TimeValidatedProjectResponsible__c),
+ $User.IsProjectManager__c =false
+)</errorConditionFormula>
+    <errorDisplayField>TimeValidatedProjectResponsible__c</errorDisplayField>
+    <errorMessage>You are not allowed to validate the time card. Please contact your Super User for assistance.
+(TC006)</errorMessage>
+</ValidationRule>

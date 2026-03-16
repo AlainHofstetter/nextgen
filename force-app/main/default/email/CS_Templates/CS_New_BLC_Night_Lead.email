@@ -1,0 +1,8 @@
+The following Person could not be matched with a Campaign Member of the BLC Night Invitation.
+
+Proceed as follows:
+1. Look for the matching Campaign Member Contact
+2. Complete the information on the Campaign Member Contact
+3. Delete the Lead
+
+Campaign Member: {!CampaignMember.Link}

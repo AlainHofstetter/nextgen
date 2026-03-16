@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IN013_Count_Status_Draft_ILV</fullName>
+    <active>true</active>
+    <description>Only one ILV in Status Draft</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+ RecordType.DeveloperName =&quot;ILV&quot;, 
+ISPICKVAL( InvoiceStatus__c, &quot;Draft&quot;),
+ ProjectName__r.ValCountHasILVDraft__c =1,
+OR(
+ISNEW(),
+ISCHANGED(InvoiceStatus__c)
+)
+)</errorConditionFormula>
+    <errorDisplayField>InvoiceStatus__c</errorDisplayField>
+    <errorMessage>There is already an ILV in Status &quot;Draft&quot;. Please complete this ILV first. 
+(IN013)</errorMessage>
+</ValidationRule>

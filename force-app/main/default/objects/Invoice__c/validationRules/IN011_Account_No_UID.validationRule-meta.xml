@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IN011_Account_No_UID</fullName>
+    <active>true</active>
+    <description>The Invoice Receiver must have an UID.</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,  
+ISBLANK(InvoiceReceiver__r.UID__c), 
+ISPICKVAL(InvoiceReceiver__r.BillingCountry__c ,&quot;Switzerland&quot;),
+OR(
+ISPICKVAL(InvoiceReceiver__r.LegalNature__c,&quot;Corporation / Limited Company&quot;),
+ISPICKVAL(InvoiceReceiver__r.LegalNature__c,&quot;Limited Partnership&quot;)
+),
+OR(
+ISPICKVAL(InvoiceStatus__c ,&quot;Ready&quot;),
+ISPICKVAL(InvoiceStatus__c ,&quot;Sent&quot;)
+)
+)</errorConditionFormula>
+    <errorDisplayField>InvoiceReceiver__c</errorDisplayField>
+    <errorMessage>You can not set the Invoice to Ready / Sent. Reason: The Invoice Receiver Account has no UID information. Please open the Invoice Receiver Account in a new browser tab and get the UID Information from www.zefix.ch.
+(IN011)</errorMessage>
+</ValidationRule>

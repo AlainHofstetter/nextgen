@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Relation --></label>
+    <name>Relation__c</name>
+    <picklistValues>
+        <masterLabel>Business Partner</masterLabel>
+        <translation><!-- Business Partner --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Former Colleague</masterLabel>
+        <translation><!-- Former Colleague --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Friend</masterLabel>
+        <translation><!-- Friend --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Married / Civil Union</masterLabel>
+        <translation><!-- Married / Civil Union --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Relative</masterLabel>
+        <translation><!-- Relative --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

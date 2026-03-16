@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PA006_Package_Sort_must_be_numeric</fullName>
+    <active>true</active>
+    <description>Package Sort only numeric</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+NOT( ISBLANK(PackageSortNr__c)) ,
+NOT(ISNUMBER( PackageSortNr__c ))
+)</errorConditionFormula>
+    <errorDisplayField>PackageSortNr__c</errorDisplayField>
+    <errorMessage>The Sort Number can not contain alphanumerical characters, only numbers.
+(PA006)</errorMessage>
+</ValidationRule>

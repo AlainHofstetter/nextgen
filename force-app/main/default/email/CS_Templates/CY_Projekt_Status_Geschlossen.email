@@ -1,0 +1,12 @@
+Hallo
+
+Der Projektstatus des folgenden Projektes "{!Project__c.Name}" wurde auf Status "Geschlossen" geändert: 
+{!Project__c.Link}
+
+Die zum Projekt gehörenden Dateien auf dem Xsan Server (10.148.12) können nun archiviert werden. 
+
+Vielen Dank!
+
+--- 
+This Email has been sent by Salesforce, do not reply. 
+(Template: 00Xb0000001EWS0)

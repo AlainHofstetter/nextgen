@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value><!-- Opportunity Bundle --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value><!-- Opportunity Bundle --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value><!-- Opportunity Bundle --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- Opportunity Bundle --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value><!-- Opportunity Bundle --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- Opportunity Bundle --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value><!-- Opportunity Bundle --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- Opportunity Bundle --></value>
+    </caseValues>
+    <gender><!-- Neuter --></gender>
+    <layouts>
+        <layout>Opportunity Bundle Layout</layout>
+        <sections>
+            <label>Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Dashboard --></label>
+            <section>Dashboard</section>
+        </sections>
+        <sections>
+            <label>Beschreibung</label>
+            <section>Description Information</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Bundle Name --></label>
+            <section>Opportunity Bundle Name</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Opportunity Bundle Nr. --></nameFieldLabel>
+    <validationRules>
+        <errorMessage>Bitte den Namen des Opportunity Bundle anpassen. (OBU001)</errorMessage>
+        <name>OBU001_Replace_Default_Name</name>
+    </validationRules>
+</CustomObjectTranslation>

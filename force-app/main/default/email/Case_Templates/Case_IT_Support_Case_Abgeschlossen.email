@@ -1,0 +1,14 @@
+Liebe(r) MitarbeiterIn
+
+Der Case {!Case.CaseNumber} mit dem Betreff {!Case.Subject} wurde geschlossen. 
+
+Folgende Lösung wurde angegeben:
+{!Case.Solution__c}
+
+Freundliche Grüsse
+Dein Brand Leadership Circle IT Support
+
+
+--- 
+This Email has been sent by Skywalk, do not reply. 
+(Template: 00Xb0000000z6q7)

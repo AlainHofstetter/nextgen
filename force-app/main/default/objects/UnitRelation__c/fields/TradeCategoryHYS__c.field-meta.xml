@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TradeCategoryHYS__c</fullName>
+    <label>Trade Category - HYS</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Private Bank</fullName>
+                <default>false</default>
+                <label>Private Bank</label>
+            </value>
+            <value>
+                <fullName>Tax Advisers</fullName>
+                <default>false</default>
+                <label>Tax Advisers</label>
+            </value>
+            <value>
+                <fullName>Consulting Companies</fullName>
+                <default>false</default>
+                <label>Consulting Companies</label>
+            </value>
+            <value>
+                <fullName>Law Firm</fullName>
+                <default>false</default>
+                <label>Law Firm</label>
+            </value>
+            <value>
+                <fullName>Luxury Brand</fullName>
+                <default>false</default>
+                <label>Luxury Brand</label>
+            </value>
+            <value>
+                <fullName>------------------</fullName>
+                <default>false</default>
+                <label>------------------</label>
+            </value>
+            <value>
+                <fullName>Luxury Hotel</fullName>
+                <default>false</default>
+                <label>Luxury Hotel</label>
+            </value>
+            <value>
+                <fullName>Boutique Hotel</fullName>
+                <default>false</default>
+                <label>Boutique Hotel</label>
+            </value>
+            <value>
+                <fullName>Hotel Association</fullName>
+                <default>false</default>
+                <label>Hotel Association</label>
+            </value>
+            <value>
+                <fullName>Event Planner</fullName>
+                <default>false</default>
+                <label>Event Planner</label>
+            </value>
+            <value>
+                <fullName>Wedding Planner</fullName>
+                <default>false</default>
+                <label>Wedding Planner</label>
+            </value>
+            <value>
+                <fullName>-----------------------</fullName>
+                <default>false</default>
+                <label>-----------------------</label>
+            </value>
+            <value>
+                <fullName>Stationary Store</fullName>
+                <default>false</default>
+                <label>Stationary Store</label>
+            </value>
+            <value>
+                <fullName>Flower Shop</fullName>
+                <default>false</default>
+                <label>Flower Shop</label>
+            </value>
+            <value>
+                <fullName>Design Store</fullName>
+                <default>false</default>
+                <label>Design Store</label>
+            </value>
+            <value>
+                <fullName>Department Store</fullName>
+                <default>false</default>
+                <label>Department Store</label>
+            </value>
+            <value>
+                <fullName>Online Retail</fullName>
+                <default>false</default>
+                <label>Online Retail</label>
+            </value>
+            <value>
+                <fullName>Travel Retail</fullName>
+                <default>false</default>
+                <label>Travel Retail</label>
+            </value>
+            <value>
+                <fullName>-----------------</fullName>
+                <default>false</default>
+                <label>-----------------</label>
+            </value>
+            <value>
+                <fullName>Magazines</fullName>
+                <default>false</default>
+                <label>Magazines</label>
+            </value>
+            <value>
+                <fullName>Editing House</fullName>
+                <default>false</default>
+                <label>Editing House</label>
+            </value>
+            <value>
+                <fullName>Cultural Institution</fullName>
+                <default>false</default>
+                <label>Cultural Institution</label>
+            </value>
+            <value>
+                <fullName>Online Blog</fullName>
+                <default>false</default>
+                <label>Online Blog</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

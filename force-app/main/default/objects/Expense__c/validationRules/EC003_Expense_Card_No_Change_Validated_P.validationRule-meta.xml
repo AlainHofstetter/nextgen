@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EC003_Expense_Card_No_Change_Validated_P</fullName>
+    <active>true</active>
+    <description>The Expense Card can not be changed anymore.</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+Priorvalue(ExpenseValidatedProjectResponsible__c) =true,
+NOT( $User.IsProjectManager__c ),
+NOT(  $User.PS180RoleFinanceApprover__c )
+)</errorConditionFormula>
+    <errorMessage>You are not allowed to change the Expense Card since the Project Manager has already validated the expense. Please contact the Project Manager for assistance.
+(EC003)</errorMessage>
+</ValidationRule>

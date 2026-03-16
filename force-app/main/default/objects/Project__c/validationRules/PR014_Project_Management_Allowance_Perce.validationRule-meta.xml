@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PR014_Project_Management_Allowance_Perce</fullName>
+    <active>true</active>
+    <description>Project Management Allowance Percent must be in line</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+ISPICKVAL( ProjectManagementBillingType__c ,&quot;AllowancePercent&quot;),
+ISNULL( ProjectManagementAllowancePercent__c )
+)</errorConditionFormula>
+    <errorDisplayField>ProjectManagementAllowancePercent__c</errorDisplayField>
+    <errorMessage>Please choose the Project Management Allowance %
+(PR014)</errorMessage>
+</ValidationRule>

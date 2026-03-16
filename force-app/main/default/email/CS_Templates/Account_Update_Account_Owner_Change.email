@@ -1,0 +1,15 @@
+The Account Owner of the following Account has been changed:
+
+Account Name: {!Account.Name}
+Account Link: {!Account.Link}
+
+New Owner: {!Account.ZEmailCurrentOwner__c}
+Previous Owner: {!Account.ZEmailPreviousOwner__c}
+
+Modified by: {!Account.LastModifiedBy}
+
+Please get in touch if you do not agree to the Account Owner Change.
+
+--- 
+This Email has been sent by Salesforce, do not reply. 
+(Template: 00Xb0000000MwlA)

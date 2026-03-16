@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Telco_Subscriptions_Active</fullName>
+    <columns>NAME</columns>
+    <columns>Phone__c</columns>
+    <columns>User__c</columns>
+    <columns>ContractType__c</columns>
+    <columns>ContractStartDate__c</columns>
+    <columns>ContractEndDate__c</columns>
+    <columns>Status__c</columns>
+    <columns>Description__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contract__c.TelecommunicationContract</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Active,Draft</value>
+    </filters>
+    <label>All Telco Subscriptions (Active)</label>
+    <language>de</language>
+</ListView>

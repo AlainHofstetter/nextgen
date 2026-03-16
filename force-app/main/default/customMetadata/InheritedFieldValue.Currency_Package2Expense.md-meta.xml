@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Currency Package2Expense</label>
+    <protected>false</protected>
+    <values>
+        <field>Insert__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>RelationshipField__c</field>
+        <value xsi:type="xsd:string">Expense_PackageName</value>
+    </values>
+    <values>
+        <field>SourceObject__c</field>
+        <value xsi:type="xsd:string">Package</value>
+    </values>
+    <values>
+        <field>SourceQuery__c</field>
+        <value xsi:type="xsd:string">ProjectName__r.ProjectCurrency__c</value>
+    </values>
+    <values>
+        <field>TargetField__c</field>
+        <value xsi:type="xsd:string">Expense_ProjectCurrency</value>
+    </values>
+    <values>
+        <field>TargetObject__c</field>
+        <value xsi:type="xsd:string">Expense</value>
+    </values>
+    <values>
+        <field>Update__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>UserValuesWinsOnInsert__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>isActive__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+</CustomMetadata>

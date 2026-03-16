@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Sends the email to the Project Manager and the Finance team.</description>
+        <name>Email_to_Project_Manager_and_Finance</name>
+        <label>Email to Project Manager and Finance</label>
+        <locationX>314</locationX>
+        <locationY>384</locationY>
+        <actionName>Project__c.ProjectClosure</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Project__c.ProjectClosure</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Valid only from Projects created from 06/02/2025)
+Sets the Project (EndDate) based on the start date of the project (TEST VERSION: +1day) and closes the project automatically, sending an email notification on that date.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Calculates de Project (End Date) as Project (Start Date) + 18 months</description>
+        <name>ProjectEndDate</name>
+        <dataType>Date</dataType>
+        <expression>ADDMONTHS({!$Record.ProjectStartDate__c}, 18)</expression>
+    </formulas>
+    <interviewLabel>RTF_ProjectAutomaticClosure {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RTF_ProjectAutomaticClosure</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Changes the Status of the project to Closed.</description>
+        <name>Change_Project_Status_to_Closed</name>
+        <label>Change Project Status to Closed</label>
+        <locationX>314</locationX>
+        <locationY>276</locationY>
+        <connector>
+            <targetReference>Email_to_Project_Manager_and_Finance</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ProjectStatus__c</field>
+            <value>
+                <stringValue>Closed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Sets the project end date to Project StartDate + 18 months</description>
+        <name>Populate_Project_End_date</name>
+        <label>Populate Project (End date)</label>
+        <locationX>50</locationX>
+        <locationY>276</locationY>
+        <inputAssignments>
+            <field>ProjectEndDate__c</field>
+            <value>
+                <elementReference>ProjectEndDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Populate_Project_End_date</targetReference>
+        </connector>
+        <filterFormula>AND( OR(
+{!$Record.RecordType.Name} = &apos;External - Services&apos;, 
+(AND( {!$Record.RecordType.Name} = &apos;Internal&apos;, NOT(ISPICKVAL({!$Record.ProjectSubType__c},&apos;Absence&apos;)))))
+,
+OR(ISNEW(), ISCHANGED({!$Record.ProjectStartDate__c}))
+,
+{!$Record.CreatedDate} &gt;= DATETIMEVALUE(&quot;2025-02-06 08:00:00&quot;))</filterFormula>
+        <object>Project__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <name>Project_Close_Date</name>
+            <connector>
+                <targetReference>Change_Project_Status_to_Closed</targetReference>
+            </connector>
+            <label>Project Close Date</label>
+            <offsetNumber>0</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>ProjectEndDate__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

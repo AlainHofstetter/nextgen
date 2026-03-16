@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Party Style --></label>
+    <name>PartyStyle__c</name>
+    <picklistValues>
+        <masterLabel>Casino Night</masterLabel>
+        <translation><!-- Casino Night --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Summer in the City</masterLabel>
+        <translation><!-- Summer in the City --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

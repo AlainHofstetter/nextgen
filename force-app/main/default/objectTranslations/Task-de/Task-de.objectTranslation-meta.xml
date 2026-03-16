@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Task Layout</layout>
+        <sections>
+            <label>Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Task Detail --></label>
+            <section>Task Detail</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Defer --></label>
+        <name>Defer</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- EditDescription --></label>
+        <name>EditDescription</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- UpdatePriority --></label>
+        <name>UpdatePriority</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- UpdateStatus --></label>
+        <name>UpdateStatus</name>
+    </quickActions>
+    <webLinks>
+        <label>Account Aktivität erstellen</label>
+        <name>LogATaskAccount</name>
+    </webLinks>
+    <webLinks>
+        <label>Kampagne Aktivität erstellen</label>
+        <name>LogATaskCampaign</name>
+    </webLinks>
+    <webLinks>
+        <label>Kontakt Aktivität erstellen</label>
+        <name>LogATaskContact</name>
+    </webLinks>
+    <webLinks>
+        <label>Lead Aktivität erstellen</label>
+        <name>LogATaskLead</name>
+    </webLinks>
+    <webLinks>
+        <label>Opportunity Aktivität erstellen</label>
+        <name>LogATaskOpportunity</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <label>Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Desktop</fullName>
+                <default>false</default>
+                <label>Desktop</label>
+            </value>
+            <value>
+                <fullName>Laptop</fullName>
+                <default>false</default>
+                <label>Laptop</label>
+            </value>
+            <value>
+                <fullName>Main Screen</fullName>
+                <default>false</default>
+                <label>Main Screen</label>
+            </value>
+            <value>
+                <fullName>Second Screen</fullName>
+                <default>false</default>
+                <label>Second Screen</label>
+            </value>
+            <value>
+                <fullName>Third Screen</fullName>
+                <default>false</default>
+                <label>Third Screen</label>
+            </value>
+            <value>
+                <fullName>Company Use</fullName>
+                <default>false</default>
+                <label>Company Use</label>
+            </value>
+            <value>
+                <fullName>Private Use</fullName>
+                <default>false</default>
+                <label>Private Use</label>
+            </value>
+            <value>
+                <fullName>Silver</fullName>
+                <default>false</default>
+                <label>Silver</label>
+            </value>
+            <value>
+                <fullName>Gold</fullName>
+                <default>false</default>
+                <label>Gold</label>
+            </value>
+            <value>
+                <fullName>Personalized Card</fullName>
+                <default>false</default>
+                <label>Personalized Card</label>
+            </value>
+            <value>
+                <fullName>Unit Card</fullName>
+                <default>false</default>
+                <label>Unit Card</label>
+            </value>
+            <value>
+                <fullName>Virtual Computer</fullName>
+                <default>false</default>
+                <label>Virtual Computer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

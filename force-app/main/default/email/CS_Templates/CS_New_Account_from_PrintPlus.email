@@ -1,0 +1,29 @@
+Liebes Office Management
+
+Der folgende Account wurde über die Schnittstelle zu Print Plus neu in Skywalk erfasst. 
+
+Account Name: {!Account.Name}
+Account ID: {!Account.Id}
+Print Plus ID: {!Account.PrintPlusId__c}
+
+{!Account.Link}
+
+Bitte macht eine Daten-Qualitäts-Check. 
+
+
+1. Gibt es den Account schon -> mergen
+2. Account Name abgeschnitten (check mit Location Adress Field)
+4. Account Record Type checken
+3. Industry checken
+4. Legal Nature ausfüllen
+5. Adresse checken
+6. Telefon Format
+7. Fax Format
+und allfällige weiteren Auffälligkeiten.
+
+Vielen Dank für eure Hilfe.
+
+
+---
+This Email has been sent by Salesforce, do not reply.
+(Template: 00Xb0000000yXVd)

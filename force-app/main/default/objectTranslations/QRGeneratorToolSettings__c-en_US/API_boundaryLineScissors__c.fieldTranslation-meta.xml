@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Mark as true if scissors should be printed on the boundary lines. This can only be active if Boundary Lines is active. --></help>
+    <label><!-- Add Boundary Line Scissors --></label>
+    <name>API_boundaryLineScissors__c</name>
+</CustomFieldTranslation>

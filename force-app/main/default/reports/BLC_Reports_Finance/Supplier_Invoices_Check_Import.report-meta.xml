@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>SupplierInvoice__c$AbacusDocumentNr__c</field>
+    </columns>
+    <columns>
+        <field>SupplierInvoice__c.SupplierCosts__r$Name</field>
+    </columns>
+    <columns>
+        <field>SupplierInvoice__c.SupplierCosts__r$AbacusSupplierCostsNet__c</field>
+    </columns>
+    <columns>
+        <field>SupplierInvoice__c.SupplierCosts__r$AbacusSupplierCostsVATAmount__c</field>
+    </columns>
+    <currency>CHF</currency>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>SupplierInvoice__c$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Supplier Invoices - Check Import</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CR_Supplier_Invoice_with_Supplier_Costs__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>SupplierInvoice__c$LastModifiedDate</dateColumn>
+        <endDate>2017-12-12</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2017-12-12</startDate>
+    </timeFrameFilter>
+</Report>

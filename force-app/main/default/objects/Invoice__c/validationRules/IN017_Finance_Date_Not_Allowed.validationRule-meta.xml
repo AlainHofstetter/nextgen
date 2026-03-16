@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IN017_Finance_Date_Not_Allowed</fullName>
+    <active>true</active>
+    <description>The Finance Date is not allowed by Finance.</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+$User.IsFinanceManager__c = false,
+FinanceDate__c &lt; ProjectCostCenter__r.FinanceDateLimit__c,
+OR(
+ISPICKVAL(InvoiceStatus__c,&quot;Draft&quot;),
+ISPICKVAL(InvoiceStatus__c,&quot;Approval&quot;),
+ISPICKVAL(InvoiceStatus__c,&quot;Ready&quot;)
+)
+)</errorConditionFormula>
+    <errorDisplayField>FinanceDate__c</errorDisplayField>
+    <errorMessage>This finance date is not allowed. Please get in touch with Finance.
+(IN017)</errorMessage>
+</ValidationRule>

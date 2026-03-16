@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Workaround --></label>
+    <name>Workaround__c</name>
+    <picklistValues>
+        <masterLabel>Workaround available</masterLabel>
+        <translation><!-- Workaround available --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Workaround just with lot of effort available</masterLabel>
+        <translation><!-- Workaround just with lot of effort available --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Workaround not available</masterLabel>
+        <translation><!-- Workaround not available --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

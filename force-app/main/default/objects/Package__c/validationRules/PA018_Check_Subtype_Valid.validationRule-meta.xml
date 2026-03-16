@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PA018_Check_Subtype_Valid</fullName>
+    <active>true</active>
+    <description>Checks if the Package Sub-Type is valid after Record Type Change</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true ,
+OR(
+AND(
+ RecordType.DeveloperName =&quot;Time&quot;,
+ NOT(ISPICKVAL(PackageSubType__c,&quot;WorkTime&quot;)),
+ NOT(ISPICKVAL(PackageSubType__c,&quot;Manufaktur&quot;)),
+ NOT(ISPICKVAL(PackageSubType__c,&quot;TravelTime&quot;))
+),
+AND(
+ RecordType.DeveloperName =&quot;SupplierCosts&quot;,
+ NOT(ISPICKVAL(PackageSubType__c,&quot;3rdPartyCosts&quot;)),
+ NOT(ISPICKVAL(PackageSubType__c,&quot;ResourceCosts&quot;)),
+ NOT(ISPICKVAL(PackageSubType__c,&quot;AbacusInbox&quot;))
+),
+AND(
+ RecordType.DeveloperName =&quot;LicenseDirect&quot;,
+ NOT(ISPICKVAL(PackageSubType__c,&quot;Trade&quot;)),
+ NOT(ISPICKVAL(PackageSubType__c,&quot;LicenseDirect&quot;))
+),
+AND(
+ RecordType.DeveloperName =&quot;LicenseProvision&quot;,
+ NOT(ISPICKVAL(PackageSubType__c,&quot;LicenseProvision&quot;))
+),
+AND(
+ RecordType.DeveloperName =&quot;Expense&quot;,
+ NOT(ISPICKVAL(PackageSubType__c,&quot;Expense&quot;))
+),
+AND(
+ RecordType.DeveloperName =&quot;Group&quot;,
+ NOT(ISPICKVAL(PackageSubType__c,&quot;None&quot;))
+)
+))</errorConditionFormula>
+    <errorDisplayField>PackageSubType__c</errorDisplayField>
+    <errorMessage>Please choose the Package Sub-Type correctly.
+(PA018)</errorMessage>
+</ValidationRule>

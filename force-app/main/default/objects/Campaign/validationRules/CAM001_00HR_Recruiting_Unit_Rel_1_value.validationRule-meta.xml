@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CAM001_00HR_Recruiting_Unit_Rel_1_value</fullName>
+    <active>true</active>
+    <description>Recruiting leads can only have 1 value selected for unit relevance</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+ RecordType.Id =&quot;012b0000000cObz&quot;,
+
+(
+IF(INCLUDES( UnitRelevance__c , &quot;BLC&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;BY&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;GBUS&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;GBCH&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;GCH&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;HBC&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;HYS&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;KNO&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;MA&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;ON&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;SC&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;SE&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;VH&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;SVH&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;CY&quot;),1,0) +
+IF(INCLUDES( UnitRelevance__c , &quot;XB&quot;),1,0)
+)&lt;&gt;1
+)</errorConditionFormula>
+    <errorDisplayField>UnitRelevance__c</errorDisplayField>
+    <errorMessage>Please select one unit relevance for a recruiting campaign.
+(CAM001)</errorMessage>
+</ValidationRule>

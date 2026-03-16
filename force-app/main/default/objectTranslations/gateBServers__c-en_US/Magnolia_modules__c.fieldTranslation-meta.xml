@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Magnolia Modules --></label>
+    <name>Magnolia_modules__c</name>
+    <picklistValues>
+        <masterLabel>Brand Portal</masterLabel>
+        <translation><!-- Brand Portal --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Digital Marketing Center</masterLabel>
+        <translation><!-- Digital Marketing Center --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Event Manager</masterLabel>
+        <translation><!-- Event Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Job Manager</masterLabel>
+        <translation><!-- Job Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Language Center</masterLabel>
+        <translation><!-- Language Center --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Marketing Planner</masterLabel>
+        <translation><!-- Marketing Planner --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Media Pool</masterLabel>
+        <translation><!-- Media Pool --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PIM</masterLabel>
+        <translation><!-- PIM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reporting Center</masterLabel>
+        <translation><!-- Reporting Center --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Review Manager</masterLabel>
+        <translation><!-- Review Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shop</masterLabel>
+        <translation><!-- Shop --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Smart Access</masterLabel>
+        <translation><!-- Smart Access --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>W2P</masterLabel>
+        <translation><!-- W2P --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

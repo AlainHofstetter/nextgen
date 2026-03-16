@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AbacusInterfaceCompactLayout</fullName>
+    <fields>Name</fields>
+    <fields>InterfaceType__c</fields>
+    <fields>Account__c</fields>
+    <fields>DateTimeFrom__c</fields>
+    <fields>DateTimeUntil__c</fields>
+    <fields>LastRunDateTime__c</fields>
+    <fields>Status__c</fields>
+    <label>AbacusInterfaceCompactLayout</label>
+</CompactLayout>

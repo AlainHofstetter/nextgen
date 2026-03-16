@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Prototype for marking persons with high impact / stake holders / vip&apos;s --></help>
+    <label><!-- VIP --></label>
+    <name>VIP__c</name>
+</CustomFieldTranslation>

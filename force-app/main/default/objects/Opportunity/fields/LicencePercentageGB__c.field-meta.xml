@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LicencePercentageGB__c</fullName>
+    <defaultValue>IF($User.Id=&quot;005b0000001rsub&quot;,0.30,(IF($UserRole.Id=&quot;00Eb0000000pXDv&quot;,0.20,0.50))
+)</defaultValue>
+    <label>Licence Percentage GB</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

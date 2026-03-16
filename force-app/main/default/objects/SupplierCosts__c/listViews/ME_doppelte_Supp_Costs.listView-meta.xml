@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ME_doppelte_Supp_Costs</fullName>
+    <columns>NAME</columns>
+    <columns>SupplierInvoice__c</columns>
+    <columns>SupplierCostsDate__c</columns>
+    <columns>ProjectNr__c</columns>
+    <columns>VisaNr__c</columns>
+    <columns>ServiceSupplierCostsNetCHF__c</columns>
+    <columns>ServiceSupplierCostsNet__c</columns>
+    <columns>ProjektName__c</columns>
+    <columns>FinanceDate__c</columns>
+    <columns>AbacusDocumentNrPosNr__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>3/1/2023 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>AbacusDocumentNrPosNr__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>SupplierCosts__c.SupplierCosts</value>
+    </filters>
+    <filters>
+        <field>ProjektName__c</field>
+        <operation>notContain</operation>
+        <value>Betriebsspesen</value>
+    </filters>
+    <label>Finance - double Supp. Costs</label>
+</ListView>

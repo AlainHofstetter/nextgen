@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Projekt</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Projekte</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Projekt</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Projekte</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Projekt</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Projekte</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Projekt</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Projekte</value>
+    </caseValues>
+    <gender>Neuter</gender>
+    <layouts>
+        <layout>Project Layout External License</layout>
+        <sections>
+            <label>Verrechnung</label>
+            <section>Billing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Budget Controlling --></label>
+            <section>Budget Controlling</section>
+        </sections>
+        <sections>
+            <label>Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Default Rechnung</label>
+            <section>Default Invoice</section>
+        </sections>
+        <sections>
+            <label>Finanzcontrolling</label>
+            <section>Finance Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Forecast --></label>
+            <section>Forecast</section>
+        </sections>
+        <sections>
+            <label>Projektinformation</label>
+            <section>Internal Project Information</section>
+        </sections>
+        <sections>
+            <label>Rechnungscontrolling</label>
+            <section>Invoice Controlling</section>
+        </sections>
+        <sections>
+            <label>Projektdetail</label>
+            <section>Project Detail</section>
+        </sections>
+        <sections>
+            <label>Offertinformation</label>
+            <section>Quote Information</section>
+        </sections>
+        <sections>
+            <label>Berichte</label>
+            <section>Reports</section>
+        </sections>
+        <sections>
+            <label><!-- Resource Forecast --></label>
+            <section>Resource Forecast</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label>Konditionen</label>
+            <section>Terms &amp; Conditions</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Project Layout External Services</layout>
+        <sections>
+            <label>Verrechnung</label>
+            <section>Billing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Budget Controlling --></label>
+            <section>Budget Controlling</section>
+        </sections>
+        <sections>
+            <label>Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Default Rechnung</label>
+            <section>Default Invoice</section>
+        </sections>
+        <sections>
+            <label>Finanzcontrolling</label>
+            <section>Finance Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Forecast --></label>
+            <section>Forecast</section>
+        </sections>
+        <sections>
+            <label>Rechnungscontrolling</label>
+            <section>Invoice Controlling</section>
+        </sections>
+        <sections>
+            <label>Projektdetail</label>
+            <section>Project Detail</section>
+        </sections>
+        <sections>
+            <label>Projektinformation</label>
+            <section>Project Information</section>
+        </sections>
+        <sections>
+            <label>Offertinformation</label>
+            <section>Quote Information</section>
+        </sections>
+        <sections>
+            <label>Berichte</label>
+            <section>Reports</section>
+        </sections>
+        <sections>
+            <label><!-- Resource Forecast --></label>
+            <section>Resource Forecast</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label>Konditionen</label>
+            <section>Terms &amp; Conditions</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Project Layout Internal</layout>
+        <sections>
+            <label><!-- Budget Controlling --></label>
+            <section>Budget Controlling</section>
+        </sections>
+        <sections>
+            <label>Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Finanzcontrolling</label>
+            <section>Finance Controlling</section>
+        </sections>
+        <sections>
+            <label>Interne Projektinformation</label>
+            <section>Internal Project Information</section>
+        </sections>
+        <sections>
+            <label>Projektdetail</label>
+            <section>Project Detail</section>
+        </sections>
+        <sections>
+            <label>Berichte</label>
+            <section>Reports</section>
+        </sections>
+        <sections>
+            <label><!-- Resource Forecast --></label>
+            <section>Resource Forecast</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label>Konditionen</label>
+            <section>Terms &amp; Conditions</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Projekt Name</nameFieldLabel>
+    <quickActions>
+        <label><!-- Billing (Draft) --></label>
+        <name>Billing_Draft</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- ILV --></label>
+        <name>ILV</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New TimEx --></label>
+        <name>New_TimeEx</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Project Validation --></label>
+        <name>Project_Manager</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Project Structure --></label>
+        <name>Project_Structure</name>
+    </quickActions>
+    <recordTypes>
+        <label>Lizenzen / Handel</label>
+        <name>ExternalLicense</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Dienstleistungen</label>
+        <name>ExternalServices</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Intern</label>
+        <name>Internal</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage>Das Projekt hat Leistungen die das Verändern des Typs verhindern. (PR002)</errorMessage>
+        <name>PR002_RecordType_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Das Projekt hängt an einer inaktiven Kostenstelle. (PR003)</errorMessage>
+        <name>PR003_Cost_Center_Active</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Der Rechnungsaccount und die gewählte Kostenstelle passen nicht. (PR004)</errorMessage>
+        <name>PR004_Billing_Account_Cost_Center_Match</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Der Rechnungsaccount oder die Kostenstelle können nicht mehr verändert werden aufgrund bestehender Daten. (PR005)</errorMessage>
+        <name>PR005_Billing_Acocunt_Cost_Center_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Die Projektwährung kann nicht mehr verändert werden aufgrund bestehender Daten. (PR006)</errorMessage>
+        <name>PR006_Currency_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte Projektwährung wählen. (PR013)</errorMessage>
+        <name>PR007_Currency_Mandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte Projektstatus wählen (PR008)</errorMessage>
+        <name>PR008_Project_Status_Mandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte Projektsubtyp wählen. (PR009)</errorMessage>
+        <name>PR009_Project_Sub_Type_Mandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Das Projekt ist blockiert aufgrund einer Rechnung im Status &quot;Draft&quot;. Bitte erst Rechnung/ILV verarbeiten. (PR011)</errorMessage>
+        <name>PR011_Locked_Invoice_Or_ILV_Status</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte Zahlungsbedingungen wählen. (PR012)</errorMessage>
+        <name>PR012_TermsOfPayment_Not_Null</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte die Projektmanagementpauschale erfassen. (PR014)</errorMessage>
+        <name>PR014_Project_Management_Allowance_Perce</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte die Spesenpauschale erfassen. (PR015)</errorMessage>
+        <name>PR015_Expense_Allowance_Perce</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte die Spesenpauschale entfernen. (PR016)</errorMessage>
+        <name>PR016_Expense_Allowance_Percent_Remove</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte die Projektmanagementpauschale entfernen. (PR017)</errorMessage>
+        <name>PR017_PM_Allowance_Percent_Remove</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Du hast keine Berechtigung diese Daten zu mutieren. Bitte kontaktiere den Projektmanager. (PR019)</errorMessage>
+        <name>PR019_No_PM_No_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte Stundenansatz erfassen. (PR020)</errorMessage>
+        <name>PR020_Rate_Not_Null</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Der Forecast übersteigt den unverrechneten Betrag zum Budget. (PR021)</errorMessage>
+        <name>PR021_Forecast_Exceeds_Budget_Open_2_Inv</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- This Contract Partner is Inactive, therefore you can not create a new Project. Please get in touch with Finance.
+(PR022) -->
+        </errorMessage>
+        <name>PR022_Inactive_Contract_Partner</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to choose VAT 2.5%/2.6%. Please get in touch with Finance. 
+(PR023) -->
+        </errorMessage>
+        <name>PR023_VAT_25_Percent</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to choose VAT 8%. Please get in touch with Finance. 
+(PR024) -->
+        </errorMessage>
+        <name>PR024_VAT_not_8_Percent</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- VAT 19% is only availablae for gateB GmbH (Cost Center gateB Germany). Please get in touch with Finance.
+(PR025) -->
+        </errorMessage>
+        <name>PR025_VAT_not_19_Percent</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to choose VAT 2.6%. Please get in touch with Finance. 
+(PR026) -->
+        </errorMessage>
+        <name>PR026_VAT_26_Percent</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to choose VAT 8.1%. Please get in touch with Finance. 
+(PR026) -->
+        </errorMessage>
+        <name>PR026_VAT_not_81_Percent</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You must choose a VAT rate
+(PR027) -->
+        </errorMessage>
+        <name>PR027_VAT_Mandatory</name>
+    </validationRules>
+</CustomObjectTranslation>

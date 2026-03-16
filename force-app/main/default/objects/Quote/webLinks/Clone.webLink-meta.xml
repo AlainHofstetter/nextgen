@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clone</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Clone</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/22.0/connection.js&quot;)}
+result = sforce.connection.query(&quot;select id,opportunityid from Quote where id = &apos;{!Quote.Id}&apos;&quot;)
+window.top.location.href =
+   &quot;{!URLFOR( $Action.Quote.NewQuote ,null,[clone=1,id=Quote.Id,retURL=&quot;/&quot;&amp;Quote.Id],true)}&amp;oppid=&quot; +
+   result.records.OpportunityId</url>
+</WebLink>

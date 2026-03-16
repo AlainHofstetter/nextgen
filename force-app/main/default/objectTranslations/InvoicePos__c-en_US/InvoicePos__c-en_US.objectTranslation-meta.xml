@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Invoice Pos</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Invoice Pos</value>
+    </caseValues>
+    <layouts>
+        <layout>Invoice Pos Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Finance Controlling --></label>
+            <section>Finance Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Position Detail --></label>
+            <section>Invoice Position Detail</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Update Invoice Pos --></label>
+        <name>UpdateInvoicePOS</name>
+    </quickActions>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage>
+            <!-- Checkboxes are not in line for billing template.
+(INP006) -->
+        </errorMessage>
+        <name>INP006_Billing_Template_Match</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The Cost Center and the Finance Account do not match. Please get in touch with your Super User for assistance.
+(INP007) -->
+        </errorMessage>
+        <name>INP007_Cost_Center_Finance_Account_Match</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You can not attach an invoice position to another invoice. Please get in touch with your Super User for assistance.
+(INP008) -->
+        </errorMessage>
+        <name>INP008_INV_POS_not_move</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The Invoice Position can not be changed anymore since the Invoice is in status &quot;Sent&quot;. Please get in touch with Finance.
+(INP010) -->
+        </errorMessage>
+        <name>INP010_Position_Change_Status_Sent</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The Invoice Position with an Amount must be shown on the invoice. Please correct the checkboxes. 
+(INP014) -->
+        </errorMessage>
+        <name>INP014_Invoice_Pos_Must_Be_Shown</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- If the Invoice Position with an Amount is not shown, the the Group Position  it belongs to must be shown. Please correct the checkboxes. 
+(INP015) -->
+        </errorMessage>
+        <name>INP015_Invoice_Pos_Group_Must_Be_Shown</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The invoice position amount can not be empty. Please add a value or 0.
+(INP11) -->
+        </errorMessage>
+        <name>INP11_Invoice_Position_Amount_Not_Null</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The invoice position Package Type Name does not match the Package Record Type Name. Please get in touch with your Super User.
+(INP12) -->
+        </errorMessage>
+        <name>INP12_Invoice_Position_Package_Type</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The Invoice Position must be without cents.
+(INP13) -->
+        </errorMessage>
+        <name>INP13_Invoice_Position_Gerundet</name>
+    </validationRules>
+</CustomObjectTranslation>

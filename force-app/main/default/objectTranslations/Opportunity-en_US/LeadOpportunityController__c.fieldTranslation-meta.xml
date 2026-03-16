@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Lead Opportunity Controller --></label>
+    <name>LeadOpportunityController__c</name>
+    <picklistValues>
+        <masterLabel>Enterprise</masterLabel>
+        <translation><!-- Enterprise --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Retail SaaS</masterLabel>
+        <translation><!-- Retail SaaS --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

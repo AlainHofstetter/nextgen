@@ -1,0 +1,2 @@
+Id,CreatedById,CurrencyIsoCode,CurrencyRateToCHF__c,IsDeleted,FinanceAccountNr__c,InvoiceName__c,Name,InvoicePositionAmount__c,InvoicePositionText__c,PackageName__c,PackageType__c,RelevantToRevenue__c,ShowInvoiceText__c,ShowPositionAmount__c
+a0a26000000pzLkAAI,0052600000147unAAA,CHF,10000,FALSE,a0Q26000000tkAIEAY,a0X260000015mNVEAY,IP-000002,10000,Needed extra fuel to get to the moon,a0K26000000bA1cEAE,Fuel,FALSE,TRUE,TRUE

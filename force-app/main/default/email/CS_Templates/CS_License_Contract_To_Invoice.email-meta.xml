@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email sent out by time based workflow before an invoice has to be sent out according to the License Contract Invoice Cycle</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>CS - License Contract to Invoice</name>
+    <style>none</style>
+    <subject>License Contract To Invoice : Contract {!Contract__c.Name}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

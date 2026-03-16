@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Grants access to data exports to specific users.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Data Export permission</label>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>DataExport</name>
+    </userPermissions>
+</PermissionSet>

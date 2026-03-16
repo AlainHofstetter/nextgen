@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Folder Path XML File --></label>
+    <name>FolderPathXMLFile__c</name>
+    <picklistValues>
+        <masterLabel>\\BLC-ABA-01\SkywalkAbacusIntegration\Export\Account\Queue</masterLabel>
+        <translation><!-- \\BLC-ABA-01\SkywalkAbacusIntegration\Export\Account\Queue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>\\BLC-ABA-01\SkywalkAbacusIntegration\Export\Invoice\Queue</masterLabel>
+        <translation><!-- \\BLC-ABA-01\SkywalkAbacusIntegration\Export\Invoice\Queue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>\\BLC-ABA-01\SkywalkAbacusIntegration\Export\Project\Queue</masterLabel>
+        <translation><!-- \\BLC-ABA-01\SkywalkAbacusIntegration\Export\Project\Queue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>\\BLC-ABA-01\SkywalkAbacusIntegration\Export\StaffHour\Queue</masterLabel>
+        <translation><!-- \\BLC-ABA-01\SkywalkAbacusIntegration\Export\StaffHour\Queue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>\\BLC-ABA-01\SkywalkAbacusIntegration\Import\Currency\Queue</masterLabel>
+        <translation><!-- \\BLC-ABA-01\SkywalkAbacusIntegration\Import\Currency\Queue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>\\BLC-ABA-01\SkywalkAbacusIntegration\Import\SupplierInvoice\Queue</masterLabel>
+        <translation><!-- \\BLC-ABA-01\SkywalkAbacusIntegration\Import\SupplierInvoice\Queue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>none</masterLabel>
+        <translation><!-- none --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

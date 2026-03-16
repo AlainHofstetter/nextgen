@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QL010_ExpenseAllowance_Not_Manual_Change</fullName>
+    <active>false</active>
+    <description>Does not allow to manually change the allowance due to %</description>
+    <errorConditionFormula>AND( 
+ISPICKVAL(Quote.ExpenseBillingType__c,&quot;AllowancePercent&quot;),
+ExpenseAllowancePackage__c =true,
+OR(
+ISCHANGED( Fraction__c ),
+ISCHANGED( Quantity )
+)
+)</errorConditionFormula>
+    <errorMessage>You can not change the Expense Allowance since it is calculated automatically due to the setting on the quote.
+(QL010)</errorMessage>
+</ValidationRule>

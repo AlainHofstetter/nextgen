@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACM015_Account_Language</fullName>
+    <active>true</active>
+    <description>Please fill out the Account Language</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+$User.Id != &apos;005b00000014eFb&apos;,
+RecordType.Id &lt;&gt; &apos;012b0000000cEKe&apos;,
+TEXT(AccountSource) &lt;&gt; &apos;Data.com&apos;, 
+ISBLANK(TEXT( AccountLanguage__c ))
+)</errorConditionFormula>
+    <errorDisplayField>AccountLanguage__c</errorDisplayField>
+    <errorMessage>Please fill out the Account Language.
+(ACM015)</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TimeCompactLayout</fullName>
+    <fields>Name</fields>
+    <fields>Timetracker__c</fields>
+    <fields>Package__c</fields>
+    <fields>DateFrom__c</fields>
+    <fields>DateUntil__c</fields>
+    <fields>DurationHhMmN__c</fields>
+    <fields>Source__c</fields>
+    <label>TimeCompactLayout</label>
+</CompactLayout>

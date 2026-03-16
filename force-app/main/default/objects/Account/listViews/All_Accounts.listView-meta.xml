@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Accounts</fullName>
+    <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>AccountNrSkywalk__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>ACCOUNT.URL</columns>
+    <columns>Email__c</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>LocationStreetNr__c</columns>
+    <columns>LocationCity__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>contains</operation>
+        <value>CHess</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>contains</operation>
+        <value>JSCHR</value>
+    </filters>
+    <filters>
+        <field>BillingCountry__c</field>
+        <operation>contains</operation>
+        <value>AUSTRIA,GERMANY</value>
+    </filters>
+    <label>All Accounts</label>
+</ListView>

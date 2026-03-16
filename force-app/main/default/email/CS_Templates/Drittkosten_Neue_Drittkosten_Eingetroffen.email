@@ -1,0 +1,23 @@
+Lieber Mitarbeiter
+
+Es wurde eine neue Drittkostenposition erfasst, ohne Zuweisung zu einem Projekt. Da du die Lieferanten-Rechnung als Besteller visiert hast, weise diese Kosten bitte dem richtigen Projekt zu:
+
+Lieferant: {!SupplierInvoice__c.BillerAccount__c}
+Rechnungs-Nr. Kreditorenbeleg: {!SupplierInvoice__c.AbacusDocumentNr__c}
+Betrag: {!SupplierCosts__c.CostsSupplierCostsGross__c}
+{!SupplierCosts__c.Link}
+
+Bitte gehe folgendermassen vor:
+1.	Prüfe die Richtigkeit der erfassten Drittkosten
+2.	Weise die Drittkostenrechnung dem richtigen Service bzw. dem richtigen Projekt zu
+3.	Sollte etwas nicht korrekt sein oder wenn du Fragen hast, wende dich bitte an die Buchhaltung
+
+Die Anleitung zur Verarbeitung von nicht zugewiesenen Drittkosten findest du unter folgendem Link auf OneNote:
+
+onenote:https://brandleadership.sharepoint.com/sites/BLC/SiteAssets/BLC%20Notebook/Finance/Anleitungen%20Finance/ANL%20Verarbeitung%20Drittkosten%20im%20Abacus%20u%20Skywalk.one#section-id={693498EA-DE29-1A41-B021-DF26B0E03254}&end
+
+Wir danken dir für eine Bearbeitung innerhalb von einem Arbeitstag. 
+
+--- 
+This Email has been sent by Salesforce, do not reply. 
+(Template: 00Xb0000001EQOH)

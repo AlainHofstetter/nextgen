@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RestrictAccessToOwner__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Check this box if you want to restrict access to this project and all related packages &amp; invoices to the Owner.</inlineHelpText>
+    <label>Restrict Access to Owner</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EC015_Car_Currency_Match_Local_Currency</fullName>
+    <active>true</active>
+    <description>Car Currency must match Local Currency</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true, 
+RecordType.DeveloperName =&quot;CarTravel&quot;,
+IF(
+AND(
+ISPICKVAL(Car__r.CarCurrency__c, &quot;CHF&quot;),
+ISPICKVAL(LocalCurrency__c,&quot;CHF&quot;)
+)
+,
+false,
+IF(
+AND(
+ISPICKVAL(Car__r.CarCurrency__c, &quot;EUR&quot;),
+ISPICKVAL(LocalCurrency__c,&quot;EUR&quot;)
+)
+,
+false,
+IF(
+AND(
+ISPICKVAL(Car__r.CarCurrency__c, &quot;USD&quot;),
+ISPICKVAL(LocalCurrency__c,&quot;USD&quot;)
+)
+,false,true)))
+
+)</errorConditionFormula>
+    <errorDisplayField>Car__c</errorDisplayField>
+    <errorMessage>Car Currency must match Local Currency. Please choose the correct car.
+(EC015)</errorMessage>
+</ValidationRule>

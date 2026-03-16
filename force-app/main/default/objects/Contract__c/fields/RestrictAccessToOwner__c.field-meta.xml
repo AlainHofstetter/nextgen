@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RestrictAccessToOwner__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Check this box if you want to restrict access to this Contract to the internal Contract Owner.</inlineHelpText>
+    <label>Restrict Access to Owner</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

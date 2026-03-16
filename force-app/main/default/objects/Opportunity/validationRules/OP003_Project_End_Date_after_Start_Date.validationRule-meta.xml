@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OP003_Project_End_Date_after_Start_Date</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+ProjectStart__c &gt; ProjectEnd__c
+)</errorConditionFormula>
+    <errorDisplayField>ProjectStart__c</errorDisplayField>
+    <errorMessage>Project Start Date must be prior to Project End Date.
+(OP003)</errorMessage>
+</ValidationRule>

@@ -1,0 +1,18 @@
+Account: {!Opportunity.Account}
+Opportunity Name: {!Opportunity.Name}
+
+Amount: {!Opportunity.Amount}
+Close Date: {!Opportunity.CloseDate}
+
+Unit Relevance: {!Opportunity.UnitRelevance__c}
+Owner: {!Opportunity.OwnerFullName}
+
+Reason Lost: {!Opportunity.ReasonWonLost__c}
+Comment: {!Opportunity.ReasonWonLostComment__c}
+
+{!Opportunity.Link}
+
+
+---
+This Email has been sent by Salesforce, do not reply.
+(Template: 00Xb0000000yS5A)

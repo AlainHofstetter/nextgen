@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PA014_Package_Sub_Type_Mandatory</fullName>
+    <active>true</active>
+    <description>Package must have Sub-Type.</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+ISBLANK( TEXT( PackageSubType__c  )))</errorConditionFormula>
+    <errorDisplayField>PackageSubType__c</errorDisplayField>
+    <errorMessage>You must choose the Package Sub-Type
+(PA014)</errorMessage>
+</ValidationRule>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gateBServerCompactLayout</fullName>
+    <fields>Name</fields>
+    <fields>customer__c</fields>
+    <fields>serverType__c</fields>
+    <fields>ssl_expiration_date__c</fields>
+    <label>gateBServerCompactLayout</label>
+</CompactLayout>

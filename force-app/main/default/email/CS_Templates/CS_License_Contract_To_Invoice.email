@@ -1,0 +1,13 @@
+License Contract Name: {!Contract__c.ContractName__c}
+Licensee: {!Contract__c.Licensee__c}
+Licensor: {!Contract__c.Licensor__c}
+Invoice Cycle: {!Contract__c.InvoiceCycle__c}
+Contract Start Date: {!Contract__c.ContractStartDate__c}
+Contract End Date: {!Contract__c.ContractEndDate__c}
+Last Notification Sent: {!Contract__c.00Nb0000009YvwG}
+
+{!Contract__c.Link}
+
+---
+This Email has been sent by Salesforce, do not reply.
+(Template: 00Xb0000000yeGj)

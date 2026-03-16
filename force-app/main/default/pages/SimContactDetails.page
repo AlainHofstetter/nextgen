@@ -1,0 +1,19 @@
+<apex:page standardController="Contact" extensions="SIMController">
+    <apex:includeScript value="{!URLFOR($Resource.SIM, '/js/jquery-1.6.min.js')}"  />
+    <apex:includeScript value="{!URLFOR($Resource.SIM, '/js/Sim4Salesforce.js')}"  />
+   
+    <apex:detail relatedList="true"/>
+    <apex:pageBlock >
+        <iframe id="ContactFrame" scrolling="no" height="40px" width="100%" frameborder="0"></iframe>
+    </apex:pageBlock>
+    <apex:pageBlock >
+        <iframe id="SIMRegistrationFrame" scrolling="yes" height="600px" width="100%" frameborder="0"></iframe>
+    </apex:pageBlock>
+    <script type="text/javascript">
+        simUrl = '{!simUrl}';
+        var j$ = jQuery.noConflict();
+
+        j$("#ContactFrame").attr("src", "{!url}&simtype=FLOWHIST|EMAILHIST|USERDETAIL|FORMHIST&gatename=CRMSFSURVEY&crm=s4ce&domain=" + encodeURIComponent(location.protocol + '//' + location.hostname));
+        j$("#SIMRegistrationFrame").attr("src", "{!url}&simtype=GATE&gatename=CRMDEMOGATE&crm=s4ce&domain=" + encodeURIComponent(location.protocol + '//' + location.hostname));    
+    </script>
+</apex:page>

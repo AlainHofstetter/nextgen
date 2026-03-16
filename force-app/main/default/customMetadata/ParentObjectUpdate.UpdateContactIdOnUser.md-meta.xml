@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>UpdateContactIdOnUser</label>
+    <protected>false</protected>
+    <values>
+        <field>ConditionField__c</field>
+        <value xsi:type="xsd:string">Contact_User</value>
+    </values>
+    <values>
+        <field>Condition__c</field>
+        <value xsi:type="xsd:string">Has changed</value>
+    </values>
+    <values>
+        <field>Insert__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>RelationField__c</field>
+        <value xsi:type="xsd:string">Contact_User</value>
+    </values>
+    <values>
+        <field>Requirement__c</field>
+        <value xsi:type="xsd:string">On insert and on update of contacts in case the field user has changed populate the field ContactId__c on User level that is related through User__c with the Id.</value>
+    </values>
+    <values>
+        <field>SourceField__c</field>
+        <value xsi:type="xsd:string">Contact_Id</value>
+    </values>
+    <values>
+        <field>SourceObject__c</field>
+        <value xsi:type="xsd:string">Contact</value>
+    </values>
+    <values>
+        <field>TargetField__c</field>
+        <value xsi:type="xsd:string">User_ContactId</value>
+    </values>
+    <values>
+        <field>TargetObject__c</field>
+        <value xsi:type="xsd:string">User</value>
+    </values>
+    <values>
+        <field>Update__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>isActive__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+</CustomMetadata>

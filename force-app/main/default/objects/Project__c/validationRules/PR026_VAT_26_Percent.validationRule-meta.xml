@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PR026_VAT_26_Percent</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+$User.UR100Trade25VAT__c =false,
+ISPICKVAL( VATPercent__c, &quot;2.6%&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>VATPercent__c</errorDisplayField>
+    <errorMessage>You are not allowed to choose VAT 2.6%. Please get in touch with Finance. 
+(PR026)</errorMessage>
+</ValidationRule>

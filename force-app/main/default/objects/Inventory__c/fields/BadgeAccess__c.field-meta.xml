@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BadgeAccess__c</fullName>
+    <description>Not used for now. Access Information in Key Management System. ary, 06.11.2014</description>
+    <label>Badge Access</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Normal</fullName>
+                <default>true</default>
+                <label>Normal</label>
+            </value>
+            <value>
+                <fullName>General (All Access)</fullName>
+                <default>false</default>
+                <label>General (All Access)</label>
+            </value>
+            <value>
+                <fullName>Hieronymus</fullName>
+                <default>false</default>
+                <label>Hieronymus</label>
+            </value>
+            <value>
+                <fullName>HR</fullName>
+                <default>false</default>
+                <label>HR</label>
+            </value>
+            <value>
+                <fullName>HR / Wine Cellar</fullName>
+                <default>false</default>
+                <label>HR / Wine Cellar</label>
+            </value>
+            <value>
+                <fullName>Recording Studio</fullName>
+                <default>false</default>
+                <label>Recording Studio</label>
+            </value>
+            <value>
+                <fullName>Server Room</fullName>
+                <default>false</default>
+                <label>Server Room</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

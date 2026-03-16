@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>BLC Ticket</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>BLC Tickets</value>
+    </caseValues>
+    <layouts>
+        <layout>Employee Layout</layout>
+        <sections>
+            <label><!-- BLC Ticket Detail --></label>
+            <section>BLC Ticket Detail</section>
+        </sections>
+        <sections>
+            <label><!-- BLC Ticket Information --></label>
+            <section>BLC Ticket Information</section>
+        </sections>
+        <sections>
+            <label><!-- Benutzerdefinierte Links --></label>
+            <section>Benutzerdefinierte Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>IT / Censhare Layout</layout>
+        <sections>
+            <label><!-- BLC Ticket Detail --></label>
+            <section>BLC Ticket Detail</section>
+        </sections>
+        <sections>
+            <label><!-- BLC Ticket Information --></label>
+            <section>BLC Ticket Information</section>
+        </sections>
+        <sections>
+            <label><!-- Benutzerdefinierte Links --></label>
+            <section>Benutzerdefinierte Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- IT --></label>
+        <name>It</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MonthlyWorktime__c</fullName>
+    <description>Dieses Feld schreibt die für den Monat der Time Card gültige Soll Arbeitszeit auf die Time Card, um in einem Bericht ausgewertet zu werden über die AVG Funktion.
+
+Für Zürich gibt HR die Sollzeit vor, für die USA wird jeder Arbeitstag (Mo - Fr) gezählt mit 8h.
+
+Die Formel erlaubt es nur, 2 Jahre zu verwalten. Für eine längere Zeitperiode muss man einen anderen Lösungsansatz wählen, der jedoch wohl Programmierung benötigt.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(
+TimetrackerCompany__r.Id &lt;&gt; &quot;001b000000Ppj5P&quot;,
+YEAR(DateFrom__c)=2017
+),
+CASE( IsInBillingPeriodYearMonth__c,&quot;2017.1&quot;,176,&quot;2017.2&quot;,160,&quot;2017.3&quot;,184,&quot;2017.4&quot;,144,&quot;2017.5&quot;,176,&quot;2017.6&quot;,160,&quot;2017.7&quot;,168,&quot;2017.8&quot;,176,&quot;2017.9&quot;,168,&quot;2017.10&quot;,176,&quot;2017.11&quot;,168,&quot;2017.12&quot;,152,0)
+,
+
+IF(
+AND(
+TimetrackerCompany__r.Id = &quot;001b000000Ppj5P&quot;,
+YEAR(DateFrom__c)=2017
+),
+CASE( IsInBillingPeriodYearMonth__c,&quot;2017.1&quot;,176,&quot;2017.2&quot;,160,&quot;2017.3&quot;,184,&quot;2017.4&quot;,160,&quot;2017.5&quot;,184,&quot;2017.6&quot;,176,&quot;2017.7&quot;,168,&quot;2017.8&quot;,184,&quot;2017.9&quot;,168,&quot;2017.10&quot;,176,&quot;2017.11&quot;,176,&quot;2017.12&quot;,168,0)
+,
+
+IF(
+AND(
+TimetrackerCompany__r.Id &lt;&gt; &quot;001b000000Ppj5P&quot;,
+YEAR(DateFrom__c)=2018
+),
+CASE( IsInBillingPeriodYearMonth__c,&quot;2018.1&quot;,176,&quot;2018.2&quot;,160,&quot;2018.3&quot;,184,&quot;2018.4&quot;,144,&quot;2018.5&quot;,160,
+&quot;2018.6&quot;,160,&quot;2018.7&quot;,168,&quot;2018.8&quot;,176,&quot;2018.9&quot;,168,&quot;2018.10&quot;,184,&quot;2018.11&quot;,168,&quot;2018.12&quot;,152,0)
+,
+
+IF(
+AND(
+TimetrackerCompany__r.Id = &quot;001b000000Ppj5P&quot;,
+YEAR(DateFrom__c)=2018
+),
+CASE( IsInBillingPeriodYearMonth__c,&quot;2018.1&quot;,184,&quot;2018.2&quot;,160,&quot;2018.3&quot;,176,&quot;2018.4&quot;,168,&quot;2018.5&quot;,184,
+&quot;2018.6&quot;,168,&quot;2018.7&quot;,176,&quot;2018.8&quot;,184,&quot;2018.9&quot;,160,&quot;2018.10&quot;,184,&quot;2018.11&quot;,176,&quot;2018.12&quot;,168,0)
+,0))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Monthly Worktime</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

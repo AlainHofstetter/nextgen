@@ -1,0 +1,13 @@
+Sehr geehrte(r) {!Contact.Title} {!Contact.LastName},
+
+{!Case.Solution_Description}
+
+Mit freundlichen Grüßen,
+
+{!User.Name}
+{!Organization.Name} Team
+
+Ihr Kommentar:
+{!Case.Description}
+
+{!Case.Solution_Attachments}

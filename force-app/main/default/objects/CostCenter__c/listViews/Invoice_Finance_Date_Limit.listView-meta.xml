@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_Finance_Date_Limit</fullName>
+    <columns>NAME</columns>
+    <columns>AbacusKostenstelleBezeichnung__c</columns>
+    <columns>InvoiceDateLimit__c</columns>
+    <columns>FinanceDateLimit__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Invoice &amp; Finance Date Limit</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_FIN_Alle</group>
+    </sharedTo>
+</ListView>

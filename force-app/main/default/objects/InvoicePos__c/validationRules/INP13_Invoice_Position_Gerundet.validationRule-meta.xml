@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>INP13_Invoice_Position_Gerundet</fullName>
+    <active>false</active>
+    <description>08.11.2017, ary: Deaktiviert.
+1. Der Invoice Creater rundet auf 5 Rappen
+2. Finance kann manuell auf den Invoice Positionen Rappen verwenden, sollte dies aus Gründen nötig sein.</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true ,
+InvoicePositionAmount__c &lt;&gt; round(InvoicePositionAmount__c*20,0)/20
+)</errorConditionFormula>
+    <errorMessage>The Invoice Position must be without cents.
+(INP13)</errorMessage>
+</ValidationRule>

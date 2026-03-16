@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Defines which fields contains the relevant information to read and store the ESR Number. All 7 fields have to be set. For more information see also Description of this field. --></help>
+    <label><!-- ESR Field Type --></label>
+    <name>ESRFieldType__c</name>
+    <picklistValues>
+        <masterLabel>Amount</masterLabel>
+        <translation><!-- Amount --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ESR Account Number</masterLabel>
+        <translation><!-- ESR Account Number --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ESR Merchant Nr</masterLabel>
+        <translation><!-- ESR Merchant Nr --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ESR code line</masterLabel>
+        <translation><!-- ESR code line --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ESR formatted</masterLabel>
+        <translation><!-- ESR formatted --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ESR unformatted</masterLabel>
+        <translation><!-- ESR unformatted --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Invoice Number</masterLabel>
+        <translation><!-- Invoice Number --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

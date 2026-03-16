@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Workstations</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Type__c</columns>
+    <columns>User__c</columns>
+    <columns>HandoutDate__c</columns>
+    <columns>ReturnedDate__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Inventory__c.Workplace</value>
+    </filters>
+    <label>All Workplaces</label>
+    <sharedTo>
+        <group>Skywalk_FIN_Alle</group>
+        <group>Skywalk_HR_OM</group>
+        <group>Skywalk_IT_Alle</group>
+    </sharedTo>
+</ListView>

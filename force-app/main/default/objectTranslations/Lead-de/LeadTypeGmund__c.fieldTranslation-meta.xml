@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Leadtyp (Gmund)</label>
+    <name>LeadTypeGmund__c</name>
+    <picklistValues>
+        <masterLabel>Agency</masterLabel>
+        <translation><!-- Agency --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>End Customer</masterLabel>
+        <translation><!-- End Customer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gmund internal</masterLabel>
+        <translation><!-- Gmund internal --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Media Representatives</masterLabel>
+        <translation><!-- Media Representatives --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Printer / Processor</masterLabel>
+        <translation><!-- Printer / Processor --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wholesaler</masterLabel>
+        <translation><!-- Wholesaler --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

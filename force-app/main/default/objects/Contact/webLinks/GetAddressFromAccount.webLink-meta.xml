@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GetAddressFromAccount</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Get Address From Account</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)}
+
+if (confirm(&quot;Do you really want to override the existing location address of the contact?&quot;))
+{
+	var fieldsNeedToBeCopied = [&quot;LocationAddressLine2__c&quot;, &quot;LocationAddressLine3__c&quot;, &quot;LocationCity__c&quot;,  &quot;LocationCountry__c&quot;, &quot;LocationPoBox__c&quot;,	&quot;LocationState__c&quot;, &quot;LocationStreetNr__c&quot;, &quot;LocationZip__c&quot;];
+
+    // identify the record
+    var contact = new sforce.SObject(&quot;Contact&quot;);
+    contact.id = &quot;{!Contact.Id}&quot;;
+
+    var results = sforce.connection.query(&quot;SELECT Name, LocationAddressLine2__c, LocationAddressLine3__c, LocationCity__c, LocationCountry__c, LocationPoBox__c, LocationState__c, LocationStreetNr__c, LocationZip__c FROM Account WHERE Id = &apos;{!Account.Id}&apos; LIMIT 1&quot;);
+	
+	var account = results.getArray(&quot;records&quot;)[0];
+	for (i = 0; i &lt; fieldsNeedToBeCopied.length; i++)
+	{
+		contact[fieldsNeedToBeCopied[i]] = account[fieldsNeedToBeCopied[i]];
+	}
+	
+    // save the change
+    sforce.connection.update([contact]);
+ 
+    //refresh the page
+    window.location.reload();
+}</url>
+</WebLink>

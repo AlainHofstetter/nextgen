@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Service</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Services</value>
+    </caseValues>
+    <layouts>
+        <layout>Package Layout Expense</layout>
+        <sections>
+            <label><!-- Billing Information --></label>
+            <section>Billing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Budget Controlling --></label>
+            <section>Budget Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Finance Controlling --></label>
+            <section>Finance Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Controlling --></label>
+            <section>Invoice Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Information --></label>
+            <section>Invoice Information</section>
+        </sections>
+        <sections>
+            <label><!-- Package Detail --></label>
+            <section>Package Detail</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label><!-- Terms &amp; Conditions --></label>
+            <section>Terms &amp; Conditions</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Package Layout Group</layout>
+        <sections>
+            <label><!-- Billing Information --></label>
+            <section>Billing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Finance Controlling --></label>
+            <section>Finance Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Information --></label>
+            <section>Invoice Information</section>
+        </sections>
+        <sections>
+            <label><!-- Package Detail --></label>
+            <section>Package Detail</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Package Layout License (Direct)</layout>
+        <sections>
+            <label><!-- Billing Information --></label>
+            <section>Billing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Budget Controlling --></label>
+            <section>Budget Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Finance Controlling --></label>
+            <section>Finance Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- HR Controlling --></label>
+            <section>HR Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Controlling --></label>
+            <section>Invoice Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Information --></label>
+            <section>Invoice Information</section>
+        </sections>
+        <sections>
+            <label><!-- Package Detail --></label>
+            <section>Package Detail</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Package Layout License (Provision)</layout>
+        <sections>
+            <label><!-- Billing Information --></label>
+            <section>Billing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Budget Controlling --></label>
+            <section>Budget Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Finance Controlling --></label>
+            <section>Finance Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- HR Controlling --></label>
+            <section>HR Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Controlling --></label>
+            <section>Invoice Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Information --></label>
+            <section>Invoice Information</section>
+        </sections>
+        <sections>
+            <label><!-- Package Detail --></label>
+            <section>Package Detail</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Package Layout Supplier Costs</layout>
+        <sections>
+            <label><!-- Billing Information --></label>
+            <section>Billing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Budget Controling --></label>
+            <section>Budget Controling</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Finance Controlling --></label>
+            <section>Finance Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Controlling --></label>
+            <section>Invoice Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Information --></label>
+            <section>Invoice Information</section>
+        </sections>
+        <sections>
+            <label><!-- Package Detail --></label>
+            <section>Package Detail</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label><!-- Terms &amp; Conditions --></label>
+            <section>Terms &amp; Conditions</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Package Layout Time</layout>
+        <sections>
+            <label><!-- Billing Information --></label>
+            <section>Billing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Budget Controlling --></label>
+            <section>Budget Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Finance Controlling --></label>
+            <section>Finance Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- HR Controlling --></label>
+            <section>HR Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Controlling --></label>
+            <section>Invoice Controlling</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Information --></label>
+            <section>Invoice Information</section>
+        </sections>
+        <sections>
+            <label><!-- Package Detail --></label>
+            <section>Package Detail</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+        <sections>
+            <label><!-- Terms &amp; Condition --></label>
+            <section>Terms &amp; Condition</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Service Name</nameFieldLabel>
+    <quickActions>
+        <label><!-- New TimEx --></label>
+        <name>New_TimeEx</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- Expense --></label>
+        <name>Expense</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Service Group</label>
+        <name>Group</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- License (Direct) / Trade --></label>
+        <name>LicenseDirect</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- License (Provision) --></label>
+        <name>LicenseProvision</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Supplier Costs --></label>
+        <name>SupplierCosts</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Time --></label>
+        <name>Time</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage>
+            <!-- You can not assign to a package that is already level 2. Please contact your Super User for assistance.
+(PA000) -->
+        </errorMessage>
+        <name>PA000_Package_Max_Level</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Level 2 Packages can not be of Type &quot;Group&quot;. Please contact your Super User for assistance.
+(PA001) -->
+        </errorMessage>
+        <name>PA001_RecordType_Group_Level_1</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Level 2 Packages can only be attached to Level 1 Packages of Type &quot;Group&quot;. Please contact your Super User for assistance.
+(PA002) -->
+        </errorMessage>
+        <name>PA002_RecordType_Superior_Must_Be_Group</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Package can not be reassigned due to existing Invoice Positions. Please contact your Super User for assistance.
+(PA003) -->
+        </errorMessage>
+        <name>PA003_Package_Move_to_other_Package</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The Pacakge Type can not be changed anymore due to existing child objects (time, expense, supplier costs, Invoices). Please contact your Super User for assistance.﻿
+(PA004) -->
+        </errorMessage>
+        <name>PA004_Recordtype_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The Sort Number can not contain alphanumerical characters, only numbers.
+(PA006) -->
+        </errorMessage>
+        <name>PA006_Package_Sort_must_be_numeric</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The Package Segment must be active. Please contact your Super User for assistance.
+(PA007) -->
+        </errorMessage>
+        <name>PA007_Segment_must_be_active</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The Package Segment can&apos;t be empty if this is a HBC-Project. Please contact your Super User for assistance.
+(PA008) -->
+        </errorMessage>
+        <name>PA008_Segment_is_necessary_for_HBC</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Checkboxes are not in line for billing template.
+(PA009) -->
+        </errorMessage>
+        <name>PA009_Billing_Template_Match</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You must choose a Package Status.
+(PA011) -->
+        </errorMessage>
+        <name>PA011_Package_Status_Mandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Package can not be reassigned to another Project.
+(PA013) -->
+        </errorMessage>
+        <name>PA013_Package_Move_to_other_Project</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You must choose the Package Sub-Type
+(PA014) -->
+        </errorMessage>
+        <name>PA014_Package_Sub_Type_Mandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Abacus TimeType must be Default (200).
+(PA015) -->
+        </errorMessage>
+        <name>PA015_Abacus_TimeType_Default_200</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You can only attach packages to superior packages linked to the same project.
+(PA016) -->
+        </errorMessage>
+        <name>PA016_Package_Superior_Same_Project</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The Package is locked due to an Invoice or ILV in Status &quot;&quot;Draft&quot;&quot;. Please complete Invoice first.
+(PA017) -->
+        </errorMessage>
+        <name>PA017_Has_Invoice_Or_ILV_Status_Draft_1</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Please choose the Package Sub-Type correctly.
+(PA018) -->
+        </errorMessage>
+        <name>PA018_Check_Subtype_Valid</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The Project Allowance Package must be excluded from the Project Mgmt Allowance.
+(PA019) -->
+        </errorMessage>
+        <name>PA019_PM_Allowance_Package_Must_Exclude</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to select &quot;Abacus Inbox&quot; for Package Sub-Type. Please contact your Super User for assistance.﻿
+(PA020) -->
+        </errorMessage>
+        <name>PA020_User_CanNot_Select_Abacus_Inbox</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You must choose an Abacus Time Type for an Internal Project.
+(PA021) -->
+        </errorMessage>
+        <name>PA021_Abacus_TimeType_Must_Internal</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Expense Allowance Checkbox must be in line with Expense Billing Type.
+(PA022) -->
+        </errorMessage>
+        <name>PA022_Expense_Allowance_In_Line_With_Gro</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The Service Status can not be set to &quot;Open&quot; since the Project Status does not allow this.
+(PA023) -->
+        </errorMessage>
+        <name>PA023_Package_Create_Status_Open_Project</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You do not have the permission to change this information. Please get in touch with the Project Manager.
+(PA024) -->
+        </errorMessage>
+        <name>PA024_No_PM_No_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The Service Sub-Type can not be changed anymore since it contains time.
+(PA025) -->
+        </errorMessage>
+        <name>PA025_Package_Closed_SubType_No_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- The Service Sub-Type can not be &quot;Manufaktur&quot; for non SVA Projects
+(PA026) -->
+        </errorMessage>
+        <name>PA026_Subtype_Manufaktur_only_SVA</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You can not create a new service, the project has an Invoice or ILV in status &quot;Draft&quot;. Please finish the Invoice/ILV first.
+(PA027) -->
+        </errorMessage>
+        <name>PA027_Has_Invoice_Or_ILV_Status_Draft_2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You are not allowed to choose the Service Sub-Type &quot;Trade&quot;. Please get in touch with Finance.
+(PA028) -->
+        </errorMessage>
+        <name>PA028_SubType_Trade</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please inform the Segment field (PA029). --></errorMessage>
+        <name>PA029_SegmentMandatoryForHotzbrandcons</name>
+    </validationRules>
+</CustomObjectTranslation>

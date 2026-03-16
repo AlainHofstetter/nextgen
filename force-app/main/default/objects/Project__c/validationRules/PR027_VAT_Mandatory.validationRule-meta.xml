@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PR027_VAT_Mandatory</fullName>
+    <active>false</active>
+    <description>VAT can&apos;t be empty (if this is an external project)</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+ISPICKVAL( VATPercent__c, &quot;&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>VATPercent__c</errorDisplayField>
+    <errorMessage>You must choose a VAT rate
+(PR027)</errorMessage>
+</ValidationRule>

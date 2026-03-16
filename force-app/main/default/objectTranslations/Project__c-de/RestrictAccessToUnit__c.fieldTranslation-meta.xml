@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Diese Checkbox wählen, um das Projekt nur für die Unit freizugeben.</help>
+    <label>Zugriff nur für Unit</label>
+    <name>RestrictAccessToUnit__c</name>
+</CustomFieldTranslation>

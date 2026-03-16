@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Date of the corresponding Cancellation Invoice if this invoice has been cancelled --></help>
+    <label><!-- Cancellation Date --></label>
+    <name>CancellationDate__c</name>
+</CustomFieldTranslation>

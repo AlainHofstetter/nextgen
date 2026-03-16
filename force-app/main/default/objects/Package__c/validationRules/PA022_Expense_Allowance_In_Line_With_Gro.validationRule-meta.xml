@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PA022_Expense_Allowance_In_Line_With_Gro</fullName>
+    <active>true</active>
+    <description>Packages for Internal Projects must have an Abacus Time Type</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+ RecordType.DeveloperName =&quot;Expense&quot;,
+ExpenseAllowancePackage__c=true,
+NOT(ISPICKVAL(ExpenseBillingType__c,&quot;AllowancePercent&quot;))
+)</errorConditionFormula>
+    <errorDisplayField>ExpenseAllowancePackage__c</errorDisplayField>
+    <errorMessage>Expense Allowance Checkbox must be in line with Expense Billing Type.
+(PA022)</errorMessage>
+</ValidationRule>

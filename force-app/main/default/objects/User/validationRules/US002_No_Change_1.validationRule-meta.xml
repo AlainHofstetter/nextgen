@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>US002_No_Change_1</fullName>
+    <active>true</active>
+    <description>Nur HR darf gewisse Daten eines Mitarbeitenden ändern</description>
+    <errorConditionFormula>AND( 
+$User.PS480FunctionValidationRulesActive__c =true, 
+$User.IsHRManager__c = false, 
+$User.PS160RoleITManager__c = false,
+OR(
+ISCHANGED(Title),
+ISCHANGED(Alias),
+ISCHANGED(FirstName),
+ISCHANGED(LastName),
+ISCHANGED(CompanyName),
+ISCHANGED(ManagerId)
+)
+)</errorConditionFormula>
+    <errorMessage>You are not allowed to change some data of your User Profile. Please get in touch with HR. 
+(US002)</errorMessage>
+</ValidationRule>

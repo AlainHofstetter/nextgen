@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InDesign_version__c</fullName>
+    <description>The Indesign version which is used for this censhare system.</description>
+    <label>InDesign Version</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>InDesign CC 2017 (12.0): November 2, 2016</fullName>
+                <default>false</default>
+                <label>InDesign CC 2017 (12.0): November 2, 2016</label>
+            </value>
+            <value>
+                <fullName>InDesign CC 2017.1 (12.1): April 14, 2017</fullName>
+                <default>false</default>
+                <label>InDesign CC 2017.1 (12.1): April 14, 2017</label>
+            </value>
+            <value>
+                <fullName>InDesign CC 2018 (13.0): October 18, 2017</fullName>
+                <default>false</default>
+                <label>InDesign CC 2018 (13.0): October 18, 2017</label>
+            </value>
+            <value>
+                <fullName>InDesign CC 2018 (13.0.1): November 2017</fullName>
+                <default>false</default>
+                <label>InDesign CC 2018 (13.0.1): November 2017</label>
+            </value>
+            <value>
+                <fullName>InDesign CC 2018.1 (13.1): March 2018</fullName>
+                <default>false</default>
+                <label>InDesign CC 2018.1 (13.1): March 2018</label>
+            </value>
+            <value>
+                <fullName>InDesign CC 2018.2 (13.2): March 2018</fullName>
+                <default>false</default>
+                <label>InDesign CC 2018.2 (13.2): March 2018</label>
+            </value>
+            <value>
+                <fullName>InDesign CC 2019 (14.0.1): November 2018</fullName>
+                <default>false</default>
+                <label>InDesign CC 2019 (14.0.1): November 2018</label>
+            </value>
+            <value>
+                <fullName>InDesign CC 2019 (14.0.2): April 2019</fullName>
+                <default>false</default>
+                <label>InDesign CC 2019 (14.0.2): April 2019</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

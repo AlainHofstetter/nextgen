@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Abacus Standardzeittyp</label>
+    <name>AbacusDefaultTimeType__c</name>
+    <picklistValues>
+        <masterLabel>1100</masterLabel>
+        <translation>Stundenlohn</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>200</masterLabel>
+        <translation>Monatslohn</translation>
+    </picklistValues>
+</CustomFieldTranslation>

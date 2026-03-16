@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X130_BLC_HR_Queue</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.MOBILE_PHONE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>Birthdate__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>UnitRelevance__c</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.LEAD_SOURCE</columns>
+    <columns>LeadSourceDetail__c</columns>
+    <columns>LeadType__c</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.LeadCandidate</value>
+    </filters>
+    <label>130 - BLC - HR - Queue</label>
+    <queue>HRTeamQueue</queue>
+    <sharedTo>
+        <group>Skywalk_HR_OM</group>
+    </sharedTo>
+</ListView>

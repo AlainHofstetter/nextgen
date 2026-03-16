@@ -1,0 +1,411 @@
+<!--  https://brandleadership--dev1--c.sandbox.vf.force.com/apex/InvoiceCancelPDF_GatebSingaporeGST?id=a0Q7Y00000APGGkUAP -->
+<apex:page standardController="Invoice__c" extensions="InvoiceDocumentController" showHeader="false" sidebar="false"
+    renderAs="pdf" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" language="{!invoiceRecord.AccountLanguage__c}">
+    
+    <head>
+        <style>
+            @page {
+                size: A4;
+                margin-top: 150px !important;
+                margin: .50in .70in 1in 1.25in;
+                font-size: 75%;
+
+                @bottom-left {
+                    font-size: 65%;
+                    content: element(footer);
+                    font-weight: normal;
+
+
+                }
+                @bottom-right {
+                content: "Seite: " counter(page) "/" counter(pages);
+                font-size: 65%;
+                }
+
+                @top-right {
+                    content: element(header);
+                }
+            }
+
+            .page-break {
+                display: block;
+                page-break-after: always;
+            }
+
+            div.header {
+                display: block;
+                margin-top: 1px;
+                position: running(header);
+
+            }
+            div.footer {
+                display: block;
+                font-size: 80%;
+                position: running(footer);
+
+            }
+
+            div.content table {
+                -fs-table-paginate: paginate;
+            }
+
+            .p {
+                page-break-inside: avoid;
+                font-weight: normal;
+            }
+
+            .head_col_1 {
+                width: 70%;
+            }
+
+            .head_col_2 {
+                width: 30%;
+            }
+
+            .col_1 {
+                width: 40%;
+                vertical-align: top;
+            }
+
+            .col_2 {
+                width: 30%;
+            }
+
+            .col_3 {
+                width: 30%;
+            }
+            .nameInvoice{
+                font-weight: bold;
+                font-size: 120%;
+            }
+            .margin_bottom{
+                padding-bottom: 30px;
+            }
+            .projName{
+                font-weight: bold;
+                font-size: 150%;
+                padding-top:20px;
+                padding-bottom: 20px;
+            }
+            .docNrPadding{
+                /*padding-top: 70px;*/
+            }
+            .rightColPadding{
+                padding-top: 15px;
+            }
+            .paddingBotom30{
+                padding-bottom: 20px;
+            }
+            .alignRight{
+                text-align: right;
+            }
+            .col50{
+                width: 50%;
+            }
+            .tableLargeCol{
+                width: 90%;
+            }
+            .tableSmallCol{
+                width: 10%;
+                align-content: right;
+            }
+            .paddingTop40{
+                padding-top: 30px;
+            }
+
+            .borderBottom{
+                border-bottom: 0.5pt solid black;
+            }
+            .highlight{
+                font-weight: bold;
+                border-bottom: 1pt solid black;
+            }
+            .paddingFirstTable{
+                padding-top: -50px;
+            }
+            .bold{
+                font-weight: bold;
+            }
+            .paddingTopTable{
+                padding-top: 15px;
+            }
+            .paddingGroup{
+                padding-top: 25px;
+            }
+
+            ​
+        </style>
+    </head>
+
+    <div class="header">
+        <!-- Header -->
+            <table>
+                <tr>
+                    <th class="head_col_1">
+                    </th>
+                    <th class="head_col_2">
+                        <apex:image url="{!$Resource.Invoice_Cancel_Logo}" width="200" />
+                    </th>
+                </tr>
+            </table>
+    </div>
+    
+    <div class="footer" style="font-family: Helvetica, sans-serif;font-size:65%;">
+        {!$Label.Footer_GateB_Singapore_1} <br/>
+        {!$Label.Footer_GateB_Singapore_2} <br/>
+        {!$Label.FooterLine3}<br/>
+    </div>
+    
+    <div class="content">
+        <body style="font-size:75%;font-weight:normal; font-family: 'Helvetica', sans-serif;color:#010101">
+            
+            <!-- Titles -->
+            <table >
+                <tr>
+                    <td class="col_1">                    
+                        <apex:outputField rendered="{!!ISBLANK(invoiceRecord.AccountNameLegal__c)}" value="{!invoiceRecord.AccountNameLegal__c}"></apex:outputField> <br/>
+                      <apex:outputField rendered="{!!ISBLANK(invoiceRecord.BillingNameAddition__c)}" value="{!invoiceRecord.BillingNameAddition__c}"></apex:outputField> <br/>
+                      <apex:outputField rendered="{!!ISBLANK(invoiceRecord.BillingAddressStreetNr__c)}" value="{!invoiceRecord.BillingAddressStreetNr__c}"></apex:outputField> <br/>
+                      <apex:outputField rendered="{!!ISBLANK(invoiceRecord.BillingAddressAddition__c)}" value="{!invoiceRecord.BillingAddressAddition__c}"></apex:outputField> <br/>
+                      <apex:outputField rendered="{!!ISBLANK(invoiceRecord.BillingAddressPOBox__c)}" value="{!invoiceRecord.BillingAddressPOBox__c}"></apex:outputField> <br/>
+                      <apex:outputText rendered="{!!ISBLANK(invoiceRecord.BillingAddressZIP__c)}" value="{!invoiceRecord.BillingAddressZIP__c +' '}"> </apex:outputText>
+                      <apex:outputField rendered="{!!ISBLANK(invoiceRecord.BillingAdressCity__c)}" value="{!invoiceRecord.BillingAdressCity__c}"></apex:outputField> <br/>
+                      <apex:outputField rendered="{!!ISBLANK(invoiceRecord.BillingAddressState__c)}" value="{!invoiceRecord.BillingAddressState__c}"></apex:outputField> <br/>
+                      <apex:outputField rendered="{!!ISBLANK(invoiceRecord.BillingAddressCountry__c)}" value="{!invoiceRecord.BillingAddressCountry__c}"></apex:outputField> <br/>
+                      <apex:outputPanel layout="block" rendered="{!invoiceRecord.InvoiceReceiver__r.BillingCountry__c != 'SWITZERLAND'}">
+                        <span>{!$Label.Vat_Number}: </span>
+                        <apex:outputField value="{!invoiceRecord.VATNumberRef__c}"/><br/>
+                      </apex:outputPanel>
+                      <apex:outputPanel layout="block" rendered="{!invoiceRecord.InvoiceReceiver__r.BillingCountry__c != 'SWITZERLAND'}">
+                        <span >{!$Label.TAX_Id}: </span>
+                        <apex:outputField value="{!invoiceRecord.TaxNumberRef__c}"/><br/>
+                      </apex:outputPanel>
+                    </td>
+                    <td class="col_2">
+                    </td>
+                    <td class="col_3">
+                        <table>
+                            <tr>
+                                <td class="docNrPadding">
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    {!$Label.DocumentNr}:
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <!-- <apex:outputField value="{!invoiceRecord.CancellationInvoiceDocumentNr__c}"></apex:outputField> -->
+                                    <apex:outputText value="{!IF(invoiceRecord.InvoiceStatus__c = 'Draft', 'DRAFT Invoice',invoiceRecord.InvoiceDocumentNr__c)}" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr >
+                                <td class="rightColPadding">
+                                    {!$Label.InvoiceDocNumber}:
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputText value="{!invoiceRecord.InvoiceDocumentNr__c}"></apex:outputText>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="rightColPadding">
+                                    {!$Label.InvoiceContact}:
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputField value="{!invoiceRecord.InvoiceContact__r.Name}"></apex:outputField>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputField value="{!invoiceRecord.InvoiceContact__r.Phone}"></apex:outputField>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputField value="{!invoiceRecord.InvoiceContact__r.Email}"></apex:outputField>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class=" paddingTop10">
+                                <apex:outputText rendered="{!!ISBLANK(invoiceRecord.CustomerReference__c )}" value="{!$Label.Reference}:"></apex:outputText>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <apex:outputText rendered="{!!ISBLANK(invoiceRecord.CustomerReference__c )}" value="{!invoiceRecord.CustomerReference__c}"></apex:outputText>
+                                <apex:outputText rendered="{!!ISBLANK(invoiceRecord.CustomerOrderNr__c )}" value=" / {!invoiceRecord.CustomerOrderNr__c}"></apex:outputText>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col_1 margin_bottom">
+                        {!localisedDate}
+                    </td>
+                    <td class="col_2">
+                    </td>
+                    <td class="col_3">
+                    </td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td class="nameInvoice">
+                        {!$Label.Cancellation_Invoice}
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td class="nameInvoice">
+                        <apex:outputField value="{!invoiceRecord.InvoiceTitle__c}"></apex:outputField>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="projName">
+                        <apex:outputField value="{!invoiceRecord.ProjectName__r.Name}"></apex:outputField>
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        {!$Label.Period}:
+                    </td>
+                </tr>
+                <tr>
+                    <td class="paddingBotom30">
+                        {!localisedPeriodFrom} - {!localisedPeriodUntil}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bold">
+                        {!$Label.Cancellation_reason}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="">
+                        <apex:outputField value="{!invoiceRecord.CancellationReason__c}"></apex:outputField>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- MAIN TABLE -->
+
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                    <td class="tableLargeCol"> </td>
+                    <td class="tableSmallCol alignRight">
+                        <p>{!$Label.gstregnr}</p>
+                        <apex:outputField value="{!invoiceRecord.ProjectInvoiceCurrency__c}"></apex:outputField>
+                    </td>
+                </tr>
+                
+                <!-- <apex:repeat value="{!mapInvPosGroup}" var="groupName" > -->
+                <apex:repeat value="{!invPosGroupKeys}" var="groupName" >
+                    <tr>
+                        <td class="tableLargeCol borderBottom  smallerFont bold  paddingGroup" ><apex:outputField value="{!mapGroupNameAmount[groupName].PackageName__r.Name}"/> </td>
+                        <td class="tableSmallCol borderBottom alignRight  smallerFont bold  paddingGroup"> <apex:outputField value="{!mapGroupNameAmount[groupName].InvoicePositionAmount__c}"/></td>
+                    </tr>
+                
+                    <apex:repeat value="{!mapInvPosGroup[groupName]}" var="invPos" >
+                    <tr>
+                        <td class="tableLargeCol borderBottom  smallerFont paddingTopTable" ><apex:outputField value="{!invPos.PackageName__r.Name}"/> </td>
+                        <td class="tableSmallCol borderBottom alignRight smallerFont paddingTopTable"> <apex:outputField value="{!invPos.InvoicePositionAmount__c}"/></td>
+                    </tr>
+                    </apex:repeat>
+                </apex:repeat>
+                
+                <!-- Invoice positions without grouping -->
+            <!--  <apex:repeat value="{!nonGroupInvPos}" var="invPos" >
+                    <tr>
+                        <td class="tableLargeCol borderBottom paddingTop40 smallerFont" ><apex:outputField value="{!invPos.PackageName__r.Name}"/> </td>
+                        <td class="tableSmallCol borderBottom alignRight paddingTop40 smallerFont"> <apex:outputField value="{!invPos.InvoicePositionAmount__c}"/></td>
+                    </tr>
+                    <tr></tr>
+                </apex:repeat>-->
+
+
+                <!--AFTER LOOP Total Amounts-->
+                
+                <tr >
+                    <td class="tableLargeCol  highlight paddingTop40">{!$Label.Grand_Total} </td>
+                    <td class="tableSmallCol highlight alignRight paddingTop40" > 
+                        <apex:outputField value="{!invoiceRecord.InvoiceTotalAmountNet__c}"></apex:outputField>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tableLargeCol borderBottom paddingTopTable">{!$Label.gst_label}
+                        <span><apex:outputField value="{!invoiceRecord.VATPercent__c}"></apex:outputField></span> 
+                    </td>
+                    <td class="tableSmallCol borderBottom alignRight paddingTopTable"> 
+                        <apex:outputField value="{!invoiceRecord.InvoiceVATAmount__c}"></apex:outputField>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tableLargeCol  highlight paddingTopTable">{!$Label.Grand_Total} 
+                        <span><apex:outputField value="{!invoiceRecord.ProjectInvoiceCurrency__c}"></apex:outputField></span>
+                        <span>{!$Label.incl_GST}</span>
+                    </td>
+                    <td class="tableSmallCol highlight alignRight paddingTopTable"> 
+                        <apex:outputField value="{!invoiceRecord.InvoiceTotalAmountGross__c}"></apex:outputField>
+                    </td>
+                </tr>
+                <!--GST Total for Singapore-->
+                <tr>
+                    <td class="tableLargeCol paddingTop40"><p>Tax recap</p> </td>
+                    <td class="tableSmallCol alignRight paddingTop40" > 
+                        <p><apex:outputField value="{!invoiceRecord.ProjectInvoiceCurrency__c}"></apex:outputField></p>
+                    </td>
+                </tr>
+                <tr >
+                    <td class="tableLargeCol  highlight paddingTop40">{!$Label.Grand_Total} </td>
+                    <td class="tableSmallCol highlight alignRight paddingTop40" > 
+                        <apex:outputField value="{!invoiceRecord.InvoiceTotalAmountNet__c}"></apex:outputField>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tableLargeCol borderBottom paddingTopTable">{!$Label.gst_label} 
+                        <span><apex:outputField value="{!invoiceRecord.VATPercent__c}"></apex:outputField></span>
+                    </td>
+                    <td class="tableSmallCol borderBottom alignRight paddingTopTable"> 
+                        <apex:outputField value="{!invoiceRecord.InvoiceVATAmount__c}"></apex:outputField>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tableLargeCol  highlight paddingTopTable">{!$Label.Grand_TotalGST} </td>
+                    <td class="tableSmallCol highlight alignRight paddingTopTable"> 
+                        <apex:outputField value="{!invoiceRecord.InvoiceTotalAmountGross__c}"></apex:outputField>
+                    </td>
+                </tr>
+
+            </table>
+
+            <div class="paddingBotom30 paddingTop40">
+                 {!$Label.TermsPayment} &nbsp;
+                <apex:outputField value="{!invoiceRecord.TermsOfPayment2__c}"></apex:outputField>
+            </div>
+            <div class="">
+                <apex:outputField value="{!invoiceRecord.BankName__c}"></apex:outputField>, &nbsp;
+                <apex:outputField value="{!invoiceRecord.BankLocation__c}"></apex:outputField> <br/>
+                {!$Label.IBAN} &nbsp; <apex:outputField value="{!invoiceRecord.IBAN__c}"></apex:outputField>,&nbsp;
+                {!$Label.Bank_Clearing} &nbsp; <apex:outputField value="{!invoiceRecord.BankClearing__c}"></apex:outputField>,&nbsp;
+                {!$Label.SWIFT} &nbsp;<apex:outputField value="{!invoiceRecord.SWIFT__c}"></apex:outputField>
+                </div>
+        </body>
+    </div>
+
+</apex:page>

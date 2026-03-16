@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Org_Contact_Hierarchy</fullName>
+    <columns>CONTACT.FIRST_NAME</columns>
+    <columns>CONTACT.LAST_NAME</columns>
+    <columns>JobTitle__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Org_Contact_Hierarchy</label>
+</ListView>

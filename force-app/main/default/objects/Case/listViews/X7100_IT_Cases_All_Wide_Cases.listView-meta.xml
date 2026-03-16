@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X7100_IT_Cases_All_Wide_Cases</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>ThirdPartyTicketNr__c</columns>
+    <columns>FlagPriority__c</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.TYPE</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>DeadlineDate__c</columns>
+    <columns>NAME</columns>
+    <columns>CASES.ORIGIN</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CASES.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Case.ITCases</value>
+    </filters>
+    <filters>
+        <field>CASES.SUBJECT</field>
+        <operation>notEqual</operation>
+        <value>Detected Malware Notification,Antiphishing Activity Notification</value>
+    </filters>
+    <filters>
+        <field>ThirdPartyServiceProvider__c</field>
+        <operation>contains</operation>
+        <value>Wide</value>
+    </filters>
+    <label>7100 - IT Cases - All Wide Cases</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_IT_Alle</group>
+    </sharedTo>
+</ListView>

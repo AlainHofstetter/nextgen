@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CostCenterCompactLayout</fullName>
+    <fields>CostCenterNr__c</fields>
+    <fields>ClearingCostCenterNr__c</fields>
+    <fields>Name</fields>
+    <fields>LegalAccount__c</fields>
+    <fields>Active__c</fields>
+    <label>CostCenterCompactLayout</label>
+</CompactLayout>

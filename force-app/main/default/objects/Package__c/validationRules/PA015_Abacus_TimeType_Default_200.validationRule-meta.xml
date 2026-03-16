@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PA015_Abacus_TimeType_Default_200</fullName>
+    <active>true</active>
+    <description>TimeType can only be Default = 200</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+OR(
+ ProjectName__r.RecordType.DeveloperName = &quot;ExternalServices&quot;,
+ProjectName__r.RecordType.DeveloperName = &quot;ExternalLicense&quot;
+),
+ Text(AbacusTimeType__c) &lt;&gt;&quot;Default&quot;
+)</errorConditionFormula>
+    <errorDisplayField>AbacusTimeType__c</errorDisplayField>
+    <errorMessage>Abacus TimeType must be Default (200).
+(PA015)</errorMessage>
+</ValidationRule>

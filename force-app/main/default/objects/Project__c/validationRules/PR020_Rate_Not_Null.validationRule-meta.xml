@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PR020_Rate_Not_Null</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true, 
+ISBLANK(ProjectRateHour__c )
+)</errorConditionFormula>
+    <errorDisplayField>ProjectRateHour__c</errorDisplayField>
+    <errorMessage>You must add a rate to the project.
+(PR020)</errorMessage>
+</ValidationRule>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>GBCH_with_GBUS</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>GBCH with GBUS</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>GBUS_gateB_US</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>UnitRelevance__c</field>
+            <operation>equals</operation>
+            <value>GBCH</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>GBUS_with_GBCH</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>GBUS with GBCH</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>GBCH</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>UnitRelevance__c</field>
+            <operation>equals</operation>
+            <value>GBUS</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Archived_User_Opps</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Archived User Opps</label>
+        <sharedTo>
+            <group>Skywalk_Super_User_Alle</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>X_99_Archive_Inactive_Users</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Role_and_Internal_Subordinates_Holding</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Role and Internal Subordinates: Holding</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BLC</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>BLC</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Sharing_Rule_BY_Internal</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Sharing Rule BY Internal</label>
+        <sharedTo>
+            <role>CY</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>CY</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Sharing_Rule_GBUS_Inernal</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Sharing Rule GBUS Inernal</label>
+        <sharedTo>
+            <role>GBUS_gateB_US</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>GBUS_gateB_US</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Sharing_Rule_GB_Internal</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Sharing Rule GB Internal</label>
+        <sharedTo>
+            <roleAndSubordinates>GBCH</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <role>GBCH</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Sharing_Rule_HBC_Internal</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Sharing Rule HBC Internal</label>
+        <sharedTo>
+            <role>HBC</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>HBC</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Sharing_Rule_HYS_Internal</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Sharing Rule HYS Internal</label>
+        <sharedTo>
+            <role>HYS_Hieronymus</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>HYS_Hieronymus</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Sharing_Rule_VH_Internal</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Sharing Rule VH Internal</label>
+        <sharedTo>
+            <role>SVH</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>SVH</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Sharing_Rule_XB_Internal</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Sharing Rule XB Internal</label>
+        <sharedTo>
+            <role>XB_Extrablack</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>XB_Extrablack</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

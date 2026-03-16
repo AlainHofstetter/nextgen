@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Meine_Lizenz_Prov_Leistungen_Segm</fullName>
+    <columns>NAME</columns>
+    <columns>ProjectName__c</columns>
+    <columns>CostCenterSegment__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Package__c.LicenseProvision</value>
+    </filters>
+    <filters>
+        <field>PackageStatus__c</field>
+        <operation>equals</operation>
+        <value>Open</value>
+    </filters>
+    <label>Meine Lizenz-Prov-Leistungen - Segm.</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_FIN_Alle</group>
+    </sharedTo>
+</ListView>

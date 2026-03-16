@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- If the boundary lines should include a margin and not extend to the border of the page. Printers usually are unable to print the lines completely otherwise. --></help>
+    <label><!-- Add Boundary Lines Margins --></label>
+    <name>API_boundaryLinesMargins__c</name>
+</CustomFieldTranslation>

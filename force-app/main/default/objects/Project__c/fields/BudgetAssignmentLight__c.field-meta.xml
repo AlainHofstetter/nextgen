@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BudgetAssignmentLight__c</fullName>
+    <description>22.08.2017, ary: Budget wird neu nur noch auf den Services verteilt und ins Projekt hochgerechnet. Auf dem Projekt wird kein Budget mehr zugewiesen. Von daher braucht es dieses Feld nicht mehr. Es kann gelegentlich gelöscht werden.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+ BudgetAssignTotalAmount__c = BudgetQuoteTotalAmount__c , IMAGE(&quot;/resource/Icons/greenaccept.png&quot;, &quot;Budget assigned correctly&quot;),
+IF(
+ BudgetAssignTotalAmount__c &gt; BudgetQuoteTotalAmount__c ,IMAGE(&quot;/resource/Icons/reddialogerror.png&quot;, &quot;Budget assigned false - too high&quot;),
+IMAGE(&quot;/resource/Icons/yellowerror.png&quot;, &quot;Budget assigned false - too low&quot;)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Budget Assignment - Light</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

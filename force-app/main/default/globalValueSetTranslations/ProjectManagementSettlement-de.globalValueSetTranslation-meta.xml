@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Allowance %</masterLabel>
+        <translation>Projektmanagementpauschale %</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>At Cost</masterLabel>
+        <translation>Nach Aufwand</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Flat Rate</masterLabel>
+        <translation>Fixpreis</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Special Deal</masterLabel>
+        <translation>Spezielle Abmachung</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

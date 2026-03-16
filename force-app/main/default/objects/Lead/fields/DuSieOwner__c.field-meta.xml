@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DuSieOwner__c</fullName>
+    <label>Du/Sie (Owner)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Du</fullName>
+                <default>false</default>
+                <label>Du</label>
+            </value>
+            <value>
+                <fullName>Sie</fullName>
+                <default>false</default>
+                <label>Sie</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EC008_Payment_Type_Company_Credit_Card</fullName>
+    <active>true</active>
+    <description>Must choose Company Credit Card if Payment Type = Company Credit Card.</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+RecordType.DeveloperName =&quot;Receipt&quot;, 
+ISPICKVAL( PaymentType__c ,&quot;CompanyCreditCard&quot;),
+ISBLANK( CreditCardResponsibleCompany__c )
+)</errorConditionFormula>
+    <errorDisplayField>CreditCardResponsibleCompany__c</errorDisplayField>
+    <errorMessage>Please choose the company credit card used for this expense.
+ (EC008)</errorMessage>
+</ValidationRule>

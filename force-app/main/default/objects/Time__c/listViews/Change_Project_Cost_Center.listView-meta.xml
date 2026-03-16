@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Change_Project_Cost_Center</fullName>
+    <columns>NAME</columns>
+    <columns>ProjectCostCenter__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ProjectNr__c</field>
+        <operation>equals</operation>
+        <value>P-106409</value>
+    </filters>
+    <filters>
+        <field>ProjectCostCenter__c</field>
+        <operation>notEqual</operation>
+        <value>Hotz Brand Consultants</value>
+    </filters>
+    <label>Change Project Cost Center</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_Skywalk_Data_Quality</group>
+    </sharedTo>
+</ListView>

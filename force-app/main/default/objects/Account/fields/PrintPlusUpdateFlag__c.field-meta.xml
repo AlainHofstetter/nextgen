@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PrintPlusUpdateFlag__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>14.12.2017, ary: Feld stammt noch aus der Zeit der ersten Phase mit Synchronisation PrintPlus und wird nicht mehr produktiv verwendet.</description>
+    <label>Print Plus Update Flag</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- CMS --></label>
+    <name>CMS__c</name>
+    <picklistValues>
+        <masterLabel>Drupal</masterLabel>
+        <translation><!-- Drupal --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kirby</masterLabel>
+        <translation><!-- Kirby --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Magnolia</masterLabel>
+        <translation><!-- Magnolia --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Qbrick/Kuhsaft</masterLabel>
+        <translation><!-- Qbrick/Kuhsaft --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sonstiges</masterLabel>
+        <translation><!-- Sonstiges --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Squarespace</masterLabel>
+        <translation><!-- Squarespace --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Typo3</masterLabel>
+        <translation><!-- Typo3 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wordpress</masterLabel>
+        <translation><!-- Wordpress --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>qBrick</masterLabel>
+        <translation><!-- qBrick --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

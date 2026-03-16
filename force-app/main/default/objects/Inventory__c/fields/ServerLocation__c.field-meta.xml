@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ServerLocation__c</fullName>
+    <label>Server Location</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Inhouse</fullName>
+                <default>false</default>
+                <label>Inhouse</label>
+            </value>
+            <value>
+                <fullName>iTrust</fullName>
+                <default>false</default>
+                <label>iTrust</label>
+            </value>
+            <value>
+                <fullName>WIDE</fullName>
+                <default>false</default>
+                <label>WIDE</label>
+            </value>
+            <value>
+                <fullName>extern</fullName>
+                <default>false</default>
+                <label>extern</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

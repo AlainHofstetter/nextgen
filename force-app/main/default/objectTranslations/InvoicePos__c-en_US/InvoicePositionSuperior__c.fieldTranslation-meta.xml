@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Invoice Position (Superior) --></label>
+    <name>InvoicePositionSuperior__c</name>
+    <relationshipLabel><!-- Invoice Pos --></relationshipLabel>
+</CustomFieldTranslation>

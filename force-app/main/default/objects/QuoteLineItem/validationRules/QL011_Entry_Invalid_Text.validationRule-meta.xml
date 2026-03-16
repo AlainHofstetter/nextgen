@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QL011_Entry_Invalid_Text</fullName>
+    <active>true</active>
+    <description>Does not allow to manually change the allowance due to %</description>
+    <errorConditionFormula>AND( 
+ISPICKVAL(ProductType__c,&quot;Text&quot;), 
+Intro__c=false, 
+Outro__c=false 
+)</errorConditionFormula>
+    <errorMessage>Product Text must be of Intro or Outro. 
+(QL011)</errorMessage>
+</ValidationRule>

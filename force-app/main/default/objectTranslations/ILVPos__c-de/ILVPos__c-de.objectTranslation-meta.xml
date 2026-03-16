@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value><!-- ILV Pos --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value><!-- ILV Pos --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value><!-- ILV Pos --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- ILV Pos --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value><!-- ILV Pos --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- ILV Pos --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value><!-- ILV Pos --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- ILV Pos --></value>
+    </caseValues>
+    <gender><!-- Neuter --></gender>
+    <layouts>
+        <layout>ILV Pos Layout</layout>
+        <sections>
+            <label>Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Beschreibung</label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label>Finanzcontrolling</label>
+            <section>Finance Controlling</section>
+        </sections>
+        <sections>
+            <label>Finanztransfer Information</label>
+            <section>Financial Transfer Information</section>
+        </sections>
+        <sections>
+            <label>ILV Position</label>
+            <section>ILV Position Detail</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- ILV Pos Nr. --></nameFieldLabel>
+    <validationRules>
+        <errorMessage>Die ILV Position kann nicht mehr verändert werden, weil die dazugehörende Rechnung nicht im Status &quot;Draft&quot; ist. Kontaktiere den Projekt Manager für Unterstützung. (ILV001)</errorMessage>
+        <name>ILV001_Position_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Eine ILV Position kann nicht an eine andere Rechnung angehängt werden. Bitte kontaktiere den Super User. (ILV002)</errorMessage>
+        <name>ILV002_ILV_POS_not_move</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Der Typ der Rechnungsposition ist nicht korrekt in Bezug auf das Leistungspaket. Bitte kontaktiere den Super User. (ILV003)</errorMessage>
+        <name>ILV003_ILV_Position_Package_Type</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT" description="Event template">
+	<aura:attribute name="lookupType" type="String"/>
+	<aura:attribute name="valueObject" type="Object"/>
+</aura:event>

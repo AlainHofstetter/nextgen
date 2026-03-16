@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HR_Ferien_Aktuelles_Jahresguthaben</fullName>
+    <columns>ProjectCostCenter__c</columns>
+    <columns>ProjectName__c</columns>
+    <columns>NAME</columns>
+    <columns>EmployeeVacationCredit__c</columns>
+    <columns>EmployeeVacationTotalHours__c</columns>
+    <columns>EmployeeVacationBalance__c</columns>
+    <columns>PackageDescription__c</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>StaffNr__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>equals</operation>
+        <value>Ferien</value>
+    </filters>
+    <filters>
+        <field>AbacusTimeType__c</field>
+        <operation>equals</operation>
+        <value>160</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Package__c.Time</value>
+    </filters>
+    <label>HR - Ferien - Aktuelles Jahresguthaben</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_HR_Alle</group>
+    </sharedTo>
+</ListView>

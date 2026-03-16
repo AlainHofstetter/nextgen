@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Project__c.PackagesProjectName__r.Time__r$DurationHhMmN__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Project__c.PackagesProjectName__r.Time__r$ServiceTotalTime__c</field>
+    </columns>
+    <currency>CHF</currency>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Project__c$Id</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Project__c.PackagesProjectName__r.Time__r$Package__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Project__c.PackagesProjectName__r$PackageNr__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Projects - Month Detail_P</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Projects_with_Services_with_Time__c</reportType>
+    <scope>user</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Project__c.PackagesProjectName__r.Time__r$DateFrom__c</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <description>Gmund Type Values as of 24.10.2014, might be extended later / ary</description>
+    <label>Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>End Customer</fullName>
+                <default>false</default>
+                <label>End Customer</label>
+            </value>
+            <value>
+                <fullName>Printer / Processor</fullName>
+                <default>false</default>
+                <label>Printer / Processor</label>
+            </value>
+            <value>
+                <fullName>Agency</fullName>
+                <default>false</default>
+                <label>Agency</label>
+            </value>
+            <value>
+                <fullName>Corporate Client</fullName>
+                <default>false</default>
+                <label>Corporate Client</label>
+            </value>
+            <value>
+                <fullName>Hotel</fullName>
+                <default>false</default>
+                <label>Hotel</label>
+            </value>
+            <value>
+                <fullName>Wholesaler</fullName>
+                <default>false</default>
+                <label>Wholesaler</label>
+            </value>
+            <value>
+                <fullName>Media Representative</fullName>
+                <default>false</default>
+                <label>Media Representative</label>
+            </value>
+            <value>
+                <fullName>Gmund internal</fullName>
+                <default>false</default>
+                <label>Gmund internal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

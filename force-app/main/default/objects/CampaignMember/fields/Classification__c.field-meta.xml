@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Classification__c</fullName>
+    <label>Classification</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Beta Tester A</fullName>
+                <default>false</default>
+                <label>Beta Tester A</label>
+            </value>
+            <value>
+                <fullName>Beta Tester B</fullName>
+                <default>false</default>
+                <label>Beta Tester B</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

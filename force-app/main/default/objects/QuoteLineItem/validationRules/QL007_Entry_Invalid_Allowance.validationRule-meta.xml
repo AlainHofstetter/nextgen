@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QL007_Entry_Invalid_Allowance</fullName>
+    <active>true</active>
+    <description>Checks for valid product combination data.</description>
+    <errorConditionFormula>AND( 
+ProjectManagementAllowancePackage__c =true, 
+ExpenseAllowancePackage__c =true 
+)</errorConditionFormula>
+    <errorMessage>Product can not be Project Management Allowance and Expense Allowance. 
+(QL007)</errorMessage>
+</ValidationRule>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>1/3 Invoice Cycle</masterLabel>
+        <translation>Drittelszahlungen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Monthly Invoice</masterLabel>
+        <translation>Monatliche Teilrechnungen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Prepaid Invoice</masterLabel>
+        <translation>Vorauszahlung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Quarterly</masterLabel>
+        <translation>Quartalszahlung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Special Deal</masterLabel>
+        <translation>Spezialvereinbarung</translation>
+    </valueTranslation>
+</GlobalValueSetTranslation>

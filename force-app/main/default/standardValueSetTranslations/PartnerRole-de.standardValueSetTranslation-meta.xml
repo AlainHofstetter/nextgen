@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Agency</masterLabel>
+        <translation>Agentur</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Consultancy</masterLabel>
+        <translation>Unternehmensberatung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Customer</masterLabel>
+        <translation>Kunde</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Manufacturer</masterLabel>
+        <translation>Hersteller</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Other</masterLabel>
+        <translation>Andere</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Partner</masterLabel>
+        <translation>Partner</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

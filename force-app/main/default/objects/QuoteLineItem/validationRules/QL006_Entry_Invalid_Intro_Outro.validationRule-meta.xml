@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QL006_Entry_Invalid_Intro_Outro</fullName>
+    <active>true</active>
+    <description>Checks for valid product combination data.</description>
+    <errorConditionFormula>AND( 
+Intro__c=true, 
+Outro__c=true 
+)</errorConditionFormula>
+    <errorMessage>Product can not be of Type Intro and Outro. 
+(QL006)</errorMessage>
+</ValidationRule>

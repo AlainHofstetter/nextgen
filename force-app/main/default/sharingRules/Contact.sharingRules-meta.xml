@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>HR_for_internal_contacts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>HR for internal contacts</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>HR</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Internal Contact</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Share_all</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share all</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BLC</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>BLC</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

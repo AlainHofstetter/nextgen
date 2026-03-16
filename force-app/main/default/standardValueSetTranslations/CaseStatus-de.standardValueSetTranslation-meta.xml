@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Closed</masterLabel>
+        <translation>Geschlossen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Forwarded 2nd Level</masterLabel>
+        <translation>Weitergeleitet an 2. Level</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Forwarded 3rd Level</masterLabel>
+        <translation>Weitergeleitet an 3. Level</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Forwarded 4rd Level</masterLabel>
+        <translation><!-- Forwarded 4rd Level --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>In Progress</masterLabel>
+        <translation>Akzeptiert</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>New</masterLabel>
+        <translation>Neu</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>On Hold</masterLabel>
+        <translation>Zurückgestellt</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Re-Opened</masterLabel>
+        <translation>Wieder geöffnet</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Rejected</masterLabel>
+        <translation>Zurückgewiesen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Waiting on Customer</masterLabel>
+        <translation>Warten auf Kunde</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

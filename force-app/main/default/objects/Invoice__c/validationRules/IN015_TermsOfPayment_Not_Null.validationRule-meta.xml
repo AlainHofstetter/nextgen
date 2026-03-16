@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IN015_TermsOfPayment_Not_Null</fullName>
+    <active>true</active>
+    <description>Terms of Payment can not be empty.</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true ,
+ISPICKVAL( TermsOfPayment2__c ,&quot;&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>TermsOfPayment2__c</errorDisplayField>
+    <errorMessage>You need to select the terms of payment. 
+(IN015)</errorMessage>
+</ValidationRule>

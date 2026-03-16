@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValAccountDebtorTrue__c</fullName>
+    <description>Dieses Flag löst einen Meta Daten Parent Update aus
+        (https://brandleadership.my.salesforce.com/m00b0000000fxzO) und setzt auf dem Invoice
+        Receiver = Acocunt das Flag Debtor auf true. Dies wiederum löst den Prozess aus, auf dem
+        Abacus interface einen Task für Talend zu erstellen.</description>
+    <formula>AND(
+        NOT(ISBLANK( InvoiceReceiver__c )),
+        OR(
+        ISPICKVAL( InvoiceStatus__c ,&quot;Ready&quot;),
+        ISPICKVAL( InvoiceStatus__c ,&quot;Sent&quot;)
+        )
+        )</formula>
+    <label>ValAccountDebtorTrue</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

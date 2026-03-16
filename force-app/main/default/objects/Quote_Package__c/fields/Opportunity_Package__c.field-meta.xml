@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Package__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Opportunity Package</label>
+    <referenceTo>OpportunityPackage__c</referenceTo>
+    <relationshipLabel>Quote Packages</relationshipLabel>
+    <relationshipName>Quote_Packages</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

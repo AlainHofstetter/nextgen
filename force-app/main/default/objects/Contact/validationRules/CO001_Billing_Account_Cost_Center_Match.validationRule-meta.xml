@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CO001_Billing_Account_Cost_Center_Match</fullName>
+    <active>true</active>
+    <description>Contact Cost Center must match Account Cost Center</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+ NOT( AccountId = &quot;001b000000Pq6Jn&quot;),
+ RecordType.DeveloperName =&quot;InternalContact&quot;,
+CostCenter__r.LegalAccount__r.Id &lt;&gt;  Account.Id
+)</errorConditionFormula>
+    <errorDisplayField>CostCenter__c</errorDisplayField>
+    <errorMessage>The Internal Account &amp; the selected Cost Center do not match. 
+(CO001)</errorMessage>
+</ValidationRule>

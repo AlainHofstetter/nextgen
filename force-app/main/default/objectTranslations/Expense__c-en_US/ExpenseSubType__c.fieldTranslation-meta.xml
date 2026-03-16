@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Expense Sub-Type --></label>
+    <name>ExpenseSubType__c</name>
+    <picklistValues>
+        <masterLabel>Accomodation</masterLabel>
+        <translation>Accomodation</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Airplane</masterLabel>
+        <translation>Airplane</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Car (Company)</masterLabel>
+        <translation>Car (Company)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Car (Private)</masterLabel>
+        <translation>Car (Private)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Car (Rental)</masterLabel>
+        <translation>Car (Rental)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Food</masterLabel>
+        <translation>Food</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Material</masterLabel>
+        <translation>Material</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation>Other</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Public Transportation</masterLabel>
+        <translation>Public Transportation</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Taxi</masterLabel>
+        <translation>Taxi</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IN006_Status_Cancellation</fullName>
+    <active>true</active>
+    <description>The Invoice can only be set to Cancellation from Status &quot;Sent to Abacus&quot;</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+RecordType.DeveloperName =&quot;Cancellation&quot;,
+NOT(ISPICKVAL(  CancellationInvoiceRelation__r.InvoiceStatus__c  ,&quot;Sent&quot;)),
+NOT(ISPICKVAL(  CancellationInvoiceRelation__r.InvoiceStatus__c  ,&quot;Ready&quot;))
+
+)</errorConditionFormula>
+    <errorMessage>You can not set the invoice type to cancellation since the invoice has not been sent to Abacus. Please get in touch with Finance for assistance.
+(IN006)</errorMessage>
+</ValidationRule>

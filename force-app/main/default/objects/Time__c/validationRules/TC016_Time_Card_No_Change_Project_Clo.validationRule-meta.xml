@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TC016_Time_Card_No_Change_Project_Clo</fullName>
+    <active>true</active>
+    <description>The Time Card can not be changed.</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+$User.IsHRManager__c =false,
+NOT(ISPICKVAL( ProjectName__r.ProjectStatus__c , &quot;Open&quot;)))</errorConditionFormula>
+    <errorMessage>You are not allowed to create or change a Time Card since the Project is closed for time tracking. Please contact the Project Manager for assistance. 
+(TC016)</errorMessage>
+</ValidationRule>

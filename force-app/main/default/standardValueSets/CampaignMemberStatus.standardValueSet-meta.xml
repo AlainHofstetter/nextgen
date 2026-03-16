@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>true</sorted>
+    <standardValue>
+        <fullName>????</fullName>
+        <default>false</default>
+        <label>????</label>
+    </standardValue>
+    <standardValue>
+        <fullName>&quot;told&quot;</fullName>
+        <default>false</default>
+        <label>&quot;told&quot;</label>
+    </standardValue>
+    <standardValue>
+        <fullName>(naja)</fullName>
+        <default>false</default>
+        <label>(naja)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>*ok</fullName>
+        <default>false</default>
+        <label>*ok</label>
+    </standardValue>
+    <standardValue>
+        <fullName>+ tja</fullName>
+        <default>false</default>
+        <label>+ tja</label>
+    </standardValue>
+    <standardValue>
+        <fullName>0. Potential</fullName>
+        <default>false</default>
+        <label>0. Potential</label>
+    </standardValue>
+    <standardValue>
+        <fullName>0A. Potential</fullName>
+        <default>false</default>
+        <label>0A. Potential</label>
+    </standardValue>
+    <standardValue>
+        <fullName>0B. Potential</fullName>
+        <default>false</default>
+        <label>0B. Potential</label>
+    </standardValue>
+    <standardValue>
+        <fullName>0C. Potential</fullName>
+        <default>false</default>
+        <label>0C. Potential</label>
+    </standardValue>
+    <standardValue>
+        <fullName>1. First Contact</fullName>
+        <default>false</default>
+        <label>1. First Contact</label>
+    </standardValue>
+    <standardValue>
+        <fullName>1. Kontakt aufnehmen</fullName>
+        <default>false</default>
+        <label>1. Kontakt aufnehmen</label>
+    </standardValue>
+    <standardValue>
+        <fullName>1. Meeting</fullName>
+        <default>false</default>
+        <label>1. Meeting</label>
+    </standardValue>
+    <standardValue>
+        <fullName>1a. Kontaktieren durch BLC</fullName>
+        <default>false</default>
+        <label>1a. Kontaktieren durch BLC</label>
+    </standardValue>
+    <standardValue>
+        <fullName>1b. Kontaktieren</fullName>
+        <default>false</default>
+        <label>1b. Kontaktieren</label>
+    </standardValue>
+    <standardValue>
+        <fullName>2. Material schicken</fullName>
+        <default>false</default>
+        <label>2. Material schicken</label>
+    </standardValue>
+    <standardValue>
+        <fullName>2. Material sent</fullName>
+        <default>false</default>
+        <label>2. Material sent</label>
+    </standardValue>
+    <standardValue>
+        <fullName>3. Follow-up</fullName>
+        <default>false</default>
+        <label>3. Follow-up</label>
+    </standardValue>
+    <standardValue>
+        <fullName>3. Nachfragen</fullName>
+        <default>false</default>
+        <label>3. Nachfragen</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Abgelehnt</fullName>
+        <default>false</default>
+        <label>Abgelehnt</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Abgemeldet</fullName>
+        <default>false</default>
+        <label>Abgemeldet</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Abgesagt</fullName>
+        <default>false</default>
+        <label>Abgesagt</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aborted</fullName>
+        <default>false</default>
+        <label>Aborted</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Absage</fullName>
+        <default>false</default>
+        <label>Absage</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Accepted</fullName>
+        <default>false</default>
+        <label>Accepted</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Accepted invitation</fullName>
+        <default>false</default>
+        <label>Accepted invitation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Accepted terms for pilot phase</fullName>
+        <default>false</default>
+        <label>Accepted terms for pilot phase</label>
+    </standardValue>
+    <standardValue>
+        <fullName>alles</fullName>
+        <default>false</default>
+        <label>alles</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Angemeldet</fullName>
+        <default>false</default>
+        <label>Angemeldet</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Angemeldet attended</fullName>
+        <default>false</default>
+        <label>Angemeldet attended</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Angemeldet no show</fullName>
+        <default>false</default>
+        <label>Angemeldet no show</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Attended</fullName>
+        <default>false</default>
+        <label>Attended</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Bereits besucht</fullName>
+        <default>false</default>
+        <label>Bereits besucht</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Besuchen</fullName>
+        <default>false</default>
+        <label>Besuchen</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Called</fullName>
+        <default>false</default>
+        <label>Called</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Certain Potential</fullName>
+        <default>false</default>
+        <label>Certain Potential</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed Lost</fullName>
+        <default>false</default>
+        <label>Closed Lost</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed Won</fullName>
+        <default>false</default>
+        <label>Closed Won</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Cold</fullName>
+        <default>false</default>
+        <label>Cold</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Contacted</fullName>
+        <default>false</default>
+        <label>Contacted</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Contacted - follow up</fullName>
+        <default>false</default>
+        <label>Contacted - follow up</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Contacted - no interest</fullName>
+        <default>false</default>
+        <label>Contacted - no interest</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Contacted - not reached</fullName>
+        <default>false</default>
+        <label>Contacted - not reached</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Contacted - visit</fullName>
+        <default>false</default>
+        <label>Contacted - visit</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Deceased</fullName>
+        <default>false</default>
+        <label>Deceased</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Declined</fullName>
+        <default>false</default>
+        <label>Declined</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Declined terms for pilot phase</fullName>
+        <default>false</default>
+        <label>Declined terms for pilot phase</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Delivered personally</fullName>
+        <default>false</default>
+        <label>Delivered personally</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Design Draft Sent</fullName>
+        <default>false</default>
+        <label>Design Draft Sent</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Do Follow-up at end of year</fullName>
+        <default>false</default>
+        <label>Do Follow-up at end of year</label>
+    </standardValue>
+    <standardValue>
+        <fullName>du</fullName>
+        <default>false</default>
+        <label>du</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Einfach erschienen</fullName>
+        <default>false</default>
+        <label>Einfach erschienen</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Eingeladen</fullName>
+        <default>false</default>
+        <label>Eingeladen</label>
+    </standardValue>
+    <standardValue>
+        <fullName>E-Mail Sent</fullName>
+        <default>false</default>
+        <label>E-Mail Sent</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Employed</fullName>
+        <default>false</default>
+        <label>Employed</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Erfasst</fullName>
+        <default>false</default>
+        <label>Erfasst</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Erhält Kompendium</fullName>
+        <default>false</default>
+        <label>Erhält Kompendium</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Evaluation HR</fullName>
+        <default>false</default>
+        <label>Evaluation HR</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Evaluation MD</fullName>
+        <default>false</default>
+        <label>Evaluation MD</label>
+    </standardValue>
+    <standardValue>
+        <fullName>extra - ja</fullName>
+        <default>false</default>
+        <label>extra - ja</label>
+    </standardValue>
+    <standardValue>
+        <fullName>First Visit</fullName>
+        <default>false</default>
+        <label>First Visit</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Follow up</fullName>
+        <default>false</default>
+        <label>Follow up</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Follow-up at end of year</fullName>
+        <default>false</default>
+        <label>Follow-up at end of year</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Follow-Up Call</fullName>
+        <default>false</default>
+        <label>Follow-Up Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Follow-up done</fullName>
+        <default>false</default>
+        <label>Follow-up done</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Follow-up scheduled</fullName>
+        <default>false</default>
+        <label>Follow-up scheduled</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Geantwortet</fullName>
+        <default>false</default>
+        <label>Geantwortet</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Geplant</fullName>
+        <default>false</default>
+        <label>Geplant</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Gesendet</fullName>
+        <default>false</default>
+        <label>Gesendet</label>
+    </standardValue>
+    <standardValue>
+        <fullName>getroffen</fullName>
+        <default>false</default>
+        <label>getroffen</label>
+    </standardValue>
+    <standardValue>
+        <fullName>High Potential</fullName>
+        <default>false</default>
+        <label>High Potential</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Hinzugefügt</fullName>
+        <default>false</default>
+        <label>Hinzugefügt</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Ich</fullName>
+        <default>false</default>
+        <label>Ich</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Identified</fullName>
+        <default>false</default>
+        <label>Identified</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Infomail nach Event</fullName>
+        <default>false</default>
+        <label>Infomail nach Event</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Infomail vor Event</fullName>
+        <default>false</default>
+        <label>Infomail vor Event</label>
+    </standardValue>
+    <standardValue>
+        <fullName>In Progress</fullName>
+        <default>false</default>
+        <label>In Progress</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Interessiert</fullName>
+        <default>false</default>
+        <label>Interessiert</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Interested</fullName>
+        <default>false</default>
+        <label>Interested</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Interested - Visit</fullName>
+        <default>false</default>
+        <label>Interested - Visit</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Interesting</fullName>
+        <default>false</default>
+        <label>Interesting</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Interviewed and closed</fullName>
+        <default>false</default>
+        <label>Interviewed and closed</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Interview scheduled</fullName>
+        <default>false</default>
+        <label>Interview scheduled</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invitation Card Sent</fullName>
+        <default>false</default>
+        <label>Invitation Card Sent</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invitation Mail</fullName>
+        <default>false</default>
+        <label>Invitation Mail</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invitation sent</fullName>
+        <default>false</default>
+        <label>Invitation sent</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invited</fullName>
+        <default>false</default>
+        <label>Invited</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invited 1st Interview</fullName>
+        <default>false</default>
+        <label>Invited 1st Interview</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invited 2nd Interview</fullName>
+        <default>false</default>
+        <label>Invited 2nd Interview</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invited 3rd Interview</fullName>
+        <default>false</default>
+        <label>Invited 3rd Interview</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invited to workshop</fullName>
+        <default>false</default>
+        <label>Invited to workshop</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Keep informed</fullName>
+        <default>false</default>
+        <label>Keep informed</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Keep me posted</fullName>
+        <default>false</default>
+        <label>Keep me posted</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Keine Antwort</fullName>
+        <default>false</default>
+        <label>Keine Antwort</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Kein Interesse</fullName>
+        <default>false</default>
+        <label>Kein Interesse</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Kontaktiert</fullName>
+        <default>false</default>
+        <label>Kontaktiert</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Kontaktiert / nochmals nachfassen</fullName>
+        <default>false</default>
+        <label>Kontaktiert / nochmals nachfassen</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Lettered</fullName>
+        <default>false</default>
+        <label>Lettered</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Mail gesendet</fullName>
+        <default>false</default>
+        <label>Mail gesendet</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Mailing received</fullName>
+        <default>false</default>
+        <label>Mailing received</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Mailing Sent</fullName>
+        <default>false</default>
+        <label>Mailing Sent</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Meeting</fullName>
+        <default>false</default>
+        <label>Meeting</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Meeting durchgeführt</fullName>
+        <default>false</default>
+        <label>Meeting durchgeführt</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Meeting Scheduled</fullName>
+        <default>false</default>
+        <label>Meeting Scheduled</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Meeting vereinbart</fullName>
+        <default>false</default>
+        <label>Meeting vereinbart</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Met at R. Event</fullName>
+        <default>false</default>
+        <label>Met at R. Event</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Nachgefasst</fullName>
+        <default>false</default>
+        <label>Nachgefasst</label>
+    </standardValue>
+    <standardValue>
+        <fullName>New</fullName>
+        <default>false</default>
+        <label>New</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Nicht gesendet</fullName>
+        <default>false</default>
+        <label>Nicht gesendet</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Nicht interessiert</fullName>
+        <default>false</default>
+        <label>Nicht interessiert</label>
+    </standardValue>
+    <standardValue>
+        <fullName>noch kontaktieren</fullName>
+        <default>false</default>
+        <label>noch kontaktieren</label>
+    </standardValue>
+    <standardValue>
+        <fullName>No Interest</fullName>
+        <default>false</default>
+        <label>No Interest</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NO LETTER</fullName>
+        <default>false</default>
+        <label>NO LETTER</label>
+    </standardValue>
+    <standardValue>
+        <fullName>No show</fullName>
+        <default>false</default>
+        <label>No show</label>
+    </standardValue>
+    <standardValue>
+        <fullName>No-show</fullName>
+        <default>false</default>
+        <label>No-show</label>
+    </standardValue>
+    <standardValue>
+        <fullName>not available</fullName>
+        <default>false</default>
+        <label>not available</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Not Contacted</fullName>
+        <default>false</default>
+        <label>Not Contacted</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Not Interested</fullName>
+        <default>false</default>
+        <label>Not Interested</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Not-Interesting</fullName>
+        <default>false</default>
+        <label>Not-Interesting</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Not reachable</fullName>
+        <default>false</default>
+        <label>Not reachable</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Not responded</fullName>
+        <default>false</default>
+        <label>Not responded</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Not sent</fullName>
+        <default>false</default>
+        <label>Not sent</label>
+    </standardValue>
+    <standardValue>
+        <fullName>on hold</fullName>
+        <default>false</default>
+        <label>on hold</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Open</fullName>
+        <default>false</default>
+        <label>Open</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Ordered</fullName>
+        <default>false</default>
+        <label>Ordered</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Package shipped</fullName>
+        <default>false</default>
+        <label>Package shipped</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Participated</fullName>
+        <default>false</default>
+        <label>Participated</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Participated in workshop</fullName>
+        <default>false</default>
+        <label>Participated in workshop</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Pers. Contacted (Phone/Meeting)</fullName>
+        <default>false</default>
+        <label>Pers. Contacted (Phone/Meeting)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Planned</fullName>
+        <default>false</default>
+        <label>Planned</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Planned for Invitation</fullName>
+        <default>false</default>
+        <label>Planned for Invitation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Planned for Mailing</fullName>
+        <default>false</default>
+        <label>Planned for Mailing</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Planned for Subscription</fullName>
+        <default>false</default>
+        <label>Planned for Subscription</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Planned for Visit</fullName>
+        <default>false</default>
+        <label>Planned for Visit</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Project identified</fullName>
+        <default>false</default>
+        <label>Project identified</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Projects Realized</fullName>
+        <default>false</default>
+        <label>Projects Realized</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Projekt erhalten</fullName>
+        <default>false</default>
+        <label>Projekt erhalten</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Proposal Requested</fullName>
+        <default>false</default>
+        <label>Proposal Requested</label>
+    </standardValue>
+    <standardValue>
+        <fullName>QUalified</fullName>
+        <default>false</default>
+        <label>QUalified</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Ready for delivery</fullName>
+        <default>false</default>
+        <label>Ready for delivery</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Ready for Mailing</fullName>
+        <default>false</default>
+        <label>Ready for Mailing</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Ready for shipment</fullName>
+        <default>false</default>
+        <label>Ready for shipment</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Received</fullName>
+        <default>false</default>
+        <label>Received</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Received - Confirmation Sent</fullName>
+        <default>false</default>
+        <label>Received - Confirmation Sent</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Refused by BLC</fullName>
+        <default>false</default>
+        <label>Refused by BLC</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Refused by Candidate</fullName>
+        <default>false</default>
+        <label>Refused by Candidate</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Registered</fullName>
+        <default>false</default>
+        <label>Registered</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Rejected</fullName>
+        <default>false</default>
+        <label>Rejected</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Reminded</fullName>
+        <default>false</default>
+        <label>Reminded</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Responded</fullName>
+        <default>false</default>
+        <label>Responded</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Responded - Change of Address</fullName>
+        <default>false</default>
+        <label>Responded - Change of Address</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Responded - Competition</fullName>
+        <default>false</default>
+        <label>Responded - Competition</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Responded - Returned</fullName>
+        <default>false</default>
+        <label>Responded - Returned</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Responded - Visit</fullName>
+        <default>false</default>
+        <label>Responded - Visit</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Retired</fullName>
+        <default>false</default>
+        <label>Retired</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Save the date sent</fullName>
+        <default>false</default>
+        <label>Save the date sent</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Save-the-Date Sent</fullName>
+        <default>false</default>
+        <label>Save-the-Date Sent</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Sent</fullName>
+        <default>false</default>
+        <label>Sent</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Subscribed</fullName>
+        <default>false</default>
+        <label>Subscribed</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Targets</fullName>
+        <default>false</default>
+        <label>Targets</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Teilgenommen</fullName>
+        <default>false</default>
+        <label>Teilgenommen</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Teilnahme</fullName>
+        <default>false</default>
+        <label>Teilnahme</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Telephone Interview</fullName>
+        <default>false</default>
+        <label>Telephone Interview</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Test &amp; so</fullName>
+        <default>false</default>
+        <label>Test &amp; so</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Testing</fullName>
+        <default>false</default>
+        <label>Testing</label>
+    </standardValue>
+    <standardValue>
+        <fullName>To Contact</fullName>
+        <default>false</default>
+        <label>To Contact</label>
+    </standardValue>
+    <standardValue>
+        <fullName>To Validate</fullName>
+        <default>false</default>
+        <label>To Validate</label>
+    </standardValue>
+    <standardValue>
+        <fullName>undesired</fullName>
+        <default>false</default>
+        <label>undesired</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Unqualified</fullName>
+        <default>false</default>
+        <label>Unqualified</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Unsubscribed</fullName>
+        <default>false</default>
+        <label>Unsubscribed</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Unterlagen senden</fullName>
+        <default>false</default>
+        <label>Unterlagen senden</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Unvollständig</fullName>
+        <default>false</default>
+        <label>Unvollständig</label>
+    </standardValue>
+    <standardValue>
+        <fullName>USE PRIVAT ADDRESS</fullName>
+        <default>false</default>
+        <label>USE PRIVAT ADDRESS</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Verschickt</fullName>
+        <default>false</default>
+        <label>Verschickt</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Visit Booth</fullName>
+        <default>false</default>
+        <label>Visit Booth</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Vorgesehen</fullName>
+        <default>false</default>
+        <label>Vorgesehen</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Weiss es noch nicht</fullName>
+        <default>false</default>
+        <label>Weiss es noch nicht</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Xb intrested</fullName>
+        <default>false</default>
+        <label>Xb intrested</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Zugesagt</fullName>
+        <default>false</default>
+        <label>Zugesagt</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Zusage</fullName>
+        <default>false</default>
+        <label>Zusage</label>
+    </standardValue>
+</StandardValueSet>

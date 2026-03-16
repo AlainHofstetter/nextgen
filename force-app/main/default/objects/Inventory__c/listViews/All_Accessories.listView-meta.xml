@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Accessories</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Condition__c</columns>
+    <columns>Description__c</columns>
+    <columns>Distributor__c</columns>
+    <columns>User__c</columns>
+    <columns>HandoutDate__c</columns>
+    <columns>ReturnedDate__c</columns>
+    <columns>SerialNr__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Inventory__c.Accessories</value>
+    </filters>
+    <label>All Accessories</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_IT_Alle</group>
+    </sharedTo>
+</ListView>

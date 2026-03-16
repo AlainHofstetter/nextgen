@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Grund Gewonnen/Verloren</label>
+    <name>ReasonWonLost__c</name>
+    <picklistValues>
+        <masterLabel>Experience</masterLabel>
+        <translation><!-- Experience --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Network</masterLabel>
+        <translation><!-- Network --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Decision</masterLabel>
+        <translation><!-- No Decision --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Price</masterLabel>
+        <translation><!-- Price --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reference</masterLabel>
+        <translation><!-- Reference --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Resource availability</masterLabel>
+        <translation><!-- Resource availability --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Skills</masterLabel>
+        <translation><!-- Skills --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

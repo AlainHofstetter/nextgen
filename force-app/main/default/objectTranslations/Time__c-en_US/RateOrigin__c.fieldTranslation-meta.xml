@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Rate Origin --></label>
+    <name>RateOrigin__c</name>
+    <picklistValues>
+        <masterLabel>Employee Specific Rate</masterLabel>
+        <translation>Employee Specific Rate</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Package Rate</masterLabel>
+        <translation>Package Rate</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PA001_RecordType_Group_Level_1</fullName>
+    <active>true</active>
+    <description>Record Type &quot;Group&quot; only allowed on Level 1</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+RecordType.DeveloperName =&quot;Group&quot;,
+NOT(ISBLANK( PackageSuperior__c ))
+)</errorConditionFormula>
+    <errorMessage>Level 2 Packages can not be of Type &quot;Group&quot;. Please contact your Super User for assistance.
+(PA001)</errorMessage>
+</ValidationRule>

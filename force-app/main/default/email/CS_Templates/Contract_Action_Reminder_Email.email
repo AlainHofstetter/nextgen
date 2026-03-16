@@ -1,0 +1,16 @@
+Der folgende Vertrag hat eine bevorstehende Aktion:
+
+{!Contract__c.ContractName__c}
+Kunde: {!Contract__c.ContractPartnerExternal__c}
+
+Aktion
+{!Contract__c.RemarksContractAction__c}
+
+
+{!Contract__c.Name}
+{!Contract__c.Link}
+
+
+--- 
+This Email has been sent by Salesforce, do not reply. 
+(Template: 00Xb0000001EVKo)

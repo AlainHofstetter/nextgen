@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Brochures_sent__c</fullName>
+    <label>Brochures sent</label>
+    <required>false</required>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>MPS Publication</fullName>
+                <default>false</default>
+                <label>MPS Publication</label>
+            </value>
+            <value>
+                <fullName>GateB - Image Brochure (A4)</fullName>
+                <default>false</default>
+                <label>GateB - Image Brochure (A4)</label>
+            </value>
+            <value>
+                <fullName>Marketing Performance Check (A4)</fullName>
+                <default>false</default>
+                <label>Marketing Performance Check (A4)</label>
+            </value>
+            <value>
+                <fullName>CS - Migros/Einkauf (A5)</fullName>
+                <default>false</default>
+                <label>CS - Migros/Einkauf (A5)</label>
+            </value>
+            <value>
+                <fullName>CS - Migros/Einkauf-Detail (A5, 18 S.)</fullName>
+                <default>false</default>
+                <label>CS - Migros/Einkauf-Detail (A5, 18 S.)</label>
+            </value>
+            <value>
+                <fullName>CS -  Bayer/BM Brand-Portal (A5)</fullName>
+                <default>false</default>
+                <label>CS -  Bayer/BM Brand-Portal (A5)</label>
+            </value>
+            <value>
+                <fullName>CS -  Franke/BM Marketing-Portal (A5)</fullName>
+                <default>false</default>
+                <label>CS -  Franke/BM Marketing-Portal (A5)</label>
+            </value>
+            <value>
+                <fullName>CS -  Nationale/BM Marketing-Portal (A5)</fullName>
+                <default>false</default>
+                <label>CS -  Nationale/BM Marketing-Portal (A5)</label>
+            </value>
+            <value>
+                <fullName>CS -  Oerlikon/Censhare (A5)</fullName>
+                <default>false</default>
+                <label>CS -  Oerlikon/Censhare (A5)</label>
+            </value>
+            <value>
+                <fullName>CS - Amag (A5)</fullName>
+                <default>false</default>
+                <label>CS - Amag (A5)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>8</visibleLines>
+</CustomField>

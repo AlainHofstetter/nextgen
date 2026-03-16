@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Status --></label>
+    <name>Status__c</name>
+    <picklistValues>
+        <masterLabel>Finished - No Errors</masterLabel>
+        <translation><!-- Finished - No Errors --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Finished - With Errors</masterLabel>
+        <translation><!-- Finished - With Errors --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Prepared</masterLabel>
+        <translation><!-- Prepared --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Queued</masterLabel>
+        <translation><!-- Queued --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

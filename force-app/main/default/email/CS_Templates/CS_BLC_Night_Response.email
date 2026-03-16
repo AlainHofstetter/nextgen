@@ -1,0 +1,14 @@
+Customer Name: {!CampaignMember.Contact}
+Account: {!CampaignMember.CompanyOrAccount}
+Response: {!CampaignMember.Status}
+
+With Companion: {!CampaignMember.WithCompanion__c}
+Companion Name: {!CampaignMember.CompanionNames__c}
+
+Comment: {!CampaignMember.Comment__c}
+
+Direct Link to Member: {!CampaignMember.Link}
+
+---
+This Email has been sent by Salesforce, do not reply.
+(Template: 00Xb0000000ygWt)

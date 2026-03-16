@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Web_Projekte_mit_SLA</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Projektname__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>SLAVorhanden__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SLAVorhanden__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>All Web-Projekte mit SLA</label>
+    <language>en_US</language>
+</ListView>

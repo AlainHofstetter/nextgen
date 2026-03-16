@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X900_Inactive_Account_Manager</fullName>
+    <columns>Account__c</columns>
+    <columns>NAME</columns>
+    <columns>AccountManager__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ZInactiveAccountManager__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>900 - Inactive Account Manager</label>
+    <language>en_US</language>
+    <sharedTo></sharedTo>
+</ListView>

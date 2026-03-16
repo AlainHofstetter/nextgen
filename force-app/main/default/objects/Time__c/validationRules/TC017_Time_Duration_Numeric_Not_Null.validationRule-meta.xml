@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TC017_Time_Duration_Numeric_Not_Null</fullName>
+    <active>true</active>
+    <description>Time Duration Numeric can not be null</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+ISNULL(DurationHhMmN__c)
+)</errorConditionFormula>
+    <errorDisplayField>DurationHhMmN__c</errorDisplayField>
+    <errorMessage>Duration can not be empty.
+(TC017)</errorMessage>
+</ValidationRule>

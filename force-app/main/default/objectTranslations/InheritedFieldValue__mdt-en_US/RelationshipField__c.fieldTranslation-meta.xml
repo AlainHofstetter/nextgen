@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>
+        <!-- Lockup to field which defines the relation between Source and Target Object. 
+Hint: As the you can use a relation like &quot;ProjectName__r.BillingViaCompany__c&quot; it is possible to have a relation more then one level deep. -->
+    </help>
+    <label><!-- RelationshipField --></label>
+    <name>RelationshipField__c</name>
+    <relationshipLabel><!-- Inherited field values (RelationshipField) --></relationshipLabel>
+</CustomFieldTranslation>

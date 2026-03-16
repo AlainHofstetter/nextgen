@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PS480FunctionValidationRulesActive__c</fullName>
+    <defaultValue>true</defaultValue>
+    <inlineHelpText>If checked, Validation Rules are active. If unchecked, Validation Rules are not considered.</inlineHelpText>
+    <label>PS480 - Function Validation Rules Active</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

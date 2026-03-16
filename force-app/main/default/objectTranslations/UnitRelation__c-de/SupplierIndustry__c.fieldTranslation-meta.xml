@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Lieferant - Industrie</label>
+    <name>SupplierIndustry__c</name>
+    <picklistValues>
+        <masterLabel>3D Visualisierungen</masterLabel>
+        <translation><!-- 3D Visualisierungen --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Aufnahmeleitung</masterLabel>
+        <translation><!-- Aufnahmeleitung --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ausstatter</masterLabel>
+        <translation><!-- Ausstatter --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Beleuchter</masterLabel>
+        <translation><!-- Beleuchter --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Brennen/Drucken – CD/DVD</masterLabel>
+        <translation><!-- Brennen/Drucken – CD/DVD --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Digitalisierung Filmmaterial</masterLabel>
+        <translation><!-- Digitalisierung Filmmaterial --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Drehbuchautor</masterLabel>
+        <translation><!-- Drehbuchautor --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Druck</masterLabel>
+        <translation><!-- Druck --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Editor</masterLabel>
+        <translation><!-- Editor --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Equipment Verleih</masterLabel>
+        <translation><!-- Equipment Verleih --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Flugobjekte</masterLabel>
+        <translation><!-- Flugobjekte --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Grading</masterLabel>
+        <translation><!-- Grading --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kamera Assistenz</masterLabel>
+        <translation><!-- Kamera Assistenz --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kameramann</masterLabel>
+        <translation><!-- Kameramann --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Licht Assistenz</masterLabel>
+        <translation><!-- Licht Assistenz --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Maske</masterLabel>
+        <translation><!-- Maske --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Materialhersteller</masterLabel>
+        <translation><!-- Materialhersteller --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Motion Designer</masterLabel>
+        <translation><!-- Motion Designer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Packaging</masterLabel>
+        <translation><!-- Packaging --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Papierhandel</masterLabel>
+        <translation><!-- Papierhandel --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Papierhersteller</masterLabel>
+        <translation><!-- Papierhersteller --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Produktionsleitung</masterLabel>
+        <translation><!-- Produktionsleitung --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Regie/Realisation</masterLabel>
+        <translation><!-- Regie/Realisation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Requisiteur</masterLabel>
+        <translation><!-- Requisiteur --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Runner</masterLabel>
+        <translation><!-- Runner --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Schauspieler</masterLabel>
+        <translation><!-- Schauspieler --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sound Engineers</masterLabel>
+        <translation><!-- Sound Engineers --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sprecher</masterLabel>
+        <translation><!-- Sprecher --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Storyboard</masterLabel>
+        <translation><!-- Storyboard --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Stuntman</masterLabel>
+        <translation><!-- Stuntman --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Stylist</masterLabel>
+        <translation><!-- Stylist --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ton</masterLabel>
+        <translation><!-- Ton --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Veredelung</masterLabel>
+        <translation><!-- Veredelung --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Werkzeughersteller</masterLabel>
+        <translation><!-- Werkzeughersteller --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Übersetzer</masterLabel>
+        <translation><!-- Übersetzer --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

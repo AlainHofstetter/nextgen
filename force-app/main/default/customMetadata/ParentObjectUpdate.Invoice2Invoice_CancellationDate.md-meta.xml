@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Invoice2Invoice CancellationDate</label>
+    <protected>false</protected>
+    <values>
+        <field>ConditionField__c</field>
+        <value xsi:type="xsd:string">Invoice_CancellationInvoiceRelation</value>
+    </values>
+    <values>
+        <field>Condition__c</field>
+        <value xsi:type="xsd:string">Has changed</value>
+    </values>
+    <values>
+        <field>Insert__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>RelationField__c</field>
+        <value xsi:type="xsd:string">Invoice_CancellationInvoiceRelation</value>
+    </values>
+    <values>
+        <field>Requirement__c</field>
+        <value xsi:type="xsd:string">On insert and on update of invoices in case the field Cancellation Invoice Relation has changed populate the field Invoice Date on Invoice that is related through Cancellation Invoice Relation.</value>
+    </values>
+    <values>
+        <field>SourceField__c</field>
+        <value xsi:type="xsd:string">Invoice_InvoiceDate</value>
+    </values>
+    <values>
+        <field>SourceObject__c</field>
+        <value xsi:type="xsd:string">Invoice</value>
+    </values>
+    <values>
+        <field>TargetField__c</field>
+        <value xsi:type="xsd:string">Invoice_CancellationDate</value>
+    </values>
+    <values>
+        <field>TargetObject__c</field>
+        <value xsi:type="xsd:string">Invoice</value>
+    </values>
+    <values>
+        <field>Update__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>isActive__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+</CustomMetadata>

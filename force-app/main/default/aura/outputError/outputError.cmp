@@ -1,0 +1,21 @@
+<aura:component >
+
+    <aura:attribute name="errors" type="Array" description="List of errors" />
+
+    <aura:if isTrue="{!v.errors.length > 0}">
+
+        <div class="slds-notify_container">
+            <div class="slds-notify slds-notify--alert slds-theme--error slds-theme--alert-texture" role="alert">
+
+                <ul>
+                    <aura:iteration items="{!v.errors}" var="error">
+                        <li>{!error}</li>
+                    </aura:iteration>
+                </ul>
+
+            </div>
+        </div>
+        
+    </aura:if>
+
+</aura:component>

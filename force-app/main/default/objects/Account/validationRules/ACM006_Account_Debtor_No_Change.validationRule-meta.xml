@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACM006_Account_Debtor_No_Change</fullName>
+    <active>true</active>
+    <description>Account Debtor can not be changed from True to False</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+ AbacusDebtor__c = False,
+ $User.IsFinanceManager__c =False,
+PRIORVALUE(AbacusDebtor__c)= true
+)</errorConditionFormula>
+    <errorDisplayField>AbacusDebtor__c</errorDisplayField>
+    <errorMessage>Account Debtor can not be changed from True to False. Please get in touch with Finance.
+(ACM006)</errorMessage>
+</ValidationRule>

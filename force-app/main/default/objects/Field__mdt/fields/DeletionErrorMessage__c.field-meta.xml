@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DeletionErrorMessage__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Error message that is presented to the user in case the deletion is not allowed.
+Used in Combination with the &quot;Controls deletion&quot; Checkbox</inlineHelpText>
+    <label>Deletion error message</label>
+    <required>false</required>
+    <type>TextArea</type>
+</CustomField>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProjectManagementBillingType__c</fullName>
+    <label>Project Management Billing Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AllowancePercent</fullName>
+                <default>true</default>
+                <label>Allowance %</label>
+            </value>
+            <value>
+                <fullName>AtCost</fullName>
+                <default>false</default>
+                <label>At Cost</label>
+            </value>
+            <value>
+                <fullName>FlatRate</fullName>
+                <default>false</default>
+                <label>Flat Rate</label>
+            </value>
+            <value>
+                <fullName>SpecialDeal</fullName>
+                <default>false</default>
+                <label>Special Deal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

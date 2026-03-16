@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ILV003_ILV_Position_Package_Type</fullName>
+    <active>true</active>
+    <description>ILV Position Package Type must match Package Record Type Name</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true ,
+OR(
+AND( 
+PackageName__r.RecordType.DeveloperName =&quot;Time&quot;,
+ILVType__c != &quot;Time&quot;
+)
+,
+AND( 
+PackageName__r.RecordType.DeveloperName =&quot;Expense&quot;,
+ILVType__c != &quot;Expense&quot;
+)
+,
+AND( 
+PackageName__r.RecordType.DeveloperName =&quot;Time&quot;,
+ILVType__c != &quot;Time&quot;
+)
+,
+AND( 
+PackageName__r.RecordType.DeveloperName =&quot;SupplierCosts&quot;,
+ILVType__c != &quot;SupplierCosts&quot;
+)
+,
+AND( 
+PackageName__r.RecordType.DeveloperName =&quot;Group&quot;,
+ILVType__c != &quot;Group&quot;
+)
+,
+AND( 
+PackageName__r.RecordType.DeveloperName =&quot;LicenseDirect&quot;,
+ILVType__c != &quot;LicenseDirect&quot;
+)
+,
+AND( 
+PackageName__r.RecordType.DeveloperName =&quot;LicenseProvision&quot;,
+ILVType__c != &quot;LicenseProvision&quot;
+)
+)
+)</errorConditionFormula>
+    <errorDisplayField>ILVType__c</errorDisplayField>
+    <errorMessage>The invoice position Package Type Name does not match the Package Record Type Name. Please get in touch with your Super User.
+(ILV003)</errorMessage>
+</ValidationRule>

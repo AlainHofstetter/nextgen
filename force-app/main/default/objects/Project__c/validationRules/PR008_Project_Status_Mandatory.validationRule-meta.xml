@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PR008_Project_Status_Mandatory</fullName>
+    <active>true</active>
+    <description>Project must have Status</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+ISBLANK( TEXT(ProjectStatus__c )))</errorConditionFormula>
+    <errorDisplayField>ProjectStatus__c</errorDisplayField>
+    <errorMessage>You must choose the Project Status.
+(PR008)</errorMessage>
+</ValidationRule>

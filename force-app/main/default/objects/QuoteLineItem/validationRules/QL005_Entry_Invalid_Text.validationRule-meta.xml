@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QL005_Entry_Invalid_Text</fullName>
+    <active>true</active>
+    <description>Checks for valid product combination data.</description>
+    <errorConditionFormula>AND( 
+ISPICKVAL(ProductType__c, &quot;Text&quot;), 
+OR( 
+ProjectManagementAllowancePackage__c=true, 
+ExpenseAllowancePackage__c=true, 
+ SupplierCostsGroup__c =true,
+License__c=true,
+Option__c=true 
+) 
+)</errorConditionFormula>
+    <errorMessage>Invalid entry for Product Type &quot;Text&quot; 
+(QL005)</errorMessage>
+</ValidationRule>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Broschüren verschickt</label>
+    <name>Brochures_sent__c</name>
+    <picklistValues>
+        <masterLabel>CS -  Bayer/BM Brand-Portal (A5)</masterLabel>
+        <translation><!-- CS -  Bayer/BM Brand-Portal (A5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CS -  Franke/BM Marketing-Portal (A5)</masterLabel>
+        <translation><!-- CS -  Franke/BM Marketing-Portal (A5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CS -  Nationale/BM Marketing-Portal (A5)</masterLabel>
+        <translation><!-- CS -  Nationale/BM Marketing-Portal (A5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CS -  Oerlikon/Censhare (A5)</masterLabel>
+        <translation><!-- CS -  Oerlikon/Censhare (A5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CS - Amag (A5)</masterLabel>
+        <translation><!-- CS - Amag (A5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CS - Migros/Einkauf (A5)</masterLabel>
+        <translation><!-- CS - Migros/Einkauf (A5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CS - Migros/Einkauf-Detail (A5, 18 S.)</masterLabel>
+        <translation><!-- CS - Migros/Einkauf-Detail (A5, 18 S.) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GateB - Image Brochure (A4)</masterLabel>
+        <translation><!-- GateB - Image Brochure (A4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MPS Publication</masterLabel>
+        <translation><!-- MPS Publication --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Marketing Performance Check (A4)</masterLabel>
+        <translation><!-- Marketing Performance Check (A4) --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

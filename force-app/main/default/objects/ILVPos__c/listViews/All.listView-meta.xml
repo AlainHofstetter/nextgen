@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>ILVType__c</columns>
+    <columns>PackageSubType__c</columns>
+    <columns>PackageName__c</columns>
+    <columns>CostCenterILVReceiver__c</columns>
+    <columns>CostCenterILVGiver__c</columns>
+    <columns>ILVPositionAmount__c</columns>
+    <columns>ILVPositionAmountCHF__c</columns>
+    <columns>FinanceAccountILVGiver__c</columns>
+    <columns>FinanceAccountILVReceiver__c</columns>
+    <columns>FinanceAccountNrILVGiver__c</columns>
+    <columns>FinanceAccountNrILVReceiver__c</columns>
+    <columns>RelevantToRevenue__c</columns>
+    <columns>InvoiceName__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ILVPositionAmountCHF__c</field>
+        <operation>notEqual</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>CostCenterILVReceiver__c</field>
+        <operation>equals</operation>
+        <value>GateB Germany</value>
+    </filters>
+    <label>All</label>
+</ListView>

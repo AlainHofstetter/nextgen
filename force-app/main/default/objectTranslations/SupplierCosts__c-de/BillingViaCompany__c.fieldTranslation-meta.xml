@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Rechnung via (Unternehmen)</label>
+    <name>BillingViaCompany__c</name>
+    <relationshipLabel>Lieferanten Kosten (Verrechnung via (Unternehmen)</relationshipLabel>
+</CustomFieldTranslation>

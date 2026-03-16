@@ -1,0 +1,11 @@
+Account Name: {!Account.Name}
+Account ID: {!Account.Id}
+
+Agency Checkbox selected by: {!Account.LastModifiedBy}
+
+{!Account.Link}
+
+
+---
+This Email has been sent by Salesforce, do not reply.
+(Template: 00Xb0000000yXMH)

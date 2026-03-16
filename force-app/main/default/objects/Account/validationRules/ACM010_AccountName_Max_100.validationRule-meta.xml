@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACM010_AccountName_Max_100</fullName>
+    <active>true</active>
+    <description>Length of Account Name can not exceed 100</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true, 
+len(Name)&gt;100
+)</errorConditionFormula>
+    <errorMessage>The Account Name can not exceed 100 characters.
+(ACM010)</errorMessage>
+</ValidationRule>

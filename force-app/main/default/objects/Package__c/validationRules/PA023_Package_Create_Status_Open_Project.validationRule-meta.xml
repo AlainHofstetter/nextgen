@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PA023_Package_Create_Status_Open_Project</fullName>
+    <active>true</active>
+    <description>Does not allow a Package to be created with Status Open if Project is closed.</description>
+    <errorConditionFormula>OR(
+
+AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+ISPICKVAL( PackageStatus__c ,&quot;Open&quot;),
+ISPICKVAL( ProjectName__r.ProjectStatus__c ,&quot;Closed&quot;)
+)
+,
+AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+ISPICKVAL( PackageStatus__c ,&quot;Open&quot;),
+RecordType.DeveloperName =&quot;Time&quot;,
+ISPICKVAL( ProjectName__r.ProjectStatus__c ,&quot;PartiallOpenWOTimeEntry)&quot;)
+)
+)</errorConditionFormula>
+    <errorDisplayField>PackageStatus__c</errorDisplayField>
+    <errorMessage>The Service Status can not be set to &quot;Open&quot; since the Project Status does not allow this.
+(PA023)</errorMessage>
+</ValidationRule>

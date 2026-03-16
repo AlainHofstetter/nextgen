@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CO003_Phone_Numbers_with_Int_Format</fullName>
+    <active>false</active>
+    <description>12.12.2017, ary: Gleiche Bemerkung wie bei Account.</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+OR(
+AND( 
+NOT(ISBLANK(Phone)), 
+IF(BEGINS(Phone,&quot;+41&quot;),NOT(REGEX(Phone ,&quot;[+41]{3}(\\s){1}(\\d){2}(\\s){1}(\\d){3}(\\s){1}(\\d){2}(\\s){1}(\\d){2}&quot;)),NOT(REGEX(Phone, &quot;[+]{1}[0-9 ]*&quot;))) 
+),
+AND(
+NOT(ISBLANK(Fax)), 
+IF(BEGINS(Fax,&quot;+41&quot;),NOT(REGEX(Fax ,&quot;[+41]{3}(\\s){1}(\\d){2}(\\s){1}(\\d){3}(\\s){1}(\\d){2}(\\s){1}(\\d){2}&quot;)),NOT(REGEX(Fax, &quot;[+]{1}[0-9 ]*&quot;)))
+),
+AND(
+NOT(ISBLANK(MobilePhone)), 
+IF(BEGINS(MobilePhone,&quot;+41&quot;),NOT(REGEX(MobilePhone ,&quot;[+41]{3}(\\s){1}(\\d){2}(\\s){1}(\\d){3}(\\s){1}(\\d){2}(\\s){1}(\\d){2}&quot;)),NOT(REGEX(MobilePhone, &quot;[+]{1}[0-9 ]*&quot;)))
+),
+AND(
+NOT(ISBLANK(PrivateMobile__c)), 
+IF(BEGINS(PrivateMobile__c,&quot;+41&quot;),NOT(REGEX(PrivateMobile__c ,&quot;[+41]{3}(\\s){1}(\\d){2}(\\s){1}(\\d){3}(\\s){1}(\\d){2}(\\s){1}(\\d){2}&quot;)),NOT(REGEX(PrivateMobile__c, &quot;[+]{1}[0-9 ]*&quot;)))
+),
+AND(
+NOT(ISBLANK(HomePhone)), 
+IF(BEGINS(HomePhone,&quot;+41&quot;),NOT(REGEX(HomePhone ,&quot;[+41]{3}(\\s){1}(\\d){2}(\\s){1}(\\d){3}(\\s){1}(\\d){2}(\\s){1}(\\d){2}&quot;)),NOT(REGEX(HomePhone, &quot;[+]{1}[0-9 ]*&quot;)))
+),
+AND(
+NOT(ISBLANK(AssistantPhone)), 
+IF(BEGINS(AssistantPhone,&quot;+41&quot;),NOT(REGEX(AssistantPhone ,&quot;[+41]{3}(\\s){1}(\\d){2}(\\s){1}(\\d){3}(\\s){1}(\\d){2}(\\s){1}(\\d){2}&quot;)),NOT(REGEX(AssistantPhone, &quot;[+]{1}[0-9 ]*&quot;)))
+),
+AND(
+NOT(ISBLANK(OtherPhone)), 
+IF(BEGINS(OtherPhone,&quot;+41&quot;),NOT(REGEX(OtherPhone ,&quot;[+41]{3}(\\s){1}(\\d){2}(\\s){1}(\\d){3}(\\s){1}(\\d){2}(\\s){1}(\\d){2}&quot;)),NOT(REGEX(OtherPhone, &quot;[+]{1}[0-9 ]*&quot;)))
+)
+)
+)</errorConditionFormula>
+    <errorMessage>All Phone and Fax numbers must be in International format, starting with &quot;+&quot; and nothing else that numbers and spaces. IF the number is a Swiss number it has to be in the format &quot;+41 xx xxx xx xx&quot;.
+(CO003)</errorMessage>
+</ValidationRule>

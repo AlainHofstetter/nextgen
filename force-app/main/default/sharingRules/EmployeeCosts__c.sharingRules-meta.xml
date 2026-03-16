@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>All_with_Finance</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>All with Finance</label>
+        <sharedTo>
+            <group>Skywalk_FIN_Alle</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>BLC</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>HR_alle</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>HR alle</label>
+        <sharedTo>
+            <group>Skywalk_HR_Alle</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>BLC</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

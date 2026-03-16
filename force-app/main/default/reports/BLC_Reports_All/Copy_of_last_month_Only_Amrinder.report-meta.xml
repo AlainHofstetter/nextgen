@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Project__c.PackagesProjectName__r.Time__r$DateFrom__c</field>
+    </columns>
+    <columns>
+        <field>Project__c$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Project__c.PackagesProjectName__r.Time__r$DurationHhMmN__c</field>
+    </columns>
+    <columns>
+        <field>Project__c.PackagesProjectName__r$Name</field>
+    </columns>
+    <columns>
+        <field>Project__c.PackagesProjectName__r.Time__r$Description__c</field>
+    </columns>
+    <currency>CHF</currency>
+    <filter>
+        <booleanFilter>1</booleanFilter>
+        <criteriaItems>
+            <column>Project__c.PackagesProjectName__r.Time__r$Timetracker__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>amrinder</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Copy of last month - Only Amrinder</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Projects_with_Services_with_Time__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Project__c.PackagesProjectName__r.Time__r$DateFrom__c</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

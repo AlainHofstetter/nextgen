@@ -1,0 +1,94 @@
+<aura:component controller="LookupController">
+
+    <!-- load perfect scrollbar -->
+    <ltng:require scripts="{!$Resource.perfectscrollbar}" afterScriptsLoaded="{!c.init}"/>
+
+    <!-- Attributes -->
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="type" type="String" description="Type of object" />
+    <aura:attribute name="class" type="String" description="CSS classes" />
+    <aura:attribute name="label" type="String" description="Label of object" />
+    <aura:attribute name="value" type="Id" description="ID of selected value" />
+    <aura:attribute name="valueLabel" type="String" description="Label of selected value" />
+    <aura:attribute name="showLabel" type="Boolean" description="Show field label?" default="true"/>
+    <aura:attribute name="withMargin" type="Boolean" description="add the margin?" default="true"/>
+    <aura:attribute name="showIcon" type="Boolean" description="show the icon?" default="true"/>
+    <aura:attribute name="showPlaceholder" type="Boolean" description="show the placeholder?" default="true"/>
+    <aura:attribute name="placeholder" type="String" default=" "/>
+    <aura:attribute name="defaultClasses" type="String" default="uiInput uiInputText uiInput--default uiInput--input"/>
+
+    <aura:attribute name="keyboardResultCurrentlySelected" default="-1" type="Integer" description="Currently selected result index by keyboard control" />
+    <aura:attribute name="supportDownArrowBehaviour" default="true" type="Boolean"/>
+
+    <aura:attribute name="results" default="[]" type="List[]" description="Results of the filter query" />
+
+    <aura:attribute name="filterById" type="Id" description="Serverside will use this to add where clause depending on type" />
+
+    <!-- Handlers -->
+    <!-- <aura:handler name="init" action="{!c.init}" value="{!this}"/> -->
+    <aura:handler name="change" value="{!v.value}" action="{!c.onValueChange}"/>
+    <aura:handler name="onLookupSearchResultsShow" event="c:OnLookupSearchResultsShow" action="{!c.onOtherLookupResultsShow}" includeFacets="true" />
+    <aura:handler name="onButtonWithDataClick" event="c:onButtonWithDataClick" action="{!c.buttonClicked}" includeFacets="true" />
+
+    <aura:method name="paginate" action="{!c.handlePagination}" description="To paginate the values with">
+        <aura:attribute name="direction" type="String"/>
+    </aura:method>
+
+    <!-- Event registration -->
+    <aura:registerEvent name="bubbleLookupValueChange" type="c:inputLookupChangeEvent"/>
+    <aura:registerEvent name="onLookupSearchResultsShow" type="c:OnLookupSearchResultsShow"/>
+
+    <!-- Markup -->
+    <div class="{! v.withMargin ? v.class + ' slds-m-bottom--medium lookup ' + v.defaultClasses : v.class + ' lookup ' + v.defaultClasses}">
+
+        <!-- Label -->
+        <aura:if isTrue="{!v.showLabel}">
+            <label class="uiLabel-left form-element__label uiLabel">{!v.label}</label>
+        </aura:if>
+
+        <!-- Selected Value -->
+        <div aura:id="selectedValuePill" class="hidden slds-pill_container">
+            <span class="slds-pill">
+
+                <aura:if isTrue="{!v.showIcon}">
+                    <lightning:icon iconName="standard:account" size="medium"/>
+                </aura:if>
+                <span class="slds-pill__label">{!v.valueLabel}</span>
+
+                <button onclick="{!c.onDeselectClick}" class="slds-button slds-button--icon slds-pill__remove">
+                    <lightning:icon iconName="utility:close" size="xx-small"/>
+                        <span class="slds-assistive-text">{!$Label.c.SkyRemove}</span>
+                </button>
+
+            </span>
+
+        </div>
+
+        <!-- Search Field -->
+        <ui:inputText aura:id="searchField" placeholder="{!v.placeholder}" keyup="{!c.filter}" updateOn="keyup" blur="{!c.onInputBlur}" click="{!c.onInputClick}" />
+
+        <!-- Result List -->
+        <div aura:id="filterResultsDropdown" class="hidden slds-picklist slds-grid slds-dropdown-trigger slds-dropdown-trigger--click slds-is-open">
+
+            <div aura:id="scrollableFilterResultsDropdown" class="slds-dropdown slds-size--1-of-1 slds-dropdown--left scrollable-lookup">
+
+                <ul class="dropdown__list">
+
+                    <aura:iteration items="{!v.results}" var="result">
+                        <li class="{!result.selected ? 'slds-dropdown__item slds-selected' : 'slds-dropdown__item'}">
+                            <!-- <a onclick="{!c.onResultItemClick}" data-object="{!result.stringified}">{!result.Name}</a> -->
+                            <c:buttonWithData isLink="true" label="{!result.Name}" data="{!result}" action="{!c.onResultItemClick}"></c:buttonWithData>
+                        </li>
+                    </aura:iteration>
+
+                    <li class="slds-dropdown__item" aura:id="no-results-message"><a>{!$Label.c.SkyNoresultsfound}</a></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</aura:component>

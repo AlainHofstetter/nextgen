@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Unit Relevanz</label>
+    <name>UnitRelevance__c</name>
+    <picklistValues>
+        <masterLabel>BLC</masterLabel>
+        <translation><!-- BLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CY</masterLabel>
+        <translation><!-- CY --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GBCH</masterLabel>
+        <translation><!-- GBCH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GBDE</masterLabel>
+        <translation><!-- GBDE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GBSGP</masterLabel>
+        <translation><!-- GBSGP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GBUS</masterLabel>
+        <translation><!-- GBUS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HBC</masterLabel>
+        <translation><!-- HBC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HI</masterLabel>
+        <translation><!-- HI --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HYS</masterLabel>
+        <translation><!-- HYS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MA</masterLabel>
+        <translation><!-- MA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VH</masterLabel>
+        <translation><!-- VH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>XB</masterLabel>
+        <translation><!-- XB --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

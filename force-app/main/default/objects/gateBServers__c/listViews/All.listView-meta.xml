@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>customer__c</columns>
+    <columns>serverType__c</columns>
+    <columns>isTestSystem__c</columns>
+    <columns>lastUpdateVersionAPI__c</columns>
+    <columns>systemBaseURL__c</columns>
+    <columns>hasSupportContract__c</columns>
+    <columns>systemResponsibleTC__c</columns>
+    <columns>ssl_expiration_date__c</columns>
+    <columns>apiuserpassword__c</columns>
+    <columns>apiErrorMessage__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <language>en_US</language>
+</ListView>

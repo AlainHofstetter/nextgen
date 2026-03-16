@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACM004_Location_Address</fullName>
+    <active>false</active>
+    <description>12.12.2017, ary: Diese VR führt immer wieder zu Problemen, weil bei der Account-Erfassung die Adresse teilweise nicht bekannt ist. Muss allenfalls gesamtheitlich nochmals besprochen werden.</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+$User.Id != &apos;005b00000014eFb&apos;,
+RecordType.Id &lt;&gt; &apos;012b0000000cEKe&apos;,
+TEXT(AccountSource) &lt;&gt; &apos;Data.com&apos;, 
+OR(
+ISBLANK (LocationCity__c), 
+ISBLANK (LocationZip__c), 
+ISBLANK(TEXT(LocationCountry__c)), 
+AND(
+ISBLANK (LocationStreetNr__c), 
+ISBLANK (LocationPoBox__c)
+)
+)
+)</errorConditionFormula>
+    <errorMessage>Please fill out the Location Address (Street, ZIP, City, Country)
+(ACM004)</errorMessage>
+</ValidationRule>

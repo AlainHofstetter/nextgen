@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Resource Forecast records are automatically created from the opportunity. Change relevant field values on the opportunity in the project information section. --></help>
+    <label><!-- Opportunity --></label>
+    <name>Opportunity__c</name>
+    <relationshipLabel><!-- Resource Forecasts --></relationshipLabel>
+</CustomFieldTranslation>

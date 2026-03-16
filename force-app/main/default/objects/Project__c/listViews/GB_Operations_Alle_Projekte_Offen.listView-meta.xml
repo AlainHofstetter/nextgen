@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GB_Operations_Alle_Projekte_Offen</fullName>
+    <columns>NAME</columns>
+    <columns>ProjectNr__c</columns>
+    <columns>ProjectResponsibleBusiness__c</columns>
+    <columns>ContractPartner__c</columns>
+    <columns>ProjectStatus__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ProjectCostCenter__c</field>
+        <operation>contains</operation>
+        <value>GateB Operations</value>
+    </filters>
+    <filters>
+        <field>ProjectStatus__c</field>
+        <operation>equals</operation>
+        <value>Open,Partially open (w/o Time Entry)</value>
+    </filters>
+    <label>GB Operations - Alle Projekte Offen</label>
+    <language>de</language>
+    <sharedTo>
+        <roleAndSubordinatesInternal>GBCH</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

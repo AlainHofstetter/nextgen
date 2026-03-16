@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EC017_InternalContactID_Blank</fullName>
+    <active>true</active>
+    <description>Prüft ob der Expensetracker und der Erfasser eine gültige InternalContactID haben</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+ Expensetracker__r.User__r.IsActive =true,
+OR(
+ISBLANK( Expensetracker__r.User__r.InternalContactID__c ),
+ISBLANK(  $User.InternalContactID__c )
+)
+)</errorConditionFormula>
+    <errorMessage>The Internal Contact ID is empty. Please get in touch with the System Administrator.
+(EC017)</errorMessage>
+</ValidationRule>

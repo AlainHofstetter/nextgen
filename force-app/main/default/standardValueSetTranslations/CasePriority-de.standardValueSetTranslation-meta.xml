@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>1. High</masterLabel>
+        <translation>Hoch</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>2. Medium</masterLabel>
+        <translation>Medium</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>3. Low</masterLabel>
+        <translation>Niedrig</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>4. 2 Min Task</masterLabel>
+        <translation><!-- 4. 2 Min Task --></translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

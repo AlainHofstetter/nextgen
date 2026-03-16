@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Jobsituation</label>
+    <name>JobSituation__c</name>
+    <picklistValues>
+        <masterLabel>Retired</masterLabel>
+        <translation>Pensioniert</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unemployed</masterLabel>
+        <translation>Nicht angestellt</translation>
+    </picklistValues>
+</CustomFieldTranslation>

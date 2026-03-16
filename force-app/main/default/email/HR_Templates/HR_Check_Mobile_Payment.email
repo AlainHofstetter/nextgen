@@ -1,0 +1,14 @@
+Dear HR and IT
+
+{!Contact.Name} has finished his / her probationary period.
+
+Please check if the Mobile Payment arrangement has to be changed.
+
+Mobile Payment at the moment: {!Contact.MobilePaymentAgreement__c}
+Valid since: {!Contact.MobilePaymentValidFromDate__c}
+
+Thanks.
+
+--- 
+This Email has been sent by Skywalk, do not reply. 
+(Template: 00Xb0000000ydgx)

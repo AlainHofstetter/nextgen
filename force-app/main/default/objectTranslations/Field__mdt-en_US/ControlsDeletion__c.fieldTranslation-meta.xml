@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The field is true in case this field is responsible to control whether a record can be deleted or not. Typically you add a formula field which turns true as soon as the deletion of a record has to be prevented. --></help>
+    <label><!-- Controls deletion --></label>
+    <name>ControlsDeletion__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PR012_TermsOfPayment_Not_Null</fullName>
+    <active>true</active>
+    <description>26.04.2017, ary: Scheint mir unnötig zu sein, es braucht auf der Rechnung noch ganz viele andere Felder, die ebenfalls befüllt sein müssen. Von daher ausgeschaltet.
+23.03.2022, cz: Da Fehler im TimeEX nicht mehr angezeigt werden, wieder reaktiviert</description>
+    <errorConditionFormula>AND(
+$User.PS480FunctionValidationRulesActive__c =true,
+ISBLANK( TEXT(ContractPartner__r.TermsOfPayment__c )),
+ISPICKVAL(TermsOfPayment__c,&quot;&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>TermsOfPayment__c</errorDisplayField>
+    <errorMessage>You need to select the terms of payment.
+(PR012)</errorMessage>
+</ValidationRule>

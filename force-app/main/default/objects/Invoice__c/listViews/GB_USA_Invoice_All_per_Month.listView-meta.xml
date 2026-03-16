@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GB_USA_Invoice_All_per_Month</fullName>
+    <columns>NAME</columns>
+    <columns>InvoiceDescription__c</columns>
+    <columns>FinanceDate__c</columns>
+    <columns>ProjectName__c</columns>
+    <columns>InvoiceReceiver__c</columns>
+    <columns>InvoiceStatus__c</columns>
+    <columns>InvoiceDate__c</columns>
+    <columns>BillingViaCompany__c</columns>
+    <columns>InvoiceTotalAmountGross__c</columns>
+    <columns>InvoiceTotalAmountGrossCHF__c</columns>
+    <columns>InvoiceTotalAmountNet__c</columns>
+    <columns>InvoiceTotalAmountNetCHF__c</columns>
+    <columns>AbacusInterfaceExport__c</columns>
+    <columns>AbacusStatus__c</columns>
+    <columns>AbacusTransfer__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>IsInBillingPeriod__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Invoice__c.Invoice</value>
+    </filters>
+    <filters>
+        <field>BillingViaCompany__c</field>
+        <operation>contains</operation>
+        <value>inc</value>
+    </filters>
+    <filters>
+        <field>InvoiceStatus__c</field>
+        <operation>equals</operation>
+        <value>Ready</value>
+    </filters>
+    <label>A07_GB USA - Invoice - All - BP</label>
+    <sharedTo>
+        <group>Skywalk_FIN_Alle</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Confirmation_Email__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>Dieses Feld wird bei der Erstellung des Campaign Members automatisch auf true gesetzt, was dazu führt, dass das Bestätigungsemail sofort verschickt wird. 29.08.2017, ary.</description>
+    <label>Send Confirmation Email</label>
+    <type>Checkbox</type>
+</CustomField>

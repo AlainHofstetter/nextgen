@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Projektmanagement-Typ</label>
+    <name>ProjectManagementBillingType__c</name>
+    <picklistValues>
+        <masterLabel>Allowance %</masterLabel>
+        <translation><!-- Allowance % --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>At Cost</masterLabel>
+        <translation><!-- At Cost --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Flat Rate</masterLabel>
+        <translation><!-- Flat Rate --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Special Deal</masterLabel>
+        <translation><!-- Special Deal --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

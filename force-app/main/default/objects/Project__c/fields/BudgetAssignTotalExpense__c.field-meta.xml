@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BudgetAssignTotalExpense__c</fullName>
+    <label>Budget Assign - Total Expense</label>
+    <summarizedField>Package__c.BudgetAssignTotalExpense__c</summarizedField>
+    <summaryFilterItems>
+        <field>Package__c.RecordTypeId</field>
+        <operation>equals</operation>
+        <value>Expense</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Package__c.ProjectName__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

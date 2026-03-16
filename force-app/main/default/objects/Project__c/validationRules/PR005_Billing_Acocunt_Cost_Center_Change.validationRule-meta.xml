@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PR005_Billing_Acocunt_Cost_Center_Change</fullName>
+    <active>true</active>
+    <description>Billing Account &amp; Cost Center can not be changed after Child exist(ed)</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+OR(
+ISCHANGED( BillingViaCompany__c ),
+ISCHANGED(ProjectCostCenter__c)
+),
+OR( 
+ValHasPackage__c=true, 
+ValHasTime__c=true, 
+ValHasExpense__c=true, 
+ValHasSupplierCosts__c=true, 
+ValHasInvoice__c=true 
+) 
+)</errorConditionFormula>
+    <errorMessage>The Billing Account and/or Cost Center can not be changed anymore due to existing child objects (time, expense, supplier costs, Invoices). Please contact your Super User for assistance.
+(PR005)</errorMessage>
+</ValidationRule>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Workaround__c</fullName>
+    <label>Workaround</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Workaround not available</fullName>
+                <default>false</default>
+                <label>Workaround not available</label>
+            </value>
+            <value>
+                <fullName>Workaround just with lot of effort available</fullName>
+                <default>false</default>
+                <label>Workaround just with lot of effort available</label>
+            </value>
+            <value>
+                <fullName>Workaround available</fullName>
+                <default>false</default>
+                <label>Workaround available</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

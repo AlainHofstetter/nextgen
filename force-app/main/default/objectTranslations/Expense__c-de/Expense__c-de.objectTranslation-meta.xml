@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Spesen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Spesen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Spesen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Spesen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Spesen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Spesen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Spesen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Spesen</value>
+    </caseValues>
+    <gender>Masculine</gender>
+    <layouts>
+        <layout>Expense Layout Car Travel</layout>
+        <sections>
+            <label>Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Spesendetails</label>
+            <section>Expense Detail</section>
+        </sections>
+        <sections>
+            <label>Finanzcontrolling</label>
+            <section>Finance Controlling</section>
+        </sections>
+        <sections>
+            <label>Finanzvalidierung</label>
+            <section>Finance Validation</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Expense Layout Receipt</layout>
+        <sections>
+            <label>Links</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Spesendetails</label>
+            <section>Expense Detail</section>
+        </sections>
+        <sections>
+            <label>Finanzcontrolling</label>
+            <section>Finance Controlling</section>
+        </sections>
+        <sections>
+            <label>Finanzvalidierung</label>
+            <section>Finance Validation</section>
+        </sections>
+        <sections>
+            <label><!-- System Administrator --></label>
+            <section>System Administrator</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Spesen Eintrag Nr.</nameFieldLabel>
+    <recordTypes>
+        <label>Fahrspesen</label>
+        <name>CarTravel</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Belegspesen</label>
+        <name>Receipt</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage>Der Speseneintrag kann nicht erstellt/verändert werden, weil die Leistung auf Status &quot;Geschlossen&quot; ist. Bitte den Projektmanager kontaktieren. (EC001)</errorMessage>
+        <name>EC001_Expense_Card_No_Change_Package_Clo</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Der Speseneintrag kann nicht erstellt/verändert werden, weil das Projekt auf Status &quot;Geschlossen&quot; ist. Bitte den Projektmanager kontaktieren. (EC002)</errorMessage>
+        <name>EC002_Expense_Card_No_Change_Project_Clo</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Der Speseneintrag kann nicht erstellt/verändert werden, da dieser bereits durch den Projektmanager validiert wurde. (EC003)</errorMessage>
+        <name>EC003_Expense_Card_No_Change_Validated_P</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Der Speseneintrag kann nicht verändert werden, da dieser bereits durch Finance validiert wurde. Bitte mit Finance Kontakt aufnehmen. (EC004)</errorMessage>
+        <name>EC004_Expense_Card_No_Change_Validated_F</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte eine Leistung vom Typ &quot;Spesen&quot; wählen. (EC005)</errorMessage>
+        <name>EC005_Package_Same_Type</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Der Zeiterfasser kann nicht verändert werden. (EC006)</errorMessage>
+        <name>EC006_Expensetracker_No_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Du hast keine Berechtigung Zeit für jemand anders zu erfassen. (EC007)</errorMessage>
+        <name>EC007_Only_Expense_For_Yourself</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte die Unternehmens-Kreditkarte wählen. (EC008)</errorMessage>
+        <name>EC008_Payment_Type_Company_Credit_Card</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte Zahlungstyp kontrollieren bei gewählter Kreditkarte. (EC009)</errorMessage>
+        <name>EC009_Payment_Type_Company_Credit_Card2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Bitte das Fahrzeug wählen. (EC010)</errorMessage>
+        <name>EC010_Payment_Type_Company_Car</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Du hast keine Berechtigung Speseneinträge zu validieren. (EC011)</errorMessage>
+        <name>EC011_PM_Validation_only_PM</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Der Speseneintrag ist validiert und kann nicht verändert werden. (EC012)</errorMessage>
+        <name>EC012_ExpenseCard_Validation_PM</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Du hast keine Berechtigung Speseneinträge zu validieren. (EC013)</errorMessage>
+        <name>EC013_PM_Validation_only_Finance</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Spesenbetrag Brutto darf nicht leer sein. (EC014)</errorMessage>
+        <name>EC014_Expense_Gross_Not_Null</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Die Währung des Fahrzeugs muss der lokalen Währung entsprechen. Bitte korrektes Fahrzeug wählen. (EC015)</errorMessage>
+        <name>EC015_Car_Currency_Match_Local_Currency</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Distanz und Vergütung dürfen nicht leer sein. (EC016)</errorMessage>
+        <name>EC016_Car_Distance_Compensation_Not_Null</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Die interne Kontakt ID ist leer. Bitte an den Systemadministrator wenden. (EC017)</errorMessage>
+        <name>EC017_InternalContactID_Blank</name>
+    </validationRules>
+</CustomObjectTranslation>

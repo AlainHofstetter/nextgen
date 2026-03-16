@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_License_Contracts</fullName>
+    <columns>NAME</columns>
+    <columns>ContractName__c</columns>
+    <columns>Licensee__c</columns>
+    <columns>Licensor__c</columns>
+    <columns>Software__c</columns>
+    <columns>LicenseType__c</columns>
+    <columns>ContractEndDate__c</columns>
+    <columns>OngoingAnnualFee__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contract__c.LicenseContract</value>
+    </filters>
+    <label>All License Contracts</label>
+    <language>en_US</language>
+</ListView>

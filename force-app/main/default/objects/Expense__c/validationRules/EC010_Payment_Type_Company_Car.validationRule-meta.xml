@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EC010_Payment_Type_Company_Car</fullName>
+    <active>true</active>
+    <description>Must choose Car if Expense Sub Type = Car (Company)</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+
+ RecordType.DeveloperName =&quot;CarTravel&quot;,
+ISPICKVAL(  ExpenseSubType__c  ,&quot;CarCompany&quot;),
+ISBLANK(  Car__c  )
+)</errorConditionFormula>
+    <errorDisplayField>Car__c</errorDisplayField>
+    <errorMessage>Please choose the car used for this expense.
+ (EC010)</errorMessage>
+</ValidationRule>
