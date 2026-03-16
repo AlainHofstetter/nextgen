@@ -83,8 +83,49 @@ public with sharing class InvoiceDocumentControllerTest {
     }
 
     @isTest
+    public static void getImageURLTest(){
+        Account acc = [SELECT Id FROM Account LIMIT 1];
+        Project__c proj = [SELECT Id FROM Project__c LIMIT 1];
+        CostCenter__c costCenter = [SELECT Id FROM CostCenter__c LIMIT 1];
+        Package__c service = [SELECT Id FROM Package__c LIMIT 1];
+        
+        Invoice__c inv = TestFactory.createInvoice(acc.Id, proj.Id, costCenter.Id);
+        insert inv; 
+
+        Test.startTest();
+        //Creating document 
+        ContentVersion cv = new ContentVersion(); 
+        cv.Title = Label.QRInvoicePrefix + System.today(); 
+        cv.PathOnClient = '/' + cv.Title + '.pdf'; 
+        cv.VersionData =  Blob.valueOf('Unit Test ContentVersion Body'); 
+        cv.origin = 'H';
+        insert cv;
+
+        ContentDocumentLink cdl = new ContentDocumentLink();
+        cdl.LinkedEntityId = inv.Id;
+        cdl.ContentDocumentId = [SELECT ContentDocumentId 
+                                FROM ContentVersion 
+                                WHERE Id =: cv.Id].ContentDocumentId;
+        cdl.ShareType = 'I';
+        cdl.Visibility = 'AllUsers';
+        insert cdl; 
+
+        //Creating page and controller 
+        PageReference pageRef = Page.InvoicePDF;
+        Test.setCurrentPage(pageRef);
+        pageRef.getParameters().put('Id', String.valueOf(inv.Id));
+        ApexPages.StandardController sc = new ApexPages.StandardController(inv); 
+        InvoiceDocumentController controller = new InvoiceDocumentController(sc);
+        
+        controller.getImageURL();
+
+        Test.stopTest();
+        System.AssertNotEquals(null, controller.imageURL);    
+    }
+
+
+    @isTest
     public static void createInvoicePDFTest(){
-        Test.setMock(HttpCalloutMock.class, new QRCodeServiceMockResponse());
         Account acc = [SELECT Id FROM Account LIMIT 1];
         Project__c proj = [SELECT Id FROM Project__c LIMIT 1];
         CostCenter__c costCenter = [SELECT Id FROM CostCenter__c LIMIT 1];
@@ -104,5 +145,7 @@ public with sharing class InvoiceDocumentControllerTest {
 
         System.assertEquals(2, [SELECT Count() FROM ContentDocumentLink WHERE LinkedEntityId =: inv.Id], 'ContentDocumentLinks were not well generated ');
     }
+
+
         
 }

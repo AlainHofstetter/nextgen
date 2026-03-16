@@ -2,6 +2,6 @@
 <ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
     <contactEmail>lisis.rodriguez@empaua.com</contactEmail>
     <label>My Time</label>
-    <logoUrl>https://brandleadership.file.force.com/servlet/servlet.ImageServer?id=015Vj000001bzn8&amp;oid=00Db0000000cbJ7</logoUrl>
+    <logoUrl>https://brandleadership.file.force.com/servlet/servlet.ImageServer?id=015Vj000001bzn8&amp;oid=00DFT00000C8Yf7</logoUrl>
     <startUrl>https://brandleadership.lightning.force.com/lightning/r/Report/00Ob0000004FfG9EAK/view</startUrl>
 </ConnectedApp>

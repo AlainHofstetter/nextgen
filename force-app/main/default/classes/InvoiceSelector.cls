@@ -66,8 +66,6 @@ public with sharing class InvoiceSelector extends fflib_SObjectSelector
                 Invoice__c.LastReferencedDate,
                 Invoice__c.LastViewedDate,
                 Invoice__c.Name,
-                Invoice__c.PeriodFrom__c,
-                Invoice__c.PeriodUntil__c,
                 Invoice__c.ProjectCostCenter__c,
                 Invoice__c.ProjectInvoiceCurrency__c,
                 Invoice__c.ProjectInvoiceDescription__c,
@@ -120,8 +118,6 @@ public with sharing class InvoiceSelector extends fflib_SObjectSelector
                 'BillingAdressCity__c',
                 'BillingAddressState__c',
                 'BillingAddressCountry__c',
-                'BillingViaCompany__c',
-                'BillingViaCompany__r.AccountName__c',
                 'InvoiceDate__c',
                 'FinanceDate__c',
                 'PeriodFrom__c',
@@ -141,10 +137,7 @@ public with sharing class InvoiceSelector extends fflib_SObjectSelector
         String soql = query.toSOQL()
                 .replaceFirst('TermsOfPayment2__c', 'toLabel(TermsOfPayment2__c)');
 
-        System.debug('---InvoiceSelector.draftByProject--- soql: '+soql);
         List<Invoice__c> invoices = (List<Invoice__c>) Database.query(soql);
-
-        System.debug('---InvoiceSelector.draftByProject--- invoices: '+invoices);
 
         return invoices == null || invoices.isEmpty() ? null : invoices[0];
     }

@@ -167,9 +167,6 @@ public class TestFactory
 		inv.BillingViaCompany__c = accId;
 		inv.ProjectName__c = projId;
 		inv.ProjectCostCenter__c = costCenter;
-		inv.ESRAccountNr__c = '01-8513-5';
-		inv.ESRMergentNr__c = '207115';
-		inv.InvoiceDocumentNr__c = 25010829;
 		return inv;
 	}
 

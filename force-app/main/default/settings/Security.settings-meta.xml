@@ -56,7 +56,7 @@
         <allowUserAuthenticationByCertificate>false</allowUserAuthenticationByCertificate>
         <allowUserCertBasedAuthenticationWithOcspValidation>false</allowUserCertBasedAuthenticationWithOcspValidation>
         <auraBoxcarReductionPref>false</auraBoxcarReductionPref>
-        <canConfirmEmailChangeInLightningCommunities>true</canConfirmEmailChangeInLightningCommunities>
+        <canConfirmEmailChangeInLightningCommunities>false</canConfirmEmailChangeInLightningCommunities>
         <canConfirmIdentityBySmsOnly>true</canConfirmIdentityBySmsOnly>
         <disableTimeoutWarning>true</disableTimeoutWarning>
         <enableBuiltInAuthenticator>true</enableBuiltInAuthenticator>
@@ -73,7 +73,7 @@
         <enableCoopHeader>false</enableCoopHeader>
         <enableLightningLogin>true</enableLightningLogin>
         <enableLightningLoginOnlyWithUserPerm>false</enableLightningLoginOnlyWithUserPerm>
-        <enableMFADirectUILoginOptIn>true</enableMFADirectUILoginOptIn>
+        <enableMFADirectUILoginOptIn>false</enableMFADirectUILoginOptIn>
         <enableOauthCorsPolicy>false</enableOauthCorsPolicy>
         <enablePermissionsPolicy>false</enablePermissionsPolicy>
         <enablePostForSessions>false</enablePostForSessions>
@@ -88,7 +88,7 @@
         <hasRetainedLoginHints>false</hasRetainedLoginHints>
         <hasUserSwitching>true</hasUserSwitching>
         <identityConfirmationOnEmailChange>false</identityConfirmationOnEmailChange>
-        <identityConfirmationOnTwoFactorRegistrationEnabled>true</identityConfirmationOnTwoFactorRegistrationEnabled>
+        <identityConfirmationOnTwoFactorRegistrationEnabled>false</identityConfirmationOnTwoFactorRegistrationEnabled>
         <lockSessionsToDomain>false</lockSessionsToDomain>
         <lockSessionsToIp>false</lockSessionsToIp>
         <lockerServiceCSP>false</lockerServiceCSP>
@@ -114,7 +114,7 @@
         <enableForceDelegatedCallout>false</enableForceDelegatedCallout>
         <enableMultipleSamlConfigs>true</enableMultipleSamlConfigs>
         <enableSamlJitProvisioning>false</enableSamlJitProvisioning>
-        <enableSamlLogin>true</enableSamlLogin>
+        <enableSamlLogin>false</enableSamlLogin>
         <isLoginWithSalesforceCredentialsDisabled>true</isLoginWithSalesforceCredentialsDisabled>
     </singleSignOnSettings>
 </SecuritySettings>

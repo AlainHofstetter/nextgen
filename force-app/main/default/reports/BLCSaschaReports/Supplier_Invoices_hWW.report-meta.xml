@@ -119,8 +119,6 @@
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
         <dateColumn>CHILD_CREATED_DATE</dateColumn>
-        <endDate>2026-02-28</endDate>
-        <interval>INTERVAL_CUSTOM</interval>
-        <startDate>2025-01-01</startDate>
+        <interval>INTERVAL_PREVCURY</interval>
     </timeFrameFilter>
 </Report>

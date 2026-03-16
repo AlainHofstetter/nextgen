@@ -1532,16 +1532,6 @@
             <field>InvoiceTotalAmountNetSGP__c</field>
             <table>Project__c.Invoices__r</table>
         </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>VATNumberRef__c</field>
-            <table>Project__c.Invoices__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>TaxNumberRef__c</field>
-            <table>Project__c.Invoices__r</table>
-        </columns>
         <masterLabel>Invoices</masterLabel>
     </sections>
     <sections>

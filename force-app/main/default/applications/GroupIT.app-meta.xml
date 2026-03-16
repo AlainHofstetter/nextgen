@@ -36,7 +36,6 @@
     </actionOverrides>
     <brand>
         <headerColor>#020202</headerColor>
-        <logo>BLC</logo>
         <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>

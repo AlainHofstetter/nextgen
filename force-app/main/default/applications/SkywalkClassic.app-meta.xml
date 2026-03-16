@@ -6,7 +6,6 @@
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
     <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
     <label>Skywalk - Classic</label>
-    <logo>Skywalk_Images/LogoSkywalk.png</logo>
     <tabs>standard-Campaign</tabs>
     <tabs>standard-Lead</tabs>
     <tabs>standard-Account</tabs>

@@ -223,14 +223,6 @@
                         <apex:outputPanel layout="block" styleClass="{!IF(ISBLANK(invoiceRecord.BillingAddressCountry__c), 'hidden', '')}" rendered="{!NOT(ISBLANK(invoiceRecord.BillingAddressCountry__c))}">
                             <apex:outputField value="{!invoiceRecord.BillingAddressCountry__c}" /><br/>
                         </apex:outputPanel>
-                        <apex:outputPanel layout="block" rendered="{!invoiceRecord.InvoiceReceiver__r.BillingCountry__c != 'SWITZERLAND'}">
-                            <span>{!$Label.Vat_Number}: </span>
-                            <apex:outputField value="{!invoiceRecord.VATNumberRef__c}"/><br/>
-                        </apex:outputPanel>
-                        <apex:outputPanel layout="block" rendered="{!invoiceRecord.InvoiceReceiver__r.BillingCountry__c != 'SWITZERLAND'}">
-                            <span >{!$Label.TAX_Id}: </span>
-                            <apex:outputField value="{!invoiceRecord.TaxNumberRef__c}"/><br/>
-                        </apex:outputPanel>
                     </div>
                     <div class="alignRight" style="margin-top:-150px;">
                         <div class="bold">

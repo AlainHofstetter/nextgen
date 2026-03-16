@@ -76,11 +76,6 @@
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
-        <application>standard__DigitalWallet</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
         <application>standard__FlowsApp</application>
         <default>false</default>
         <visible>true</visible>
@@ -89,11 +84,6 @@
         <application>standard__Integration</application>
         <default>false</default>
         <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>standard__LightningInstrumentation</application>
-        <default>false</default>
-        <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__LightningSales</application>
@@ -1953,12 +1943,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Account.TarifInformation__c</field>
+        <field>Account.TEST_NextGen01_001__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Account.TaxNumber__c</field>
+        <field>Account.TarifInformation__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1984,11 +1974,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.VATPercent__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.VatNumber__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -7223,11 +7208,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Invoice__c.TaxNumberRef__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Invoice__c.TermsOfPayment2__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -7239,11 +7219,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Invoice__c.TotalInvoiceInclCancellationCHF__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Invoice__c.VATNumberRef__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -13290,10 +13265,6 @@
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-ActiveScratchOrg</tab>
-        <visibility>DefaultOff</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>standard-ApprovalSubmission</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
@@ -13426,10 +13397,6 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-NamespaceRegistry</tab>
-        <visibility>DefaultOff</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>standard-Opportunity</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
@@ -13464,10 +13431,6 @@
     <tabVisibilities>
         <tab>standard-Scorecard</tab>
         <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>standard-ScratchOrgInfo</tab>
-        <visibility>DefaultOff</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Seller</tab>

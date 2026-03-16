@@ -23,14 +23,6 @@
                 <behavior>Edit</behavior>
                 <field>BillingViaCompany__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>VATNumberRef__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>TaxNumberRef__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

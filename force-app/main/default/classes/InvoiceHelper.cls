@@ -86,34 +86,7 @@ public with sharing class InvoiceHelper {
 
     @future(callout=true)
     public static void generateQRCode(Id invoiceId) {
-        // Include BillingAdressCity__c so we can normalize special characters such as "Zürich"
-        Invoice__c invoiceRecord = [
-            SELECT Id, Name, InvoiceTotalAmountGross__c, AccountLanguage__c, BillingAdressCity__c
-            FROM Invoice__c
-            WHERE Id = :invoiceId
-        ];
-        // Normalize in-memory only: convert "Zürich" (and any umlaut variants) to ASCII-friendly "Zurich"
-        // No DML updates are performed.
-        try {
-            String city = (String)invoiceRecord.get('BillingAdressCity__c');
-            if (city != null) {
-                // Replace German umlauts and ß with ASCII equivalents
-                // Specifically handle "Zürich" -> "Zurich"
-                String normalized = city;
-                normalized = normalized.replace('ä','a').replace('Ä','A');
-                normalized = normalized.replace('ö','o').replace('Ö','O');
-                normalized = normalized.replace('ü','u').replace('Ü','U');
-                normalized = normalized.replace('ß','ss');
-                // If downstream QRCodeService reads the field value, pass a shallow clone with normalized city
-                // to avoid mutating the original sObject.
-                Invoice__c qrInput = invoiceRecord.clone(false, true, false, false);
-                qrInput.put('BillingAdressCity__c', normalized);
-                QRCodeService.generateQRCode(qrInput);
-                return;
-            }
-        } catch (Exception e) {
-            system.debug('Error with Normalization of BillingAdressCity '+ InvoiceRecord.BillingAdressCity__c + 'Invoice ID: '+ InvoiceRecord.Id);
-        }
+        Invoice__c invoiceRecord = [SELECT Id, Name, InvoiceTotalAmountGross__c, AccountLanguage__c FROM Invoice__c WHERE Id = :invoiceId];
         QRCodeService.generateQRCode(invoiceRecord);
     }
 

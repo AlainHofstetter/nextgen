@@ -35,94 +35,15 @@ public with sharing class SupplierCosts extends fflib_SObjectDomain
         callParentUpdate(oldRecords);
     }
 
-    // public void save(fflib_ISObjectUnitOfWork uow) {
-
-    //     for (SupplierCosts__c sc: (List<SupplierCosts__c>) records) {
-    //         if (sc.Id == null)
-    //             uow.registerNew(sc);
-    //         else
-    //             uow.registerDirty(sc);
-    //     }
-
-    // }
-
     public void save(fflib_ISObjectUnitOfWork uow) {
 
-        List<SupplierCosts__c> input = (List<SupplierCosts__c>) records;
-
-        System.debug('---SupplierCosts.save--- uow: '+uow);
-        System.debug('---SupplierCosts.save--- records: '+records);
-        System.debug('---SupplierCosts.save--- input: '+input);
-
-        // Track first occurrence per Abacus key within this payload
-        Map<String, SupplierCosts__c> firstByKey = new Map<String, SupplierCosts__c>();
-        Set<String> keysToCheck = new Set<String>();
-
-        for (SupplierCosts__c sc : input) {
-
-            Boolean hasId = (sc.Id != null);
-            Boolean hasKey = !String.isBlank(sc.AbacusDocumentNrPosNr__c);
-
-            if (!hasId && hasKey) {
-                String key = sc.AbacusDocumentNrPosNr__c.trim();
-
-                if (!firstByKey.containsKey(key)) {
-                    firstByKey.put(key, sc);
-                    keysToCheck.add(key);
-                }
-            }
-        }
-
-        // Find keys that already exist in Salesforce
-        Set<String> existingKeys = new Set<String>();
-        if (!keysToCheck.isEmpty()) {
-            for (SupplierCosts__c existing : [SELECT AbacusDocumentNrPosNr__c FROM SupplierCosts__c WHERE AbacusDocumentNrPosNr__c IN :keysToCheck]) {
-                existingKeys.add(existing.AbacusDocumentNrPosNr__c);
-            }
-        }
-
-        System.debug('---SupplierCosts.save--- existingKeys: '+existingKeys);
-
-        // Register DML intentions
-        for (SupplierCosts__c sc : input) {
-
-            System.debug('---SupplierCosts.save--- sc: '+sc);
-
-            Boolean hasId  = (sc.Id != null);
-            Boolean hasKey = !String.isBlank(sc.AbacusDocumentNrPosNr__c);
-            Boolean isFirstInPayload = false;
-            Boolean existsInDb = false;
-
-            System.debug('---SupplierCosts.save--- hasId: '+hasId + ' hasKey: '+hasKey);
-
-            if (hasKey) {
-                String key = sc.AbacusDocumentNrPosNr__c.trim();
-                isFirstInPayload = (firstByKey.get(key) == sc);
-                existsInDb = existingKeys.contains(key);
-            }
-
-            System.debug('---SupplierCosts.save--- existsInDb: '+existsInDb  + ' isFirstInPayload: '+isFirstInPayload);
-
-            if (hasId) {
-                System.debug('---SupplierCosts.save--- registerDirty - sc: '+sc);
+        for (SupplierCosts__c sc: (List<SupplierCosts__c>) records) {
+            if (sc.Id == null)
+                uow.registerNew(sc);
+            else
                 uow.registerDirty(sc);
-
-            } else if (!hasKey) {
-                System.debug('---SupplierCosts.save--- Non-Abacus registerNew - sc: '+sc);
-                // Non-Abacus record
-                uow.registerNew(sc);
-
-            } else if (isFirstInPayload && !existsInDb) {
-                System.debug('---SupplierCosts.save--- Abacus registerNew - sc: '+sc);
-                // First occurrence + not already stored
-                uow.registerNew(sc);
-
-            }
-            else { // duplicate in payload OR already in DB → intentionally ignored
-                System.debug('---SupplierCosts.save--- isFirstInPayload: '+isFirstInPayload + ' existsInDb: '+existsInDb);
-                System.debug('---SupplierCosts.save--- Duplicated: '+sc);
-            } 
         }
+
     }
 
     @TestVisible

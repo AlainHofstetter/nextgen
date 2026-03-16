@@ -37,7 +37,6 @@
             <casePriority>2. Medium</casePriority>
             <createTask>false</createTask>
             <emailAddress>itsupport@brandleadership.ch</emailAddress>
-            <emailServicesAddress>it@9-1i8mbrkhlh80tvyu0v9a2lr64gwoex5y68u54zzn0fn2xk0xon.b-cbj7eai.eu2.case.salesforce.com</emailServicesAddress>
             <isPermsetControlled>false</isPermsetControlled>
             <isVerified>true</isVerified>
             <newEntityRecordType>Case.ITCases</newEntityRecordType>

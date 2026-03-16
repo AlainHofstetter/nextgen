@@ -1045,10 +1045,6 @@
         <name>Studio_Hotz_Footer2</name>
     </customLabels>
     <customLabels>
-        <label><!-- Tax Id --></label>
-        <name>Tax_Id</name>
-    </customLabels>
-    <customLabels>
         <label>Konditionen</label>
         <name>TermsPayment</name>
     </customLabels>
@@ -1091,10 +1087,6 @@
     <customLabels>
         <label>inkl. Mehrwertsteuer</label>
         <name>VAT_inkl</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- Vat Number --></label>
-        <name>Vat_Number</name>
     </customLabels>
     <customLabels>
         <label>Agenturleistungen</label>
@@ -1770,57 +1762,6 @@
         </sections>
     </reportTypes>
     <reportTypes>
-        <description><!-- NextGen_Accounts with Projects or Opps --></description>
-        <label><!-- NextGen_Accounts with Projects or Opps --></label>
-        <name>NextGen_Accounts_with_Projects_or_Opps</name>
-        <sections>
-            <label><!-- Accounts --></label>
-            <name>Accounts</name>
-        </sections>
-        <sections>
-            <label><!-- Opportunities --></label>
-            <name>Opportunities</name>
-        </sections>
-        <sections>
-            <label><!-- Projects --></label>
-            <name>Projects</name>
-        </sections>
-    </reportTypes>
-    <reportTypes>
-        <description><!-- NextGen Project - Accounts with Contacts and Opportunities --></description>
-        <label><!-- NextGen Project - Accounts with Contacts and Opportunities --></label>
-        <name>NextGen_Project_Accounts_with_Contacts_and_Opportunities</name>
-        <sections>
-            <label><!-- Accounts --></label>
-            <name>Accounts</name>
-        </sections>
-        <sections>
-            <label><!-- Contacts --></label>
-            <name>Contacts</name>
-        </sections>
-        <sections>
-            <label><!-- Opportunities --></label>
-            <name>Opportunities</name>
-        </sections>
-    </reportTypes>
-    <reportTypes>
-        <description><!-- NextGen Project - Accounts with Projects or Opportunities --></description>
-        <label><!-- NextGen Project - Accounts with Projects or Opportunities --></label>
-        <name>NextGen_Project_Accounts_with_projects_or_Opportunities</name>
-        <sections>
-            <label><!-- Accounts --></label>
-            <name>Accounts</name>
-        </sections>
-        <sections>
-            <label><!-- Contacts --></label>
-            <name>Contacts</name>
-        </sections>
-        <sections>
-            <label><!-- Opportunities --></label>
-            <name>Opportunities</name>
-        </sections>
-    </reportTypes>
-    <reportTypes>
         <description><!-- Project with Resource Forecast --></description>
         <label><!-- Project with Resource Forecast --></label>
         <name>Project_with_Resource_Forecast</name>
@@ -1906,26 +1847,10 @@
             <name>Projects</name>
         </sections>
         <sections>
-            <columns>
-                <label><!-- Sv: Costs - Total Amount (CHF) --></label>
-                <name>Sv: Costs - Total Amount (CHF)</name>
-            </columns>
-            <columns>
-                <label><!-- Sv: Costs - Total Supplier Costs (CHF) --></label>
-                <name>Sv: Costs - Total Supplier Costs (CHF)</name>
-            </columns>
             <label><!-- Services --></label>
             <name>Services</name>
         </sections>
         <sections>
-            <columns>
-                <label><!-- SC: Service -  Supplier Costs Net (CHF) --></label>
-                <name>SC: Service -  Supplier Costs Net (CHF)</name>
-            </columns>
-            <columns>
-                <label><!-- SC: Service - Supplier Costs Net --></label>
-                <name>SC: Service - Supplier Costs Net</name>
-            </columns>
             <label><!-- Supplier Costs --></label>
             <name>Supplier Costs</name>
         </sections>

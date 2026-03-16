@@ -1686,6 +1686,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.TEST_NextGen01_001__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Type</field>
         <readable>true</readable>
     </fieldPermissions>

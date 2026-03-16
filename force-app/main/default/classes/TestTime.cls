@@ -3,35 +3,16 @@ private class TestTime {
 
   @IsTest(SeeAllData=true)
   private static void testTrigger() {
-    // Query for Time records that meet all validation requirements
-    // The validation rule requires Timetracker__r.User__r.InternalContactID__c to not be null
-    // So we query for records that already satisfy this condition
-    List<Time__c> theList = [
-      SELECT Id, Description__c, Timetracker__c
-      FROM Time__c
-      WHERE Timetracker__r.User__r.InternalContactID__c != NULL
-        AND Timetracker__c != NULL
-      ORDER BY CreatedDate DESC
-      LIMIT 1
-    ];
+    SObjectType t = Time__c.SObjectType;
+    fflib_QueryFactory qf = new fflib_QueryFactory(t);
+    qf.selectFields(t.getDescribe().fields.getMap().values());
+    qf.setCondition('Timetracker__r.User__r.InternalContactID__c != NULL');
+    qf.addOrdering('CreatedDate', fflib_QueryFactory.SortOrder.DESCENDING);
+    qf.setLimit(1);
+    List<Time__c> theList = (List<Time__c>) Database.query(qf.toSOQL());
 
-    if (!theList.isEmpty()) {
-      Time__c timeToUpdate = theList[0];
-      // Update a non-critical field to trigger the domain logic
-      // Only update Description to avoid triggering other validation rules
-      String originalDescription = timeToUpdate.Description__c;
-      timeToUpdate.Description__c = (originalDescription == null ? 'Test Update' : originalDescription + ' - Test');
-      
-      try {
-        update timeToUpdate;
-        System.assert(true, 'Time record updated successfully');
-      } catch (DmlException e) {
-        // If update fails due to validation, that's okay - we've at least tested the query
-        System.assert(true, 'Update attempted - validation rules may prevent update');
-      }
-    } else {
-      System.assert(true, 'No suitable Time records found for testing');
-    }
+    if (!theList.isEmpty())
+      update theList;
   }
 
   @IsTest

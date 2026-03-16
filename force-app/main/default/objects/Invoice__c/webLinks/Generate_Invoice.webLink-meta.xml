@@ -16,5 +16,5 @@
     <protected>false</protected>
     <showsLocation>false</showsLocation>
     <showsStatus>false</showsStatus>
-    <url>/flow/ScreenFlowInvoiceButton?v_InvoiceType=1&amp;recordId={!Invoice__c.Id}&amp;retURL=https%3A%2F%2Fbrandleadership.lightning.force.com%2Flightning%2Fr%2FInvoice__c%2F{!Invoice__c.Id}%2Fview%0A</url>
+    <url>/flow/ScreenFlowInvoiceButton?v_InvoiceType=1&amp;recordId={!Invoice__c.Id}&amp;retURL=https%3A%2F%2Fbrandleadership--nextgen01.sandbox.lightning.force.com%2Flightning%2Fr%2FInvoice__c%2F{!Invoice__c.Id}%2Fview%0A</url>
 </WebLink>

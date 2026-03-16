@@ -69,7 +69,7 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.FebForecast__c</field>
+        <field>Project__c.DecForecast__c</field>
     </columns>
     <currency>CHF</currency>
     <filter>
@@ -121,7 +121,7 @@
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
     <sortColumn>Project__c.ProjectResponsibleBusiness__c</sortColumn>
-    <sortOrder>Desc</sortOrder>
+    <sortOrder>Asc</sortOrder>
     <timeFrameFilter>
         <dateColumn>Project__c.LastTimeEntryDate__c</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>

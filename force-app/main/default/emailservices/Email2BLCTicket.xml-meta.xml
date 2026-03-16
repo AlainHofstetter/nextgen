@@ -4,12 +4,6 @@
     <attachmentOption>All</attachmentOption>
     <authenticationFailureAction>Discard</authenticationFailureAction>
     <authorizationFailureAction>Discard</authorizationFailureAction>
-    <emailServicesAddresses>
-        <developerName>b0000000kAL6</developerName>
-        <isActive>true</isActive>
-        <localPart>email2blcticket</localPart>
-        <runAsUser>andre.ryf@brandleadership.ch</runAsUser>
-    </emailServicesAddresses>
     <functionInactiveAction>Discard</functionInactiveAction>
     <functionName>Email2BLCTicket</functionName>
     <isActive>true</isActive>

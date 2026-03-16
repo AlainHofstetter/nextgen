@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TEST_NextGen01_001__c</fullName>
+    <businessStatus>Active</businessStatus>
+    <description>Test by Silvio and Iryna (16.02.2026) for Migration.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Test by Silvio and Iryna (16.02.2026) for Migration.</inlineHelpText>
+    <label>TEST_NextGen01_001</label>
+    <length>50</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

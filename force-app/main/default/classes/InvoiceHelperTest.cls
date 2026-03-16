@@ -40,10 +40,7 @@ private class InvoiceHelperTest {
         Invoice__c oldInvoice = new Invoice__c(
             InvoiceReceiver__c = receiver.Id,
             BillingAddressZIP__c = '8000',
-            ProjectName__c = proj.Id,
-            ESRAccountNr__c = '01-8513-5',
-            ESRMergentNr__c = '207115',
-            InvoiceDocumentNr__c = 25010829
+            ProjectName__c = proj.Id
         );
         insert oldInvoice;
 
@@ -84,10 +81,7 @@ private class InvoiceHelperTest {
         Invoice__c invoice = new Invoice__c(
             InvoiceReceiver__c = receiver.Id,
             BillingAddressZIP__c = '8000',
-            ProjectName__c = proj.Id,
-            ESRAccountNr__c = '01-8513-5',
-            ESRMergentNr__c = '207115',
-            InvoiceDocumentNr__c = 25010829
+            ProjectName__c = proj.Id
         );
         insert invoice;
 

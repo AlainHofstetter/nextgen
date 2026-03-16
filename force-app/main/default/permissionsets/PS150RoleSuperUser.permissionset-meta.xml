@@ -6,6 +6,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.TEST_NextGen01_001__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>CampaignMember.PostalAddress__c</field>
         <readable>true</readable>

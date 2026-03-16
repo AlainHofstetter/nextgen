@@ -999,7 +999,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <displayNameOverride>Sv: Costs - Total Amount (CHF)</displayNameOverride>
             <field>CostsTotalAmountCHF__c</field>
             <table>Project__c.PackagesProjectName__r</table>
         </columns>
@@ -1010,7 +1009,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <displayNameOverride>Sv: Costs - Total Supplier Costs (CHF)</displayNameOverride>
             <field>CostsTotalSupplierCostsCHF__c</field>
             <table>Project__c.PackagesProjectName__r</table>
         </columns>
@@ -1659,13 +1657,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <displayNameOverride>SC: Service - Supplier Costs Net</displayNameOverride>
             <field>ServiceSupplierCostsNet__c</field>
             <table>Project__c.PackagesProjectName__r.SupplierCosts__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <displayNameOverride>SC: Service -  Supplier Costs Net (CHF)</displayNameOverride>
             <field>ServiceSupplierCostsNetCHF__c</field>
             <table>Project__c.PackagesProjectName__r.SupplierCosts__r</table>
         </columns>

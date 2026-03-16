@@ -44,8 +44,8 @@
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
         <dateColumn>Project__c.PackagesProjectName__r.Time__r$DateFrom__c</dateColumn>
-        <endDate>2026-02-28</endDate>
+        <endDate>2026-01-31</endDate>
         <interval>INTERVAL_CUSTOM</interval>
-        <startDate>2026-02-01</startDate>
+        <startDate>2026-01-01</startDate>
     </timeFrameFilter>
 </Report>

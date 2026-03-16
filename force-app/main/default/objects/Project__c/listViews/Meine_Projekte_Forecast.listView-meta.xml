@@ -11,9 +11,9 @@
     <columns>InvoiceOpenToBudget__c</columns>
     <columns>SupplierCostsForecast__c</columns>
     <columns>ILVForecast__c</columns>
+    <columns>JanForecast__c</columns>
     <columns>FebForecast__c</columns>
     <columns>MarForecast__c</columns>
-    <columns>AprForecast__c</columns>
     <filterScope>Mine</filterScope>
     <filters>
         <field>RECORDTYPE</field>

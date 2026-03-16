@@ -22,7 +22,7 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c$MarForecast__c</field>
+        <field>Project__c$JanForecast__c</field>
     </columns>
     <currency>CHF</currency>
     <filter>
@@ -60,7 +60,7 @@
     </params>
     <reportType>Projects_with_Services_with_Time__c</reportType>
     <scope>user</scope>
-    <showDetails>true</showDetails>
+    <showDetails>false</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>

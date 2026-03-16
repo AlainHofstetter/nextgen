@@ -15,7 +15,6 @@ public with sharing class InvoiceDocumentController {
     public static final String HILDA = 'Hilda';
     public static final String FOCUSNEXT = 'Focusnext';
     public static final String STUDIO_HOTZ = 'Studio Victor Hotz';
-    public static final String HOUSE_MANUS = 'HoM - Studio';
     public Project__c companyName { get; set; }
     public String imageFirstPage { get; set; }
     public Invoice__c invoiceRecord { get; set; }
@@ -24,9 +23,8 @@ public with sharing class InvoiceDocumentController {
     public String localisedPeriodUntil { get; set; }
     public String termsOfPaymentLabel { get; set; }
     public List<InvoicePos__c> nonGroupInvPos { get; set; }
-    public Map<String, InvoicePos__c> mapGroupNameAmount { get; set; }      // @key: invoice position name @value: invoice position
-    public Map<String, List<InvoicePos__c>> mapInvPosGroup { get; set; }    // @key: name of the group @values: list of invoice positions
-    public List<String> invPosGroupKeys { get; set; }                       // Sorted list of mapInvPosGroup keys
+    public Map<String, InvoicePos__c> mapGroupNameAmount { get; set; } // @key: invoice position name @value: invoice position
+    public Map<String, List<InvoicePos__c>> mapInvPosGroup { get; set; } // @key: name of the group @values: list of invoice positions
 
     /**
      * @param stdController
@@ -41,15 +39,14 @@ public with sharing class InvoiceDocumentController {
                    CustomerOrderNr__c, ShowProjectInvoiceDescription__c, InvoiceDescription__c, PeriodFrom__c, PeriodUntil__c, CancellationReason__c, 
                    ProjectInvoiceCurrency__c, TermsOfPayment2__c, BankName__c, BankLocation__c, IBAN__c, BankClearing__c, SWIFT__c, InvoiceTotalAmountNet__c,
                    InvoiceTotalAmountNetSGP__c, InvoiceTotalAmountNetGBP__c, InvoiceTotalAmountGross__c, InvoiceTotalAmountGrossSGP__c, InvoiceTotalAmountGrossGBP__c,
-                   InvoiceVATAmount__c, InvoiceVATAmountSGP__c, InvoiceVATAmountGBP__c, VATNumberRef__c, TaxNumberRef__c,
+                   InvoiceVATAmount__c, InvoiceVATAmountSGP__c, InvoiceVATAmountGBP__c, 
                    InvoiceReceiver__r.BillingAddressLine2__c, InvoiceReceiver__r.BillingAddressLine3__c, InvoiceReceiver__r.BillingPoBox__c, 
                    InvoiceReceiver__r.BillingZip__c, InvoiceReceiver__r.BillingCity__c, InvoiceContact__c, AbacusBelegreferenz__c, InvoiceDate__c, 
                    VATPercent__c, OpportunityQuoteNr__c, InvoiceReceiver__r.BillingCountry__c, InvoiceReceiver__r.LocationCountry__c,
-                   (SELECT Id, Name, InvoicePositionName__c, InvoicePositionAmount__c, InvoicePositionSuperior__c,InvoicePositionSuperior__r.InvoicePositionName__c,
-                           ShowPosition__c, InvoicePositionSuperior__r.ShowPosition__c, PackageType__c, InvoicePositionText__c, ShowInvoiceText__c, ShowPositionAmount__c,
-                           PackageName__r.Name
+                   (SELECT Id, InvoicePositionName__c, InvoicePositionAmount__c, InvoicePositionSuperior__c,InvoicePositionSuperior__r.InvoicePositionName__c, 
+                           PackageType__c, InvoicePositionText__c, ShowInvoiceText__c, PackageName__r.Name
                     FROM InvoicePos__r
-                   WHERE ShowPosition__c = TRUE ORDER BY InvoicePositionSortNr__c ASC)
+                    WHERE ShowPosition__c = TRUE ORDER BY InvoicePositionSortNr__c ASC)
             FROM Invoice__c
             WHERE Id = :invoiceRecord.Id
         ];
@@ -68,11 +65,9 @@ public with sharing class InvoiceDocumentController {
         this.mapInvPosGroup = new Map<String, List<InvoicePos__c>>();
         this.nonGroupInvPos = new List<InvoicePos__c>();
         this.mapGroupNameAmount = new Map<String, InvoicePos__c>();
-        this.invPosGroupKeys = new List<String>();
         this.processInvoicePos(this.invoiceRecord.InvoicePos__r);
 
         System.debug('---InvoiceDocumentController--- mapInvPosGroup: '+mapInvPosGroup);
-        System.debug('---InvoiceDocumentController--- invPosGroupKeys: '+invPosGroupKeys);
 
         System.debug('---InvoiceDocumentController--- --END--');
     }
@@ -89,35 +84,27 @@ public with sharing class InvoiceDocumentController {
     @testVisible
     public void processInvoicePos(List<InvoicePos__c> initialInvPos) {
         Map<Id, String> mapNameGroup = new Map<Id, String>();
-        Map<Id, Boolean> mapGroupShow = new Map<Id, Boolean>();
 
         System.debug('---InvoiceDocumentController.processInvoicePos--- initialInvPos['+initialInvPos.size()+']: '+initialInvPos);
         for (InvoicePos__c iInvPos : initialInvPos) {
             System.debug('---InvoiceDocumentController.processInvoicePos--- iInvPos: '+iInvPos);
             mapNameGroup.put(iInvPos.Id, iInvPos.InvoicePositionName__c);
             this.mapGroupNameAmount.put(iInvPos.InvoicePositionName__c, iInvPos);
-            mapGroupShow.put(iInvPos.Id,iInvPos.ShowPosition__c);
         }
 
-        System.debug('---InvoiceDocumentController.processInvoicePos--- mapNameGroup: '+mapNameGroup);
         System.debug('---InvoiceDocumentController.processInvoicePos--- mapGroupNameAmount['+this.mapGroupNameAmount.size()+']: '+this.mapGroupNameAmount);
 
         for (InvoicePos__c iInvPos : initialInvPos) {
             if (iInvPos.InvoicePositionSuperior__c != null) {
                 // Populating mapInvPosGroup
                 String groupName = mapNameGroup.get(iInvPos.InvoicePositionSuperior__c);
-                Boolean showGrpPos = mapGroupShow.get(iInvPos.InvoicePositionSuperior__c);
+                System.debug('---InvoiceDocumentController.processInvoicePos--- groupName: '+groupName);
 
-                System.debug('---InvoiceDocumentController.processInvoicePos--- byGroup-- ['+iInvPos.InvoicePositionSuperior__c+'] groupName: '+groupName+' showGrpPos: '+showGrpPos);
-
-                // Show this record only if it's a child position (InvoicePositionSuperior__c is not null) 
-                // and marked to be displayed (ShowPosition__c = true)
-                if (groupName != null && showGrpPos) {
-                    // display the child position
+                if (groupName != null) {
+                    // If the InvoicePositionSuperior__c is not null, then it's a child)
                     List<InvoicePos__c> listChildren;
                     if (!this.mapInvPosGroup.containsKey(groupName)) {
                         listChildren = new List<InvoicePos__c>();
-                        invPosGroupKeys.add(groupName);
                     } else {
                         listChildren = this.mapInvPosGroup.get(groupName);
                     }
@@ -134,17 +121,15 @@ public with sharing class InvoiceDocumentController {
 
         // Populating nonGroupInvPos
         for (InvoicePos__c iInvPos : initialInvPos) {
-            System.debug('---InvoiceDocumentController.processInvoicePos--- nonGroupInvPos --['+iInvPos.Name+'] id: '+iInvPos.Id + ' InvoicePositionSuperior__c:'+ iInvPos.InvoicePositionSuperior__c +
-                         ' InvoicePositionName__c: ' +iInvPos.InvoicePositionName__c + ' PackageType__c:'+ iInvPos.PackageType__c + ' Amount: '+iInvPos.InvoicePositionAmount__c);
-            if ((iInvPos.InvoicePositionSuperior__c == null || !iInvPos.InvoicePositionSuperior__r.ShowPosition__c)
+            if (iInvPos.InvoicePositionSuperior__c == null 
                 && !this.mapInvPosGroup.containsKey(iInvPos.InvoicePositionName__c) 
                 && iInvPos.PackageType__c != null
                 && !iInvPos.PackageType__c.equalsIgnoreCase('group')) {
                 // It doesn't belong to any group
 
-                // if (!iInvPos.ShowInvoiceText__c) {
-                //     iInvPos.InvoicePositionText__c = null;
-                // }
+                if (!iInvPos.ShowInvoiceText__c) {
+                    iInvPos.InvoicePositionText__c = null;
+                }
 
                 this.nonGroupInvPos.add(iInvPos);
             }
@@ -166,7 +151,6 @@ public with sharing class InvoiceDocumentController {
 
     public void getImageURL() {
         System.debug('---InvoiceDocumentController.getImageURL--- --START-- ');
-        System.debug('---InvoiceDocumentController.getImageURL--- invoiceRecord.Id: '+this.invoiceRecord.Id+' QRInvoicePrefix: '+Label.QRInvoicePrefix);
         // Check if the QR code already exists
         List<ContentDocumentLink> lstContentDocumentLinks = [
             SELECT Id, ContentDocumentId
@@ -178,20 +162,17 @@ public with sharing class InvoiceDocumentController {
         System.debug('---InvoiceDocumentController.getImageURL--- lstContentDocumentLinks: '+lstContentDocumentLinks);
         System.debug('---InvoiceDocumentController.getImageURL--- BillingCountry__c: '+this.invoiceRecord.InvoiceReceiver__r.BillingCountry__c);
 
-        // If the invoice doesn't have a QR code already, we generate it using the QRCodeService.
-        // QR codes are only needed for Swiss invoices with currency CHF or EUR.
+        // If the invoice doesn't have a QR code already, we generate it using the QRCodeService
+        // QR Code are only needed for Swiss invoices.
         String billingCountry = String.isNotBlank(this.invoiceRecord.InvoiceReceiver__r.BillingCountry__c) ? 
                                     this.invoiceRecord.InvoiceReceiver__r.BillingCountry__c : this.invoiceRecord.InvoiceReceiver__r.LocationCountry__c;
 
-        System.debug('---InvoiceDocumentController.getImageURL--- -billingCountry: '+billingCountry+ ' lstContentDocumentLinks: '+lstContentDocumentLinks);
-        if (billingCountry == 'SWITZERLAND' && 
-            (this.invoiceRecord.ProjectInvoiceCurrency__c == 'CHF' || this.invoiceRecord.ProjectInvoiceCurrency__c == 'EUR')) {
-            // if (lstContentDocumentLinks.isEmpty()) {
+        if (billingCountry == 'SWITZERLAND') {
+            if (lstContentDocumentLinks.isEmpty()) {
                 if (!Test.isRunningTest()) {
-                    System.debug('---InvoiceDocumentController.getImageURL--- --Generate new QR--');
                     QRCodeService.generateQRCode(this.invoiceRecord);
                 }
-            // }
+            }
             System.debug('---InvoiceDocumentController.getImageURL--- --After QRCodeService.generateQRCode- ');
         } else {
             System.debug('---InvoiceDocumentController.getImageURL--- --Not SWITZERLAND- ');
@@ -205,8 +186,6 @@ public with sharing class InvoiceDocumentController {
             WHERE LinkedEntityId = :this.invoiceRecord.Id
             AND ContentDocument.Title LIKE :Label.QRInvoicePrefix + '%'
         ];
-
-        System.debug('---InvoiceDocumentController.getImageURL--- AFTER-- lstContentDocumentLinks: '+lstContentDocumentLinks);
 
         // Getting ContentVersion file using ContentDocument Id
         List<ContentVersion> versions = [
@@ -252,52 +231,52 @@ public with sharing class InvoiceDocumentController {
 
         Map<String, Map<String, String>> translationsMap = new Map<String, Map<String, String>>{
             '1' => new Map<String, String>{
-                'de' => '30 Tage netto',
-                'en' => '30 days net'
+                'de' => '30 Tage Netto',
+                'en' => '30 Days Net'
             },
             '10' => new Map<String, String>{
-                'de' => '15 Tage netto',
-                'en' => '15 days net'
+                'de' => '15 Tage Netto',
+                'en' => '15 Days Net'
             },
             '13' => new Map<String, String>{
-                'de' => '20 Tage netto',
-                'en' => '20 days net'
+                'de' => '20 Tage Netto',
+                'en' => '20 Days Net'
             },
             '14' => new Map<String, String>{
-                'de' => 'sofort',
-                'en' => 'immediately'
+                'de' => 'Sofort',
+                'en' => 'Immediately'
             },
             '15' => new Map<String, String>{
-                'de' => '45 Tage netto',
-                'en' => '45 days net'
+                'de' => '45 Tage Netto',
+                'en' => '45 Days Net'
             },
             '2' => new Map<String, String>{
-                'de' => '10 Tage 2%, 30 Tage netto',
-                'en' => '10 days 2%, 30 days net'
+                'de' => '10 Tage 2%, 30 Tage Netto',
+                'en' => '10 Days 2%, 30 Days Net'
             },
             '3' => new Map<String, String>{
-                'de' => '10 Tage netto',
-                'en' => '10 days net'
+                'de' => '10 Tage Netto',
+                'en' => '10 Days Net'
             },
             '4' => new Map<String, String>{
                 'de' => '30 Tage 2%',
-                'en' => '30 days 2%'
+                'en' => '30 Days 2%'
             },
             '5' => new Map<String, String>{
-                'de' => '60 Tage netto',
-                'en' => '60 days net'
+                'de' => '60 Tage Netto',
+                'en' => '60 Days Net'
             },
             '7' => new Map<String, String>{
-                'de' => '10 Tage 3%, 30 Tage netto',
-                'en' => '10 days 3%, 30 days net'
+                'de' => '10 Tage 3%, 30 Tage Netto',
+                'en' => '10 Days 3%, 30 Days Net'
             },
             '8' => new Map<String, String>{
-                'de' => '90 Tage netto',
-                'en' => '90 days net'
+                'de' => '90 Tage Netto',
+                'en' => '90 Days Net'
             },
             '9' => new Map<String, String>{
-                'de' => '15 Tage 2%, 30 Tage netto',
-                'en' => '15 days 2%, 30 days net'
+                'de' => '15 Tage 2%, 30 Tage Netto',
+                'en' => '15 Days 2%, 30 Days Net'
             }
             // Add additional values and translations as needed
         };
@@ -331,7 +310,7 @@ public with sharing class InvoiceDocumentController {
             Invoice__c inv = [
                 SELECT Id, ProjectCostCenter__c, ProjectCostCenter__r.Active__c, ProjectCostCenter__r.Name, AccountLanguage__c, 
                        InvoiceVATAmount__c, VATPercent__c, InvoiceDocumentNr__c, ProjectCostCenter__r.LegalAccount__r.Name,
-                       InvoiceReceiver__r.CurrencyIsoCode, InvoiceStatus__c
+                       InvoiceReceiver__r.CurrencyIsoCode
                 FROM Invoice__c
                 WHERE Id = :invoiceId
             ];
@@ -421,10 +400,6 @@ public with sharing class InvoiceDocumentController {
                 'CREATE' => Page.InvoicePDF_Studio_Hotz,
                 'CANCEL' => Page.InvoiceCancelPDF_Studio_Hotz
             },
-            'HOUSE_MANUS' => new Map<String, PageReference>{
-                'CREATE' => Page.InvoicePDF_Manus,
-                'CANCEL' => Page.InvoiceCancelPDF_BLC
-            },
             'DEFAULT' => new Map<String, PageReference>{
                 'CREATE' => Page.InvoicePDF_BLC,
                 'CANCEL' => Page.InvoiceCancelPDF_BLC
@@ -464,8 +439,6 @@ public with sharing class InvoiceDocumentController {
             mapKey = 'FOCUSNEXT';
         } else if (upperCostCenter.contains(STUDIO_HOTZ.toUpperCase())) {
             mapKey = 'STUDIO';
-        } else if (upperCostCenter.contains(HOUSE_MANUS.toUpperCase())) {
-            mapKey = 'HOUSE_MANUS';
         } else {
             mapKey = 'DEFAULT';
         }

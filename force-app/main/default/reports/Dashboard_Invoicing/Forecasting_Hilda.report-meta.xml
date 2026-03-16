@@ -72,11 +72,15 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.FebForecast__c</field>
+        <field>Project__c.OctForecast__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.MarForecast__c</field>
+        <field>Project__c.NovForecast__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Project__c.DecForecast__c</field>
     </columns>
     <currency>CHF</currency>
     <filter>

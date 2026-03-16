@@ -59,7 +59,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>greaterOrEqual</operator>
-            <value>1/1/2025</value>
+            <value>1/1/2023</value>
         </criteriaItems>
         <criteriaItems>
             <column>Project__c$ProjectSubType__c</column>
@@ -73,7 +73,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>lessOrEqual</operator>
-            <value>12/31/2025</value>
+            <value>12/31/2023</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>

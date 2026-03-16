@@ -4,12 +4,6 @@
     <attachmentOption>All</attachmentOption>
     <authenticationFailureAction>Bounce</authenticationFailureAction>
     <authorizationFailureAction>Discard</authorizationFailureAction>
-    <emailServicesAddresses>
-        <developerName>b0000000Cx89</developerName>
-        <isActive>true</isActive>
-        <localPart>it</localPart>
-        <runAsUser>automatedcase@00db0000000cbj7eai.ext</runAsUser>
-    </emailServicesAddresses>
     <functionInactiveAction>Bounce</functionInactiveAction>
     <functionName>EmailToCase</functionName>
     <isActive>true</isActive>

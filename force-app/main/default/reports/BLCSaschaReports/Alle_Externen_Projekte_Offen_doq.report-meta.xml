@@ -54,13 +54,6 @@
             <operator>equals</operator>
             <value>Open</value>
         </criteriaItems>
-        <criteriaItems>
-            <column>Project__c.ProjectCostCenter__c</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>Calydo</value>
-        </criteriaItems>
         <language>en_US</language>
     </filter>
     <format>Tabular</format>

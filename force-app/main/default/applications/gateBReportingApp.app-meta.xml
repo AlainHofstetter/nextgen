@@ -6,7 +6,6 @@
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
     <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
     <label>gateB Reporting App</label>
-    <logo>Skywalk_Images/LogoSkywalk.png</logo>
     <tabs>standard-Chatter</tabs>
     <tabs>gateBServers__c</tabs>
     <tabs>gateBServerModules__c</tabs>

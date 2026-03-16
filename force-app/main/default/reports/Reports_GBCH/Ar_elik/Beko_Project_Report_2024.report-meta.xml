@@ -29,7 +29,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>P-118432</value>
+            <value>P-113765</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>
@@ -56,8 +56,8 @@
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
         <dateColumn>Project__c.PackagesProjectName__r.Time__r$DateFrom__c</dateColumn>
-        <endDate>2026-02-27</endDate>
+        <endDate>2025-09-30</endDate>
         <interval>INTERVAL_CUSTOM</interval>
-        <startDate>2026-01-01</startDate>
+        <startDate>2025-09-01</startDate>
     </timeFrameFilter>
 </Report>

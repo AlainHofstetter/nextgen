@@ -87,7 +87,6 @@ public with sharing class Invoice extends fflib_SObjectDomain
     }
 
     public void updateESR(Invoice__c inv){
-        System.debug('---Invoice.updateESR--- inv: ' + inv);
         //we are using a isRunningTest call to let us supply the value to the InvoiceTotalAmountGross__c formula field - ds
         //ESR Unformatted
         inv.ESRUnformatted__c = EsrUtil.getESR(inv.ESRAccountNr__c, inv.ESRMergentNr__c, inv.InvoiceDocumentNr__c, (System.Test.isRunningTest() ? 123 : inv.InvoiceTotalAmountGross__c), EsrUtil.EsrFormat.UNFORMATTED);
@@ -262,8 +261,6 @@ public with sharing class Invoice extends fflib_SObjectDomain
             ic.InvoiceSentDate__c = null;
             ic.InvoiceValutaDate__c = null;
             ic.CancellationInvoiceRelation__c = i.Id;
-            ic.PeriodFrom__c = i.PeriodFrom__c;
-            ic.PeriodUntil__c = i.PeriodUntil__c;
 
             uow.registerNew(ic);
             cancelled.add(ic);

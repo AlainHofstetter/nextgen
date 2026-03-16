@@ -57,10 +57,6 @@
         <field>Project__c.Invoices__r$Name</field>
     </columns>
     <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.Invoices__r$InvoiceDocumentNr__c</field>
-    </columns>
-    <columns>
         <field>Project__c.Invoices__r$InvoiceStatus__c</field>
     </columns>
     <columns>
@@ -87,14 +83,6 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>Project__c.Invoices__r$InvoicePOSTotalAmountCHF__c</field>
     </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.Invoices__r$InvoiceTotalAmountNetCHF__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c$InvoiceTotalAmountNetCHFBP__c</field>
-    </columns>
     <currency>CHF</currency>
     <description>Übersicht aller Rechnungen der Abrechnungsperiode. Kontrolle mit Erfolgrechnung (Summe Konto 3400 + 3611 +3612)</description>
     <filter>
@@ -111,7 +99,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>contains</operator>
-            <value>house of manus</value>
+            <value>Victor Hotz</value>
         </criteriaItems>
         <language>en_US</language>
     </filter>
