@@ -3,5 +3,5 @@
     <customSettingsType>Hierarchy</customSettingsType>
     <enableFeeds>false</enableFeeds>
     <label>User Admin</label>
-    <visibility>Protected</visibility>
+    <visibility>Public</visibility>
 </CustomObject>

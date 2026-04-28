@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>BrandMaker</fullName>
+        <default>false</default>
+        <label>BrandMaker</label>
+    </customValue>
+    <customValue>
+        <fullName>Magnolia CMS</fullName>
+        <default>false</default>
+        <label>Magnolia CMS</label>
+    </customValue>
+    <customValue>
+        <fullName>censhare (not tracked via Version API)</fullName>
+        <default>false</default>
+        <label>censhare (not tracked via Version API)</label>
+    </customValue>
+    <customValue>
+        <fullName>other (not tracked via Version API)</fullName>
+        <default>false</default>
+        <label>other (not tracked via Version API)</label>
+    </customValue>
+    <masterLabel>Server Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

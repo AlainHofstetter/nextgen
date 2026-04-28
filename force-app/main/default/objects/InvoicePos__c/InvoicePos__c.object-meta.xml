@@ -168,9 +168,7 @@
         <customTabListAdditionalFields>PackageName__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>InvoicePositionAmount__c</customTabListAdditionalFields>
         <excludedStandardButtons>Accept</excludedStandardButtons>
-        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>Forward</excludedStandardButtons>
-        <lookupDialogsAdditionalFields>InvoicePositionSortNr__c</lookupDialogsAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>        <lookupDialogsAdditionalFields>InvoicePositionSortNr__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>PackageName__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>PackageSubType__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>PackageType__c</lookupDialogsAdditionalFields>

@@ -172,9 +172,7 @@
         <customTabListAdditionalFields>ExpenseSubType__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>ExpenseDate__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>ExpenseGross__c</customTabListAdditionalFields>
-        <excludedStandardButtons>Accept</excludedStandardButtons>
-        <excludedStandardButtons>Forward</excludedStandardButtons>
-        <searchResultsAdditionalFields>Expensetracker__c</searchResultsAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>        <searchResultsAdditionalFields>Expensetracker__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Package__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ExpenseType__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ExpenseSubType__c</searchResultsAdditionalFields>

@@ -1,69 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
-    <standardValue>
-        <fullName>Planned</fullName>
-        <default>true</default>
-        <label>Planned</label>
-    </standardValue>
-    <standardValue>
-        <fullName>In Progress</fullName>
-        <default>false</default>
-        <label>In Progress</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Completed</fullName>
-        <default>false</default>
-        <label>Completed</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Aborted</fullName>
-        <default>false</default>
-        <label>Aborted</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Erfasst</fullName>
-        <default>false</default>
-        <label>Erfasst</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Unvollständig</fullName>
-        <default>false</default>
-        <label>Unvollständig</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Save the date sent</fullName>
-        <default>false</default>
-        <label>Save the date sent</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Invitation sent</fullName>
-        <default>false</default>
-        <label>Invitation sent</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Angemeldet no show</fullName>
-        <default>false</default>
-        <label>Angemeldet no show</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Angemeldet attended</fullName>
-        <default>false</default>
-        <label>Angemeldet attended</label>
-    </standardValue>
     <standardValue>
         <fullName>Abgemeldet</fullName>
         <default>false</default>
         <label>Abgemeldet</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Infomail vor Event</fullName>
-        <default>false</default>
-        <label>Infomail vor Event</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Infomail nach Event</fullName>
-        <default>false</default>
-        <label>Infomail nach Event</label>
     </standardValue>
 </StandardValueSet>

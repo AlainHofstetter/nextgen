@@ -9,4 +9,37 @@ package.xml
 **/.eslintrc.json
 
 # LWC Jest
-**/__tests__/**
+**/__tests__/**force-app/main/default/layouts/AccountBrand-Account Brand Layout.layout-meta.xml
+force-app/main/default/layouts/Address-Address Layout.layout-meta.xml
+force-app/main/default/layouts/BusinessBrand-Business Brand Layout.layout-meta.xml
+force-app/main/default/layouts/CollaborationGroup-Group Layout.layout-meta.xml
+force-app/main/default/layouts/ContactPointAddress-Contact Point Address Layout.layout-meta.xml
+force-app/main/default/layouts/ContactPointEmail-Contact Point Email Layout.layout-meta.xml
+force-app/main/default/layouts/ContactPointPhone-Contact Point Phone Layout.layout-meta.xml
+force-app/main/default/layouts/ContactPointTypeConsent-Contact Point Type Consent Layout.layout-meta.xml
+force-app/main/default/layouts/Customer-Customer Layout.layout-meta.xml
+force-app/main/default/layouts/DataUseLegalBasis-Data Use Legal Basis Layout.layout-meta.xml
+force-app/main/default/layouts/DelegatedAccount-External Managed Account Layout.layout-meta.xml
+force-app/main/default/layouts/EmpUserProvisionProcessErr-Employee User Provisioning Process Error Layout.layout-meta.xml
+force-app/main/default/layouts/EmpUserProvisioningProcess-Employee User Provisioning Process Layout.layout-meta.xml
+force-app/main/default/layouts/Individual-Individual Layout.layout-meta.xml
+force-app/main/default/layouts/Seller-Seller Layout.layout-meta.xml
+force-app/main/default/layouts/WorkAccess-Access Layout.layout-meta.xml
+force-app/main/default/layouts/WorkBadge-Badge Received Layout.layout-meta.xml
+force-app/main/default/layouts/WorkBadgeDefinition-Badge Layout.layout-meta.xml
+force-app/main/default/layouts/WorkThanks-Thanks Layout.layout-meta.xml
+force-app/main/default/layouts/SalesforceInvoice-Salesforce-Rechnung-Layout.layout-meta.xml
+**/AccountBrand*
+**/quickActions/Project__c.Billing_Draft*
+**/quickActions/Project__c.New_TimeEx*
+**/quickActions/Project__c.ILV*
+**/quickActions/Project__c.Project_Manager*
+**/quickActions/Project__c.Project_Structure*
+**/quickActions/Invoice__c.Billing_Draft*
+**/quickActions/Invoice__c.CancelInvoice*
+**/quickActions/Invoice__c.Genera_new_QR_Bill*
+**/quickActions/Package__c.New_TimeEx*
+**/quickActions/Opportunity.Add_Packages*
+**/quickActions/Quote.Add_Packages_for_Quote*
+**/quickActions/Case.SendEmail*
+**/quickActions/CollaborationGroup*

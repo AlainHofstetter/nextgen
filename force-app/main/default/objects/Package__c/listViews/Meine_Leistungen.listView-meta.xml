@@ -8,7 +8,7 @@
     <columns>PackageType__c</columns>
     <columns>PackageSubType__c</columns>
     <columns>ProjectNr__c</columns>
-    <filterScope>Mine</filterScope>
+    <filterScope>Everything</filterScope>
     <label>Meine Leistungen</label>
     <language>en_US</language>
 </ListView>

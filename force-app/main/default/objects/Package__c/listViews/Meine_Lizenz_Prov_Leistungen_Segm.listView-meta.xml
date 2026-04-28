@@ -4,7 +4,7 @@
     <columns>NAME</columns>
     <columns>ProjectName__c</columns>
     <columns>CostCenterSegment__c</columns>
-    <filterScope>Mine</filterScope>
+    <filterScope>Everything</filterScope>
     <filters>
         <field>RECORDTYPE</field>
         <operation>equals</operation>

@@ -10,7 +10,7 @@
     <columns>LEAD.STATUS</columns>
     <columns>CORE.USERS.ALIAS</columns>
     <columns>UnitRelevance__c</columns>
-    <filterScope>Mine</filterScope>
+    <filterScope>Everything</filterScope>
     <filters>
         <field>LEAD.RECORDTYPE</field>
         <operation>equals</operation>

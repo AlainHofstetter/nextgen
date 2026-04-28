@@ -128,22 +128,6 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Invoice_Datensatzseite</content>
-        <formFactor>Small</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Invoice_Datensatzseite</content>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
@@ -179,9 +163,7 @@
         <customTabListAdditionalFields>InvoiceDate__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>CURRENCY_ISO_CODE</customTabListAdditionalFields>
         <customTabListAdditionalFields>InvoiceTotalAmountGross__c</customTabListAdditionalFields>
-        <excludedStandardButtons>Accept</excludedStandardButtons>
-        <excludedStandardButtons>Forward</excludedStandardButtons>
-        <searchResultsAdditionalFields>InvoiceDocumentNr__c</searchResultsAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>        <searchResultsAdditionalFields>InvoiceDocumentNr__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ProjectName__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>InvoiceType__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>InvoiceDate__c</searchResultsAdditionalFields>

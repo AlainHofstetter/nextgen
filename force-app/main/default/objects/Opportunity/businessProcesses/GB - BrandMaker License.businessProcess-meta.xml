@@ -23,8 +23,4 @@
         <fullName>Prospecting</fullName>
         <default>false</default>
     </values>
-    <values>
-        <fullName>Scoping</fullName>
-        <default>false</default>
-    </values>
 </BusinessProcess>

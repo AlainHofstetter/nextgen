@@ -7,7 +7,7 @@
     <columns>CONTACT.EMAIL</columns>
     <columns>ACCOUNT.NAME</columns>
     <columns>CORE.USERS.ALIAS</columns>
-    <filterScope>Mine</filterScope>
+    <filterScope>Everything</filterScope>
     <filters>
         <field>CONTACT.RECORDTYPE</field>
         <operation>equals</operation>

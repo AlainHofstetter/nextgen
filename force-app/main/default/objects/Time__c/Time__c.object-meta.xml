@@ -172,9 +172,7 @@
         <customTabListAdditionalFields>EndHhMm__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>DurationHhMm__c</customTabListAdditionalFields>
         <excludedStandardButtons>Accept</excludedStandardButtons>
-        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>Forward</excludedStandardButtons>
-        <searchResultsAdditionalFields>Timetracker__c</searchResultsAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>        <searchResultsAdditionalFields>Timetracker__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Package__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>DateFrom__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>DateUntil__c</searchResultsAdditionalFields>

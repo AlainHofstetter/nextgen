@@ -4,19 +4,4 @@
     <active>false</active>
     <compactLayoutAssignment>SupplierCostsCompactLayout</compactLayoutAssignment>
     <label>License Costs (Provision)</label>
-    <picklistValues>
-        <picklist>ProjectCurrency__c</picklist>
-        <values>
-            <fullName>CHF</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>EUR</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>USD</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
 </RecordType>

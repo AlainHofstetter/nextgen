@@ -1,91 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>RecruitingCampaign</fullName>
     <active>false</active>
     <compactLayoutAssignment>BusinessCampaignCompactLayout</compactLayoutAssignment>
     <label>Recruiting</label>
-    <picklistValues>
-        <picklist>JobLanguage__c</picklist>
-        <values>
-            <fullName>English</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>French</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>German</fullName>
-            <default>true</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>Status</picklist>
-        <values>
-            <fullName>Aborted</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Completed</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>In Progress</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Planned</fullName>
-            <default>true</default>
-        </values>
-    </picklistValues>
+    
     <picklistValues>
         <picklist>Type</picklist>
         <values>
             <fullName>HR Campaign</fullName>
             <default>true</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>UnitRelevance__c</picklist>
-        <values>
-            <fullName>BLC</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>CY</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>GBCH</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>GBDE</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>GBSGP</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>GBUS</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>HBC</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>HYS</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>SVH</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>XB</fullName>
-            <default>false</default>
         </values>
     </picklistValues>
 </RecordType>

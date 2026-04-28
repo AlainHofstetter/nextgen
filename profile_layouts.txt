@@ -1,0 +1,207 @@
+﻿AbacusInterface__c-Abacus Interface
+AccountBrand-Account Brand Layout
+Account-Company Account Layout
+Account-Company Account Layout
+AccountContactRole-Account Contact Role Layout
+Account-Internal Account Layout
+Account-Summary Account Layout
+ActionPlan-Action Plan Layout
+ActionPlanItemDependency-Action Plan Item Dependency Layout
+ActionPlanTemplate-Action Plan Template Layout
+ActionPlanTemplateItem-Action Plan Template Item Layout
+ActionPlanTemplateItemValue-Action Plan Template Item Value Layout
+ActionPlanTemplateVersion-Action Plan Template Version Layout
+ActionPlnTmplItmDependency-Action Plan Template Item Dependency Layout
+Address-Address Layout
+Asset-Asset Layout
+AssociatedLocation-Associated Location Layout
+BLCTickets__c-Employee Layout
+BLCTickets__c-IT %2F Censhare Layout
+BusinessBrand-Business Brand Layout
+Campaign-Business Campaign Layout
+Campaign-Business Campaign Layout
+CampaignMember-BLC - Alumnis Campaign Member
+CampaignMember-BLC - Event Campaign Member
+CampaignMember-BLC - Event Campaign Member
+CampaignMember-BLC - Mailing Campaign Member
+CampaignMember-CS - Candidate Campaign Member
+CampaignMemberStatus-Campaign Member Status Layout
+CampaignMember-XB - Kompendium Beta Test Campaign Member
+Campaign-Recruting Campaign Layout
+CaseClose-Close Case Layout
+CaseInteraction-Case Feed Layout
+Case-IT Case Layout
+Case-IT Case Layout
+Case-SBB Case Layout
+CollaborationGroup-Group Layout
+CommunityMemberLayout-Community Member Layout
+Contact-Company Contact Layout
+Contact-Company Contact Layout
+Contact-Internal Contact Layout
+ContactPointAddress-Contact Point Address Layout
+ContactPointEmail-Contact Point Email Layout
+ContactPointPhone-Contact Point Phone Layout
+ContactPointTypeConsent-Contact Point Type Consent Layout
+Contact-Summary Contact Layout
+ContentAsset-Asset File Layout
+ContentVersion-General
+Contract__c-Contract Layout
+Contract__c-Contract Layout
+Contract__c-License Layout
+Contract__c-Telco Subscription Layout
+Contract-Contract Layout
+CostCenter__c-Cost Center Layout
+CostCenterSegment__c-Cost Center Segment Layout
+Customer-Customer Layout
+CYWebprojekte__c-CY - Webprojekte Layout
+DataUseLegalBasis-Data Use Legal Basis Layout
+DelegatedAccount-External Managed Account Layout
+DuplicateRecordItem-Duplicate Record Item Layout
+DuplicateRecordSet-Duplicate Record Set Layout
+DynaDocQuery__c-DynaDoc Query Layout
+DynaDocTemplate__c-DynaDoc Template Layout
+EmailMessage-Email Message Layout - Email-to-Case
+EmployeeCosts__c-Employee Costs Layout
+EmpUserProvisioningProcess-Employee User Provisioning Process Layout
+EmpUserProvisionProcessErr-Employee User Provisioning Process Error Layout
+EnhancedLetterhead-Enhanced Letterhead Layout
+Event-Event Layout
+Expense__c-Expense Layout Car Travel
+Expense__c-Expense Layout Car Travel
+Expense__c-Expense Layout Receipt
+FeedItem-Feed Item Layout
+Field__mdt-Field Layout
+FinanceAccount__c-Finance Account Layout
+FlowInterview-Flow Interview Layout
+FlowOrchestrationInstance-Orchestration Run Layout
+FlowOrchestration-Orchestration Layout
+FlowOrchestrationWorkItem-Orchestration Work Item Layout
+FlowRecord-Flow-Layout
+gateBServerModuleRelation__c-gateB Server Module Relation Layout
+gateBServerModules__c-gateB Server Module Layout
+gateBServers__c-gateB Server Component Layout
+Global-Global Layout
+HRMutation__c-HR Mutation Layout
+Idea-Idea Layout
+ILVPos__c-ILV Pos Layout
+Individual-Individual Layout
+InheritedFieldValue__mdt-FieldValueInheritance Layout
+Inventory__c-Accessories Layout
+Inventory__c-Badge Layout
+Inventory__c-Books VH Layout
+Inventory__c-Car Layout
+Inventory__c-Computer Layout
+Inventory__c-Computer Layout
+Inventory__c-Credentials Layout
+Inventory__c-Credit Card Layout
+Inventory__c-Key Layout
+Inventory__c-Mobile Layout
+Inventory__c-Printer Layout
+Inventory__c-Screen Layout
+Inventory__c-Server Layout
+Inventory__c-Server Layout
+Inventory__c-Tablet Layout
+Inventory__c-Telephone Layout
+Inventory__c-Toner Layout
+Inventory__c-Workplace Layout
+Invoice__c-ILV Layout Invoice
+Invoice__c-Invoice Layout Cancellation
+Invoice__c-Invoice Layout Cancellation
+Invoice__c-Invoice Layout Credit
+Invoice__c-Invoice Layout Invoice
+Invoice_Template__mdt-Invoice Template Layout
+InvoicePos__c-Invoice Pos Layout
+Lead-Lead Business Layout
+Lead-Lead Business Layout
+Lead-Lead Candidate Layout
+ListEmail-List Email Layout
+Location-Location Layout
+Macro-Macro Layout
+Object__mdt-Object Layout
+Opportunity-BLC - Services Layout
+Opportunity-BLC - Services Layout
+Opportunity-BLC - Services Layout
+OpportunityBundle__c-Opportunity Bundle Layout
+OpportunityLineItem-Opportunity Product Layout
+OpportunityPackage__c-Opportunity Package Layout
+Pack__c-Package Layout
+Package__c-Package Layout Expense
+Package__c-Package Layout Expense
+Package__c-Package Layout Group
+Package__c-Package Layout License %28Direct%29
+Package__c-Package Layout License %28Provision%29
+Package__c-Package Layout Supplier Costs
+Package__c-Package Layout Time
+PackageLine__c-Package Line Layout
+ParentObjectUpdate__mdt-UpdateParentObject Layout
+PermissionSetAssigment__mdt-PermissionsetUserAssignment Layout
+PersonalRelation__c-Contact2Employee Layout
+Pricebook2-Price Book Layout
+PricebookEntry-Price Book Entry Layout
+ProcessException-Process Exception Layout
+Product2-Product Layout
+ProfileSkillEndorsement-Endorsement Layout
+ProfileSkill-Skill Layout
+ProfileSkillUser-Skill User Layout
+Project__c-Project Layout External License
+Project__c-Project Layout External License
+Project__c-Project Layout External Services
+Project__c-Project Layout Internal
+ProjectContractRelation__c-Project Contract Layout
+ProjectEmployeeRate__c-Project Employee Rate Layout
+Purchasing__c-Purchasing Layout
+QRCountryCode__mdt-QRCountryCode Layout
+QRLanguageCode__mdt-QRLanguageCode Layout
+QuickText-Quick Text Layout
+Quote_Package__c-Quote Package Layout
+QuoteLineItem-Quote Line Item Layout
+Quote-Quote Layout
+ResourceForecast__c-Resource Forecast Layout
+RHA_Configuration__c-RHA_Configuration Layout
+SalesforceContract-Salesforce-Vertrag-Layout
+SalesforceInvoice-Salesforce-Rechnung-Layout
+ScorecardAssociation-Scorecard Association Layout
+ScorecardMetric-Scorecard Metric Layout
+Scorecard-Scorecard Layout
+Segment__c-Segment Project Layout
+Segment__c-Segment Project Layout
+Segment__c-Segment Service Layout
+Seller-Seller Layout
+SIMWeb__c-SIM Analytics Layout
+Skills__c-Alumni
+Skills__c-Customer Projects
+Skills__c-Education
+Skills__c-Industry Knowledge
+Skills__c-Languages
+Skills__c-Motivation %2F Personal Interests Detail
+Skills__c-Network
+Skills__c-Skills Layout
+Solution-Solution Layout
+SupplierCosts__c-Supplier Costs Layout
+SupplierCosts__c-Supplier Costs Layout
+SupplierCosts__c-Supplier Costs Layout
+SupplierCosts__c-Supplier Costs Layout
+SupplierInvoice__c-Supplier Invoice Layout
+TalendSyncLog__c-Talend Sync Log Layout
+Task-Task Layout
+Time__c-Time Layout
+UnitRelation__c-gateB Test
+UnitRelation__c-Unit Relation Layout - BLC
+UnitRelation__c-Unit Relation Layout - BLC
+UnitRelation__c-Unit Relation Layout - BLC
+UnitRelation__c-Unit Relation Layout - CY
+UnitRelation__c-Unit Relation Layout - GB
+UnitRelation__c-Unit Relation Layout - GB
+UnitRelation__c-Unit Relation Layout - GBDE
+UnitRelation__c-Unit Relation Layout - GBSGP
+UnitRelation__c-Unit Relation Layout - HBC
+UnitRelation__c-Unit Relation Layout - VH
+UnitRelation__c-Unit Relation Layout - XB
+UnitRelation__c-Unit Relation Layout- HYS
+UserAlt-User Profile Layout
+UserAppMenuItem-Application Layout
+User-User Layout
+WorkAccess-Access Layout
+WorkBadge-Badge Received Layout
+WorkBadgeDefinition-Badge Layout
+WorkThanks-Thanks Layout

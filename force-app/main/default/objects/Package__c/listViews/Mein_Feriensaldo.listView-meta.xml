@@ -5,7 +5,7 @@
     <columns>ProjectName__c</columns>
     <columns>EmployeeVacationCredit__c</columns>
     <columns>EmployeeVacationBalance__c</columns>
-    <filterScope>Mine</filterScope>
+    <filterScope>Everything</filterScope>
     <filters>
         <field>NAME</field>
         <operation>equals</operation>

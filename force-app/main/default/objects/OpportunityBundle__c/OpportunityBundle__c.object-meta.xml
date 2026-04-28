@@ -171,7 +171,6 @@
         <customTabListAdditionalFields>UPDATEDBY_USER</customTabListAdditionalFields>
         <excludedStandardButtons>Accept</excludedStandardButtons>
         <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>Forward</excludedStandardButtons>
         <lookupDialogsAdditionalFields>OpportunityBundleName__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>OWNER.ALIAS</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CREATEDBY_USER</lookupDialogsAdditionalFields>

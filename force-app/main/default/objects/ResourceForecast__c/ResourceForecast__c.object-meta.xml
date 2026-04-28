@@ -172,9 +172,7 @@
         <customTabListAdditionalFields>ExpectedRevenue__c</customTabListAdditionalFields>
         <excludedStandardButtons>New</excludedStandardButtons>
         <excludedStandardButtons>Accept</excludedStandardButtons>
-        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>Forward</excludedStandardButtons>
-        <lookupDialogsAdditionalFields>Opportunity__c</lookupDialogsAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>        <lookupDialogsAdditionalFields>Opportunity__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>DateFirstDayOfMonth__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Amount__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Days__c</lookupDialogsAdditionalFields>

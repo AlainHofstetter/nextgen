@@ -3,15 +3,6 @@
     <fullName>Contact__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <label>Contact</label>
-    <lookupFilter>
-        <active>true</active>
-        <filterItems>
-            <field>Contact.RecordTypeId</field>
-            <operation>equals</operation>
-            <value>Company Contact, Summary Contact, Private Contact</value>
-        </filterItems>
-        <isOptional>false</isOptional>
-    </lookupFilter>
     <referenceTo>Contact</referenceTo>
     <relationshipLabel>Internal Personal Relation</relationshipLabel>
     <relationshipName>InternalPersonalRelation</relationshipName>

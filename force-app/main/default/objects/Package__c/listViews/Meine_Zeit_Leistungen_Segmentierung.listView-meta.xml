@@ -6,7 +6,7 @@
     <columns>PackageSortNr__c</columns>
     <columns>NAME</columns>
     <columns>CostCenterSegment__c</columns>
-    <filterScope>Mine</filterScope>
+    <filterScope>Everything</filterScope>
     <filters>
         <field>PackageStatus__c</field>
         <operation>equals</operation>

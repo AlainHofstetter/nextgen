@@ -165,9 +165,7 @@
         <customTabListAdditionalFields>CostCenter__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Segment__c</customTabListAdditionalFields>
         <excludedStandardButtons>Accept</excludedStandardButtons>
-        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>Forward</excludedStandardButtons>
-        <lookupDialogsAdditionalFields>CostCenter__c</lookupDialogsAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>        <lookupDialogsAdditionalFields>CostCenter__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Segment__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>SegmentType__c</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>CostCenter__c</lookupPhoneDialogsAdditionalFields>

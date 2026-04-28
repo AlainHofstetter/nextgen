@@ -167,9 +167,7 @@
         <customTabListAdditionalFields>InvoiceName__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>PackageName__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>ILVPositionAmount__c</customTabListAdditionalFields>
-        <excludedStandardButtons>Accept</excludedStandardButtons>
-        <excludedStandardButtons>Forward</excludedStandardButtons>
-        <searchResultsAdditionalFields>InvoiceName__c</searchResultsAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>        <searchResultsAdditionalFields>InvoiceName__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>PackageName__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ILVPositionAmount__c</searchResultsAdditionalFields>
     </searchLayouts>

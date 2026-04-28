@@ -4,5 +4,5 @@
     <description>Trigger management</description>
     <enableFeeds>false</enableFeeds>
     <label>Trigger Settings</label>
-    <visibility>Protected</visibility>
+    <visibility>Public</visibility>
 </CustomObject>

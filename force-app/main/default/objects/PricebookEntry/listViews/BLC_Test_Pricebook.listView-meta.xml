@@ -13,8 +13,6 @@
     <columns>Product2.Legal__c</columns>
     <columns>PRODUCT2.ACTIVE</columns>
     <columns>Product2.SortNr__c</columns>
-    <filterScope>Queue</filterScope>
+    <filterScope>Everything</filterScope>
     <label>BLC - Test Pricebook</label>
-    <language>en_US</language>
-    <queue>BLC - Test Pricebook</queue>
-</ListView>
+    <language>en_US</language></ListView>

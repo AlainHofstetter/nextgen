@@ -128,22 +128,6 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Service_Record_Page2</content>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Service_Record_Page2</content>
-        <formFactor>Small</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
@@ -177,9 +161,7 @@
         <customTabListAdditionalFields>PackageType2__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>PackageSubType__c</customTabListAdditionalFields>
         <excludedStandardButtons>Accept</excludedStandardButtons>
-        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>Forward</excludedStandardButtons>
-        <lookupDialogsAdditionalFields>PackageSuperior__c</lookupDialogsAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>        <lookupDialogsAdditionalFields>PackageSuperior__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>PackageNr__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>PackageType2__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>PackageSubType__c</lookupDialogsAdditionalFields>

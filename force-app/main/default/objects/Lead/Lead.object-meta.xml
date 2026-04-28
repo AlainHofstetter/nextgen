@@ -267,9 +267,7 @@
         <customTabListAdditionalFields>LEAD.PHONE</customTabListAdditionalFields>
         <customTabListAdditionalFields>LocationCity__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>CORE.USERS.ALIAS</customTabListAdditionalFields>
-        <excludedStandardButtons>Accept</excludedStandardButtons>
-        <excludedStandardButtons>Forward</excludedStandardButtons>
-        <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>        <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>LEAD.COMPANY</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>JobTitle__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>LEAD.EMAIL</lookupDialogsAdditionalFields>

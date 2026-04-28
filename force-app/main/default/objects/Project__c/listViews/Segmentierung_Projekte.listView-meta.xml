@@ -7,7 +7,7 @@
     <columns>NAME</columns>
     <columns>CostCenterSegment__c</columns>
     <columns>RECORDTYPE</columns>
-    <filterScope>Mine</filterScope>
+    <filterScope>Everything</filterScope>
     <filters>
         <field>RECORDTYPE</field>
         <operation>equals</operation>

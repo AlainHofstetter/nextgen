@@ -3,5 +3,5 @@
     <customSettingsType>List</customSettingsType>
     <enableFeeds>false</enableFeeds>
     <label>SIMSettings</label>
-    <visibility>Protected</visibility>
+    <visibility>Public</visibility>
 </CustomObject>

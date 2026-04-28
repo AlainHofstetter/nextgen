@@ -1,29 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <sorted>true</sorted>
-    <standardValue>
-        <fullName>Email</fullName>
-        <default>false</default>
-        <label>Email</label>
-    </standardValue>
-    <standardValue>
-        <fullName>In Person</fullName>
-        <default>false</default>
-        <label>In Person</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Phone</fullName>
-        <default>false</default>
-        <label>Phone</label>
-    </standardValue>
+    <sorted>false</sorted>
     <standardValue>
         <fullName>Slack</fullName>
         <default>false</default>
         <label>Slack</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Teams</fullName>
-        <default>false</default>
-        <label>Teams</label>
     </standardValue>
 </StandardValueSet>

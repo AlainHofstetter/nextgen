@@ -168,9 +168,7 @@
         <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
         <customTabListAdditionalFields>Active__c</customTabListAdditionalFields>
         <excludedStandardButtons>Accept</excludedStandardButtons>
-        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>Forward</excludedStandardButtons>
-        <lookupDialogsAdditionalFields>RECORDTYPE</lookupDialogsAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>        <lookupDialogsAdditionalFields>RECORDTYPE</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Active__c</lookupDialogsAdditionalFields>
         <lookupFilterFields>NAME</lookupFilterFields>
         <lookupFilterFields>RECORDTYPE</lookupFilterFields>

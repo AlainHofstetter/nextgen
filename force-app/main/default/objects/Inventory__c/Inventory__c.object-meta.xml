@@ -171,7 +171,6 @@
         <customTabListAdditionalFields>User__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>ClientName__c</customTabListAdditionalFields>
         <excludedStandardButtons>Accept</excludedStandardButtons>
-        <excludedStandardButtons>Forward</excludedStandardButtons>
         <lookupDialogsAdditionalFields>InventoryName__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>RECORDTYPE</lookupDialogsAdditionalFields>

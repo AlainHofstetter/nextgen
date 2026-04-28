@@ -171,9 +171,7 @@
         <customTabListAdditionalFields>SupplierCostsType__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>ServiceSupplierCostsNetPM__c</customTabListAdditionalFields>
         <excludedStandardButtons>Accept</excludedStandardButtons>
-        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>Forward</excludedStandardButtons>
-        <searchResultsAdditionalFields>PackageName__c</searchResultsAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>        <searchResultsAdditionalFields>PackageName__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>SupplierCostsDate__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>SupplierCostsType__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ServiceSupplierCostsNetPM__c</searchResultsAdditionalFields>

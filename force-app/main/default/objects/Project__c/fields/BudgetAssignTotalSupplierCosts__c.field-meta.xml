@@ -3,11 +3,6 @@
     <fullName>BudgetAssignTotalSupplierCosts__c</fullName>
     <label>Budget Assign - Total Supplier Costs</label>
     <summarizedField>Package__c.BudgetAssignTotalSupplierCosts__c</summarizedField>
-    <summaryFilterItems>
-        <field>Package__c.RecordTypeId</field>
-        <operation>equals</operation>
-        <value>Supplier Costs, License (Direct), License (Provision)</value>
-    </summaryFilterItems>
     <summaryForeignKey>Package__c.ProjectName__c</summaryForeignKey>
     <summaryOperation>sum</summaryOperation>
     <trackHistory>false</trackHistory>

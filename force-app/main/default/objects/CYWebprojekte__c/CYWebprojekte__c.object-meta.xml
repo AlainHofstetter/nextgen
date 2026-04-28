@@ -166,9 +166,7 @@
         <customTabListAdditionalFields>Projekt__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Account__c</customTabListAdditionalFields>
         <excludedStandardButtons>Accept</excludedStandardButtons>
-        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>Forward</excludedStandardButtons>
-        <lookupDialogsAdditionalFields>Projekt__c</lookupDialogsAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>        <lookupDialogsAdditionalFields>Projekt__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Account__c</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Projekt__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Account__c</lookupPhoneDialogsAdditionalFields>

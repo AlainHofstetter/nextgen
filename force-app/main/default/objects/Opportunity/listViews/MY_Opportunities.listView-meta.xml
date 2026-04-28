@@ -9,7 +9,7 @@
     <columns>OPPORTUNITY.EXP_AMOUNT</columns>
     <columns>OPPORTUNITY.NEXT_STEP</columns>
     <columns>OPPORTUNITY.CLOSE_DATE</columns>
-    <filterScope>Mine</filterScope>
+    <filterScope>Everything</filterScope>
     <label>My Opportunities</label>
     <language>en_US</language>
 </ListView>
