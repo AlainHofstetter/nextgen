@@ -13,5 +13,5 @@
     <isActive>true</isActive>
     <masterLabel>Contact - Exact Account Name, First Name, Last Name</masterLabel>
     <securityOption>BypassSharingRules</securityOption>
-    <sortOrder>2</sortOrder>
+    <sortOrder>4</sortOrder>
 </DuplicateRule>

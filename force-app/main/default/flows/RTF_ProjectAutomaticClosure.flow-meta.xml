@@ -15,12 +15,8 @@
                 <elementReference>$Record.Id</elementReference>
             </value>
         </inputParameters>
-        <nameSegment>Project__c.ProjectClosure</nameSegment>
-        <offset>0</offset>
-    </actionCalls>
-    <apiVersion>62.0</apiVersion>
-    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
-    <description>Valid only from Projects created from 06/02/2025)
+        <nameSegment>Project__c.ProjectClosure</nameSegment>    </actionCalls>
+    <apiVersion>60.0</apiVersion>    <description>Valid only from Projects created from 06/02/2025)
 Sets the Project (EndDate) based on the start date of the project (TEST VERSION: +1day) and closes the project automatically, sending an email notification on that date.</description>
     <environments>Default</environments>
     <formulas>

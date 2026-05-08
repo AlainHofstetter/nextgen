@@ -13,6 +13,7 @@
         <locationY>200</locationY>
         <actionName>SupplierCosts__c.Drittkosten_Projekt_Nicht_Zugewiesen_Information_Abacus_VIS</actionName>
         <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>SObjectRowId</name>
             <value>
@@ -34,6 +35,7 @@
         <locationY>300</locationY>
         <actionName>SupplierCosts__c.Drittkosten_Projekt_Nicht_Zugewiesen_Information_Abacus_VIS</actionName>
         <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>SObjectRowId</name>
             <value>
@@ -44,22 +46,6 @@
     </actionCalls>
     <apiVersion>49.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
-    <assignments>
-        <name>myVariable_waitStartTimeAssignment</name>
-        <label>myVariable_waitStartTimeAssignment</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <assignmentItems>
-            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>myDecision</targetReference>
-        </connector>
-    </assignments>
     <decisions>
         <processMetadataValues>
             <name>index</name>
@@ -125,16 +111,18 @@
             <name>originalFormula</name>
             <value>
                 <stringValue>AND(
-NOT(ISBLANK([SupplierCosts__c].EmailAbacusVisa__c )),
-[SupplierCosts__c].ProjektName__c.ProjectNr__c =&quot;P-105657&quot;
+  NOT(ISBLANK([SupplierCosts__c].EmailAbacusVisa__c)),
+  [SupplierCosts__c].ProjektName__c.ProjectNr__c = &quot;P-105657&quot;,
+  ISCHANGED([SupplierCosts__c].EmailAbacusVisa__c)
 )</stringValue>
             </value>
         </processMetadataValues>
         <name>formula_myRule_1</name>
         <dataType>Boolean</dataType>
         <expression>AND(
-NOT(ISBLANK({!myVariable_current.EmailAbacusVisa__c} )),
-{!myVariable_current.ProjektName__c.ProjectNr__c} =&quot;P-105657&quot;
+  NOT(ISBLANK({!myVariable_current.EmailAbacusVisa__c})),
+  {!myVariable_current.ProjektName__r.ProjectNr__c} = &quot;P-105657&quot;,
+  ISCHANGED({!myVariable_current.EmailAbacusVisa__c})
 )</expression>
     </formulas>
     <formulas>
@@ -142,19 +130,21 @@ NOT(ISBLANK({!myVariable_current.EmailAbacusVisa__c} )),
             <name>originalFormula</name>
             <value>
                 <stringValue>AND(
-ISBLANK([SupplierCosts__c].EmailAbacusVisa__c ),
-[SupplierCosts__c].ProjektName__c.ProjectNr__c =&quot;P-105657&quot;
+  ISBLANK([SupplierCosts__c].EmailAbacusVisa__c),
+  [SupplierCosts__c].ProjektName__c.ProjectNr__c =&quot;P-105657&quot;,
+  ISCHANGED([SupplierCosts__c].EmailAbacusVisa__c)
 )</stringValue>
             </value>
         </processMetadataValues>
         <name>formula_myRule_3</name>
         <dataType>Boolean</dataType>
         <expression>AND(
-ISBLANK({!myVariable_current.EmailAbacusVisa__c} ),
-{!myVariable_current.ProjektName__c.ProjectNr__c} =&quot;P-105657&quot;
+  ISBLANK({!myVariable_current.EmailAbacusVisa__c}),
+  {!myVariable_current.ProjektName__r.ProjectNr__c} =&quot;P-105657&quot;,
+  ISCHANGED({!myVariable_current.EmailAbacusVisa__c})
 )</expression>
     </formulas>
-    <interviewLabel>SupplierCostsEmailInformationAbacusVISA-4_InterviewLabel</interviewLabel>
+    <interviewLabel>SupplierCostsEmailInformationAbacusVISA-5_InterviewLabel</interviewLabel>
     <label>SupplierCostsEmailInformationAbacusVISA</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -189,6 +179,9 @@ ISBLANK({!myVariable_current.EmailAbacusVisa__c} ),
             </value>
         </processMetadataValues>
         <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
             <name>isChildRelationship</name>
             <value>
                 <booleanValue>false</booleanValue>
@@ -199,6 +192,9 @@ ISBLANK({!myVariable_current.EmailAbacusVisa__c} ),
             <value>
                 <stringValue>[SupplierCosts__c]</stringValue>
             </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_3_A1</name>
         <label>EmailProjectFinance</label>
@@ -253,7 +249,7 @@ ISBLANK({!myVariable_current.EmailAbacusVisa__c} ),
         </inputAssignments>
         <object>SupplierCosts__c</object>
     </recordUpdates>
-    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
+    <startElementReference>myDecision</startElementReference>
     <status>Active</status>
     <variables>
         <name>myVariable_current</name>
@@ -270,15 +266,5 @@ ISBLANK({!myVariable_current.EmailAbacusVisa__c} ),
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>SupplierCosts__c</objectType>
-    </variables>
-    <variables>
-        <name>myVariable_waitStartTimeVariable</name>
-        <dataType>DateTime</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <value>
-            <elementReference>$Flow.CurrentDateTime</elementReference>
-        </value>
     </variables>
 </Flow>

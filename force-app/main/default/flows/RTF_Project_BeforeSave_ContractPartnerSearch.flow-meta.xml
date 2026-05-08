@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <description>Copies ContractPartner Account name to ContractPartnerSearch__c for search purposes. Migrated from Process Builder ProjectContractPartnerSearch.</description>
+    <environments>Default</environments>
+    <interviewLabel>RTF_Project_BeforeSave_ContractPartnerSearch {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RTF_Project_BeforeSave_ContractPartnerSearch</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_ContractPartnerSearch</name>
+        <label>Set Contract Partner Search</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>ContractPartnerSearch__c</field>
+            <value>
+                <elementReference>$Record.ContractPartner__r.AccountName__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_ContractPartnerSearch</targetReference>
+        </connector>
+        <filterFormula>ISNEW() OR ISCHANGED({!$Record.ContractPartner__c})</filterFormula>
+        <object>Project__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

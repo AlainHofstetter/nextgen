@@ -78,13 +78,12 @@
             <operator>equals</operator>
             <value>0</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <name>22_CY - Protokoll Rechnungsübergabe</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Projects_with_Invoices_with_Invoice_Pos__c</reportType>
     <scope>organization</scope>

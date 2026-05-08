@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>60.0</apiVersion>
-    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
-    <description>Updates the Project Name (Search) field of the Service when it&apos;s created or if the project is changed.</description>
+    <apiVersion>60.0</apiVersion>    <description>Updates the Project Name (Search) field of the Service when it&apos;s created or if the project is changed.</description>
     <environments>Default</environments>
     <interviewLabel>RTF_ServiceUpdateProjectNameSearch {!$Flow.CurrentDateTime}</interviewLabel>
     <label>RTF_ServiceUpdateProjectNameSearch</label>

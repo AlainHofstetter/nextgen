@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <description>Sends CY email alert when ProjectStatus becomes Closed and CYSendEmailProjectStatusClosed is true. Migrated from Process Builder ProjectCYProjectStatusClosed.</description>
+    <environments>Default</environments>
+    <interviewLabel>RTF_Project_AfterSave_CYProjectStatusClosed {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RTF_Project_AfterSave_CYProjectStatusClosed</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <actionCalls>
+        <name>Send_CY_Email_Alert</name>
+        <label>Send CY Email Alert</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>Project__c.CY_Send_Email_Project_Status_Closed</actionName>
+        <actionType>emailAlert</actionType>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Send_CY_Email_Alert</targetReference>
+        </connector>
+        <filterFormula>OR(
+AND(ISCHANGED({!$Record.ProjectStatus__c}), {!$Record.ProjectStatus__c} = &quot;Closed&quot;, {!$Record.CYSendEmailProjectStatusClosed__c}),
+AND({!$Record.ProjectStatus__c} = &quot;Closed&quot;, ISCHANGED({!$Record.CYSendEmailProjectStatusClosed__c}), {!$Record.CYSendEmailProjectStatusClosed__c})
+)</filterFormula>
+        <object>Project__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -19,8 +19,8 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>Project__c.PackagesProjectName__r.Time__r$DurationHhMmN__c</field>
     </columns>
-    <currency>SGD</currency>
     <description>Resource utilization for CardMRI</description>
+    <currency>SGD</currency>
     <filter>
         <criteriaItems>
             <column>Project__c$Name</column>
@@ -29,13 +29,12 @@
             <operator>equals</operator>
             <value>Card MRI</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Tabular</format>
     <name>CardMRI Timesheet Reporting</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Projects_with_Services_with_Time__c</reportType>
     <scope>organization</scope>

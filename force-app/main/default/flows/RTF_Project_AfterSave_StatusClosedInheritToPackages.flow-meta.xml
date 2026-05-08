@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <description>Inherits Closed status to child Package__c records when Project status changes. Closed closes all packages; PartiallOpenWOTimeEntry closes only Time packages. Migrated from Process Builder ProjectStatusClosedInheritToServices.</description>
+    <environments>Default</environments>
+    <interviewLabel>RTF_Project_AfterSave_StatusClosedInheritToPackages {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RTF_Project_AfterSave_StatusClosedInheritToPackages</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <decisions>
+        <name>Check_Status_Closed</name>
+        <label>Status Closed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Check_Status_PartiallyOpen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Closed</defaultConnectorLabel>
+        <rules>
+            <name>Is_Closed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ProjectStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ProjectStatus__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Close_All_Packages</targetReference>
+            </connector>
+            <label>Is Closed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Status_PartiallyOpen</name>
+        <label>Status PartiallOpenWOTimeEntry?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Neither</defaultConnectorLabel>
+        <rules>
+            <name>Is_PartiallyOpen</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ProjectStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PartiallOpenWOTimeEntry</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ProjectStatus__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Close_Time_Packages</targetReference>
+            </connector>
+            <label>Is PartiallOpen</label>
+        </rules>
+    </decisions>
+    <recordUpdates>
+        <name>Close_All_Packages</name>
+        <label>Close All Packages</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>PackageStatus__c</field>
+            <value>
+                <stringValue>Closed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.PackagesProjectName__r</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Close_Time_Packages</name>
+        <label>Close Time-Type Packages</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>RecordType.DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Time</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>PackageStatus__c</field>
+            <value>
+                <stringValue>Closed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.PackagesProjectName__r</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_Status_Closed</targetReference>
+        </connector>
+        <object>Project__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

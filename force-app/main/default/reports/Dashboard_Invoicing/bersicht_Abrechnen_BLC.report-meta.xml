@@ -21,15 +21,7 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.ServicesTotalAmountCHF__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
         <field>Project__c.InvoiceTotalAmountCHF__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.ServiceTotalAmountCHFBP__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -76,7 +68,6 @@
             <operator>equals</operator>
             <value>Project__c.ExternalLicense,Project__c.ExternalServices</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Tabular</format>
     <name>Übersicht Abrechnen BLC</name>

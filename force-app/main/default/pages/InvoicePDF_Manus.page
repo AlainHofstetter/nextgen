@@ -240,8 +240,8 @@
         </apex:outputPanel>
 
         <!-- Swiss first page -->
-        <apex:outputText escape="false"
-            rendered="{!invoiceRecord.InvoiceReceiver__r.BillingCountry__c == 'SWITZERLAND'}">
+        <apex:outputText escape="false" rendered="{!invoiceRecord.InvoiceReceiver__r.BillingCountry__c == 'SWITZERLAND' &&
+                                                    (invoiceRecord.ProjectInvoiceCurrency__c == 'CHF' || invoiceRecord.ProjectInvoiceCurrency__c == 'EUR')}">
             <style>
                 /* First page (QR) - no header */
                 @page :first {
@@ -271,7 +271,8 @@
 
     <!-- Swiss QR running element: appears only for Switzerland -->
     <apex:outputPanel layout="none"
-        rendered="{!invoiceRecord.InvoiceReceiver__r.BillingCountry__c == 'SWITZERLAND'}">
+        rendered="{!invoiceRecord.InvoiceReceiver__r.BillingCountry__c == 'SWITZERLAND' &&
+                    (invoiceRecord.ProjectInvoiceCurrency__c == 'CHF' || invoiceRecord.ProjectInvoiceCurrency__c == 'EUR')}">
         <!-- Running element for @bottom-left -->
         <div class="imageFirstPage" style="margin:0; padding:0;">
             <apex:image url="{!imageURL}" width="815px" style="max-width:815px;" />
@@ -472,7 +473,12 @@
                                 </td>
                                 <td class="tableSmallCol alignRight paddingTopTable">
                                     <apex:outputPanel layout="none" rendered="{!!(ISBLANK(invPos.InvoicePositionAmount__c))}">
+                                    <!-- JC updated 25/03/2026 from the following line to the rest of the code inside this td
                                         <apex:outputField value="{!invPos.InvoicePositionAmount__c}"/>
+                                    -->
+                                        <apex:outputPanel layout="none" rendered="{!invPos.ShowPositionAmount__c}">
+                                            <apex:outputField value="{!invPos.InvoicePositionAmount__c}"/>
+                                        </apex:outputPanel>
                                     </apex:outputPanel>
                                 </td>
                             <!-- </apex:outputPanel> -->
@@ -513,7 +519,12 @@
                               <apex:outputField value="{!invPos.InvoicePositionName__c}"/>
                           </td>
                           <td class="tableSmallCol alignRight paddingTopTable borderBottom highlightLight">
-                              <apex:outputField value="{!invPos.InvoicePositionAmount__c}"/>
+                                <!-- JC updated 25/03/2026 from the following line to the rest of the code inside this td
+                                    <apex:outputField value="{!invPos.InvoicePositionAmount__c}"/>
+                                -->
+                                    <apex:outputPanel layout="none" rendered="{!invPos.ShowPositionAmount__c}">
+                                        <apex:outputField value="{!invPos.InvoicePositionAmount__c}"/>
+                                    </apex:outputPanel>
                           </td>
                       </apex:outputPanel>
                   </tr>

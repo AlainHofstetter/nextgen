@@ -37,7 +37,6 @@
             <operator>equals</operator>
             <value>Flat Rate 80.-,Contract 100.-,Contract 200.-,Contract 300.-,Other</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -58,7 +57,7 @@
     <name>HR - Mobile Übersicht</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CR_Contracts_with_Contacts__c</reportType>
     <scope>organization</scope>

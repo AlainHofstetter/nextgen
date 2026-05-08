@@ -169,7 +169,8 @@
         <customTabListAdditionalFields>SupplierInvoiceTotal__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>AbacusDocumentNr__c</customTabListAdditionalFields>
         <excludedStandardButtons>Accept</excludedStandardButtons>
-        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>        <searchResultsAdditionalFields>SupplierInvoiceDate__c</searchResultsAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <searchResultsAdditionalFields>SupplierInvoiceDate__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>BillerAccount__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>SupplierInvoiceTotal__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>AbacusDocumentNr__c</searchResultsAdditionalFields>

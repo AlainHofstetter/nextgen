@@ -16,7 +16,7 @@
     <columns>Q3Forecast__c</columns>
     <columns>Q4Forecast__c</columns>
     <columns>Q1_Forecast_Next_Year__c</columns>
-    <filterScope>Everything</filterScope>
+    <filterScope>Mine</filterScope>
     <filters>
         <field>OPPORTUNITY.STAGE_NAME</field>
         <operation>notEqual</operation>

@@ -16,7 +16,6 @@
             <operator>greaterOrEqual</operator>
             <value>LAST_N_MONTHS:14</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -27,7 +26,7 @@
     <name>Umsatz_MY_Projects</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Projects_with_Invoice_with_ILV_Pos__c</reportType>
     <scope>user</scope>

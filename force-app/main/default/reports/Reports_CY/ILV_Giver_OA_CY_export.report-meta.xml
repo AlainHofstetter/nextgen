@@ -91,7 +91,6 @@
             <operator>greaterOrEqual</operator>
             <value>LAST_YEAR</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsAcross>

@@ -8,12 +8,12 @@
     <label>BSI Integration</label>
     <oauthConfig>
         <callbackUrl>http://localhost/gateb_skywalkintegration_php/oauth_callback.php</callbackUrl>
-        <consumerKey>3MVG9z5xLJmws289JMl44TRqSuPj9AvzWZCDLMh1cPlt4EcdfRGvlPjWw4ozVf1rDwtCCrZWkHTEwdsdr8xja</consumerKey>
+        <consumerKey>3MVG99qusVZJwhslEt1oE3n8qyBtpSwSZHpKoQGclRkHJtP8EorB8oMZKG.MkVW7yDZikzJgU2gHBzDaVK0y5</consumerKey>
         <isAdminApproved>true</isAdminApproved>
         <isClientCredentialEnabled>false</isClientCredentialEnabled>
         <isCodeCredentialEnabled>false</isCodeCredentialEnabled>
         <isCodeCredentialPostOnly>false</isCodeCredentialPostOnly>
-        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isConsumerSecretOptional>true</isConsumerSecretOptional>
         <isIntrospectAllTokens>false</isIntrospectAllTokens>
         <isNamedUserJwtEnabled>false</isNamedUserJwtEnabled>
         <isPkceRequired>false</isPkceRequired>

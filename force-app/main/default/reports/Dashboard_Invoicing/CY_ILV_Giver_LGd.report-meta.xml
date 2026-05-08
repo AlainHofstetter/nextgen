@@ -79,7 +79,6 @@
             <operator>contains</operator>
             <value>GateB Germany</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>

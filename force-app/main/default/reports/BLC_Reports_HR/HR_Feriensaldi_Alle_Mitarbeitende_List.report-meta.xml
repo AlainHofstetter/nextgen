@@ -44,13 +44,12 @@
             <operator>equals</operator>
             <value>Open</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Tabular</format>
     <name>HR - Feriensaldi Alle Mitarbeitende List</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntityCustomEntity$Project__c$Package__c</reportType>
     <scope>organization</scope>

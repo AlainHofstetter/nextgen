@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <description>Copies InvoiceDocumentNr__c (as text) to InvoiceILVDocumentNrSearch__c when it changes on Invoice/Cancellation/Credit records. Migrated from Process Builder InvoiceNrSearch.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>formula_DocumentNrText</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!$Record.InvoiceDocumentNr__c})</expression>
+    </formulas>
+    <interviewLabel>RTF_Invoice_BeforeSave_DocumentNrSearch {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RTF_Invoice_BeforeSave_DocumentNrSearch</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_DocumentNrSearch</name>
+        <label>Set Document Nr Search</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>InvoiceILVDocumentNrSearch__c</field>
+            <value>
+                <elementReference>formula_DocumentNrText</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_DocumentNrSearch</targetReference>
+        </connector>
+        <filterFormula>ISCHANGED({!$Record.InvoiceDocumentNr__c}) AND ({!$Record.RecordType.DeveloperName} = &quot;Invoice&quot; OR {!$Record.RecordType.DeveloperName} = &quot;Cancellation&quot; OR {!$Record.RecordType.DeveloperName} = &quot;Credit&quot;)</filterFormula>
+        <object>Invoice__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

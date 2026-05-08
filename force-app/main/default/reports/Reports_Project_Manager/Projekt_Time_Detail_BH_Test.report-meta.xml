@@ -21,8 +21,11 @@
         <field>Project__c.PackagesProjectName__r.Time__r$Description__c</field>
     </columns>
     <columns>
+        <field>Project__c.PackagesProjectName__r.Time__r$Name</field>
+    </columns>
+    <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c$JanForecast__c</field>
+        <field>Project__c$AprForecast__c</field>
     </columns>
     <currency>CHF</currency>
     <filter>
@@ -40,7 +43,6 @@
             <operator>equals</operator>
             <value>Open</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsAcross>
@@ -60,7 +62,7 @@
     </params>
     <reportType>Projects_with_Services_with_Time__c</reportType>
     <scope>user</scope>
-    <showDetails>false</showDetails>
+    <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>

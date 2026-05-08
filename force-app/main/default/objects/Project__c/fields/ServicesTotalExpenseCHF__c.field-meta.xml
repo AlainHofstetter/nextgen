@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ServicesTotalExpenseCHF__c</fullName>
+    <label>Services - Total Expense (CHF)</label>
+    <summarizedField>Package__c.ServicesTotalExpenseCHF__c</summarizedField>
+    <summaryForeignKey>Package__c.ProjectName__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

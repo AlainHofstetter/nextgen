@@ -52,7 +52,6 @@
             <operator>equals</operator>
             <value>,Open,PartiallyOpen</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -63,7 +62,7 @@
     <name>HBC Project Segment</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntityCustomEntity$Project__c$Package__c</reportType>
     <scope>organization</scope>

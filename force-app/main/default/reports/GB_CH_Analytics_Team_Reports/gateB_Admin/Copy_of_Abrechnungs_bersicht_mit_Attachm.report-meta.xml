@@ -9,16 +9,10 @@
             <axisBinding>y</axisBinding>
             <column>Invoice__c.InvoiceTotalAmountNet__c</column>
         </chartSummaries>
-        <chartSummaries>
-            <aggregate>Sum</aggregate>
-            <axisBinding>y</axisBinding>
-            <column>Project__c.ServiceTotalTimeCHFBP__c</column>
-        </chartSummaries>
         <chartType>VerticalColumn</chartType>
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>true</expandOthers>
         <groupingColumn>CUST_NAME</groupingColumn>
-        <legendPosition>Right</legendPosition>
         <location>CHART_BOTTOM</location>
         <showAxisLabels>false</showAxisLabels>
         <showPercentage>false</showPercentage>
@@ -52,10 +46,6 @@
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Invoice__c.InvoiceTotalAmountNet__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.ServiceTotalTimeCHFBP__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -103,7 +93,6 @@
             <operator>greaterThan</operator>
             <value>3/1/2018</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -114,7 +103,7 @@
     <name>Abrechnungsübersicht</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntityCustomEntity$Project__c$Invoice__c</reportType>
     <scope>organization</scope>

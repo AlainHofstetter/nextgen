@@ -63,7 +63,6 @@
             <operator>equals</operator>
             <value>2023.4</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -74,7 +73,7 @@
     <name>HBC - EXCEL - Umsatz</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntityCustomEntity$Project__c$Invoice__c</reportType>
     <scope>organization</scope>

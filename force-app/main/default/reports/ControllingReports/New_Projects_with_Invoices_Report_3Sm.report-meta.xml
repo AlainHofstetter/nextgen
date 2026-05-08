@@ -13,7 +13,6 @@
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>true</expandOthers>
         <groupingColumn>Invoice__c.InvoiceDueDate__c</groupingColumn>
-        <legendPosition>Right</legendPosition>
         <location>CHART_BOTTOM</location>
         <secondaryGroupingColumn>Project__c.BillingViaCompany__c</secondaryGroupingColumn>
         <showAxisLabels>true</showAxisLabels>
@@ -44,10 +43,6 @@
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Project__c.InvoiceTotalAmount__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.BudgetOpenTotalAmount__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -112,7 +107,7 @@
     <name>Invoice Timeline</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntityCustomEntity$Project__c$Invoice__c</reportType>
     <scope>organization</scope>

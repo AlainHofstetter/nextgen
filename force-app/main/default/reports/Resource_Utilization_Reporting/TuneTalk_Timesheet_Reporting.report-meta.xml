@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Project__c$Name</field>
+    </columns>
+    <columns>
+        <field>Project__c.PackagesProjectName__r$Name</field>
+    </columns>
+    <columns>
+        <field>Project__c.PackagesProjectName__r.Time__r$DateFrom__c</field>
+    </columns>
+    <columns>
+        <field>Project__c.PackagesProjectName__r.Time__r$Name</field>
+    </columns>
+    <columns>
+        <field>Project__c.PackagesProjectName__r.Time__r$Description__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Project__c.PackagesProjectName__r.Time__r$DurationHhMmN__c</field>
+    </columns>
+    <description>Resource utilization for TuneTalk Migration</description>
+    <currency>SGD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Project__c.PackagesProjectName__r$ProjectNameSearch__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>TuneTalk</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>TuneTalk Timesheet Reporting</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Projects_with_Services_with_Time__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Project__c.PackagesProjectName__r.Time__r$DateFrom__c</dateColumn>
+        <endDate>2026-03-18</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2025-09-01</startDate>
+    </timeFrameFilter>
+</Report>

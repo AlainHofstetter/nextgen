@@ -109,7 +109,6 @@
             <operator>greaterThan</operator>
             <value>CHF 0</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -133,7 +132,7 @@
     </params>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Opportunity</reportType>
     <scope>organization</scope>

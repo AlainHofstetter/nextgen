@@ -24,7 +24,6 @@
             <operator>equals</operator>
             <value>1</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -35,7 +34,7 @@
     <name>Abacus Inbox Check</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntityCustomEntity$SupplierInvoice__c$SupplierCosts__c@SupplierCosts__c.PackageName__c</reportType>
     <scope>organization</scope>

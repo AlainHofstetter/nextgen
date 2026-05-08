@@ -17,7 +17,7 @@
     <name>NextGen_Accounts, Contacts, Opps</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>NextGen_Project_Accounts_with_Contacts_and_Opportunities__c</reportType>
     <scope>organization</scope>

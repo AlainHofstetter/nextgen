@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <description>Copies ContractPartner__c to InvoiceReceiver__c and ProjectPartner__c when ContractPartner changes. Migrated from Process Builder ProjectUpdateInvoiceReceiverProjectPartner.</description>
+    <environments>Default</environments>
+    <interviewLabel>RTF_Project_BeforeSave_UpdateInvoiceReceiverFromPartner {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RTF_Project_BeforeSave_UpdateInvoiceReceiverFromPartner</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_InvoiceReceiver_And_Partner</name>
+        <label>Set Invoice Receiver and Project Partner</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>InvoiceReceiver__c</field>
+            <value>
+                <elementReference>$Record.ContractPartner__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ProjectPartner__c</field>
+            <value>
+                <elementReference>$Record.ContractPartner__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_InvoiceReceiver_And_Partner</targetReference>
+        </connector>
+        <filterFormula>ISCHANGED({!$Record.ContractPartner__c})</filterFormula>
+        <object>Project__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

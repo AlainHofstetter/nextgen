@@ -5,6 +5,6 @@
     <columns>ActionPlanState</columns>
     <columns>Target</columns>
     <columns>StartDate</columns>
-    <filterScope>Everything</filterScope>
+    <filterScope>Mine</filterScope>
     <label>My Action Plans</label>
 </ListView>

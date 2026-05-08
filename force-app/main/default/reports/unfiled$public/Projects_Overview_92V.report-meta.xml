@@ -28,23 +28,11 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.PackagesProjectName__r$ServicesTotalAmount__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
         <field>Project__c.PackagesProjectName__r$ServicesTotalExpense__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Project__c.PackagesProjectName__r$ServicesTotalHours__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.PackagesProjectName__r$ServicesTotalSupplierCosts__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.PackagesProjectName__r$ServicesTotalTime__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -65,14 +53,6 @@
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Project__c.PackagesProjectName__r$BudgetOpenTotalHours__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.PackagesProjectName__r$BudgetOpenTotalSupplierCosts__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.PackagesProjectName__r$BudgetOpenTotalTime__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -131,7 +111,6 @@
             <operator>equals</operator>
             <value>Brand Leadership Management AG,Calydo AG,gateB (Singpore) Pte. Ltd.,gateB AG,gateB Consulting Inc.,gateB GmbH,Hieronymus Stationers AG,Hieronymus Stationers CP AG,hilda ltd.,Hotz Brand Consultants AG,Marmot Balboa AG,Victor Hotz AG</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -152,7 +131,7 @@
     <name>Projects Overview</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Projects_with_or_without_Services__c</reportType>
     <scope>organization</scope>

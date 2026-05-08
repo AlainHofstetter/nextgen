@@ -57,6 +57,10 @@
         <field>Project__c.Invoices__r$Name</field>
     </columns>
     <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Project__c.Invoices__r$InvoiceDocumentNr__c</field>
+    </columns>
+    <columns>
         <field>Project__c.Invoices__r$InvoiceStatus__c</field>
     </columns>
     <columns>
@@ -66,14 +70,7 @@
         <field>Project__c.Invoices__r$FinanceDate__c</field>
     </columns>
     <columns>
-        <field>Project__c$ServicesTotalAmountCHF__c</field>
-    </columns>
-    <columns>
         <field>Project__c$InvoiceTotalAmountCHF__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c$ServiceTotalAmountCHFBP__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -82,6 +79,14 @@
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Project__c.Invoices__r$InvoicePOSTotalAmountCHF__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Project__c.Invoices__r$InvoiceTotalAmountNetCHF__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Project__c$InvoiceTotalAmountNetCHFBP__c</field>
     </columns>
     <currency>CHF</currency>
     <description>Übersicht aller Rechnungen der Abrechnungsperiode. Kontrolle mit Erfolgrechnung (Summe Konto 3400 + 3611 +3612)</description>
@@ -99,9 +104,8 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>contains</operator>
-            <value>Victor Hotz</value>
+            <value>house of manus</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -112,7 +116,7 @@
     <name>SVH - DB - Overview Invoicing</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Projects_with_Invoices_with_Invoice_Pos__c</reportType>
     <scope>organization</scope>

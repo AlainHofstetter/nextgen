@@ -9,5 +9,10 @@
     <columns>FullStackTrace__c</columns>
     <columns>CREATED_DATE</columns>
     <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterThan</operation>
+        <value>2/23/2026 12:00 AM</value>
+    </filters>
     <label>All</label>
 </ListView>

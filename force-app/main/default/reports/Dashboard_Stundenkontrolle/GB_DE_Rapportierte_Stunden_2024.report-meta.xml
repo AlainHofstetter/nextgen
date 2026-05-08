@@ -52,7 +52,6 @@
             <operator>equals</operator>
             <value>1141</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsAcross>
@@ -68,7 +67,7 @@
     <name>GB DE Rapportierte Stunden 2024</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Projects_with_Services_with_Time__c</reportType>
     <scope>organization</scope>

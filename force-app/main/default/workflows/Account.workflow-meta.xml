@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
         <fullName>Account_Update_Previous_Owner_Change</fullName>
@@ -12,46 +12,35 @@
             <field>ZEmailPreviousOwner__c</field>
             <type>email</type>
         </recipients>
-        <senderAddress>noreply@brandleadership.ch</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderAddress>noreply@brandleadership.ch</senderAddress><senderType>OrgWideEmailAddress</senderType>
         <template>CS_Templates/Account_Update_Account_Owner_Change</template>
     </alerts>
     <alerts>
         <fullName>CS_Agency_Checkbox</fullName>
         <description>CS - Agency Checkbox</description>
         <protected>false</protected>
-        <recipients>
-            <recipient>sascha.salis@brandleadership.ch</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>technicaluser@brandleadership.ch</recipient>
-            <type>user</type>
-        </recipients>
-        <senderAddress>noreply@brandleadership.ch</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <recipients><type>owner</type></recipients><senderAddress>noreply@brandleadership.ch</senderAddress><senderType>OrgWideEmailAddress</senderType>
         <template>CS_Templates/CS_Agency_Checkbox</template>
+    
+        <recipients><recipient>sascha.salis@brandleadership.ch</recipient><type>email</type></recipients>
+        <recipients><recipient>technicaluser@brandleadership.ch</recipient><type>email</type></recipients>
     </alerts>
     <alerts>
         <fullName>CS_New_Account_from_PrintPlus</fullName>
         <ccEmails>om@brandleadership.ch</ccEmails>
         <description>CS - New Account from PrintPlus</description>
         <protected>false</protected>
-        <senderAddress>noreply@brandleadership.ch</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderAddress>noreply@brandleadership.ch</senderAddress><senderType>OrgWideEmailAddress</senderType>
         <template>CS_Templates/CS_New_Account_from_PrintPlus</template>
     </alerts>
     <alerts>
         <fullName>CS_Premium_Checkbox</fullName>
         <description>CS - Premium Checkbox</description>
         <protected>false</protected>
-        <recipients>
-            <recipient>rahel.hotz@hieronymus-cp.com</recipient>
-            <type>user</type>
-        </recipients>
-        <senderAddress>noreply@brandleadership.ch</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <recipients><type>owner</type></recipients><senderAddress>noreply@brandleadership.ch</senderAddress><senderType>OrgWideEmailAddress</senderType>
         <template>CS_Templates/CS_Premium_Checkbox</template>
+    
+        <recipients><recipient>rahel.hotz@hieronymus-cp.com</recipient><type>email</type></recipients>
     </alerts>
     <fieldUpdates>
         <fullName>Account_Update_Email_Current_Owner</fullName>

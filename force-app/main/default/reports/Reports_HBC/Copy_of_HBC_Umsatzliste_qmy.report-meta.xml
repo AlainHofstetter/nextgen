@@ -23,7 +23,6 @@
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>true</expandOthers>
         <groupingColumn>Invoice__c.InvoiceReceiver__c</groupingColumn>
-        <legendPosition>Bottom</legendPosition>
         <location>CHART_BOTTOM</location>
         <showAxisLabels>false</showAxisLabels>
         <showPercentage>false</showPercentage>
@@ -69,7 +68,6 @@
             <operator>equals</operator>
             <value>Invoice__c.Cancellation,Invoice__c.Invoice,Invoice__c.ILV</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -85,7 +83,7 @@
     <name>HBC - Umsatzliste nach Periode</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntityCustomEntity$Project__c$Invoice__c@Invoice__c.BillingViaCompany__c</reportType>
     <scope>organization</scope>

@@ -59,7 +59,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>greaterOrEqual</operator>
-            <value>1/1/2022</value>
+            <value>1/1/2025</value>
         </criteriaItems>
         <criteriaItems>
             <column>Project__c$ProjectSubType__c</column>
@@ -73,15 +73,14 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>lessOrEqual</operator>
-            <value>12/31/2022</value>
+            <value>12/31/2025</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Tabular</format>
     <name>GB SGP - DB - Leistungen GB CH für SGP</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Projects_with_Services_with_Time__c</reportType>
     <scope>organization</scope>

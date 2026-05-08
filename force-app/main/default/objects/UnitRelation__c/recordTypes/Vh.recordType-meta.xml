@@ -4,4 +4,168 @@
     <active>true</active>
     <compactLayoutAssignment>UnitRelationCompactLayout</compactLayoutAssignment>
     <label>VH</label>
+    <picklistValues>
+        <picklist>Customer__c</picklist>
+        <values>
+            <fullName>Actual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offline</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SupplierIndustry__c</picklist>
+        <values>
+            <fullName>Druck</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Materialhersteller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Packaging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Papierhandel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Papierhersteller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veredelung</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Werkzeughersteller</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>TradeCategoryHYS__c</picklist>
+        <values>
+            <fullName>-----------------</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>------------------</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>-----------------------</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boutique Hotel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consulting Companies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cultural Institution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Department Store</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Design Store</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Editing House</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event Planner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flower Shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotel Association</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Law Firm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Luxury Brand</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Luxury Hotel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Magazines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online Blog</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private Bank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stationary Store</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tax Advisers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wedding Planner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Agency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>End Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gmund internal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Media Representative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Printer %2F Processor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wholesaler</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
 </RecordType>

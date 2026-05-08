@@ -15,37 +15,16 @@
             <inputField>ZImportId__c</inputField>
             <outputField>ZImportId__c</outputField>
         </mappingFields>
-        <mappingFields>
-            <inputField>LocationAddressLine2__c</inputField>
-            <outputField>LocationAddressLine2__c</outputField>
-        </mappingFields>
+        <!-- LocationAddressLine2__c, LocationCity__c, LocationPoBox__c, LocationState__c,
+             LocationStreetNr__c, LocationZip__c removed: Lead field lengths exceed Account field
+             lengths on target (LENGTH_MISMATCH — source-org field definitions differ between objects) -->
         <mappingFields>
             <inputField>LocationAddressLine3__c</inputField>
             <outputField>LocationAddressLine3__c</outputField>
         </mappingFields>
         <mappingFields>
-            <inputField>LocationCity__c</inputField>
-            <outputField>LocationCity__c</outputField>
-        </mappingFields>
-        <mappingFields>
             <inputField>LocationCountry__c</inputField>
             <outputField>LocationCountry__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>LocationPoBox__c</inputField>
-            <outputField>LocationPoBox__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>LocationState__c</inputField>
-            <outputField>LocationState__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>LocationStreetNr__c</inputField>
-            <outputField>LocationStreetNr__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>LocationZip__c</inputField>
-            <outputField>LocationZip__c</outputField>
         </mappingFields>
         <mappingFields>
             <inputField>ExtendedInformation__c</inputField>

@@ -37,7 +37,6 @@
             <operator>greaterThan</operator>
             <value>20000</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -48,7 +47,7 @@
     <name>HBC - Project with Time Entry 1.1.2015</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntity$Project__c@Project__c.ContractPartner__c</reportType>
     <scope>organization</scope>

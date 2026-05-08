@@ -1,12 +1,52 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ITCases</fullName>
     <active>true</active>
     <businessProcess>IT Case</businessProcess>
     <compactLayoutAssignment>CaseCompactLayout</compactLayoutAssignment>
     <label>IT Cases</label>
-    
-    
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Person</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Teams</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>1%2E High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%2E Medium</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>3%2E Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%2E 2 Min Task</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
     <picklistValues>
         <picklist>Reason</picklist>
         <values>
@@ -27,6 +67,37 @@
         </values>
         <values>
             <fullName>User didn%27t attend training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Severity__c</picklist>
+        <values>
+            <fullName>Alle Benutzer betroffen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Einzelner Benutzer betroffen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kunden betroffen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schönheitsfehler</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Viele Benutzer betroffen</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -170,6 +241,40 @@
         </values>
         <values>
             <fullName>Telephony Mobile</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>UnitSuperuser__c</picklist>
+        <values>
+            <fullName>A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Workaround__c</picklist>
+        <values>
+            <fullName>Workaround nicht verfügbar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workaround nur mit viel Aufwand verfügbar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workaround verfügbar</fullName>
             <default>false</default>
         </values>
     </picklistValues>

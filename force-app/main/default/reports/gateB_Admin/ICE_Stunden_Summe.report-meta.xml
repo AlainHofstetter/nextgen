@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>IF(Time__c.Timetracker__c.Name = &quot;Andrea Küpfer&quot;, Time__c.DurationHhMmN__c:SUM, IF(Time__c.DurationHhMmN__c:SUM &gt;= 5 , Time__c.DurationHhMmN__c:SUM,NULL))</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Time</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <columns>
+        <field>Project__c$Name</field>
+    </columns>
+    <columns>
+        <field>Project__c.PackagesProjectName__r$Name</field>
+    </columns>
+    <columns>
+        <field>Project__c.PackagesProjectName__r.Time__r$Name</field>
+    </columns>
+    <columns>
+        <field>Project__c.PackagesProjectName__r.Time__r$StartHhMm__c</field>
+    </columns>
+    <columns>
+        <field>Project__c.PackagesProjectName__r.Time__r$EndHhMm__c</field>
+    </columns>
+    <columns>
+        <field>Project__c.PackagesProjectName__r.Time__r$Description__c</field>
+    </columns>
+    <currency>CHF</currency>
+    <filter>
+        <booleanFilter>(1 OR 2 OR 3 OR 4 OR 5) AND 6 AND 7</booleanFilter>
+        <criteriaItems>
+            <column>Project__c.PackagesProjectName__r.Time__r$TimetrackerCostCenter__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>GateB ICE</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Project__c.PackagesProjectName__r.Time__r$Timetracker__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Andreas Seiler</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Project__c.PackagesProjectName__r.Time__r$Timetracker__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Marco Wyler</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Project__c.PackagesProjectName__r.Time__r$Timetracker__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Steven Rogers</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Project__c.PackagesProjectName__r.Time__r$Timetracker__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Christian Schuszter</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Project__c.PackagesProjectName__r.Time__r$Weekday__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Saturday</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Project__c.PackagesProjectName__r.Time__r$Weekday__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Sunday</value>
+        </criteriaItems>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>Project__c.PackagesProjectName__r.Time__r$Timetracker__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Project__c.PackagesProjectName__r.Time__r$WeekdayDate__c</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <name>ICE - Time Check - Last Month</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Projects_with_Services_with_Time__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Project__c.PackagesProjectName__r.Time__r$DateFrom__c</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

@@ -50,8 +50,8 @@ private class TestILVPosController {
 
 	  Test.startTest();
 
-	  // When
-	  Id jobId = ILVPosController.startQueueableJob(new Invoice__c(), new List<ILVPos__c>());
+	  // When — pass one position so the queueable's chunk loop has something to process
+	  Id jobId = ILVPosController.startQueueableJob(new Invoice__c(), new List<ILVPos__c>{new ILVPos__c()});
 	  System.assertNotEquals(null, jobId);
 
 	  Boolean isJobFinished = ILVPosController.checkIsJobFinished(jobId);
@@ -62,8 +62,8 @@ private class TestILVPosController {
 	  isJobFinished = ILVPosController.checkIsJobFinished(jobId);
 	  System.assertEquals(true, isJobFinished);
 
-    // Then
-    ((IILVPosService) mocks.verify(mockInvoiceService)).save(new Invoice__c(), new List<ILVPos__c>());
+    // Then — verify save was called with the single position that was enqueued
+    ((IILVPosService) mocks.verify(mockInvoiceService)).save(new Invoice__c(), new List<ILVPos__c>{new ILVPos__c()});
 
   }
 

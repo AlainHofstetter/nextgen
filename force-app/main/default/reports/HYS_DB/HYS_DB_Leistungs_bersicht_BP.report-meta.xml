@@ -41,7 +41,6 @@
             <operator>notContain</operator>
             <value>absence</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsAcross>
@@ -67,7 +66,7 @@
     <name>HYS - DB - Leistungsübersicht BP</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Projects_with_Services_with_Time__c</reportType>
     <scope>organization</scope>

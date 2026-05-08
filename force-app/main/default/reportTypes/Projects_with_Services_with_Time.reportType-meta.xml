@@ -91,11 +91,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>BillingRatePercent__c</field>
-            <table>Project__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>BillingModelSpecialDeal__c</field>
             <table>Project__c</table>
         </columns>
@@ -161,57 +156,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>BudgetOpenForecast__c</field>
-            <table>Project__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>BudgetOpenForecastAmount__c</field>
-            <table>Project__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>BudgetOpenTotalAmount__c</field>
-            <table>Project__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>BudgetOpenTotalAmountCHF__c</field>
-            <table>Project__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>BudgetOpenTotalExpense__c</field>
-            <table>Project__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>BudgetOpenTotalExpenseCHF__c</field>
-            <table>Project__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>BudgetOpenTotalSupplierCosts__c</field>
-            <table>Project__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>BudgetOpenTotalSupplierCostsCHF__c</field>
-            <table>Project__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>BudgetOpenTotalTime__c</field>
-            <table>Project__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>BudgetOpenTotalTimeCHF__c</field>
-            <table>Project__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>BudgetOverrunAmount__c</field>
             <table>Project__c</table>
         </columns>
         <columns>
@@ -701,16 +646,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>ServicesTotalAmount__c</field>
-            <table>Project__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ServicesTotalAmountCHF__c</field>
-            <table>Project__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>ServicesTotalExpense__c</field>
             <table>Project__c</table>
         </columns>
@@ -721,22 +656,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>ServicesTotalExpenseCHF__c</field>
-            <table>Project__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>ServicesTotalHours__c</field>
-            <table>Project__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ServicesTotalSupplierCosts__c</field>
-            <table>Project__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ServicesTotalSupplierCostsCHF__c</field>
             <table>Project__c</table>
         </columns>
         <columns>
@@ -766,26 +686,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>ServiceTotalAmountCHFBP__c</field>
-            <table>Project__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ServiceTotalTimeCHFBP__c</field>
-            <table>Project__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ServicesTotalTime__c</field>
-            <table>Project__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ServicesTotalTimeCHF__c</field>
-            <table>Project__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Source__c</field>
             <table>Project__c</table>
         </columns>
@@ -802,16 +702,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>TermsOfPayment__c</field>
-            <table>Project__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ValCountHasILVDraft__c</field>
-            <table>Project__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ValCountHasInvoiceDraft__c</field>
             <table>Project__c</table>
         </columns>
         <columns>
@@ -879,11 +769,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>BillingRatePercent__c</field>
-            <table>Project__c.PackagesProjectName__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>BriefingDeBriefingNotes__c</field>
             <table>Project__c.PackagesProjectName__r</table>
         </columns>
@@ -925,31 +810,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>BudgetOpenTotalExpense__c</field>
-            <table>Project__c.PackagesProjectName__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>BudgetOpenTotalSupplierCosts__c</field>
-            <table>Project__c.PackagesProjectName__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>BudgetOpenTotalTime__c</field>
-            <table>Project__c.PackagesProjectName__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>BudgetTimeOpenForecast__c</field>
-            <table>Project__c.PackagesProjectName__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>BudgetTimeOpenForecastAmount__c</field>
-            <table>Project__c.PackagesProjectName__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>BudgetTimeOverrunAmount__c</field>
             <table>Project__c.PackagesProjectName__r</table>
         </columns>
         <columns>
@@ -1229,47 +1089,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>ServicesTotalAmount__c</field>
-            <table>Project__c.PackagesProjectName__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ServicesTotalAmountCHF__c</field>
-            <table>Project__c.PackagesProjectName__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>ServicesTotalExpense__c</field>
             <table>Project__c.PackagesProjectName__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>ServicesTotalExpenseCHF__c</field>
-            <table>Project__c.PackagesProjectName__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>ServicesTotalHours__c</field>
-            <table>Project__c.PackagesProjectName__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ServicesTotalSupplierCosts__c</field>
-            <table>Project__c.PackagesProjectName__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ServicesTotalSupplierCostsCHF__c</field>
-            <table>Project__c.PackagesProjectName__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ServicesTotalTime__c</field>
-            <table>Project__c.PackagesProjectName__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ServicesTotalTimeCHF__c</field>
             <table>Project__c.PackagesProjectName__r</table>
         </columns>
         <columns>
@@ -1295,11 +1120,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>ServiceTotalExpenseCHFBP__c</field>
-            <table>Project__c.PackagesProjectName__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ServiceTotalTimeCHFBP__c</field>
             <table>Project__c.PackagesProjectName__r</table>
         </columns>
         <columns>
@@ -1334,16 +1154,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>ValCountHasILVDraft__c</field>
-            <table>Project__c.PackagesProjectName__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ValCountHasInvoiceDraft__c</field>
-            <table>Project__c.PackagesProjectName__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>ValHasExpense__c</field>
             <table>Project__c.PackagesProjectName__r</table>
         </columns>
@@ -1365,11 +1175,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>ValHasTime__c</field>
-            <table>Project__c.PackagesProjectName__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ValPackageLockedInvoiceDraft__c</field>
             <table>Project__c.PackagesProjectName__r</table>
         </columns>
         <columns>

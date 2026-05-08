@@ -68,7 +68,6 @@
             <operator>equals</operator>
             <value>PA-104586</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsAcross>

@@ -398,7 +398,8 @@ https://brandleadership--dev1--c.sandbox.vf.force.com/apex/InvoicePDF_Focusnext?
         </div>
 
 
-        <apex:outputPanel rendered="{!invoiceRecord.InvoiceReceiver__r.BillingCountry__c == 'SWITZERLAND'}">
+        <apex:outputPanel rendered="{!invoiceRecord.InvoiceReceiver__r.BillingCountry__c == 'SWITZERLAND' &&
+                                    (invoiceRecord.ProjectInvoiceCurrency__c == 'CHF' || invoiceRecord.ProjectInvoiceCurrency__c == 'EUR')}">
             <div class="imageFirstPage" style="margin:0; padding:0;">
                 <apex:image url="{!imageURL}" width="815px" style="max-width:815px;" />
             </div>
@@ -551,7 +552,12 @@ https://brandleadership--dev1--c.sandbox.vf.force.com/apex/InvoicePDF_Focusnext?
                                     <apex:outputField value="{!invPos.InvoicePositionName__c}"/>
                                 </td>
                                 <td class="tableSmallCol alignRight paddingTopTable">
+                                <!-- JC updated 25/03/2026 from the following line to the rest of the code inside this td
                                     <apex:outputField value="{!invPos.InvoicePositionAmount__c}"/>
+                                -->
+                                    <apex:outputPanel layout="none" rendered="{!invPos.ShowPositionAmount__c}">
+                                    <apex:outputField value="{!invPos.InvoicePositionAmount__c}"/>
+                                    </apex:outputPanel>
                                 </td>
                             </apex:outputPanel>
                             <apex:outputPanel layout="none" rendered="{!(ISBLANK(invPos.InvoicePositionText__c))}">
@@ -590,7 +596,12 @@ https://brandleadership--dev1--c.sandbox.vf.force.com/apex/InvoicePDF_Focusnext?
                                 <apex:outputField value="{!invPos.InvoicePositionName__c}"/>
                             </td>
                             <td class="tableSmallCol alignRight paddingTopTable borderBottom highlightLight">
-                                <apex:outputField value="{!invPos.InvoicePositionAmount__c}"/>
+                                <!-- JC updated 25/03/2026 from the following line to the rest of the code inside this td
+                                    <apex:outputField value="{!invPos.InvoicePositionAmount__c}"/>
+                                -->
+                                    <apex:outputPanel layout="none" rendered="{!invPos.ShowPositionAmount__c}">
+                                    <apex:outputField value="{!invPos.InvoicePositionAmount__c}"/>
+                                    </apex:outputPanel>
                             </td>
                         </apex:outputPanel>
                     </tr>

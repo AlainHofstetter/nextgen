@@ -30,7 +30,7 @@
     </params>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>User</reportType>
     <showDetails>true</showDetails>

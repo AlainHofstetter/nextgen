@@ -61,7 +61,6 @@
             <operator>equals</operator>
             <value>Calydo</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <formattingRules>

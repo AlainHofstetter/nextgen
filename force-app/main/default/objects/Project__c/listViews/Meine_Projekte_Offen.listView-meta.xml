@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Meine_Projekte_Offen</fullName>
+    <columns>NAME</columns>
+    <columns>ContractPartner__c</columns>
+    <columns>ProjectNr__c</columns>
+    <columns>BudgetAssignTotalTime__c</columns>
+    <columns>ServicesTotalAmount__c</columns>
+    <columns>BudgetOpenTotalAmount__c</columns>
+    <columns>InvoiceTotalAmount__c</columns>
+    <columns>ProjectType__c</columns>
+    <columns>BudgetNotes__c</columns>
+    <columns>LastTimeEntryDate__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>ProjectStatus__c</field>
+        <operation>equals</operation>
+        <value>Open,PartiallOpenWOTimeEntry</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Project__c.ExternalServices,Project__c.ExternalLicense,Project__c.Internal</value>
+    </filters>
+    <label>Meine Projekte - Offen</label>
+</ListView>

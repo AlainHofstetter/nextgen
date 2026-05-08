@@ -372,7 +372,10 @@
                     <apex:repeat value="{!mapInvPosGroup[groupName]}" var="invPos" >
                         <tr>
                             <td class="tableLargeCol borderBottom  smallerFont paddingTopTable" ><apex:outputField value="{!invPos.InvoicePositionName__c}"/> </td>
-                            <td class="tableSmallCol borderBottom alignRight smallerFont paddingTopTable"> <apex:outputField value="{!invPos.InvoicePositionAmount__c}"/></td>
+<!-- JC Updated 25/03/2026 to respect "Show Position Amount" -->
+                            <td class="tableSmallCol borderBottom alignRight smallerFont paddingTopTable"> 
+                                <apex:outputField value="{!invPos.InvoicePositionAmount__c}"/>
+                            </td>
                         </tr>
                     </apex:repeat>
                 </apex:repeat>

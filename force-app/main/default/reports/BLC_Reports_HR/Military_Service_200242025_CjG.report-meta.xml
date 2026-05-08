@@ -23,7 +23,6 @@
             <operator>contains</operator>
             <value>Military</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -39,7 +38,7 @@
     <name>Military Service 20024-2025</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Time__c</reportType>
     <scope>organization</scope>

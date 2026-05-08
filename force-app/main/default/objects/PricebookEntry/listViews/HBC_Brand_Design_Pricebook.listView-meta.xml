@@ -12,6 +12,8 @@
     <columns>Product2.ExpenseAllowanceProduct__c</columns>
     <columns>Product2.Legal__c</columns>
     <columns>PRODUCT2.ACTIVE</columns>
-    <filterScope>Everything</filterScope>
+    <filterScope>Queue</filterScope>
     <label>HBC - Brand Design Pricebook</label>
-    <language>en_US</language></ListView>
+    <language>en_US</language>
+    <queue>HBC - Brand Design</queue>
+</ListView>

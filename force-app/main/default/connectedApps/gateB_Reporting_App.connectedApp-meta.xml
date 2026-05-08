@@ -4,7 +4,7 @@
     <label>gateB Reporting App</label>
     <oauthConfig>
         <callbackUrl>http://localhost/gateb_skywalkintegration_php/oauth_callback.php</callbackUrl>
-        <consumerKey>3MVG9z5xLJmws289JMl44TRqSuOW8OpxpjDLuQw8xc7x1aNvIsU7PbiORXqAuAZW8KY9Cn7GqNNT5yqqMQ1aF</consumerKey>
+        <consumerKey>3MVG99qusVZJwhslEt1oE3n8qyJhS1wHflCF6IjUJmDxVcYmoq8Wi29XcD7hI3jVcd.gVFOyr68Hsdhr8eV0J</consumerKey>
         <isAdminApproved>false</isAdminApproved>
         <isClientCredentialEnabled>false</isClientCredentialEnabled>
         <isCodeCredentialEnabled>false</isCodeCredentialEnabled>

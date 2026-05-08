@@ -12,7 +12,7 @@
     <columns>NAME</columns>
     <columns>CORE.USERS.ALIAS</columns>
     <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
-    <filterScope>Everything</filterScope>
+    <filterScope>Mine</filterScope>
     <filters>
         <field>CASES.RECORDTYPE</field>
         <operation>equals</operation>

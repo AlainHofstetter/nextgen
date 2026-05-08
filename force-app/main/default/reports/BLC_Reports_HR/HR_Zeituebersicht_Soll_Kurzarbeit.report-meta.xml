@@ -76,7 +76,6 @@
             <operator>contains</operator>
             <value>P-109721,P-100014,P-100257,P-100242,P-100256,P-100255</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsAcross>

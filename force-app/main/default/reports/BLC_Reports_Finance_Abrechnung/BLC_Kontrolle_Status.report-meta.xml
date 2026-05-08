@@ -45,7 +45,6 @@
             <operator>notEqual</operator>
             <value>Sent</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsDown>
@@ -56,7 +55,7 @@
     <name>BLC - Kontrolle Status nicht BP</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntityCustomEntity$Project__c$Invoice__c</reportType>
     <scope>organization</scope>

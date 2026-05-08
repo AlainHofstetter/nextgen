@@ -5,4 +5,211 @@
     <compactLayoutAssignment>CampaignMemberCompactLayout</compactLayoutAssignment>
     <description>Used for events of all kind such as Seminar, Fair, Networking Event</description>
     <label>BLC - Event</label>
+    <picklistValues>
+        <picklist>BLCRefusalStage__c</picklist>
+        <values>
+            <fullName>After 1st Interview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>After 2nd Interview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>After 3rd Interview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>After 4th Interview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>After Telephone Interview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>By MD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Right Away</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Brochures_sent__c</picklist>
+        <values>
+            <fullName>CS -  Bayer%2FBM Brand-Portal %28A5%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS -  Franke%2FBM Marketing-Portal %28A5%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS -  Nationale%2FBM Marketing-Portal %28A5%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS -  Oerlikon%2FCenshare %28A5%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Migros%2FEinkauf %28A5%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Migros%2FEinkauf-Detail %28A5%2C 18 S%2E%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GateB - Image Brochure %28A4%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Performance Check %28A4%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Candidate_Refusal_Stage__c</picklist>
+        <values>
+            <fullName>After 1st Interview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>After 2nd Interview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>After 3rd Interview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>After 4th Interview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>After Telephone Interview</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Classification__c</picklist>
+        <values>
+            <fullName>Beta Tester A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Beta Tester B</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Evaluation_By__c</picklist>
+        <values>
+            <fullName>HR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MD</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>KompilateDelivered__c</picklist>
+        <values>
+            <fullName>FLO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HFP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online Portal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PartyStyle__c</picklist>
+        <values>
+            <fullName>Casino Night</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Summer in the City</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Source__c</picklist>
+        <values>
+            <fullName>Direct entry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Unit_s_Worked_For__c</picklist>
+        <values>
+            <fullName>BY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GBCH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GBUS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GCH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HBC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HYS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KNO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ON</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XB</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
 </RecordType>

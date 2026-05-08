@@ -84,7 +84,6 @@
             <operator>contains</operator>
             <value>Vaibhav</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <formattingRules>

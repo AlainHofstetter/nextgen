@@ -26,7 +26,6 @@
             <operator>contains</operator>
             <value>amrinder</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Tabular</format>
     <name>Copy of last month - Only Amrinder</name>

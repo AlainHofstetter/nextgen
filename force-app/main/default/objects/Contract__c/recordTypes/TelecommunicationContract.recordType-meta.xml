@@ -4,4 +4,190 @@
     <active>true</active>
     <compactLayoutAssignment>ContractCompactLayout</compactLayoutAssignment>
     <label>Telecommunication Contract</label>
+    <picklistValues>
+        <picklist>ContractType__c</picklist>
+        <values>
+            <fullName>NATEL Business data XL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NATEL Office light</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NATEL business data M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NATEL business infinity L</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NATEL business infinity M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NATEL business infinity S</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NATEL business infinity XL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NATEL company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NATEL company basic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NATEL data M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>inOne KMU mobile L</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>inOne KMU mobile M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>inOne KMU mobile S</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>inOne KMU mobile XL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>inOne KMU mobile XS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>InvoiceCycle__c</picklist>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yearly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LicenseType__c</picklist>
+        <values>
+            <fullName>Direct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indirect</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OriginOfContract__c</picklist>
+        <values>
+            <fullName>BLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New through Employee</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pricing__c</picklist>
+        <values>
+            <fullName>At Cost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cost Ceiling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flat Rate</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RGProfil__c</picklist>
+        <values>
+            <fullName>5%2E13098 %28BLC Allgemein%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%2E13098%2E11 %28gateB%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%2E13098%2E13 %28Calydo%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SalesCommission__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SignedContractExists__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Software__c</picklist>
+        <values>
+            <fullName>BrandMaker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Censhare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Simplex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>officeatwork</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Terminated</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
 </RecordType>

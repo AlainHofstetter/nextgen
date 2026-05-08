@@ -25,7 +25,6 @@
             <operator>equals</operator>
             <value>PA-139937</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsAcross>

@@ -54,7 +54,6 @@
             <operator>equals</operator>
             <value>Inventory__c.Badge</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -65,7 +64,7 @@
     <name>Inventory Report_by Record Type</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntity$Inventory__c</reportType>
     <scope>organization</scope>

@@ -463,13 +463,7 @@
         </notificationChannels>
         <notificationType>task_reminder</notificationType>
     </notificationTypeSettings>
-    <notificationTypeSettings>
-        <notificationChannels>
-            <desktopEnabled>true</desktopEnabled>
-            <mobileEnabled>false</mobileEnabled>
-        </notificationChannels>
-        <notificationType>templatized_data_alert</notificationType>
-    </notificationTypeSettings>
+
     <notificationTypeSettings>
         <notificationChannels>
             <desktopEnabled>true</desktopEnabled>

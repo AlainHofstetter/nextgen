@@ -82,7 +82,6 @@
             <operator>notEqual</operator>
             <value></value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <formattingRules>
@@ -110,7 +109,7 @@
     <name>Supplier Invoices (Show duplicates)</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntityCustomEntity$SupplierInvoice__c$SupplierCosts__c@SupplierCosts__c.PackageName__c</reportType>
     <scope>organization</scope>
@@ -119,6 +118,8 @@
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
         <dateColumn>CHILD_CREATED_DATE</dateColumn>
-        <interval>INTERVAL_PREVCURY</interval>
+        <endDate>2026-02-28</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2025-01-01</startDate>
     </timeFrameFilter>
 </Report>

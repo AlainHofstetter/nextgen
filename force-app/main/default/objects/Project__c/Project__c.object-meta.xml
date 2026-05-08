@@ -171,7 +171,9 @@
         <customTabListAdditionalFields>ProjectSubType__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>ProjectCurrency__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>ProjectResponsibleBusiness__c</customTabListAdditionalFields>
-        <excludedStandardButtons>Accept</excludedStandardButtons>        <searchResultsAdditionalFields>ProjectNr__c</searchResultsAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>Forward</excludedStandardButtons>
+        <searchResultsAdditionalFields>ProjectNr__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ProjectType__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ProjectStatus__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ProjectResponsibleBusiness__c</searchResultsAdditionalFields>

@@ -83,7 +83,6 @@
             <operator>contains</operator>
             <value>HBC</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>

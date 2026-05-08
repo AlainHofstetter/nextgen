@@ -32,7 +32,6 @@
             <operator>notEqual</operator>
             <value>Saturday,Sunday</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsAcross>

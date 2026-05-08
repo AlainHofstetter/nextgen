@@ -11,16 +11,6 @@
         <scale>0</scale>
     </aggregates>
     <aggregates>
-        <calculatedFormula>IF(Project__c.ServicesTotalAmountCHF__c:SUM=0, 0, Project__c.InvoiceTotalAmountCHF__c:SUM / Project__c.ServicesTotalAmountCHF__c:SUM)</calculatedFormula>
-        <datatype>percent</datatype>
-        <description>Verrechenbarkeit der Services</description>
-        <developerName>FORMULA2</developerName>
-        <isActive>false</isActive>
-        <isCrossBlock>false</isCrossBlock>
-        <masterLabel>Billing Rate %</masterLabel>
-        <scale>0</scale>
-    </aggregates>
-    <aggregates>
         <calculatedFormula>IF(Project__c.InvoiceTotalAmountCHF__c:SUM=0, 0, (Project__c.InvoiceTotalAmountCHF__c:SUM-Project__c.CostsTotalAmountCHF__c:SUM)/Project__c.InvoiceTotalAmountCHF__c:SUM)</calculatedFormula>
         <datatype>percent</datatype>
         <description>DB I im Verhältnis zum Umsatz</description>
@@ -49,15 +39,7 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.ServicesTotalAmountCHF__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
         <field>Project__c.InvoiceTotalAmountCHF__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.BillingRatePercent__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -90,14 +72,6 @@
             <operator>equals</operator>
             <value>0</value>
         </criteriaItems>
-        <criteriaItems>
-            <column>Project__c.ServicesTotalAmountCHF__c</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>true</isUnlocked>
-            <operator>greaterThan</operator>
-            <value>5000</value>
-        </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsAcross>
@@ -118,7 +92,7 @@
     <name>CY - DB - nicht fakturierte Projekte</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntity$Project__c</reportType>
     <scope>organization</scope>

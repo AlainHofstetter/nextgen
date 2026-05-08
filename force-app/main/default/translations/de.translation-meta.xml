@@ -1045,6 +1045,10 @@
         <name>Studio_Hotz_Footer2</name>
     </customLabels>
     <customLabels>
+        <label><!-- Tax Id --></label>
+        <name>Tax_Id</name>
+    </customLabels>
+    <customLabels>
         <label>Konditionen</label>
         <name>TermsPayment</name>
     </customLabels>
@@ -1087,6 +1091,10 @@
     <customLabels>
         <label>inkl. Mehrwertsteuer</label>
         <name>VAT_inkl</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Vat Number --></label>
+        <name>Vat_Number</name>
     </customLabels>
     <customLabels>
         <label>Agenturleistungen</label>
@@ -1320,328 +1328,6 @@
         <label><!-- TimEx 1.0 --></label>
         <name>SkywalkApp</name>
     </customTabs>
-    <flowDefinitions>
-        <flows/>
-        <fullName>AbacusInterfaceAccountUpsert</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>AbacusInterfaceAccountUpsertSupplier</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>AccountBillingAddress</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>AccountContactAddressUpdateMass</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>AccountDataComLocationiAddress</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>AccountNameUpdatePrivateAccount</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>AccountShortNameUpdate</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>Account_Update_Account_Owner_Send_Email</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>Account_Update_Email_Previous_Current_Owner</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>Amount_GB_License</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>CaseQueueAssign</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>CaseQueueAssignmentOwner</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>ContactAddressUpdateFromAccount</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>ContactInternalEmployeeCostsCreate</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>ContactInternalUpdateRelatedUser</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>ContactRecordTypeUpdateSummaryAccount</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>ContactSummary</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>ContractOwnerUpdate</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>ContractUpdateOwnerWithContractPartnerInternal</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>EmployeeCostsUpdateContacts</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>ExpenseCarTravelPaymentTypePrivate</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>ExpenseIsInBillingPeriod</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows>
-            <screens>
-                <fields>
-                    <name>ConfirmationMsg</name>
-                </fields>
-                <name>QR_Bill_Creation</name>
-            </screens>
-        </flows>
-        <fullName>GenerateNewQrBillInvoice</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>HRMutation</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>ILVDocumentNrSearch</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>InvoiceAbacusPaymentInformation</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>InvoiceCancellation</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>InvoiceCancellationFinanceDateToday</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>InvoiceCancellationTotalAmountNetCHF</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>InvoiceContractPartnerAbacusDebtorTrue</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>InvoiceInvoiceReceiverUpdateGetAddress</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>InvoiceIsInBilliingPeriod</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>InvoiceNrSearch</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>InvoicePosInheritSupplierGroupFlagFromPackageOnInvoiceCreation</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>InvoicePosServiceNameInherit</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>InvoicePositionAmountVAT</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>InvoiceStatusSentToAbacusWhenTransferDateNotNull</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>InvoiceVATPercent</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>OpportunityCalcuateForeCastingCurrentYear</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>OpportunitySetProjectStartToCloseDateIfEmpty</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>PackageGroupShowFieldsTrue</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>PackageGroupStatusClosedInheritToServices</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>PackageGroupStatusClosedInheritToServices_1</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>PackageSupplierCostsAbacusInbox</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>ProjectCYProjectStatusClosed</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>ProjectContractPartnerSearch</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>ProjectDefaultInvoiceTitleNull</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>ProjectForecastMoveMonth</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>ProjectInheritResponisbleToPackage</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>ProjectInvoiceContactInternalNull</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>ProjectOwnerUpdateWithResponsible</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>ProjectResponsible</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>ProjectStatusClosedInheritToServices</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>ProjectUpdateInvoiceReceiverProjectPartner</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>ProjectUpdateProjectNameToService</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>QLI_Calculate_PM_fee</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>QuoteLineItemCopyProductInformation</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>QuoteLineItemExpenseAllowanceCalc2</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>QuoteLineItemProjectManagementAllowanceCalc2</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>RTF_InvoicePosition_SetAmountVAT</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>RTF_Invoice_AfterSave_AbacusPaymentInformation</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>RTF_Invoice_AfterSave_UpdateCancellationTotalAmountNetCHF</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>RTF_Invoice_BeforeSave_InvoiceReceiverUpdateGetAddress</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>RTF_Invoice_BeforeSave_IsInBillingPeriod</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>RTF_Invoice_BeforeSave_UpdateFinanceDate</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>RTF_ProjectAutomaticClosure</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>RTF_ServiceUpdateProjectNameSearch</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>RTF_UpdateBillingAccountDetails</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows>
-            <screens>
-                <fields>
-                    <name>errorMessageScreen</name>
-                </fields>
-                <name>Error_Screen</name>
-            </screens>
-        </flows>
-        <fullName>ScreenFlowInvoiceButton</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>ServiceUpdateProjectNameSearch</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>SupplierCostsAutoFill</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>SupplierCostsEmailInformationAbacusVISA</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>SupplierCostsEmailInformationProjectManager</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>SupplierCostsIsInBillingPeriod</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>TalendExchangeRateNotImported</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>TimeIsInBillingPeriod</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows/>
-        <fullName>TimeUpdateLastTimeCardContact</fullName>
-    </flowDefinitions>
     <quickActions>
         <label><!-- New Case --></label>
         <name>CreateCase</name>
@@ -1762,6 +1448,57 @@
         </sections>
     </reportTypes>
     <reportTypes>
+        <description><!-- NextGen_Accounts with Projects or Opps --></description>
+        <label><!-- NextGen_Accounts with Projects or Opps --></label>
+        <name>NextGen_Accounts_with_Projects_or_Opps</name>
+        <sections>
+            <label><!-- Accounts --></label>
+            <name>Accounts</name>
+        </sections>
+        <sections>
+            <label><!-- Opportunities --></label>
+            <name>Opportunities</name>
+        </sections>
+        <sections>
+            <label><!-- Projects --></label>
+            <name>Projects</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- NextGen Project - Accounts with Contacts and Opportunities --></description>
+        <label><!-- NextGen Project - Accounts with Contacts and Opportunities --></label>
+        <name>NextGen_Project_Accounts_with_Contacts_and_Opportunities</name>
+        <sections>
+            <label><!-- Accounts --></label>
+            <name>Accounts</name>
+        </sections>
+        <sections>
+            <label><!-- Contacts --></label>
+            <name>Contacts</name>
+        </sections>
+        <sections>
+            <label><!-- Opportunities --></label>
+            <name>Opportunities</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- NextGen Project - Accounts with Projects or Opportunities --></description>
+        <label><!-- NextGen Project - Accounts with Projects or Opportunities --></label>
+        <name>NextGen_Project_Accounts_with_projects_or_Opportunities</name>
+        <sections>
+            <label><!-- Accounts --></label>
+            <name>Accounts</name>
+        </sections>
+        <sections>
+            <label><!-- Contacts --></label>
+            <name>Contacts</name>
+        </sections>
+        <sections>
+            <label><!-- Opportunities --></label>
+            <name>Opportunities</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
         <description><!-- Project with Resource Forecast --></description>
         <label><!-- Project with Resource Forecast --></label>
         <name>Project_with_Resource_Forecast</name>
@@ -1847,10 +1584,26 @@
             <name>Projects</name>
         </sections>
         <sections>
+            <columns>
+                <label><!-- Sv: Costs - Total Amount (CHF) --></label>
+                <name>Sv: Costs - Total Amount (CHF)</name>
+            </columns>
+            <columns>
+                <label><!-- Sv: Costs - Total Supplier Costs (CHF) --></label>
+                <name>Sv: Costs - Total Supplier Costs (CHF)</name>
+            </columns>
             <label><!-- Services --></label>
             <name>Services</name>
         </sections>
         <sections>
+            <columns>
+                <label><!-- SC: Service -  Supplier Costs Net (CHF) --></label>
+                <name>SC: Service -  Supplier Costs Net (CHF)</name>
+            </columns>
+            <columns>
+                <label><!-- SC: Service - Supplier Costs Net --></label>
+                <name>SC: Service - Supplier Costs Net</name>
+            </columns>
             <label><!-- Supplier Costs --></label>
             <name>Supplier Costs</name>
         </sections>

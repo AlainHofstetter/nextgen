@@ -4,7 +4,7 @@
     <label>bewerbung.brandleadership.ch</label>
     <oauthConfig>
         <callbackUrl>http://localhost/gateb_skywalkintegration_php/oauth_callback.php</callbackUrl>
-        <consumerKey>3MVG9z5xLJmws289JMl44TRqSuOW8OpxpjDLuImsfhDR5VvpJ78pOlgXYQBhP4Xa4Laa0.PIHBETGXPpm3N1r</consumerKey>
+        <consumerKey>3MVG99qusVZJwhslEt1oE3n8qyJg4bdcEb38W_GL9sh2Y7zrGa.ji8XzAYHjs8bQnREeSAMUDvA3Qxtr54ZJj</consumerKey>
         <isAdminApproved>true</isAdminApproved>
         <isClientCredentialEnabled>false</isClientCredentialEnabled>
         <isCodeCredentialEnabled>false</isCodeCredentialEnabled>

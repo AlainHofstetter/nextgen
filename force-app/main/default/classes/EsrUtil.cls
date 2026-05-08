@@ -38,40 +38,100 @@ public  class EsrUtil {
 		return zeroPad;
 	}
 
-	public static string getESR(string accNum, string merNum, decimal invNum, decimal amount, EsrFormat format){
 
-		string invNumber = string.valueOf(invNum);
-		integer zeroPadLength = 26 - (merNum.length() + invNumber.length());
+    //JC: Updating GetESR with ChatGPT version below so that the ESRUnformatted value will include the account number (BLC-133).
+    
+    public static String getESR(String accNum, String merNum, Decimal invNum, Decimal amount, EsrFormat format){
 
-		string baseESR = merNum + getZeros(zeroPadLength) + invNumber;
-		string esrWithCheck = baseESR + string.valueOf(getCheckDigit(baseESR));
+    System.debug('---EsrUtil.getESR--- accNum: ' + accNum + ' merNum: ' + merNum + ' invNum: ' + invNum + ' amount: ' + amount + ' format:' + format);
 
-		if(format == EsrFormat.UNFORMATTED){
-			return esrWithCheck;
-		}
+    // Pieces
+    String mer = onlyDigits(merNum);
+    String invNumber = String.valueOf(invNum).replaceAll('[^0-9]','');  // keep digits only
 
-		if(format == EsrFormat.FORMATTED){
-			string[] vals = new string[]{esrWithCheck.substring(0,2), esrWithCheck.substring(2,7), esrWithCheck.substring(7,12), esrWithCheck.substring(12,17), esrWithCheck.substring(17,22), esrWithCheck.substring(22,27)};
-			return string.Format('{0} {1} {2} {3} {4} {5}', vals);
-		}
+    // Choose the segment immediately after Merchant:
+    //  - prefer Account Number (digits only)
+    //  - else amount in cents (digits only)
+    String postMerchant;
+    String acctDigits = onlyDigits(accNum);
+    if (!String.isBlank(acctDigits)) {
+        postMerchant = acctDigits;
+    } else {
+        postMerchant = amountToCentsDigits(amount); // e.g., 123.45 -> "12345"
+    }
 
-		if(format == EsrFormat.CODE_LINE){
-			string amt = string.valueOf(amount).replace('.','');
+    // Build the 26-digit body: [mer][postMerchant][zeros][invNumber]
+    Integer bodyTargetLen = 26;
+    Integer used = mer.length() + postMerchant.length() + invNumber.length();
+    if (used > bodyTargetLen) {
+        // Defensive: if it doesn't fit, fail fast with a clear message (or truncate if that's your policy)
+        throw new AuraHandledException(
+            'ESR reference parts exceed length: mer=' + mer.length() + ', chosen=' + postMerchant.length() + ', inv=' + invNumber.length()
+            + ' > ' + bodyTargetLen + '. Adjust segment sizes or input lengths.'
+        );
+    }
+    Integer zeroPadLength = bodyTargetLen - used;
 
-			string header = '01' + getZeros(12-(amt.length() + 2)) + amt;
+    String baseESR = mer + postMerchant + getZeros(zeroPadLength) + invNumber;
+    String esrWithCheck = baseESR + String.valueOf(getCheckDigit(baseESR));
 
-			string[] accParts = accNum.split('-');
-			string accFormatted = accParts[0] + getZeros(9-(accParts[1].length() + accParts[2].length() + 2)) + accParts[1] + accParts[2];
+    if (format == EsrFormat.UNFORMATTED){
+        return esrWithCheck;
+    }
 
-			string[] vals = new string[]{header + getCheckDigit(header),esrWithCheck,accFormatted};
-			return string.Format('{0}>{1}+ {2}>', vals);
-		}
+    if (format == EsrFormat.FORMATTED){
+        // keep your existing 2-5-5-5-5-5 grouping (total 27 incl checksum)
+        String[] vals = new String[]{
+            esrWithCheck.substring(0,2),
+            esrWithCheck.substring(2,7),
+            esrWithCheck.substring(7,12),
+            esrWithCheck.substring(12,17),
+            esrWithCheck.substring(17,22),
+            esrWithCheck.substring(22,27)
+        };
+        return String.format('{0} {1} {2} {3} {4} {5}', vals);
+    }
 
-		//if we get here then return the unformatted version
-		return esrWithCheck;
-		
-	}
+    if (format == EsrFormat.CODE_LINE){
+        // unchanged: your code line already includes amount & account explicitly
+        String amt = String.valueOf(amount).replace('.','');
+        System.debug('---EsrUtil.getESR--- amount: ' + amount+ ' amt: '+amt);
 
+        String header = '01' + getZeros(12-(amt.length() + 2)) + amt;
+        System.debug('---EsrUtil.getESR--- header: ' + header);
+
+        String[] accParts = accNum != null ? accNum.split('-') : new String[]{};
+        // Defensive defaults if accNum is blank or malformed
+        String accLeft   = (accParts.size() > 0 ? accParts[0] : '');
+        String accMiddle = (accParts.size() > 1 ? accParts[1] : '');
+        String accRight  = (accParts.size() > 2 ? accParts[2] : '');
+        String accFormatted = accLeft + getZeros(9-(accMiddle.length() + accRight.length() + 2)) + accMiddle + accRight;
+
+        System.debug('---EsrUtil.getESR--- accFormatted: ' + accFormatted);
+
+        String[] vals = new String[]{ header + String.valueOf(getCheckDigit(header)), esrWithCheck, accFormatted };
+        System.debug('---EsrUtil.getESR--- vals: ' + vals);
+
+        return String.format('{0}>{1}+ {2}>', vals);
+    }
+
+    // Default to unformatted
+    return esrWithCheck;
+}
+// End of ChatGPT updated code.  
+/** keep digits only (null-safe) */
+private static String onlyDigits(String s) {
+    return String.isBlank(s) ? '' : s.replaceAll('[^0-9]','');
+}
+
+/** convert Decimal amount to cents as digits, no sign, no dots; null -> "0" */
+private static String amountToCentsDigits(Decimal amount) {
+    Decimal a = (amount == null ? 0 : amount.setScale(2));
+    // multiply by 100 safely and convert to positive int-like string (ESR body has only digits)
+    Long cents = (Long)(a * 100); // handles big amounts better than int
+    if (cents < 0) cents = -cents; // omit minus in the reference
+    return String.valueOf(cents);
+}
     /**
      * Return the check digit for a string of digits
      *

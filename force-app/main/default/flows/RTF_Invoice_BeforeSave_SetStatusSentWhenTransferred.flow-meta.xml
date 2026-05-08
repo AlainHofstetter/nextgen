@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <description>Sets InvoiceStatus__c to Sent when Ready + AbacusInterfaceExport is true + AbacusTransfer is populated. Migrated from Process Builder InvoiceStatusSentToAbacusWhenTransferDateNotNull.</description>
+    <environments>Default</environments>
+    <interviewLabel>RTF_Invoice_BeforeSave_SetStatusSentWhenTransferred {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RTF_Invoice_BeforeSave_SetStatusSentWhenTransferred</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_Status_Sent</name>
+        <label>Set Status Sent</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>InvoiceStatus__c</field>
+            <value>
+                <stringValue>Sent</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_Status_Sent</targetReference>
+        </connector>
+        <filterFormula>{!$Record.InvoiceStatus__c} = &quot;Ready&quot; AND {!$Record.AbacusInterfaceExport__c} AND NOT(ISBLANK({!$Record.AbacusTransfer__c}))</filterFormula>
+        <object>Invoice__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

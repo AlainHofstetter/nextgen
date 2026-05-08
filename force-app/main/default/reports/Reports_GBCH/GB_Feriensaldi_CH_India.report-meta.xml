@@ -77,7 +77,6 @@
             <operator>contains</operator>
             <value>gateB AG,gateB Services Private Ltd. India</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsAcross>

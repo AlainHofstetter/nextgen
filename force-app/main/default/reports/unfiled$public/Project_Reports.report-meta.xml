@@ -53,13 +53,12 @@
             <operator>contains</operator>
             <value></value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Tabular</format>
     <name>Project Report - Deepak</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Projects_with_Services_with_Time__c</reportType>
     <scope>organization</scope>

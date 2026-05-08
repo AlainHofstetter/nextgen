@@ -89,7 +89,6 @@
             <operator>equals</operator>
             <value>Honorar</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>

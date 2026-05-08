@@ -87,6 +87,7 @@ public with sharing class Invoice extends fflib_SObjectDomain
     }
 
     public void updateESR(Invoice__c inv){
+        System.debug('---Invoice.updateESR--- inv: ' + inv);
         //we are using a isRunningTest call to let us supply the value to the InvoiceTotalAmountGross__c formula field - ds
         //ESR Unformatted
         inv.ESRUnformatted__c = EsrUtil.getESR(inv.ESRAccountNr__c, inv.ESRMergentNr__c, inv.InvoiceDocumentNr__c, (System.Test.isRunningTest() ? 123 : inv.InvoiceTotalAmountGross__c), EsrUtil.EsrFormat.UNFORMATTED);
@@ -196,7 +197,8 @@ public with sharing class Invoice extends fflib_SObjectDomain
 
         for (Invoice__c i : (List<Invoice__c>) records) {
             String rtName = RecordTypeMap.get(i.RecordTypeId);
-            Boolean isRecordTypeOk = rtName.containsIgnoreCase(RECORD_TYPE_INVOICE) || rtName.containsIgnoreCase(RECORD_TYPE_CREDIT) || rtName.containsIgnoreCase(RECORD_TYPE_ILV);
+            // Null-safe: rtName can be null when RecordTypeId is null or maps to a target-only RecordType. See TARGET_COMPAT_NOTES.md.
+            Boolean isRecordTypeOk = rtName != null && (rtName.containsIgnoreCase(RECORD_TYPE_INVOICE) || rtName.containsIgnoreCase(RECORD_TYPE_CREDIT) || rtName.containsIgnoreCase(RECORD_TYPE_ILV));
 
             String status = Picklist.get(Invoice__c.InvoiceStatus__c, i.InvoiceStatus__c);
             Boolean isStatusOk = status == STATUS_READY || status == STATUS_SENT || status == STATUS_APPROVAL;
@@ -261,6 +263,8 @@ public with sharing class Invoice extends fflib_SObjectDomain
             ic.InvoiceSentDate__c = null;
             ic.InvoiceValutaDate__c = null;
             ic.CancellationInvoiceRelation__c = i.Id;
+            ic.PeriodFrom__c = i.PeriodFrom__c;
+            ic.PeriodUntil__c = i.PeriodUntil__c;
 
             uow.registerNew(ic);
             cancelled.add(ic);

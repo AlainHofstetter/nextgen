@@ -8,7 +8,7 @@
     <columns>WHAT_NAME</columns>
     <columns>CORE.USERS.ALIAS</columns>
     <columns>ALL_DAY</columns>
-    <filterScope>Everything</filterScope>
+    <filterScope>Mine</filterScope>
     <filters>
         <field>DUE_DATE</field>
         <operation>lessOrEqual</operation>

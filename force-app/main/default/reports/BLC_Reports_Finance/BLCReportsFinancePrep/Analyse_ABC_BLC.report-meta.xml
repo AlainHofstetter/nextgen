@@ -132,13 +132,12 @@
             <operator>greaterOrEqual</operator>
             <value>2/1/2025</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Tabular</format>
     <name>Analyse_ABC_BLC</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntityCustomEntity$Project__c$Invoice__c@Invoice__c.InvoiceReceiver__c</reportType>
     <scope>organization</scope>

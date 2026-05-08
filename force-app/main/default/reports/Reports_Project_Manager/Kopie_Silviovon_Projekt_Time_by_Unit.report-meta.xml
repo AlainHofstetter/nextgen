@@ -54,10 +54,6 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.PackagesProjectName__r$BudgetOpenTotalTime__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
         <field>Project__c.PackagesProjectName__r$BudgetOpenTotalHours__c</field>
     </columns>
     <columns>
@@ -91,7 +87,7 @@
             <operator>equals</operator>
             <value>Open</value>
         </criteriaItems>
-        <language>de</language>
+        
     </filter>
     <format>Matrix</format>
     <groupingsAcross>

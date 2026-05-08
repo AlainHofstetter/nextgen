@@ -10,13 +10,8 @@
     <enableRestrictEmailDomains>false</enableRestrictEmailDomains>
     <enableScrambleUserData>false</enableScrambleUserData>
     <enableUserSelfDeactivate>false</enableUserSelfDeactivate>
-    <enhancedPermSetList>false</enhancedPermSetList>
-    <enhancedUserListView>false</enhancedUserListView>
-    <enhancedUserRoleListView>false</enhancedUserRoleListView>
-    <groupSummaryUIEnhancement>true</groupSummaryUIEnhancement>
     <permsetsInFieldCreation>true</permsetsInFieldCreation>
     <psaExpirationUIEnabled>true</psaExpirationUIEnabled>
     <restrictedProfileCloning>true</restrictedProfileCloning>
     <userAccessPoliciesEnabled>true</userAccessPoliciesEnabled>
-    <userFieldHistoryTracking>false</userFieldHistoryTracking>
 </UserManagementSettings>

@@ -51,7 +51,6 @@
             <operator>equals</operator>
             <value>monday,tuesday,wednesday,thursday,friday</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsAcross>
@@ -72,7 +71,7 @@
     <name>GB ICE Rapportierte Stunden</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Projects_with_Services_with_Time__c</reportType>
     <scope>organization</scope>

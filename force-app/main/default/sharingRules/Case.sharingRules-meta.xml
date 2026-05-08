@@ -27,17 +27,6 @@
         </sharedFrom>
     </sharingOwnerRules>
     <sharingOwnerRules>
-        <fullName>IT_Andr_Ryf_with_IT_Team</fullName>
-        <accessLevel>Edit</accessLevel>
-        <label>IT André Ryf with IT Team</label>
-        <sharedTo>
-            <group>Skywalk_IT_Alle</group>
-        </sharedTo>
-        <sharedFrom>
-            <queue>ITCasesSammelqueue</queue>
-        </sharedFrom>
-    </sharingOwnerRules>
-    <sharingOwnerRules>
         <fullName>IT_Cases</fullName>
         <accessLevel>Edit</accessLevel>
         <label>IT Cases</label>
@@ -79,39 +68,6 @@
         </sharedTo>
         <sharedFrom>
             <group>Skywalk_IT_Alle</group>
-        </sharedFrom>
-    </sharingOwnerRules>
-    <sharingOwnerRules>
-        <fullName>IT_Cases5</fullName>
-        <accessLevel>Edit</accessLevel>
-        <label>IT Cases</label>
-        <sharedTo>
-            <group>Skywalk_GBCH_Censhare_Support</group>
-        </sharedTo>
-        <sharedFrom>
-            <queue>ITSupportQueue</queue>
-        </sharedFrom>
-    </sharingOwnerRules>
-    <sharingOwnerRules>
-        <fullName>IT_Cases6</fullName>
-        <accessLevel>Edit</accessLevel>
-        <label>IT Cases</label>
-        <sharedTo>
-            <group>Skywalk_IT_Alle</group>
-        </sharedTo>
-        <sharedFrom>
-            <queue>CenshareQueue</queue>
-        </sharedFrom>
-    </sharingOwnerRules>
-    <sharingOwnerRules>
-        <fullName>IT_Cases8</fullName>
-        <accessLevel>Edit</accessLevel>
-        <label>IT Cases</label>
-        <sharedTo>
-            <group>Skywalk_GBCH_Censhare_Support</group>
-        </sharedTo>
-        <sharedFrom>
-            <queue>CenshareQueue</queue>
         </sharedFrom>
     </sharingOwnerRules>
 </SharingRules>

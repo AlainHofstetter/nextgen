@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <description>Defaults ProjectResponsibilityCompany__c from the Cost Center LegalAccount on create if blank. Migrated from Process Builder ProjectResponsible.</description>
+    <environments>Default</environments>
+    <interviewLabel>RTF_Project_BeforeSave_ResponsibleCompanyAccount {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RTF_Project_BeforeSave_ResponsibleCompanyAccount</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_ResponsibilityCompany</name>
+        <label>Set Responsibility Company</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>ProjectResponsibilityCompany__c</field>
+            <value>
+                <elementReference>$Record.ProjectCostCenter__r.LegalAccount__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_ResponsibilityCompany</targetReference>
+        </connector>
+        <filterFormula>ISBLANK({!$Record.ProjectResponsibilityCompany__c})</filterFormula>
+        <object>Project__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

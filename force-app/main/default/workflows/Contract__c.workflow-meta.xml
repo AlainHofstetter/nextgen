@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
         <fullName>Contract_Action_Email_Reminder_To_Christian_Zuercher</fullName>
         <ccEmails>contract@brandleadership.ch</ccEmails>
         <description>Contract: Action Email Reminder To Christian Zürcher</description>
         <protected>false</protected>
-        <senderAddress>noreply@brandleadership.ch</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderAddress>noreply@brandleadership.ch</senderAddress><senderType>OrgWideEmailAddress</senderType>
         <template>CS_Templates/Contract_Action_Reminder_Email</template>
     </alerts>
     <alerts>
@@ -16,8 +15,7 @@
         <recipients>
             <type>owner</type>
         </recipients>
-        <senderAddress>noreply@brandleadership.ch</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderAddress>noreply@brandleadership.ch</senderAddress><senderType>OrgWideEmailAddress</senderType>
         <template>CS_Templates/Contract_Action_Reminder_Email</template>
     </alerts>
     <rules>
@@ -25,8 +23,8 @@
         <active>true</active>
         <formula>AND(
 OR(
-ISPICKVAL(Status__c ,&quot;Active&quot;),
-ISPICKVAL(Status__c ,&quot;Draft&quot;)
+ISPICKVAL(Status__c ,"Active"),
+ISPICKVAL(Status__c ,"Draft")
 ),
 NOT(ISBLANK( DateNextContractAction__c )),
 NOT(ISBLANK( ContractPartnerInternal__c )),
@@ -48,8 +46,8 @@ ContractPartnerInternal__r.Inactive__c = false
         <active>true</active>
         <formula>AND(
 OR(
-ISPICKVAL(Status__c ,&quot;Active&quot;),
-ISPICKVAL(Status__c ,&quot;Draft&quot;)
+ISPICKVAL(Status__c ,"Active"),
+ISPICKVAL(Status__c ,"Draft")
 ),
 NOT(ISBLANK( DateNextContractAction__c )),
 NOT(ISBLANK( ContractPartnerInternal__c )),
@@ -71,8 +69,8 @@ ContractPartnerInternal__r.Inactive__c = false
         <active>true</active>
         <formula>AND(
 OR(
-ISPICKVAL(Status__c ,&quot;Active&quot;),
-ISPICKVAL(Status__c ,&quot;Draft&quot;)
+ISPICKVAL(Status__c ,"Active"),
+ISPICKVAL(Status__c ,"Draft")
 ),
 NOT(ISBLANK( DateNextContractAction__c )),
 NOT(ISBLANK( ContractPartnerInternal__c )),
@@ -94,8 +92,8 @@ ContractPartnerInternal__r.Inactive__c = false
         <active>true</active>
         <formula>AND(
 OR(
-ISPICKVAL(Status__c ,&quot;Active&quot;),
-ISPICKVAL(Status__c ,&quot;Draft&quot;)
+ISPICKVAL(Status__c ,"Active"),
+ISPICKVAL(Status__c ,"Draft")
 ),
 NOT(ISBLANK( DateNextContractAction__c )),
 NOT(ISBLANK( ContractPartnerInternal__c )),

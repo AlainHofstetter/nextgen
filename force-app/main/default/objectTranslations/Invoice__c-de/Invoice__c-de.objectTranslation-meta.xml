@@ -307,14 +307,6 @@
         <name>IN011_Account_No_UID</name>
     </validationRules>
     <validationRules>
-        <errorMessage>Es besteht bereits eine Rechnung im Status &quot;Draft&quot;. Bitte erst komplettieren. (IN012)</errorMessage>
-        <name>IN012_Count_Status_Draft_Invoice</name>
-    </validationRules>
-    <validationRules>
-        <errorMessage>Es besteht bereits eine ILV im Status &quot;Draft&quot;. Bitte erst komplettieren. (IN013)</errorMessage>
-        <name>IN013_Count_Status_Draft_ILV</name>
-    </validationRules>
-    <validationRules>
         <errorMessage>Der Rechnungsstatus kann nicht zu diesem Status mutiert werden. Bitte mit Finance Kontakt aufnehmen. (IN014)</errorMessage>
         <name>IN014_Status_Change</name>
     </validationRules>

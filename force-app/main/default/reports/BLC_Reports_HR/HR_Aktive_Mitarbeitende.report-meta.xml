@@ -55,7 +55,6 @@
             <operator>equals</operator>
             <value>0</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -66,7 +65,7 @@
     <name>HR - Aktive Mitarbeitende</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>ContactList</reportType>
     <scope>organization</scope>

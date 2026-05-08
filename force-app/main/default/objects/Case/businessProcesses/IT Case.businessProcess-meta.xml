@@ -7,6 +7,10 @@
         <default>false</default>
     </values>
     <values>
+        <fullName>Forwarded 2nd Level</fullName>
+        <default>false</default>
+    </values>
+    <values>
         <fullName>Forwarded 3rd Level</fullName>
         <default>false</default>
     </values>

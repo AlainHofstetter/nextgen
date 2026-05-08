@@ -51,7 +51,6 @@
             <operator>notEqual</operator>
             <value>Sales Insights Integration User</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Tabular</format>
     <name>Users Report (6 months not logged)</name>
@@ -61,7 +60,7 @@
     </params>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>User</reportType>
     <showDetails>true</showDetails>

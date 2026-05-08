@@ -13,7 +13,6 @@
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>false</expandOthers>
         <groupingColumn>Invoice__c.InvoiceReceiver__c</groupingColumn>
-        <legendPosition>Right</legendPosition>
         <location>CHART_BOTTOM</location>
         <showAxisLabels>false</showAxisLabels>
         <showPercentage>false</showPercentage>
@@ -143,7 +142,6 @@
             <operator>contains</operator>
             <value>Germany</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -159,7 +157,7 @@
     <name>gateB DE - Umsatzliste</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntityCustomEntity$Project__c$Invoice__c@Invoice__c.BillingViaCompany__c</reportType>
     <scope>organization</scope>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <description>Sets OwnerId to the Salesforce User linked to ProjectResponsibleBusiness Contact when that Contact has an active user and changes. Migrated from Process Builder ProjectOwnerUpdateWithResponsible (fallback to hardcoded inactive-user owner not included).</description>
+    <environments>Default</environments>
+    <interviewLabel>RTF_Project_BeforeSave_OwnerUpdateWithResponsible {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RTF_Project_BeforeSave_OwnerUpdateWithResponsible</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_Owner</name>
+        <label>Set Owner</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.ProjectResponsibleBusiness__r.User__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_Owner</targetReference>
+        </connector>
+        <filterFormula>NOT(ISBLANK({!$Record.ProjectResponsibleBusiness__c})) AND {!$Record.ProjectResponsibleBusiness__r.User__r.IsActive} AND (ISNEW() OR ISCHANGED({!$Record.ProjectResponsibleBusiness__c}))</filterFormula>
+        <object>Project__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

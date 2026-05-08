@@ -49,7 +49,6 @@
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>true</expandOthers>
         <groupingColumn>Project__c.ProjectResponsibilityCompany__c</groupingColumn>
-        <legendPosition>Right</legendPosition>
         <location>CHART_BOTTOM</location>
         <secondaryGroupingColumn>Project__c.ProjectResponsibleBusiness__c</secondaryGroupingColumn>
         <showAxisLabels>true</showAxisLabels>
@@ -77,10 +76,6 @@
     </columns>
     <columns>
         <field>Project__c.ProjectSubType__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.ServicesTotalAmountCHF__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -173,7 +168,7 @@
     <name>BLC - Forecast (Projekte)</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntity$Project__c</reportType>
     <scope>organization</scope>

@@ -56,7 +56,7 @@
             <operator>equals</operator>
             <value>Marion Albisser</value>
         </criteriaItems>
-        <language>de</language>
+        
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -67,7 +67,7 @@
     <name>Überzeitbericht Marion Albisser</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Projects_with_Services_with_Time__c</reportType>
     <scope>organization</scope>

@@ -46,7 +46,8 @@ public class TestPackageSelector {
                 Name = 'Test Package ' + str_i,
                 ProjectName__c = project.Id,
                 PackageSubType__c = 'WorkTime',
-                PackageSortNr__c = str_i
+                PackageSortNr__c = str_i,
+                PackageStatus__c = 'Open' // required on target. See TARGET_COMPAT_NOTES.md.
             ));
         }
         insert packages;

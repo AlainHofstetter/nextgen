@@ -48,13 +48,12 @@
             <operator>contains</operator>
             <value>lindow</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Tabular</format>
     <name>KL Copy of BLC - Feriensaldi Liste</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntityCustomEntity$Project__c$Package__c</reportType>
     <scope>organization</scope>

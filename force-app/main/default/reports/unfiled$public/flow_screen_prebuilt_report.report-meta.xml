@@ -59,7 +59,7 @@
     <name>Sample Flow Report: Screen Flows</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>screen_flows_prebuilt_crt__c</reportType>
     <scope>organization</scope>

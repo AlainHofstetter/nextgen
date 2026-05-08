@@ -55,7 +55,6 @@
             <operator>equals</operator>
             <value>Vacation</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>

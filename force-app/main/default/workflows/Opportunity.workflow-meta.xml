@@ -1,117 +1,57 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
         <fullName>CS_Opportunity_LOST</fullName>
         <description>CS - Opportunity LOST</description>
         <protected>false</protected>
-        <recipients>
-            <recipient>chris.steinacker@hotzbrandconsultants.ch</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>christian.hessdoerfer@gateb.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>daniel.baerlocher@hilda.ch</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>fabian.hotz@brandleadership.ch</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>marco.wyler@gateb.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>olaf.gijseman@gateb.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>pascal.charriere@brandleadership.ch</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>rene.affolter@gateb.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>sven.lareida@calydo.com</recipient>
-            <type>user</type>
-        </recipients>
-        <senderAddress>noreply@brandleadership.ch</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <recipients><type>owner</type></recipients><senderAddress>noreply@brandleadership.ch</senderAddress><senderType>OrgWideEmailAddress</senderType>
         <template>CS_Templates/CS_Opportunity_LOST</template>
+    
+        <recipients><recipient>chris.steinacker@hotzbrandconsultants.ch</recipient><type>email</type></recipients>
+        <recipients><recipient>christian.hessdoerfer@gateb.com</recipient><type>email</type></recipients>
+        <recipients><recipient>daniel.baerlocher@hilda.ch</recipient><type>email</type></recipients>
+        <recipients><recipient>fabian.hotz@brandleadership.ch</recipient><type>email</type></recipients>
+        <recipients><recipient>marco.wyler@gateb.com</recipient><type>email</type></recipients>
+        <recipients><recipient>olaf.gijseman@gateb.com</recipient><type>email</type></recipients>
+        <recipients><recipient>pascal.charriere@brandleadership.ch</recipient><type>email</type></recipients>
+        <recipients><recipient>rene.affolter@gateb.com</recipient><type>email</type></recipients>
+        <recipients><recipient>sven.lareida@calydo.com</recipient><type>email</type></recipients>
     </alerts>
     <alerts>
         <fullName>CS_Opportunity_WON</fullName>
         <ccEmails>finance@brandleadership.ch</ccEmails>
         <description>CS - Opportunity WON</description>
         <protected>false</protected>
-        <recipients>
-            <recipient>chris.steinacker@hotzbrandconsultants.ch</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>christian.hessdoerfer@gateb.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>daniel.baerlocher@hilda.ch</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>fabian.hotz@brandleadership.ch</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>marco.wyler@gateb.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>olaf.gijseman@gateb.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>pascal.charriere@brandleadership.ch</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>rene.affolter@gateb.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>sven.lareida@calydo.com</recipient>
-            <type>user</type>
-        </recipients>
-        <senderAddress>noreply@brandleadership.ch</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <recipients><type>owner</type></recipients><senderAddress>noreply@brandleadership.ch</senderAddress><senderType>OrgWideEmailAddress</senderType>
         <template>CS_Templates/CS_Opportunity_WON</template>
+    
+        <recipients><recipient>chris.steinacker@hotzbrandconsultants.ch</recipient><type>email</type></recipients>
+        <recipients><recipient>christian.hessdoerfer@gateb.com</recipient><type>email</type></recipients>
+        <recipients><recipient>daniel.baerlocher@hilda.ch</recipient><type>email</type></recipients>
+        <recipients><recipient>fabian.hotz@brandleadership.ch</recipient><type>email</type></recipients>
+        <recipients><recipient>marco.wyler@gateb.com</recipient><type>email</type></recipients>
+        <recipients><recipient>olaf.gijseman@gateb.com</recipient><type>email</type></recipients>
+        <recipients><recipient>pascal.charriere@brandleadership.ch</recipient><type>email</type></recipients>
+        <recipients><recipient>rene.affolter@gateb.com</recipient><type>email</type></recipients>
+        <recipients><recipient>sven.lareida@calydo.com</recipient><type>email</type></recipients>
     </alerts>
     <alerts>
         <fullName>VH_Opportunity_LOST</fullName>
         <description>VH - Opportunity LOST</description>
         <protected>false</protected>
-        <recipients>
-            <recipient>fabian.hotz@brandleadership.ch</recipient>
-            <type>user</type>
-        </recipients>
-        <senderAddress>noreply@brandleadership.ch</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <recipients><type>owner</type></recipients><senderAddress>noreply@brandleadership.ch</senderAddress><senderType>OrgWideEmailAddress</senderType>
         <template>CS_Templates/CS_Opportunity_LOST</template>
+    
+        <recipients><recipient>fabian.hotz@brandleadership.ch</recipient><type>email</type></recipients>
     </alerts>
     <alerts>
         <fullName>VH_Opportunity_WON</fullName>
         <description>VH - Opportunity WON</description>
         <protected>false</protected>
-        <recipients>
-            <recipient>fabian.hotz@brandleadership.ch</recipient>
-            <type>user</type>
-        </recipients>
-        <senderAddress>noreply@brandleadership.ch</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <recipients><type>owner</type></recipients><senderAddress>noreply@brandleadership.ch</senderAddress><senderType>OrgWideEmailAddress</senderType>
         <template>CS_Templates/CS_Opportunity_WON</template>
+    
+        <recipients><recipient>fabian.hotz@brandleadership.ch</recipient><type>email</type></recipients>
     </alerts>
     <fieldUpdates>
         <fullName>Amount_GB_License</fullName>
@@ -142,7 +82,7 @@
         </actions>
         <active>true</active>
         <description>Calculates the Amount of the Opportunity of GB - License for internal forecast.</description>
-        <formula>RecordTypeId =&quot;012b0000000cQ3P&quot;</formula>
+        <formula>RecordTypeId ="012b0000000cQ3P"</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -153,7 +93,7 @@
         </actions>
         <active>true</active>
         <description>Calculates the Amount of the Opportunity of GB - SAS License for internal forecast.</description>
-        <formula>RecordTypeId =&quot;012b0000000cWvc&quot;</formula>
+        <formula>RecordTypeId ="012b0000000cWvc"</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -165,7 +105,7 @@
         <active>true</active>
         <description>This Workflow is used to inform about Opportunity Stage = LOST</description>
         <formula>AND(
-ispickval(StageName,&quot;Closed Lost&quot;),
+ispickval(StageName,"Closed Lost"),
 ischanged( StageName )
 )</formula>
         <triggerType>onAllChanges</triggerType>
@@ -179,7 +119,7 @@ ischanged( StageName )
         <active>true</active>
         <description>This Workflow is used to inform about Opportunity Stage = WON</description>
         <formula>AND(
-ispickval(StageName,&quot;Closed Won&quot;),
+ispickval(StageName,"Closed Won"),
 ischanged( StageName )
 )</formula>
         <triggerType>onAllChanges</triggerType>

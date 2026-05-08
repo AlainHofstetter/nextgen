@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <description>Inherits SupplierCostsGroup__c from Package when Invoice is in Draft status. Migrated from Process Builder InvoicePosInheritSupplierGroupFlagFromPackageOnInvoiceCreation.</description>
+    <environments>Default</environments>
+    <interviewLabel>RTF_InvoicePos_BeforeSave_InheritSupplierGroupFlag {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RTF_InvoicePos_BeforeSave_InheritSupplierGroupFlag</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_SupplierCostsGroup</name>
+        <label>Set Supplier Costs Group</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>SupplierCostsGroup__c</field>
+            <value>
+                <elementReference>$Record.PackageName__r.SupplierCostsGroup__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_SupplierCostsGroup</targetReference>
+        </connector>
+        <filterFormula>{!$Record.InvoiceName__r.InvoiceStatus__c} = &quot;Draft&quot;</filterFormula>
+        <object>InvoicePos__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -10,24 +10,6 @@
         <scale>2</scale>
     </aggregates>
     <aggregates>
-        <calculatedFormula>Project__c.BudgetAssignTotalTime__c:SUM-Project__c.InvoiceTotalTime__c:SUM-Project__c.BudgetOpenTotalTime__c:SUM</calculatedFormula>
-        <datatype>number</datatype>
-        <developerName>FORMULA2</developerName>
-        <isActive>true</isActive>
-        <isCrossBlock>false</isCrossBlock>
-        <masterLabel>Booked this month</masterLabel>
-        <scale>2</scale>
-    </aggregates>
-    <aggregates>
-        <calculatedFormula>Project__c.InvoiceTotalTime__c:SUM/(Project__c.ServicesTotalAmount__c:SUM-(Time__c.ServiceTotalTime__c:SUM-Project__c.InvoiceTotalTime__c:SUM))</calculatedFormula>
-        <datatype>percent</datatype>
-        <developerName>FORMULA3</developerName>
-        <isActive>true</isActive>
-        <isCrossBlock>false</isCrossBlock>
-        <masterLabel>Verrechenbarkeit</masterLabel>
-        <scale>0</scale>
-    </aggregates>
-    <aggregates>
         <calculatedFormula>(Time__c.ServiceTotalTime__c:SUM-Time__c.ServiceTotalTimeOufOfScope__c:SUM)/Time__c.ServiceTotalTime__c:SUM</calculatedFormula>
         <datatype>percent</datatype>
         <developerName>FORMULA4</developerName>
@@ -81,18 +63,6 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c$BudgetOpenTotalTime__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c$ServicesTotalTime__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c$BillingRatePercent__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
         <field>Project__c$MarginPercent__c</field>
     </columns>
     <columns>
@@ -114,10 +84,6 @@
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Project__c.PackagesProjectName__r.Time__r$DurationHhMmN__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.PackagesProjectName__r$ServicesTotalTime__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -144,10 +110,6 @@
     <columns>
         <field>Project__c$OpportunityQuoteDescription__c</field>
     </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c$ServiceTotalTimeCHFBP__c</field>
-    </columns>
     <currency>CHF</currency>
     <format>Summary</format>
     <groupingsDown>
@@ -168,7 +130,7 @@
     <name>Total Costs</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Projects_with_Services_with_Time__c</reportType>
     <scope>organization</scope>

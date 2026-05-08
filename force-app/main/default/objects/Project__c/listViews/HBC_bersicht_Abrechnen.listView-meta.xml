@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HBC_bersicht_Abrechnen</fullName>
+    <columns>ProjectResponsibleBusiness__c</columns>
+    <columns>BillingViaCompany__c</columns>
+    <columns>ContractPartner__c</columns>
+    <columns>ProjectNr__c</columns>
+    <columns>NAME</columns>
+    <columns>ServiceTotalAmountCHFBP__c</columns>
+    <columns>InvoiceTotalAmountNetCHFBP__c</columns>
+    <columns>CancellationTotalAmountNetCHFBP__c</columns>
+    <columns>ServicesTotalAmountCHF__c</columns>
+    <columns>InvoiceTotalAmountCHF__c</columns>
+    <columns>ILVTotalTimeCHF__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ContractPartner__c</field>
+        <operation>contains</operation>
+        <value>hotz bran</value>
+    </filters>
+    <label>VP - Übersicht Abrechnen</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Skywalk_FIN_Alle</group>
+        <group>Skywalk_HBC_Alle</group>
+    </sharedTo>
+</ListView>

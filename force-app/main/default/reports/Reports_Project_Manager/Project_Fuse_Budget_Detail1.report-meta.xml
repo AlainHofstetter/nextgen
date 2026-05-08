@@ -29,10 +29,6 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>Project__c.PackagesProjectName__r$BudgetAssignPackage__c</field>
     </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.PackagesProjectName__r$ServicesTotalAmount__c</field>
-    </columns>
     <currency>CHF</currency>
     <filter>
         <criteriaItems>
@@ -42,7 +38,6 @@
             <operator>equals</operator>
             <value>P-113643</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>

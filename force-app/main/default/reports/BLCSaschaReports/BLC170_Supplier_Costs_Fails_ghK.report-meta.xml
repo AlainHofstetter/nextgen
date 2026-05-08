@@ -25,7 +25,6 @@
             <operator>contains</operator>
             <value>557008,252800,556992,252838,62815,62749,62728,62700,62684,62665,62629,557032</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -41,7 +40,7 @@
     <name>BLC-170 - Supplier Costs Fails</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Projects_with_Services_with_Supplier_Costs__c</reportType>
     <scope>organization</scope>

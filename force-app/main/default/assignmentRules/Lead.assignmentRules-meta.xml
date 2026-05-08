@@ -4,26 +4,12 @@
         <fullName>Lead Import</fullName>
         <active>true</active>
         <ruleEntry>
-            <assignedTo>rene.affolter@gateb.com</assignedTo>
+            <assignedTo>sven.boesiger1@gateb.com</assignedTo>
             <assignedToType>User</assignedToType>
             <criteriaItems>
                 <field>Lead.ZImportSource__c</field>
                 <operation>equals</operation>
                 <value>René Affolter</value>
-            </criteriaItems>
-        </ruleEntry>
-        <ruleEntry>
-            <assignedTo>sarah.iskander@gateb.com</assignedTo>
-            <assignedToType>User</assignedToType>
-            <criteriaItems>
-                <field>Lead.CreatedById</field>
-                <operation>equals</operation>
-                <value>Sarah Iksander</value>
-            </criteriaItems>
-            <criteriaItems>
-                <field>Lead.LeadSource</field>
-                <operation>equals</operation>
-                <value>Jigsaw</value>
             </criteriaItems>
         </ruleEntry>
     </assignmentRule>

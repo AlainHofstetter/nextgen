@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <description>Sets IsInBillingPeriodYearMonth__c from ExpenseDate__c on every save. Migrated from Process Builder ExpenseIsInBillingPeriod.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>formula_BillingPeriod</name>
+        <dataType>String</dataType>
+        <expression>TEXT(YEAR({!$Record.ExpenseDate__c})) &amp; &quot;.&quot; &amp; TEXT(MONTH({!$Record.ExpenseDate__c}))</expression>
+    </formulas>
+    <interviewLabel>RTF_Expense_BeforeSave_IsInBillingPeriod {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RTF_Expense_BeforeSave_IsInBillingPeriod</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_BillingPeriod</name>
+        <label>Set Billing Period</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>IsInBillingPeriodYearMonth__c</field>
+            <value>
+                <elementReference>formula_BillingPeriod</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_BillingPeriod</targetReference>
+        </connector>
+        <object>Expense__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

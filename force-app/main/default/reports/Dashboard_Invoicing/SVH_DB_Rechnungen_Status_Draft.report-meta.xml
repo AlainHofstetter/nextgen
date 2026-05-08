@@ -82,7 +82,6 @@
             <operator>equals</operator>
             <value>Draft</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsDown>
@@ -98,7 +97,7 @@
     <name>SVH - DB - Rechnungen Status &quot;Draft&quot;</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Projects_with_Invoices_with_Invoice_Pos__c</reportType>
     <scope>organization</scope>

@@ -49,7 +49,6 @@
             <operator>contains</operator>
             <value>Schumacher,Hefti,Hersberger,Bösiger,Hofstetter,Wenk,Felder,Heinrich,Fellinghauer,Naqqar,Alchynska,Karpenko,Mekkattuparambil,Noel,Picaud</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsAcross>
@@ -70,7 +69,7 @@
     <name>Rapportierte Stunden 30 Tage ICE</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Projects_with_Services_with_Time__c</reportType>
     <scope>organization</scope>

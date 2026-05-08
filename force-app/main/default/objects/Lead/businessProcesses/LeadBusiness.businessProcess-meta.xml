@@ -4,6 +4,10 @@
     <description>Used for standard business leads</description>
     <isActive>true</isActive>
     <values>
+        <fullName>Contacted</fullName>
+        <default>false</default>
+    </values>
+    <values>
         <fullName>Open</fullName>
         <default>true</default>
     </values>

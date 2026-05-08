@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValCountHasInvoiceDraft__c</fullName>
+    <label>ValCountHasInvoiceDraft</label>
+    <summaryFilterItems>
+        <field>Invoice__c.InvoiceStatus__c</field>
+        <operation>equals</operation>
+        <value>Draft</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Invoice__c.RecordTypeId</field>
+        <operation>equals</operation>
+        <value>Invoice</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Invoice__c.ProjectName__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

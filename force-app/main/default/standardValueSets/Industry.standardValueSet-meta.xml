@@ -1,6 +1,16 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
+    <standardValue>
+        <fullName>Agriculture</fullName>
+        <default>false</default>
+        <label>Agriculture</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Association / Not for Profit</fullName>
+        <default>false</default>
+        <label>Association / Not for Profit</label>
+    </standardValue>
     <standardValue>
         <fullName>Automotive</fullName>
         <default>false</default>
@@ -10,5 +20,100 @@
         <fullName>Banking / Finance / Insurance</fullName>
         <default>false</default>
         <label>Banking / Finance / Insurance</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Beauty / Fashion / Luxury Goods</fullName>
+        <default>false</default>
+        <label>Beauty / Fashion / Luxury Goods</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Communication / Media / Social Media</fullName>
+        <default>false</default>
+        <label>Communication / Media / Social Media</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Construction / Real Estate</fullName>
+        <default>false</default>
+        <label>Construction / Real Estate</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Consulting / Service Provider / Agency</fullName>
+        <default>false</default>
+        <label>Consulting / Service Provider / Agency</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Consumer Packaged Goods</fullName>
+        <default>false</default>
+        <label>Consumer Packaged Goods</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Education</fullName>
+        <default>false</default>
+        <label>Education</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Energy / Utilities</fullName>
+        <default>false</default>
+        <label>Energy / Utilities</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Entertainment / Sports / Films</fullName>
+        <default>false</default>
+        <label>Entertainment / Sports / Films</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Environmental</fullName>
+        <default>false</default>
+        <label>Environmental</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Food &amp; Beverage</fullName>
+        <default>false</default>
+        <label>Food &amp; Beverage</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Government</fullName>
+        <default>false</default>
+        <label>Government</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Healthcare / Pharma / Chemicals</fullName>
+        <default>false</default>
+        <label>Healthcare / Pharma / Chemicals</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Hospitality / Hotel / Tourism</fullName>
+        <default>false</default>
+        <label>Hospitality / Hotel / Tourism</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Industry / Manufacturing / Printing</fullName>
+        <default>false</default>
+        <label>Industry / Manufacturing / Printing</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Private Person</fullName>
+        <default>false</default>
+        <label>Private Person</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Retail</fullName>
+        <default>false</default>
+        <label>Retail</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Technology / IT / Engineering / Electro</fullName>
+        <default>false</default>
+        <label>Technology / IT / Engineering / Electro</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Transportation / Shipping</fullName>
+        <default>false</default>
+        <label>Transportation / Shipping</label>
+    </standardValue>
+    <standardValue>
+        <fullName>None</fullName>
+        <default>false</default>
+        <label>None</label>
     </standardValue>
 </StandardValueSet>

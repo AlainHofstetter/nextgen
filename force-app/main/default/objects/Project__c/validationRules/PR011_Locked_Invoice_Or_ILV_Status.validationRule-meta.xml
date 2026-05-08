@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PR011_Locked_Invoice_Or_ILV_Status</fullName>
+    <active>true</active>
+    <description>Project has an Invoice and/or an ILV in Status Draft.</description>
+    <errorConditionFormula>AND(
+ $User.PS480FunctionValidationRulesActive__c =true,
+OR(
+ValCountHasInvoiceDraft__c =1,
+ValCountHasILVDraft__c =1
+),
+OR(
+ISCHANGED(ProjectPartner__c),
+ISCHANGED(ContractPartner__c),
+ISCHANGED(InvoiceReceiver__c),
+ISCHANGED(ProjectCostCenter__c),
+ISCHANGED(ProjectStatus__c),
+ISCHANGED(ProjectSubType__c),
+ISCHANGED(ProjectRateHour__c),
+ISCHANGED(ProjectCurrency__c)
+)
+)</errorConditionFormula>
+    <errorMessage>The Project is locked due to an Invoice or ILV in Status &quot;Draft&quot;. Please complete Invoice first.(PR011)</errorMessage>
+</ValidationRule>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>US003_No_Change_2</fullName>
-    <active>false</active>
+    <active>true</active>
     <description>Nur HR oder IT darf gewisse Daten eines Mitarbeitenden ändern</description>
     <errorConditionFormula>AND( 
 $User.PS480FunctionValidationRulesActive__c =true, 

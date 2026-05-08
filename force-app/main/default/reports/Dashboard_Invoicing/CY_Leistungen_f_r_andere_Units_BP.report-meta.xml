@@ -1,33 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
-    <aggregates>
-        <acrossGroupingContext>COLUMN_GRAND_SUMMARY</acrossGroupingContext>
-        <calculatedFormula>Project__c.ServicesTotalTimeCHF__c:AVG</calculatedFormula>
-        <datatype>number</datatype>
-        <developerName>FORMULA1</developerName>
-        <downGroupingContext>Project__c$Name</downGroupingContext>
-        <isActive>true</isActive>
-        <isCrossBlock>false</isCrossBlock>
-        <masterLabel>Service - Total Time Project (CHF)</masterLabel>
-        <scale>2</scale>
-    </aggregates>
-    <aggregates>
-        <acrossGroupingContext>COLUMN_GRAND_SUMMARY</acrossGroupingContext>
-        <calculatedFormula>Project__c.ServiceTotalTimeCHFBP__c:AVG</calculatedFormula>
-        <datatype>number</datatype>
-        <developerName>FORMULA2</developerName>
-        <downGroupingContext>Project__c$Name</downGroupingContext>
-        <isActive>true</isActive>
-        <isCrossBlock>false</isCrossBlock>
-        <masterLabel>Service - Total Time Project (BP)</masterLabel>
-        <scale>2</scale>
-    </aggregates>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Project__c.PackagesProjectName__r.Time__r$ServiceTotalTimeCHF__c</field>
-    </columns>
-    <columns>
-        <field>Project__c$ServiceTotalTimeCHFBP__c</field>
     </columns>
     <columns>
         <field>Project__c.PackagesProjectName__r$Name</field>
@@ -66,7 +41,6 @@
             <operator>equals</operator>
             <value>1</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsAcross>

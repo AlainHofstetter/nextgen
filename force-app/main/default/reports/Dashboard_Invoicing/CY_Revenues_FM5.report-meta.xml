@@ -108,7 +108,6 @@
             <operator>lessOrEqual</operator>
             <value>12/31/2023</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -119,7 +118,7 @@
     <name>CY Revenues</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Projects_with_Invoices_with_Invoice_Pos__c</reportType>
     <scope>organization</scope>

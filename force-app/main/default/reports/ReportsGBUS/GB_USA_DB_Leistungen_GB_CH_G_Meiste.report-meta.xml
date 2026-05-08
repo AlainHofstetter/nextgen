@@ -69,13 +69,12 @@
             <operator>contains</operator>
             <value>meister</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Tabular</format>
     <name>GB USA - DB - Leistungen GB CH G. Meiste</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Projects_with_Services_with_Time__c</reportType>
     <scope>organization</scope>

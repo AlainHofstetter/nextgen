@@ -4,5 +4,4 @@
     <enableDynamicStreamingChannel>true</enableDynamicStreamingChannel>
     <enableEventLogGeneration>true</enableEventLogGeneration>
     <enableStreamingApi>true</enableStreamingApi>
-    <eventLogRetentionDuration>0</eventLogRetentionDuration>
 </EventSettings>

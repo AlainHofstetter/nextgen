@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>63.0</apiVersion>
-    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
-    <description>This Flow is used to set the Finance Date to Today if the record type is Cancellation.</description>
+    <apiVersion>60.0</apiVersion>    <description>This Flow is used to set the Finance Date to Today if the record type is Cancellation.</description>
     <environments>Default</environments>
     <interviewLabel>RTF_Invoice_BeforeSave_UpdateFinanceDate {!$Flow.CurrentDateTime}</interviewLabel>
     <label>RTF_Invoice_BeforeSave_UpdateFinanceDate</label>

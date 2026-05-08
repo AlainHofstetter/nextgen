@@ -11,16 +11,6 @@
         <scale>0</scale>
     </aggregates>
     <aggregates>
-        <calculatedFormula>IF(Project__c.ServicesTotalAmountCHF__c:SUM=0, 0, Project__c.InvoiceTotalAmountCHF__c:SUM / Project__c.ServicesTotalAmountCHF__c:SUM)</calculatedFormula>
-        <datatype>percent</datatype>
-        <description>Verrechenbarkeit der Services</description>
-        <developerName>FORMULA2</developerName>
-        <isActive>true</isActive>
-        <isCrossBlock>false</isCrossBlock>
-        <masterLabel>Billing Rate %</masterLabel>
-        <scale>0</scale>
-    </aggregates>
-    <aggregates>
         <calculatedFormula>IF(Project__c.InvoiceTotalAmountCHF__c:SUM=0, 0, (Project__c.InvoiceTotalAmountCHF__c:SUM-Project__c.CostsTotalAmountCHF__c:SUM)/Project__c.InvoiceTotalAmountCHF__c:SUM)</calculatedFormula>
         <datatype>percent</datatype>
         <description>DB I im Verhältnis zum Umsatz</description>
@@ -49,14 +39,7 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.ServicesTotalAmountCHF__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
         <field>Project__c.InvoiceTotalAmountCHF__c</field>
-    </columns>
-    <columns>
-        <field>Project__c.BillingRatePercent__c</field>
     </columns>
     <columns>
         <field>Project__c.MarginAmountCHF__c</field>
@@ -95,7 +78,6 @@
             <operator>notEqual</operator>
             <value>Victor Hotz AG,Hotz Brand Consultants AG,GateB AG,Brand Leadership Management AG,Calydo AG</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsAcross>
@@ -116,7 +98,7 @@
     <name>CY - DB - Close Projects</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntity$Project__c</reportType>
     <scope>organization</scope>

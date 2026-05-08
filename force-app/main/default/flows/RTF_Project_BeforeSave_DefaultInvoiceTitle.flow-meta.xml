@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <description>Sets DefaultInvoiceTitle__c to "Rechnung" if blank. Migrated from Process Builder ProjectDefaultInvoiceTitleNull.</description>
+    <environments>Default</environments>
+    <interviewLabel>RTF_Project_BeforeSave_DefaultInvoiceTitle {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RTF_Project_BeforeSave_DefaultInvoiceTitle</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_Default_Invoice_Title</name>
+        <label>Set Default Invoice Title</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>DefaultInvoiceTitle__c</field>
+            <value>
+                <stringValue>Rechnung</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_Default_Invoice_Title</targetReference>
+        </connector>
+        <filterFormula>ISBLANK({!$Record.DefaultInvoiceTitle__c})</filterFormula>
+        <object>Project__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

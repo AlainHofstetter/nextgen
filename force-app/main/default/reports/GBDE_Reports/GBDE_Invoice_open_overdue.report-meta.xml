@@ -147,7 +147,6 @@
             <operator>equals</operator>
             <value></value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -158,7 +157,7 @@
     <name>GBDE - Invoice open - overdue</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntityCustomEntity$Project__c$Invoice__c@Invoice__c.InvoiceReceiver__c</reportType>
     <scope>organization</scope>

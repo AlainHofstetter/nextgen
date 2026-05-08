@@ -119,7 +119,6 @@
             <operator>contains</operator>
             <value>Deepak</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <formattingRules>

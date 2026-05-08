@@ -66,18 +66,11 @@
         <field>Project__c.Invoices__r$FinanceDate__c</field>
     </columns>
     <columns>
-        <field>Project__c$ServicesTotalAmountCHF__c</field>
-    </columns>
-    <columns>
         <field>Project__c$InvoiceTotalAmountCHF__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Project__c$InvoiceTotalServicesNetCHFBP__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c$ServiceTotalAmountCHFBP__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -108,7 +101,6 @@
             <operator>equals</operator>
             <value>1</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -119,7 +111,7 @@
     <name>HI - DB - Overview Invoicing</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Projects_with_Invoices_with_Invoice_Pos__c</reportType>
     <scope>organization</scope>

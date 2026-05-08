@@ -57,9 +57,8 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>contains</operator>
-            <value>Hotz Brand Consultants AG</value>
+            <value>Hotz Brand Consultants AG,Calydo</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <formattingRules>
@@ -104,6 +103,6 @@
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
         <dateColumn>Project__c.PackagesProjectName__r.Time__r$DateFrom__c</dateColumn>
-        <interval>INTERVAL_LAST7</interval>
+        <interval>INTERVAL_LASTTHISMONTH</interval>
     </timeFrameFilter>
 </Report>

@@ -47,7 +47,6 @@
             <operator>equals</operator>
             <value>THIS_YEAR</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -58,7 +57,7 @@
     <name>Revenue GB Singapore per month (2023)</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntityCustomEntity$Project__c$Invoice__c@Invoice__c.ProjectCostCenter__c</reportType>
     <scope>organization</scope>

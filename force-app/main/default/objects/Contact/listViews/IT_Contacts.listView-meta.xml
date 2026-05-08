@@ -7,7 +7,7 @@
     <columns>CONTACT.EMAIL</columns>
     <columns>CONTACT.TITLE</columns>
     <columns>CORE.USERS.ALIAS</columns>
-    <filterScope>Everything</filterScope>
+    <filterScope>Mine</filterScope>
     <label>IT Contacts</label>
     <sharedTo>
         <group>Skywalk_IT_Alle</group>

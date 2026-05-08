@@ -88,7 +88,6 @@
             <operator>contains</operator>
             <value>amit</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <formattingRules>

@@ -6,6 +6,7 @@
           Generates PDF invoices for GateB customers in Switzerland and internationally.
           Handles a first-page QR layout for Switzerland with no header, then restores
           header and margins on following pages.
+          Updated 25/03/2026 by Janet to exclude invoice Position Amount if ShowPositionAmount is false and amount is 0
 
         Layout Notes:
           - Running header and footer via CSS @page and running elements
@@ -120,7 +121,8 @@
 
         <!-- Swiss first page -->
         <apex:outputText escape="false"
-            rendered="{!invoiceRecord.InvoiceReceiver__r.BillingCountry__c == 'SWITZERLAND'}">
+            rendered="{!invoiceRecord.InvoiceReceiver__r.BillingCountry__c == 'SWITZERLAND' &&
+                        (invoiceRecord.ProjectInvoiceCurrency__c == 'CHF' || invoiceRecord.ProjectInvoiceCurrency__c == 'EUR')}">
             <style>
                 /* First page (QR) - no header */
                 @page :first {
@@ -148,7 +150,8 @@
 
     <!-- Swiss QR running element: appears only for Switzerland -->
     <apex:outputPanel layout="none"
-        rendered="{!invoiceRecord.InvoiceReceiver__r.BillingCountry__c == 'SWITZERLAND'}">
+        rendered="{!invoiceRecord.InvoiceReceiver__r.BillingCountry__c == 'SWITZERLAND' &&
+                    (invoiceRecord.ProjectInvoiceCurrency__c == 'CHF' || invoiceRecord.ProjectInvoiceCurrency__c == 'EUR')}">
         <!-- Running element for @bottom-left -->
         <div class="imageFirstPage" style="margin:0; padding:0;">
             <apex:image url="{!imageURL}" width="815px" style="max-width:815px;" />
@@ -210,6 +213,14 @@
                 </apex:outputPanel>
                 <apex:outputPanel layout="block" styleClass="{!IF(ISBLANK(invoiceRecord.BillingAddressCountry__c), 'hidden', '')}" rendered="{!NOT(ISBLANK(invoiceRecord.BillingAddressCountry__c))}">
                     <apex:outputField value="{!invoiceRecord.BillingAddressCountry__c}" /><br/>
+                </apex:outputPanel>
+                <apex:outputPanel layout="block" rendered="{!invoiceRecord.InvoiceReceiver__r.BillingCountry__c != 'SWITZERLAND'}">
+                    <span>{!$Label.Vat_Number}: </span>
+                    <apex:outputField value="{!invoiceRecord.VATNumberRef__c}"/><br/>
+                </apex:outputPanel>
+                <apex:outputPanel layout="block" rendered="{!invoiceRecord.InvoiceReceiver__r.BillingCountry__c != 'SWITZERLAND'}">
+                    <span >{!$Label.TAX_Id}: </span>
+                    <apex:outputField value="{!invoiceRecord.TaxNumberRef__c}"/><br/>
                 </apex:outputPanel>
             </div>
 
@@ -280,7 +291,12 @@
                     <tr>
                         <td class="tableLargeCol paddingTopTable"><apex:outputField value="{!invPos.InvoicePositionName__c}"/></td>
                         <td class="tableSmallCol alignRight paddingTopTable">
+                        <!-- JC updated 25/03/2026 from the following line to the rest of the code inside this td
                             <apex:outputField value="{!invPos.InvoicePositionAmount__c}"/>
+                        -->
+                            <apex:outputPanel layout="none" rendered="{!invPos.ShowPositionAmount__c}">
+                               <apex:outputField value="{!invPos.InvoicePositionAmount__c}"/>
+                            </apex:outputPanel>
                         </td>
                     </tr>
 
@@ -308,8 +324,11 @@
                         <td class="tableLargeCol paddingTopTable bold borderBottom highlightLight">
                             <apex:outputField value="{!invPos.InvoicePositionName__c}"/>
                         </td>
+                        <!-- JC Updated 25/03/2026 - Show Position Amount respected -->
                         <td class="tableSmallCol alignRight paddingTopTable borderBottom highlightLight">
-                            <apex:outputField value="{!invPos.InvoicePositionAmount__c}"/>
+                            <apex:outputPanel layout="none" rendered="{!invPos.ShowPositionAmount__c}">
+                                <apex:outputField value="{!invPos.InvoicePositionAmount__c}"/>
+                            </apex:outputPanel>
                         </td>
                     </apex:outputPanel>
                 </tr>

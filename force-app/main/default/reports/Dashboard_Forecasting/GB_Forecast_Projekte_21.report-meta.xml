@@ -49,7 +49,6 @@
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>true</expandOthers>
         <groupingColumn>Project__c.ProjectCostCenter__c</groupingColumn>
-        <legendPosition>Right</legendPosition>
         <location>CHART_BOTTOM</location>
         <secondaryGroupingColumn>Project__c.ProjectResponsibleBusiness__c</secondaryGroupingColumn>
         <showAxisLabels>false</showAxisLabels>
@@ -171,7 +170,6 @@
             <operator>equals</operator>
             <value>Project__c.ExternalLicense,Project__c.ExternalServices</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -187,7 +185,7 @@
     <name>GB - kein FC (Projekte)</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntity$Project__c</reportType>
     <scope>organization</scope>

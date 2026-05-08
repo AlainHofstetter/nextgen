@@ -7,18 +7,12 @@
         <chartSummaries>
             <aggregate>Sum</aggregate>
             <axisBinding>y</axisBinding>
-            <column>Project__c.ServiceTotalAmountCHFBP__c</column>
-        </chartSummaries>
-        <chartSummaries>
-            <aggregate>Sum</aggregate>
-            <axisBinding>y</axisBinding>
             <column>Project__c.InvoiceTotalAmountNetCHFBP__c</column>
         </chartSummaries>
         <chartType>HorizontalBar</chartType>
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>true</expandOthers>
         <groupingColumn>Project__c.ProjectCostCenter__c</groupingColumn>
-        <legendPosition>Bottom</legendPosition>
         <location>CHART_BOTTOM</location>
         <showAxisLabels>false</showAxisLabels>
         <showPercentage>false</showPercentage>
@@ -43,19 +37,11 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.ServicesTotalAmountCHF__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
         <field>Project__c.InvoiceTotalAmountCHF__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Project__c.CostsTotalAmountCHF__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.ServiceTotalAmountCHFBP__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -112,20 +98,12 @@
     <currency>CHF</currency>
     <description>Filter by May</description>
     <filter>
-        <booleanFilter>(1 OR 2) AND 3 AND 4 AND 5</booleanFilter>
         <criteriaItems>
             <column>Project__c.ProjectStatus__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>equals</operator>
             <value>Open</value>
-        </criteriaItems>
-        <criteriaItems>
-            <column>Project__c.ServiceTotalAmountCHFBP__c</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>false</isUnlocked>
-            <operator>greaterThan</operator>
-            <value>0</value>
         </criteriaItems>
         <criteriaItems>
             <column>Project__c.BillingViaCompany__c</column>
@@ -148,7 +126,6 @@
             <operator>greaterThan</operator>
             <value>0</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -166,7 +143,6 @@
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
-    <sortColumn>Project__c.ServiceTotalAmountCHFBP__c</sortColumn>
     <sortOrder>Desc</sortOrder>
     <timeFrameFilter>
         <dateColumn>Project__c.LastTimeEntryDate__c</dateColumn>

@@ -81,9 +81,9 @@ private class QRCodeUtilsTest {
     
     @isTest 
     static void testGetCompanyName() {
-        // Test for "GateB" cost center.
+        // Test for "gateB" cost center.
         String result = QRCodeUtils.getCompanyName('GateB something');
-        Assert.areEqual('GateB AG', result, 'Expected "GateB AG" for cost center containing "GateB".');
+        Assert.areEqual('gateB AG', result, 'Expected "gateB AG" for cost center containing "GateB".');
         
         // Test for "Calydo" cost center.
         result = QRCodeUtils.getCompanyName('Calydo services');

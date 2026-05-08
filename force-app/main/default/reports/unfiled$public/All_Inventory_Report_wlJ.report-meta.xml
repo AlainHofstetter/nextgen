@@ -358,7 +358,7 @@
     <name>All Inventory Report</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntity$Inventory__c</reportType>
     <scope>organization</scope>

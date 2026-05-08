@@ -172,6 +172,14 @@
                       <apex:outputField rendered="{!!ISBLANK(invoiceRecord.BillingAdressCity__c)}" value="{!invoiceRecord.BillingAdressCity__c}"></apex:outputField> <br/>
                       <apex:outputField rendered="{!!ISBLANK(invoiceRecord.BillingAddressState__c)}" value="{!invoiceRecord.BillingAddressState__c}"></apex:outputField> <br/>
                       <apex:outputField rendered="{!!ISBLANK(invoiceRecord.BillingAddressCountry__c)}" value="{!invoiceRecord.BillingAddressCountry__c}"></apex:outputField> <br/>
+                      <apex:outputPanel layout="block" rendered="{!invoiceRecord.InvoiceReceiver__r.BillingCountry__c != 'SWITZERLAND'}">
+                        <span>{!$Label.Vat_Number}: </span>
+                        <apex:outputField value="{!invoiceRecord.VATNumberRef__c}"/><br/>
+                      </apex:outputPanel>
+                      <apex:outputPanel layout="block" rendered="{!invoiceRecord.InvoiceReceiver__r.BillingCountry__c != 'SWITZERLAND'}">
+                        <span >{!$Label.TAX_Id}: </span>
+                        <apex:outputField value="{!invoiceRecord.TaxNumberRef__c}"/><br/>
+                      </apex:outputPanel>
                     </td>
                     <td class="col_2">
                     </td>

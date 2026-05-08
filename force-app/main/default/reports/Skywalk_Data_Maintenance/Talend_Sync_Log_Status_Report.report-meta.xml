@@ -31,7 +31,7 @@
     <name>Talend Sync Log Status Report</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntity$TalendSyncLog__c@TalendSyncLog__c.AbacusInterface__c</reportType>
     <scope>organization</scope>

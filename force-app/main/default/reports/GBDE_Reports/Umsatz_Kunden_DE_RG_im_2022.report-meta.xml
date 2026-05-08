@@ -13,7 +13,6 @@
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>false</expandOthers>
         <groupingColumn>Invoice__c.ContractPartner__c</groupingColumn>
-        <legendPosition>Right</legendPosition>
         <location>CHART_BOTTOM</location>
         <showAxisLabels>false</showAxisLabels>
         <showPercentage>true</showPercentage>
@@ -104,7 +103,6 @@
             <operator>equals</operator>
             <value>GERMANY</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -115,7 +113,7 @@
     <name>Umsatz_Kunden DE_RG im 2022</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntityCustomEntity$Project__c$Invoice__c@Invoice__c.InvoiceReceiver__c</reportType>
     <scope>organization</scope>

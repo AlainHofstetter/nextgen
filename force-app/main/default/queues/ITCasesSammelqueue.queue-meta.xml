@@ -2,13 +2,6 @@
 <Queue xmlns="http://soap.sforce.com/2006/04/metadata">
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
     <name>IT Cases Sammelqueue</name>
-    <queueMembers>
-        <users>
-            <user>antonio.farati@gateb.com</user>
-            <user>burak.demiryuerek@gateb.com</user>
-            <user>fabrizio.marra@gateb.com</user>
-        </users>
-    </queueMembers>
     <queueSobject>
         <sobjectType>Case</sobjectType>
     </queueSobject>

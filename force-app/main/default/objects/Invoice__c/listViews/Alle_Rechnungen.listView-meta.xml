@@ -23,13 +23,8 @@
     </filters>
     <filters>
         <field>InvoiceDate__c</field>
-        <operation>greaterThan</operation>
-        <value>12/1/2020</value>
-    </filters>
-    <filters>
-        <field>BillingViaCompany__c</field>
-        <operation>contains</operation>
-        <value>house</value>
+        <operation>equals</operation>
+        <value>4/7/2026</value>
     </filters>
     <label>Alle Rechnungen</label>
 </ListView>

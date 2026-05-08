@@ -21,13 +21,12 @@
             <operator>equals</operator>
             <value>Supplier Invoice</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Tabular</format>
     <name>Talend Sync Supplier Invoice Import</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntity$TalendSyncLog__c</reportType>
     <scope>organization</scope>

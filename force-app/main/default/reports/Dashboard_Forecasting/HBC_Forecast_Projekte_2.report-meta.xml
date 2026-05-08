@@ -49,7 +49,6 @@
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>true</expandOthers>
         <groupingColumn>Project__c.ProjectResponsibilityCompany__c</groupingColumn>
-        <legendPosition>Right</legendPosition>
         <location>CHART_BOTTOM</location>
         <secondaryGroupingColumn>Project__c.ProjectResponsibleBusiness__c</secondaryGroupingColumn>
         <showAxisLabels>true</showAxisLabels>
@@ -241,7 +240,6 @@
             <operator>equals</operator>
             <value>Open,PartiallOpenWOTimeEntry</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -257,7 +255,7 @@
     <name>HBC - Forecast (Projekte)</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntity$Project__c</reportType>
     <scope>organization</scope>

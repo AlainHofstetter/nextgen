@@ -49,7 +49,6 @@
             <operator>equals</operator>
             <value>Invoice__c.Cancellation,Invoice__c.Invoice</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -57,15 +56,10 @@
         <field>CUST_NAME</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <groupingsDown>
-        <dateGranularity>Day</dateGranularity>
-        <field>Project__c.ServicesTotalAmountCHF__c</field>
-        <sortOrder>Asc</sortOrder>
-    </groupingsDown>
     <name>HRS_Abgerechnet 2020-2022</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntityCustomEntity$Project__c$Invoice__c</reportType>
     <scope>organization</scope>

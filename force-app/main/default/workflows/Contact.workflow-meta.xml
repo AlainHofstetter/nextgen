@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
         <fullName>CS_Birthday_of_Internal_Contact</fullName>
@@ -12,8 +12,7 @@
             <recipient>Skywalk_HR_OM</recipient>
             <type>group</type>
         </recipients>
-        <senderAddress>noreply@brandleadership.ch</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderAddress>noreply@brandleadership.ch</senderAddress><senderType>OrgWideEmailAddress</senderType>
         <template>CS_Templates/CS_Birthday_of_Internal_Contact</template>
     </alerts>
     <alerts>
@@ -24,29 +23,19 @@
             <recipient>Skywalk_HR_OM</recipient>
             <type>group</type>
         </recipients>
-        <senderAddress>noreply@brandleadership.ch</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderAddress>noreply@brandleadership.ch</senderAddress><senderType>OrgWideEmailAddress</senderType>
         <template>CS_Templates/CS_Birthday_of_Internal_Contact</template>
     </alerts>
     <alerts>
         <fullName>CS_Inventory_Exit_Notification</fullName>
         <description>CS - Inventory Exit Notification</description>
         <protected>false</protected>
-        <recipients>
-            <recipient>antonio.farati@gateb.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>sabrina.wettach@brandleadership.ch</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>sara.tau@gateb.ch</recipient>
-            <type>user</type>
-        </recipients>
-        <senderAddress>skywalk@brandleadership.ch</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <recipients><type>owner</type></recipients><senderAddress>skywalk@brandleadership.ch</senderAddress><senderType>OrgWideEmailAddress</senderType>
         <template>CS_Templates/CS_Inventory_Exit_Notification</template>
+    
+        <recipients><recipient>antonio.farati@gateb.com</recipient><type>email</type></recipients>
+        <recipients><recipient>sabrina.wettach@brandleadership.ch</recipient><type>email</type></recipients>
+        <recipients><recipient>sara.tau@gateb.ch</recipient><type>email</type></recipients>
     </alerts>
     <alerts>
         <fullName>Contact_Update_Previous_Owner_Change</fullName>
@@ -60,8 +49,7 @@
             <field>ZEmailPreviousOwner__c</field>
             <type>email</type>
         </recipients>
-        <senderAddress>skywalk@brandleadership.ch</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderAddress>skywalk@brandleadership.ch</senderAddress><senderType>OrgWideEmailAddress</senderType>
         <template>CS_Templates/Contact_Update_Contact_Owner_Change</template>
     </alerts>
     <alerts>
@@ -70,8 +58,7 @@
         <ccEmails>it@brandleadership.ch</ccEmails>
         <description>HR - Check Mobile Payment</description>
         <protected>false</protected>
-        <senderAddress>noreply@brandleadership.ch</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderAddress>noreply@brandleadership.ch</senderAddress><senderType>OrgWideEmailAddress</senderType>
         <template>HR_Templates/HR_Check_Mobile_Payment</template>
     </alerts>
     <fieldUpdates>
@@ -193,7 +180,7 @@
         </actions>
         <active>true</active>
         <formula>AND(
- RecordType.Id = &quot;012b0000000bub1&quot;,
+ RecordType.Id = "012b0000000bub1",
 (OR(
 ISNEW(),
 ISCHANGED( Birthdate ) 
@@ -206,7 +193,7 @@ ISCHANGED( Birthdate )
         <fullName>CS - Birthday Reminder - 2%2E Send Emails</fullName>
         <active>false</active>
         <formula>AND(
- RecordType.Id = &quot;012b0000000bub1&quot;,
+ RecordType.Id = "012b0000000bub1",
 NextBirthday__c &gt; Today()
 )</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
@@ -286,11 +273,6 @@ NextBirthday__c &gt; Today()
         </actions>
         <active>true</active>
         <criteriaItems>
-            <field>Contact.LeadSource</field>
-            <operation>equals</operation>
-            <value>Jigsaw</value>
-        </criteriaItems>
-        <criteriaItems>
             <field>Contact.MailingCountry</field>
             <operation>equals</operation>
             <value>Canada</value>
@@ -320,11 +302,6 @@ NextBirthday__c &gt; Today()
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <criteriaItems>
-            <field>Contact.LeadSource</field>
-            <operation>equals</operation>
-            <value>Jigsaw</value>
-        </criteriaItems>
         <criteriaItems>
             <field>Contact.MailingCountry</field>
             <operation>equals</operation>

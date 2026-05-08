@@ -85,7 +85,6 @@
             <operator>equals</operator>
             <value>Oora - Markenentwicklung &amp; CI</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <formattingRules>
@@ -105,7 +104,7 @@
     <name>Project Service Cost Recon</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntityCustomEntity$SupplierInvoice__c$SupplierCosts__c@SupplierCosts__c.PackageName__c</reportType>
     <scope>organization</scope>

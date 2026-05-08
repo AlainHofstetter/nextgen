@@ -7,6 +7,6 @@
     <columns>QUOTE.EXPIRATIONDATE</columns>
     <columns>QUOTE.SUBTOTAL</columns>
     <columns>QUOTE.TOTALPRICE</columns>
-    <filterScope>Everything</filterScope>
+    <filterScope>Mine</filterScope>
     <label>My Quotes</label>
 </ListView>

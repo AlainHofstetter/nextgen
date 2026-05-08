@@ -22,8 +22,7 @@ public with sharing class InvoiceSelector extends fflib_SObjectSelector
                 Invoice__c.BillingViaLegalCode__c,
                 Invoice__c.CancellationInvoiceRelation__c,
                 Invoice__c.CancellationReason__c,
-                Invoice__c.ConnectionReceivedId,
-                Invoice__c.ConnectionSentId,
+                // ConnectionReceivedId / ConnectionSentId removed — target lacks Salesforce-to-Salesforce. See TARGET_COMPAT_NOTES.md.
                 Invoice__c.ContractPartner__c,
                 Invoice__c.CreatedById,
                 Invoice__c.CreatedDate,
@@ -63,9 +62,10 @@ public with sharing class InvoiceSelector extends fflib_SObjectSelector
                 Invoice__c.LastActivityDate,
                 Invoice__c.LastModifiedById,
                 Invoice__c.LastModifiedDate,
-                Invoice__c.LastReferencedDate,
-                Invoice__c.LastViewedDate,
+                // LastReferencedDate / LastViewedDate removed — target Invoice__c has Activities tracking off. See TARGET_COMPAT_NOTES.md.
                 Invoice__c.Name,
+                Invoice__c.PeriodFrom__c,
+                Invoice__c.PeriodUntil__c,
                 Invoice__c.ProjectCostCenter__c,
                 Invoice__c.ProjectInvoiceCurrency__c,
                 Invoice__c.ProjectInvoiceDescription__c,
@@ -118,6 +118,8 @@ public with sharing class InvoiceSelector extends fflib_SObjectSelector
                 'BillingAdressCity__c',
                 'BillingAddressState__c',
                 'BillingAddressCountry__c',
+                'BillingViaCompany__c',
+                'BillingViaCompany__r.AccountName__c',
                 'InvoiceDate__c',
                 'FinanceDate__c',
                 'PeriodFrom__c',
@@ -137,7 +139,10 @@ public with sharing class InvoiceSelector extends fflib_SObjectSelector
         String soql = query.toSOQL()
                 .replaceFirst('TermsOfPayment2__c', 'toLabel(TermsOfPayment2__c)');
 
+        System.debug('---InvoiceSelector.draftByProject--- soql: '+soql);
         List<Invoice__c> invoices = (List<Invoice__c>) Database.query(soql);
+
+        System.debug('---InvoiceSelector.draftByProject--- invoices: '+invoices);
 
         return invoices == null || invoices.isEmpty() ? null : invoices[0];
     }

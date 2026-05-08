@@ -54,10 +54,6 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Project__c.PackagesProjectName__r$BudgetOpenTotalTime__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
         <field>Project__c.PackagesProjectName__r$BudgetOpenTotalHours__c</field>
     </columns>
     <currency>CHF</currency>
@@ -76,7 +72,6 @@
             <operator>equals</operator>
             <value>WorkTime,TravelTime</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsAcross>

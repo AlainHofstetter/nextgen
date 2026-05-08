@@ -5,10 +5,5 @@
         <sharedTo>AllInternalUsers</sharedTo>
         <sharedToType>Organization</sharedToType>
     </folderShares>
-    <folderShares>
-        <accessLevel>Manage</accessLevel>
-        <sharedTo>inspireai@blc.com</sharedTo>
-        <sharedToType>User</sharedToType>
-    </folderShares>
     <name>View Dashboards</name>
 </DashboardFolder>

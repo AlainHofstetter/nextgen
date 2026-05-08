@@ -92,7 +92,7 @@
     <name>Copy of Cleanup Accounts (NextGen Projec</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>AccountList</reportType>
     <scope>organization</scope>

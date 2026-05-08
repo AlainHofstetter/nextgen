@@ -13,6 +13,8 @@
     <columns>Product2.Legal__c</columns>
     <columns>PRODUCT2.ACTIVE</columns>
     <columns>Product2.SortNr__c</columns>
-    <filterScope>Everything</filterScope>
+    <filterScope>Queue</filterScope>
     <label>GBCH - Analytics Pricebook</label>
-    <language>en_US</language></ListView>
+    <language>en_US</language>
+    <queue>GBCH - Analytics</queue>
+</ListView>

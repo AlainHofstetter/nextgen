@@ -82,7 +82,6 @@ Package__c.BudgetAssignTotalTime__c:SUM</calculatedFormula>
             <operator>equals</operator>
             <value>P-105942</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsDown>

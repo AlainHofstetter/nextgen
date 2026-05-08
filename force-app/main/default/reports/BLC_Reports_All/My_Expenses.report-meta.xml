@@ -69,7 +69,6 @@
             <operator>equals</operator>
             <value>Private</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -80,7 +79,7 @@
     <name>My Expenses</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Projects_with_Services_with_Expenses__c</reportType>
     <scope>organization</scope>

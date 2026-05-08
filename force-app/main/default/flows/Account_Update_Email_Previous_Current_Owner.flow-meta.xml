@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>64.0</apiVersion>
-    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <apiVersion>60.0</apiVersion>
     <description>Migrated from the: Account: Update Email Previous &amp; Current Owner workflow rule
 Workflow rule description: &quot;</description>
     <formulas>

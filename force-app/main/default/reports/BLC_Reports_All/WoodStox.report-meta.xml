@@ -39,7 +39,6 @@
             <operator>contains</operator>
             <value>absence</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Tabular</format>
     <name>My Leave Report</name>

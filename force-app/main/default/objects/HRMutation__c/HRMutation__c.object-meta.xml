@@ -171,7 +171,8 @@
         <customTabListAdditionalFields>TimetrackerWorkloadPercent__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>CostCenter__c</customTabListAdditionalFields>
         <excludedStandardButtons>Accept</excludedStandardButtons>
-        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>    </searchLayouts>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+    </searchLayouts>
     <sharingModel>Private</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

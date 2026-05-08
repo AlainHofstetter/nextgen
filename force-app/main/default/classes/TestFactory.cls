@@ -167,6 +167,9 @@ public class TestFactory
 		inv.BillingViaCompany__c = accId;
 		inv.ProjectName__c = projId;
 		inv.ProjectCostCenter__c = costCenter;
+		inv.ESRAccountNr__c = '01-8513-5';
+		inv.ESRMergentNr__c = '207115';
+		inv.InvoiceDocumentNr__c = 25010829;
 		return inv;
 	}
 
@@ -179,6 +182,8 @@ public class TestFactory
 		proj.ProjectStartDate__c = System.Today();
 		proj.ProjectSubType__c = 'Support';
 		proj.ProjectCostCenter__c = costC;
+		// ProjectStatus__c is required on target; set explicitly. See TARGET_COMPAT_NOTES.md.
+		proj.ProjectStatus__c = 'Open';
 		return proj;
 
 	}
@@ -227,6 +232,8 @@ public class TestFactory
 	public static Package__c createService(Id projectId){
 		Package__c service = new Package__c();
 		service.ProjectName__c = projectId;
+		// PackageStatus__c is required on target; set explicitly. See TARGET_COMPAT_NOTES.md.
+		service.PackageStatus__c = 'Open';
 		return service;
 	}
 

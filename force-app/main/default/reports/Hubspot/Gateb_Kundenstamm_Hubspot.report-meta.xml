@@ -19,13 +19,12 @@
             <operator>equals</operator>
             <value>GBCH</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Tabular</format>
     <name>Gateb Kundenstamm Hubspot</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>AccountPartner</reportType>
     <scope>organization</scope>

@@ -43,7 +43,6 @@
             <operator>equals</operator>
             <value>P-108335</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -64,7 +63,7 @@
     <name>ICM Carefree Current Month Hours</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Projects_with_Services_with_Time__c</reportType>
     <scope>organization</scope>

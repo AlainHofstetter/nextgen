@@ -53,7 +53,8 @@ private class fflib_SecurityUtilsTest {
 
 	@isTest
 	static void readonly_field_access() {
-		User testUser = setupTestUser('Test FFLIB');
+		// 'Test FFLIB' → 'Read Only': target lacks that custom profile; 'Read Only' is standard and enforces FLS. See TARGET_COMPAT_NOTES.md.
+		User testUser = setupTestUser('Read Only');
 		System.runAs(testUser){
 			{
 				fflib_SecurityUtils.SecurityException ex;

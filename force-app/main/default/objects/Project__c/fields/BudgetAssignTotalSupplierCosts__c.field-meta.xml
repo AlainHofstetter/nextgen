@@ -3,7 +3,7 @@
     <fullName>BudgetAssignTotalSupplierCosts__c</fullName>
     <label>Budget Assign - Total Supplier Costs</label>
     <summarizedField>Package__c.BudgetAssignTotalSupplierCosts__c</summarizedField>
-    <summaryForeignKey>Package__c.ProjectName__c</summaryForeignKey>
+<summaryForeignKey>Package__c.ProjectName__c</summaryForeignKey>
     <summaryOperation>sum</summaryOperation>
     <trackHistory>false</trackHistory>
     <type>Summary</type>

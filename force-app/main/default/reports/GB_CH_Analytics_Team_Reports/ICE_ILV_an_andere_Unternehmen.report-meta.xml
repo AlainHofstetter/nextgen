@@ -85,7 +85,6 @@
             <operator>contains</operator>
             <value>ICE</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsAcross>

@@ -31,13 +31,12 @@
             <operator>contains</operator>
             <value>hbc trans</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Tabular</format>
     <name>New_Project_HBC_T&amp;M</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntity$Project__c@Project__c.ProjectCostCenter__c</reportType>
     <scope>organization</scope>

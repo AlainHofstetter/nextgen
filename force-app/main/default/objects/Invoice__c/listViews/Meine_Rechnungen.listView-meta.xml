@@ -12,7 +12,7 @@
     <columns>PeriodUntil__c</columns>
     <columns>InvoiceDocumentNr__c</columns>
     <columns>ProjectCostCenter__c</columns>
-    <filterScope>Everything</filterScope>
+    <filterScope>Mine</filterScope>
     <filters>
         <field>FinanceDate__c</field>
         <operation>greaterOrEqual</operation>

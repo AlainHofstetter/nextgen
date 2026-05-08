@@ -49,7 +49,6 @@
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>true</expandOthers>
         <groupingColumn>Project__c.ProjectResponsibilityCompany__c</groupingColumn>
-        <legendPosition>Right</legendPosition>
         <location>CHART_BOTTOM</location>
         <secondaryGroupingColumn>Project__c.ProjectResponsibleBusiness__c</secondaryGroupingColumn>
         <showAxisLabels>false</showAxisLabels>
@@ -219,11 +218,11 @@
             <value>0</value>
         </criteriaItems>
         <criteriaItems>
-            <column>Project__c.ProjectResponsibilityCompany__c</column>
+            <column>Project__c.ProjectCostCenter__c</column>
             <columnToColumn>false</columnToColumn>
-            <isUnlocked>true</isUnlocked>
+            <isUnlocked>false</isUnlocked>
             <operator>contains</operator>
-            <value>hotz brand</value>
+            <value>HBC</value>
         </criteriaItems>
         <criteriaItems>
             <column>Project__c.ProjectStatus__c</column>
@@ -232,7 +231,6 @@
             <operator>equals</operator>
             <value>Open,PartiallOpenWOTimeEntry</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -248,7 +246,7 @@
     <name>HBC - Forecast (Projekte) Q2</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntity$Project__c</reportType>
     <scope>organization</scope>

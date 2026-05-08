@@ -1,1273 +1,178 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>49.0</apiVersion>
+    <apiVersion>60.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
-    <assignments>
-        <name>myVariable_waitStartTimeAssignment</name>
-        <label>myVariable_waitStartTimeAssignment</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <assignmentItems>
-            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>myDecision</targetReference>
-        </connector>
-    </assignments>
-    <decisions>
-        <processMetadataValues>
-            <name>index</name>
-            <value>
-                <numberValue>0.0</numberValue>
-            </value>
-        </processMetadataValues>
-        <name>myDecision</name>
-        <label>myDecision</label>
-        <locationX>50</locationX>
-        <locationY>0</locationY>
-        <defaultConnectorLabel>default</defaultConnectorLabel>
-        <rules>
-            <name>myRule_1</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>formula_myRule_1</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>myRule_1_A1</targetReference>
-            </connector>
-            <label>Calculate</label>
-        </rules>
-    </decisions>
-    <description>Splits the forecast accorind the project duration for the current year</description>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>IF(
- ( YEAR([Opportunity].ProjectStart__c) == YEAR(TODAY()) )
- &amp;&amp;
- ( 9 &gt;= MONTH([Opportunity].ProjectStart__c))
- &amp;&amp;
- (
-	( 9 &lt;= MONTH([Opportunity].ProjectEnd__c) )
-	|| 
-	( YEAR([Opportunity].ProjectEnd__c) &gt; YEAR([Opportunity].ProjectStart__c) )	
- ),
- (([Opportunity].Amount-[Opportunity].ILVForecast__c-[Opportunity].SupplierCostsForecast__c ) * [Opportunity].Probability / [Opportunity].ProjectDurationMonths__c),
- 0
-)
-</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_10_myRule_1_A1_1395787654</name>
-        <dataType>Currency</dataType>
-        <expression>IF(
- ( YEAR({!myVariable_current.ProjectStart__c}) == YEAR(TODAY()) )
- &amp;&amp;
- ( 9 &gt;= MONTH({!myVariable_current.ProjectStart__c}))
- &amp;&amp;
- (
-	( 9 &lt;= MONTH({!myVariable_current.ProjectEnd__c}) )
-	|| 
-	( YEAR({!myVariable_current.ProjectEnd__c}) &gt; YEAR({!myVariable_current.ProjectStart__c}) )	
- ),
- (({!myVariable_current.Amount}-{!myVariable_current.ILVForecast__c}-{!myVariable_current.SupplierCostsForecast__c} ) * {!myVariable_current.Probability} / {!myVariable_current.ProjectDurationMonths__c}),
- 0
-)</expression>
-        <scale>18</scale>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>IF(
- ( YEAR([Opportunity].ProjectStart__c) == YEAR(TODAY()) )
- &amp;&amp;
- ( 10 &gt;= MONTH([Opportunity].ProjectStart__c))
- &amp;&amp;
- (
-	( 10 &lt;= MONTH([Opportunity].ProjectEnd__c) )
-	|| 
-	( YEAR([Opportunity].ProjectEnd__c) &gt; YEAR([Opportunity].ProjectStart__c) )	
- ),
- (([Opportunity].Amount-[Opportunity].ILVForecast__c-[Opportunity].SupplierCostsForecast__c ) * [Opportunity].Probability / [Opportunity].ProjectDurationMonths__c),
- 0
-)
-</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_11_myRule_1_A1_3975373080</name>
-        <dataType>Currency</dataType>
-        <expression>IF(
- ( YEAR({!myVariable_current.ProjectStart__c}) == YEAR(TODAY()) )
- &amp;&amp;
- ( 10 &gt;= MONTH({!myVariable_current.ProjectStart__c}))
- &amp;&amp;
- (
-	( 10 &lt;= MONTH({!myVariable_current.ProjectEnd__c}) )
-	|| 
-	( YEAR({!myVariable_current.ProjectEnd__c}) &gt; YEAR({!myVariable_current.ProjectStart__c}) )	
- ),
- (({!myVariable_current.Amount}-{!myVariable_current.ILVForecast__c}-{!myVariable_current.SupplierCostsForecast__c} ) * {!myVariable_current.Probability} / {!myVariable_current.ProjectDurationMonths__c}),
- 0
-)</expression>
-        <scale>18</scale>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>IF(
- ( YEAR([Opportunity].ProjectStart__c) == YEAR(TODAY()) )
- &amp;&amp;
- ( 11 &gt;= MONTH([Opportunity].ProjectStart__c))
- &amp;&amp;
- (
-	( 11 &lt;= MONTH([Opportunity].ProjectEnd__c) )
-	|| 
-	( YEAR([Opportunity].ProjectEnd__c) &gt; YEAR([Opportunity].ProjectStart__c) )	
- ),
- (([Opportunity].Amount-[Opportunity].ILVForecast__c-[Opportunity].SupplierCostsForecast__c ) * [Opportunity].Probability / [Opportunity].ProjectDurationMonths__c),
- 0
-)
-</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_12_myRule_1_A1_7340336435</name>
-        <dataType>Currency</dataType>
-        <expression>IF(
- ( YEAR({!myVariable_current.ProjectStart__c}) == YEAR(TODAY()) )
- &amp;&amp;
- ( 11 &gt;= MONTH({!myVariable_current.ProjectStart__c}))
- &amp;&amp;
- (
-	( 11 &lt;= MONTH({!myVariable_current.ProjectEnd__c}) )
-	|| 
-	( YEAR({!myVariable_current.ProjectEnd__c}) &gt; YEAR({!myVariable_current.ProjectStart__c}) )	
- ),
- (({!myVariable_current.Amount}-{!myVariable_current.ILVForecast__c}-{!myVariable_current.SupplierCostsForecast__c} ) * {!myVariable_current.Probability} / {!myVariable_current.ProjectDurationMonths__c}),
- 0
-)</expression>
-        <scale>18</scale>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>IF(
- ( YEAR([Opportunity].ProjectStart__c) == YEAR(TODAY()) )
- &amp;&amp;
- ( 12 &gt;= MONTH([Opportunity].ProjectStart__c))
- &amp;&amp;
- (
-	( 12 &lt;= MONTH([Opportunity].ProjectEnd__c) )
-	|| 
-	( YEAR([Opportunity].ProjectEnd__c) &gt; YEAR([Opportunity].ProjectStart__c) )	
- ),
- (([Opportunity].Amount-[Opportunity].ILVForecast__c-[Opportunity].SupplierCostsForecast__c ) * [Opportunity].Probability / [Opportunity].ProjectDurationMonths__c),
- 0
-)
-</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_13_myRule_1_A1_4221271880</name>
-        <dataType>Currency</dataType>
-        <expression>IF(
- ( YEAR({!myVariable_current.ProjectStart__c}) == YEAR(TODAY()) )
- &amp;&amp;
- ( 12 &gt;= MONTH({!myVariable_current.ProjectStart__c}))
- &amp;&amp;
- (
-	( 12 &lt;= MONTH({!myVariable_current.ProjectEnd__c}) )
-	|| 
-	( YEAR({!myVariable_current.ProjectEnd__c}) &gt; YEAR({!myVariable_current.ProjectStart__c}) )	
- ),
- (({!myVariable_current.Amount}-{!myVariable_current.ILVForecast__c}-{!myVariable_current.SupplierCostsForecast__c} ) * {!myVariable_current.Probability} / {!myVariable_current.ProjectDurationMonths__c}),
- 0
-)</expression>
-        <scale>18</scale>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>IF(
- ( 
-   ( 1 &lt;= MONTH([Opportunity].ProjectEnd__c)) 
-   &amp;&amp; 
-   ( YEAR([Opportunity].ProjectEnd__c) &gt; YEAR( TODAY() ))
- )
- &amp;&amp;
- ( 
-   ( 1 &gt;= MONTH([Opportunity].ProjectStart__c) &amp;&amp; YEAR([Opportunity].ProjectEnd__c) == YEAR( TODAY())+1)
-   ||
-   ( YEAR([Opportunity].ProjectStart__c) == YEAR( TODAY()) )
-   
- ),
- (([Opportunity].Amount-[Opportunity].ILVForecast__c-[Opportunity].SupplierCostsForecast__c ) * [Opportunity].Probability )/ [Opportunity].ProjectDurationMonths__c,
- 0
-)
-
-
-
-</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_14_myRule_1_A1_5445383888</name>
-        <dataType>Currency</dataType>
-        <expression>IF(
- ( 
-   ( 1 &lt;= MONTH({!myVariable_current.ProjectEnd__c})) 
-   &amp;&amp; 
-   ( YEAR({!myVariable_current.ProjectEnd__c}) &gt; YEAR( TODAY() ))
- )
- &amp;&amp;
- ( 
-   ( 1 &gt;= MONTH({!myVariable_current.ProjectStart__c}) &amp;&amp; YEAR({!myVariable_current.ProjectEnd__c}) == YEAR( TODAY())+1)
-   ||
-   ( YEAR({!myVariable_current.ProjectStart__c}) == YEAR( TODAY()) )
-   
- ),
- (({!myVariable_current.Amount}-{!myVariable_current.ILVForecast__c}-{!myVariable_current.SupplierCostsForecast__c} ) * {!myVariable_current.Probability} )/ {!myVariable_current.ProjectDurationMonths__c},
- 0
-)</expression>
-        <scale>18</scale>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>IF(
- ( 
-   ( 2 &lt;= MONTH([Opportunity].ProjectEnd__c)) 
-   &amp;&amp; 
-   ( YEAR([Opportunity].ProjectEnd__c) &gt; YEAR( TODAY() ))
- )
- &amp;&amp;
- ( 
-   ( 2 &gt;= MONTH([Opportunity].ProjectStart__c) &amp;&amp; YEAR([Opportunity].ProjectEnd__c) == YEAR( TODAY())+1)
-   ||
-   ( YEAR([Opportunity].ProjectStart__c) == YEAR( TODAY()) )
-   
- ),
- (([Opportunity].Amount-[Opportunity].ILVForecast__c-[Opportunity].SupplierCostsForecast__c ) * [Opportunity].Probability )/ [Opportunity].ProjectDurationMonths__c,
- 0
-)
-
-
-
-</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_15_myRule_1_A1_7179419418</name>
-        <dataType>Currency</dataType>
-        <expression>IF(
- ( 
-   ( 2 &lt;= MONTH({!myVariable_current.ProjectEnd__c})) 
-   &amp;&amp; 
-   ( YEAR({!myVariable_current.ProjectEnd__c}) &gt; YEAR( TODAY() ))
- )
- &amp;&amp;
- ( 
-   ( 2 &gt;= MONTH({!myVariable_current.ProjectStart__c}) &amp;&amp; YEAR({!myVariable_current.ProjectEnd__c}) == YEAR( TODAY())+1)
-   ||
-   ( YEAR({!myVariable_current.ProjectStart__c}) == YEAR( TODAY()) )
-   
- ),
- (({!myVariable_current.Amount}-{!myVariable_current.ILVForecast__c}-{!myVariable_current.SupplierCostsForecast__c} ) * {!myVariable_current.Probability} )/ {!myVariable_current.ProjectDurationMonths__c},
- 0
-)</expression>
-        <scale>18</scale>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>IF(
- ( 
-   ( 3 &lt;= MONTH([Opportunity].ProjectEnd__c)) 
-   &amp;&amp; 
-   ( YEAR([Opportunity].ProjectEnd__c) &gt; YEAR( TODAY() ))
- )
- &amp;&amp;
- ( 
-   ( 3 &gt;= MONTH([Opportunity].ProjectStart__c) &amp;&amp; YEAR([Opportunity].ProjectEnd__c) == YEAR( TODAY())+1)
-   ||
-   ( YEAR([Opportunity].ProjectStart__c) == YEAR( TODAY()) )
-   
- ),
- (([Opportunity].Amount-[Opportunity].ILVForecast__c-[Opportunity].SupplierCostsForecast__c ) * [Opportunity].Probability )/ [Opportunity].ProjectDurationMonths__c,
- 0
-)
-
-
-
-</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_16_myRule_1_A1_4089804000</name>
-        <dataType>Currency</dataType>
-        <expression>IF(
- ( 
-   ( 3 &lt;= MONTH({!myVariable_current.ProjectEnd__c})) 
-   &amp;&amp; 
-   ( YEAR({!myVariable_current.ProjectEnd__c}) &gt; YEAR( TODAY() ))
- )
- &amp;&amp;
- ( 
-   ( 3 &gt;= MONTH({!myVariable_current.ProjectStart__c}) &amp;&amp; YEAR({!myVariable_current.ProjectEnd__c}) == YEAR( TODAY())+1)
-   ||
-   ( YEAR({!myVariable_current.ProjectStart__c}) == YEAR( TODAY()) )
-   
- ),
- (({!myVariable_current.Amount}-{!myVariable_current.ILVForecast__c}-{!myVariable_current.SupplierCostsForecast__c} ) * {!myVariable_current.Probability} )/ {!myVariable_current.ProjectDurationMonths__c},
- 0
-)</expression>
-        <scale>18</scale>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>IF(
- ( YEAR([Opportunity].ProjectStart__c) == YEAR(TODAY()) )
- &amp;&amp;
- ( 4 &gt;= MONTH([Opportunity].ProjectStart__c))
- &amp;&amp;
- (
-	( 4 &lt;= MONTH([Opportunity].ProjectEnd__c) )
-	|| 
-	( YEAR([Opportunity].ProjectEnd__c) &gt; YEAR([Opportunity].ProjectStart__c) )	
- ),
- (([Opportunity].Amount-[Opportunity].ILVForecast__c-[Opportunity].SupplierCostsForecast__c ) * [Opportunity].Probability / [Opportunity].ProjectDurationMonths__c),
- 0
-)
-</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_2_myRule_1_A1_1457158245</name>
-        <dataType>Currency</dataType>
-        <expression>IF(
- ( YEAR({!myVariable_current.ProjectStart__c}) == YEAR(TODAY()) )
- &amp;&amp;
- ( 4 &gt;= MONTH({!myVariable_current.ProjectStart__c}))
- &amp;&amp;
- (
-	( 4 &lt;= MONTH({!myVariable_current.ProjectEnd__c}) )
-	|| 
-	( YEAR({!myVariable_current.ProjectEnd__c}) &gt; YEAR({!myVariable_current.ProjectStart__c}) )	
- ),
- (({!myVariable_current.Amount}-{!myVariable_current.ILVForecast__c}-{!myVariable_current.SupplierCostsForecast__c} ) * {!myVariable_current.Probability} / {!myVariable_current.ProjectDurationMonths__c}),
- 0
-)</expression>
-        <scale>18</scale>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>IF(
- ( YEAR([Opportunity].ProjectStart__c) == YEAR(TODAY()) )
- &amp;&amp;
- ( 2 &gt;= MONTH([Opportunity].ProjectStart__c))
- &amp;&amp;
- (
-	( 2 &lt;= MONTH([Opportunity].ProjectEnd__c) )
-	|| 
-	( YEAR([Opportunity].ProjectEnd__c) &gt; YEAR([Opportunity].ProjectStart__c) )	
-
- ),
- (([Opportunity].Amount-[Opportunity].ILVForecast__c-[Opportunity].SupplierCostsForecast__c ) * [Opportunity].Probability / [Opportunity].ProjectDurationMonths__c),
- 0
-)
-</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_3_myRule_1_A1_8383227423</name>
-        <dataType>Currency</dataType>
-        <expression>IF(
- ( YEAR({!myVariable_current.ProjectStart__c}) == YEAR(TODAY()) )
- &amp;&amp;
- ( 2 &gt;= MONTH({!myVariable_current.ProjectStart__c}))
- &amp;&amp;
- (
-	( 2 &lt;= MONTH({!myVariable_current.ProjectEnd__c}) )
-	|| 
-	( YEAR({!myVariable_current.ProjectEnd__c}) &gt; YEAR({!myVariable_current.ProjectStart__c}) )	
-
- ),
- (({!myVariable_current.Amount}-{!myVariable_current.ILVForecast__c}-{!myVariable_current.SupplierCostsForecast__c} ) * {!myVariable_current.Probability} / {!myVariable_current.ProjectDurationMonths__c}),
- 0
-)</expression>
-        <scale>18</scale>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>IF(
- ( YEAR([Opportunity].ProjectStart__c) == YEAR(TODAY()) )
- &amp;&amp;
- ( 1 &gt;= MONTH([Opportunity].ProjectStart__c))
- &amp;&amp;
- (
-	( 1 &lt;= MONTH([Opportunity].ProjectEnd__c) )
-	|| 
-	( YEAR([Opportunity].ProjectEnd__c) &gt; YEAR([Opportunity].ProjectStart__c) )	
- ),
- (([Opportunity].Amount-[Opportunity].ILVForecast__c-[Opportunity].SupplierCostsForecast__c ) * [Opportunity].Probability / [Opportunity].ProjectDurationMonths__c),
- 0
-)
-</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_4_myRule_1_A1_2158579556</name>
-        <dataType>Currency</dataType>
-        <expression>IF(
- ( YEAR({!myVariable_current.ProjectStart__c}) == YEAR(TODAY()) )
- &amp;&amp;
- ( 1 &gt;= MONTH({!myVariable_current.ProjectStart__c}))
- &amp;&amp;
- (
-	( 1 &lt;= MONTH({!myVariable_current.ProjectEnd__c}) )
-	|| 
-	( YEAR({!myVariable_current.ProjectEnd__c}) &gt; YEAR({!myVariable_current.ProjectStart__c}) )	
- ),
- (({!myVariable_current.Amount}-{!myVariable_current.ILVForecast__c}-{!myVariable_current.SupplierCostsForecast__c} ) * {!myVariable_current.Probability} / {!myVariable_current.ProjectDurationMonths__c}),
- 0
-)</expression>
-        <scale>18</scale>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>IF(
- ( YEAR([Opportunity].ProjectStart__c) == YEAR(TODAY()) )
- &amp;&amp;
- ( 7 &gt;= MONTH([Opportunity].ProjectStart__c))
- &amp;&amp;
- (
-	( 7 &lt;= MONTH([Opportunity].ProjectEnd__c) )
-	|| 
-	( YEAR([Opportunity].ProjectEnd__c) &gt; YEAR([Opportunity].ProjectStart__c) )	
- ),
- (([Opportunity].Amount-[Opportunity].ILVForecast__c-[Opportunity].SupplierCostsForecast__c ) * [Opportunity].Probability / [Opportunity].ProjectDurationMonths__c),
- 0
-)
-</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_5_myRule_1_A1_2100664013</name>
-        <dataType>Currency</dataType>
-        <expression>IF(
- ( YEAR({!myVariable_current.ProjectStart__c}) == YEAR(TODAY()) )
- &amp;&amp;
- ( 7 &gt;= MONTH({!myVariable_current.ProjectStart__c}))
- &amp;&amp;
- (
-	( 7 &lt;= MONTH({!myVariable_current.ProjectEnd__c}) )
-	|| 
-	( YEAR({!myVariable_current.ProjectEnd__c}) &gt; YEAR({!myVariable_current.ProjectStart__c}) )	
- ),
- (({!myVariable_current.Amount}-{!myVariable_current.ILVForecast__c}-{!myVariable_current.SupplierCostsForecast__c} ) * {!myVariable_current.Probability} / {!myVariable_current.ProjectDurationMonths__c}),
- 0
-)</expression>
-        <scale>18</scale>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>IF(
- ( YEAR([Opportunity].ProjectStart__c) == YEAR(TODAY()) )
- &amp;&amp;
- ( 6 &gt;= MONTH([Opportunity].ProjectStart__c))
- &amp;&amp;
- (
-	( 6 &lt;= MONTH([Opportunity].ProjectEnd__c) )
-	|| 
-	( YEAR([Opportunity].ProjectEnd__c) &gt; YEAR([Opportunity].ProjectStart__c) )	
- ),
- (([Opportunity].Amount-[Opportunity].ILVForecast__c-[Opportunity].SupplierCostsForecast__c ) * [Opportunity].Probability / [Opportunity].ProjectDurationMonths__c),
- 0
-)
-</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_6_myRule_1_A1_4041427523</name>
-        <dataType>Currency</dataType>
-        <expression>IF(
- ( YEAR({!myVariable_current.ProjectStart__c}) == YEAR(TODAY()) )
- &amp;&amp;
- ( 6 &gt;= MONTH({!myVariable_current.ProjectStart__c}))
- &amp;&amp;
- (
-	( 6 &lt;= MONTH({!myVariable_current.ProjectEnd__c}) )
-	|| 
-	( YEAR({!myVariable_current.ProjectEnd__c}) &gt; YEAR({!myVariable_current.ProjectStart__c}) )	
- ),
- (({!myVariable_current.Amount}-{!myVariable_current.ILVForecast__c}-{!myVariable_current.SupplierCostsForecast__c} ) * {!myVariable_current.Probability} / {!myVariable_current.ProjectDurationMonths__c}),
- 0
-)</expression>
-        <scale>18</scale>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>IF(
- ( YEAR([Opportunity].ProjectStart__c) == YEAR(TODAY()) )
- &amp;&amp;
- ( 3 &gt;= MONTH([Opportunity].ProjectStart__c))
- &amp;&amp;
- (
-	( 3 &lt;= MONTH([Opportunity].ProjectEnd__c) )
-	|| 
-	( YEAR([Opportunity].ProjectEnd__c) &gt; YEAR([Opportunity].ProjectStart__c) )	
- ),
- (([Opportunity].Amount-[Opportunity].ILVForecast__c-[Opportunity].SupplierCostsForecast__c ) * [Opportunity].Probability / [Opportunity].ProjectDurationMonths__c),
- 0
-)
-</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_7_myRule_1_A1_1051031693</name>
-        <dataType>Currency</dataType>
-        <expression>IF(
- ( YEAR({!myVariable_current.ProjectStart__c}) == YEAR(TODAY()) )
- &amp;&amp;
- ( 3 &gt;= MONTH({!myVariable_current.ProjectStart__c}))
- &amp;&amp;
- (
-	( 3 &lt;= MONTH({!myVariable_current.ProjectEnd__c}) )
-	|| 
-	( YEAR({!myVariable_current.ProjectEnd__c}) &gt; YEAR({!myVariable_current.ProjectStart__c}) )	
- ),
- (({!myVariable_current.Amount}-{!myVariable_current.ILVForecast__c}-{!myVariable_current.SupplierCostsForecast__c} ) * {!myVariable_current.Probability} / {!myVariable_current.ProjectDurationMonths__c}),
- 0
-)</expression>
-        <scale>18</scale>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>IF(
- ( YEAR([Opportunity].ProjectStart__c) == YEAR(TODAY()) )
- &amp;&amp;
- ( 5 &gt;= MONTH([Opportunity].ProjectStart__c))
- &amp;&amp;
- (
-	( 5 &lt;= MONTH([Opportunity].ProjectEnd__c) )
-	|| 
-	( YEAR([Opportunity].ProjectEnd__c) &gt; YEAR([Opportunity].ProjectStart__c) )	
- ),
- (([Opportunity].Amount-[Opportunity].ILVForecast__c-[Opportunity].SupplierCostsForecast__c ) * [Opportunity].Probability / [Opportunity].ProjectDurationMonths__c),
- 0
-)
-</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_8_myRule_1_A1_9613364691</name>
-        <dataType>Currency</dataType>
-        <expression>IF(
- ( YEAR({!myVariable_current.ProjectStart__c}) == YEAR(TODAY()) )
- &amp;&amp;
- ( 5 &gt;= MONTH({!myVariable_current.ProjectStart__c}))
- &amp;&amp;
- (
-	( 5 &lt;= MONTH({!myVariable_current.ProjectEnd__c}) )
-	|| 
-	( YEAR({!myVariable_current.ProjectEnd__c}) &gt; YEAR({!myVariable_current.ProjectStart__c}) )	
- ),
- (({!myVariable_current.Amount}-{!myVariable_current.ILVForecast__c}-{!myVariable_current.SupplierCostsForecast__c} ) * {!myVariable_current.Probability} / {!myVariable_current.ProjectDurationMonths__c}),
- 0
-)</expression>
-        <scale>18</scale>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>IF(
- ( YEAR([Opportunity].ProjectStart__c) == YEAR(TODAY()) )
- &amp;&amp;
- ( 8 &gt;= MONTH([Opportunity].ProjectStart__c))
- &amp;&amp;
- (
-	( 8 &lt;= MONTH([Opportunity].ProjectEnd__c) )
-	|| 
-	( YEAR([Opportunity].ProjectEnd__c) &gt; YEAR([Opportunity].ProjectStart__c) )	
- ),
- (([Opportunity].Amount-[Opportunity].ILVForecast__c-[Opportunity].SupplierCostsForecast__c ) * [Opportunity].Probability / [Opportunity].ProjectDurationMonths__c),
- 0
-)
-</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_9_myRule_1_A1_9634911074</name>
-        <dataType>Currency</dataType>
-        <expression>IF(
- ( YEAR({!myVariable_current.ProjectStart__c}) == YEAR(TODAY()) )
- &amp;&amp;
- ( 8 &gt;= MONTH({!myVariable_current.ProjectStart__c}))
- &amp;&amp;
- (
-	( 8 &lt;= MONTH({!myVariable_current.ProjectEnd__c}) )
-	|| 
-	( YEAR({!myVariable_current.ProjectEnd__c}) &gt; YEAR({!myVariable_current.ProjectStart__c}) )	
- ),
- (({!myVariable_current.Amount}-{!myVariable_current.ILVForecast__c}-{!myVariable_current.SupplierCostsForecast__c} ) * {!myVariable_current.Probability} / {!myVariable_current.ProjectDurationMonths__c}),
- 0
-)</expression>
-        <scale>18</scale>
-    </formulas>
-    <formulas>
-        <name>formula_myRule_1</name>
-        <dataType>Boolean</dataType>
-        <expression>true</expression>
-    </formulas>
-    <interviewLabel>OpportunityCalcuateForeCastingCurrentYear-9_InterviewLabel</interviewLabel>
+    <description>Migrated from Process Builder: OpportunityCalcuateForeCastingCurrentYear</description>
     <label>OpportunityCalcuateForeCastingCurrentYear</label>
     <processMetadataValues>
-        <name>ObjectType</name>
-        <value>
-            <stringValue>Opportunity</stringValue>
-        </value>
+        <name>CanvasMode</name>
+        <value><stringValue>AUTO_LAYOUT_CANVAS</stringValue></value>
     </processMetadataValues>
-    <processMetadataValues>
-        <name>ObjectVariable</name>
-        <value>
-            <elementReference>myVariable_current</elementReference>
-        </value>
-    </processMetadataValues>
-    <processMetadataValues>
-        <name>OldObjectVariable</name>
-        <value>
-            <elementReference>myVariable_old</elementReference>
-        </value>
-    </processMetadataValues>
-    <processMetadataValues>
-        <name>TriggerType</name>
-        <value>
-            <stringValue>onAllChanges</stringValue>
-        </value>
-    </processMetadataValues>
-    <processType>Workflow</processType>
+    <processType>AutoLaunchedFlow</processType>
+    <formulas>
+        <name>JanForecastFormula</name>
+        <dataType>Currency</dataType>
+        <scale>18</scale>
+        <expression>IF(AND(YEAR($Record.ProjectStart__c) &lt;= YEAR(TODAY()), 1 &gt;= MONTH($Record.ProjectStart__c), OR(1 &lt;= MONTH($Record.ProjectEnd__c), YEAR($Record.ProjectEnd__c) &gt; YEAR(TODAY())), YEAR($Record.ProjectEnd__c) &gt;= YEAR(TODAY())), ($Record.Amount - $Record.ILVForecast__c - $Record.SupplierCostsForecast__c) * $Record.Probability / 100 / $Record.ProjectDurationMonths__c, 0)</expression>
+    </formulas>
+    <formulas>
+        <name>FebForecastFormula</name>
+        <dataType>Currency</dataType>
+        <scale>18</scale>
+        <expression>IF(AND(YEAR($Record.ProjectStart__c) &lt;= YEAR(TODAY()), 2 &gt;= MONTH($Record.ProjectStart__c), OR(2 &lt;= MONTH($Record.ProjectEnd__c), YEAR($Record.ProjectEnd__c) &gt; YEAR(TODAY())), YEAR($Record.ProjectEnd__c) &gt;= YEAR(TODAY())), ($Record.Amount - $Record.ILVForecast__c - $Record.SupplierCostsForecast__c) * $Record.Probability / 100 / $Record.ProjectDurationMonths__c, 0)</expression>
+    </formulas>
+    <formulas>
+        <name>MarForecastFormula</name>
+        <dataType>Currency</dataType>
+        <scale>18</scale>
+        <expression>IF(AND(YEAR($Record.ProjectStart__c) &lt;= YEAR(TODAY()), 3 &gt;= MONTH($Record.ProjectStart__c), OR(3 &lt;= MONTH($Record.ProjectEnd__c), YEAR($Record.ProjectEnd__c) &gt; YEAR(TODAY())), YEAR($Record.ProjectEnd__c) &gt;= YEAR(TODAY())), ($Record.Amount - $Record.ILVForecast__c - $Record.SupplierCostsForecast__c) * $Record.Probability / 100 / $Record.ProjectDurationMonths__c, 0)</expression>
+    </formulas>
+    <formulas>
+        <name>AprForecastFormula</name>
+        <dataType>Currency</dataType>
+        <scale>18</scale>
+        <expression>IF(AND(YEAR($Record.ProjectStart__c) &lt;= YEAR(TODAY()), 4 &gt;= MONTH($Record.ProjectStart__c), OR(4 &lt;= MONTH($Record.ProjectEnd__c), YEAR($Record.ProjectEnd__c) &gt; YEAR(TODAY())), YEAR($Record.ProjectEnd__c) &gt;= YEAR(TODAY())), ($Record.Amount - $Record.ILVForecast__c - $Record.SupplierCostsForecast__c) * $Record.Probability / 100 / $Record.ProjectDurationMonths__c, 0)</expression>
+    </formulas>
+    <formulas>
+        <name>MayForecastFormula</name>
+        <dataType>Currency</dataType>
+        <scale>18</scale>
+        <expression>IF(AND(YEAR($Record.ProjectStart__c) &lt;= YEAR(TODAY()), 5 &gt;= MONTH($Record.ProjectStart__c), OR(5 &lt;= MONTH($Record.ProjectEnd__c), YEAR($Record.ProjectEnd__c) &gt; YEAR(TODAY())), YEAR($Record.ProjectEnd__c) &gt;= YEAR(TODAY())), ($Record.Amount - $Record.ILVForecast__c - $Record.SupplierCostsForecast__c) * $Record.Probability / 100 / $Record.ProjectDurationMonths__c, 0)</expression>
+    </formulas>
+    <formulas>
+        <name>JunForecastFormula</name>
+        <dataType>Currency</dataType>
+        <scale>18</scale>
+        <expression>IF(AND(YEAR($Record.ProjectStart__c) &lt;= YEAR(TODAY()), 6 &gt;= MONTH($Record.ProjectStart__c), OR(6 &lt;= MONTH($Record.ProjectEnd__c), YEAR($Record.ProjectEnd__c) &gt; YEAR(TODAY())), YEAR($Record.ProjectEnd__c) &gt;= YEAR(TODAY())), ($Record.Amount - $Record.ILVForecast__c - $Record.SupplierCostsForecast__c) * $Record.Probability / 100 / $Record.ProjectDurationMonths__c, 0)</expression>
+    </formulas>
+    <formulas>
+        <name>JulForecastFormula</name>
+        <dataType>Currency</dataType>
+        <scale>18</scale>
+        <expression>IF(AND(YEAR($Record.ProjectStart__c) &lt;= YEAR(TODAY()), 7 &gt;= MONTH($Record.ProjectStart__c), OR(7 &lt;= MONTH($Record.ProjectEnd__c), YEAR($Record.ProjectEnd__c) &gt; YEAR(TODAY())), YEAR($Record.ProjectEnd__c) &gt;= YEAR(TODAY())), ($Record.Amount - $Record.ILVForecast__c - $Record.SupplierCostsForecast__c) * $Record.Probability / 100 / $Record.ProjectDurationMonths__c, 0)</expression>
+    </formulas>
+    <formulas>
+        <name>AugForecastFormula</name>
+        <dataType>Currency</dataType>
+        <scale>18</scale>
+        <expression>IF(AND(YEAR($Record.ProjectStart__c) &lt;= YEAR(TODAY()), 8 &gt;= MONTH($Record.ProjectStart__c), OR(8 &lt;= MONTH($Record.ProjectEnd__c), YEAR($Record.ProjectEnd__c) &gt; YEAR(TODAY())), YEAR($Record.ProjectEnd__c) &gt;= YEAR(TODAY())), ($Record.Amount - $Record.ILVForecast__c - $Record.SupplierCostsForecast__c) * $Record.Probability / 100 / $Record.ProjectDurationMonths__c, 0)</expression>
+    </formulas>
+    <formulas>
+        <name>SepForecastFormula</name>
+        <dataType>Currency</dataType>
+        <scale>18</scale>
+        <expression>IF(AND(YEAR($Record.ProjectStart__c) &lt;= YEAR(TODAY()), 9 &gt;= MONTH($Record.ProjectStart__c), OR(9 &lt;= MONTH($Record.ProjectEnd__c), YEAR($Record.ProjectEnd__c) &gt; YEAR(TODAY())), YEAR($Record.ProjectEnd__c) &gt;= YEAR(TODAY())), ($Record.Amount - $Record.ILVForecast__c - $Record.SupplierCostsForecast__c) * $Record.Probability / 100 / $Record.ProjectDurationMonths__c, 0)</expression>
+    </formulas>
+    <formulas>
+        <name>OctForecastFormula</name>
+        <dataType>Currency</dataType>
+        <scale>18</scale>
+        <expression>IF(AND(YEAR($Record.ProjectStart__c) &lt;= YEAR(TODAY()), 10 &gt;= MONTH($Record.ProjectStart__c), OR(10 &lt;= MONTH($Record.ProjectEnd__c), YEAR($Record.ProjectEnd__c) &gt; YEAR(TODAY())), YEAR($Record.ProjectEnd__c) &gt;= YEAR(TODAY())), ($Record.Amount - $Record.ILVForecast__c - $Record.SupplierCostsForecast__c) * $Record.Probability / 100 / $Record.ProjectDurationMonths__c, 0)</expression>
+    </formulas>
+    <formulas>
+        <name>NovForecastFormula</name>
+        <dataType>Currency</dataType>
+        <scale>18</scale>
+        <expression>IF(AND(YEAR($Record.ProjectStart__c) &lt;= YEAR(TODAY()), 11 &gt;= MONTH($Record.ProjectStart__c), OR(11 &lt;= MONTH($Record.ProjectEnd__c), YEAR($Record.ProjectEnd__c) &gt; YEAR(TODAY())), YEAR($Record.ProjectEnd__c) &gt;= YEAR(TODAY())), ($Record.Amount - $Record.ILVForecast__c - $Record.SupplierCostsForecast__c) * $Record.Probability / 100 / $Record.ProjectDurationMonths__c, 0)</expression>
+    </formulas>
+    <formulas>
+        <name>DecForecastFormula</name>
+        <dataType>Currency</dataType>
+        <scale>18</scale>
+        <expression>IF(AND(YEAR($Record.ProjectStart__c) &lt;= YEAR(TODAY()), 12 &gt;= MONTH($Record.ProjectStart__c), OR(12 &lt;= MONTH($Record.ProjectEnd__c), YEAR($Record.ProjectEnd__c) &gt; YEAR(TODAY())), YEAR($Record.ProjectEnd__c) &gt;= YEAR(TODAY())), ($Record.Amount - $Record.ILVForecast__c - $Record.SupplierCostsForecast__c) * $Record.Probability / 100 / $Record.ProjectDurationMonths__c, 0)</expression>
+    </formulas>
+    <formulas>
+        <name>JanNextYearForecastFormula</name>
+        <dataType>Currency</dataType>
+        <scale>18</scale>
+        <expression>IF(AND(1 &lt;= MONTH($Record.ProjectEnd__c), YEAR($Record.ProjectEnd__c) &gt; YEAR(TODAY()), OR(AND(1 &gt;= MONTH($Record.ProjectStart__c), YEAR($Record.ProjectEnd__c) = YEAR(TODAY())+1), YEAR($Record.ProjectStart__c) &lt;= YEAR(TODAY()))), ($Record.Amount - $Record.ILVForecast__c - $Record.SupplierCostsForecast__c) * $Record.Probability / 100 / $Record.ProjectDurationMonths__c, 0)</expression>
+    </formulas>
+    <formulas>
+        <name>FebNextYearForecastFormula</name>
+        <dataType>Currency</dataType>
+        <scale>18</scale>
+        <expression>IF(AND(2 &lt;= MONTH($Record.ProjectEnd__c), YEAR($Record.ProjectEnd__c) &gt; YEAR(TODAY()), OR(AND(2 &gt;= MONTH($Record.ProjectStart__c), YEAR($Record.ProjectEnd__c) = YEAR(TODAY())+1), YEAR($Record.ProjectStart__c) &lt;= YEAR(TODAY()))), ($Record.Amount - $Record.ILVForecast__c - $Record.SupplierCostsForecast__c) * $Record.Probability / 100 / $Record.ProjectDurationMonths__c, 0)</expression>
+    </formulas>
+    <formulas>
+        <name>MarNextYearForecastFormula</name>
+        <dataType>Currency</dataType>
+        <scale>18</scale>
+        <expression>IF(AND(3 &lt;= MONTH($Record.ProjectEnd__c), YEAR($Record.ProjectEnd__c) &gt; YEAR(TODAY()), OR(AND(3 &gt;= MONTH($Record.ProjectStart__c), YEAR($Record.ProjectEnd__c) = YEAR(TODAY())+1), YEAR($Record.ProjectStart__c) &lt;= YEAR(TODAY()))), ($Record.Amount - $Record.ILVForecast__c - $Record.SupplierCostsForecast__c) * $Record.Probability / 100 / $Record.ProjectDurationMonths__c, 0)</expression>
+    </formulas>
     <recordUpdates>
-        <processMetadataValues>
-            <name>evaluationType</name>
-            <value>
-                <stringValue>always</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>isChildRelationship</name>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>reference</name>
-            <value>
-                <stringValue>[Opportunity]</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>myRule_1_A1</name>
-        <label>Calculate Forecast this year</label>
-        <locationX>100</locationX>
-        <locationY>200</locationY>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </processMetadataValues>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </filters>
+        <name>updateForecast</name>
+        <label>Update Forecast Fields</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Currency</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Apr Forecast</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Formula</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>AprForecast__c</field>
-            <value>
-                <elementReference>formula_2_myRule_1_A1_1457158245</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Currency</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Aug Forecast</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Formula</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>AugForecast__c</field>
-            <value>
-                <elementReference>formula_9_myRule_1_A1_9634911074</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Currency</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Dec Forecast</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Formula</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>DecForecast__c</field>
-            <value>
-                <elementReference>formula_13_myRule_1_A1_4221271880</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Currency</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Feb Forecast</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Formula</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>FebForecast__c</field>
-            <value>
-                <elementReference>formula_3_myRule_1_A1_8383227423</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Currency</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Feb Forecast Next Year</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Formula</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Feb_Forecast_Next_Year__c</field>
-            <value>
-                <elementReference>formula_15_myRule_1_A1_7179419418</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Currency</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Jan Forecast Next Year</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Formula</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>JanForecastNextYear__c</field>
-            <value>
-                <elementReference>formula_14_myRule_1_A1_5445383888</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Currency</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Jan Forecast</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Formula</stringValue>
-                </value>
-            </processMetadataValues>
             <field>JanForecast__c</field>
-            <value>
-                <elementReference>formula_4_myRule_1_A1_2158579556</elementReference>
-            </value>
+            <value><elementReference>JanForecastFormula</elementReference></value>
         </inputAssignments>
         <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Currency</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Jul Forecast</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Formula</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>JulForecast__c</field>
-            <value>
-                <elementReference>formula_5_myRule_1_A1_2100664013</elementReference>
-            </value>
+            <field>FebForecast__c</field>
+            <value><elementReference>FebForecastFormula</elementReference></value>
         </inputAssignments>
         <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Currency</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Jun Forecast</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Formula</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>JunForecast__c</field>
-            <value>
-                <elementReference>formula_6_myRule_1_A1_4041427523</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Currency</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Mar Forecast</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Formula</stringValue>
-                </value>
-            </processMetadataValues>
             <field>MarForecast__c</field>
-            <value>
-                <elementReference>formula_7_myRule_1_A1_1051031693</elementReference>
-            </value>
+            <value><elementReference>MarForecastFormula</elementReference></value>
         </inputAssignments>
         <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Currency</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Mar Forecast Next Year</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Formula</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Mar_Forecast_Next_Year__c</field>
-            <value>
-                <elementReference>formula_16_myRule_1_A1_4089804000</elementReference>
-            </value>
+            <field>AprForecast__c</field>
+            <value><elementReference>AprForecastFormula</elementReference></value>
         </inputAssignments>
         <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Currency</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>May Forecast</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Formula</stringValue>
-                </value>
-            </processMetadataValues>
             <field>MayForecast__c</field>
-            <value>
-                <elementReference>formula_8_myRule_1_A1_9613364691</elementReference>
-            </value>
+            <value><elementReference>MayForecastFormula</elementReference></value>
         </inputAssignments>
         <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Currency</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Nov Forecast</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Formula</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>NovForecast__c</field>
-            <value>
-                <elementReference>formula_12_myRule_1_A1_7340336435</elementReference>
-            </value>
+            <field>JunForecast__c</field>
+            <value><elementReference>JunForecastFormula</elementReference></value>
         </inputAssignments>
         <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Currency</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Oct Forecast</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Formula</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>OctForecast__c</field>
-            <value>
-                <elementReference>formula_11_myRule_1_A1_3975373080</elementReference>
-            </value>
+            <field>JulForecast__c</field>
+            <value><elementReference>JulForecastFormula</elementReference></value>
         </inputAssignments>
         <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Currency</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Sep Forecast</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Formula</stringValue>
-                </value>
-            </processMetadataValues>
+            <field>AugForecast__c</field>
+            <value><elementReference>AugForecastFormula</elementReference></value>
+        </inputAssignments>
+        <inputAssignments>
             <field>SepForecast__c</field>
-            <value>
-                <elementReference>formula_10_myRule_1_A1_1395787654</elementReference>
-            </value>
+            <value><elementReference>SepForecastFormula</elementReference></value>
         </inputAssignments>
-        <object>Opportunity</object>
+        <inputAssignments>
+            <field>OctForecast__c</field>
+            <value><elementReference>OctForecastFormula</elementReference></value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>NovForecast__c</field>
+            <value><elementReference>NovForecastFormula</elementReference></value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>DecForecast__c</field>
+            <value><elementReference>DecForecastFormula</elementReference></value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>JanForecastNextYear__c</field>
+            <value><elementReference>JanNextYearForecastFormula</elementReference></value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Feb_Forecast_Next_Year__c</field>
+            <value><elementReference>FebNextYearForecastFormula</elementReference></value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Mar_Forecast_Next_Year__c</field>
+            <value><elementReference>MarNextYearForecastFormula</elementReference></value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
     </recordUpdates>
-    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector><targetReference>updateForecast</targetReference></connector>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
     <status>Active</status>
-    <variables>
-        <name>myVariable_current</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>true</isInput>
-        <isOutput>true</isOutput>
-        <objectType>Opportunity</objectType>
-    </variables>
-    <variables>
-        <name>myVariable_old</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>true</isInput>
-        <isOutput>false</isOutput>
-        <objectType>Opportunity</objectType>
-    </variables>
-    <variables>
-        <name>myVariable_waitStartTimeVariable</name>
-        <dataType>DateTime</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <value>
-            <elementReference>$Flow.CurrentDateTime</elementReference>
-        </value>
-    </variables>
 </Flow>

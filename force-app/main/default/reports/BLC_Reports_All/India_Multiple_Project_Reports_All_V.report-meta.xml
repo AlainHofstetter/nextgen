@@ -103,7 +103,6 @@
             <operator>contains</operator>
             <value>Absences Kamal</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsAcross>

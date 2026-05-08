@@ -49,7 +49,6 @@
             <operator>equals</operator>
             <value>Samanta Navarro,Ilona Hausherr,Janica Kottmeyer,Reto Zwahlen,Emilia Ordoñez,Cécile Sabater</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsAcross>
@@ -70,7 +69,7 @@
     <name>Rapportierte Stunden Alle_Ivan Version</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Projects_with_Services_with_Time__c</reportType>
     <scope>organization</scope>

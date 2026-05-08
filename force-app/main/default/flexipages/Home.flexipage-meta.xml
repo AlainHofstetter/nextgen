@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
     <flexiPageRegions>
         <itemInstances>
@@ -53,26 +53,27 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>entityName</name>
-                    <value>Project__c</value>
+                    <name>context</name>
+                    <value>GLOBAL</value>
                 </componentInstanceProperties>
+                <componentName>forceChatter:publisher</componentName>
+                <identifier>forceChatter_publisher</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
-                    <name>filterName</name>
-                    <value>Meine_Projekte_Offen</value>
+                    <name>context</name>
+                    <value>TO</value>
                 </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>pageSize</name>
-                    <value>3</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:filterListCard</componentName>
-                <identifier>flexipage_filterListCard</identifier>
+                <componentName>forceChatter:exposedFeed</componentName>
+                <identifier>forceChatter_exposedFeed</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
-        <name>bottomRight</name>
+        <name>sidebar</name>
         <type>Region</type>
     </flexiPageRegions>
-    
     <masterLabel>Home</masterLabel>
     <parentFlexiPage>home__desktopDefault</parentFlexiPage>
     <template>

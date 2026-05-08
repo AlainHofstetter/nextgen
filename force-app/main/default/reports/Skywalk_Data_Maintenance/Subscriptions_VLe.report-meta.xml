@@ -27,7 +27,7 @@
     <name>Subscriptions</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Subscriptions_with_Actions__c</reportType>
     <scope>organization</scope>

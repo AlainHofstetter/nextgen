@@ -9,7 +9,7 @@
  * @since Feb 2025
  * @documentation https://rest.qr-invoice.cloud/swagger-ui/index.html#/11%20Payment%20Part%20%26%20Receipt%20(QR%20Bill)/createPaymentPartReceipt
  */
-public with sharing class QRCodeService {
+public without sharing class QRCodeService {
     
     // Retrieve default tool settings for QR generation.
     static QRGeneratorToolSettings__c toolSettings = QRGeneratorToolSettings__c.getOrgDefaults();
@@ -26,6 +26,8 @@ public with sharing class QRCodeService {
     public static void generateQRCode(Invoice__c record) {
         // Validate that required custom settings are configured
         validateToolSettings();
+
+        System.debug('---QRCodeService.generateQRCode--- invoice: ' + record);
         
         String qrCodeString = buildQRCodeImage(record);
         insertQRImage(record.Id, qrCodeString);
@@ -49,31 +51,64 @@ public with sharing class QRCodeService {
     
     /**
      * Inserts the QR image as a ContentVersion and creates a ContentDocumentLink
-     * to associate the image with the given parent record.
+     * to associate the image with the given parent record. If there are existing
+     * ContentDocumentLinks with the same title pattern for the same parentRecordId, they are deleted.
      *
      * @param parentRecordId The ID of the parent Invoice__c record.
      * @param base64 The Base64 encoded QR code image.
      */
     private static void insertQRImage(Id parentRecordId, String base64) {
+
         String docName = Label.QRInvoicePrefix + '_' + Date.today().format();
-        
-        ContentVersion contentVersion = new ContentVersion(
-            Title = docName,
-            PathOnClient = docName + '.jpg',
-            VersionData = EncodingUtil.base64Decode(base64)
+        String titlePattern = Label.QRInvoicePrefix + '_%';
+
+       // 1) Insert new file and link it to the record
+        ContentVersion cv = new ContentVersion(
+            Title                 = docName,
+            PathOnClient          = docName + '.' + 'jpg',
+            VersionData           = EncodingUtil.base64Decode(base64),
+            FirstPublishLocationId = parentRecordId
         );
-        insert contentVersion;
-        
-        // Retrieve the ContentDocumentId from the inserted ContentVersion.
-        Id contentDocId = [SELECT ContentDocumentId FROM ContentVersion WHERE Id = :contentVersion.Id].ContentDocumentId;
-        
-        // Create and insert a ContentDocumentLink to associate the document with the Invoice.
-        ContentDocumentLink contentDocumentLink = new ContentDocumentLink(
-            LinkedEntityId = parentRecordId,
-            ContentDocumentId = contentDocId,
-            ShareType = 'V'
-        );
-        insert contentDocumentLink;
+        insert cv;
+
+        // 2) Get the ContentDocumentId of the newly created file
+        Id newContentDocumentId = [
+            SELECT ContentDocumentId
+            FROM ContentVersion
+            WHERE Id = :cv.Id
+            LIMIT 1
+        ].ContentDocumentId;
+
+        // 3) Find *other* documents with same Title/Extension
+        //    and linked to this record
+        List<ContentDocumentLink> oldLinks = [
+            SELECT ContentDocumentId
+            FROM ContentDocumentLink
+            WHERE LinkedEntityId = :parentRecordId
+              AND ContentDocument.Title LIKE :titlePattern
+              AND ContentDocument.FileExtension = 'JPG'
+              AND ContentDocumentId != :newContentDocumentId
+        ];
+
+        System.debug('---QRCodeService.insertQRImage--- oldLinks: ' + oldLinks);
+        System.debug('---QRCodeService.insertQRImage--- newContentDocumentId: '+newContentDocumentId);
+
+        if (!oldLinks.isEmpty()) {
+            Set<Id> oldDocIds = new Set<Id>();
+            for (ContentDocumentLink cdl : oldLinks) {
+                oldDocIds.add(cdl.ContentDocumentId);
+            }
+
+            // 4) Delete old ContentDocuments (this deletes ALL their versions + links)
+            List<ContentDocument> docsToDelete = [
+                SELECT Id
+                FROM ContentDocument
+                WHERE Id IN :oldDocIds
+            ];
+            if (!docsToDelete.isEmpty()) {
+                delete docsToDelete;
+            }
+        }
     }
     
     /**
@@ -195,6 +230,8 @@ public with sharing class QRCodeService {
                    ProjectInvoiceCurrency__c, 
                    ProjectName__r.Name,
                    ESRFormatted__c,
+                   ESRAccountNr__c,
+                   ESRMergentNr__c,
                    ProjectCostCenter__r.Name,
                    AccountNameLegal__c,
                    InvoiceDocumentNr__c,
@@ -202,7 +239,7 @@ public with sharing class QRCodeService {
             FROM Invoice__c
             WHERE Id = :record.Id
         ];
-        
+
         // Retrieve organization information for address details.
         Organization companyInfo = [SELECT Name, Address FROM Organization LIMIT 1];
         
@@ -248,27 +285,35 @@ public with sharing class QRCodeService {
         
         // If the IBAN is a QR-IBAN, generate a structured reference.
         if (QRCodeUtils.isQrIban(iban)) {
-            if (record.InvoiceStatus__c == 'Draft' && record.InvoiceDocumentNr__c == null)
+            if ((record.InvoiceStatus__c == 'Draft' || record.InvoiceStatus__c == 'Approval') && record.InvoiceDocumentNr__c == null)
             {
                 record.InvoiceDocumentNr__c = 0;
                 record.ESRFormatted__c = 'DRAFT Invoice';
             }
 
-            String baseForReference;
-            if (record.InvoiceDocumentNr__c != null) {
-                baseForReference = String.valueOf(record.InvoiceDocumentNr__c);
-            } else if (String.isNotBlank(record.ESRFormatted__c)) {
-                baseForReference = record.ESRFormatted__c;
-            } else {
+            System.debug('---QRCodeService.createRequestBody--- ESRFormatted__c:' + record.ESRFormatted__c);
+
+            // Generate the invoice ESR Unformatted just in case any of the values used to generate it has changed.
+            // Note the the field ESRUnformatted__c is not updated with the generated value. 
+            // The generateded value is not saved back into Salesforce. Just doing this to ensure the ESR is always up to date in the generated QR-Bill
+            String qrReference = EsrUtil.getESR(record.ESRAccountNr__c, record.ESRMergentNr__c, record.InvoiceDocumentNr__c, 
+                                                    (System.Test.isRunningTest() ? 123 : record.InvoiceTotalAmountGross__c), EsrUtil.EsrFormat.UNFORMATTED);
+
+            if (String.isBlank(qrReference)) {
                 throw new HandledException('Missing InvoiceDocumentNr__c and ESRFormatted__c for QR reference generation.');
             }
-            String qrReference = QRCodeUtils.generateQrReference(baseForReference);
+
+            System.debug('---QRCodeService.createRequestBody--- qrReference:' + qrReference);
+        
             req.paymentReference.reference = qrReference;
             req.paymentReference.referenceType = 'QRR';
         } else {
+            System.debug('---QRCodeService.createRequestBody--- isQrIban == false');
             req.paymentReference.reference = '';
             req.paymentReference.referenceType = '';
         }
+
+        System.debug('---QRCodeService.createRequestBody--- Json:' + req.toJson());
         
         return req.toJson();
     }

@@ -42,7 +42,6 @@
             <operator>lessThan</operator>
             <value>12/31/2025</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -53,7 +52,7 @@
     <name>Working Times per Bhavinder</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Time__c</reportType>
     <scope>organization</scope>

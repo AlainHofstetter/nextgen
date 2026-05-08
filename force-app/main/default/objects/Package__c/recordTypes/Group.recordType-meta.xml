@@ -4,4 +4,52 @@
     <active>true</active>
     <compactLayoutAssignment>ProjectCompactLayoutGroup</compactLayoutAssignment>
     <label>Group</label>
+    <picklistValues>
+        <picklist>AbacusTimeType__c</picklist>
+        <values>
+            <fullName>Default</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ExpenseBillingType__c</picklist>
+        <values>
+            <fullName>AllowancePercent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AtCost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FlatRate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SpecialDeal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PackageStatus__c</picklist>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>PartiallyOpen</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PackageSubType__c</picklist>
+        <values>
+            <fullName>None</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
 </RecordType>

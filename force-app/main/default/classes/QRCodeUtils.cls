@@ -19,6 +19,7 @@ public with sharing class QRCodeUtils {
     private static final String HILDA = 'Hilda';
     private static final String FOCUSNEXT = 'Focusnext';
     private static final String STUDIO_HOTZ = 'Studio Victor Hotz';
+    private static final String HOM = 'HOM';
 
     // Lookup table as defined by the Swiss Implementation Guidelines
     private static final Integer[][] TABLE = new Integer[][]{
@@ -35,11 +36,12 @@ public with sharing class QRCodeUtils {
     };
     
     /**
-     * Determines whether the given IBAN string corresponds to a Swiss QR-IBAN.
-     * A Swiss QR-IBAN must have an institution identifier (characters 5–9) between 30000 and 31999.
+     * Returns true if the given IBAN is a QR-IBAN.
+     * For Swiss QR-IBANs, the institution identifier (positions 5 to 9)
+     * must fall in the range 30000 to 31999.
      *
-     * @param iban The IBAN string to evaluate, may be null or shorter than 9 characters.
-     * @return true if the IBAN is a valid Swiss QR-IBAN; false if null, too short, improperly formatted, or out of range.
+     * @param iban The IBAN to check.
+     * @return Boolean indicating if the IBAN is a QR-IBAN.
      */
     public static Boolean isQrIban(String iban) {
         if (iban == null || iban.length() < 9) {
@@ -56,11 +58,12 @@ public with sharing class QRCodeUtils {
     }
     
     /**
-     * Generates a 27-digit Swiss QR reference number by left-padding the base string to 26 digits and computing a check digit.
+     * Generates a structured QR reference (27 digits) given a base string.
+     * The base string will be left-padded with zeros to reach 26 digits.
+     * The check digit is computed using the modulo 10 recursive algorithm.
      *
-     * @param base The base reference string (numeric invoice or order number), may contain non-digit characters.
-     * @return A 27-digit QR reference string consisting of the 26-digit padded base and a modulo-10 check digit.
-     * @throws IllegalArgumentException if base is null.
+     * @param base The base string (usually a numeric invoice or order number).
+     * @return A 27-digit QR reference string.
      */
     public static String generateQrReference(String base) {
         if (base == null) {
@@ -93,26 +96,21 @@ public with sharing class QRCodeUtils {
     }
     
     /**
-     * Cleans the provided IBAN string by trimming whitespace and removing all spaces.
+     * Cleans the provided IBAN by trimming spaces.
      *
-     * @param rawIban The raw IBAN string, potentially null or containing spaces.
-     * @return The cleaned IBAN without spaces; returns an empty string if input is null.
+     * @param rawIban The raw IBAN string.
+     * @return A trimmed IBAN without spaces.
      */
     public static String cleanIban(String rawIban) {
         if(rawIban == null) return '';
         return rawIban.trim().replace(' ', '');
     }
 
-    /**
-     * Maps a cost center identifier to a company name based on predefined keywords.
-     *
-     * @param costCenter The cost center string to evaluate (case-insensitive).
-     * @return The matching company name; defaults to 'Brand Leadership Circle' if no match is found.
-     */
+    // Helper method to determine the company name based on the cost center.
     public static String getCompanyName(String costCenter) {
         String upperCostCenter = (costCenter != null) ? costCenter.toUpperCase() : '';
         if (upperCostCenter.contains(GATEB.toUpperCase())) {
-            return 'GateB AG';
+            return 'gateB AG';
         } else if (upperCostCenter.contains(CALYDO.toUpperCase())) {
             return 'Calydo AG';
         } else if (upperCostCenter.contains(HOTZ.toUpperCase())) {
@@ -123,18 +121,14 @@ public with sharing class QRCodeUtils {
             return 'FocusNext';
         } else if (upperCostCenter.contains(STUDIO_HOTZ.toUpperCase())) {
             return STUDIO_HOTZ;
+        } else if (upperCostCenter.contains(HOM.toUpperCase())) {
+            return 'House of Manus AG';
         } else {
             return 'Brand Leadership Circle';
         }
     }
     
-    /**
-     * Constructs a localized invoice label prefixing the invoice number based on language code.
-     *
-     * @param invoiceDocNr The invoice document number (Object), will be converted to string.
-     * @param language The ISO language code ('de' for German); any other value defaults to English.
-     * @return A string label 'Rechnungsnummer: {number}' or 'Invoice number: {number}', or '-' if number is null.
-     */
+    // Helper method to generate the invoice name label.
     public static String getInvoiceNameLabel(Object invoiceDocNr, String language) {
         String label;
         label = (language == 'de') ? 'Rechnungsnummer: ' : 'Invoice number: ';

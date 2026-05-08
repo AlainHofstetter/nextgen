@@ -40,12 +40,11 @@
                 </groupingSortProperties>
                 <header>UBS - Prototyp - Budget</header>
                 <legendPosition>Right</legendPosition>
-                <report>GB_CH_Analytics_Team_Reports/ICE_Ad_Hoc/UBS_Prototyp_Marketingbudget/UBS_Prototyp_Budget</report>
+                <report>UBS_Prototyp_Marketingbudget/UBS_Prototyp_Budget</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
                 <showValues>true</showValues>
                 <sortBy>RowLabelAscending</sortBy>
-                <sortLegendValues>false</sortLegendValues>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
             <rowIndex>0</rowIndex>
@@ -78,12 +77,11 @@
                 </groupingSortProperties>
                 <header>UBS - Prototyp Services Last Week</header>
                 <legendPosition>Bottom</legendPosition>
-                <report>GB_CH_Analytics_Team_Reports/ICE_Ad_Hoc/UBS_Prototyp_Marketingbudget/UBS_Prototyp_Services_Last_Week</report>
+                <report>UBS_Prototyp_Marketingbudget/UBS_Prototyp_Services_Last_Week</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
                 <showValues>true</showValues>
                 <sortBy>RowLabelAscending</sortBy>
-                <sortLegendValues>false</sortLegendValues>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
             <rowIndex>8</rowIndex>

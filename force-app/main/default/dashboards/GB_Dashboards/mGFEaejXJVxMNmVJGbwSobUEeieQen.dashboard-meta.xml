@@ -180,6 +180,9 @@
                 <drillToDetailEnabled>false</drillToDetailEnabled>
                 <groupingSortProperties/>
                 <header>BLC - Opportunities nicht aktuell</header>
+                <indicatorHighColor>#54C254</indicatorHighColor>
+                <indicatorLowColor>#C23934</indicatorLowColor>
+                <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
                 <report>Dashboard_Opportunities/BLC_Opportunities_nicht_aktuell</report>
                 <showPicturesOnTables>false</showPicturesOnTables>
                 <sortBy>RowValueDescending</sortBy>

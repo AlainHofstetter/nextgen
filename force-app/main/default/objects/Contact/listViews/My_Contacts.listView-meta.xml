@@ -9,7 +9,7 @@
     <columns>CONTACT.PHONE3</columns>
     <columns>CORE.USERS.ALIAS</columns>
     <columns>LocationCity__c</columns>
-    <filterScope>Everything</filterScope>
+    <filterScope>Mine</filterScope>
     <label>My Contacts</label>
     <language>en_US</language>
 </ListView>

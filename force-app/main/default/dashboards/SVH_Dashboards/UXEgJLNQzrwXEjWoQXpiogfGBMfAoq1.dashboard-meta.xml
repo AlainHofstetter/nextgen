@@ -90,7 +90,6 @@
                 <showTotal>false</showTotal>
                 <showValues>true</showValues>
                 <sortBy>RowValueDescending</sortBy>
-                <sortLegendValues>false</sortLegendValues>
                 <title>Std. zu Lohnkosten inkl. Soz.Leistungen</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
@@ -136,7 +135,6 @@
                 <showPercentage>false</showPercentage>
                 <showValues>false</showValues>
                 <sortBy>RowValueDescending</sortBy>
-                <sortLegendValues>false</sortLegendValues>
                 <title>% - Anteil</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
@@ -182,7 +180,6 @@
                 <showPercentage>false</showPercentage>
                 <showValues>true</showValues>
                 <sortBy>RowValueDescending</sortBy>
-                <sortLegendValues>false</sortLegendValues>
                 <title>Std. Zeit (Dauer)</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
@@ -223,7 +220,6 @@
                 <showPercentage>false</showPercentage>
                 <showValues>true</showValues>
                 <sortBy>RowValueDescending</sortBy>
-                <sortLegendValues>false</sortLegendValues>
                 <title>Splitt - Auftraggeber (Zeit)</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
@@ -264,7 +260,6 @@
                 <showPercentage>false</showPercentage>
                 <showValues>true</showValues>
                 <sortBy>RowValueDescending</sortBy>
-                <sortLegendValues>false</sortLegendValues>
                 <title>Std. zu Lohnkosten</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
@@ -274,10 +269,10 @@
         <numberOfColumns>9</numberOfColumns>
         <rowHeight>80</rowHeight>
     </dashboardGridLayout>
-    <dashboardType>LoggedInUser</dashboardType>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <runningUser>sven.boesiger1@gateb.com</runningUser>
     <isGridLayout>true</isGridLayout>
     <owner>patrick.lippuner@brandleadership.ch</owner>
-    <runningUser>finance.admin@brandleadership.ch</runningUser>
     <textColor>#000000</textColor>
     <title>Produktion SVH &amp; HYS - DB - Produktivität</title>
     <titleColor>#000000</titleColor>

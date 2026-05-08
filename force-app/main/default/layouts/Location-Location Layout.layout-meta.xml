@@ -30,6 +30,10 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>VisitorAddressId</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>TimeZone</field>
             </layoutItems>
             <layoutItems>

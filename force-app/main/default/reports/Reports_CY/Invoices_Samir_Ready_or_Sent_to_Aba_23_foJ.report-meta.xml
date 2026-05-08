@@ -70,7 +70,6 @@
             <operator>equals</operator>
             <value>Ready,Sent</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -81,7 +80,7 @@
     <name>Invoices Samir, Ready or Sent to Aba, 23</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntityCustomEntity$Project__c$Invoice__c</reportType>
     <scope>organization</scope>

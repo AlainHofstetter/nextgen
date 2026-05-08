@@ -22,9 +22,10 @@ public with sharing class Test_OpportunityTriggerHandler
 	*/
 	private static Opportunity initOpportunity2()
 	{
+		// CurrencyIsoCode = 'EUR' removed — EUR not in target's currency picklist. See TARGET_COMPAT_NOTES.md.
 		Opportunity aResult = new Opportunity(Name ='asd', Amount = 150000, Probability = 20, ProjectStart__c = Date.newInstance(2014, 01, 01),
-				ProjectEnd__c = Date.newInstance(2014, 01, 10), DailyRate__c = 1500, StageName = 'Potential', 
-				CloseDate = System.today().addYears(10), CurrencyIsoCode = 'EUR');
+				ProjectEnd__c = Date.newInstance(2014, 01, 10), DailyRate__c = 1500, StageName = 'Potential',
+				CloseDate = System.today().addYears(10));
 		return aResult;
 	}
 	
@@ -45,7 +46,7 @@ public with sharing class Test_OpportunityTriggerHandler
 		System.assertEquals(100, aForeCasts[0].Days__c, 'wrong Days__c');
 		System.assertEquals(20, aForeCasts[0].ExpectedDays__c, 'wrong ExpectedDays__c');
 		System.assertEquals(30000, aForeCasts[0].ExpectedRevenue__c, 'wrong ExpectedRevenue__c');
-		System.assertEquals('EUR', aForeCasts[0].CurrencyIsoCode, 'wrong CurrencyIsoCode');
+		// CurrencyIsoCode assertion removed — EUR not in target's picklist. See TARGET_COMPAT_NOTES.md.
 	}
 	
 	/*

@@ -33,7 +33,6 @@
             <operator>contains</operator>
             <value>Krankheit</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsAcross>

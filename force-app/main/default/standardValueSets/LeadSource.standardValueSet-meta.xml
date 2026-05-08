@@ -1,15 +1,40 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
+    <standardValue>
+        <fullName>BLC Network</fullName>
+        <default>false</default>
+        <label>BLC Network</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Employee Referral</fullName>
+        <default>false</default>
+        <label>Employee Referral</label>
+    </standardValue>
+    <standardValue>
+        <fullName>External Referral</fullName>
+        <default>false</default>
+        <label>External Referral</label>
+    </standardValue>
+    <standardValue>
+        <fullName>External Partner</fullName>
+        <default>false</default>
+        <label>External Partner</label>
+    </standardValue>
     <standardValue>
         <fullName>Event / Conference</fullName>
         <default>false</default>
         <label>Event / Conference</label>
     </standardValue>
     <standardValue>
-        <fullName>Customer Success</fullName>
+        <fullName>Newsletter</fullName>
         <default>false</default>
-        <label>Customer Success</label>
+        <label>Newsletter</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Web</fullName>
+        <default>false</default>
+        <label>Web</label>
     </standardValue>
     <standardValue>
         <fullName>Cold Call</fullName>
@@ -17,8 +42,73 @@
         <label>Cold Call</label>
     </standardValue>
     <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </standardValue>
+    <standardValue>
         <fullName>Articel</fullName>
         <default>false</default>
         <label>Articel</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Customer Success</fullName>
+        <default>false</default>
+        <label>Customer Success</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Direct Sales</fullName>
+        <default>false</default>
+        <label>Direct Sales</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Inbound / Call</fullName>
+        <default>false</default>
+        <label>Inbound / Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Inbound / Mail</fullName>
+        <default>false</default>
+        <label>Inbound / Mail</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Inbound / Web</fullName>
+        <default>false</default>
+        <label>Inbound / Web</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Outbound / Sales Lead Generation Team</fullName>
+        <default>false</default>
+        <label>Outbound / Sales Lead Generation Team</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Partner- / Co-Marketing</fullName>
+        <default>false</default>
+        <label>Partner- / Co-Marketing</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Professional Services</fullName>
+        <default>false</default>
+        <label>Professional Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Referral</fullName>
+        <default>false</default>
+        <label>Referral</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Trade Show</fullName>
+        <default>false</default>
+        <label>Trade Show</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Webinar</fullName>
+        <default>false</default>
+        <label>Webinar</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Data.com</fullName>
+        <default>false</default>
+        <label>Data.com</label>
     </standardValue>
 </StandardValueSet>

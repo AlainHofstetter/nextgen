@@ -1,9 +1,24 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
     <standardValue>
-        <fullName>2. Medium</fullName>
+        <fullName>1. High</fullName>
         <default>false</default>
+        <label>1. High</label>
+    </standardValue>
+    <standardValue>
+        <fullName>2. Medium</fullName>
+        <default>true</default>
         <label>2. Medium</label>
+    </standardValue>
+    <standardValue>
+        <fullName>3. Low</fullName>
+        <default>false</default>
+        <label>3. Low</label>
+    </standardValue>
+    <standardValue>
+        <fullName>4. 2 Min Task</fullName>
+        <default>false</default>
+        <label>4. 2 Min Task</label>
     </standardValue>
 </StandardValueSet>

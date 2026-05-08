@@ -298,20 +298,6 @@
     </validationRules>
     <validationRules>
         <errorMessage>
-            <!-- There is already an Invoice in Status &quot;Draft&quot;. Please complete this invoice first. 
-(IN012) -->
-        </errorMessage>
-        <name>IN012_Count_Status_Draft_Invoice</name>
-    </validationRules>
-    <validationRules>
-        <errorMessage>
-            <!-- There is already an ILV in Status &quot;Draft&quot;. Please complete this ILV first. 
-(IN013) -->
-        </errorMessage>
-        <name>IN013_Count_Status_Draft_ILV</name>
-    </validationRules>
-    <validationRules>
-        <errorMessage>
             <!-- You are not allowed to change to this status of the Invoice. Please contact Finance.
 (IN014) -->
         </errorMessage>

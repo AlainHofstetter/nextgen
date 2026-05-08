@@ -36,29 +36,6 @@
     <leftSection>
         <columnSize>Narrow</columnSize>
         <components>
-            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
-            <chartAxisRange>Auto</chartAxisRange>
-            <componentType>Bar</componentType>
-            <dashboardFilterColumns>
-                <column>Invoice__c.FinanceDate__c</column>
-            </dashboardFilterColumns>
-            <displayUnits>Integer</displayUnits>
-            <drillEnabled>false</drillEnabled>
-            <drillToDetailEnabled>false</drillToDetailEnabled>
-            <enableHover>true</enableHover>
-            <expandOthers>false</expandOthers>
-            <groupingSortProperties/>
-            <legendPosition>Bottom</legendPosition>
-            <report>Reports_GBCH/gateB_Umsatzliste_lSg</report>
-            <showPercentage>false</showPercentage>
-            <showPicturesOnCharts>false</showPicturesOnCharts>
-            <showValues>true</showValues>
-            <sortBy>RowValueDescending</sortBy>
-            <sortLegendValues>false</sortLegendValues>
-            <title>Umsatz gateB pro Kunde</title>
-            <useReportChart>false</useReportChart>
-        </components>
-        <components>
             <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
             <chartAxisRange>Auto</chartAxisRange>
             <chartSummary>

@@ -29,7 +29,6 @@
             <operator>contains</operator>
             <value>HBC</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -45,7 +44,7 @@
     <name>HBC Hours worked per customer 2023</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Contacts_with_Times__c</reportType>
     <scope>organization</scope>

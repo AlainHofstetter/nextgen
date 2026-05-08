@@ -25,9 +25,7 @@
         <enableOnDemandEmailToCase>true</enableOnDemandEmailToCase>
         <enableThreadIDInBody>true</enableThreadIDInBody>
         <enableThreadIDInSubject>true</enableThreadIDInSubject>
-        <movingEmailEnabled>false</movingEmailEnabled>
         <notifyOwnerOnNewCaseEmail>true</notifyOwnerOnNewCaseEmail>
-        <notifySenderE2CError>false</notifySenderE2CError>
         <overEmailLimitAction>Bounce</overEmailLimitAction>
         <preQuoteSignature>false</preQuoteSignature>
         <replyWithNewContentOnly>false</replyWithNewContentOnly>
@@ -37,17 +35,14 @@
             <casePriority>2. Medium</casePriority>
             <createTask>false</createTask>
             <emailAddress>itsupport@brandleadership.ch</emailAddress>
-            <isPermsetControlled>false</isPermsetControlled>
+            <emailServicesAddress>it@9-1i8mbrkhlh80tvyu0v9a2lr64gwoex5y68u54zzn0fn2xk0xon.b-cbj7eai.eu2.case.salesforce.com</emailServicesAddress>
             <isVerified>true</isVerified>
-            <newEntityRecordType>Case.ITCases</newEntityRecordType>
             <routingName>Case: IT Support Brandleadership</routingName>
             <saveEmailHeaders>true</saveEmailHeaders>
         </routingAddresses>
-        <showWordCountInComposer>false</showWordCountInComposer>
         <unauthorizedSenderAction>Discard</unauthorizedSenderAction>
     </emailToCase>
     <enableCaseFeed>false</enableCaseFeed>
-    <enableCaseSwarming>false</enableCaseSwarming>
     <enableCollapseEmailThread>false</enableCollapseEmailThread>
     <enableEarlyEscalationRuleTriggers>false</enableEarlyEscalationRuleTriggers>
     <enableMultiLangSolnSrchCSS>false</enableMultiLangSolnSrchCSS>
@@ -58,14 +53,11 @@
     <enableSolutionShortSummary>true</enableSolutionShortSummary>
     <enableSuggestedSolutions>false</enableSuggestedSolutions>
     <escalateCaseBefore>false</escalateCaseBefore>
-    <hidePublicInCaseComment>false</hidePublicInCaseComment>
     <keepRecordTypeOnAssignmentRule>true</keepRecordTypeOnAssignmentRule>
     <notifyContactOnCaseComment>false</notifyContactOnCaseComment>
     <notifyDefaultCaseOwner>false</notifyDefaultCaseOwner>
     <notifyOwnerOnCaseComment>false</notifyOwnerOnCaseComment>
     <notifyOwnerOnCaseOwnerChange>false</notifyOwnerOnCaseOwnerChange>
-    <rtaCaseComment>false</rtaCaseComment>
-    <rtaCaseDescription>false</rtaCaseDescription>
     <showEmailAttachmentsInCaseAttachmentsRL>true</showEmailAttachmentsInCaseAttachmentsRL>
     <systemUserEmail>it@brandleadership.ch</systemUserEmail>
     <useSystemEmailAddress>false</useSystemEmailAddress>

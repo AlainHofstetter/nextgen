@@ -65,7 +65,6 @@
             <operator>equals</operator>
             <value>Stefan Zimmermann,Marco Wyler,Zora Born,Robert Jüngling,Olaf Gijseman,Isabelle Guichard,Peter Müller,Michael Zehnder,Andreas Wirth,Andreas Seiler,Sarah Iskander,Nadine Eberle,René Affolter,Uli Meier</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -87,7 +86,7 @@
     </params>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>Opportunity</reportType>
     <scope>organization</scope>

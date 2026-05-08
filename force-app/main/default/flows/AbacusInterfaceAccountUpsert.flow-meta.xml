@@ -1,225 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>49.0</apiVersion>
-    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
-    <decisions>
-        <processMetadataValues>
-            <name>index</name>
-            <value>
-                <numberValue>0.0</numberValue>
-            </value>
-        </processMetadataValues>
-        <name>myDecision</name>
-        <label>myDecision</label>
-        <locationX>50</locationX>
-        <locationY>0</locationY>
-        <defaultConnectorLabel>default</defaultConnectorLabel>
-        <rules>
-            <name>myRule_1</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>formula_myRule_1</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>myRule_1_A1</targetReference>
-            </connector>
-            <label>AbacusDebtorTrue</label>
-        </rules>
-    </decisions>
-    <description>Creates a task for Talend</description>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>OR(
-AND(
-PRIORVALUE([Account].AbacusDebtor__c )=false,
-[Account].AbacusDebtor__c =true
-),
-OR(
-AND(
-[Account].AbacusDebtor__c =true,
-OR(
-ISCHANGED([Account].Name),
-ISCHANGED([Account].BillingCity__c),
-ISCHANGED([Account].BillingZip__c),
-ISCHANGED([Account].BillingStreetNr__c),
-ISCHANGED([Account].BillingPoBox__c),
-ISCHANGED([Account].BillingAddressLine2__c),
-ISCHANGED([Account].BillingAddressLine3__c)
-)
-)
-)
-)</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_myRule_1</name>
-        <dataType>Boolean</dataType>
-        <expression>OR(
-AND(
-PRIORVALUE({!myVariable_current.AbacusDebtor__c} )=false,
-{!myVariable_current.AbacusDebtor__c} =true
-),
-OR(
-AND(
-{!myVariable_current.AbacusDebtor__c} =true,
-OR(
-ISCHANGED({!myVariable_current.Name}),
-ISCHANGED({!myVariable_current.BillingCity__c}),
-ISCHANGED({!myVariable_current.BillingZip__c}),
-ISCHANGED({!myVariable_current.BillingStreetNr__c}),
-ISCHANGED({!myVariable_current.BillingPoBox__c}),
-ISCHANGED({!myVariable_current.BillingAddressLine2__c}),
-ISCHANGED({!myVariable_current.BillingAddressLine3__c})
-)
-)
-)
-)</expression>
-    </formulas>
-    <interviewLabel>AbacusInterfaceAccountUpsert-12_InterviewLabel</interviewLabel>
+    <apiVersion>60.0</apiVersion>    <description>Migrated from Process Builder: AbacusInterfaceAccountUpsertDebtor</description>
     <label>AbacusInterfaceAccountUpsertDebtor</label>
     <processMetadataValues>
-        <name>ObjectType</name>
-        <value>
-            <stringValue>Account</stringValue>
-        </value>
+        <name>CanvasMode</name>
+        <value><stringValue>AUTO_LAYOUT_CANVAS</stringValue></value>
     </processMetadataValues>
-    <processMetadataValues>
-        <name>ObjectVariable</name>
-        <value>
-            <elementReference>myVariable_current</elementReference>
-        </value>
-    </processMetadataValues>
-    <processMetadataValues>
-        <name>OldObjectVariable</name>
-        <value>
-            <elementReference>myVariable_old</elementReference>
-        </value>
-    </processMetadataValues>
-    <processMetadataValues>
-        <name>TriggerType</name>
-        <value>
-            <stringValue>onAllChanges</stringValue>
-        </value>
-    </processMetadataValues>
-    <processType>Workflow</processType>
+    <processType>AutoLaunchedFlow</processType>
     <recordCreates>
-        <name>myRule_1_A1</name>
-        <label>AbacusInterfaceCreateAccountUpsert</label>
-        <locationX>100</locationX>
-        <locationY>200</locationY>
+        <name>createAbacusInterface</name>
+        <label>Create Abacus Interface Record</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Account</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Reference</stringValue>
-                </value>
-            </processMetadataValues>
             <field>Account__c</field>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
+            <value><elementReference>$Record.Id</elementReference></value>
         </inputAssignments>
         <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Picklist</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Folder Path XML File</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Picklist</stringValue>
-                </value>
-            </processMetadataValues>
             <field>FolderPathXMLFile__c</field>
-            <value>
-                <stringValue>\\BLC-ABA-01\SkywalkAbacusIntegration\Export\Account\Queue</stringValue>
-            </value>
+            <value><stringValue>\\BLC-ABA-01\SkywalkAbacusIntegration\Export\Account\Queue</stringValue></value>
         </inputAssignments>
         <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Picklist</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Interface Type</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Picklist</stringValue>
-                </value>
-            </processMetadataValues>
             <field>InterfaceType__c</field>
-            <value>
-                <stringValue>Account Debtor Upsert</stringValue>
-            </value>
+            <value><stringValue>Account Debtor Upsert</stringValue></value>
         </inputAssignments>
         <object>AbacusInterface__c</object>
     </recordCreates>
-    <startElementReference>myDecision</startElementReference>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector><targetReference>createAbacusInterface</targetReference></connector>
+        <filterFormula>OR(AND(PRIORVALUE($Record.AbacusDebtor__c) = FALSE, $Record.AbacusDebtor__c = TRUE), AND($Record.AbacusDebtor__c = TRUE, OR(ISCHANGED($Record.Name), ISCHANGED($Record.BillingCity__c), ISCHANGED($Record.BillingZip__c), ISCHANGED($Record.BillingStreetNr__c), ISCHANGED($Record.BillingPoBox__c), ISCHANGED($Record.BillingAddressLine2__c), ISCHANGED($Record.BillingAddressLine3__c))))</filterFormula>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
     <status>Active</status>
-    <variables>
-        <name>myVariable_current</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>true</isInput>
-        <isOutput>true</isOutput>
-        <objectType>Account</objectType>
-    </variables>
-    <variables>
-        <name>myVariable_old</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>true</isInput>
-        <isOutput>false</isOutput>
-        <objectType>Account</objectType>
-    </variables>
 </Flow>

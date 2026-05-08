@@ -2,6 +2,6 @@
 <ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
     <contactEmail>itsupport@brandleadership.ch</contactEmail>
     <label>Office</label>
-    <logoUrl>https://brandleadership.file.force.com/servlet/servlet.ImageServer?id=015b0000004gSNA&amp;oid=00DFT00000C8Yf7</logoUrl>
+    <logoUrl>https://brandleadership.file.force.com/servlet/servlet.ImageServer?id=015b0000004gSNA&amp;oid=00Db0000000cbJ7</logoUrl>
     <startUrl>https://portal.office.com</startUrl>
 </ConnectedApp>

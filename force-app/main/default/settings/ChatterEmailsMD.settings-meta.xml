@@ -5,8 +5,4 @@
     <enableDisplayAppDownloadBadges>true</enableDisplayAppDownloadBadges>
     <enableEmailReplyToChatter>true</enableEmailReplyToChatter>
     <enableEmailToChatter>false</enableEmailToChatter>
-    <noQnOwnNotifyOnCaseCmt>false</noQnOwnNotifyOnCaseCmt>
-    <noQnOwnNotifyOnRep>false</noQnOwnNotifyOnRep>
-    <noQnSubNotifyOnBestR>false</noQnSubNotifyOnBestR>
-    <noQnSubNotifyOnRep>false</noQnSubNotifyOnRep>
 </ChatterEmailsMDSettings>

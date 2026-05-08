@@ -338,7 +338,8 @@
         <customTabListAdditionalFields>CONTACT.EMAIL</customTabListAdditionalFields>
         <customTabListAdditionalFields>LocationStreetNr__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>LocationCity__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>CORE.USERS.ALIAS</customTabListAdditionalFields>        <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
+        <customTabListAdditionalFields>CORE.USERS.ALIAS</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>LocationStreetNr__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>LocationCity__c</lookupDialogsAdditionalFields>

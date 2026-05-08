@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>InvoicePositionAmountGBP__c</fullName>
     <externalId>false</externalId>
-    <formula>InvoicePositionAmount__c * CurrencyRateToSGP__c</formula>
+    <formula>InvoicePositionAmount__c *  CurrencyRateToGBP__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Invoice Position - Amount (GBP)</label>
     <precision>18</precision>

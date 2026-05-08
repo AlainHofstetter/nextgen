@@ -19,12 +19,6 @@
         <field>Project__c.PackagesProjectName__r.Time__r$Timetracker__c</field>
     </columns>
     <columns>
-        <field>Project__c$ServiceTotalTimeCHFBP__c</field>
-    </columns>
-    <columns>
-        <field>Project__c$ServiceTotalAmountCHFBP__c</field>
-    </columns>
-    <columns>
         <field>Project__c.PackagesProjectName__r$CostsTotalExpenseCHF__c</field>
     </columns>
     <columns>
@@ -55,7 +49,6 @@
             <operator>equals</operator>
             <value>1</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Matrix</format>
     <groupingsAcross>

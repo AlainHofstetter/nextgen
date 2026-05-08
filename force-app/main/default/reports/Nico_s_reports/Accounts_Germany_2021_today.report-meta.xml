@@ -39,13 +39,12 @@
             <operator>equals</operator>
             <value>0</value>
         </criteriaItems>
-        <language>en_US</language>
     </filter>
     <format>Tabular</format>
     <name>Accounts Germany 2021 - today</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>AccountList</reportType>
     <scope>organization</scope>

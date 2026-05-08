@@ -24,7 +24,6 @@
             </value>
         </inputParameters>
         <nameSegment>InvoiceInvocableService</nameSegment>
-        <offset>0</offset>
     </actionCalls>
     <actionCalls>
         <name>Send_Custom_Notification</name>
@@ -65,10 +64,8 @@
             </value>
         </inputParameters>
         <nameSegment>customNotificationAction</nameSegment>
-        <offset>0</offset>
     </actionCalls>
-    <apiVersion>61.0</apiVersion>
-    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <apiVersion>60.0</apiVersion>
     <assignments>
         <name>ASSIGN_Billing_Address_City_To_Error_Message</name>
         <label>ASSIGN_Billing Address City To Error Message</label>
@@ -653,14 +650,6 @@ NOT(ISNULL({!$Organization.City}))
             <name>errorMessageScreen</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;Please ensure that {!f_finalErrorMsgScreen} {!errorMessagePartialText} and try it again.&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
         </fields>
         <nextOrFinishButtonLabel>Finish</nextOrFinishButtonLabel>
         <showFooter>false</showFooter>

@@ -90,6 +90,7 @@ public with sharing class ILVPosController {
 			for (ILVPos__c invPos : positions) {
 				System.debug('---ILVPosController.validateILVPosition--- posPkgIDs: '+invPos);
 				Package__c pkg = posPkg.get(invPos.PackageName__c);
+				if (pkg == null) continue;
 
 				if (invPos.ILVType__c != pkg.RecordType.DeveloperName) {
 					return 'The invoice position Package Type Name does not match the Package Record Type Name.' +

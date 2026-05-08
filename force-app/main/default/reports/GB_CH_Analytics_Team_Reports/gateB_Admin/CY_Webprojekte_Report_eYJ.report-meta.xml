@@ -28,7 +28,7 @@
     <name>CY - Webprojekte Report</name>
     <params>
         <name>co</name>
-        <value>1</value>
+        <value>0</value>
     </params>
     <reportType>CustomEntity$CYWebprojekte__c</reportType>
     <scope>organization</scope>
