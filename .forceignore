@@ -9,37 +9,617 @@ package.xml
 **/.eslintrc.json
 
 # LWC Jest
-**/__tests__/**force-app/main/default/layouts/AccountBrand-Account Brand Layout.layout-meta.xml
+**/__tests__/**
+
+node_modules/
+# === Auto-generated from /tmp/deploy-schema.log on first validate ===
+# These components failed validation against targegt-org and are skipped from deploy.
+# Reasons include: target rollup-summary cap, missing standard fields/features,
+# edition gates, missing dependencies. Revisit each before re-enabling.
+
+
+# --- objects ---
+# Account.CompanyAccount — unblocked Phase 25 (compact layout co-deployed)
+# Account.InternalAccount — unblocked Phase 25
+# Account.IsCustomerPortal
+force-app/main/default/objects/Account/fields/IsCustomerPortal.field-meta.xml
+# Account.Summary_Account — unblocked Phase 25
+# AccountBrand — permanently excluded: Digital Experiences / Branding feature not enabled on target
+force-app/main/default/objects/AccountBrand/**
+# ActiveScratchOrg — permanently excluded: DevHub-specific, not a valid sObject type on target
+force-app/main/default/objects/ActiveScratchOrg/**
+# Address — permanently excluded: Address Management / Field Services feature not enabled on target
+force-app/main/default/objects/Address/**
+# AuthorizationForm — permanently excluded: Consent Management feature not enabled on target
+force-app/main/default/objects/AuthorizationForm/**
+# AuthorizationFormConsent
+# AuthorizationFormConsent — permanently excluded: Consent Management feature not enabled on target
+force-app/main/default/objects/AuthorizationFormConsent/**
+# AuthorizationFormDataUse — permanently excluded: Consent Management feature not enabled on target
+force-app/main/default/objects/AuthorizationFormDataUse/**
+# AuthorizationFormText — permanently excluded: Consent Management feature not enabled on target
+force-app/main/default/objects/AuthorizationFormText/**
+# BLCTickets__c — unblocked Phase 23 (deps: Account, Contact, Inventory__c — all on target)
+# BusinessBrand — permanently excluded: Digital Experiences / Branding feature not enabled on target
+force-app/main/default/objects/BusinessBrand/**
+# CYWebprojekte__c — unblocked Phase 23 (Projekt__c lookup to excluded Project__c excluded below)
+# CYWebprojekte__c.Projekt__c — unblocked Phase 26 (Project__c object is deployed; lookup to object is valid even without its custom rollup fields)
+# force-app/main/default/objects/CYWebprojekte__c/fields/Projekt__c.field-meta.xml
+# Campaign — unblocked Phase 27 (15 custom fields, 2 RTs, 2 CompactLayouts, 17 ListViews, 1 VR; no excluded object deps)
+# force-app/main/default/objects/Campaign/**
+# Campaign.BusinessCampaign — unblocked Phase 27
+# force-app/main/default/objects/Campaign/recordTypes/BusinessCampaign.recordType-meta.xml
+# Campaign.RecruitingCampaign — unblocked Phase 27
+# force-app/main/default/objects/Campaign/recordTypes/RecruitingCampaign.recordType-meta.xml
+# Case.ITCases — unblocked Phase 27 (BusinessProcess IT Case + CompactLayout + all picklist fields deployed)
+# force-app/main/default/objects/Case/recordTypes/ITCases.recordType-meta.xml
+# Case.Language — standard field with no type element; not deployable
+force-app/main/default/objects/Case/fields/Language.field-meta.xml
+# Case.SBBCase — unblocked Phase 27 (BusinessProcess SBB Case + all picklist fields deployed)
+# force-app/main/default/objects/Case/recordTypes/SBBCase.recordType-meta.xml
+# CollaborationGroup — unblocked Phase 42 (Chatter enabled on target; standard object)
+# force-app/main/default/objects/CollaborationGroup/**
+# CollaborationGroupMember — unblocked Phase 42
+# force-app/main/default/objects/CollaborationGroupMember/**
+# CommSubscription — permanently excluded: Consent Management feature not enabled on target
+force-app/main/default/objects/CommSubscription/**
+# CommSubscriptionChannelType — permanently excluded: Consent Management feature not enabled on target
+force-app/main/default/objects/CommSubscriptionChannelType/**
+# CommSubscriptionConsent — permanently excluded: Consent Management feature not enabled on target
+force-app/main/default/objects/CommSubscriptionConsent/**
+# CommSubscriptionTiming — permanently excluded: Consent Management feature not enabled on target
+force-app/main/default/objects/CommSubscriptionTiming/**
+# Contact — unblocked Phase 24 (custom fields, compact layouts, record types, list views, validation rules, web links)
+# Contact.IndividualId — privacy field, excluded like User.IndividualId and Lead.IndividualId
+force-app/main/default/objects/Contact/fields/IndividualId.field-meta.xml
+# ContactPointAddress — permanently excluded: Consent Management feature not enabled on target
+force-app/main/default/objects/ContactPointAddress/**
+# ContactPointConsent — permanently excluded: Consent Management feature not enabled on target
+force-app/main/default/objects/ContactPointConsent/**
+# ContactPointEmail — permanently excluded: Consent Management feature not enabled on target
+force-app/main/default/objects/ContactPointEmail/**
+# ContactPointPhone — permanently excluded: Consent Management feature not enabled on target
+force-app/main/default/objects/ContactPointPhone/**
+# ContactPointTypeConsent — permanently excluded: Consent Management feature not enabled on target
+force-app/main/default/objects/ContactPointTypeConsent/**
+# Contract.ActivatedDate
+force-app/main/default/objects/Contract/fields/ActivatedDate.field-meta.xml
+# CostCenterSegment__c — unblocked Phase 23 (deps: CostCenter__c, Segment__c — both deployed or co-deployed)
+# Customer — permanently excluded: Revenue Cloud / Subscription Management feature not enabled on target
+force-app/main/default/objects/Customer/**
+# DataUseLegalBasis — permanently excluded: Consent Management feature not enabled on target
+force-app/main/default/objects/DataUseLegalBasis/**
+# DataUsePurpose — permanently excluded: Consent Management feature not enabled on target
+force-app/main/default/objects/DataUsePurpose/**
+# DelegatedAccount — permanently excluded: Partner Portal / Communities feature not enabled on target
+force-app/main/default/objects/DelegatedAccount/**
+# EmpUserProvisionProcessErr — permanently excluded: Salesforce Identity Connect feature not enabled on target
+force-app/main/default/objects/EmpUserProvisionProcessErr/**
+# EngagementChannelType — permanently excluded: Consent Management / Marketing Cloud feature not enabled on target
+force-app/main/default/objects/EngagementChannelType/**
+# Event.IsVisibleInSelfService
+force-app/main/default/objects/Event/fields/IsVisibleInSelfService.field-meta.xml
+# Expense__c — unblocked Phase 31 (rollup cap raised; master-detail to Package__c)
+# force-app/main/default/objects/Expense__c/**
+# FlowOrchestrationLog — unblocked Phase 48: sharingModel + externalSharingModel changed ReadWrite→ControlledByParent
+# force-app/main/default/objects/FlowOrchestrationLog/**
+# HRMutation__c — unblocked Phase 23 (deps: Contact, Account, CostCenter__c, EmployeeCosts__c — all on target)
+# ILVPos__c — unblocked Phase 31 (rollup cap raised; master-detail to Invoice__c + Package__c)
+# force-app/main/default/objects/ILVPos__c/**
+# Individual — permanently excluded: Privacy / Data Subject feature not enabled on target (not a valid sObject type)
+force-app/main/default/objects/Individual/**
+# Inventory__c — unblocked Phase 22 (all deps: Account, Contact, Contract__c — all on target)
+# InvoicePos__c — unblocked Phase 31 (rollup cap raised; master-detail to Invoice__c, lookup to Package__c)
+# force-app/main/default/objects/InvoicePos__c/**
+# Invoice__c — unblocked Phase 31 (rollup cap raised; all fields deployable)
+# force-app/main/default/objects/Invoice__c/**
+# Invoice__c.IN012_Count_Status_Draft_Invoice — unblocked Phase 31 (rollup fields now deployed)
+# force-app/main/default/objects/Invoice__c/validationRules/IN012_Count_Status_Draft_Invoice.validationRule-meta.xml
+# Invoice__c.IN013_Count_Status_Draft_ILV — unblocked Phase 31 (rollup fields now deployed)
+# force-app/main/default/objects/Invoice__c/validationRules/IN013_Count_Status_Draft_ILV.validationRule-meta.xml
+# Invoice__c.Meine_Rechnungen — permanently excluded: "Invalid scope:Mine, not allowed on Invoice__c" (platform limitation on custom objects)
+force-app/main/default/objects/Invoice__c/listViews/Meine_Rechnungen.listView-meta.xml
+# Lead — unblocked Phase 25 (42 custom fields, no excluded object deps; business processes, compact layout, record types, list views co-deployed)
+# Lead.IndividualId — privacy field, keep excluded
+force-app/main/default/objects/Lead/fields/IndividualId.field-meta.xml
+# LearningAssignment — permanently excluded: myTrailhead Enterprise feature not enabled on target (not a valid sObject type)
+force-app/main/default/objects/LearningAssignment/**
+# LearningAssignmentProgress — permanently excluded: myTrailhead Enterprise feature not enabled on target
+force-app/main/default/objects/LearningAssignmentProgress/**
+# LearningItem — permanently excluded: myTrailhead Enterprise feature not enabled on target
+force-app/main/default/objects/LearningItem/**
+# LearningLinkProgress — permanently excluded: myTrailhead Enterprise feature not enabled on target
+force-app/main/default/objects/LearningLinkProgress/**
+# Location — permanently excluded: Field Service (FSL) feature not enabled on target (not a valid sObject type)
+force-app/main/default/objects/Location/**
+# Location.VisitorAddressId — permanently excluded: Location object itself excluded
+force-app/main/default/objects/Location/fields/VisitorAddressId.field-meta.xml
+# NamespaceRegistry — permanently excluded: DevHub-specific, not a valid sObject type on target
+force-app/main/default/objects/NamespaceRegistry/**
+# NetworkMember — permanently excluded: Experience Cloud / Communities feature not enabled on target
+force-app/main/default/objects/NetworkMember/**
+# NetworkMemberChunk — permanently excluded: Experience Cloud / Communities feature not enabled on target
+force-app/main/default/objects/NetworkMemberChunk/**
+# Opportunity.Add_Packages — unblocked Phase 42 (references AddBundlePackagePage VF page, deployed)
+# force-app/main/default/objects/Opportunity/webLinks/Add_Packages.webLink-meta.xml
+# Opportunity.BLC_Services — unblocked Phase 26 (BusinessProcess BLC-Services in manifest; all picklist fields deployed)
+# force-app/main/default/objects/Opportunity/recordTypes/BLC_Services.recordType-meta.xml
+# Opportunity.GB_CH_Lizenzen — unblocked Phase 26 (BusinessProcess GB-BrandMaker License in manifest; all picklist fields deployed)
+# force-app/main/default/objects/Opportunity/recordTypes/GB_CH_Lizenzen.recordType-meta.xml
+# Opportunity.My_Opportunities_FC_SAS_Lizenzen — unblocked Phase 42 (RT ID replaced 012b0000000cWvc→012Vj00000C1Km4IAF)
+# force-app/main/default/objects/Opportunity/listViews/My_Opportunities_FC_SAS_Lizenzen.listView-meta.xml
+# OpportunityBundle__c — unblocked Phase 23 (standalone, no dependencies)
+# Package__c — unblocked Phase 31 (rollup cap raised; all fields + rollups deployable)
+# force-app/main/default/objects/Package__c/**
+# Package__c.BudgetOpenTotalSupplierCosts__c — unblocked Phase 31 (formula: ServicesTotalSupplierCosts__c rollup co-deployed)
+# force-app/main/default/objects/Package__c/fields/BudgetOpenTotalSupplierCosts__c.field-meta.xml
+# Package__c.BudgetOpenTotalTime__c — unblocked Phase 31 (formula: ServicesTotalTime__c rollup co-deployed)
+# force-app/main/default/objects/Package__c/fields/BudgetOpenTotalTime__c.field-meta.xml
+# Package__c.BudgetTimeOpenForecastAmount__c — unblocked Phase 31 (formula: ServicesTotalTime__c rollup co-deployed)
+# force-app/main/default/objects/Package__c/fields/BudgetTimeOpenForecastAmount__c.field-meta.xml
+# Package__c.BudgetTimeOverrunAmount__c — unblocked Phase 31 (formula: ServicesTotalTime__c rollup co-deployed)
+# force-app/main/default/objects/Package__c/fields/BudgetTimeOverrunAmount__c.field-meta.xml
+# Package__c.Mein_Feriensaldo — permanently excluded: "Invalid scope:Mine, not allowed on Package__c" (platform limitation on custom objects)
+force-app/main/default/objects/Package__c/listViews/Mein_Feriensaldo.listView-meta.xml
+# Package__c.Meine_Leistungen — permanently excluded: "Invalid scope:Mine, not allowed on Package__c" (platform limitation on custom objects)
+force-app/main/default/objects/Package__c/listViews/Meine_Leistungen.listView-meta.xml
+# Package__c.Meine_Leistungen_Offen — permanently excluded: "Invalid scope:Mine, not allowed on Package__c" (platform limitation on custom objects)
+force-app/main/default/objects/Package__c/listViews/Meine_Leistungen_Offen.listView-meta.xml
+# Package__c.Meine_Lizenz_Dir_Leistungen_Segm — permanently excluded: "Invalid scope:Mine, not allowed on Package__c" (platform limitation on custom objects)
+force-app/main/default/objects/Package__c/listViews/Meine_Lizenz_Dir_Leistungen_Segm.listView-meta.xml
+# Package__c.Meine_Lizenz_Prov_Leistungen_Segm — permanently excluded: "Invalid scope:Mine, not allowed on Package__c" (platform limitation on custom objects)
+force-app/main/default/objects/Package__c/listViews/Meine_Lizenz_Prov_Leistungen_Segm.listView-meta.xml
+# Package__c.Meine_Zeit_Leistungen_Segmentierung — permanently excluded: "Invalid scope:Mine, not allowed on Package__c" (platform limitation on custom objects)
+force-app/main/default/objects/Package__c/listViews/Meine_Zeit_Leistungen_Segmentierung.listView-meta.xml
+# Package__c.PA017_Has_Invoice_Or_ILV_Status_Draft_1 — unblocked Phase 31 (rollup fields co-deployed)
+# force-app/main/default/objects/Package__c/validationRules/PA017_Has_Invoice_Or_ILV_Status_Draft_1.validationRule-meta.xml
+# Package__c.PA027_Has_Invoice_Or_ILV_Status_Draft_2 — unblocked Phase 31 (rollup fields co-deployed)
+# force-app/main/default/objects/Package__c/validationRules/PA027_Has_Invoice_Or_ILV_Status_Draft_2.validationRule-meta.xml
+# Package__c.ServicesTotalAmountCHF__c — unblocked Phase 31 (rollup fields co-deployed)
+# force-app/main/default/objects/Package__c/fields/ServicesTotalAmountCHF__c.field-meta.xml
+# Package__c.ServicesTotalAmount__c — unblocked Phase 31 (rollup fields co-deployed)
+# force-app/main/default/objects/Package__c/fields/ServicesTotalAmount__c.field-meta.xml
+# Package__c.ServicesTotalSupplierCostsCHF__c — unblocked Phase 31 (rollup from SupplierCosts__c.PackageName__c co-deployed)
+# force-app/main/default/objects/Package__c/fields/ServicesTotalSupplierCostsCHF__c.field-meta.xml
+# Package__c.ServicesTotalSupplierCosts__c — unblocked Phase 31 (rollup from SupplierCosts__c.PackageName__c co-deployed)
+# force-app/main/default/objects/Package__c/fields/ServicesTotalSupplierCosts__c.field-meta.xml
+# Package__c.ServicesTotalTimeCHF__c — unblocked Phase 31 (rollup from Time__c.Package__c co-deployed)
+# force-app/main/default/objects/Package__c/fields/ServicesTotalTimeCHF__c.field-meta.xml
+# Package__c.ServicesTotalTime__c — unblocked Phase 31 (rollup from Time__c.Package__c co-deployed)
+# force-app/main/default/objects/Package__c/fields/ServicesTotalTime__c.field-meta.xml
+# Package__c.ValCountHasILVDraft__c — unblocked Phase 31 (cross-obj formula to Project__c.ValCountHasILVDraft__c co-deployed)
+# force-app/main/default/objects/Package__c/fields/ValCountHasILVDraft__c.field-meta.xml
+# Package__c.ValCountHasInvoiceDraft__c — unblocked Phase 31 (cross-obj formula to Project__c.ValCountHasInvoiceDraft__c co-deployed)
+# force-app/main/default/objects/Package__c/fields/ValCountHasInvoiceDraft__c.field-meta.xml
+# Package__c.ValPackageLockedInvoiceDraft__c — unblocked Phase 31 (cross-obj formula to Project__c rollups co-deployed)
+# force-app/main/default/objects/Package__c/fields/ValPackageLockedInvoiceDraft__c.field-meta.xml
+# PartyConsent — permanently excluded: Consent Management feature not enabled on target (not a valid sObject type)
+force-app/main/default/objects/PartyConsent/**
+# PersonalRelation__c.Contact__c — unblocked Phase 27 (Contact now deployed Phase 24; "Private Contact" removed from lookupFilter value)
+# force-app/main/default/objects/PersonalRelation__c/fields/Contact__c.field-meta.xml
+# PricebookEntry.BLC_Test_Pricebook — permanently excluded: filterScope=Queue references "BLC - Test Pricebook" queue (not in source, not on target)
+force-app/main/default/objects/PricebookEntry/listViews/BLC_Test_Pricebook.listView-meta.xml
+# PricebookEntry.GBCH_Analytics_Pricebook — permanently excluded: filterScope=Queue references "GBCH - Analytics" queue (not in source, not on target)
+force-app/main/default/objects/PricebookEntry/listViews/GBCH_Analytics_Pricebook.listView-meta.xml
+# PricebookEntry.HBC_Brand_Design_Pricebook — permanently excluded: filterScope=Queue references "HBC - Brand Design" queue (not in source, not on target)
+force-app/main/default/objects/PricebookEntry/listViews/HBC_Brand_Design_Pricebook.listView-meta.xml
+# ProjectEmployeeRate__c.Project_Employee_Rate — unblocked Phase 41 (filterScope=Everything; Skywalk_FIN_Alle group deployed)
+# force-app/main/default/objects/ProjectEmployeeRate__c/listViews/Project_Employee_Rate.listView-meta.xml
+# Project__c — unblocked Phase 31 (rollup cap raised; all rollup fields now deployable)
+# force-app/main/default/objects/Project__c/**
+# Project__c.BudgetAssignTotalSupplierCosts__c — unblocked Phase 31 (rollup from Package__c.ProjectName__c co-deployed)
+# force-app/main/default/objects/Project__c/fields/BudgetAssignTotalSupplierCosts__c.field-meta.xml
+# Project__c.BudgetOpenTotalExpenseCHF__c — unblocked Phase 31 (formula refs Package__c rollups co-deployed)
+# force-app/main/default/objects/Project__c/fields/BudgetOpenTotalExpenseCHF__c.field-meta.xml
+# Project__c.BudgetOpenTotalSupplierCostsCHF__c — unblocked Phase 31 (formula refs Package__c rollups co-deployed)
+# force-app/main/default/objects/Project__c/fields/BudgetOpenTotalSupplierCostsCHF__c.field-meta.xml
+# Project__c.BudgetOpenTotalSupplierCosts__c — unblocked Phase 31 (formula refs Package__c rollups co-deployed)
+# force-app/main/default/objects/Project__c/fields/BudgetOpenTotalSupplierCosts__c.field-meta.xml
+# Project__c.BudgetOpenTotalTimeCHF__c — unblocked Phase 31 (formula refs Package__c rollups co-deployed)
+# force-app/main/default/objects/Project__c/fields/BudgetOpenTotalTimeCHF__c.field-meta.xml
+# Project__c.BudgetOpenTotalTime__c — unblocked Phase 31 (formula refs Package__c rollups co-deployed)
+# force-app/main/default/objects/Project__c/fields/BudgetOpenTotalTime__c.field-meta.xml
+# Project__c.HBC_bersicht_Abrechnen_ALLE — unblocked Phase 31 (rollup fields co-deployed)
+# force-app/main/default/objects/Project__c/listViews/HBC_bersicht_Abrechnen_ALLE.listView-meta.xml
+# Project__c.PR011_Locked_Invoice_Or_ILV_Status — unblocked Phase 31 (rollup fields co-deployed)
+# force-app/main/default/objects/Project__c/validationRules/PR011_Locked_Invoice_Or_ILV_Status.validationRule-meta.xml
+# Project__c.ServiceTotalAmountCHFBP__c — unblocked Phase 31 (rollup from Package__c.ProjectName__c co-deployed)
+# force-app/main/default/objects/Project__c/fields/ServiceTotalAmountCHFBP__c.field-meta.xml
+# Project__c.ServiceTotalTimeCHFBP__c — unblocked Phase 31 (rollup from Package__c.ProjectName__c co-deployed)
+# force-app/main/default/objects/Project__c/fields/ServiceTotalTimeCHFBP__c.field-meta.xml
+# Project__c.ServicesTotalAmountCHF__c — unblocked Phase 31 (rollup from Package__c.ProjectName__c co-deployed)
+# force-app/main/default/objects/Project__c/fields/ServicesTotalAmountCHF__c.field-meta.xml
+# Project__c.ServicesTotalAmount__c — unblocked Phase 31 (rollup from Package__c.ProjectName__c co-deployed)
+# force-app/main/default/objects/Project__c/fields/ServicesTotalAmount__c.field-meta.xml
+# Project__c.ServicesTotalExpenseCHF__c — unblocked Phase 31 (rollup from Package__c.ProjectName__c co-deployed)
+# force-app/main/default/objects/Project__c/fields/ServicesTotalExpenseCHF__c.field-meta.xml
+# Project__c.ServicesTotalSupplierCostsCHF__c — unblocked Phase 31 (rollup from Package__c.ProjectName__c co-deployed)
+# force-app/main/default/objects/Project__c/fields/ServicesTotalSupplierCostsCHF__c.field-meta.xml
+# Project__c.ServicesTotalSupplierCosts__c — unblocked Phase 31 (rollup from Package__c.ProjectName__c co-deployed)
+# force-app/main/default/objects/Project__c/fields/ServicesTotalSupplierCosts__c.field-meta.xml
+# Project__c.ServicesTotalTimeCHF__c — unblocked Phase 31 (rollup from Package__c.ProjectName__c co-deployed)
+# force-app/main/default/objects/Project__c/fields/ServicesTotalTimeCHF__c.field-meta.xml
+# Project__c.ServicesTotalTime__c — unblocked Phase 31 (rollup from Package__c.ProjectName__c co-deployed)
+# force-app/main/default/objects/Project__c/fields/ServicesTotalTime__c.field-meta.xml
+# Project__c.ValCountHasILVDraft__c — unblocked Phase 31 (rollup from Invoice__c.ProjectName__c co-deployed)
+# force-app/main/default/objects/Project__c/fields/ValCountHasILVDraft__c.field-meta.xml
+# Project__c.ValCountHasInvoiceDraft__c — unblocked Phase 31 (rollup from Invoice__c.ProjectName__c co-deployed)
+# force-app/main/default/objects/Project__c/fields/ValCountHasInvoiceDraft__c.field-meta.xml
+# Project__c.interne_Projekte — unblocked Phase 31 (rollup fields co-deployed)
+# force-app/main/default/objects/Project__c/listViews/interne_Projekte.listView-meta.xml
+# Quote.Add_Packages_For_Quote — unblocked Phase 42 (references AddBundlePackagePageforQuote VF page, deployed)
+# force-app/main/default/objects/Quote/webLinks/Add_Packages_For_Quote.webLink-meta.xml
+# ResourceForecast__c — unblocked Phase 23 (deps: Opportunity — standard, on target)
+# SIMSettings__c — unblocked Phase 23 (custom setting, visibility changed Protected→Public)
+# ScratchOrgInfo — permanently excluded: DevHub-specific, not a valid sObject type on target
+force-app/main/default/objects/ScratchOrgInfo/**
+# Segment__c — unblocked Phase 23 (standalone, no dependencies)
+# Seller — permanently excluded: Revenue Cloud feature not enabled on target (not a valid sObject type)
+force-app/main/default/objects/Seller/**
+# StreamActivityAccess.ActivityTeamId
+force-app/main/default/objects/StreamActivityAccess/fields/ActivityTeamId.field-meta.xml
+# SupplierCosts__c — unblocked Phase 22 (/** wildcard removed; cross-object formula fields excluded at bottom of file)
+# SupplierInvoice__c — unblocked Phase 22 (deploying with SupplierCosts__c together)
+# Task.IsVisibleInSelfService
+force-app/main/default/objects/Task/fields/IsVisibleInSelfService.field-meta.xml
+# Time__c — unblocked Phase 22; Time__c.Package__c + ProjectNr__c restored Phase 31 (Package__c now deployed)
+# Time__c.Package__c — unblocked Phase 31 (Package__c now co-deployed)
+# force-app/main/default/objects/Time__c/fields/Package__c.field-meta.xml
+# Time__c.ProjectNr__c — unblocked Phase 31 (cross-object formula via Package__c now valid)
+# force-app/main/default/objects/Time__c/fields/ProjectNr__c.field-meta.xml
+# TriggerSettings__c — unblocked Phase 22 (simple custom settings, no dependencies)
+# UnitRelation__c — unblocked Phase 22 (deps: Account, Contact — both on target)
+# User.IndividualId
+force-app/main/default/objects/User/fields/IndividualId.field-meta.xml
+# User.PortalRole
+force-app/main/default/objects/User/fields/PortalRole.field-meta.xml
+# UserAdmin__c — unblocked Phase 23 (custom setting, visibility changed Protected→Public)
+# WorkBadge — unblocked Phase 42 (Chatter/WDC enabled on target)
+# force-app/main/default/objects/WorkBadge/**
+# WorkBadgeDefinition — unblocked Phase 42
+# force-app/main/default/objects/WorkBadgeDefinition/**
+# WorkThanks — unblocked Phase 42
+# force-app/main/default/objects/WorkThanks/**
+
+# --- GlobalValueSet (duplicate label, fixable in source) ---
+# serverType — unblocked Phase 47: retrieved from target (fullName reconciled: Magnolia CMS, censhare..., other...); now matches target exactly
+# force-app/main/default/globalValueSets/serverType.globalValueSet-meta.xml
+
+# Chatter classes are now re-included after Chatter was enabled on target (2026-04-29).
+# Reverted patch #1 from TARGET_COMPAT_NOTES.md.
+
+# Triggers previously excluded here are now re-included.
+# TriggerCoverageTest.cls provides the required ≥1% coverage for each.
+
+# === Phase 2: Non-Apex metadata exclusions (2026-04-29) ===
+# All items below failed validate against targegt-org. Grouped by root cause.
+
+# --- Reports & Dashboards (attempting deploy) ---
+# force-app/main/default/reports/**
+# force-app/main/default/reportTypes/**
+# force-app/main/default/dashboards/**
+
+# --- Connected Apps (cannot create — org-locked; requires Salesforce Support ticket for ALL apps) ---
+# Applies to all 13 on-disk apps incl. simple bookmark-style ones (tested in Phase 54, same error)
+force-app/main/default/connectedApps/**
+
+# --- Communities / Experience Cloud (not enabled on target) ---
+force-app/main/default/networks/**
+force-app/main/default/communities/**
+force-app/main/default/siteDotComSites/**
+force-app/main/default/navigationMenus/**
+force-app/main/default/networkBranding/**
+force-app/main/default/audience/**
+force-app/main/default/managedTopics/**
+
+# --- Data.com / Clean Data (not available on target edition) ---
+force-app/main/default/cleanDataServices/**
+
+# --- CMS / Managed Content (cannot update via API) ---
+force-app/main/default/managedContentTypes/**
+
+# --- Notification Config — unblocked Phase 42 (templatized_data_alert block stripped) ---
+# force-app/main/default/notificationTypeConfig/**
+
+# --- Email Services ---
+# EmailToCase — re-excluded: creating a new EmailServicesFunction without apexClass fails ("An Apex Class must be specified")
+#   Standard Email-to-Case routing is configured via UI, not via this metadata type
+# Email2BLCTicket — unblocked Phase 29 (Email-to-Case enabled; emailServicesAddresses stripped — runAsUser andre.ryf not on target)
+# EmailToSalesforce — permanently excluded: "An Apex Class must be specified when creating an Email Service" (standard service cannot be deployed via API)
+force-app/main/default/emailservices/EmailToCase.xml-meta.xml
+force-app/main/default/emailservices/EmailToSalesforce.xml-meta.xml
+
+# --- Org Settings: safe subset deployed Phase 43 via targeted manifest; risky ones remain excluded ---
+# Permanently excluded (features not available on target): Communities, Einstein, Pardot, Blockchain, DevHub, etc.
+# force-app/main/default/settings/**
+
+# --- Apex Email Notifications — unblocked Phase 42 (maria+blc@ user + Gearset email stripped; 2 email-only entries kept) ---
+# force-app/main/default/apexEmailNotifications/**
+
+# --- Profile Password / Session Policies — unblocked Phase 43 (only matching-profile files deployed via manifest) ---
+# force-app/main/default/profilePasswordPolicies/**
+# force-app/main/default/profileSessionSettings/**
+
+# --- Translations: Translation Workbench enabled on target (2026-05-06) ---
+# All objectTranslations unblocked (deployed Phase 38)
+# Package__c/Project__c unblocked: objects now fully deployed
+# force-app/main/default/objectTranslations/Package__c-de/**
+# force-app/main/default/objectTranslations/Package__c-en_US/**
+# force-app/main/default/objectTranslations/Project__c-de/**
+# force-app/main/default/objectTranslations/Project__c-en_US/**
+# Global translations + GVS/SVS translations unblocked Phase 39
+# force-app/main/default/translations/**
+# force-app/main/default/globalValueSetTranslations/**
+# force-app/main/default/standardValueSetTranslations/**
+
+# --- SAML SSO Configs (insufficient access rights on cross-reference org) ---
+force-app/main/default/samlssoconfigs/**
+
+# --- Sites (no Network named BLC found on target) ---
+force-app/main/default/sites/**
+
+# --- Workflows: fixed OrgWideEmailAddress→CurrentUser, deactivated time-triggered and Jigsaw rules ---
+# force-app/main/default/workflows/**  (re-enabled 2026-04-29)
+
+# --- Flows: 44 processType=Workflow (Process Builder) flows permanently excluded ---
+# Active PB flows: RTF equivalents already deployed on target (Phases 31-32, 37) handle same logic.
+# Obsolete PB flows: retired in source; no RTF equivalents needed.
+# The areMetricsLoggedToDataCloud property (added retroactively at source) also blocks v60 deploy for many.
+# Deploying Active PB flows alongside their RTF equivalents would cause duplicate field updates.
+force-app/main/default/flowDefinitions/**
+# AbacusInterfaceAccountUpsert(Supplier) — unblocked Phase 31 (AutoLaunchedFlow; Account + Task — all deployed)
+# force-app/main/default/flows/AbacusInterfaceAccountUpsertSupplier.flow-meta.xml
+# force-app/main/default/flows/AbacusInterfaceAccountUpsert.flow-meta.xml
+# AccountBillingAddress — unblocked Phase 23 (Account-only, no custom field dependencies)
+# AccountContactAddressUpdateMass — unblocked Phase 23 (Account/Contact standard fields only)
+# AccountNameUpdatePrivateAccount — unblocked Phase 23 (Account-only)
+# AccountShortNameUpdate — unblocked Phase 23 (Account-only)
+# CaseQueueAssign — unblocked Phase 25 (Case object + standard fields only)
+# CaseQueueAssignmentOwner — unblocked Phase 25 (Case object + standard fields only)
+# AccountDataComLocationiAddress — unblocked Phase 25 (Account + Contact standard fields only)
+# ContactInternalEmployeeCostsCreate — unblocked Phase 24 (Contact.Timetracker* fields now co-deployed)
+# ContactInternalUpdateRelatedUser — unblocked Phase 23 (reads standard Contact fields, writes User.Phone_external__c which is deployed)
+# ContactRecordTypeUpdateSummaryAccount — unblocked Phase 23 (RecordType only, no custom fields)
+# ContractOwnerUpdate — unblocked Phase 25 (Contract + User standard fields only)
+# ContactAddressUpdateFromAccount — unblocked Phase 25 (Contact + Account standard fields only)
+# ContractUpdateOwnerWithContractPartnerInternal — unblocked Phase 25 (Contract + Contact standard fields)
+# EmployeeCostsUpdateContacts — unblocked Phase 24 (Contact.Timetracker* + Contact.EmployeeCosts__c now co-deployed)
+# ContactSummary — unblocked Phase 24 (Contact.Location*__c + Contact.Other*__c fields now co-deployed)
+force-app/main/default/flows/ExpenseIsInBillingPeriod.flow-meta.xml
+# HRMutation — unblocked Phase 23 (triggered by HRMutation__c which is co-deployed)
+force-app/main/default/flows/InvoiceAbacusPaymentInformation.flow-meta.xml
+force-app/main/default/flows/InvoiceCancellationFinanceDateToday.flow-meta.xml
+force-app/main/default/flows/InvoiceContractPartnerAbacusDebtorTrue.flow-meta.xml
+force-app/main/default/flows/InvoiceCancellation.flow-meta.xml
+force-app/main/default/flows/InvoiceIsInBilliingPeriod.flow-meta.xml
+force-app/main/default/flows/ExpenseCarTravelPaymentTypePrivate.flow-meta.xml
+force-app/main/default/flows/InvoicePosInheritSupplierGroupFlagFromPackageOnInvoiceCreation.flow-meta.xml
+force-app/main/default/flows/InvoicePositionAmountVAT.flow-meta.xml
+force-app/main/default/flows/InvoiceInvoiceReceiverUpdateGetAddress.flow-meta.xml
+force-app/main/default/flows/ILVDocumentNrSearch.flow-meta.xml
+# OpportunitySetProjectStartToCloseDateIfEmpty — unblocked Phase 25 (Opportunity standard fields only)
+force-app/main/default/flows/InvoicePosServiceNameInherit.flow-meta.xml
+force-app/main/default/flows/InvoiceCancellationTotalAmountNetCHF.flow-meta.xml
+force-app/main/default/flows/InvoiceVATPercent.flow-meta.xml
+force-app/main/default/flows/InvoiceNrSearch.flow-meta.xml
+force-app/main/default/flows/PackageSupplierCostsAbacusInbox.flow-meta.xml
+# OpportunityCalcuateForeCastingCurrentYear — unblocked Phase 25 (Opportunity standard fields only)
+force-app/main/default/flows/PackageGroupStatusClosedInheritToServices.flow-meta.xml
+force-app/main/default/flows/InvoiceStatusSentToAbacusWhenTransferDateNotNull.flow-meta.xml
+force-app/main/default/flows/ProjectForecastMoveMonth.flow-meta.xml
+force-app/main/default/flows/ProjectContractPartnerSearch.flow-meta.xml
+force-app/main/default/flows/PackageGroupShowFieldsTrue.flow-meta.xml
+force-app/main/default/flows/ProjectResponsible.flow-meta.xml
+force-app/main/default/flows/ProjectDefaultInvoiceTitleNull.flow-meta.xml
+force-app/main/default/flows/ProjectInvoiceContactInternalNull.flow-meta.xml
+force-app/main/default/flows/ProjectCYProjectStatusClosed.flow-meta.xml
+force-app/main/default/flows/ProjectOwnerUpdateWithResponsible.flow-meta.xml
+force-app/main/default/flows/ProjectUpdateInvoiceReceiverProjectPartner.flow-meta.xml
+force-app/main/default/flows/ProjectInheritResponisbleToPackage.flow-meta.xml
+force-app/main/default/flows/ProjectUpdateProjectNameToService.flow-meta.xml
+# QuoteLineItemExpenseAllowanceCalc2 — unblocked Phase 26 (Package__c ref is field ExpenseAllowancePackage__c on QuoteLineItem, NOT the excluded Package__c object)
+# force-app/main/default/flows/QuoteLineItemExpenseAllowanceCalc2.flow-meta.xml
+# QuoteLineItemProjectManagementAllowanceCalc2 — unblocked Phase 26 (Package__c ref is field ProjectManagementAllowancePackage__c on QuoteLineItem, NOT the excluded Package__c object)
+# force-app/main/default/flows/QuoteLineItemProjectManagementAllowanceCalc2.flow-meta.xml
+force-app/main/default/flows/ProjectStatusClosedInheritToServices.flow-meta.xml
+# SupplierCostsEmailInformationAbacusVISA — unblocked Phase 25 (SupplierCosts__c now deployed; no excluded field deps)
+# QuoteLineItemCopyProductInformation — unblocked Phase 25 (Quote + ExpenseAllowancePackage__c + ProjectManagementAllowancePackage__c all deployed)
+force-app/main/default/flows/ServiceUpdateProjectNameSearch.flow-meta.xml
+# Account_Update_Email_Previous_Current_Owner — unblocked Phase 59 (apiVersion 64→60, areMetricsLoggedToDataCloud stripped)
+# QLI_Calculate_PM_fee — unblocked Phase 59 (apiVersion 64→60, areMetricsLoggedToDataCloud stripped)
+# ScreenFlowInvoiceButton — unblocked Phase 59 (apiVersion 61→60, offset+areMetricsLoggedToDataCloud+styleProperties stripped)
+# Amount_GB_License — unblocked Phase 60: hardcoded source RT ID 012b0000000cQ3P replaced with
+#   target GB_CH_Lizenzen RT ID 012Vj00000C1Km4IAF; apiVersion 64→60; areMetricsLoggedToDataCloud stripped
+# force-app/main/default/flows/Amount_GB_License.flow-meta.xml
+# TimeIsInBillingPeriod — unblocked Phase 25 (Time__c now deployed)
+# SupplierCostsIsInBillingPeriod — unblocked Phase 25 (SupplierCosts__c now deployed)
+# SupplierCostsAutoFill — unblocked Phase 25 (SupplierCosts__c now deployed)
+# TimeUpdateLastTimeCardContact — unblocked Phase 25 (Time__c + Contact now deployed)
+# SupplierCostsEmailInformationProjectManager — unblocked Phase 25 (SupplierCosts__c now deployed)
+# TalendExchangeRateNotImported — unblocked Phase 25 (no excluded object deps)
+
+# --- Profiles: IsSsoEnabled + EnableCommunityAppLauncher stripped; now included in deploy ---
+# force-app/main/default/profiles/**
+# Force.com App Subscription User: %2E filename confuses CLI zip builder; already exists on target
+force-app/main/default/profiles/Force%2Ecom - App Subscription User.profile-meta.xml
+
+# --- Queues: user members stripped; now deployable ---
+# force-app/main/default/queues/**
+
+# --- Assignment Rules (AssignedTo user rene.affolter@gateb.com not found) ---
+# Lead.assignmentRules — unblocked Phase 38 (rene.affolter replaced with sven.boesiger1; sarah/Jigsaw rule dropped)
+# Note: forceignore path was wrong (Lead.rules-meta.xml) — actual file Lead.assignmentRules-meta.xml was never blocked
+
+# --- Auto Response Rules ---
+# force-app/main/default/autoResponseRules/**
+# Case.autoResponseRules — deployed Phase 58 (Email-to-Case routing address configured by admin 2026-05-07)
+
+# --- Sharing Rules: queue refs will be resolved once queues deploy ---
+# force-app/main/default/sharingRules/**
+
+# --- Lead Convert Settings (custom field mappings stripped since Lead fields not on target) ---
+# force-app/main/default/LeadConvertSettings/**
+
+# --- SSL Certificates (org-specific, cannot be transferred) ---
+force-app/main/default/certs/**
+
+# --- Custom Indexes (org-specific, reference org's internal IDs) ---
+force-app/main/default/customindex/**
+
+# --- Forecasting Types (trying deploy — all active=false) ---
+# force-app/main/default/forecastingTypes/**
+
+# --- Topics For Objects (trying deploy) ---
+# force-app/main/default/topicsForObjects/**
+
+# --- Standard Value Sets (Libya country name conflict in Address) ---
+force-app/main/default/standardValueSets/Address.standardValueSet-meta.xml
+
+# --- AppMenus — unblocked Phase 42 (all ConnectedApp + Network entries stripped; Console_App removed) ---
+# force-app/main/default/appMenus/AppSwitcher.appMenu-meta.xml
+
+# --- ContentAssets used only by excluded apps (GroupHR, GroupIT logos) ---
+# BLC + BLC1 unblocked Phase 39 (GroupHR + GroupIT apps unblocked; logos now needed)
+# force-app/main/default/contentassets/BLC.asset
+# force-app/main/default/contentassets/BLC.asset-meta.xml
+# force-app/main/default/contentassets/BLC1.asset
+# force-app/main/default/contentassets/BLC1.asset-meta.xml
+
+# --- Named Credentials (password required — permanently excluded; Salesforce Metadata API requires password for protocol=Password) ---
+force-app/main/default/namedCredentials/Heroku_QR_Bill_code.namedCredential-meta.xml
+
+# Skills__c-Motivation %2F Personal Interests Detail — %2F filename encoding bug (same as Force%2Ecom profile)
+force-app/main/default/layouts/Skills__c-Motivation %2F Personal Interests Detail.layout-meta.xml
+
+# --- Layouts for objects already excluded from deploy ---
+force-app/main/default/layouts/AccountBrand-*.layout-meta.xml
+force-app/main/default/layouts/Address-Address%20Layout.layout-meta.xml
+force-app/main/default/layouts/BusinessBrand-*.layout-meta.xml
+force-app/main/default/layouts/ContactPointAddress-*.layout-meta.xml
+force-app/main/default/layouts/ContactPointEmail-*.layout-meta.xml
+force-app/main/default/layouts/ContactPointPhone-*.layout-meta.xml
+force-app/main/default/layouts/ContactPointTypeConsent-*.layout-meta.xml
+force-app/main/default/layouts/Customer-*.layout-meta.xml
+force-app/main/default/layouts/DataUseLegalBasis-*.layout-meta.xml
+force-app/main/default/layouts/DelegatedAccount-*.layout-meta.xml
+force-app/main/default/layouts/EmpUserProvisionProcessErr-*.layout-meta.xml
+force-app/main/default/layouts/EmpUserProvisioningProcess-*.layout-meta.xml
+force-app/main/default/layouts/Individual-*.layout-meta.xml
+force-app/main/default/layouts/Seller-*.layout-meta.xml
+
+# --- Layouts referencing excluded custom fields ---
+# Package__c layouts — unblocked Phase 34 (all Package__c fields deployed Phase 31)
+# force-app/main/default/layouts/Package__c-*.layout-meta.xml
+# Project__c layouts — unblocked Phase 34 (all Project__c rollup fields deployed Phase 31)
+# force-app/main/default/layouts/Project__c-*.layout-meta.xml
+# User-User%20Layout — commented out Phase 46: space-named file already deployed Phase 22; %20 pattern wouldn't match anyway
+# force-app/main/default/layouts/User-User%20Layout.layout-meta.xml
+force-app/main/default/layouts/Location-Location%20Layout.layout-meta.xml
+# SalesforceInvoice layout — permanently excluded (standard SalesforceInvoice object not available on target; deploy returns "unexpected error")
+force-app/main/default/layouts/SalesforceInvoice-*.layout-meta.xml
+# Inventory__c-Printer%20Layout — unblocked Phase 25 (Inventory__c deployed Phase 22; layout has no excluded field deps)
+# Contract-Contract%20Layout — unblocked (same file as Contract-Contract Layout below, now fixed)
+# Quote-Quote Layout — unblocked Phase 41 (Add_Packages_For_Quote button stripped from layout)
+# force-app/main/default/layouts/Quote-Quote%20Layout.layout-meta.xml
+# Contract-Contract Layout — unblocked Phase 22 (ActivatedDate/ActivatedById stripped from XML)
+# CampaignMember layouts — unblocked Phase 28 (removed excludeButtons>Create_Opportunity from all 5 layouts; all custom fields are in manifest)
+# force-app/main/default/layouts/CampaignMember-*.layout-meta.xml
+
+# --- FlexiPages referencing excluded list views or reports ---
+# Home — unblocked Phase 41 (standard components only; Project__c deployed)
+# force-app/main/default/flexipages/Home.flexiPage-meta.xml
+# Package_Record_Page — unblocked Phase 34 (Package__c fully deployed)
+# force-app/main/default/flexipages/Package_Record_Page.flexiPage-meta.xml
+# Project_Manager_One_App_Page — unblocked Phase 34 (Project__c fully deployed)
+# force-app/main/default/flexipages/Project_Manager_One_App_Page.flexiPage-meta.xml
+# Project_Record_Page1 — unblocked Phase 34 (Project__c fully deployed)
+# force-app/main/default/flexipages/Project_Record_Page1.flexiPage-meta.xml
+# Standard-namespace FlexiPages: cannot create via API (wrong org namespace)
+force-app/main/default/flexipages/standard__Content.flexiPage-meta.xml
+force-app/main/default/flexipages/standard__DataGovernanceConsole.flexiPage-meta.xml
+force-app/main/default/flexipages/standard__LightningService.flexiPage-meta.xml
+force-app/main/default/flexipages/standard__Optimizer.flexiPage-meta.xml
+
+# --- Permission Sets: re-enabled 2026-04-29 (fields now deployed); GroupHR ref removed from PS120 ---
+# force-app/main/default/permissionsets/BLC_Edit_all_for_Attachments_Invoice.permissionset-meta.xml
+# force-app/main/default/permissionsets/PS000AllEmployees.permissionset-meta.xml
+# force-app/main/default/permissionsets/PS100RoleProjectManager.permissionset-meta.xml
+# force-app/main/default/permissionsets/PS130RoleFinanceManager.permissionset-meta.xml
+# force-app/main/default/permissionsets/PS191_Role_Selligent_SIM.permissionset-meta.xml
+# force-app/main/default/permissionsets/PS500InternalProjects.permissionset-meta.xml
+# force-app/main/default/permissionsets/Power_BI_Integration.permissionset-meta.xml
+
+# === Phase 2b: Additional fixes from second validate run (2026-04-29) ===
+
+# --- InstalledPackages with activateRSS required field errors ---
+force-app/main/default/installedPackages/OIQ.installedPackage-meta.xml
+force-app/main/default/installedPackages/al.installedPackage-meta.xml
+force-app/main/default/installedPackages/sf_chttr_apps.installedPackage-meta.xml
+force-app/main/default/installedPackages/sf_com_apps.installedPackage-meta.xml
+
+# --- Lightning Apps (standard namespace cannot be created via API; or reference excluded FlexiPage) ---
+force-app/main/default/applications/standard__Content.app-meta.xml
+force-app/main/default/applications/standard__DataGovernanceConsole.app-meta.xml
+force-app/main/default/applications/standard__LightningService.app-meta.xml
+force-app/main/default/applications/standard__Optimizer.app-meta.xml
+# GroupFinance — unblocked Phase 39 (logo BLC2 deployed; all referenced flexipages deployed)
+# force-app/main/default/applications/GroupFinance.app-meta.xml
+# GroupHR — unblocked Phase 39 (logo BLC1 content asset unblocked)
+# force-app/main/default/applications/GroupHR.app-meta.xml
+# GroupIT — unblocked Phase 39 (logo BLC content asset unblocked)
+# force-app/main/default/applications/GroupIT.app-meta.xml
+# GroupMarketing — unblocked Phase 39 (logo BLC3 deployed)
+# force-app/main/default/applications/GroupMarketing.app-meta.xml
+
+# --- QuickAction Case.SendEmail — unblocked Phase 59 (Activities enabled Phase 43; Email-to-Case configured 2026-05-07) ---
+# force-app/main/default/quickActions/Case.SendEmail.quickAction-meta.xml
+
+# --- Assignment Rules: Lead user entries stripped; queues now deploying ---
+# force-app/main/default/assignmentRules/**
+
+# --- Layouts with spaces in filenames (the %20 entries above did not match actual paths) ---
 force-app/main/default/layouts/Address-Address Layout.layout-meta.xml
-force-app/main/default/layouts/BusinessBrand-Business Brand Layout.layout-meta.xml
-force-app/main/default/layouts/CollaborationGroup-Group Layout.layout-meta.xml
-force-app/main/default/layouts/ContactPointAddress-Contact Point Address Layout.layout-meta.xml
-force-app/main/default/layouts/ContactPointEmail-Contact Point Email Layout.layout-meta.xml
-force-app/main/default/layouts/ContactPointPhone-Contact Point Phone Layout.layout-meta.xml
-force-app/main/default/layouts/ContactPointTypeConsent-Contact Point Type Consent Layout.layout-meta.xml
-force-app/main/default/layouts/Customer-Customer Layout.layout-meta.xml
-force-app/main/default/layouts/DataUseLegalBasis-Data Use Legal Basis Layout.layout-meta.xml
-force-app/main/default/layouts/DelegatedAccount-External Managed Account Layout.layout-meta.xml
-force-app/main/default/layouts/EmpUserProvisionProcessErr-Employee User Provisioning Process Error Layout.layout-meta.xml
-force-app/main/default/layouts/EmpUserProvisioningProcess-Employee User Provisioning Process Layout.layout-meta.xml
-force-app/main/default/layouts/Individual-Individual Layout.layout-meta.xml
-force-app/main/default/layouts/Seller-Seller Layout.layout-meta.xml
-force-app/main/default/layouts/WorkAccess-Access Layout.layout-meta.xml
-force-app/main/default/layouts/WorkBadge-Badge Received Layout.layout-meta.xml
-force-app/main/default/layouts/WorkBadgeDefinition-Badge Layout.layout-meta.xml
-force-app/main/default/layouts/WorkThanks-Thanks Layout.layout-meta.xml
-force-app/main/default/layouts/SalesforceInvoice-Salesforce-Rechnung-Layout.layout-meta.xml
-**/AccountBrand*
-**/quickActions/Project__c.Billing_Draft*
-**/quickActions/Project__c.New_TimeEx*
-**/quickActions/Project__c.ILV*
-**/quickActions/Project__c.Project_Manager*
-**/quickActions/Project__c.Project_Structure*
-**/quickActions/Invoice__c.Billing_Draft*
-**/quickActions/Invoice__c.CancelInvoice*
-**/quickActions/Invoice__c.Genera_new_QR_Bill*
-**/quickActions/Package__c.New_TimeEx*
-**/quickActions/Opportunity.Add_Packages*
-**/quickActions/Quote.Add_Packages_for_Quote*
-**/quickActions/Case.SendEmail*
-**/quickActions/CollaborationGroup*
+# Case-IT Case Layout — unblocked Phase 27 (no excluded field deps; Case.ITCases RT co-deployed)
+# force-app/main/default/layouts/Case-IT Case Layout.layout-meta.xml
+# Case-SBB Case Layout — unblocked Phase 27 (no excluded field deps; Case.SBBCase RT co-deployed)
+# force-app/main/default/layouts/Case-SBB Case Layout.layout-meta.xml
+# Contract-Contract Layout — unblocked Phase 22 (ActivatedDate/ActivatedById stripped)
+# Inventory__c-Printer Layout — unblocked Phase 25 (Inventory__c deployed Phase 22; layout has no excluded field deps)
+force-app/main/default/layouts/Location-Location Layout.layout-meta.xml
+# Quote-Quote Layout — unblocked Phase 41 (Add_Packages_For_Quote button stripped)
+# force-app/main/default/layouts/Quote-Quote Layout.layout-meta.xml
+# User-User Layout — unblocked Phase 22 (IsProjectManager__c and PS460FunctionInvoiceCancel__c are deployed)
+
+# --- Account sharing rule: criteria-only rules, no SortOrder issues ---
+# force-app/main/default/sharingRules/Account.sharingRules-meta.xml
+
+# === Phase 2c: Fixes from third validate run (2026-04-29) ===
+
+# --- Duplicate Rules (Account/Contact/Lead conflict with standard rules already on target) ---
+# Unblocked Phase 41: sortOrders corrected (Account→2/3/4, Contact custom→3/4, Lead→3)
+# Note: Lead rule required matching rule co-deploy (MatchingRule:Lead.Lead_Candidate_Duplicate) to pass validation
+# force-app/main/default/duplicateRules/Account.Account_Alert_Bybass_Sharing_Rules.duplicateRule-meta.xml
+# force-app/main/default/duplicateRules/Account.Account_Block_Craete_Edit_Bypass_Sharing_Rules.duplicateRule-meta.xml
+# force-app/main/default/duplicateRules/Account.Account_UID.duplicateRule-meta.xml
+# force-app/main/default/duplicateRules/Contact.Contact_Alert_Create_Edit_Bypass_Sharing_Rules.duplicateRule-meta.xml
+# force-app/main/default/duplicateRules/Contact.Contact_Exact_Account_Name_First_Name_Last_Name.duplicateRule-meta.xml
+# Contact.Standard_Rule_for_Contacts_with_Duplicate_Leads — permanently excluded: already a standard rule on target
+force-app/main/default/duplicateRules/Contact.Standard_Rule_for_Contacts_with_Duplicate_Leads.duplicateRule-meta.xml
+# force-app/main/default/duplicateRules/Lead.Lead_Candidate_Duplicate.duplicateRule-meta.xml
+# SupplierCosts__c has no standard rules on target — keep it
+
+# --- Permission Set PS120RoleHRManager: GroupHR app ref removed from XML, now re-enabled ---
+# force-app/main/default/permissionsets/PS120RoleHRManager.permissionset-meta.xml
+
+# --- QuickAction Invoice__c.Genera_new_QR_Bill — unblocked Phase 46 (GenerateNewQrBillInvoice flow now deployed) ---
+# force-app/main/default/quickActions/Invoice__c.Genera_new_QR_Bill.quickAction-meta.xml
+# --- Flows referencing excluded workflow alerts (Project__c excluded; Account field deps) ---
+# Account_Update_Account_Owner_Send_Email — unblocked Phase 22 (email alert Account_Update_Previous_Owner_Change now deployed)
+# SupplierCosts__c — unblocked Phase 22; PackageName__c + formula fields restored Phase 31 (Package__c now deployed)
+# force-app/main/default/objects/SupplierCosts__c/fields/PackageName__c.field-meta.xml
+# force-app/main/default/objects/SupplierCosts__c/fields/BillerAccountProjectNr__c.field-meta.xml
+# force-app/main/default/objects/SupplierCosts__c/fields/ProjectNr__c.field-meta.xml
+# RTF_ProjectAutomaticClosure — unblocked Phase 31 (AutoLaunchedFlow; Project__c + Package__c now deployed)
+# force-app/main/default/flows/RTF_ProjectAutomaticClosure.flow-meta.xml
+# --- Contact matching rule — unblocked Phase 25 (Contact now deployed Phase 24; both rules now in manifest) ---
+# Contact.matchingRule — unblocked Phase 25
