@@ -623,3 +623,77 @@ force-app/main/default/duplicateRules/Contact.Standard_Rule_for_Contacts_with_Du
 # force-app/main/default/flows/RTF_ProjectAutomaticClosure.flow-meta.xml
 # --- Contact matching rule — unblocked Phase 25 (Contact now deployed Phase 24; both rules now in manifest) ---
 # Contact.matchingRule — unblocked Phase 25
+
+# Old/orphan profile policies (profiles don't exist in target)
+profilePasswordPolicies/Skywalk_*
+profileSessionSettings/Skywalk_*
+profilePasswordPolicies/TEST_*
+profileSessionSettings/TEST_*
+profilePasswordPolicies/Test_*
+profileSessionSettings/Test_*
+profilePasswordPolicies/Wyler_*
+profileSessionSettings/Wyler_*
+profilePasswordPolicies/testmarco_*
+profileSessionSettings/testmarco_*
+profilePasswordPolicies/null_*
+profileSessionSettings/null_*
+profilePasswordPolicies/P100_*
+profilePasswordPolicies/P101_*
+profilePasswordPolicies/P110_*
+
+# Org-specific / unavailable settings
+settings/ChatterAnswers.settings
+settings/Communities.settings
+settings/CustomerDataPlatform.settings
+settings/Discovery.settings
+settings/DxGlobalTerms.settings
+settings/EinsteinAgent.settings
+settings/Entitlement.settings
+settings/Mobile.settings
+settings/Territory2.settings
+settings/Trailhead.settings
+settings/Address.settings
+settings/Pardot.settings
+settings/PlatformEncryption.settings
+settings/SceGlobalModelOptOut.settings
+settings/Campaign.settings
+settings/EmployeeFieldAccess.settings
+settings/EmployeeUser.settings
+settings/IncidentMgmt.settings
+settings/Industries.settings
+settings/InsuranceBrokerage.settings
+settings/PrmCore.settings
+settings/ReleaseMgmt.settings
+settings/Sandbox.settings
+settings/Search.settings
+settings/ServiceAIRecommendations.settings
+settings/ServiceItsmIntelligenceUdd.settings
+settings/Analytics.settings
+
+# Not available for this API version
+settings/EmailAuthorization.settings
+settings/GRCIntelligenceUdd.settings
+settings/IndustriesEnergyUtilitiesMultiSite.settings
+settings/PlatformWebIde.settings
+settings/PurchaseOrderMgmt.settings
+settings/RiskMgmt.settings
+settings/UIBundle.settings
+
+# Standard namespace — cannot deploy via API
+applications/standard__Integration.app
+
+# Empty SharingRules
+sharingRules/ActiveScratchOrg.sharingRules
+sharingRules/AccountBrand.sharingRules
+sharingRules/DelegatedAccount.sharingRules
+sharingRules/LearningItem.sharingRules
+sharingRules/NetworkMemberChunk.sharingRules
+sharingRules/ScratchOrgInfo.sharingRules
+
+# Org-specific workflow alerts (unverified email)
+workflows/Contract__c.workflow
+workflows/SupplierCosts__c.workflow
+autoResponseRules/Case.autoResponseRules
+
+# AppSwitcher (deploy manually if needed)
+appMenus/AppSwitcher.appMenu
