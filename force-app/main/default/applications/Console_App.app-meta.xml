@@ -12,7 +12,6 @@
     <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
     <label>Console App</label>
     <navType>Console</navType>
-    <tabs>SkywalkApp</tabs>
     <tabs>Project__c</tabs>
     <tabs>Package__c</tabs>
     <tabs>Time__c</tabs>
@@ -33,9 +32,6 @@
         </mappings>
         <mappings>
             <tab>Project__c</tab>
-        </mappings>
-        <mappings>
-            <tab>SkywalkApp</tab>
         </mappings>
         <mappings>
             <tab>SupplierCosts__c</tab>
