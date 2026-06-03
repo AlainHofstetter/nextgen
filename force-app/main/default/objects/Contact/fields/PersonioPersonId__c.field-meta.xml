@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PersonioPersonId__c</fullName>
+    <caseSensitive>true</caseSensitive>
+    <description>Darin wird die MitarbeiterId aus Personio abgespeichert</description>
+    <externalId>true</externalId>
+    <label>PersonioPersonId</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>
