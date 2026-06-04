@@ -153,6 +153,21 @@ public class Mocks
 		}
 	}
 
+	public class TimeService implements ITimeService
+	{
+		private fflib_ApexMocks mocks;
+
+		public TimeService(fflib_ApexMocks mocks)
+		{
+			this.mocks = mocks;
+		}
+
+		public void save(List<Time__c> times)
+		{
+			mocks.mockVoidMethod(this, 'save', new List<Type> {System.Type.forName('List<Time__c>')}, new List<Object> {times});
+		}
+	}
+
 	public class PermissionSetAssignmentSelector extends fflib_SObjectMocks.SObjectSelector implements IPermissionSetAssignmentSelector
 	{
 		private fflib_ApexMocks mocks;
@@ -225,6 +240,21 @@ public class Mocks
 		}
 	}
 
+	public class SupplierCostsService implements ISupplierCostsService
+	{
+		private fflib_ApexMocks mocks;
+
+		public SupplierCostsService(fflib_ApexMocks mocks)
+		{
+			this.mocks = mocks;
+		}
+
+		public void save(List<SupplierCosts__c> scList)
+		{
+			mocks.mockVoidMethod(this, 'save', new List<Type> {System.Type.forName('List<SupplierCosts__c>')}, new List<Object> {scList});
+		}
+	}
+
 	public class Expense extends fflib_SObjectMocks.SObjectDomain implements IExpense
 	{
 		private fflib_ApexMocks mocks;
@@ -253,6 +283,21 @@ public class Mocks
 		public User getLogged()
 		{
 			return (User) mocks.mockNonVoidMethod(this, 'getLogged', new List<Type> {}, new List<Object> {});
+		}
+	}
+
+	public class ExpenseService implements IExpenseService
+	{
+		private fflib_ApexMocks mocks;
+
+		public ExpenseService(fflib_ApexMocks mocks)
+		{
+			this.mocks = mocks;
+		}
+
+		public void save(List<Expense__c> expenses)
+		{
+			mocks.mockVoidMethod(this, 'save', new List<Type> {System.Type.forName('List<Expense__c>')}, new List<Object> {expenses});
 		}
 	}
 

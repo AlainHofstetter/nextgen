@@ -211,6 +211,7 @@
         <profile>Admin</profile>
     </profileActionOverrides>
     <setupExperience>all</setupExperience>
+    <tabs>SkywalkApp</tabs>
     <tabs>standard-Account</tabs>
     <tabs>standard-Contact</tabs>
     <tabs>standard-Pricebook2</tabs>

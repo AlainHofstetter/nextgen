@@ -176,6 +176,7 @@
         <type>Flexipage</type>
         <profile>P100 - Standard - CRM</profile>
     </profileActionOverrides>
+    <tabs>SkywalkApp</tabs>
     <tabs>standard-Campaign</tabs>
     <tabs>standard-Lead</tabs>
     <tabs>standard-Account</tabs>

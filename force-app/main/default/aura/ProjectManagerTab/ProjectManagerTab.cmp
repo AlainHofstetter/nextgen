@@ -1,0 +1,469 @@
+<aura:component controller="HumanResourcesTabController">
+
+    <!-- load momentjs -->
+    <ltng:require scripts="{!$Resource.momentjs}" afterScriptsLoaded="{!c.init}"/>
+    <!-- <ltng:require scripts="{!$Resource.dragulajs}" afterScriptsLoaded="{!c.init}"/> -->
+
+    <!--
+        Attributes!
+    -->
+    <!-- one array to error them all -->
+    <aura:attribute name="errors" type="Array" description="List of validation errors" />
+    <aura:attribute name="showSuccessMessage" type="Boolean"/>
+
+    <!-- for lookup interactivity -->
+    <aura:attribute name="accountValue" type="Id" description="value for account lookup" />
+    <aura:attribute name="projectValue" type="Id" description="value for project lookup" />
+    <!-- so we can filter lookups -->
+    <aura:attribute name="showsClosedProjects" type="Boolean" default="" description="value for showsClosedProjects" />
+	<!-- labels -->
+    <aura:attribute name="projectCurrency" type="String" default="" description="project currency" />
+    <aura:attribute name="resultsLoaded" type="Boolean" description="show the tables already or maybe wait until we got actually data?" />
+
+    <aura:attribute name="rawData" type="Array" default="[]" description="so we can sort before making everything table rows" />
+
+    <!-- table attributes -->
+    <aura:attribute name="timeRows" type="Array" default="[]" description="time table rows because lightning doesnt support looping over objects" />
+    <aura:attribute name="expenseRows" type="Array" default="[]"  description="expense table rows because lightning doesnt support looping over objects" />
+    <aura:attribute name="supplierCostsRows" type="Array" default="[]"  description="supplier costs table rows because lightning doesnt support looping over objects" />
+
+    <aura:attribute name="timeTotalRow" type="Array" default="[]" />
+    <aura:attribute name="expenseTotalRow" type="Array" default="[]" />
+    <aura:attribute name="supplierCostsTotalRow" type="Array" default="[]" />
+
+    <aura:attribute name="showTime" type="Boolean" description="show time table?" />
+    <aura:attribute name="showExpense" type="Boolean" description="show expense table?" />
+    <aura:attribute name="showSupplierCosts" type="Boolean" description="show supplier costs table?" />
+
+    <aura:attribute name="sortOptions" type="Object" />
+
+    <!--
+        Handlers!
+    -->
+    <aura:handler name="bubbleLookupValueChange" event="c:inputLookupChangeEvent" action="{!c.onLookupValueChange}" includeFacets="true" />
+    <aura:handler name="onButtonWithDataClick" event="c:onButtonWithDataClick" action="{!c.dataButtonWasPressed}" includeFacets="true" />
+
+    <!--
+        Markup!
+    -->
+    <c:outputError errors="{!v.errors}"></c:outputError>
+
+    <div class="slds-spinner_container hidden" aura:id="spinner">
+        <div class="slds-spinner--brand slds-spinner slds-spinner--large" role="alert">
+            <span class="slds-assistive-text">Loading</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+        </div>
+    </div>
+
+    <div class="slds-grid slds-wrap slds-grid--pull-padded slds-m-bottom--medium blc-content">
+
+        <div class="slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--2-of-3 slds-large-size--1-of-2">
+
+            <div class="slds-box slds-clearfix section-header">
+                <h3 class="slds-float--left slds-text-title--caps">
+                    <lightning:icon iconName="utility:filterList" size="medium" class="slds-float--left" />
+                    {!$Label.c.SkyFilter}
+                </h3>
+            </div>
+
+            <div class="slds-box section-body slds-grid">
+
+                <div class="slds-col slds-size--1-of-2">
+                    <c:inputLookup aura:id="accountId" label="{!$Label.c.SkyCustomer}" placeholder="{!$Label.c.SkySearchAccounts}" value="{!v.accountValue}" type="Account"></c:inputLookup>
+                    <c:inputLookup aura:id="projectId" label="{!$Label.c.SkyProject}" placeholder="{!$Label.c.SkySearchProjects}" value="{!v.projectValue}" type="{!v.showsClosedProjects ? 'open and closed project' : 'all project'}" filterById="{!v.accountValue}"></c:inputLookup>
+                    <c:inputLookup aura:id="packageId" label="{!$Label.c.SkyPackage}" placeholder="{!$Label.c.SkySearchPackages}" type="Package" filterById="{!v.projectValue}"></c:inputLookup>
+                </div>
+
+                <div class="slds-col slds-size--1-of-2 slds-m-horizontal--small">
+
+                    <div class="slds-grid">
+	                    <div class="slds-col slds-m-bottom--medium">
+                            <ui:inputDate aura:id="dateFrom" label="{!$Label.c.SkyDateFrom}" displayDatePicker="true" />
+	                    </div>
+	                    <div class="slds-col slds-m-horizontal--small">
+                            <ui:inputDate aura:id="dateTo" label="{!$Label.c.SkyDateUntil}" displayDatePicker="true" />
+	                    </div>
+	                </div>
+
+                    <div class="slds-col slds-size--1-of-1 slds-grid slds-m-bottom--medium">
+						<div class="slds-col slds-size--1-of-3" >
+                            <ui:inputCheckbox value="{!v.showTime}" aura:id="showTime" label="{!$Label.c.SkyTime}"/>
+						</div>
+						<div class="slds-col slds-size--1-of-3" >
+                            <ui:inputCheckbox value="{!v.showExpense}" aura:id="showExpense" label="{!$Label.c.SkyEXPENSE}"/>
+						</div>
+						<div class="slds-col slds-size--1-of-3" >
+                            <ui:inputCheckbox value="{!v.showSupplierCosts}" aura:id="showSupplierCosts" label="{!$Label.c.SkySupplierCosts}"/>
+						</div>
+                    </div>
+                    
+                    <div class="slds-col slds-size--1-of-1 slds-m-bottom--medium">
+                        <ui:inputCheckbox aura:id="showValidatedInvoicedCosts" label="{!$Label.c.SkyShowValidatedInvoicedCosts}"/>
+                    </div>
+
+                    <div class="slds-col slds-size--1-of-1">
+                        <ui:inputCheckbox value="{!v.showsClosedProjects}" class="slds-m-bottom--medium" aura:id="showClosedProjects" label="{!$Label.c.SkyShowClosedProjects}"/>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="slds-box slds-theme--shade section-footer">
+                <lightning:button variant="brand" label="{!$Label.c.SkyListCosts}" onclick="{!c.onListCostsClick}" />
+            </div>
+
+        </div>
+
+    </div>
+
+    <aura:if isTrue="{!and(v.resultsLoaded, (v.showExpense || v.showTime || v.showSupplierCosts))}">
+
+        <div class="slds-grid slds-wrap slds-grid--pull-padded">
+
+            <div class="slds-p-horizontal--small slds-size--1-of-1">
+
+                <div class="slds-box section-body">
+
+                    <aura:if isTrue="{!v.showTime}">
+
+                        <table class="slds-table slds-table--bordered slds-no-row-hover slds-table--col-bordered slds-m-bottom--large ">
+                            <thead>
+                                <tr class="title-row" ondragover="{!c.onDragOver}" ondrop="{!c.onDrop}">
+                                    <th colspan="12">
+                                        <div title="Time"><strong>{!$Label.c.SkyTime}</strong></div>
+                                    </th>
+                                </tr>
+                                <tr class="title-row" ondragover="{!c.onDragOver}" ondrop="{!c.onDrop}">
+                                    <th>
+                                        <div title="Date">
+                                            <c:sortButtonComponent label="{!$Label.c.SkyDate}" section="times" field="DateFrom__c" sortOptions="{!v.sortOptions.times}"></c:sortButtonComponent>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div title="Package">
+                                            <c:sortButtonComponent label="{!$Label.c.SkyPackage}" section="times" field="Package__r.Name" sortOptions="{!v.sortOptions.times}"></c:sortButtonComponent>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div title="Service Type">
+                                            <c:sortButtonComponent label="{!$Label.c.SkyServiceType}" section="times" field="ServiceType__c" sortOptions="{!v.sortOptions.times}"></c:sortButtonComponent>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div title="Time Tracker">
+                                            <c:sortButtonComponent label="{!$Label.c.SkyTimetracker}" section="times" field="Timetracker__r.Name" sortOptions="{!v.sortOptions.times}"></c:sortButtonComponent>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div title="Description"><c:sortButtonComponent label="{!$Label.c.SkyDescription}" section="times" field="Description__c" sortOptions="{!v.sortOptions.times}"></c:sortButtonComponent></div>
+                                    </th>
+                                    <th>
+                                        <div title="Duration"><c:sortButtonComponent label="{!$Label.c.SkyDurationOnly}" section="times" field="DurationHhMm__c" sortOptions="{!v.sortOptions.times}"></c:sortButtonComponent></div>
+                                    </th>
+                                    <th>
+                                        <div title="Rate (Hour)"><c:sortButtonComponent label="{!$Label.c.SkyRateHour}" section="times" field="RateHour__c" sortOptions="{!v.sortOptions.times}"></c:sortButtonComponent></div>
+                                    </th>
+                                    <th>
+                                        <div title="Service"><c:sortButtonComponent label="{! $Label.c.SkyService + ' (' + v.projectCurrency + ')'}" section="times" field="ServiceTotalTime__c" sortOptions="{!v.sortOptions.times}"></c:sortButtonComponent></div>
+                                    </th>
+                                    <th>
+                                        <div title="Out of scope"><c:sortButtonComponent label="{!$Label.c.SkyOutofScope}" section="times" field="OutOfScope__c" sortOptions="{!v.sortOptions.times}"></c:sortButtonComponent></div>
+                                    </th>
+                                    <th>
+                                        <div title="Validated"><c:sortButtonComponent label="{!$Label.c.SkyValidated}" section="times" field="TimeValidatedProjectResponsible__c" sortOptions="{!v.sortOptions.times}"></c:sortButtonComponent></div>
+                                    </th>
+                                    <th>
+                                        <div title="Time Nr."><c:sortButtonComponent label="{!$Label.c.SkyTimeNr}" section="times" field="Name" sortOptions="{!v.sortOptions.times}"></c:sortButtonComponent></div>
+                                    </th>
+                                    <th>
+                                        <div title="Validate">{!$Label.c.SkyValidate}</div>
+                                    </th>
+                                </tr>
+                                <tr class="emtpy-row">
+                                    <th colspan="12"></th>
+                                </tr>
+                            </thead>
+                            <tbody class="highlight-last-column">
+                                <aura:iteration items="{!v.timeRows}" var="columns">
+                                    <tr>
+                                        <aura:iteration items="{!columns}" var="column">
+                                            <td>
+                                                <aura:if isTrue="{!column.linksToSFpage}">
+
+                                                    <div title="{!column.value}"><a target="_blank" href="{!'/' + column.id}">{!column.value}</a></div>
+
+                                                    <aura:set attribute="else">
+
+                                                        <aura:if isTrue="{!column.showCheckbox}">
+
+                                                            <ui:inputCheckbox value="{!column.toBeValidated}" />
+
+                                                            <aura:set attribute="else">
+
+                                                                <aura:if isTrue="{!column.showCheck}">
+
+                                                                    <lightning:icon iconName="utility:check" size="x-small"/>
+
+                                                                    <aura:set attribute="else">
+                                                                        <div title="{!column.value}" class="{! 'slds-float--' + column.alignment }">{!column.value}</div>
+                                                                    </aura:set>
+
+                                                                </aura:if>
+
+                                                            </aura:set>
+
+                                                        </aura:if>
+
+                                                    </aura:set>
+
+                                                </aura:if> 
+                                            </td>
+                                        </aura:iteration>
+                                    </tr>
+                                </aura:iteration>
+
+                                <aura:if isTrue="{!v.timeRows.length > 0}">
+                                    <tr>
+                                        <aura:iteration items="{!v.timeTotalRow}" var="total">
+                                            <td class="slds-text-align--right">{!total}</td>
+                                        </aura:iteration>
+                                    </tr>
+                                </aura:if>
+
+                                <aura:if isTrue="{!v.timeRows.length == 0}">
+                                    <tr>
+                                        <td class="actually-dont-highlight-this-column" colspan="12">{!$Label.c.SkyNoresultsfound}</td>
+                                    </tr>
+                                </aura:if>
+                            </tbody>
+                        </table>
+
+                    </aura:if>
+
+                    <aura:if isTrue="{!v.showExpense}">
+
+                        <table class="slds-table slds-table--bordered slds-no-row-hover slds-table--col-bordered slds-m-bottom--large">
+                            <thead>
+                                <tr class="title-row">
+                                    <th colspan="12">
+                                        <div title="Expense"><strong>{!$Label.c.SkyEXPENSE}</strong></div>
+                                    </th>
+                                </tr>
+                                <tr class="title-row">
+                                    <th>
+                                        <div title="Date"><c:sortButtonComponent label="{!$Label.c.SkyDate}" section="expenses" field="ExpenseDate__c" sortOptions="{!v.sortOptions.expenses}"></c:sortButtonComponent></div>
+                                    </th>
+                                    <th>
+                                        <div title="Package"><c:sortButtonComponent label="{!$Label.c.SkyPackage}" section="expenses" field="Package__r.Name" sortOptions="{!v.sortOptions.expenses}"></c:sortButtonComponent></div>
+                                    </th>
+                                    <th>
+                                        <div title="Expense Type"><c:sortButtonComponent label="{!$Label.c.SkyExpenseType}" section="expenses" field="RecordType.Name" sortOptions="{!v.sortOptions.expenses}"></c:sortButtonComponent></div>
+                                    </th>
+                                    <th>
+                                        <div title="Expense Tracker"><c:sortButtonComponent label="{!$Label.c.SkyExpenseTracker}" section="expenses" field="Expensetracker__r.Name" sortOptions="{!v.sortOptions.expenses}"></c:sortButtonComponent></div>
+                                    </th>
+                                    <th>
+                                        <div title="Sub-Type"><c:sortButtonComponent label="{!$Label.c.SkySubType}" section="expenses" field="ExpenseSubType__c" sortOptions="{!v.sortOptions.expenses}"></c:sortButtonComponent></div>
+                                    </th>
+                                    <th>
+                                        <div title="Costs"><c:sortButtonComponent label="{! $Label.c.SkyCosts + ' (' + v.projectCurrency + ')'}" section="expenses" field="ServiceExpenseNet__c" sortOptions="{!v.sortOptions.expenses}"></c:sortButtonComponent></div>
+                                    </th>
+                                    <th>
+                                        <div title="Validated"><c:sortButtonComponent label="{!$Label.c.SkyValidated}" section="expenses" field="ExpenseValidatedProjectResponsible__c" sortOptions="{!v.sortOptions.expenses}"></c:sortButtonComponent></div>
+                                    </th>
+                                    <th>
+                                        <div title="Expense Nr."><c:sortButtonComponent label="{!$Label.c.SkyExpenseNr}" section="expenses" field="Name" sortOptions="{!v.sortOptions.expenses}"></c:sortButtonComponent></div>
+                                    </th>
+                                    <th>
+                                        <div title="Validate">{!$Label.c.SkyValidate}</div>
+                                    </th>
+                                </tr>
+                                <tr class="empty-row">
+                                    <th colspan="12"></th>
+                                </tr>
+                            </thead>
+                            <tbody class="highlight-last-column">
+                                <aura:iteration items="{!v.expenseRows}" var="columns">
+                                    <tr>
+                                        <aura:iteration items="{!columns}" var="column">
+                                            <td>
+
+                                                <aura:if isTrue="{!column.linksToSFpage}">
+
+                                                    <div title="{!column.value}"><a target="_blank" href="{!'/' + column.id}">{!column.value}</a></div>
+
+                                                    <aura:set attribute="else">
+
+                                                        <aura:if isTrue="{!column.showCheckbox}">
+
+                                                            <p>{!column.validated}</p>
+                                                            <ui:inputCheckbox value="{!column.toBeValidated}" />
+
+                                                            <aura:set attribute="else">
+
+                                                                <aura:if isTrue="{!column.showCheck}">
+
+                                                                    <lightning:icon iconName="utility:check" size="x-small"/>
+
+                                                                    <aura:set attribute="else">
+                                                                        <div title="{!column.value}" class="{! 'slds-float--' + column.alignment }">{!column.value}</div>
+                                                                    </aura:set>
+
+                                                                </aura:if>
+
+                                                            </aura:set>
+
+                                                        </aura:if>
+
+                                                    </aura:set>
+
+                                                </aura:if> 
+
+                                            </td>
+                                        </aura:iteration>
+                                    </tr>
+                                </aura:iteration>
+
+                                <aura:if isTrue="{!v.expenseRows.length > 0}">
+                                    <tr>
+                                        <aura:iteration items="{!v.expenseTotalRow}" var="total">
+                                            <td class="slds-text-align--right">{!total}</td>
+                                        </aura:iteration>
+                                    </tr>
+                                </aura:if>
+
+                                <aura:if isTrue="{!v.expenseRows.length == 0}">
+                                    <tr>
+                                        <td class="actually-dont-highlight-this-column" colspan="12">{!$Label.c.SkyNoresultsfound}</td>
+                                    </tr>
+                                </aura:if>
+
+                            </tbody>
+                        </table>
+
+                    </aura:if>
+
+                    <aura:if isTrue="{!v.showSupplierCosts}">
+
+                        <table class="slds-table slds-table--bordered slds-no-row-hover slds-table--col-bordered slds-m-bottom--large">
+                            <thead>
+                                <tr class="title-row">
+                                    <th colspan="12">
+                                        <div title="Supplier Costs"><strong>{!$Label.c.SkySupplierCosts}</strong></div>
+                                    </th>
+                                </tr>
+                                <tr class="title-row">
+                                    <th>
+                                        <div title="Date"><c:sortButtonComponent label="{!$Label.c.SkyDate}" section="supplierCosts" field="SupplierCostsDate__c" sortOptions="{!v.sortOptions.supplierCosts}"></c:sortButtonComponent></div>
+                                    </th>
+                                    <th>
+                                        <div title="Package"><c:sortButtonComponent label="{!$Label.c.SkyPackage}" section="supplierCosts" field="PackageName__r.Name" sortOptions="{!v.sortOptions.supplierCosts}"></c:sortButtonComponent></div>
+                                    </th>
+                                    <th>
+                                        <div title="Biller Account"><c:sortButtonComponent label="{!$Label.c.SkyBillerAccount}" section="supplierCosts" field="SupplierInvoice__r.BillerAccount__r.Name" sortOptions="{!v.sortOptions.supplierCosts}"></c:sortButtonComponent></div>
+                                    </th>
+                                    <th>
+                                        <div title="Order / Reference"><c:sortButtonComponent label="{!$Label.c.SkyOrderReference}" section="supplierCosts" field="SupplierInvoice__r.OrderReference__c" sortOptions="{!v.sortOptions.supplierCosts}"></c:sortButtonComponent></div>
+                                    </th>
+                                    <th>
+                                        <div title="Text Position"><c:sortButtonComponent label="{!$Label.c.SkyTextPosition}" section="supplierCosts" field="SupplierInvoicePositionText__c" sortOptions="{!v.sortOptions.supplierCosts}"></c:sortButtonComponent></div>
+                                    </th>
+                                    <th>
+                                        <div title="Invoiced"><c:sortButtonComponent label="{!$Label.c.SkyInvoiced}" section="supplierCosts" field="SupplierCostsInvoicedPM__c" sortOptions="{!v.sortOptions.supplierCosts}"></c:sortButtonComponent></div>
+                                    </th>
+                                    <th>
+                                        <div title="Costs"><c:sortButtonComponent label="{!$Label.c.SkyCosts + ' (' + v.projectCurrency + ')'}" section="supplierCosts" field="CostsSupplierCostsNet__c" sortOptions="{!v.sortOptions.supplierCosts}"></c:sortButtonComponent></div>
+                                    </th>
+                                    <th>
+                                        <div title="Supplier Costs Nr."><c:sortButtonComponent label="{!$Label.c.SkySupplierCostsNr}" section="supplierCosts" field="Name" sortOptions="{!v.sortOptions.supplierCosts}"></c:sortButtonComponent></div>
+                                    </th>
+                                    <th>
+                                        <div title="Invoiced">{!$Label.c.SkyInvoiced}</div>
+                                    </th>
+                                </tr>
+                                <tr class="emtpy-row">
+                                    <th colspan="12"></th>
+                                </tr>
+                            </thead>
+                            <tbody class="highlight-last-column">
+                                <aura:iteration items="{!v.supplierCostsRows}" var="columns">
+                                    <tr>
+                                        <aura:iteration items="{!columns}" var="column">
+                                            <td>
+                                                <aura:if isTrue="{!column.linksToSFpage}">
+
+                                                    <div title="{!column.value}"><a target="_blank" href="{!'/' + column.id}">{!column.value}</a></div>
+
+                                                    <aura:set attribute="else">
+
+                                                        <aura:if isTrue="{!column.showCheckbox}">
+
+                                                            <p>{!column.validated}</p>
+                                                            <ui:inputCheckbox value="{!column.toBeValidated}" />
+
+                                                            <aura:set attribute="else">
+
+                                                                <aura:if isTrue="{!column.showCheck}">
+
+                                                                    <lightning:icon iconName="utility:check" size="x-small"/>
+
+                                                                    <aura:set attribute="else">
+                                                                        <div title="{!column.value}" class="{! 'slds-float--' + column.alignment }">{!column.value}</div>
+                                                                    </aura:set>
+
+                                                                </aura:if>
+
+                                                            </aura:set>
+
+                                                        </aura:if>
+
+                                                    </aura:set>
+
+                                                </aura:if> 
+                                            </td>
+                                        </aura:iteration>
+                                    </tr>
+                                </aura:iteration>
+
+                                <aura:if isTrue="{!v.supplierCostsRows.length > 0}">
+                                    <tr>
+                                        <aura:iteration items="{!v.supplierCostsTotalRow}" var="total">
+                                            <td class="slds-text-align--right">{!total}</td>
+                                        </aura:iteration>
+                                    </tr>
+                                </aura:if>
+
+                                <aura:if isTrue="{!v.supplierCostsRows.length == 0}">
+                                    <tr>
+                                        <td class="actually-dont-highlight-this-column" colspan="12">{!$Label.c.SkyNoresultsfound}</td>
+                                    </tr>
+                                </aura:if>
+
+                            </tbody>
+                        </table>
+
+                    </aura:if>
+
+                </div>
+
+                <div class="slds-box slds-theme--shade section-footer">
+
+                    <lightning:button variant="brand" class="slds-float--left slds-m-right--small" label="{!$Label.c.SkyValidateSelectedCosts}" onclick="{!c.onValidatedSelectedCostsClick}" />
+
+                    <aura:if isTrue="{!v.showSuccessMessage}">
+                        <p class="slds-float--left slds-m-top--x-small">{!$Label.c.SkyThecostshavebeenvalidatedThepagehasbeenrefreshed}</p>
+                    </aura:if>
+
+                    <div class="slds-clearfix"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aura:if>
+
+</aura:component>

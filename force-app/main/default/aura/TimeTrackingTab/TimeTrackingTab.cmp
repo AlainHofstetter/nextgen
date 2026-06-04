@@ -1,0 +1,252 @@
+<aura:component controller="TimeExpensesController" access="global">
+
+    <!-- load momentjs -->
+    <ltng:require scripts="{!$Resource.momentjs}" afterScriptsLoaded="{!c.init}"/>
+
+    <!--
+        Variables!
+    -->
+    <!-- form fields definition -->
+    <aura:attribute name="formFields" type="Object" description="Array of fields in the form for convenient looping over" />
+    <aura:attribute name="data" type="Object"/>
+
+    <!-- current user variable -->
+    <aura:attribute name="currentUser" type="Object" description="The current user with access information" />
+
+    <!-- all them time entries in 1 big array! -->
+    <aura:attribute name="entries" type="Array" description="All the time entries!" />
+    <aura:attribute name="dateRangeTitle" type="String" description="Title of the date range" />
+    <aura:attribute name="dateRangeTotalTime" type="String" description="Total time calculated in the date range" />
+
+    <!-- connected lookup values, this should probably be refactored out into elegant events -->
+    <aura:attribute name="customerValue" type="Id" description="ID of customer lookup" />
+    <aura:attribute name="customerValueLabel" type="String" description="Label of value of customer lookup" />
+    <aura:attribute name="projectValue" type="Id" description="ID of project lookup" />
+    <aura:attribute name="projectValueLabel" type="String" description="Label of value of project lookup" />
+    <aura:attribute name="packageValue" type="Id" description="ID of package lookup" />
+    <aura:attribute name="packageValueLabel" type="String" description="Label of value of package lookup" />
+    <!-- and again for the absence tab :( -->
+    <aura:attribute name="absenceProjectValue" type="Id" description="ID of project lookup" />
+    <aura:attribute name="absenceProjectValueLabel" type="String" description="Label of value of project lookup" />
+    <aura:attribute name="absencePackageValue" type="Id" description="ID of package lookup" />
+    <aura:attribute name="absencePackageValueLabel" type="String" description="Label of value of package lookup" />
+
+   	<!-- one array to error them all -->
+    <aura:attribute name="errors" type="Array" description="List of validation errors" />
+
+    <!--
+        Handlers!
+    -->
+    <aura:handler name="bubbleLookupValueChange" event="c:inputLookupChangeEvent" action="{!c.onLookupValueChange}" includeFacets="true" />
+    <aura:handler name="onButtonWithDataClick" event="c:onButtonWithDataClick" action="{!c.buttonClicked}" includeFacets="true" />
+
+    <!--
+        Markup!
+    -->
+    <c:outputError errors="{!v.errors}"></c:outputError>
+
+    <div class="slds-spinner_container hidden" aura:id="spinner">
+        <div class="slds-spinner--brand slds-spinner slds-spinner--large" role="alert">
+            <span class="slds-assistive-text">Loading</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+        </div>
+    </div>
+
+    <div class="slds-grid slds-wrap slds-grid--pull-padded blc-content">
+
+        <div class="slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--4-of-12">
+
+            <c:inputLookup class="hidden" supportDownArrowBehaviour="false" aura:id="Timetracker__c" label="{!$Label.c.SkyTrackTimefor}" type="User"></c:inputLookup>
+
+            <div class="slds-box slds-clearfix section-header">
+                <h3 class="slds-float--left slds-text-title--caps">
+                    <lightning:icon iconName="utility:clock" size="medium" class="slds-float--left" />
+                    {!$Label.c.SkyTime}
+                </h3>
+            </div>
+
+            <div class="slds-box section-body">
+
+                <div aura:id="parentId"><ui:inputText class="hidden" aura:id="Id" /></div>
+
+                <lightning:tabset onselect="{!c.toggleTimeType}">
+                    <lightning:tab id="WorkTime" aura:id="WorkTime" label="{!$Label.c.SkyWork}"></lightning:tab>
+                    <lightning:tab id="TravelTime" aura:id="TravelTime" label="{!$Label.c.SkyTravel}"></lightning:tab>
+                 <!--JC Removed as per BLC-154   <lightning:tab id="AbsenceTime" aura:id="AbsenceTime" label="{!$Label.c.SkyAbsence}"></lightning:tab> -->
+                </lightning:tabset>
+
+                <div aura:id="parentServiceType__c"><ui:inputText class="hidden" aura:id="ServiceType__c" /></div>
+
+                <!-- Work/Travel tab -->
+                <div class="slds-grid slds-m-bottom--medium" aura:id="parentDateFrom__c">
+                    <div class="slds-col slds-m-right--small">
+                        <ui:inputDate aura:id="DateFrom__c" label="{!$Label.c.SkyDateFrom}" displayDatePicker="true" change="{!c.onDateFieldChange}" updateOn="blur" />
+                    </div>
+                    <div class="slds-col">
+                        <ui:inputDate aura:id="DateUntil__c" label="{!$Label.c.SkyDateUntil}" displayDatePicker="true" change="{!c.onDateFieldChange}" updateOn="blur" />
+                    </div>
+                </div>
+                <div class="slds-grid slds-m-bottom--medium">
+                    <div class="slds-col" aura:id="parentStartHhMm__c">
+                        <ui:inputText label="{!$Label.c.SkyStartTime}" aura:id="StartHhMm__c" keyup="{!c.onTimeFieldChange}" updateOn="keyup"/>
+                    </div>
+                    <div class="slds-col slds-m-horizontal--small" aura:id="parentEndHhMm__c">
+                        <ui:inputText label="{!$Label.c.SkyEndTime}" aura:id="EndHhMm__c" keyup="{!c.onTimeFieldChange}" updateOn="keyup"/>
+                    </div>
+                    <div class="slds-col" aura:id="parentDurationHhMm__c">
+                        <ui:inputText label="{!$Label.c.SkyDuration}" aura:id="DurationHhMm__c" blur="{!c.onDurationFieldChange}" updateOn="keyup"/>
+                    </div>
+                </div>
+
+                <div aura:id="parentProjectPartner__c"><c:inputLookup type="Account" label="{!$Label.c.SkySelectCustomer}" placeholder="{!$Label.c.SkySearchAccounts}" aura:id="ProjectPartner__c" value="{!v.customerValue}" valueLabel="{!v.customerValueLabel}"></c:inputLookup></div>
+                <div aura:id="parentProjectName__c"><c:inputLookup type="Project" label="{!$Label.c.SkySelectProject}" placeholder="{!$Label.c.SkySearchProjects}" aura:id="ProjectName__c" value="{!v.projectValue}" valueLabel="{!v.projectValueLabel}" filterById="{!v.customerValue}"></c:inputLookup></div>
+                <!-- Work tab -->
+                <div aura:id="parentWorkPackage__c"><c:inputLookup type="Work Package" label="{!$Label.c.SkySelectPackage}" placeholder="{!$Label.c.SkySearchWorkPackages}" aura:id="WorkPackage__c" value="{!v.packageValue}" valueLabel="{!v.packageValueLabel}" filterById="{!v.projectValue}"></c:inputLookup></div>
+                <!-- Travel tab -->
+                <div aura:id="parentTravelPackage__c"><c:inputLookup type="Travel Package" label="{!$Label.c.SkySelectPackage}" placeholder="{!$Label.c.SkySearchTravelPackages}" aura:id="TravelPackage__c" value="{!v.packageValue}" valueLabel="{!v.packageValueLabel}" filterById="{!v.projectValue}"></c:inputLookup></div>
+
+                <div aura:id="parentOutOfScope__c"><ui:inputCheckbox aura:id="OutOfScope__c" class="slds-m-bottom--medium" label="{!$Label.c.SkyOutofScope}"/></div>
+
+                <!-- Absence tab -->
+                <div class="slds-grid slds-m-bottom--medium">
+                    <div class="slds-col" aura:id="parentAbsenceDateFrom__c">
+                        <ui:inputDate format="dd.MM.yyyy" aura:id="AbsenceDateFrom__c" label="{!$Label.c.SkyDateFrom}" displayDatePicker="true"/>
+                    </div>
+                    <div class="slds-col slds-m-horizontal--small" aura:id="parentAbsenceDateUntil__c">
+                        <ui:inputDate format="dd.MM.yyyy" aura:id="AbsenceDateUntil__c" label="{!$Label.c.SkyDateUntil}" displayDatePicker="true"/>
+                    </div>
+                    <div class="slds-col" aura:id="parentAbsenceDurationHhMm__c">
+                        <ui:inputText label="{!$Label.c.SkyDuration}" aura:id="AbsenceDurationHhMm__c" blur="{!c.onAbsenceDurationChange}" updateOn="blur" />
+                    </div>
+                </div>
+
+                <div aura:id="parentAbsenceProjectName__c"><c:inputLookup type="Internal Project" label="{!$Label.c.SkySelectProject}" placeholder="{!$Label.c.SkySearchProjects}" aura:id="AbsenceProjectName__c" value="{!v.absenceProjectValue}" valueLabel="{!v.absenceProjectValueLabel}"></c:inputLookup></div>
+                <div aura:id="parentAbsencePackage__c"><c:inputLookup type="Internal Package" label="{!$Label.c.SkySelectPackage}" placeholder="{!$Label.c.SkySearchPackages}" aura:id="AbsencePackage__c" value="{!v.absencePackageValue}" valueLabel="{!v.absencePackageValueLabel}" filterById="{!v.absenceProjectValue}"></c:inputLookup></div>
+
+                <!-- Both tabs -->
+                <div aura:id="parentDescription__c"><ui:inputTextarea aura:id="Description__c" label="{!$Label.c.SkyDescription}" value=""/></div>
+
+            </div>
+
+            <div class="slds-box slds-theme--shade section-footer">
+                <lightning:button variant="brand" label="{!$Label.c.SkySubmit}" onclick="{!c.save}" />
+            </div>
+
+        </div>
+
+        <div class="section-list slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--8-of-12">
+
+            <div class="slds-grid slds-wrap">
+
+                <div class="slds-large-size--5-of-12 slds-size--1-of-1">
+                    <h2 class="slds-m-around--small slds-section__title">{!v.dateRangeTitle}</h2>
+                </div>
+
+                <div class="slds-large-size--7-of-12 slds-size--1-of-1 slds-wrap">
+                    <div class="slds-size--1-of-12 slds-offset-from-top slds-float--right">
+                        <ui:button label="{!$Label.c.SkyToday}" press="{!c.onTodayButtonClick}" class="round-button" aura:id="entriesDateRangeTodayButton" />
+                    </div>
+                    <div class="slds-size--4-of-12 slds-float--right slds-m-around--small">
+                        <ui:inputDate format="dd.MM.yyyy" aura:id="entriesDateRangeEnd" label="{!$Label.c.SkyUntil}" displayDatePicker="true" blur="{!c.onDateRangeSelect}" />
+                    </div>
+                    <div class="slds-size--4-of-12 slds-float--right slds-m-around--small">
+                        <ui:inputDate format="dd.MM.yyyy" aura:id="entriesDateRangeStart" label="{!$Label.c.SkyFrom}" displayDatePicker="true" blur="{!c.onDateRangeSelect}" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="slds-box section-body-header">
+
+                <ul class="slds-has-dividers--bottom-space">
+
+                    <aura:iteration items="{!v.entries}" var="entry">
+                        <li class="slds-item slds-grid slds-wrap">
+                            <div class="slds-size--2-of-3 slds-large-size--7-of-12" data-entry="{!entry.stringified}">
+
+                                <div class="hoverable hoverable-inline">
+
+                                    <p class="large">{!entry.ProjectName__r.Name}</p>
+                                    <p>{!entry.Package__r.Name}</p>
+
+                                    <div class="hover-box slds-popover slds-nubbin--top-left">
+
+                                        <h3 class="slds-text-title--caps slds-m-vertical--small">{!entry.ServiceType__c}</h3>
+
+                                        <div class="slds-wrap slds-grid">
+                                            <div class="slds-size--1-of-2 border-right">
+                                                <p><strong>{!$Label.c.SkyDate}:</strong></p>
+                                                <p class="slds-m-bottom--x-small"><ui:outputDate value="{!entry.DateFrom__c}" format="D.MM.YYYY"/></p>
+                                                <p><strong>{!$Label.c.SkyDuration}:</strong></p>
+                                                <p class="slds-m-bottom--x-small">{!entry.DurationHhMm__c}<aura:if isTrue="{!and(entry.StartHhMm__c, entry.EndHhMm__c)}">&nbsp;({!entry.StartHhMm__c} - {!entry.EndHhMm__c})</aura:if></p>
+                                                <p><strong>{!$Label.c.SkyDescription}:</strong></p>
+                                                <p class="slds-m-bottom--x-small">{!entry.Description__c}</p>
+                                                <p><a target="_blank" href="{! '/' + entry.Id }">{!entry.Name}</a></p>
+                                            </div>
+                                            <div class="slds-size--1-of-2">
+                                                <div class="slds-m-horizontal--medium">
+                                                    <p><strong>{!$Label.c.SkyProjectNr}:</strong></p>
+                                                    <p class="slds-m-bottom--x-small"><a href="{!'/' + entry.ProjectName__r.Id}" target="_blank">{!entry.ProjectName__r.ProjectNr__c}</a></p>
+                                                    <aura:if isTrue="{!entry.ProjectName__r.ProjectSubType__c != 'Absence'}">
+                                                        <p><strong>{!$Label.c.SkyCustomer}:</strong></p>
+                                                        <p class="slds-m-bottom--x-small"><a href="{!'/' + entry.ProjectName__r.ProjectPartner__r.Id}" target="_blank">{!entry.ProjectName__r.ProjectPartner__r.Name}</a></p>
+                                                    </aura:if>
+                                                    <p><strong>{!$Label.c.SkyProjectName}:</strong></p>
+                                                    <p class="slds-m-bottom--x-small"><a href="{!'/' + entry.ProjectName__r.Id}" target="_blank">{!entry.ProjectName__r.Name}</a></p>
+                                                    <p><strong>{!$Label.c.SkyPackageName}:</strong></p>
+                                                    <p><a href="{!'/' + entry.Package__r.Id}" target="_blank">{!entry.Package__r.Name}</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="slds-size--1-of-3 slds-large-size--5-of-12 slds-wrap slds-grid">
+                                <div class="slds-large-size--1-of-4 slds-size--1-of-1">
+                                    <p class="large"><ui:outputDate value="{!entry.DateFrom__c}" format="D.MM.YYYY"/></p>
+                                    <p>{!entry.ProjectName__r.ProjectNr__c}</p>
+                                </div>
+                                <div class="slds-large-size--1-of-4 slds-size--1-of-1 slds-text-align--right">
+                                    <p class="large">{!entry.DurationHhMm__c}</p>
+                                    <aura:if isTrue="{!and(entry.StartHhMm__c, entry.EndHhMm__c)}"><p>{!entry.StartHhMm__c} - {!entry.EndHhMm__c}</p></aura:if>
+                                </div>
+                                <div class="slds-large-size--2-of-4 slds-size--1-of-1">
+                                    <aura:if isTrue="{!and(entry.ValNoDelete__c == false, entry.ProjectName__r.ProjectStatus__c == 'Open', entry.Package__r.PackageStatus__c == 'Open')}">
+                                        <c:buttonWithData data="{!entry}" action="{!c.delete}" iconName="utility:close" class="slds-float--right slds-m-around--xx-small"></c:buttonWithData>
+                                        <c:buttonWithData data="{!entry}" action="{!c.onEditButtonClick}" iconName="utility:edit" class="slds-float--right slds-m-around--xx-small"></c:buttonWithData>
+                                    </aura:if>
+                                    <c:buttonWithData data="{!entry}" action="{!c.onCloneButtonClick}" iconName="utility:add" class="slds-float--right slds-m-around--xx-small"></c:buttonWithData>
+                                </div>
+                            </div>
+                        </li>
+                    </aura:iteration>
+
+                    <li class="hidden" aura:id="noEntriesError">{!$Label.c.SkyNoresultsfoundforthisdaterange}</li>
+
+                </ul>
+
+            </div>
+
+            <div class="slds-box slds-theme--shade section-footer slds-clearfix slds-grid slds-wrap">
+
+                <div class="slds-size--2-of-3 slds-large-size--8-of-12">
+                    <lightning:icon iconName="utility:clock" size="medium" class="slds-m-around--xx-small slds-float--left blc-icon-next-to-text" />
+                    <p class="large slds-m-around--x-small slds-float--left">{!$Label.c.SkyTotal}</p>
+                </div>
+
+                <div class="slds-size--1-of-3 slds-large-size--4-of-12 slds-grid slds-wrap">
+                    <div class="slds-size--1-of-4 slds-size--1-of-1">&nbsp;</div>
+                    <div class="slds-size--1-of-4 slds-size--1-of-1 slds-text-align--right"><p class="large slds-m-around--x-small">{!v.dateRangeTotalTime}</p></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</aura:component>

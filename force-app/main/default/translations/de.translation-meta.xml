@@ -32,6 +32,10 @@
         <label><!-- Skywalk - Classic --></label>
         <name>SkywalkClassic</name>
     </customApplications>
+    <customApplications>
+        <label><!-- gateB Reporting App --></label>
+        <name>gateBReportingApp</name>
+    </customApplications>
     <customLabels>
         <label><!-- BLC_Footer1 --></label>
         <name>BLC_Footer1</name>
@@ -1313,8 +1317,16 @@
         <name>MetadataRetrieveDemo</name>
     </customTabs>
     <customTabs>
+        <label><!-- Privately Paid Expenses Overview --></label>
+        <name>Privately_Paid_Expenses_Overview</name>
+    </customTabs>
+    <customTabs>
         <label><!-- SIM Analytics --></label>
         <name>SIMAnalytics</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- TimEx 1.0 --></label>
+        <name>SkywalkApp</name>
     </customTabs>
     <quickActions>
         <label><!-- New Case --></label>

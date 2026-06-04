@@ -1,0 +1,156 @@
+<aura:component controller="TimeExpensesController">
+
+    <!-- load momentjs -->
+    <ltng:require scripts="{!$Resource.momentjs}" afterScriptsLoaded="{!c.init}"/>
+
+    <!--
+        Variables!
+    -->
+    <!-- form fields definition -->
+    <aura:attribute name="formFields" type="Array" description="Array of fields in the form for convenient looping over" />
+
+    <!-- current user variable -->
+    <aura:attribute name="currentUser" type="Object" description="The current user with access information" />
+
+    <!-- all them time entries in 1 big array! -->
+    <aura:attribute name="entries" type="Array" description="All the time entries!" />
+    <aura:attribute name="dateRangeTitle" type="String" description="Title of the date range" />
+    <aura:attribute name="dateRangeTotalTime" type="String" description="Total time calculated in the date range" />
+
+    <!-- connected lookup values, this should probably be refactored out into elegant events -->
+    <aura:attribute name="projectValue" type="Id" description="ID of project lookup" />
+    <aura:attribute name="projectValueLabel" type="String" description="Label of value of project lookup" />
+    <aura:attribute name="packageValue" type="Id" description="ID of package lookup" />
+    <aura:attribute name="packageValueLabel" type="String" description="Label of value of package lookup" />
+
+   	<!-- one array to error them all -->
+    <aura:attribute name="errors" type="Array" description="List of validation errors" />
+
+    <!--
+        Handlers!
+    -->
+    <aura:handler name="bubbleLookupValueChange" event="c:inputLookupChangeEvent" action="{!c.onLookupValueChange}" includeFacets="true" />
+
+    <!--
+        Markup!
+    -->
+    <c:outputError errors="{!v.errors}"></c:outputError>
+
+    <div class="slds-spinner_container hidden" aura:id="spinner">
+        <div class="slds-spinner--brand slds-spinner slds-spinner--large" role="alert">
+            <span class="slds-assistive-text">Loading</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+        </div>
+    </div>
+    
+    <div class="slds-grid slds-wrap slds-grid--pull-padded">
+
+        <div class="slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--4-of-12">
+
+            <div class="slds-box slds-clearfix section-header">
+                <lightning:icon iconName="utility:clock" size="medium" class="slds-float--left" />
+                    <h3 class="slds-float--left slds-text-title--caps">{!$Label.c.SkyAbsence}</h3>
+            </div>
+
+            <div class="slds-box section-body">
+
+                <ui:inputText class="hidden" aura:id="Id" />
+
+                    <c:inputLookup class="hidden" aura:id="Timetracker__c" label="{!$Label.c.SkyTrackfor}" type="User"></c:inputLookup>
+
+                <div class="slds-grid slds-m-bottom--medium">
+                    <div class="slds-col slds-size--1-of-3">
+                        <ui:inputDate aura:id="DateFrom__c" label="{!$Label.c.SkyDateFrom}" displayDatePicker="true" blur="{!c.onDateFieldChange}" updateOn="blur" />
+                    </div>
+                    <div class="slds-col slds-m-horizontal--small slds-size--1-of-3">
+                        <ui:inputDate aura:id="DateUntil__c" label="{!$Label.c.SkyDateUntil}" displayDatePicker="true" blur="{!c.onDateFieldChange}" updateOn="blur" />
+                    </div>
+                    <div class="slds-col slds-size--1-of-3">
+                        <ui:inputText label="{!$Label.c.SkyDuration}" aura:id="DurationHhMm__c" />
+                    </div>
+
+                </div>
+
+                <c:inputLookup type="Internal Project" label="{!$Label.c.SkyProject}" placeholder="{!$Label.c.SkySearchProjects}" aura:id="ProjectName__c" value="{!v.projectValue}" valueLabel="{!v.projectValueLabel}"></c:inputLookup>
+                <c:inputLookup type="Internal Package" label="{!$Label.c.SkyPackage}" placeholder="{!$Label.c.SkySearchPackages}" aura:id="Package__c" value="{!v.packageValue}" valueLabel="{!v.packageValueLabel}" filterById="{!v.projectValue}"></c:inputLookup>
+
+                <ui:inputText aura:id="Description__c" label="{!$Label.c.SkyDescription}" value=""/>
+
+            </div>
+
+            <div class="slds-box slds-theme--shade section-footer">
+
+                <lightning:button variant="brand" label="{!$Label.c.SkySubmit}" onclick="{!c.save}" />
+
+            </div>
+
+        </div>
+
+        <div class="section-list slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--8-of-12">
+
+            <div class="slds-grid slds-wrap">
+
+                <div class="slds-size--7-of-12">
+                    <h2 class="slds-m-around--small slds-section__title">{!v.dateRangeTitle}</h2>
+                </div>
+
+                <div class="slds-size--2-of-12 slds-m-around--small">
+                    <ui:inputDate aura:id="entriesDateRangeStart" label="{!$Label.c.SkyFrom}" displayDatePicker="true" blur="{!c.onDateRangeSelect}" />
+                </div>
+
+                <div class="slds-size--2-of-12 slds-m-around--small">
+                    <ui:inputDate aura:id="entriesDateRangeEnd" label="{!$Label.c.SkyUntil}" displayDatePicker="true" blur="{!c.onDateRangeSelect}" />
+                </div>
+
+            </div>
+
+            <div class="slds-box section-body-header">
+
+                <ul class="slds-has-dividers--bottom-space slds-m-around--medium">
+
+                    <aura:iteration items="{!v.entries}" var="entry">
+                        <li class="slds-item slds-grid slds-wrap slds-grid--pull-padded" data-entry="{!entry.stringified}">
+                            <div class="slds-size--1-of-6">
+                                <p class="large">{!entry.BillingViaCompany__r.Name}</p>
+                                <p>{!entry.DateFrom__c}</p>
+                            </div>
+                            <div class="slds-size--1-of-6">
+                                <p class="large">{!entry.ProjectName__r.Name}</p>
+                                <p>{!entry.ProjectName__r.ProjectNr__c}</p>
+                            </div>
+                            <div class="slds-size--2-of-6">
+                                <p class="large">{!entry.Package__r.Name}</p>
+                                <p>{!entry.Description__c}</p>
+                            </div>
+                            <div class="slds-size--1-of-6 slds-text-align--right">
+                                <p class="large">{!entry.DurationHhMm__c} h</p>
+                                <p>{!entry.StartHhMm__c} - {!entry.EndHhMm__c}</p>
+                            </div>
+                            <div class="slds-size--1-of-6">
+                                <lightning:buttonIcon onclick="{!c.delete}" iconName="utility:close" class="slds-float--right slds-m-around--xx-small" />
+                                <lightning:buttonIcon onclick="{!c.onEditButtonClick}" iconName="utility:edit" class="slds-float--right slds-m-around--xx-small" />
+                                <lightning:buttonIcon onclick="{!c.onCloneButtonClick}" iconName="utility:add" class="slds-float--right slds-m-around--xx-small" />
+                            </div>
+                        </li>
+                    </aura:iteration>
+
+                    <li class="hidden" aura:id="noEntriesError">{!$Label.c.SkyNoresultsfoundforthisdaterange}</li>
+
+                </ul>
+
+            </div>
+
+            <div class="slds-box slds-theme--shade section-footer slds-clearfix">
+
+                <lightning:icon iconName="utility:clock" size="medium" class="slds-float--right slds-m-around--xx-small" />
+                <p class="large slds-text-align--right slds-m-around--x-small slds-float--right">Total time: {!v.dateRangeTotalTime}</p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</aura:component>

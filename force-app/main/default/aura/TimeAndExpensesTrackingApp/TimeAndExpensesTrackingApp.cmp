@@ -1,0 +1,62 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="TimeExpensesController">
+
+    <aura:attribute name="test" type="String" default="sup" />
+
+    <aura:attribute name="openTab" type="String" default="Time" />
+
+    <aura:attribute name="showProjectManagerTab" type="Boolean" default="false" />
+    <aura:attribute name="showHumanResourcesTab" type="Boolean" default="false" />
+    <aura:attribute name="showBillingTab" type="Boolean" default="false" />
+    <aura:attribute name="showProjectStructureTab" type="Boolean" default="false" />
+    <aura:attribute name="showILVTab" type="Boolean" default="false" />
+
+    <aura:handler name="init" action="{!c.init}" value="{!this}"/>
+    <aura:handler name="destroy" action="{!c.onMovingAway}" value="{!this}"/>
+
+    <div>
+
+        <lightning:tabset selectedTabId="{!v.openTab}">
+
+            <lightning:tab label="{!$Label.c.SkyTime}" id="Time">
+                <c:TimeTrackingTab />
+            </lightning:tab>
+
+            <lightning:tab label="{!$Label.c.SkyEXPENSE}" id="Expense">
+                <c:ExpenseTrackingTab />
+            </lightning:tab>
+
+            <aura:if isTrue="{! v.showBillingTab }">
+                <lightning:tab label="{!$Label.c.SkyBilling}" id="Billing">
+                    <c:BillingTab aura:id="billingTabComponent" />
+                </lightning:tab>
+            </aura:if> 
+
+            <aura:if isTrue="{! v.showProjectStructureTab }">
+                <lightning:tab label="{!$Label.c.SkyProjectStructure}" id="ProjectStructure">
+                    <c:ProjectStructureTab aura:id="projectStructureTabComponent" />
+                </lightning:tab>
+            </aura:if> 
+
+            <aura:if isTrue="{! v.showILVTab }">
+                <lightning:tab label="{!$Label.c.SkyILV}" id="ILV">
+                    <c:ILVTab aura:id="ILVTabComponent" />
+                </lightning:tab>
+            </aura:if> 
+
+            <aura:if isTrue="{! v.showProjectManagerTab }">
+                <lightning:tab label="{!$Label.c.SkyProjectValidation}" id="ProjectManager">
+                    <c:ProjectManagerTab />
+                </lightning:tab>
+            </aura:if> 
+
+            <aura:if isTrue="{! v.showHumanResourcesTab }">
+                <lightning:tab label="{!$Label.c.SkyHumanResources}" id="HumanResources">
+                    <c:HumanResourcesTab />
+                </lightning:tab>
+            </aura:if>
+
+        </lightning:tabset>
+
+    </div>
+
+</aura:component>

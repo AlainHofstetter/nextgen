@@ -1,0 +1,192 @@
+<aura:component controller="HumanResourcesTabController">
+
+    <!-- load momentjs -->
+    <ltng:require scripts="{!$Resource.momentjs}" afterScriptsLoaded="{!c.init}"/>
+
+    <!--
+        Attributes!
+    -->
+    <!-- one array to error them all -->
+    <aura:attribute name="errors" type="Array" description="List of validation errors" />
+    <aura:attribute name="showSuccessMessage" type="Boolean"/>
+
+    <!-- for lookup interactivity -->
+    <aura:attribute name="accountValue" type="Id" description="value for account lookup" />
+
+    <!-- so we know what to send back -->
+    <aura:attribute name="rawTimeEntries" type="Array" />
+
+    <!-- table building attributes -->
+    <aura:attribute name="daysInDuration" type="Array" description="all the days in selected duration" />
+    <aura:attribute name="rows" type="Array" description="table rows because lightning doesnt support looping over objects" />
+    <aura:attribute name="totalRow" type="Array" description="total row because lightning doesnt support looping over objects" />
+
+    <!-- totals and such -->
+    <aura:attribute name="theBigTotal" type="String" description="total of all hours" />
+    <aura:attribute name="targetHours" type="String" description="weekdays times 8" />
+    <aura:attribute name="hourDifference" type="String" description="difference between target and actual hours" />
+
+    <!-- we all need a little pagination in our lives -->
+    <aura:attribute name="contactsToPaginateThrough" type="Array" description="what it says on the tin. long variable names so these silly description attributes are not needed." />
+    <aura:attribute name="paginationIndex" type="Integer" description="just so we know how we're at" />
+
+    <!--
+        Handlers!
+    -->
+    <aura:handler name="bubbleLookupValueChange" event="c:inputLookupChangeEvent" action="{!c.onLookupValueChange}" includeFacets="true" />
+
+    <!--
+        Markup!
+    -->
+    <c:outputError errors="{!v.errors}"></c:outputError>
+
+    <div class="slds-spinner_container hidden" aura:id="spinner">
+        <div class="slds-spinner--brand slds-spinner slds-spinner--large" role="alert">
+            <span class="slds-assistive-text">Loading</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+        </div>
+    </div>
+
+    <div class="slds-grid slds-wrap slds-grid--pull-padded slds-m-bottom--medium blc-content">
+
+        <div class="slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--2-of-3 slds-large-size--1-of-2">
+
+            <div class="slds-box slds-clearfix section-header">
+                <h3 class="slds-float--left slds-text-title--caps">
+                    <lightning:icon iconName="utility:filterList" size="medium" class="slds-float--left" />
+                    {!$Label.c.SkyFilter}
+                </h3>
+            </div>
+
+            <div class="slds-box section-body slds-grid">
+
+                <div class="slds-col slds-size--1-of-2">
+                    <c:inputLookup aura:id="Account" label="{!$Label.c.SkyLegal}" placeholder="{!$Label.c.SkySearchAccounts}" value="{!v.accountValue}" type="Internal Account"></c:inputLookup>
+                    <c:inputLookup aura:id="Timetracker" label="{!$Label.c.SkyTimetracker}" placeholder="{!$Label.c.SkySearchUsers}" type="User" filterById="{!v.accountValue}"></c:inputLookup>
+                </div>
+
+                <div class="slds-col slds-size--1-of-2 slds-m-horizontal--small slds-grid">
+                    <div class="slds-col">
+                        <ui:inputDate aura:id="DateFrom" label="{!$Label.c.SkyDateFrom}" displayDatePicker="true" />
+                    </div>
+                    <div class="slds-col slds-m-horizontal--small">
+                        <ui:inputDate aura:id="DateUntil" label="{!$Label.c.SkyDateUntil}" displayDatePicker="true" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="slds-box slds-theme--shade section-footer">
+                <lightning:button variant="brand" label="{!$Label.c.SkyListTime}" onclick="{!c.onListTimeClick}" />
+                <lightning:button variant="brand" class="slds-float--right" label="{!$Label.c.SkyNext}" onclick="{!c.onNextClick}" />
+                <lightning:button variant="brand" class="slds-float--right" label="{!$Label.c.SkyPrevious}" onclick="{!c.onPreviousClick}" />
+            </div>
+
+        </div>
+
+    </div>
+
+    <aura:if isTrue="{!v.rows.length}">
+
+        <div class="slds-grid slds-wrap slds-grid--pull-padded">
+
+            <div class="slds-p-horizontal--small slds-size--1-of-1">
+
+                <div class="slds-box section-body slds-grid">
+
+                    <table class="slds-table slds-table--bordered slds-no-row-hover slds-table--col-bordered">
+                        <thead>
+                            <!-- day of the month row -->
+                            <tr class="days-of-month-row">
+                                <th></th>
+                                <aura:iteration items="{!v.daysInDuration}" var="d">
+                                    <th class="{!d.isWeekend ? 'weekend-column' : ''}">
+                                        <div title="{!d.day}">{!d.day}</div>
+                                    </th>
+                                </aura:iteration>
+                                <th></th>
+                            </tr>
+                            <!-- day name row -->
+                            <tr>
+                                <th></th>
+                                <aura:iteration items="{!v.daysInDuration}" var="d">
+                                    <th class="{!d.isWeekend ? 'weekend-column' : ''}">
+                                        <div title="{!d.dayName}">{!d.dayName}</div>
+                                    </th>
+                                </aura:iteration>
+                                <th></th>
+                            </tr>
+                            <!-- label row -->
+                            <tr class="title-row">
+                                <th>
+                                    <div title="Abacus Time Type">{!$Label.c.SkyAbacusTimeType}</div>
+                                </th>
+                                <th colspan="{!v.daysInDuration.length}"></th>
+                                <th>
+                                    <div title="Total">{!$Label.c.SkyTotal}</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="highlight-last-column">
+                            <aura:iteration items="{!v.rows}" var="columns">
+                                <tr>
+                                    <aura:iteration items="{!columns}" var="column">
+                                        <td class="{!column.isWeekend ? 'weekend-column' : ''}">
+                                            <div title="{!column.value}" class="slds-float--right">{!column.value}</div>
+                                        </td>
+                                    </aura:iteration>
+                                </tr>
+                            </aura:iteration>
+                            <tr class="emtpy-row">
+                                <td colspan="{!v.daysInDuration.length + 2}"></td>
+                            </tr>
+                            <tr class="footer-row">
+                                <td>Total</td>
+                                <aura:iteration items="{!v.totalRow}" var="d">
+                                    <td class="{!d.isWeekend ? 'weekend-column ' + d.colourCode : d.colourCode}">
+                                        <div title="{!d.value}" class="slds-float--right">{!d.value}</div>
+                                    </td>
+                                </aura:iteration>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <div class="slds-box slds-theme--shade section-footer">
+
+                    <lightning:button variant="brand" class="slds-float--left slds-m-right--small"  label="{!$Label.c.SkyValidateTime}" onclick="{!c.onValidateTimeClick}" />
+
+                    <aura:if isTrue="{!v.showSuccessMessage}">
+                        <p class="slds-float--left slds-m-top--x-small">{!$Label.c.SkyThetimeentriesforthisemployeehavebeenvalidated}</p>
+                    </aura:if>
+
+                    <lightning:icon iconName="utility:clock" size="medium" class="slds-float--right slds-m-around--xx-small" />
+
+                    <div class="slds-text-align--right slds-m-right--x-small slds-float--right metric">
+                        <p class="large">{!v.hourDifference}</p>
+                        <p>{!$Label.c.SkyDifference}</p>
+                    </div>
+
+                    <div class="slds-text-align--right slds-m-right--x-small slds-float--right metric">
+                        <p class="large">{!v.theBigTotal}</p>
+                        <p>{!$Label.c.SkyActual}</p>
+                    </div>
+
+                    <div class="slds-text-align--right slds-m-right--x-small slds-float--right metric">
+                        <p class="large">{!v.targetHours}</p>
+                        <p>{!$Label.c.SkyTarget}</p>
+                    </div>
+
+                    <div class="slds-clearfix"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aura:if>
+
+</aura:component>

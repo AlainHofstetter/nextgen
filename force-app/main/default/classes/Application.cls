@@ -31,6 +31,9 @@ public with sharing class Application {
                             IUserService.class => UserServiceImpl.class,
                             IPackageService.class => PackageServiceImpl.class,
                             IInvoiceService.class => InvoiceServiceImpl.class,
+                            ITimeService.class => TimeServiceImpl.class,
+                            IExpenseService.class => ExpenseServiceImpl.class,
+                            ISupplierCostsService.class => SupplierCostsServiceImpl.class,
                             IILVPosService.class => ILVPosServiceImpl.class
                     }
             );

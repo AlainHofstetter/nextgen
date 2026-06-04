@@ -1,0 +1,320 @@
+<aura:component controller="TimeExpensesController">
+
+    <!-- load momentjs -->
+    <ltng:require scripts="{!$Resource.momentjs}" afterScriptsLoaded="{!c.init}"/>
+
+    <!--
+        Variables!
+    -->
+    <!-- form fields definition -->
+    <aura:attribute name="formFields" type="Array" description="Array of fields in the form for convenient looping over" />
+    <aura:attribute name="data" type="Object"/>
+
+    <!-- current user variable -->
+    <aura:attribute name="currentUser" type="Object" description="The current user with access information" />
+    <aura:attribute name="localCurrency" type="String"/>
+    <aura:attribute name="totalLocalCurrency" type="String"/>
+
+    <!-- record type info -->
+    <aura:attribute name="recordTypes" type="Object" description="Expense__c record type information" />
+
+    <!-- picklists -->
+    <aura:attribute name="paymentTypes" type="Array" />
+    <aura:attribute name="expenseSubtypes" type="Array" />
+
+    <!-- all them expense entries in subtotal array! -->
+    <aura:attribute name="subTotalEntries" type="Array" description="The subtotal entries!" />
+    <aura:attribute name="dateRangeCHFSubtotalExpenses" type="String" description="Total CHF expenses calculated in the date range" />
+    <aura:attribute name="dateRangeEURSubtotalExpenses" type="String" description="Total EUR expenses calculated in the date range" />
+    <aura:attribute name="dateRangeUSDSubtotalExpenses" type="String" description="Total USD expenses calculated in the date range" />
+    <aura:attribute name="currencyTypeWithRates" type="Array" />
+
+    <!-- all them expense entries in 1 big array! -->
+    <aura:attribute name="entries" type="Array" description="All the entries!" />
+    <aura:attribute name="dateRangeTitle" type="String" description="Title of the date range" />
+    <aura:attribute name="dateRangeTotalExpenses" type="String" description="Total expenses calculated in the date range" />
+
+    <!-- connected lookup values, this should probably be refactored out into elegant events -->
+    <aura:attribute name="customerValue" type="Id" description="ID of customer lookup" />
+    <aura:attribute name="customerValueLabel" type="String" description="Label of value of customer lookup" />
+    <aura:attribute name="projectValue" type="Id" description="ID of project lookup" />
+    <aura:attribute name="projectValueLabel" type="String" description="Label of value of project lookup" />
+    <aura:attribute name="packageValue" type="Id" description="ID of package lookup" />
+    <aura:attribute name="packageValueLabel" type="String" description="Label of value of package lookup" />
+
+   	<!-- one array to error them all -->
+    <aura:attribute name="errors" type="Array" description="List of validation errors" />
+
+    <!-- EPU Currency -->
+    <aura:attribute name="currences" type="List" default="[{'label': 'CHF', 'value': 'CHF'}, {'label': 'USD', 'value': 'USD'},{'label': 'EUR', 'value': 'EUR'} ]"/>
+    <!--
+        Handlers!
+    -->
+    <aura:handler name="bubbleLookupValueChange" event="c:inputLookupChangeEvent" action="{!c.onLookupValueChange}" includeFacets="true" />
+    <aura:handler name="onButtonWithDataClick" event="c:onButtonWithDataClick" action="{!c.buttonClicked}" includeFacets="true" />
+
+    <!--
+        Markup!
+    -->
+    <c:outputError errors="{!v.errors}"></c:outputError>
+
+    <div class="slds-spinner_container hidden" aura:id="spinner">
+        <div class="slds-spinner--brand slds-spinner slds-spinner--large" role="alert">
+            <span class="slds-assistive-text">Loading</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+        </div>
+    </div>
+    
+    <div class="slds-grid slds-wrap slds-grid--pull-padded blc-content">
+
+        <div class="slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--4-of-12">
+
+            <c:inputLookup class="hidden" supportDownArrowBehaviour="false" aura:id="Expensetracker__c" label="{!$Label.c.SkyTrackExpensefor}" type="User"></c:inputLookup>
+
+            <div class="slds-box slds-clearfix section-header">
+
+                <h3 class="slds-float--left slds-text-title--caps">
+                    <lightning:icon iconName="utility:moneybag" size="medium" class="slds-float--left" />
+                    {!$Label.c.SkyEXPENSE}
+                </h3>
+
+            </div>
+
+            <div class="slds-box section-body">
+
+                <!-- Both tabs -->
+                <div aura:id="parentId"><ui:inputText class="hidden" aura:id="Id" /></div>
+
+                <!-- Both tabs -->
+                <lightning:tabset selectedTabId="Receipt" onselect="{!c.toggleExpenseType}">
+                    <lightning:tab id="Receipt" label="{!$Label.c.SkyReceipt}"></lightning:tab>
+                    <lightning:tab id="Car Travel" label="{!$Label.c.SkyCarTravel}"></lightning:tab>
+                </lightning:tabset>
+                <div aura:id="parentExpenseType__c"><ui:inputText class="hidden" aura:id="ExpenseType__c" /></div>
+
+                <!-- Both tabs -->
+                <div aura:id="parentExpenseDate__c" class="slds-m-bottom--medium"><ui:inputDate format="dd.MM.yyyy" aura:id="ExpenseDate__c" label="{!$Label.c.SkyExpenseDate}" displayDatePicker="true" /></div>
+
+                <!-- Car tab -->
+                <div aura:id="parentCar__c"><c:inputLookup aura:id="Car__c" label="{!$Label.c.SkySelectCar}" placeholder="{!$Label.c.SkySearchCars}" type="Car"></c:inputLookup></div>
+
+                <!-- Car tab -->
+                <div aura:id="parentDistance__c"><ui:inputText label="{!$Label.c.SkyDistance}" aura:id="Distance__c" class="slds-m-bottom--medium" /></div>
+
+                <!-- Receipt tab -->
+                <div aura:id="parentExpenseSubType__c">
+                    <ui:inputSelect label="{!$Label.c.SkyExpenseSubType}" aura:id="ExpenseSubType__c" class="slds-m-bottom--medium">
+                        <ui:inputSelectOption text="" label=""/>
+                        <aura:iteration var="subType" items="{!v.expenseSubtypes}">
+                            <ui:inputSelectOption text="{!subType.value}" label="{!subType.label}"/>
+                        </aura:iteration>
+                    </ui:inputSelect>
+                </div>
+
+                <!-- Both tabs -->
+                <div aura:id="parentBusinessReason__c"><ui:inputText label="{!$Label.c.SkyBusinessReason}" aura:id="BusinessReason__c" class="slds-m-bottom--medium" /></div>
+
+                <!-- Expense tab -->
+                <div aura:id="parentSupplierReceiverLocation__c"><ui:inputText label="{!$Label.c.SkySupplierReceiverLocation}" aura:id="SupplierReceiverLocation__c" class="slds-m-bottom--medium" /></div>
+
+                <!-- Expense tab -->
+                <div aura:id="parentListOfNames__c"><ui:inputText label="{!$Label.c.SkyListofNames}" aura:id="ListOfNames__c" class="slds-m-bottom--medium" /></div>
+
+                <!-- Both tabs -->
+                <div aura:id="parentProjectPartner__c"><c:inputLookup type="Account" label="{!$Label.c.SkySelectCustomer}" placeholder="{!$Label.c.SkySearchAccounts}" aura:id="ProjectPartner__c" value="{!v.customerValue}" valueLabel="{!v.customerValueLabel}"></c:inputLookup></div>
+
+                <!-- Expense Tab -->
+                <div aura:id="parentProjectName__c"><c:inputLookup type="Expense Project" label="{!$Label.c.SkySelectProject}" placeholder="{!$Label.c.SkySearchProjects}" aura:id="ProjectName__c" value="{!v.projectValue}" valueLabel="{!v.projectValueLabel}" filterById="{!v.customerValue}"></c:inputLookup></div>
+
+                <!-- Both tabs -->
+                <div aura:id="parentPackage__c"><c:inputLookup type="Expense Package" label="{!$Label.c.SkySelectPackage}" placeholder="{!$Label.c.SkySearchPackages}" aura:id="Package__c" value="{!v.packageValue}" valueLabel="{!v.packageValueLabel}" filterById="{!v.projectValue}"></c:inputLookup></div>
+
+                <!-- Expense tab -->
+                <div aura:id="parentPaymentType__c">
+                    <ui:inputSelect label="{!$Label.c.SkyPaymentType}" aura:id="PaymentType__c" class="slds-m-bottom--medium" change="{!c.onPaymentTypeChange}">
+                        <ui:inputSelectOption text="" label=""/>
+                        <aura:iteration var="paymentType" items="{!v.paymentTypes}">
+                            <ui:inputSelectOption text="{!paymentType.value}" label="{!paymentType.label}" value="true"/>
+                        </aura:iteration>
+                    </ui:inputSelect>
+                </div>
+
+                <!-- Expense tab when payment type is credit card -->
+                <div aura:id="parentCreditCardResponsibleCompany__c"><c:inputLookup aura:id="CreditCardResponsibleCompany__c" label="{!$Label.c.SkySelectCreditCard}" placeholder="{!$Label.c.SkySearchCreditCards}" type="Credit Card"></c:inputLookup></div>
+
+                <div class="slds-grid">
+
+                    <!-- Both tabs -->
+                    <div aura:id="parentLocalCurrency__c" class="slds-col slds-size--1-of-2 slds-m-right--medium slds-size--45-of-100">
+                        <!-- <ui:inputText label="{!$Label.c.SkyLocalCurrency}" aura:id="LocalCurrency__c" disabled="false" /> --> 
+                        <lightning:combobox label="{!$Label.c.SkyLocalCurrency}" aura:id="LocalCurrency__c" value="localCurrency" placeholder="Select Currency" options="{!v.currences }" onchange="{!c.handleChangeCurrency}" required="true"/>
+
+                    </div>
+
+                    <!-- Expense tab -->
+                    <div aura:id="parentExpenseGross__c" class="slds-col slds-size--1-of-2 slds-m-left--medium">
+                        <ui:inputText label="{!$Label.c.SkyExpenseGross}" aura:id="ExpenseGross__c" />
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="slds-box slds-theme--shade section-footer">
+                <lightning:button variant="brand" label="{!$Label.c.SkySubmit}" onclick="{!c.save}" />
+            </div>
+
+        </div>
+
+        <div class="section-list slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--8-of-12">
+
+            <div class="slds-grid slds-wrap">
+
+                <div class="slds-large-size--5-of-12 slds-size--1-of-1">
+                    <h2 class="slds-m-around--small slds-section__title">{!v.dateRangeTitle}</h2>
+                </div>
+
+                <div class="slds-large-size--7-of-12 slds-size--1-of-1 slds-wrap">
+                    <div class="slds-size--1-of-12 slds-offset-from-top slds-float--right">
+                        <ui:button label="{!$Label.c.SkyToday}" press="{!c.onTodayButtonClick}" class="round-button" aura:id="entriesDateRangeTodayButton" />
+                    </div>
+                    <div class="slds-size--4-of-12 slds-float--right slds-m-around--small">
+                        <ui:inputDate format="dd.MM.yyyy" aura:id="entriesDateRangeEnd" label="{!$Label.c.SkyUntil}" displayDatePicker="true" blur="{!c.onDateRangeSelect}" />
+                    </div>
+                    <div class="slds-size--4-of-12 slds-float--right slds-m-around--small">
+                        <ui:inputDate format="dd.MM.yyyy" aura:id="entriesDateRangeStart" label="{!$Label.c.SkyFrom}" displayDatePicker="true" blur="{!c.onDateRangeSelect}" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="slds-box section-body-header">
+
+                <ul class="slds-has-dividers--bottom-space">
+
+                    <aura:iteration items="{!v.entries}" var="entry">
+                        <li class="slds-item slds-grid slds-wrap" data-entry="{!entry.stringified}">
+
+                            <div class="slds-size--2-of-3 slds-large-size--7-of-12">
+
+                                <div class="hoverable hoverable-inline">
+
+                                    <p class="large">{!entry.ProjectName__r.Name}</p>
+                                    <p>{!entry.Package__r.Name}</p>
+
+                                    <div class="hover-box slds-popover slds-nubbin--top-left">
+
+                                        <h3 class="slds-text-title--caps slds-m-vertical--small">{! entry.ExpenseType__c == 'Receipt' ? $Label.c.SkyReceipt : $Label.c.SkyCarTravel }</h3>
+
+                                        <div class="slds-wrap slds-grid">
+                                            <div class="slds-size--1-of-2 border-right">
+                                                <p><strong>{!$Label.c.SkyDate}:</strong></p>
+                                                <p class="slds-m-bottom--x-small"><ui:outputDate value="{!entry.ExpenseDate__c}" format="D.MM.YYYY"/></p>
+                                                <aura:if isTrue="{!entry.ExpenseType__c == 'Car Travel'}">
+                                                    <p><strong>{!$Label.c.SkyCar}:</strong></p>
+                                                    <p class="slds-m-bottom--x-small">{!entry.Car__r.Name}</p>
+                                                    <p><strong>{!$Label.c.SkyDistance}:</strong></p>
+                                                    <p class="slds-m-bottom--x-small">{!entry.Distance__c}</p>
+                                                </aura:if>
+                                                <aura:if isTrue="{!entry.ExpenseType__c == 'Receipt'}">
+                                                    <p><strong>{!$Label.c.SkyExpenseSubType}:</strong></p>
+                                                    <p class="slds-m-bottom--x-small">{!entry.ExpenseSubType__c}</p>
+                                                    <p><strong>{!$Label.c.SkySupplierReceiverLocation}:</strong></p>
+                                                    <p class="slds-m-bottom--x-small">{!entry.SupplierReceiverLocation__c}</p>
+                                                </aura:if>
+                                                <p><strong>{!$Label.c.SkyExpenseGross}:</strong></p>
+                                                <p class="slds-m-bottom--x-small">{!entry.LocalCurrency__c}&nbsp;<ui:outputCurrency value="{!entry.ExpenseGross__c}" format="0.00"/></p>
+                                                <aura:if isTrue="{!entry.ExpenseType__c == 'Receipt'}">
+                                                    <p><strong>{!$Label.c.SkyPaymentType}:</strong></p>
+                                                    <p class="slds-m-bottom--x-small">{!entry.PaymentType__c}</p>
+                                                    <p><strong>{!$Label.c.SkyListofNames}:</strong></p>
+                                                    <p class="slds-m-bottom--x-small">{!entry.ListOfNames__c}</p>
+                                                </aura:if>
+                                                <p><strong>{!$Label.c.SkyBusinessReason}:</strong></p>
+                                                <p class="slds-m-bottom--x-small">{!entry.BusinessReason__c}</p>
+                                                <p>{!entry.Name}</p>
+                                            </div>
+                                            <div class="slds-size--1-of-2">
+                                                <div class="slds-m-horizontal--medium">
+                                                    <p><strong>{!$Label.c.SkyPackageNr}:</strong></p>
+                                                    <p class="slds-m-bottom--x-small"><a href="{!'/' + entry.ProjectName__r.Id}" target="_blank">{!entry.ProjectName__r.ProjectNr__c}</a></p>
+                                                    <p><strong>{!$Label.c.SkyCustomer}:</strong></p>
+                                                    <p class="slds-m-bottom--x-small"><a href="{!'/' + entry.ProjectName__r.ProjectPartner__r.Id}" target="_blank">{!entry.ProjectName__r.ProjectPartner__r.Name}</a></p>
+                                                    <p><strong>{!$Label.c.SkyProjectName}:</strong></p>
+                                                    <p class="slds-m-bottom--x-small"><a href="{!'/' + entry.ProjectName__r.Id}" target="_blank">{!entry.ProjectName__r.Name}</a></p>
+                                                    <p><strong>{!$Label.c.SkyPackageName}:</strong></p>
+                                                    <p><a href="{!'/' + entry.Package__r.Id}" target="_blank">{!entry.Package__r.Name}</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="slds-size--1-of-3 slds-large-size--5-of-12 slds-wrap slds-grid">
+
+                                <div class="slds-large-size--2-of-8 slds-size--1-of-1">
+                                    <p class="large"><ui:outputDate value="{!entry.ExpenseDate__c}" format="D.MM.YYYY"/></p>
+                                    <p>{!entry.ProjectName__r.ProjectNr__c}</p>
+                                </div>
+                                <div class="slds-large-size--3-of-8 slds-size--1-of-1">
+                                    <p class="large"><span class="slds-float--left slds-m-left--small">{!entry.LocalCurrency__c}</span>&nbsp;<span class="slds-float--right"><ui:outputCurrency value="{!entry.ExpenseGross__c}" currencyCode="GPB" format="#,##0.00"/></span><div class="slds-clearfix"></div></p>
+                                </div>
+                                <div class="slds-large-size--3-of-8 slds-size--1-of-1">
+                                    <aura:if isTrue="{!and(entry.ValNoDelete__c == false, entry.ProjectName__r.ProjectStatus__c != 'Closed', entry.Package__r.PackageStatus__c != 'Closed')}">
+                                        <c:buttonWithData data="{!entry}" action="{!c.delete}" iconName="utility:close" class="slds-float--right slds-m-around--xx-small"></c:buttonWithData>
+                                        <c:buttonWithData data="{!entry}" action="{!c.onEditButtonClick}" iconName="utility:edit" class="slds-float--right slds-m-around--xx-small"></c:buttonWithData>
+                                    </aura:if>
+                                    <c:buttonWithData data="{!entry}" action="{!c.onCloneButtonClick}" iconName="utility:add" class="slds-float--right slds-m-around--xx-small"></c:buttonWithData>
+                                </div>
+                            </div>
+
+                        </li>
+
+                    </aura:iteration>
+
+                    <li class="hidden" aura:id="noEntriesError">{!$Label.c.SkyNoresultsfoundforthisdaterange}</li>
+
+                </ul>
+
+            </div>
+
+            <div class="slds-box slds-theme--shade section-footer slds-clearfix slds-grid slds-wrap">
+                <div class="slds-size--2-of-3 slds-large-size--8-of-12"><!--EPU14-->
+                    <p class="large slds-p-top--x-large">{!$Label.c.SkySubtotal}</p>
+                </div>
+
+                <div class="slds-size--1-of-3 slds-large-size--4-of-12 slds-grid slds-wrap"><!--EPU14-->
+                    <p class="large slds-size--2-of-4 slds-size--1-of-1 slds-m-around--xx-small slds-text-align--right">CHF&nbsp;&nbsp;&nbsp;{!v.dateRangeCHFSubtotalExpenses}</p> 
+                    <p class="large slds-size--2-of-4 slds-size--1-of-1 slds-m-around--xx-small slds-text-align--right">EUR&nbsp;&nbsp;&nbsp;{!v.dateRangeEURSubtotalExpenses}</p>
+                    <p class="large slds-size--2-of-4 slds-size--1-of-1 slds-m-around--xx-small slds-text-align--right">USD&nbsp;&nbsp;&nbsp;{!v.dateRangeUSDSubtotalExpenses}</p>
+                </div>
+
+                <div class="slds-size--2-of-3 slds-p-top--medium slds-large-size--8-of-12">
+                    <p class="large">{!$Label.c.SkyTotal}</p>
+                </div>
+
+                <div class="slds-size--1-of-3 slds-p-top--medium slds-large-size--4-of-12 slds-grid slds-wrap">
+<!--                {!v.totalLocalCurrency}&nbsp;&nbsp;&nbsp;{!v.dateRangeTotalExpenses}-->
+                    <p class="large slds-size--2-of-4 slds-size--1-of-1 slds-m-around--xx-small slds-text-align--right"><lightning:formattedNumber value="{!v.dateRangeTotalExpenses}" style="currency" currencyCode="{!v.totalLocalCurrency}"/></p><!--EPU14-->
+                </div>
+
+            </div>
+
+            <div class="slds-p-vertical--medium">
+                <ui:inputCheckbox class="slds-float--left" value="false" click="{!c.onPrivatePaymentsOnlyClick}" labelClass="slds-m-left--x-small" label="{!$Label.c.SkyShowMyPrivateExpensesForSubmitting}" aura:id="onlyShowPaidPrivately"/>
+                <lightning:button variant="brand" label="{!$Label.c.SkyPrint}" class="slds-m-top--small hidden" aura:id="PrintPrivatelyPaidButton" onclick="{!c.openPrivatelyPaidExpensesOverview}" />
+                
+                <!-- <aura:if isTrue="{!and(v.currentUser.User__r.PS180RoleFinanceApprover__c, v.entries.length > 0)}"> -->
+                <lightning:button variant="brand" label="{!$Label.c.SkyValidate}" class="slds-m-top--small" onclick="{!c.onValidateButtonClick}" />
+            </div>
+
+        </div>
+
+    </div>
+
+</aura:component>

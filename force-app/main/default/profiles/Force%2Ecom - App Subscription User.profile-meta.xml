@@ -253,6 +253,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ExpenseService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ExpenseServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>FieldMDT</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -278,6 +286,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ForgotPasswordControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>HumanResourcesTabController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -322,6 +334,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>IExpenseSelector</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>IExpenseService</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -505,6 +521,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ISupplierCostsService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ISupplierInvoice</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -514,6 +534,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ITimeSelector</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ITimeService</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -905,6 +929,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>SupplierCostsService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SupplierCostsServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>SupplierInvoice</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -941,6 +973,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>TestExpenseService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>TestFactory</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -950,6 +986,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>TestFinanceAccount</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TestHumanResourcesTabController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -1045,11 +1085,19 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>TestSupplierCostsService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>TestSupplierInvoice</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>TestTime</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TestTimeService</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -1081,7 +1129,19 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>TimeExpensesController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>TimeSelector</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TimeService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TimeServiceImpl</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -12369,6 +12429,10 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>Privately_Paid_Expenses_Overview</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>ProjectContractRelation__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
@@ -12402,6 +12466,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Skills__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>SkywalkApp</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
