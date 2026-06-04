@@ -1,0 +1,55 @@
+<template>
+  <lightning-card title="AbacusNG — Recently Changed Accounts" icon-name="standard:account">
+    <lightning-button
+      slot="actions"
+      label="Refresh"
+      icon-name="utility:refresh"
+      onclick={handleRefresh}
+      disabled={isLoading}>
+    </lightning-button>
+
+    <div class="slds-p-horizontal_medium">
+      <p class="slds-text-body_small slds-text-color_weak slds-p-bottom_x-small">
+        Accounts that have been modified since their last successful AbacusNG sync (or have never been synced).
+        Select the accounts you want to transfer and click <strong>Synchronize</strong>.
+      </p>
+
+      <template lwc:if={isLoading}>
+        <div class="slds-is-relative slds-p-vertical_large">
+          <lightning-spinner alternative-text="Loading…" size="small"></lightning-spinner>
+        </div>
+      </template>
+
+      <template lwc:elseif={hasRows}>
+        <lightning-datatable
+          key-field="id"
+          data={rows}
+          columns={columns}
+          onrowselection={handleRowSelection}
+          selected-rows={selectedIds}>
+        </lightning-datatable>
+
+        <div class="slds-grid slds-grid_align-spread slds-p-top_medium">
+          <div class="slds-text-body_small">
+            <strong>{selectedCount}</strong> of {rowCount} selected
+          </div>
+          <lightning-button
+            variant="brand"
+            label="Synchronize"
+            icon-name="utility:sync"
+            disabled={syncDisabled}
+            onclick={handleSynchronize}>
+          </lightning-button>
+        </div>
+      </template>
+
+      <template lwc:else>
+        <div class="slds-illustration slds-illustration_small slds-p-vertical_large slds-align_absolute-center">
+          <p class="slds-text-body_regular slds-text-color_weak">
+            No accounts have changed since the last sync. You're up to date.
+          </p>
+        </div>
+      </template>
+    </div>
+  </lightning-card>
+</template>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>Account.AbacusNgSyncTimeStamp__c</members>
         <members>Contact.PersonioPersonId__c</members>
         <members>Contact.PersonioPersonSyncTimeStamp__c</members>
         <members>Time__c.PersonioImportId__c</members>
@@ -8,6 +9,24 @@
         <name>CustomField</name>
     </types>
     <types>
+        <members>AbacusNgSyncController</members>
+        <members>AbacusNgSyncControllerTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>abacusNgAccountSync</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>AbacusNG_Account_Sync</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>AbacusNG</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>AbacusNG_Integration</members>
         <members>Personio_Integration</members>
         <name>PermissionSet</name>
     </types>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AbacusNgSyncTimeStamp__c</fullName>
+    <description>Timestamp of the last successful synchronization of this Account to AbacusNG. Used to detect records changed since the last sync.</description>
+    <externalId>false</externalId>
+    <label>AbacusNG Sync TimeStamp</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

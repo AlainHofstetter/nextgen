@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>AbacusNG Integration</label>
+    <description>Grants access to the AbacusNG account-sync UI, Apex controller, tab, and tracking field.</description>
+    <applicationVisibilities>
+        <application>AbacusNG</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <classAccesses>
+        <apexClass>AbacusNgSyncController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.AbacusNgSyncTimeStamp__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <tabSettings>
+        <tab>AbacusNG_Account_Sync</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+</PermissionSet>
