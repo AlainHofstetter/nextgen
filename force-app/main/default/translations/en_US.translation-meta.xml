@@ -32,10 +32,6 @@
         <label><!-- Skywalk - Classic --></label>
         <name>SkywalkClassic</name>
     </customApplications>
-    <customApplications>
-        <label><!-- gateB Reporting App --></label>
-        <name>gateBReportingApp</name>
-    </customApplications>
     <customLabels>
         <label><!-- BLC_Footer1 --></label>
         <name>BLC_Footer1</name>

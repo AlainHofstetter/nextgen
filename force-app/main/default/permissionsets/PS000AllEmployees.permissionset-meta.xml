@@ -3217,10 +3217,6 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
-        <tab>gateBServers__c</tab>
-        <visibility>Available</visibility>
-    </tabSettings>
-    <tabSettings>
         <tab>standard-Dashboard</tab>
         <visibility>Visible</visibility>
     </tabSettings>
