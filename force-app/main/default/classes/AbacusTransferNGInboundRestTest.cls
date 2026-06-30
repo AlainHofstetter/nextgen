@@ -1,0 +1,103 @@
+@IsTest
+private class AbacusTransferNGInboundRestTest {
+
+    @IsTest
+    static void missingIdempotencyKeyReturns400() {
+        RestRequest req = new RestRequest();
+        req.requestBody = Blob.valueOf('{}');
+        req.httpMethod = 'POST';
+        RestContext.request = req;
+        RestContext.response = new RestResponse();
+
+        AbacusTransferNGInboundRest.InboundResponse out = AbacusTransferNGInboundRest.handlePost();
+
+        System.assertEquals(400, RestContext.response.statusCode);
+        System.assertEquals('error', out.status);
+    }
+
+    @IsTest
+    static void duplicateIdempotencyKeyReturnsExistingRow() {
+        AbacusTransferNG__c existing = AbacusTransferNGTestFactory.buildInboundSent('Currency Import');
+        existing.IdempotencyKey__c = 'dup-key-001';
+        insert existing;
+
+        RestRequest req = new RestRequest();
+        req.headers.put('Idempotency-Key', 'dup-key-001');
+        req.requestBody = Blob.valueOf('{"type":"Currency Import","payload":{}}');
+        req.httpMethod = 'POST';
+        RestContext.request = req;
+        RestContext.response = new RestResponse();
+
+        AbacusTransferNGInboundRest.InboundResponse out = AbacusTransferNGInboundRest.handlePost();
+
+        System.assertEquals('duplicate', out.status);
+        System.assertEquals(existing.Id, out.abacusTransferNGId);
+        System.assertEquals(1, [SELECT COUNT() FROM AbacusTransferNG__c WHERE IdempotencyKey__c = 'dup-key-001']);
+    }
+
+    @IsTest
+    static void malformedJsonReturns400() {
+        RestRequest req = new RestRequest();
+        req.headers.put('Idempotency-Key', 'bad-json-001');
+        req.requestBody = Blob.valueOf('not json');
+        req.httpMethod = 'POST';
+        RestContext.request = req;
+        RestContext.response = new RestResponse();
+
+        AbacusTransferNGInboundRest.InboundResponse out = AbacusTransferNGInboundRest.handlePost();
+
+        System.assertEquals(400, RestContext.response.statusCode);
+        System.assertEquals('error', out.status);
+    }
+
+    @IsTest
+    static void unknownTypeReturns400() {
+        RestRequest req = new RestRequest();
+        req.headers.put('Idempotency-Key', 'unknown-type-001');
+        req.requestBody = Blob.valueOf('{"type":"SomethingElse","payload":{"x":1}}');
+        req.httpMethod = 'POST';
+        RestContext.request = req;
+        RestContext.response = new RestResponse();
+
+        AbacusTransferNGInboundRest.InboundResponse out = AbacusTransferNGInboundRest.handlePost();
+
+        System.assertEquals(400, RestContext.response.statusCode);
+        System.assertEquals('error', out.status);
+        System.assertEquals(0, [SELECT COUNT() FROM AbacusTransferNG__c WHERE IdempotencyKey__c = 'unknown-type-001']);
+    }
+
+    @IsTest
+    static void supplierInvoiceImportWithoutDocNrReturns500() {
+        RestRequest req = new RestRequest();
+        req.headers.put('Idempotency-Key', 'si-bad-001');
+        req.requestBody = Blob.valueOf('{"type":"Supplier Invoice Import","payload":{}}');
+        req.httpMethod = 'POST';
+        RestContext.request = req;
+        RestContext.response = new RestResponse();
+
+        AbacusTransferNGInboundRest.InboundResponse out = AbacusTransferNGInboundRest.handlePost();
+
+        System.assertEquals(500, RestContext.response.statusCode);
+        System.assertEquals('failed', out.status);
+        AbacusTransferNG__c row = [SELECT Status__c, LastError__c FROM AbacusTransferNG__c WHERE Id = :out.abacusTransferNGId];
+        System.assertEquals('Failed', row.Status__c);
+    }
+
+    @IsTest
+    static void currencyImportLogsRowOnly() {
+        RestRequest req = new RestRequest();
+        req.headers.put('Idempotency-Key', 'curr-001');
+        req.requestBody = Blob.valueOf('{"type":"Currency Import","payload":{"isoCode":"EUR","exchangeRate":0.92}}');
+        req.httpMethod = 'POST';
+        RestContext.request = req;
+        RestContext.response = new RestResponse();
+
+        AbacusTransferNGInboundRest.InboundResponse out = AbacusTransferNGInboundRest.handlePost();
+
+        System.assertEquals('sent', out.status);
+        AbacusTransferNG__c row = [SELECT Status__c, Direction__c, InterfaceType__c FROM AbacusTransferNG__c WHERE Id = :out.abacusTransferNGId];
+        System.assertEquals('Sent', row.Status__c);
+        System.assertEquals('Inbound', row.Direction__c);
+        System.assertEquals('Currency Import', row.InterfaceType__c);
+    }
+}

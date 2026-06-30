@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <!--
+        Abacus MuleSoft Integration — JWT bearer flow for Mule's service user.
+        Grants Mule API access to call the inbound REST endpoint and PATCH AbacusTransferNG__c.
+
+        TODO before deploy:
+          1. Generate an X.509 cert/key pair (`openssl req -x509 -nodes -newkey rsa:2048 ...`).
+          2. Base64-encode the .crt and paste into the <certificate> element below.
+          3. Distribute the .key to Mule's secure properties (never commit it to git).
+          4. After first deploy, capture the auto-generated Consumer Key from Setup and set it in
+             Mule's Salesforce connector configuration.
+          5. Pre-authorize the connected app for the "Abacus Integration User" profile (Setup →
+             Manage Connected Apps → Edit Policies → Permitted Users = Admin approved users).
+    -->
+    <contactEmail>TODO@example.com</contactEmail>
+    <label>Abacus MuleSoft Integration</label>
+    <oauthConfig>
+        <callbackUrl>https://login.salesforce.com</callbackUrl>
+        <!-- TODO replace placeholder with base64-encoded X.509 cert -->
+        <certificate>REPLACE_WITH_BASE64_CERT</certificate>
+        <isAdminApproved>true</isAdminApproved>
+        <scopes>Api</scopes>
+        <scopes>RefreshToken</scopes>
+        <scopes>Web</scopes>
+    </oauthConfig>
+</ConnectedApp>

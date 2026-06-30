@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>callReplay</name>
+        <label>Publish AbacusTransferNGQueued PEs</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>AbacusTransferNGReplayAction</actionName>
+        <actionType>apex</actionType>
+        <connector><targetReference>successScreen</targetReference></connector>
+        <faultConnector><targetReference>errorScreen</targetReference></faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>abacusTransferNGIds</name>
+            <value><elementReference>eligibleIds</elementReference></value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <assignments>
+        <name>collectEligibleId</name>
+        <label>Collect eligible Id</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>eligibleIds</assignToReference>
+            <operator>Add</operator>
+            <value><elementReference>loopEligible.Id</elementReference></value>
+        </assignmentItems>
+        <connector><targetReference>loopEligible</targetReference></connector>
+    </assignments>
+    <description>Bulk approval: FinanceQueue selects rows from the AbacusTransferNG__c list view, clicks "Approve &amp; Push Selected", and this flow filters to Pending Approval rows then calls AbacusTransferNGReplayAction once with the full collection of eligible Ids.</description>
+    <label>RTF AbacusTransferNG Bulk Approve And Push</label>
+    <loops>
+        <name>loopEligible</name>
+        <label>Loop eligible rows</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>eligibleRows</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector><targetReference>collectEligibleId</targetReference></nextValueConnector>
+        <noMoreValuesConnector><targetReference>callReplay</targetReference></noMoreValuesConnector>
+    </loops>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>getEligibleRows</name>
+        <label>Get rows in Pending Approval</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector><targetReference>confirmScreen</targetReference></connector>
+        <faultConnector><targetReference>errorScreen</targetReference></faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>In</operator>
+            <value><elementReference>ids</elementReference></value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value><stringValue>PendingApproval</stringValue></value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>AbacusTransferNG__c</object>
+        <outputReference>eligibleRows</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>Status__c</queriedFields>
+    </recordLookups>
+    <screens>
+        <name>confirmScreen</name>
+        <label>Confirm bulk approval</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector><targetReference>loopEligible</targetReference></connector>
+        <fields>
+            <name>confirmText</name>
+            <fieldText>&lt;p&gt;Approve and release the selected rows in &lt;b&gt;Pending Approval&lt;/b&gt; to Abacus?&lt;/p&gt;&lt;p&gt;Rows already in any other status are silently skipped.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>errorScreen</name>
+        <label>Error</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>errorText</name>
+            <fieldText>&lt;p&gt;The bulk approval failed:&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>successScreen</name>
+        <label>Approved &amp; Released</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>successText</name>
+            <fieldText>&lt;p&gt;Approved and released the eligible rows to Abacus. They now appear in &lt;b&gt;Pending&lt;/b&gt; (Mule pickup in flight).&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector><targetReference>getEligibleRows</targetReference></connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>ids</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>eligibleRows</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>AbacusTransferNG__c</objectType>
+    </variables>
+    <variables>
+        <name>eligibleIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

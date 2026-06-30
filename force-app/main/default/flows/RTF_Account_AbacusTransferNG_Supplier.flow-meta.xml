@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <description>NG path: enqueues an AbacusTransferNG__c row when an Account becomes (or remains) an Abacus Supplier with changed key details. Mirrors entry conditions of AbacusInterfaceAccountUpsertSupplier (legacy).</description>
+    <label>RTF Account AbacusTransferNG Supplier</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>createNGRow</name>
+        <label>Create AbacusTransferNG row</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Account__c</field>
+            <value><elementReference>$Record.Id</elementReference></value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Direction__c</field>
+            <value><stringValue>Outbound</stringValue></value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>InterfaceType__c</field>
+            <value><stringValue>Account Supplier Upsert</stringValue></value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SourceObject__c</field>
+            <value><stringValue>Account</stringValue></value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SourceRecordId__c</field>
+            <value><elementReference>$Record.Id</elementReference></value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value><stringValue>PendingApproval</stringValue></value>
+        </inputAssignments>
+        <object>AbacusTransferNG__c</object>
+    </recordCreates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector><targetReference>createNGRow</targetReference></connector>
+        <filterFormula>OR(AND(ISNEW(), $Record.AbacusSupplier__c = TRUE), AND(PRIORVALUE($Record.AbacusSupplier__c) = FALSE, $Record.AbacusSupplier__c = TRUE), AND($Record.AbacusSupplier__c = TRUE, OR(ISCHANGED($Record.Name), ISCHANGED($Record.BillingCity__c), ISCHANGED($Record.BillingZip__c), ISCHANGED($Record.BillingStreetNr__c), ISCHANGED($Record.BillingPoBox__c), ISCHANGED($Record.BillingAddressLine2__c), ISCHANGED($Record.BillingAddressLine3__c), ISCHANGED($Record.BillingCountryISO__c), ISCHANGED($Record.AbacusAccountNr__c), ISCHANGED($Record.FirstName__c), ISCHANGED($Record.BillingState__c), ISCHANGED($Record.Website), ISCHANGED($Record.Email__c), ISCHANGED($Record.Phone), ISCHANGED($Record.Fax), ISCHANGED($Record.AccountLanguage__c), ISCHANGED($Record.CurrencyIsoCode))))</filterFormula>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

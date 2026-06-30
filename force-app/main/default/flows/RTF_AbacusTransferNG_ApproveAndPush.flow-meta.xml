@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>callReplay</name>
+        <label>Publish AbacusTransferNGQueued PE</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>AbacusTransferNGReplayAction</actionName>
+        <actionType>apex</actionType>
+        <connector><targetReference>successScreen</targetReference></connector>
+        <faultConnector><targetReference>errorScreen</targetReference></faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>abacusTransferNGId</name>
+            <value><elementReference>recordId</elementReference></value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <decisions>
+        <name>checkStatus</name>
+        <label>Status is PendingApproval?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector><targetReference>wrongStatusScreen</targetReference></defaultConnector>
+        <defaultConnectorLabel>Wrong status</defaultConnectorLabel>
+        <rules>
+            <name>isPendingApproval</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>getRow.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue><stringValue>PendingApproval</stringValue></rightValue>
+            </conditions>
+            <connector><targetReference>confirmScreen</targetReference></connector>
+            <label>Pending Approval</label>
+        </rules>
+    </decisions>
+    <description>Approver screen flow: confirms an AbacusTransferNG__c row is ok to push to Abacus, stamps ApprovedBy/ApprovedAt, flips Status to Pending, and calls AbacusTransferNGReplayAction to publish the AbacusTransferNGQueued__e Platform Event.</description>
+    <label>RTF AbacusTransferNG Approve And Push</label>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>getRow</name>
+        <label>Get AbacusTransferNG row</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector><targetReference>checkStatus</targetReference></connector>
+        <faultConnector><targetReference>errorScreen</targetReference></faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value><elementReference>recordId</elementReference></value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>AbacusTransferNG__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>Status__c</queriedFields>
+        <queriedFields>InterfaceType__c</queriedFields>
+        <queriedFields>Direction__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>updateRow</name>
+        <label>Stamp approval + set Status=Pending</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector><targetReference>callReplay</targetReference></connector>
+        <faultConnector><targetReference>errorScreen</targetReference></faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value><elementReference>recordId</elementReference></value>
+        </filters>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value><stringValue>Pending</stringValue></value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ApprovedBy__c</field>
+            <value><elementReference>$User.Id</elementReference></value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ApprovedAt__c</field>
+            <value><elementReference>$Flow.CurrentDateTime</elementReference></value>
+        </inputAssignments>
+        <object>AbacusTransferNG__c</object>
+    </recordUpdates>
+    <screens>
+        <name>confirmScreen</name>
+        <label>Confirm approval</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector><targetReference>updateRow</targetReference></connector>
+        <fields>
+            <name>confirmText</name>
+            <fieldText>&lt;p&gt;You are about to approve &lt;b&gt;{!getRow.Name}&lt;/b&gt; ({!getRow.InterfaceType__c}) and push it to Abacus.&lt;/p&gt;&lt;p&gt;Confirm with Next, or close this dialog to cancel.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>errorScreen</name>
+        <label>Error</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>errorText</name>
+            <fieldText>&lt;p&gt;Could not approve this record:&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>successScreen</name>
+        <label>Pushed</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>successText</name>
+            <fieldText>&lt;p&gt;&lt;b&gt;{!getRow.Name}&lt;/b&gt; was approved and a Platform Event was published. Abacus pickup is now pending Mule's subscription.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>wrongStatusScreen</name>
+        <label>Wrong status</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>wrongStatusText</name>
+            <fieldText>&lt;p&gt;This record is not in &lt;b&gt;Pending Approval&lt;/b&gt; status (currently: {!getRow.Status__c}). Only Pending Approval records can be approved &amp; pushed from here.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector><targetReference>getRow</targetReference></connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <isCollection>false</isCollection>
+    </variables>
+</Flow>

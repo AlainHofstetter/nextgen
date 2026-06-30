@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <description>NG path: publishes the AbacusTransferNGQueued__e Platform Event when a new AbacusTransferNG__c row is created with Status=Pending. Mule subscribes to this PE.</description>
+    <label>RTF AbacusTransferNG PublishPE</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>publishPE</name>
+        <label>Publish AbacusTransferNGQueued PE</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>AbacusTransferNGId__c</field>
+            <value><elementReference>$Record.Id</elementReference></value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>InterfaceType__c</field>
+            <value><elementReference>$Record.InterfaceType__c</elementReference></value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>IdempotencyKey__c</field>
+            <value><elementReference>$Record.Name</elementReference></value>
+        </inputAssignments>
+        <object>AbacusTransferNGQueued__e</object>
+    </recordCreates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector><targetReference>publishPE</targetReference></connector>
+        <filterFormula>$Record.Status__c = "Pending"</filterFormula>
+        <object>AbacusTransferNG__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

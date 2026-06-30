@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Grants the accounting team (FinanceQueue members) the ability to approve and push AbacusTransferNG__c rows to Abacus via the Approve &amp; Push quick action. Read access on all rows, edit access for stamping approval, and visibility of the quick action.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Abacus Transfer NG Approver</label>
+    <license>Salesforce</license>
+
+    <objectPermissions>
+        <object>AbacusTransferNG__c</object>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+
+    <fieldPermissions>
+        <field>AbacusTransferNG__c.ApprovedBy__c</field>
+        <editable>true</editable>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <field>AbacusTransferNG__c.ApprovedAt__c</field>
+        <editable>true</editable>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <field>AbacusTransferNG__c.Account__c</field>
+        <editable>false</editable>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <field>AbacusTransferNG__c.Invoice__c</field>
+        <editable>false</editable>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <field>AbacusTransferNG__c.SupplierInvoice__c</field>
+        <editable>false</editable>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <field>AbacusTransferNG__c.LastError__c</field>
+        <editable>false</editable>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <field>AbacusTransferNG__c.PayloadSnapshot__c</field>
+        <editable>false</editable>
+        <readable>true</readable>
+    </fieldPermissions>
+
+    <classAccesses>
+        <apexClass>AbacusTransferNGReplayAction</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+
+    <tabSettings>
+        <tab>AbacusTransferNG__c</tab>
+        <visibility>Available</visibility>
+    </tabSettings>
+</PermissionSet>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>AbacusTransferNGCompactLayout</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <label>Abacus Transfer NG</label>
+    <nameField>
+        <displayFormat>ABNG-{0000000}</displayFormat>
+        <label>Abacus Transfer NG Nr.</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Abacus Transfers NG</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>InterfaceType__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Direction__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>SourceObject__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>SourceRecordId__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LastAttemptAt__c</customTabListAdditionalFields>
+        <listViewButtons>Bulk_Approve_and_Push</listViewButtons>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

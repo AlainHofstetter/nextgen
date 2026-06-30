@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <description>NG path: if an accountant unticks AbacusInterfaceExport__c before Mule has picked up the row, transition any Pending AbacusTransferNG__c rows for this Invoice to Cancelled.</description>
+    <label>RTF Invoice AbacusTransferNG Cancel</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>getPendingNGRows</name>
+        <label>Get Pending NG rows for this Invoice</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector><targetReference>loopOverPending</targetReference></connector>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Invoice__c</field>
+            <operator>EqualTo</operator>
+            <value><elementReference>$Record.Id</elementReference></value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value><stringValue>Pending</stringValue></value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>AbacusTransferNG__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <loops>
+        <name>loopOverPending</name>
+        <label>Loop over Pending NG rows</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>getPendingNGRows</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector><targetReference>setCancelled</targetReference></nextValueConnector>
+        <noMoreValuesConnector><targetReference>cancelNGRows</targetReference></noMoreValuesConnector>
+    </loops>
+    <assignments>
+        <name>setCancelled</name>
+        <label>Set Status to Cancelled</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector><targetReference>loopOverPending</targetReference></connector>
+        <assignmentItems>
+            <assignToReference>loopOverPending.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value><stringValue>Cancelled</stringValue></value>
+        </assignmentItems>
+    </assignments>
+    <recordUpdates>
+        <name>cancelNGRows</name>
+        <label>Update NG rows to Cancelled</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputReference>getPendingNGRows</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector><targetReference>getPendingNGRows</targetReference></connector>
+        <filterFormula>AND(PRIORVALUE($Record.AbacusInterfaceExport__c) = TRUE, $Record.AbacusInterfaceExport__c = FALSE)</filterFormula>
+        <object>Invoice__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

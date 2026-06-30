@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bulk_Approve_and_Push</fullName>
+    <availability>online</availability>
+    <description>Bulk-approve the selected Pending Approval rows and release them to Abacus via MuleSoft.</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Approve &amp; Push Selected</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/flow/RTF_AbacusTransferNG_BulkApproveAndPush?ids={!GETRECORDIDS($ObjectType.AbacusTransferNG__c)}&amp;retURL=/lightning/o/AbacusTransferNG__c/list</url>
+</WebLink>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <description>NG path: enqueues an AbacusTransferNG__c row whenever a Project is created OR has a tracked Abacus field changed. No accountant approval required (auto-transfer).</description>
+    <label>RTF Project AbacusTransferNG</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>createNGRow</name>
+        <label>Create AbacusTransferNG row</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Project__c</field>
+            <value><elementReference>$Record.Id</elementReference></value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Direction__c</field>
+            <value><stringValue>Outbound</stringValue></value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>InterfaceType__c</field>
+            <value><stringValue>Project Export</stringValue></value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SourceObject__c</field>
+            <value><stringValue>Project__c</stringValue></value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SourceRecordId__c</field>
+            <value><elementReference>$Record.Id</elementReference></value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value><stringValue>Pending</stringValue></value>
+        </inputAssignments>
+        <object>AbacusTransferNG__c</object>
+    </recordCreates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector><targetReference>createNGRow</targetReference></connector>
+        <filterFormula>OR(ISNEW(), ISCHANGED($Record.AbacusProjectNr__c), ISCHANGED($Record.AbacusProjectName__c), ISCHANGED($Record.AbacusProjectAbbreviation__c), ISCHANGED($Record.AbacusProjectStatus__c), ISCHANGED($Record.AbacusProjectType__c), ISCHANGED($Record.AbacusResponsible__c), ISCHANGED($Record.AbacusProjectResponsibleBusiness__c))</filterFormula>
+        <object>Project__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
