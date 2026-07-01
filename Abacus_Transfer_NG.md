@@ -4,6 +4,8 @@
 
 Move the Salesforce ↔ Abacus integration from XML-file-drop on a network share to a REST integration brokered by MuleSoft. The new path is built on a **new custom object `AbacusTransferNG__c`** and runs in parallel to the legacy `AbacusInterface__c` machinery — legacy automation is not modified.
 
+> **Scope note on the legacy path.** "Parallel to legacy" holds for the interface types that have Salesforce-side legacy automation in this repo (Account Debtor/Supplier upserts, supplier-cost inbound). It does **not** hold for **Staff Hour Export (time entries)**: there is *no* legacy Salesforce implementation of it — no Apex, no flow, no named credential/remote site references `AbacusInterface__c` for staff hours. The old time-entry export ran entirely outside Salesforce (Talend reading `Time__c` and dropping XML on the UNC share), and appears unused/dormant from the SF side. The NG Staff Hour batch is therefore greenfield, not a mirror of an existing SF batch. See [Staff Hour Export](#staff-hour-export-scheduled-batch).
+
 ## Constraints
 
 - **The old system is not modified.** `AbacusInterface__c`, its fields, flows, file-drop folders, sharing rules, custom metadata, and the middleware that reads the UNC share are left untouched.
@@ -14,12 +16,14 @@ Move the Salesforce ↔ Abacus integration from XML-file-drop on a network share
 
 ## Accounting Verification Gate
 
-For outbound interfaces, there is a **single approval gate** owned by the accounting team:
+For outbound interfaces, there is a **single approval gate** owned by the accounting team — but not every interface type goes through it. Some are auto-published; see the table below.
 
-1. **Queueing is automatic** — when the source record changes in a way the legacy file-drop path would have triggered (e.g. `AbacusDebtor__c` flipped on, `AbacusInterfaceExport__c` ticked on an invoice), a record-triggered flow inserts an `AbacusTransferNG__c` row with `Status__c = 'Pending Approval'`. No action is required on the source record beyond what was already being done there.
-2. **Approval happens in batches from the list view.** The accounting team (FinanceQueue) opens the `AbacusTransferNG__c` list view (typically the "Pending Approval" view), multi-selects the rows they deem ready to send, and clicks the **Approve & Push Selected** list view button. The screen flow filters to rows currently in `Pending Approval`, then stamps `ApprovedBy__c` / `ApprovedAt__c`, flips `Status__c` to `Pending`, and publishes one `AbacusTransferNGQueued__e` Platform Event per row. Mule takes it from there.
+1. **Queueing is automatic** — when the source record changes in a way the legacy file-drop path would have triggered (e.g. `AbacusDebtor__c` flipped on, `AbacusInterfaceExport__c` ticked on an invoice), a record-triggered flow inserts an `AbacusTransferNG__c` row with `Status__c = 'PendingApproval'` (label *Pending Approval*). No action is required on the source record beyond what was already being done there.
+2. **Approval happens in batches from the list view.** The accounting team (FinanceQueue) opens the `AbacusTransferNG__c` list view (typically the "Pending Approval" view), multi-selects the rows they deem ready to send, and clicks the **Approve & Push Selected** list view button. The screen flow filters to rows currently in `PendingApproval`, then stamps `ApprovedBy__c` / `ApprovedAt__c`, flips `Status__c` to `Pending`, and publishes one `AbacusTransferNGQueued__e` Platform Event per row. Mule takes it from there.
 
 Approval is bulk-by-design: there is no per-record approval button. The list view is the gate.
+
+**Auto-published interface types bypass the gate.** For Project Export and Staff Hour Export, the queueing step inserts the row directly at `Status='Pending'`. A shared record-triggered flow `RTF_AbacusTransferNG_PublishPE` fires on any `AbacusTransferNG__c` created with `Status='Pending'` and publishes the `AbacusTransferNGQueued__e` Platform Event immediately — Mule picks it up without an accountant gesture.
 
 | Interface Type | Source record | Queue trigger | Approval required? |
 |---|---|---|---|
@@ -27,7 +31,7 @@ Approval is bulk-by-design: there is no per-record approval button. The list vie
 | Cancellation Export | `Invoice__c` (canceled) | `AbacusInterfaceExport__c` on the cancellation | Yes (FinanceQueue, bulk from list view) |
 | Account Debtor Upsert | `Account` | `AbacusDebtor__c` flips on, or tracked address fields change | Yes (FinanceQueue, bulk from list view) |
 | Account Supplier Upsert | `Account` | `AbacusSupplier__c` flips on, or tracked key fields change | Yes (FinanceQueue, bulk from list view) |
-| Staff Hour Export | `Time__c` / scheduled batch | Existing aggregation rules (unchanged) | Yes (FinanceQueue, bulk from list view) |
+| Staff Hour Export | `Time__c` / scheduled batch | Scheduled batch scans the configured window | **No — auto-published** (see [Staff Hour Export](#staff-hour-export-scheduled-batch) below). *No legacy Salesforce equivalent — the old time-entry export appears unused from the SF side; the NG batch is greenfield.* |
 | Project Export | `Project__c` | Project create or change of any tracked Abacus field | **No — auto-published** (NG-only, no legacy equivalent) |
 | Currency Import | n/a (inbound) | — | n/a (inbound) |
 
@@ -38,7 +42,7 @@ Approval is bulk-by-design: there is no per-record approval button. The list vie
 - On the source record, the existing formula field `Invoice__c.AbacusStatus__c` continues to reflect the lifecycle in finance-readable terms (`READY` → `SELECTED TO TRANSFER` → `TRANSFERRED`) and is **not modified** by this plan. Mule stamps `Invoice__c.AbacusTransfer__c` on success — same field, same timing as the legacy path — so the existing formula keeps working.
 - On the queued row, `Status__c` + `ApprovedBy__c` + `ApprovedAt__c` give the finance team a full audit trail of who approved what and when.
 
-**Reverting before approval**: if the accountant unticks the source-record verification before a FinanceQueue member has approved the row, a companion flow on `AbacusTransferNG__c` moves the still-`Pending Approval` row to `Cancelled` so it never appears in the approval batch.
+**Reverting before approval**: if the accountant unticks the source-record verification before a FinanceQueue member has approved the row, a companion flow on `AbacusTransferNG__c` moves the still-`PendingApproval` row to `Cancelled` so it never appears in the approval batch.
 
 ## Target Architecture
 
@@ -51,15 +55,20 @@ Approval is bulk-by-design: there is no per-record approval button. The list vie
                     │        ▼ (record-triggered flow, matches legacy     │
                     │           trigger conditions)                       │
                     │                                                     │
-                    │     AbacusTransferNG__c row (Status=PendingApproval)│
+                    │  AbacusTransferNG__c row                            │
+                    │    • Status=PendingApproval  (approval-gated types) │
+                    │    • Status=Pending          (Project Export;       │
+                    │                               Staff Hour batch)     │
                     │                          │                          │
-                    │                          ▼                          │
-                    │   FinanceQueue opens the AbacusTransferNG list view │
-                    │   multi-selects rows, clicks "Approve & Push        │
-                    │   Selected" (list-view button → screen flow         │
-                    │   → AbacusTransferNGReplayAction Apex)              │
-                    │                          │                          │
-                    │   ApprovedBy/ApprovedAt stamped, Status=Pending     │
+                    │           ┌──────────────┴──────────────┐           │
+                    │           ▼                             ▼           │
+                    │   Approval path:                Auto-publish path:  │
+                    │   FinanceQueue clicks           RTF_AbacusTransferNG│
+                    │   "Approve & Push Selected"     _PublishPE fires on │
+                    │   → ReplayAction Apex sets      create when         │
+                    │   Status=Pending, stamps        Status=Pending      │
+                    │   ApprovedBy/ApprovedAt,                            │
+                    │   publishes PE                                      │
                     │                          │                          │
                     │                          └─► PE AbacusTransferNG..  │
                     └─────────────────────┬───────────────────────────────┘
@@ -80,8 +89,9 @@ Approval is bulk-by-design: there is no per-record approval button. The list vie
 ```
 
 **Direction of work**:
-- Salesforce *queues* the transfer when the source record changes.
-- An accountant *approves* the row, which publishes a Platform Event.
+- Salesforce *queues* the transfer when the source record changes (or when the Staff Hour batch runs).
+- **Approval-gated types**: an accountant *approves* the row, which publishes a Platform Event.
+- **Auto-published types** (Project Export, Staff Hour Export): the row is created at `Status='Pending'` and the shared `RTF_AbacusTransferNG_PublishPE` flow publishes the PE on create — no accountant gesture.
 - Mule *does* the work: read source, transform, call Abacus, retry, DLQ.
 - Mule *writes back* via Salesforce REST to update the `AbacusTransferNG__c` row with status, Mule correlation id, Abacus document id, last HTTP status, last error.
 - Mule also stamps the source record's existing Abacus tracking fields (e.g. `Invoice__c.AbacusTransfer__c`) on success — so the existing post-transfer flows (like `InvoiceStatusSentToAbacusWhenTransferDateNotNull`) keep firing unchanged.
@@ -94,9 +104,9 @@ Auto-number `Name`: `ABNG-{0000000}`.
 
 | API name | Type | Purpose |
 |---|---|---|
-| `InterfaceType__c` | Picklist | Seven values — six mirror `AbacusInterface__c.InterfaceType__c` (Account Debtor Upsert / Account Supplier Upsert / Invoice Export / Cancellation Export / Staff Hour Export / Currency Import) plus **Project Export** (NG-only, no legacy equivalent). |
+| `InterfaceType__c` | Picklist | Seven values — six mirror `AbacusInterface__c.InterfaceType__c` (Account Debtor Upsert / Account Supplier Upsert / Invoice Export / Cancellation Export / Staff Hour Export / Currency Import) plus **Project Export** (NG-only, no legacy equivalent). Note: the `Staff Hour Export` value exists on the legacy picklist but has **no legacy Salesforce automation behind it** (see the Staff Hour Export section) — it is effectively NG-only in practice. |
 | `Direction__c` | Picklist (`Outbound`, `Inbound`) | `Outbound` for SF→Abacus, `Inbound` for Abacus→SF. |
-| `Status__c` | Picklist | `Pending Approval`, `Pending`, `Dormant`, `InFlight`, `Sent`, `Failed`, `DeadLettered`, `Cancelled`. Default `Pending Approval` for new outbound rows. |
+| `Status__c` | Picklist (restricted) | API values: `PendingApproval`, `Pending`, `Dormant`, `InFlight`, `Sent`, `Failed`, `DeadLettered`, `Cancelled`. Default `PendingApproval` for new outbound rows requiring approval. Labels differ from API values where noted (`PendingApproval` → *Pending Approval*, `InFlight` → *In Flight*, `DeadLettered` → *Dead Lettered*). |
 | `SourceObject__c` | Text(80) | API name of the source SObject, e.g. `Invoice__c`. |
 | `SourceRecordId__c` | Text(18), Indexed | Id of the source record. |
 | `Account__c` | Lookup(Account) | Populated for debtor/supplier upserts. |
@@ -118,42 +128,69 @@ Auto-number `Name`: `ABNG-{0000000}`.
 
 ### Platform Event
 
-`AbacusTransferNGQueued__e` — published by the `AbacusTransferNGReplayAction` Apex class on approval (and on manual replay). Carries:
+`AbacusTransferNGQueued__e` is published by two paths, both landing on the same event bus:
+
+- **Approval / replay path** — `AbacusTransferNGReplayAction` Apex class calls `EventBus.publish` when a FinanceQueue member releases a `PendingApproval` row (or when someone manually replays a `Failed`/`DeadLettered` row).
+- **Auto-publish path** — the record-triggered flow `RTF_AbacusTransferNG_PublishPE` fires on any `AbacusTransferNG__c` created directly at `Status='Pending'` and creates the `AbacusTransferNGQueued__e` record. This is how Project Export rows, Staff Hour Export batch rows, and any future gate-less interface types reach Mule.
+
+The event carries:
 
 - `AbacusTransferNGId__c` (Text 18)
 - `InterfaceType__c` (Text 80)
 - `IdempotencyKey__c` (Text 40)
 
-Mule's Salesforce connector subscribes to this PE.
+Mule's Salesforce connector subscribes to this PE via the Salesforce Streaming API (CometD long-poll). Salesforce never calls Mule directly — it just publishes to its internal event bus; Mule pulls the event over its open subscription.
 
 ## Salesforce-Side Changes
 
 ### Source-record-triggered flows (queue gesture)
 
-One record-triggered flow per source object creates `AbacusTransferNG__c` rows in `Status__c = 'Pending Approval'` when the same trigger conditions that drive the legacy file-drop flow are met:
+One record-triggered flow per source object creates `AbacusTransferNG__c` rows when the same trigger conditions that drive the legacy file-drop flow are met. Approval-gated flows insert at `Status='PendingApproval'`; auto-published flows insert at `Status='Pending'`.
 
-- `RTF_Account_AbacusTransferNG_Debtor` — Account becomes a debtor or tracked billing fields change while debtor=true.
-- `RTF_Account_AbacusTransferNG_Supplier` — Account becomes a supplier or tracked key fields change while supplier=true.
-- `RTF_Account_AbacusTransferNG_Cancel` — debtor or supplier flag is unticked → any still-Pending-Approval rows for the Account flip to `Cancelled`.
-- `RTF_Invoice_AbacusTransferNG` — `AbacusInterfaceExport__c` flips on.
+- `RTF_Account_AbacusTransferNG_Debtor` — Account becomes a debtor or tracked billing fields change while debtor=true. Inserts at `PendingApproval`.
+- `RTF_Account_AbacusTransferNG_Supplier` — Account becomes a supplier or tracked key fields change while supplier=true. Inserts at `PendingApproval`.
+- `RTF_Account_AbacusTransferNG_Cancel` — debtor or supplier flag is unticked → any still-`PendingApproval` rows for the Account flip to `Cancelled`.
+- `RTF_Invoice_AbacusTransferNG` — `AbacusInterfaceExport__c` flips on. Inserts at `PendingApproval`.
 - `RTF_Invoice_AbacusTransferNG_Cancel` — companion cancellation flow.
 - `RTF_Invoice_AbacusTransferNG_Cancellation` — cancellation invoice path.
 - `RTF_Invoice_AbacusNGTransfer_Finalise` — after Mule callback flips `AbacusNGTransfer__c`, finalises invoice status (`InvoiceStatus__c = 'Sent'`).
-- `RTF_Project_AbacusTransferNG` — project create or change of any tracked Abacus field. **Bypasses approval** (auto-publishes), since Project Export has no accountant gate.
+- `RTF_Project_AbacusTransferNG` — project create or change of any tracked Abacus field. Inserts at `Status='Pending'` (bypasses approval — Project Export has no accountant gate).
 
-The trigger conditions of each flow mirror the existing legacy flow that creates `AbacusInterface__c` rows, so the *moment of queueing* is identical from the user's perspective.
+In addition, a shared publisher flow watches for gate-less inserts:
+
+- `RTF_AbacusTransferNG_PublishPE` — record-triggered (after-save, create only) on `AbacusTransferNG__c`. Filter: `Status__c = "Pending"`. Creates the `AbacusTransferNGQueued__e` Platform Event. This is what makes Project Export and Staff Hour Export batch rows reach Mule without an accountant clicking Approve.
+
+The trigger conditions of each source-record flow mirror the existing legacy flow that creates `AbacusInterface__c` rows, so the *moment of queueing* is identical from the user's perspective.
 
 ### Approval flow (release gesture)
 
 - `RTF_AbacusTransferNG_BulkApproveAndPush` is a screen flow exposed as the **Approve & Push Selected** list view button (a `WebLink` with `displayType=massActionButton`) on `AbacusTransferNG__c`. The button URL passes the selected record Ids to the flow as a Text collection.
 - The flow:
-  1. Queries the `AbacusTransferNG__c` rows whose Ids were selected AND whose `Status__c = 'PendingApproval'`. Rows in any other status are silently filtered out — the accountant can multi-select freely without worrying about already-released or cancelled rows.
+  1. Queries the `AbacusTransferNG__c` rows whose Ids were selected AND whose `Status__c = 'PendingApproval'` (API value; label *Pending Approval*). Rows in any other status are silently filtered out — the accountant can multi-select freely without worrying about already-released or cancelled rows.
   2. Shows a confirmation screen identifying how many rows are about to be released.
   3. Loops the eligible rows into a String collection of Ids.
   4. Calls `AbacusTransferNGReplayAction.replay({abacusTransferNGIds: [...]})` once with the full collection. The Apex method updates each row in one DML (`Status__c = 'Pending'`, `ApprovedBy__c = $User.Id`, `ApprovedAt__c = now`) and publishes one `AbacusTransferNGQueued__e` Platform Event per row in one `EventBus.publish` call.
   5. Shows a success screen.
 
 The same `AbacusTransferNGReplayAction` Apex method is reused for the **Replay** workflow on `Failed` / `DeadLettered` rows. Its `Request` class accepts either a single `abacusTransferNGId` or a collection `abacusTransferNGIds` — the bulk approval flow uses the collection form, the manual replay invocation uses either.
+
+### Staff Hour Export (scheduled batch)
+
+> **Remark — no legacy Salesforce implementation (see the [scope note](#goal) at the top).** The old "Staff Hour Export" time-entry sender leaves only two traces in this repo: the `Staff Hour Export` picklist value on `AbacusInterface__c`, and the `FolderPathXMLFile__c` field pointing at the UNC share (`\\BLC-ABA-01\SkywalkAbacusIntegration\...`) that Talend consumed. No Apex references `AbacusInterface__c`, no flow creates staff-hour rows, and there is no named credential/remote site for it — the actual sender (query `Time__c`, aggregate, drop XML) lived in Talend/external scheduling, and is effectively dormant/unused from the Salesforce side. The NG batch below is therefore written from scratch, not mirrored from an existing Apex batch — the field grouping and date semantics are best-guess contracts to confirm with finance (see the TODO in `AbacusTransferNGStaffHourBatch`).
+
+Staff Hour Export does not queue from a record trigger. Instead, `AbacusTransferNGStaffHourScheduler` (a `Schedulable`) invokes `AbacusTransferNGStaffHourBatch` on a schedule. The batch:
+
+1. **Window** — default is the last calendar week (Monday 00:00 → Sunday 23:59:59.999). An overloaded constructor accepts an explicit `(fromDt, untilDt)` for manual replays or backfills.
+2. **Query** — `Time__c` records where `DateFrom__c` is in the window and `BillingReceiver__c` is set.
+3. **Group** — distinct `BillingReceiver__c` Account Ids.
+4. **De-dupe** — skips any receiver that already has an open (`Dormant` / `Pending` / `InFlight`) `AbacusTransferNG__c` row of type `Staff Hour Export`. This is a safety net for the same schedule firing twice within a window; it does **not** de-dupe across successive weeks.
+5. **Insert** — one `AbacusTransferNG__c` per remaining receiver with `InterfaceType__c = 'Staff Hour Export'`, `Direction__c = 'Outbound'`, `Status__c = 'Pending'`, `Account__c = <receiverId>`, `SourceObject__c = 'Time__c'`. Because the row is inserted at `Status='Pending'`, the shared `RTF_AbacusTransferNG_PublishPE` flow publishes the PE immediately. **No accountant approval gate.**
+
+Mule receives the PE, reads the `AbacusTransferNG__c` row (which carries only `Account__c` — the batch does not stamp the window on the row today), re-derives the window on its side, and re-queries `Time__c` for the matching receiver + window before transforming and posting to Abacus.
+
+> **Known gap.** The window (`fromDt`, `untilDt`) is not stamped on the `AbacusTransferNG__c` row. Mule and the batch must agree on the window definition independently. If the batch is ever replayed with a non-default window, or if Mule processes an event long after the schedule ran, the two sides can drift. A follow-up should add `WindowFrom__c` / `WindowUntil__c` fields (or use `PayloadSnapshot__c`) so the row is self-describing.
+
+The scheduler class is present but no `CronTrigger` is committed to metadata; the schedule must be created out-of-band via `System.schedule(...)` at deploy time.
 
 ### Inbound (Currency Import, Supplier Invoice)
 
@@ -184,7 +221,7 @@ The legacy inbound file-drop reader is untouched and keeps running for any inbou
 ## MuleSoft-Side Responsibilities
 
 1. **Subscribe** to `AbacusTransferNGQueued__e` via the Salesforce connector. Each event → one job.
-2. **Fetch** the `AbacusTransferNG__c` row and the related source record (resolved via `SourceObject__c` + `SourceRecordId__c`) in one or two SOQL calls. If the row's `Status__c` is `Cancelled` by the time Mule reads it, drop the message (the accountant unticked the verification flag before approval, or the row was manually cancelled).
+2. **Fetch** the `AbacusTransferNG__c` row and the related source record (resolved via `SourceObject__c` + `SourceRecordId__c`) in one or two SOQL calls. If the row's `Status__c` is `Cancelled` by the time Mule reads it, drop the message (the accountant unticked the verification flag before approval, or the row was manually cancelled). For Staff Hour Export rows, the source record lookup is replaced by a `Time__c` query for the receiver + window.
 3. **Set `Status__c = 'InFlight'`** and `LastAttemptAt__c = now` (single PATCH).
 4. **Transform** with DataWeave into the Abacus REST payload. One DataWeave module per `InterfaceType__c`. Optionally write the transformed payload back to `PayloadSnapshot__c`.
 5. **Call Abacus** with header `Idempotency-Key: {IdempotencyKey__c}`. Use `until-successful` for retry; on terminal failure, push to DLQ (Anypoint MQ).
@@ -204,19 +241,21 @@ The existing mapping CMDT records (`Field.Account_AbacusDebtor` etc.) are **not*
    │  Prepared → Queued → Finished (No Errors|With Err.) │
    └─────────────────────────────────────────────────────┘
 
-   NG path (AbacusTransferNG__c)
+   NG path (AbacusTransferNG__c) — API values, not labels
    ┌─────────────────────────────────────────────────────┐
-   │  Pending Approval ──► Pending ──► InFlight ──► Sent │
-   │       │                  │            │             │
-   │       │                  │            └► Failed ──► DeadLettered │
-   │       │                  │                          │
-   │       └──► Cancelled     └──► Cancelled (rare)      │
+   │  PendingApproval ──► Pending ──► InFlight ──► Sent  │
+   │       │                 │            │              │
+   │       │                 │            └► Failed ──► DeadLettered │
+   │       │                 │                           │
+   │       └──► Cancelled    └──► Cancelled (rare)       │
    │       (accountant un-                               │
    │        ticked before                                │
    │        approval)                                    │
    │                                                     │
-   │  Project Export bypasses Pending Approval:          │
-   │  flow creates rows in Pending directly.             │
+   │  Project Export and Staff Hour Export bypass        │
+   │  PendingApproval: their queue flow / batch creates  │
+   │  rows at Status=Pending, and RTF_AbacusTransferNG_  │
+   │  PublishPE fires the PE on create.                  │
    └─────────────────────────────────────────────────────┘
 ```
 
@@ -259,3 +298,15 @@ For clarity, the following are **not modified or removed** by this plan:
 - Duplicate rule on `SupplierCosts__c.Supplier_Cost_Abacus_Doc_Nr_Pos_Nr`: untouched.
 - Invoice formula field `AbacusStatus__c` (READY / SELECTED TO TRANSFER / TRANSFERRED): untouched.
 - All `Abacus*` fields on Account, Invoice, SupplierInvoice, SupplierCosts, Project, Contact, Time: untouched.
+
+## Current Todos
+ - Test the flows for the automatical creation of PEs for invoices and cancelations
+ - Update the Debitor/Kreditor Upserts so they are also writing address data correctly
+ - Test with one example the creation of a debitor/creditor in Test system 9999
+ - Write back new debitor/creditor number to salesforce
+ - Create test cases for the different entities
+   - Creditor/Debitor
+   - Invoices
+   - Projects
+   - FX Rates changes
+   - Supplier invoices
