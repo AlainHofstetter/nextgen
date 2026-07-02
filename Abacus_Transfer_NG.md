@@ -165,7 +165,7 @@ The trigger conditions of each source-record flow mirror the existing legacy flo
 
 ### Approval flow (release gesture)
 
-- `RTF_AbacusTransferNG_BulkApproveAndPush` is a screen flow exposed as the **Approve & Push Selected** list view button (a `WebLink` with `displayType=massActionButton`) on `AbacusTransferNG__c`. The button URL passes the selected record Ids to the flow as a Text collection.
+- `RTF_AbacusTransferNG_BulkApproveAndPush` is a screen flow exposed as the **Approve & Push Selected** list view button (a `WebLink` with `displayType=massActionButton`) on `AbacusTransferNG__c`. The Lightning list-view framework auto-appends `?ids=<id1>,<id2>,…` for the selected rows, populating the flow's `ids` Text-collection input variable. Do **not** use `{!GETRECORDIDS(...)}` in the URL — it doesn't resolve in Lightning Experience, and combined with the framework's auto-append it produced a broken mixed collection (literal `getRecordIds('a0r')` + a real Id) that the flow's SOQL then rejected.
 - The flow:
   1. Queries the `AbacusTransferNG__c` rows whose Ids were selected AND whose `Status__c = 'PendingApproval'` (API value; label *Pending Approval*). Rows in any other status are silently filtered out — the accountant can multi-select freely without worrying about already-released or cancelled rows.
   2. Shows a confirmation screen identifying how many rows are about to be released.
