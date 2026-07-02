@@ -624,76 +624,83 @@ force-app/main/default/duplicateRules/Contact.Standard_Rule_for_Contacts_with_Du
 # --- Contact matching rule — unblocked Phase 25 (Contact now deployed Phase 24; both rules now in manifest) ---
 # Contact.matchingRule — unblocked Phase 25
 
+# NOTE: patterns are matched relative to this file (gitignore semantics) and the files on
+# disk carry the -meta.xml suffix — a bare "settings/Foo.settings" matches nothing (this
+# mistake already happened twice above; see the Phase 25/%20 remarks).
+# NOTE: force-app/main/default/connectedApps/** (further up) also excludes the NEW
+# Abacus_MuleSoft_Integration connected app — it must be created/maintained manually in the
+# target org (Setup → App Manager) and its Consumer Key handed to the Mule config.
+
 # Old/orphan profile policies (profiles don't exist in target)
-profilePasswordPolicies/Skywalk_*
-profileSessionSettings/Skywalk_*
-profilePasswordPolicies/TEST_*
-profileSessionSettings/TEST_*
-profilePasswordPolicies/Test_*
-profileSessionSettings/Test_*
-profilePasswordPolicies/Wyler_*
-profileSessionSettings/Wyler_*
-profilePasswordPolicies/testmarco_*
-profileSessionSettings/testmarco_*
-profilePasswordPolicies/null_*
-profileSessionSettings/null_*
-profilePasswordPolicies/P100_*
-profilePasswordPolicies/P101_*
-profilePasswordPolicies/P110_*
+force-app/main/default/profilePasswordPolicies/Skywalk_*
+force-app/main/default/profileSessionSettings/Skywalk_*
+force-app/main/default/profilePasswordPolicies/TEST_*
+force-app/main/default/profileSessionSettings/TEST_*
+force-app/main/default/profilePasswordPolicies/Test_*
+force-app/main/default/profileSessionSettings/Test_*
+force-app/main/default/profilePasswordPolicies/Wyler_*
+force-app/main/default/profileSessionSettings/Wyler_*
+force-app/main/default/profilePasswordPolicies/testmarco_*
+force-app/main/default/profileSessionSettings/testmarco_*
+force-app/main/default/profilePasswordPolicies/null_*
+force-app/main/default/profileSessionSettings/null_*
+force-app/main/default/profilePasswordPolicies/P100_*
+force-app/main/default/profilePasswordPolicies/P101_*
+force-app/main/default/profilePasswordPolicies/P110_*
 
 # Org-specific / unavailable settings
-settings/ChatterAnswers.settings
-settings/Communities.settings
-settings/CustomerDataPlatform.settings
-settings/Discovery.settings
-settings/DxGlobalTerms.settings
-settings/EinsteinAgent.settings
-settings/Entitlement.settings
-settings/Mobile.settings
-settings/Territory2.settings
-settings/Trailhead.settings
-settings/Address.settings
-settings/Pardot.settings
-settings/PlatformEncryption.settings
-settings/SceGlobalModelOptOut.settings
-settings/Campaign.settings
-settings/EmployeeFieldAccess.settings
-settings/EmployeeUser.settings
-settings/IncidentMgmt.settings
-settings/Industries.settings
-settings/InsuranceBrokerage.settings
-settings/PrmCore.settings
-settings/ReleaseMgmt.settings
-settings/Sandbox.settings
-settings/Search.settings
-settings/ServiceAIRecommendations.settings
-settings/ServiceItsmIntelligenceUdd.settings
-settings/Analytics.settings
+force-app/main/default/settings/ChatterAnswers.settings-meta.xml
+force-app/main/default/settings/Communities.settings-meta.xml
+force-app/main/default/settings/CustomerDataPlatform.settings-meta.xml
+force-app/main/default/settings/Discovery.settings-meta.xml
+force-app/main/default/settings/DxGlobalTerms.settings-meta.xml
+force-app/main/default/settings/EinsteinAgent.settings-meta.xml
+force-app/main/default/settings/Entitlement.settings-meta.xml
+force-app/main/default/settings/Mobile.settings-meta.xml
+force-app/main/default/settings/Territory2.settings-meta.xml
+force-app/main/default/settings/Trailhead.settings-meta.xml
+force-app/main/default/settings/Address.settings-meta.xml
+force-app/main/default/settings/Pardot.settings-meta.xml
+force-app/main/default/settings/PlatformEncryption.settings-meta.xml
+force-app/main/default/settings/SceGlobalModelOptOut.settings-meta.xml
+force-app/main/default/settings/Campaign.settings-meta.xml
+force-app/main/default/settings/EmployeeFieldAccess.settings-meta.xml
+force-app/main/default/settings/EmployeeUser.settings-meta.xml
+force-app/main/default/settings/IncidentMgmt.settings-meta.xml
+force-app/main/default/settings/Industries.settings-meta.xml
+force-app/main/default/settings/InsuranceBrokerage.settings-meta.xml
+force-app/main/default/settings/PrmCore.settings-meta.xml
+force-app/main/default/settings/ReleaseMgmt.settings-meta.xml
+force-app/main/default/settings/Sandbox.settings-meta.xml
+force-app/main/default/settings/Search.settings-meta.xml
+force-app/main/default/settings/ServiceAIRecommendations.settings-meta.xml
+force-app/main/default/settings/ServiceItsmIntelligenceUdd.settings-meta.xml
+force-app/main/default/settings/Analytics.settings-meta.xml
 
 # Not available for this API version
-settings/EmailAuthorization.settings
-settings/GRCIntelligenceUdd.settings
-settings/IndustriesEnergyUtilitiesMultiSite.settings
-settings/PlatformWebIde.settings
-settings/PurchaseOrderMgmt.settings
-settings/RiskMgmt.settings
-settings/UIBundle.settings
+force-app/main/default/settings/EmailAuthorization.settings-meta.xml
+force-app/main/default/settings/GRCIntelligenceUdd.settings-meta.xml
+force-app/main/default/settings/IndustriesEnergyUtilitiesMultiSite.settings-meta.xml
+force-app/main/default/settings/PlatformWebIde.settings-meta.xml
+force-app/main/default/settings/PurchaseOrderMgmt.settings-meta.xml
+force-app/main/default/settings/RiskMgmt.settings-meta.xml
+force-app/main/default/settings/UIBundle.settings-meta.xml
 
 # Standard namespace — cannot deploy via API
-applications/standard__Integration.app
+force-app/main/default/applications/standard__Integration.app-meta.xml
 
 # Empty SharingRules
-sharingRules/ActiveScratchOrg.sharingRules
-sharingRules/AccountBrand.sharingRules
-sharingRules/DelegatedAccount.sharingRules
-sharingRules/LearningItem.sharingRules
-sharingRules/NetworkMemberChunk.sharingRules
-sharingRules/ScratchOrgInfo.sharingRules
+force-app/main/default/sharingRules/ActiveScratchOrg.sharingRules-meta.xml
+force-app/main/default/sharingRules/AccountBrand.sharingRules-meta.xml
+force-app/main/default/sharingRules/DelegatedAccount.sharingRules-meta.xml
+force-app/main/default/sharingRules/LearningItem.sharingRules-meta.xml
+force-app/main/default/sharingRules/NetworkMemberChunk.sharingRules-meta.xml
+force-app/main/default/sharingRules/ScratchOrgInfo.sharingRules-meta.xml
 
 # Org-specific workflow alerts (unverified email)
-workflows/Contract__c.workflow
-workflows/SupplierCosts__c.workflow
-autoResponseRules/Case.autoResponseRules
+force-app/main/default/workflows/Contract__c.workflow-meta.xml
+force-app/main/default/workflows/SupplierCosts__c.workflow-meta.xml
+force-app/main/default/autoResponseRules/Case.autoResponseRules-meta.xml
 
 # AppSwitcher (deploy manually if needed)
-appMenus/AppSwitcher.appMenu
+force-app/main/default/appMenus/AppSwitcher.appMenu-meta.xml

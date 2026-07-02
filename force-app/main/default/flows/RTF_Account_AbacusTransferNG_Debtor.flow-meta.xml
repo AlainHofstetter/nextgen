@@ -39,7 +39,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector><targetReference>createNGRow</targetReference></connector>
-        <filterFormula>OR(AND(PRIORVALUE($Record.AbacusDebtor__c) = FALSE, $Record.AbacusDebtor__c = TRUE), AND($Record.AbacusDebtor__c = TRUE, OR(ISCHANGED($Record.Name), ISCHANGED($Record.BillingCity__c), ISCHANGED($Record.BillingZip__c), ISCHANGED($Record.BillingStreetNr__c), ISCHANGED($Record.BillingPoBox__c), ISCHANGED($Record.BillingAddressLine2__c), ISCHANGED($Record.BillingAddressLine3__c))))</filterFormula>
+        <filterFormula>OR(AND(ISNEW(), $Record.AbacusDebtor__c = TRUE), AND(PRIORVALUE($Record.AbacusDebtor__c) = FALSE, $Record.AbacusDebtor__c = TRUE), AND($Record.AbacusDebtor__c = TRUE, OR(ISCHANGED($Record.Name), ISCHANGED($Record.BillingCity__c), ISCHANGED($Record.BillingZip__c), ISCHANGED($Record.BillingStreetNr__c), ISCHANGED($Record.BillingPoBox__c), ISCHANGED($Record.BillingAddressLine2__c), ISCHANGED($Record.BillingAddressLine3__c))))</filterFormula>
         <object>Account</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>

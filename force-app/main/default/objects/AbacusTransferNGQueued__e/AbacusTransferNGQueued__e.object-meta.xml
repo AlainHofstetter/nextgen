@@ -4,5 +4,5 @@
     <eventType>HighVolume</eventType>
     <label>Abacus Transfer NG Queued</label>
     <pluralLabel>Abacus Transfer NG Queued</pluralLabel>
-    <publishBehavior>PublishImmediately</publishBehavior>
+    <publishBehavior>PublishAfterCommit</publishBehavior>
 </CustomObject>

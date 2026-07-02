@@ -1,64 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>60.0</apiVersion>
-    <description>NG path: if AbacusDebtor__c or AbacusSupplier__c is unticked before Mule pickup, transition any Pending AbacusTransferNG__c rows for this Account to Cancelled.</description>
-    <label>RTF Account AbacusTransferNG Cancel</label>
-    <processType>AutoLaunchedFlow</processType>
-    <recordLookups>
-        <name>getPendingNGRows</name>
-        <label>Get Pending NG rows for this Account</label>
+    <decisions>
+        <name>decDebtorUnticked</name>
+        <label>Debtor flag unticked?</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <connector><targetReference>loopOverPending</targetReference></connector>
-        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
-        <filterLogic>and</filterLogic>
+        <defaultConnector><targetReference>decSupplierUnticked</targetReference></defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>debtorUnticked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.AbacusDebtor__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue><booleanValue>true</booleanValue></rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.AbacusDebtor__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue><booleanValue>false</booleanValue></rightValue>
+            </conditions>
+            <connector><targetReference>cancelDebtorRows</targetReference></connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>decSupplierUnticked</name>
+        <label>Supplier flag unticked?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>supplierUnticked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.AbacusSupplier__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue><booleanValue>true</booleanValue></rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.AbacusSupplier__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue><booleanValue>false</booleanValue></rightValue>
+            </conditions>
+            <connector><targetReference>cancelSupplierRows</targetReference></connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>NG path: if AbacusDebtor__c or AbacusSupplier__c is unticked before the transfer is released to Mule, transition the matching not-yet-sent AbacusTransferNG__c rows (PendingApproval or Pending) of that interface type to Cancelled.</description>
+    <label>RTF Account AbacusTransferNG Cancel</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>cancelDebtorRows</name>
+        <label>Cancel open Debtor Upsert rows</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector><targetReference>decSupplierUnticked</targetReference></connector>
+        <filterLogic>1 AND 2 AND (3 OR 4)</filterLogic>
         <filters>
             <field>Account__c</field>
             <operator>EqualTo</operator>
             <value><elementReference>$Record.Id</elementReference></value>
         </filters>
         <filters>
+            <field>InterfaceType__c</field>
+            <operator>EqualTo</operator>
+            <value><stringValue>Account Debtor Upsert</stringValue></value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value><stringValue>PendingApproval</stringValue></value>
+        </filters>
+        <filters>
             <field>Status__c</field>
             <operator>EqualTo</operator>
             <value><stringValue>Pending</stringValue></value>
         </filters>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>AbacusTransferNG__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <loops>
-        <name>loopOverPending</name>
-        <label>Loop over Pending NG rows</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <collectionReference>getPendingNGRows</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector><targetReference>setCancelled</targetReference></nextValueConnector>
-        <noMoreValuesConnector><targetReference>cancelNGRows</targetReference></noMoreValuesConnector>
-    </loops>
-    <assignments>
-        <name>setCancelled</name>
-        <label>Set Status to Cancelled</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <connector><targetReference>loopOverPending</targetReference></connector>
-        <assignmentItems>
-            <assignToReference>loopOverPending.Status__c</assignToReference>
-            <operator>Assign</operator>
+        <inputAssignments>
+            <field>Status__c</field>
             <value><stringValue>Cancelled</stringValue></value>
-        </assignmentItems>
-    </assignments>
+        </inputAssignments>
+        <object>AbacusTransferNG__c</object>
+    </recordUpdates>
     <recordUpdates>
-        <name>cancelNGRows</name>
-        <label>Update NG rows to Cancelled</label>
+        <name>cancelSupplierRows</name>
+        <label>Cancel open Supplier Upsert rows</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <inputReference>getPendingNGRows</inputReference>
+        <filterLogic>1 AND 2 AND (3 OR 4)</filterLogic>
+        <filters>
+            <field>Account__c</field>
+            <operator>EqualTo</operator>
+            <value><elementReference>$Record.Id</elementReference></value>
+        </filters>
+        <filters>
+            <field>InterfaceType__c</field>
+            <operator>EqualTo</operator>
+            <value><stringValue>Account Supplier Upsert</stringValue></value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value><stringValue>PendingApproval</stringValue></value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value><stringValue>Pending</stringValue></value>
+        </filters>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value><stringValue>Cancelled</stringValue></value>
+        </inputAssignments>
+        <object>AbacusTransferNG__c</object>
     </recordUpdates>
     <start>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <connector><targetReference>getPendingNGRows</targetReference></connector>
+        <connector><targetReference>decDebtorUnticked</targetReference></connector>
         <filterFormula>OR(AND(PRIORVALUE($Record.AbacusDebtor__c) = TRUE, $Record.AbacusDebtor__c = FALSE), AND(PRIORVALUE($Record.AbacusSupplier__c) = TRUE, $Record.AbacusSupplier__c = FALSE))</filterFormula>
         <object>Account</object>
         <recordTriggerType>Update</recordTriggerType>

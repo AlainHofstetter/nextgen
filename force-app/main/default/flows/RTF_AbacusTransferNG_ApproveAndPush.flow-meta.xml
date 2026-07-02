@@ -61,33 +61,6 @@
         <queriedFields>Direction__c</queriedFields>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
-    <recordUpdates>
-        <name>updateRow</name>
-        <label>Stamp approval + set Status=Pending</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <connector><targetReference>callReplay</targetReference></connector>
-        <faultConnector><targetReference>errorScreen</targetReference></faultConnector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value><elementReference>recordId</elementReference></value>
-        </filters>
-        <inputAssignments>
-            <field>Status__c</field>
-            <value><stringValue>Pending</stringValue></value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ApprovedBy__c</field>
-            <value><elementReference>$User.Id</elementReference></value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ApprovedAt__c</field>
-            <value><elementReference>$Flow.CurrentDateTime</elementReference></value>
-        </inputAssignments>
-        <object>AbacusTransferNG__c</object>
-    </recordUpdates>
     <screens>
         <name>confirmScreen</name>
         <label>Confirm approval</label>
@@ -96,7 +69,7 @@
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
-        <connector><targetReference>updateRow</targetReference></connector>
+        <connector><targetReference>callReplay</targetReference></connector>
         <fields>
             <name>confirmText</name>
             <fieldText>&lt;p&gt;You are about to approve &lt;b&gt;{!getRow.Name}&lt;/b&gt; ({!getRow.InterfaceType__c}) and push it to Abacus.&lt;/p&gt;&lt;p&gt;Confirm with Next, or close this dialog to cancel.&lt;/p&gt;</fieldText>

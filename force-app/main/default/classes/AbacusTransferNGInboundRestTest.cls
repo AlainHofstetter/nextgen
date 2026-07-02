@@ -67,6 +67,89 @@ private class AbacusTransferNGInboundRestTest {
     }
 
     @IsTest
+    static void oversizedIdempotencyKeyReturns400() {
+        RestRequest req = new RestRequest();
+        req.headers.put('Idempotency-Key', 'x'.repeat(41));
+        req.requestBody = Blob.valueOf('{"type":"Currency Import","payload":{}}');
+        req.httpMethod = 'POST';
+        RestContext.request = req;
+        RestContext.response = new RestResponse();
+
+        AbacusTransferNGInboundRest.InboundResponse out = AbacusTransferNGInboundRest.handlePost();
+
+        System.assertEquals(400, RestContext.response.statusCode);
+        System.assertEquals('error', out.status);
+        System.assertEquals(0, [SELECT COUNT() FROM AbacusTransferNG__c]);
+    }
+
+    @IsTest
+    static void nullJsonBodyReturns400() {
+        RestRequest req = new RestRequest();
+        req.headers.put('Idempotency-Key', 'null-body-001');
+        req.requestBody = Blob.valueOf('null');
+        req.httpMethod = 'POST';
+        RestContext.request = req;
+        RestContext.response = new RestResponse();
+
+        AbacusTransferNGInboundRest.InboundResponse out = AbacusTransferNGInboundRest.handlePost();
+
+        System.assertEquals(400, RestContext.response.statusCode);
+        System.assertEquals('error', out.status);
+    }
+
+    @IsTest
+    static void scalarPayloadReturns400() {
+        RestRequest req = new RestRequest();
+        req.headers.put('Idempotency-Key', 'scalar-payload-001');
+        req.requestBody = Blob.valueOf('{"type":"Currency Import","payload":"not-an-object"}');
+        req.httpMethod = 'POST';
+        RestContext.request = req;
+        RestContext.response = new RestResponse();
+
+        AbacusTransferNGInboundRest.InboundResponse out = AbacusTransferNGInboundRest.handlePost();
+
+        System.assertEquals(400, RestContext.response.statusCode);
+        System.assertEquals('error', out.status);
+    }
+
+    @IsTest
+    static void retryOfFailedDeliveryReprocessesSameRow() {
+        // First delivery fails (missing abacusDocumentNr) and commits a Failed audit row.
+        RestRequest req = new RestRequest();
+        req.headers.put('Idempotency-Key', 'si-retry-001');
+        req.requestBody = Blob.valueOf('{"type":"Supplier Invoice Import","payload":{}}');
+        req.httpMethod = 'POST';
+        RestContext.request = req;
+        RestContext.response = new RestResponse();
+        AbacusTransferNGInboundRest.InboundResponse firstOut = AbacusTransferNGInboundRest.handlePost();
+        System.assertEquals(500, RestContext.response.statusCode);
+        System.assertEquals('failed', firstOut.status);
+
+        // Mule retries the same key with a corrected payload: the Failed row is reprocessed,
+        // not reported as a duplicate.
+        RestRequest retry = new RestRequest();
+        retry.headers.put('Idempotency-Key', 'si-retry-001');
+        retry.requestBody = Blob.valueOf('{"type":"Supplier Invoice Import","payload":{"abacusDocumentNr":"AB-4711"}}');
+        retry.httpMethod = 'POST';
+        RestContext.request = retry;
+        RestContext.response = new RestResponse();
+        AbacusTransferNGInboundRest.InboundResponse retryOut = AbacusTransferNGInboundRest.handlePost();
+
+        System.assertEquals(200, RestContext.response.statusCode);
+        System.assertEquals('sent', retryOut.status);
+        System.assertEquals(firstOut.abacusTransferNGId, retryOut.abacusTransferNGId,
+            'retry must reuse the Failed audit row');
+        AbacusTransferNG__c row = [
+            SELECT Status__c, LastError__c, SupplierInvoice__c
+            FROM AbacusTransferNG__c WHERE Id = :retryOut.abacusTransferNGId
+        ];
+        System.assertEquals('Sent', row.Status__c);
+        System.assertEquals(null, row.LastError__c);
+        System.assertNotEquals(null, row.SupplierInvoice__c);
+        System.assertEquals(1, [SELECT COUNT() FROM SupplierInvoice__c WHERE AbacusDocumentNr__c = 'AB-4711']);
+    }
+
+    @IsTest
     static void supplierInvoiceImportWithoutDocNrReturns500() {
         RestRequest req = new RestRequest();
         req.headers.put('Idempotency-Key', 'si-bad-001');

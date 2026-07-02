@@ -12,7 +12,12 @@ public class AbacusTransferNGStaffHourBatch implements Database.Batchable<SObjec
     private final DateTime untilDt;
 
     public AbacusTransferNGStaffHourBatch() {
-        Date lastMonday = Date.today().toStartOfWeek().addDays(-7);
+        // Monday-anchored regardless of the running user's locale — Date.toStartOfWeek()
+        // returns Sunday for en_US users, which would shift the window Mule re-derives.
+        Date today = Date.today();
+        Date anchorMonday = Date.newInstance(2024, 1, 1); // a known Monday
+        Date thisMonday = today.addDays(-Math.mod(anchorMonday.daysBetween(today), 7));
+        Date lastMonday = thisMonday.addDays(-7);
         Date lastSunday = lastMonday.addDays(6);
         this.fromDt = DateTime.newInstance(lastMonday, Time.newInstance(0, 0, 0, 0));
         this.untilDt = DateTime.newInstance(lastSunday, Time.newInstance(23, 59, 59, 999));

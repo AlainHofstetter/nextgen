@@ -14,27 +14,43 @@ global with sharing class AbacusTransferNGInboundRest {
             res.statusCode = 400;
             return new InboundResponse(null, 'error', 'Missing Idempotency-Key header');
         }
+        Integer keyMax = Schema.SObjectType.AbacusTransferNG__c.fields.IdempotencyKey__c.getLength();
+        if (idempotencyKey.length() > keyMax) {
+            res.statusCode = 400;
+            return new InboundResponse(null, 'error', 'Idempotency-Key exceeds ' + keyMax + ' characters');
+        }
 
         List<AbacusTransferNG__c> existing = [
             SELECT Id, Status__c FROM AbacusTransferNG__c
             WHERE IdempotencyKey__c = :idempotencyKey LIMIT 1
         ];
+        // A Failed row means the previous attempt rolled back its target writes —
+        // a retry with the same key must run again against that row, not report success.
+        Id retryRowId = null;
         if (!existing.isEmpty()) {
-            res.statusCode = 200;
-            return new InboundResponse(existing[0].Id, 'duplicate', null);
+            if (existing[0].Status__c != 'Failed') {
+                res.statusCode = 200;
+                return new InboundResponse(existing[0].Id, 'duplicate', null);
+            }
+            retryRowId = existing[0].Id;
         }
 
         Map<String, Object> bodyMap;
         try {
-            bodyMap = (Map<String, Object>) JSON.deserializeUntyped(req.requestBody.toString());
+            bodyMap = (Map<String, Object>) JSON.deserializeUntyped(
+                req.requestBody != null ? req.requestBody.toString() : null);
         } catch (Exception e) {
             res.statusCode = 400;
             return new InboundResponse(null, 'error', 'Malformed JSON: ' + e.getMessage());
         }
+        if (bodyMap == null) {
+            res.statusCode = 400;
+            return new InboundResponse(null, 'error', 'Missing request body');
+        }
 
         String type = (String) bodyMap.get('type');
-        Map<String, Object> payload = (Map<String, Object>) bodyMap.get('payload');
-        if (String.isBlank(type) || payload == null) {
+        Object payloadObj = bodyMap.get('payload');
+        if (String.isBlank(type) || !(payloadObj instanceof Map<String, Object>)) {
             res.statusCode = 400;
             return new InboundResponse(null, 'error', 'Missing "type" or "payload"');
         }
@@ -42,16 +58,22 @@ global with sharing class AbacusTransferNGInboundRest {
             res.statusCode = 400;
             return new InboundResponse(null, 'error', 'Unknown interface type: ' + type);
         }
+        // Apex string comparison is case-insensitive; write the canonical picklist value.
+        type = type == CURRENCY_IMPORT ? CURRENCY_IMPORT : SUPPLIER_INVOICE_IMPORT;
+        Map<String, Object> payload = (Map<String, Object>) payloadObj;
 
-        String payloadJson = JSON.serializePretty(bodyMap);
-        if (payloadJson.length() > 131071) payloadJson = payloadJson.substring(0, 131071);
+        String payloadJson = JSON.serializePretty(bodyMap)
+            .left(Schema.SObjectType.AbacusTransferNG__c.fields.PayloadSnapshot__c.getLength());
 
         AbacusTransferNG__c row = new AbacusTransferNG__c(
+            Id = retryRowId,
             InterfaceType__c = type,
             Direction__c = 'Inbound',
             Status__c = 'Sent',
             SentAt__c = DateTime.now(),
             LastAttemptAt__c = DateTime.now(),
+            LastError__c = null,
+            LastHttpStatus__c = null,
             IdempotencyKey__c = idempotencyKey,
             PayloadSnapshot__c = payloadJson
         );
@@ -63,13 +85,33 @@ global with sharing class AbacusTransferNGInboundRest {
             } else if (type == SUPPLIER_INVOICE_IMPORT) {
                 applySupplierInvoiceImport(payload, row);
             }
-            insert row;
+            upsert row;
         } catch (Exception e) {
             Database.rollback(sp);
+            // The target upsert was rolled back — drop references to records that no longer exist.
+            row.SupplierInvoice__c = null;
+            row.SourceObject__c = null;
+            row.SourceRecordId__c = null;
             row.Status__c = 'Failed';
-            String err = e.getMessage() + '\n' + e.getStackTraceString();
-            row.LastError__c = err.length() > 32767 ? err.substring(0, 32767) : err;
-            insert row;
+            row.SentAt__c = null;
+            row.LastError__c = (e.getMessage() + '\n' + e.getStackTraceString())
+                .left(Schema.SObjectType.AbacusTransferNG__c.fields.LastError__c.getLength());
+            try {
+                upsert row;
+            } catch (Exception auditEx) {
+                // Most likely a concurrent request committed the same key first
+                // (IdempotencyKey__c is unique) — report it as the duplicate it is.
+                List<AbacusTransferNG__c> winner = [
+                    SELECT Id FROM AbacusTransferNG__c
+                    WHERE IdempotencyKey__c = :idempotencyKey LIMIT 1
+                ];
+                if (!winner.isEmpty()) {
+                    res.statusCode = 200;
+                    return new InboundResponse(winner[0].Id, 'duplicate', null);
+                }
+                res.statusCode = 500;
+                return new InboundResponse(null, 'failed', e.getMessage());
+            }
             res.statusCode = 500;
             return new InboundResponse(row.Id, 'failed', e.getMessage());
         }

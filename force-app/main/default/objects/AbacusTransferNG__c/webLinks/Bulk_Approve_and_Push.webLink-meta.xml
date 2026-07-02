@@ -10,5 +10,5 @@
     <openType>replace</openType>
     <protected>false</protected>
     <requireRowSelection>true</requireRowSelection>
-    <url>/flow/RTF_AbacusTransferNG_BulkApproveAndPush?ids={!GETRECORDIDS($ObjectType.AbacusTransferNG__c)}&amp;retURL=/lightning/o/AbacusTransferNG__c/list</url>
+    <url>/flow/RTF_AbacusTransferNG_BulkApproveAndPush?retURL=/lightning/o/AbacusTransferNG__c/list</url>
 </WebLink>

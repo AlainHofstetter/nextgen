@@ -39,7 +39,7 @@ Approval is bulk-by-design: there is no per-record approval button. The list vie
 
 **Where the verification status is visible**:
 
-- On the source record, the existing formula field `Invoice__c.AbacusStatus__c` continues to reflect the lifecycle in finance-readable terms (`READY` → `SELECTED TO TRANSFER` → `TRANSFERRED`) and is **not modified** by this plan. Mule stamps `Invoice__c.AbacusTransfer__c` on success — same field, same timing as the legacy path — so the existing formula keeps working.
+- On the source record, the existing formula field `Invoice__c.AbacusStatus__c` continues to reflect the lifecycle in finance-readable terms (`READY` → `SELECTED TO TRANSFER` → `TRANSFERRED`) and is **not modified** by this plan. Mule stamps the **new** `Invoice__c.AbacusNGTransfer__c` field on success (the only Invoice field the Mule permset can edit — the legacy `AbacusTransfer__c` stays owned by the file-drop path); the new flow `RTF_Invoice_AbacusNGTransfer_Finalise` then sets `InvoiceStatus__c = 'Sent'`, which is what the existing formula reads — so it keeps working through the NG route.
 - On the queued row, `Status__c` + `ApprovedBy__c` + `ApprovedAt__c` give the finance team a full audit trail of who approved what and when.
 
 **Reverting before approval**: if the accountant unticks the source-record verification before a FinanceQueue member has approved the row, a companion flow on `AbacusTransferNG__c` moves the still-`PendingApproval` row to `Cancelled` so it never appears in the approval batch.
@@ -94,7 +94,7 @@ Approval is bulk-by-design: there is no per-record approval button. The list vie
 - **Auto-published types** (Project Export, Staff Hour Export): the row is created at `Status='Pending'` and the shared `RTF_AbacusTransferNG_PublishPE` flow publishes the PE on create — no accountant gesture.
 - Mule *does* the work: read source, transform, call Abacus, retry, DLQ.
 - Mule *writes back* via Salesforce REST to update the `AbacusTransferNG__c` row with status, Mule correlation id, Abacus document id, last HTTP status, last error.
-- Mule also stamps the source record's existing Abacus tracking fields (e.g. `Invoice__c.AbacusTransfer__c`) on success — so the existing post-transfer flows (like `InvoiceStatusSentToAbacusWhenTransferDateNotNull`) keep firing unchanged.
+- Mule also stamps the source record's NG tracking field (`Invoice__c.AbacusNGTransfer__c`) on success — the new `RTF_Invoice_AbacusNGTransfer_Finalise` flow then finalises the invoice (`InvoiceStatus__c = 'Sent'`), mirroring what the legacy `InvoiceStatusSentToAbacusWhenTransferDateNotNull` flow does for the file-drop path. The legacy `AbacusTransfer__c` field is not written by the NG path.
 
 `AbacusTransferNG__c` is an **outbox + audit log**, not a working queue. Mule's persistent queue (Anypoint MQ or VM persistent) is the actual queue.
 
@@ -114,7 +114,7 @@ Auto-number `Name`: `ABNG-{0000000}`.
 | `SupplierInvoice__c` | Lookup(SupplierInvoice__c) | Populated for inbound supplier invoices. |
 | `SupplierCosts__c` | Lookup(SupplierCosts__c) | Populated for supplier-cost imports. |
 | `Project__c` | Lookup(Project__c) | Populated for Project Export and for Staff Hour Export when project-scoped. |
-| `IdempotencyKey__c` | Text(40), External Id | Defaults to `Name`. Passed to Abacus via `Idempotency-Key` header. Uniqueness is guaranteed by the auto-number `Name` it's seeded from. |
+| `IdempotencyKey__c` | Text(40), External Id, Unique | Stamped to `Name` on create by `RTF_AbacusTransferNG_StampIdempotencyKey` (inbound rows arrive with the caller's `Idempotency-Key` instead). Passed to Abacus via `Idempotency-Key` header; the unique index is the DB-level backstop for the inbound dedup. |
 | `MuleCorrelationId__c` | Text(64) | Mule transaction id, written on callback. |
 | `AbacusDocumentId__c` | Text(64) | External id assigned by Abacus on success. |
 | `LastHttpStatus__c` | Number(3,0) | HTTP code from the last Mule → Abacus attempt. |
@@ -156,9 +156,10 @@ One record-triggered flow per source object creates `AbacusTransferNG__c` rows w
 - `RTF_Invoice_AbacusNGTransfer_Finalise` — after Mule callback flips `AbacusNGTransfer__c`, finalises invoice status (`InvoiceStatus__c = 'Sent'`).
 - `RTF_Project_AbacusTransferNG` — project create or change of any tracked Abacus field. Inserts at `Status='Pending'` (bypasses approval — Project Export has no accountant gate).
 
-In addition, a shared publisher flow watches for gate-less inserts:
+In addition, two shared flows run on `AbacusTransferNG__c` itself:
 
 - `RTF_AbacusTransferNG_PublishPE` — record-triggered (after-save, create only) on `AbacusTransferNG__c`. Filter: `Status__c = "Pending"`. Creates the `AbacusTransferNGQueued__e` Platform Event. This is what makes Project Export and Staff Hour Export batch rows reach Mule without an accountant clicking Approve.
+- `RTF_AbacusTransferNG_StampIdempotencyKey` — record-triggered (after-save, create only) on `AbacusTransferNG__c`. Filter: `ISBLANK(IdempotencyKey__c)`. Stamps `IdempotencyKey__c = Name` so every outbound row carries the key Mule sends to Abacus and addresses callbacks with; inbound rows already carry the caller's key and are skipped.
 
 The trigger conditions of each source-record flow mirror the existing legacy flow that creates `AbacusInterface__c` rows, so the *moment of queueing* is identical from the user's perspective.
 
@@ -214,7 +215,7 @@ The legacy inbound file-drop reader is untouched and keeps running for any inbou
 - The file-drop folders on `\\BLC-ABA-01\SkywalkAbacusIntegration\...` and the middleware reading them: unchanged.
 - Custom metadata `Field.Account_AbacusDebtor`, `Field.Account_AbacusSupplier`, `ParentObjectUpdate.Invoice2Account_AbacusDebtor`: unchanged.
 - Duplicate rule on `SupplierCosts__c`: unchanged.
-- Invoice formula field `AbacusStatus__c` (READY / SELECTED TO TRANSFER / TRANSFERRED): unchanged — Mule stamps `Invoice__c.AbacusTransfer__c` on success, exactly like the file-drop path did.
+- Invoice formula field `AbacusStatus__c` (READY / SELECTED TO TRANSFER / TRANSFERRED): unchanged — on the NG path Mule stamps `Invoice__c.AbacusNGTransfer__c` and the `RTF_Invoice_AbacusNGTransfer_Finalise` flow sets `InvoiceStatus__c = 'Sent'`, which drives the formula. The legacy `AbacusTransfer__c` field remains reserved for the file-drop path.
 - `InvoiceStatusSentToAbacusWhenTransferDateNotNull` flow: unchanged.
 - Existing legacy flows (`AbacusInterfaceAccountUpsert`, `AbacusInterfaceAccountUpsertSupplier`, `PackageSupplierCostsAbacusInbox`): unchanged. Both paths can in principle fire on the same source change; in practice the user-facing queue is `AbacusTransferNG__c` and the legacy `AbacusInterface__c` rows are observed-but-ignored. Future work could add an explicit gate (e.g. CMDT mode flag) if dual-firing becomes operationally relevant.
 
@@ -226,7 +227,7 @@ The legacy inbound file-drop reader is untouched and keeps running for any inbou
 4. **Transform** with DataWeave into the Abacus REST payload. One DataWeave module per `InterfaceType__c`. Optionally write the transformed payload back to `PayloadSnapshot__c`.
 5. **Call Abacus** with header `Idempotency-Key: {IdempotencyKey__c}`. Use `until-successful` for retry; on terminal failure, push to DLQ (Anypoint MQ).
 6. **Callback to Salesforce** PATCH `AbacusTransferNG__c`:
-   - On 2xx: `Status__c = 'Sent'`, `AbacusDocumentId__c`, `LastHttpStatus__c`, `MuleCorrelationId__c`, `SentAt__c`. For Invoice Export, **additionally** PATCH `Invoice__c.AbacusTransfer__c = now` so the existing post-transfer flow finalises the invoice — no change to that flow.
+   - On 2xx: `Status__c = 'Sent'`, `AbacusDocumentId__c`, `LastHttpStatus__c`, `MuleCorrelationId__c`, `SentAt__c`. For Invoice Export, **additionally** PATCH `Invoice__c.AbacusNGTransfer__c = now` (the only Invoice field the Mule permset can edit) so `RTF_Invoice_AbacusNGTransfer_Finalise` finalises the invoice.
    - On terminal failure: `Status__c = 'Failed'`, `LastHttpStatus__c`, `LastError__c`, `RetryCount__c`.
    - On DLQ: `Status__c = 'DeadLettered'`.
 7. **Named Credentials** for the Salesforce callback (Mule → SF) live in Mule's secure properties. The Salesforce → Abacus credentials never leave Mule.
@@ -263,7 +264,7 @@ Reports filter on the relevant object. No collisions because the two paths use d
 
 ## Idempotency
 
-- `IdempotencyKey__c` is an External Id, defaulting to the auto-number `Name`. Because `Name` is unique by construction, the key is unique in practice.
+- `IdempotencyKey__c` is a unique External Id, stamped to the auto-number `Name` on create by `RTF_AbacusTransferNG_StampIdempotencyKey` (outbound) or set from the `Idempotency-Key` header (inbound). The unique index makes duplicate keys impossible at the DB level, not just in practice.
 - Mule sends `Idempotency-Key` header on every Abacus call. Abacus must treat duplicate keys as no-ops returning the original response — hard requirement on the Abacus REST contract.
 - On Salesforce callback, Mule PATCHes by `IdempotencyKey__c` (External Id upsert), so even if a callback retries, the row converges.
 - Inbound: the Apex REST endpoint also keys on `Idempotency-Key`, so Mule retrying an inbound delivery doesn't double-insert.
@@ -274,13 +275,13 @@ Reports filter on the relevant object. No collisions because the two paths use d
 - Mule retry policy: exponential backoff, e.g. 1m / 5m / 30m / 2h / 12h, then DLQ.
 - DLQ alerts go to the integrations channel (Slack / email — TBD with ops).
 - Salesforce list views on `AbacusTransferNG__c` (`Pending Approval`, `Open`, `Failed`, `DeadLettered`, etc.) give finance and ops a view of where every row is.
-- Manual replay = reuse the same `AbacusTransferNGReplayAction` invocable from a list view button or the Approve & Push quick action. It resets `Status__c = 'Pending'`, clears `LastError__c` / `LastHttpStatus__c`, and publishes a fresh `AbacusTransferNGQueued__e`.
+- Manual replay = reuse the same `AbacusTransferNGReplayAction` invocable from a list view button or the Approve & Push quick action. It only accepts outbound rows in `PendingApproval` (approve), `Failed`, or `DeadLettered` (replay) — anything else is skipped. It resets `Status__c = 'Pending'`, clears `LastError__c` / `LastHttpStatus__c` / `RetryCount__c`, publishes a fresh `AbacusTransferNGQueued__e` (publish-after-commit; a failed publish rolls the whole release back), and stamps `ApprovedBy__c`/`ApprovedAt__c` only on first approval — replays keep the original approver.
 
 ## Open Questions / Decisions
 
 - **Abacus REST contract**: who owns the OpenAPI spec? Need confirmation that Abacus honours `Idempotency-Key` semantics. If not, idempotency must be enforced inside Mule (lookup-before-write) — slower and not bulletproof.
 - **Auth Mule ↔ Abacus**: OAuth 2.0 client credentials assumed. Confirm with Abacus admin.
-- **Auth Mule ↔ Salesforce**: connected app `Abacus_MuleSoft_Integration` + JWT bearer for Mule, scoped to a service user with `PS_Abacus_Mule_Integration` permset.
+- **Auth Mule ↔ Salesforce**: connected app `Abacus_MuleSoft_Integration` + JWT bearer for Mule, scoped to a service user with `PS_Abacus_Mule_Integration` permset. **Manual step:** `.forceignore` excludes `connectedApps/**` (org-locked), so the connected app in this repo never deploys — create it manually in the target org (Setup → App Manager), upload the real certificate, and capture the Consumer Key for Mule's config.
 - **Volume**: current peak rows/day on `AbacusInterface__c` → sizes the Mule worker tier and decides Anypoint MQ vs VM queue.
 - **Replay window**: confirm Mule DLQ retention matches finance's reconciliation window (typically 90 days for month-end close).
 - **PE vs CDC**: starting with Platform Events; CDC is a fallback if Mule's PE subscription proves lossy under load.
