@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>60.0</apiVersion>
-    <description>NG path: enqueues an AbacusTransferNG__c row when an Invoice is approved for Abacus export (AbacusInterfaceExport__c flips true).</description>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>NG path: enqueues an AbacusTransferNG__c row when an Invoice&apos;s InvoiceStatus__c changes to Ready.</description>
     <label>RTF Invoice AbacusTransferNG</label>
     <processType>AutoLaunchedFlow</processType>
     <recordCreates>
@@ -10,39 +11,53 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <inputAssignments>
-            <field>Invoice__c</field>
-            <value><elementReference>$Record.Id</elementReference></value>
-        </inputAssignments>
-        <inputAssignments>
             <field>Direction__c</field>
-            <value><stringValue>Outbound</stringValue></value>
+            <value>
+                <stringValue>Outbound</stringValue>
+            </value>
         </inputAssignments>
         <inputAssignments>
             <field>InterfaceType__c</field>
-            <value><stringValue>Invoice Export</stringValue></value>
+            <value>
+                <stringValue>Invoice Export</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Invoice__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
         </inputAssignments>
         <inputAssignments>
             <field>SourceObject__c</field>
-            <value><stringValue>Invoice__c</stringValue></value>
+            <value>
+                <stringValue>Invoice__c</stringValue>
+            </value>
         </inputAssignments>
         <inputAssignments>
             <field>SourceRecordId__c</field>
-            <value><elementReference>$Record.Id</elementReference></value>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
         </inputAssignments>
         <inputAssignments>
             <field>Status__c</field>
-            <value><stringValue>PendingApproval</stringValue></value>
+            <value>
+                <stringValue>PendingApproval</stringValue>
+            </value>
         </inputAssignments>
         <object>AbacusTransferNG__c</object>
     </recordCreates>
     <start>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <connector><targetReference>createNGRow</targetReference></connector>
-        <filterFormula>AND(PRIORVALUE($Record.AbacusInterfaceExport__c) = FALSE, $Record.AbacusInterfaceExport__c = TRUE, ISBLANK($Record.CancellationDate__c))</filterFormula>
+        <connector>
+            <targetReference>createNGRow</targetReference>
+        </connector>
+        <filterFormula>AND(ISPICKVAL({!$Record.InvoiceStatus__c}, &quot;Ready&quot;), NOT(ISPICKVAL(PRIORVALUE({!$Record.InvoiceStatus__c}), &quot;Ready&quot;)), ISBLANK({!$Record.CancellationDate__c}))</filterFormula>
         <object>Invoice__c</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
 </Flow>

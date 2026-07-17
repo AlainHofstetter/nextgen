@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>60.0</apiVersion>
-    <description>NG path: if an accountant unticks AbacusInterfaceExport__c before the transfer is released to Mule, transition any not-yet-sent AbacusTransferNG__c rows (PendingApproval or Pending) for this Invoice to Cancelled.</description>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>NG path: if an Invoice&apos;s InvoiceStatus__c moves away from Ready before the transfer is released to Mule, transition any not-yet-sent AbacusTransferNG__c rows (PendingApproval or Pending) for this Invoice to Cancelled.</description>
     <label>RTF Invoice AbacusTransferNG Cancel</label>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
@@ -13,32 +14,42 @@
         <filters>
             <field>Invoice__c</field>
             <operator>EqualTo</operator>
-            <value><elementReference>$Record.Id</elementReference></value>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
         </filters>
         <filters>
             <field>Status__c</field>
             <operator>EqualTo</operator>
-            <value><stringValue>PendingApproval</stringValue></value>
+            <value>
+                <stringValue>PendingApproval</stringValue>
+            </value>
         </filters>
         <filters>
             <field>Status__c</field>
             <operator>EqualTo</operator>
-            <value><stringValue>Pending</stringValue></value>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
         </filters>
         <inputAssignments>
             <field>Status__c</field>
-            <value><stringValue>Cancelled</stringValue></value>
+            <value>
+                <stringValue>Cancelled</stringValue>
+            </value>
         </inputAssignments>
         <object>AbacusTransferNG__c</object>
     </recordUpdates>
     <start>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <connector><targetReference>cancelNGRows</targetReference></connector>
-        <filterFormula>AND(PRIORVALUE($Record.AbacusInterfaceExport__c) = TRUE, $Record.AbacusInterfaceExport__c = FALSE)</filterFormula>
+        <connector>
+            <targetReference>cancelNGRows</targetReference>
+        </connector>
+        <filterFormula>AND(ISPICKVAL(PRIORVALUE({!$Record.InvoiceStatus__c}), &quot;Ready&quot;), NOT(ISPICKVAL({!$Record.InvoiceStatus__c}, &quot;Ready&quot;)))</filterFormula>
         <object>Invoice__c</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
 </Flow>
