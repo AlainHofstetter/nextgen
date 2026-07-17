@@ -168,12 +168,11 @@ The trigger conditions of each source-record flow mirror the existing legacy flo
 ### Approval flow (release gesture)
 
 - `RTF_AbacusTransferNG_BulkApproveAndPush` is a screen flow exposed as the **Approve & Push Selected** list view button (a `WebLink` with `displayType=massActionButton`) on `AbacusTransferNG__c`. The Lightning list-view framework auto-appends `?ids=<id1>,<id2>,…` for the selected rows, populating the flow's `ids` Text-collection input variable. Do **not** use `{!GETRECORDIDS(...)}` in the URL — it doesn't resolve in Lightning Experience, and combined with the framework's auto-append it produced a broken mixed collection (literal `getRecordIds('a0r')` + a real Id) that the flow's SOQL then rejected.
-- The flow:
-  1. Queries the `AbacusTransferNG__c` rows whose Ids were selected AND whose `Status__c = 'PendingApproval'` (API value; label *Pending Approval*). Rows in any other status are silently filtered out — the accountant can multi-select freely without worrying about already-released or cancelled rows.
-  2. Shows a confirmation screen identifying how many rows are about to be released.
-  3. Loops the eligible rows into a String collection of Ids.
-  4. Calls `AbacusTransferNGReplayAction.replay({abacusTransferNGIds: [...]})` once with the full collection. The Apex method updates each row in one DML (`Status__c = 'Pending'`, `ApprovedBy__c = $User.Id`, `ApprovedAt__c = now`) and publishes one `AbacusTransferNGQueued__e` Platform Event per row in one `EventBus.publish` call.
-  5. Shows a success screen.
+- The flow (single confirmation page — no success screen):
+  1. Calls `AbacusTransferNGApprovalSummaryAction.summarize({abacusTransferNGIds: [...]})` with the selected Ids. The invocable filters to rows whose `Status__c = 'PendingApproval'` (API value; label *Pending Approval*) and `Direction__c = 'Outbound'` — rows in any other status are silently filtered out, so the accountant can multi-select freely — and returns the eligible Ids, their count, and (when invoice rows are among the selection) an HTML summary of the referenced invoices' `InvoiceTotalAmountNetCHF__c` / `InvoiceTotalAmountGrossCHF__c` sums grouped by cost center (`Invoice__c.ProjectCostCenter__c`), each invoice counted once even if referenced by several rows, plus a grand total.
+  2. Shows **one** confirmation screen: eligible-row count, the per-cost-center CHF breakdown (omitted when no invoices are selected), and a footer button relabeled **Send to Abacus**. Cancelling = navigating away/back.
+  3. On confirm, calls `AbacusTransferNGReplayAction.replay({abacusTransferNGIds: [...]})` once with the eligible Ids. The Apex method updates each row in one DML (`Status__c = 'Pending'`, `ApprovedBy__c = $User.Id`, `ApprovedAt__c = now`) and publishes one `AbacusTransferNGQueued__e` Platform Event per row in one `EventBus.publish` call.
+  4. The flow then ends — the button's `retURL` drops the accountant straight back onto the list view.
 
 The same `AbacusTransferNGReplayAction` Apex method is reused for the **Replay** workflow on `Failed` / `DeadLettered` rows. Its `Request` class accepts either a single `abacusTransferNGId` or a collection `abacusTransferNGIds` — the bulk approval flow uses the collection form, the manual replay invocation uses either.
 
@@ -278,7 +277,7 @@ Reports filter on the relevant object. No collisions because the two paths use d
 - **Retries live in Mule**, not Salesforce. Apex never reschedules.
 - Mule retry policy: exponential backoff, e.g. 1m / 5m / 30m / 2h / 12h, then DLQ.
 - DLQ alerts go to the integrations channel (Slack / email — TBD with ops).
-- Salesforce list views on `AbacusTransferNG__c` (`Pending Approval`, `Open`, `Failed`, `DeadLettered`, etc.) give finance and ops a view of where every row is.
+- Salesforce list views on `AbacusTransferNG__c` (`Pending Approval`, `Open`, `Sent`, `Failed`, `DeadLettered`, etc.) give finance and ops a view of where every row is — `Sent` shows the successfully transferred rows with their `SentAt__c` timestamp.
 - Manual replay = reuse the same `AbacusTransferNGReplayAction` invocable from a list view button or the Approve & Push quick action. It only accepts outbound rows in `PendingApproval` (approve), `Failed`, or `DeadLettered` (replay) — anything else is skipped. It resets `Status__c = 'Pending'`, clears `LastError__c` / `LastHttpStatus__c` / `RetryCount__c`, publishes a fresh `AbacusTransferNGQueued__e` (publish-after-commit; a failed publish rolls the whole release back), and stamps `ApprovedBy__c`/`ApprovedAt__c` only on first approval — replays keep the original approver.
 
 ## Open Questions / Decisions
