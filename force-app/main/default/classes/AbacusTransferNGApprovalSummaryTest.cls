@@ -19,9 +19,25 @@ private class AbacusTransferNGApprovalSummaryTest {
     }
 
     // Builds an AbacusTransferNG__c row (Id set) with an optional nested Invoice__r that carries
-    // net/gross amounts and an optional nested ProjectCostCenter__r (nr + name).
+    // the stored CHF net/gross formula values (InvoiceTotalAmount*CHF__c) and an optional nested
+    // ProjectCostCenter__r (nr + name). Kept as the original overload so existing call sites that
+    // only care about the stored-CHF fallback path keep compiling unchanged; it delegates to the
+    // full overload with null document amounts/rate, which is the null-rate fallback behavior.
     private static AbacusTransferNG__c buildRow(
-        Id invoiceId, Decimal net, Decimal gross,
+        Id invoiceId, Decimal netChf, Decimal grossChf,
+        Id costCenterId, String costCenterNr, String costCenterName
+    ) {
+        return buildRow(
+            invoiceId, null, null, null, netChf, grossChf,
+            costCenterId, costCenterNr, costCenterName
+        );
+    }
+
+    // Full overload: also sets the document-currency totals and the header CurrencyRateToCHF__c
+    // used by chfAmount() to derive CHF net/gross, alongside the stored CHF formula values that
+    // now only serve as the fallback when no header rate is present.
+    private static AbacusTransferNG__c buildRow(
+        Id invoiceId, Decimal net, Decimal gross, Decimal rate, Decimal netChf, Decimal grossChf,
         Id costCenterId, String costCenterNr, String costCenterName
     ) {
         Map<String, Object> row = new Map<String, Object>();
@@ -30,8 +46,11 @@ private class AbacusTransferNGApprovalSummaryTest {
         if (invoiceId != null) {
             Map<String, Object> inv = new Map<String, Object>();
             inv.put('Id', invoiceId);
-            inv.put('InvoiceTotalAmountNetCHF__c', net);
-            inv.put('InvoiceTotalAmountGrossCHF__c', gross);
+            inv.put('InvoiceTotalAmountNetCHF__c', netChf);
+            inv.put('InvoiceTotalAmountGrossCHF__c', grossChf);
+            inv.put('InvoiceTotalAmountNet__c', net);
+            inv.put('InvoiceTotalAmountGross__c', gross);
+            inv.put('CurrencyRateToCHF__c', rate);
             if (costCenterId != null) {
                 Map<String, Object> cc = new Map<String, Object>();
                 cc.put('Id', costCenterId);
@@ -61,6 +80,8 @@ private class AbacusTransferNGApprovalSummaryTest {
         Id invB = fakeId(Invoice__c.SObjectType);
 
         // Two rows share invoice A (must count once); a third row references invoice B.
+        // No header rate is set, so these exercise the stored-CHF fallback path (see
+        // chfAmount()); the values below are set directly on InvoiceTotalAmount*CHF__c.
         AbacusTransferNG__c r1 = buildRow(invA, 12500, 13750, cc1, '100', 'Alpha');
         AbacusTransferNG__c r2 = buildRow(invA, 12500, 13750, cc1, '100', 'Alpha');
         AbacusTransferNG__c r3 = buildRow(invB, 500, 550, cc2, '200', 'Beta');
@@ -96,9 +117,61 @@ private class AbacusTransferNGApprovalSummaryTest {
     }
 
     @IsTest
+    static void buildResultConvertsUsingHeaderRateWhenPresent() {
+        Id cc1 = fakeId(CostCenter__c.SObjectType);
+        Id inv = fakeId(Invoice__c.SObjectType);
+
+        // Document-currency totals converted via the header rate: 100 * 0.93 = 93.00 (exact),
+        // 107.7 * 0.93 = 100.161 -> HALF_UP to 100.16. Stored CHF formulas are left null to
+        // prove the conversion path (not the fallback) is what produced the result.
+        AbacusTransferNG__c row = buildRow(
+            inv, 100, 107.7, 0.93, null, null,
+            cc1, '100', 'Alpha'
+        );
+
+        AbacusTransferNGApprovalSummaryAction.Result res =
+            AbacusTransferNGApprovalSummaryAction.buildResult(
+                new List<AbacusTransferNG__c>{ row }
+            );
+
+        String html = res.summaryHtml;
+        Assert.isTrue(
+            html.contains('<li><b>100 – Alpha</b>: Net 93.00 / Gross 100.16</li>'),
+            'header-rate conversion with HALF_UP rounding: ' + html
+        );
+        Assert.isTrue(html.contains('<p><b>Total</b>: Net 93.00 / Gross 100.16</p>'));
+    }
+
+    @IsTest
+    static void buildResultFallsBackToStoredChfWhenRateIsNull() {
+        Id cc1 = fakeId(CostCenter__c.SObjectType);
+        Id inv = fakeId(Invoice__c.SObjectType);
+
+        // Document amounts are present but there is no header rate at all, so chfAmount()
+        // must fall back to the stored (org-canonical) CHF formula values instead of
+        // multiplying by a missing rate.
+        AbacusTransferNG__c row = buildRow(
+            inv, 100, 107.7, null, 55.55, 60.60,
+            cc1, '100', 'Alpha'
+        );
+
+        AbacusTransferNGApprovalSummaryAction.Result res =
+            AbacusTransferNGApprovalSummaryAction.buildResult(
+                new List<AbacusTransferNG__c>{ row }
+            );
+
+        String html = res.summaryHtml;
+        Assert.isTrue(
+            html.contains('<li><b>100 – Alpha</b>: Net 55.55 / Gross 60.60</li>'),
+            'null header rate falls back to stored CHF formulas: ' + html
+        );
+        Assert.isTrue(html.contains('<p><b>Total</b>: Net 55.55 / Gross 60.60</p>'));
+    }
+
+    @IsTest
     static void buildResultHandlesNullCostCenterAndNullAmounts() {
         Id inv = fakeId(Invoice__c.SObjectType);
-        // No cost center, null amounts.
+        // No cost center, null amounts, no header rate (stored-CHF fallback path with nulls).
         AbacusTransferNG__c row = buildRow(inv, null, null, null, null, null);
 
         AbacusTransferNGApprovalSummaryAction.Result res =
@@ -122,6 +195,7 @@ private class AbacusTransferNGApprovalSummaryTest {
         Id invA = fakeId(Invoice__c.SObjectType);
         Id invB = fakeId(Invoice__c.SObjectType);
 
+        // No header rate set on either row: stored-CHF fallback path.
         AbacusTransferNG__c withCc = buildRow(invA, 100, 100, cc1, '100', 'Alpha');
         AbacusTransferNG__c noCc = buildRow(invB, 50, 50, null, null, null);
 
@@ -235,7 +309,9 @@ private class AbacusTransferNGApprovalSummaryTest {
         Assert.areEqual(new List<Id>{ eligible.Id }, res.eligibleIds);
         Assert.areEqual(1, res.invoiceCount, 'the eligible row carries one real invoice');
         Assert.isNotNull(res.summaryHtml, 'invoice present => summary rendered');
-        // A freshly inserted invoice has no amounts, so both sums render as 0.00.
+        // A freshly inserted invoice via TestFactory has no CurrencyRateToCHF__c, so chfAmount()
+        // falls back to the stored CHF formulas, which are also unset on a bare invoice with no
+        // positions => both sums render as 0.00.
         Assert.isTrue(res.summaryHtml.contains('Net 0.00 / Gross 0.00'),
             'zeroed amounts on a bare invoice: ' + res.summaryHtml);
     }

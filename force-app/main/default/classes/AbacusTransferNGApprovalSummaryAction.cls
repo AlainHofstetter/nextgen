@@ -29,6 +29,9 @@ public with sharing class AbacusTransferNGApprovalSummaryAction {
                 SELECT Id, Invoice__c,
                        Invoice__r.InvoiceTotalAmountNetCHF__c,
                        Invoice__r.InvoiceTotalAmountGrossCHF__c,
+                       Invoice__r.InvoiceTotalAmountNet__c,
+                       Invoice__r.InvoiceTotalAmountGross__c,
+                       Invoice__r.CurrencyRateToCHF__c,
                        Invoice__r.ProjectCostCenter__c,
                        Invoice__r.ProjectCostCenter__r.Name,
                        Invoice__r.ProjectCostCenter__r.CostCenterNr__c
@@ -89,8 +92,16 @@ public with sharing class AbacusTransferNGApprovalSummaryAction {
                 grp = new CostCenterGroup(label);
                 groupsByLabel.put(label, grp);
             }
-            Decimal net = inv.InvoiceTotalAmountNetCHF__c == null ? 0 : inv.InvoiceTotalAmountNetCHF__c;
-            Decimal gross = inv.InvoiceTotalAmountGrossCHF__c == null ? 0 : inv.InvoiceTotalAmountGrossCHF__c;
+            // Positions' CHF rates aren't reliably copied down from the invoice header (a
+            // separate broken flow), so the *CHF__c formulas can read 0 even for real invoices.
+            // The header's CurrencyRateToCHF__c is authoritative, so prefer document total x
+            // header rate and only fall back to the stored CHF formula when there is no rate.
+            Decimal net = chfAmount(
+                inv.InvoiceTotalAmountNet__c, inv.CurrencyRateToCHF__c, inv.InvoiceTotalAmountNetCHF__c
+            );
+            Decimal gross = chfAmount(
+                inv.InvoiceTotalAmountGross__c, inv.CurrencyRateToCHF__c, inv.InvoiceTotalAmountGrossCHF__c
+            );
             grp.net += net;
             grp.gross += gross;
             grandNet += net;
@@ -117,6 +128,19 @@ public with sharing class AbacusTransferNGApprovalSummaryAction {
             + ' / Gross ' + formatCHF(grandGross) + '</p>';
         result.summaryHtml = html;
         return result;
+    }
+
+    // Converts a document-currency amount to CHF using the invoice header's CurrencyRateToCHF__c.
+    // The header rate is reliable (it's 1 for CHF invoices); the per-position CHF formulas are
+    // not, because an unrelated broken flow never copies the rate down to invoice positions.
+    // When no header rate is available at all, fall back to the stored (org-canonical) CHF
+    // formula value so behavior for edge cases (e.g. bare/legacy records) is unchanged.
+    @TestVisible
+    private static Decimal chfAmount(Decimal documentAmount, Decimal rate, Decimal storedChf) {
+        if (rate != null) {
+            return (documentAmount == null ? 0 : documentAmount) * rate;
+        }
+        return storedChf == null ? 0 : storedChf;
     }
 
     // Label for the cost-center group of a single invoice, already HTML-escaped.
