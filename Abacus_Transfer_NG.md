@@ -116,7 +116,7 @@ Auto-number `Name`: `ABNG-{0000000}`.
 | `SupplierInvoice__c` | Lookup(SupplierInvoice__c) | Populated for inbound supplier invoices. |
 | `SupplierCosts__c` | Lookup(SupplierCosts__c) | Populated for supplier-cost imports. |
 | `Project__c` | Lookup(Project__c) | Populated for Project Export and for Staff Hour Export when project-scoped. |
-| `IdempotencyKey__c` | Text(40), External Id, Unique | Stamped to `Name` on create by `RTF_AbacusTransferNG_StampIdempotencyKey` (inbound rows arrive with the caller's `Idempotency-Key` instead). Passed to Abacus via `Idempotency-Key` header; the unique index is the DB-level backstop for the inbound dedup. |
+| `IdempotencyKey__c` | Text(40), External Id | **Intentionally blank on outbound rows** (as-built decision 2026-07-24): the key IS the auto-number `Name`, which the publishers put in the PE payload and Mule falls back to from the fetched row, so a copy field adds nothing — the planned stamping flow was dropped. Reserved for the inbound direction, where rows will arrive with the caller's `Idempotency-Key` (add the unique index when that ships; the field is currently `unique=false`). |
 | `MuleCorrelationId__c` | Text(64) | Mule transaction id, written on callback. |
 | `AbacusDocumentId__c` | Text(64) | External id assigned by Abacus on success. |
 | `LastHttpStatus__c` | Number(3,0) | HTTP code from the last Mule → Abacus attempt. |
@@ -161,9 +161,24 @@ One record-triggered flow per source object creates `AbacusTransferNG__c` rows w
 In addition, two shared flows run on `AbacusTransferNG__c` itself:
 
 - `RTF_AbacusTransferNG_PublishPE` — record-triggered (after-save, create only) on `AbacusTransferNG__c`. Filter: `Status__c = "Pending"`. Creates the `AbacusTransferNGQueued__e` Platform Event. This is what makes Project Export and Staff Hour Export batch rows reach Mule without an accountant clicking Approve.
-- `RTF_AbacusTransferNG_StampIdempotencyKey` — record-triggered (after-save, create only) on `AbacusTransferNG__c`. Filter: `ISBLANK(IdempotencyKey__c)`. Stamps `IdempotencyKey__c = Name` so every outbound row carries the key Mule sends to Abacus and addresses callbacks with; inbound rows already carry the caller's key and are skipped.
+- ~~`RTF_AbacusTransferNG_StampIdempotencyKey`~~ — **never built, deliberately dropped** (2026-07-24). The key is the auto-number `Name` itself: `RTF_AbacusTransferNG_PublishPE` and `AbacusTransferNGReplayAction` both put `Name` into the PE's `IdempotencyKey__c`, and Mule additionally falls back to the fetched row's `Name` when the event value is absent (MUnit/direct entry). Stamping a copy of `Name` into `IdempotencyKey__c` added no information; revisit only when the inbound direction ships (see field table).
 
 The trigger conditions of each source-record flow mirror the existing legacy flow that creates `AbacusInterface__c` rows, so the *moment of queueing* is identical from the user's perspective.
+
+#### Swiss legal-code gate (queue-time filter)
+
+Only the Swiss group companies are on Abacus, so the queue producers for **Invoice Export**, **Cancellation Export**, **Project Export**, and **Staff Hour Export** only enqueue when the item's billing company (`BillingViaCompany__r.LegalCode__c` on `Invoice__c` / `Project__c` / `Time__c`) has one of these `Account.LegalCode__c` values:
+
+`10` (Brand Leadership Management), `25` (gateB AG), `35` (Calydo AG), `45` (House of Manus), `55` (Hotz Brand Consultants), `65` (Hieronymus Stationers CP), `75` (hilda), `90` (Marmot Balboa), `100` (Fabian Hotz Holding).
+
+Notes:
+
+- The flows use `CONTAINS("|10|25|35|45|55|65|75|90|100|", "|" & TEXT({!$Record.BillingViaCompany__r.LegalCode__c}) & "|")` in their entry `filterFormula`; the Staff Hour batch filters `BillingViaCompany__r.LegalCode__c IN SWISS_LEGAL_CODES` in its `Time__c` SOQL (constant on `AbacusTransferNGStaffHourBatch`). The code list is deliberately hardcoded in these four producers — keep them in sync when a company onboards/offboards.
+- A **blank** `BillingViaCompany__c` (or a company without a legal code) means **no NG row is created**.
+- The filter deliberately traverses the lookup instead of reading `Invoice__c.BillingViaLegalCode__c` — that field is Number(2,0) and cannot hold code `100`.
+- Excluded on purpose: gateB Inc./GmbH/India/Singapore (codes 26–29) and Hieronymus Stationers AG (70) — non-Swiss or not on Abacus.
+- **Account Debtor/Supplier Upserts are NOT filtered**: an external debtor/supplier Account carries no billing-company link, so those flows queue for all accounts and the FinanceQueue approval gate remains the control point.
+- The gate applies at queue time only — rows already in `AbacusTransferNG__c` are unaffected, and the publish/approval machinery (`RTF_AbacusTransferNG_PublishPE`, `AbacusTransferNGReplayAction`) does not re-check it.
 
 ### Approval flow (release gesture)
 
@@ -267,10 +282,13 @@ Reports filter on the relevant object. No collisions because the two paths use d
 
 ## Idempotency
 
-- `IdempotencyKey__c` is a unique External Id, stamped to the auto-number `Name` on create by `RTF_AbacusTransferNG_StampIdempotencyKey` (outbound) or set from the `Idempotency-Key` header (inbound). The unique index makes duplicate keys impossible at the DB level, not just in practice.
-- Mule sends `Idempotency-Key` header on every Abacus call. Abacus must treat duplicate keys as no-ops returning the original response — hard requirement on the Abacus REST contract.
-- On Salesforce callback, Mule PATCHes by `IdempotencyKey__c` (External Id upsert), so even if a callback retries, the row converges.
-- Inbound: the Apex REST endpoint also keys on `Idempotency-Key`, so Mule retrying an inbound delivery doesn't double-insert.
+As-built (2026-07-24) — the design below drifted in three places; this is the current truth:
+
+- **The idempotency key is the row's auto-number `Name`** (ABNG-…). Both publishers (`RTF_AbacusTransferNG_PublishPE`, `AbacusTransferNGReplayAction`) carry it in the PE's `IdempotencyKey__c`; Mule falls back to the fetched row's `IdempotencyKey__c` then `Name` for entry paths without an event. `Name` never changes, so every delivery and replay of a row sends the same key. The row field `IdempotencyKey__c` stays blank on outbound (see field table).
+- Mule sends the `Idempotency-Key` header on `POST /Customers`, `POST /Suppliers`, and `POST /CustomerInvoices` — not on Subject/Address/Communication creates, which are protected by the exists-first retry path instead.
+- **Abacus very likely ignores the header** (probed 2026-07-24 on TEST 9999, Subject 999902: a duplicate `POST /Communications` with an identical key returned a 400 duplicate-value *business validation* — not an idempotent replay of the original 201 — and a different key behaved identically, i.e. no idempotency middleware is visible). Customers/Suppliers are safe anyway via client-supplied `Id` + exists-first GET. **`POST /CustomerInvoices` is the residual exposure**: a booked-but-response-lost invoice followed by a Replay would double-book. Confirm on the mandatory TEST invoice booking (double-POST the same body/key and count documents); until then, treat Failed invoice rows with suspicion — check Abacus for the document before replaying.
+- Salesforce status write-backs go by `Id` (not upsert-by-`IdempotencyKey__c` as originally designed) — Mule holds the row Id from the PE, so the upsert indirection was unnecessary.
+- Inbound (future): rows will arrive with the caller's `Idempotency-Key` in `IdempotencyKey__c`; add the unique index then, so the DB backstops the dedup.
 
 ## Error Handling & Retries
 
@@ -282,7 +300,7 @@ Reports filter on the relevant object. No collisions because the two paths use d
 
 ## Open Questions / Decisions
 
-- **Abacus REST contract**: who owns the OpenAPI spec? Need confirmation that Abacus honours `Idempotency-Key` semantics. If not, idempotency must be enforced inside Mule (lookup-before-write) — slower and not bulletproof.
+- **Abacus REST contract**: who owns the OpenAPI spec? ~~Need confirmation that Abacus honours `Idempotency-Key` semantics.~~ **Probed 2026-07-24: almost certainly not honoured** (duplicate key → 400 business validation, not a replayed response; see Idempotency section). Idempotency is therefore enforced by lookup-before-write in Mule (exists-first GET for Subjects/Customers/Suppliers) — already the implemented pattern. Remaining: confirm on `POST /CustomerInvoices` during the mandatory TEST booking, since that endpoint has no lookup-before-write equivalent.
 - **Auth Mule ↔ Abacus**: OAuth 2.0 client credentials assumed. Confirm with Abacus admin.
 - **Auth Mule ↔ Salesforce**: connected app `Abacus_MuleSoft_Integration` + JWT bearer for Mule, scoped to a service user with `PS_Abacus_Mule_Integration` permset. **Manual step:** `.forceignore` excludes `connectedApps/**` (org-locked), so the connected app in this repo never deploys — create it manually in the target org (Setup → App Manager), upload the real certificate, and capture the Consumer Key for Mule's config.
 - **Volume**: current peak rows/day on `AbacusInterface__c` → sizes the Mule worker tier and decides Anypoint MQ vs VM queue.
