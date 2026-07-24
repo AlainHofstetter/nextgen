@@ -1,0 +1,20 @@
+<!--
+  Full-page host for the Abacus Approvals tab. A Lightning Component tab (unlike a
+  FlexiPage app page) renders without the automatic "Abacus Approvals" page-header bar,
+  which would duplicate the logo/KPI header below. Aura is required here because
+  lightning:listView has no LWC equivalent.
+-->
+<aura:component implements="force:appHostable" access="global">
+  <c:abacusTransferHeader />
+  <div class="slds-m-top_x-small">
+    <lightning:listView
+      objectApiName="AbacusTransferNG__c"
+      listName="PendingApproval"
+      rows="25"
+      showActionBar="true"
+      enableInlineEdit="true"
+      showRowLevelActions="true"
+      showSearchBar="true"
+    />
+  </div>
+</aura:component>
