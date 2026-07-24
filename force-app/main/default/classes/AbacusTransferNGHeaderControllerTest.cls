@@ -158,13 +158,28 @@ private class AbacusTransferNGHeaderControllerTest {
     );
     sentLate.Status__c = 'Sent';
     sentLate.SentAt__c = later;
+    // One Failed and one DeadLettered row: together they drive needsAttentionCount == 2.
+    AbacusTransferNG__c failed = AbacusTransferNGTestFactory.buildFailed(
+      'Invoice Export',
+      'boom'
+    );
+    AbacusTransferNG__c deadLettered = AbacusTransferNGTestFactory.buildOutboundPending(
+      'Invoice Export'
+    );
+    deadLettered.Status__c = 'DeadLettered';
     insert new List<AbacusTransferNG__c>{
       pending1,
       pending2,
       pending,
       sentEarly,
-      sentLate
+      sentLate,
+      failed,
+      deadLettered
     };
+
+    // Pin the oldest PendingApproval row's CreatedDate so oldestPendingCreatedAt is exact.
+    Datetime oldestPending = DateTime.newInstance(2026, 1, 2, 9, 0, 0);
+    Test.setCreatedDate(pending1.Id, oldestPending);
 
     Test.startTest();
     AbacusTransferNGHeaderController.HeaderData data = AbacusTransferNGHeaderController.getHeaderData();
@@ -182,6 +197,21 @@ private class AbacusTransferNGHeaderControllerTest {
       data.totalInvoiceGrossChf,
       'no invoice-linked pending rows'
     );
+    Assert.areEqual(
+      2,
+      data.needsAttentionCount,
+      'one Failed + one DeadLettered'
+    );
+    Assert.areEqual(
+      0,
+      data.pendingInvoiceCount,
+      'no invoices linked to the pending rows'
+    );
+    Assert.areEqual(
+      oldestPending,
+      data.oldestPendingCreatedAt,
+      'oldest PendingApproval CreatedDate'
+    );
 
     Assert.areEqual(
       2,
@@ -190,10 +220,8 @@ private class AbacusTransferNGHeaderControllerTest {
     );
     Assert.areEqual(1, counts.get('Pending'), 'one plain Pending row');
     Assert.areEqual(2, counts.get('Sent'), 'two Sent rows');
-    Assert.isFalse(
-      counts.containsKey('Failed'),
-      'no Failed rows => key absent'
-    );
+    Assert.areEqual(1, counts.get('Failed'), 'one Failed row');
+    Assert.areEqual(1, counts.get('DeadLettered'), 'one DeadLettered row');
   }
 
   // ---------------------------------------------------------------------------------------
@@ -212,6 +240,12 @@ private class AbacusTransferNGHeaderControllerTest {
     Assert.areEqual(0, data.pendingCount, 'no pending rows');
     Assert.areEqual(0, data.totalInvoiceGrossChf, 'no invoices to sum');
     Assert.isNull(data.lastTransferAt, 'no Sent rows => MAX(SentAt) is null');
+    Assert.areEqual(0, data.needsAttentionCount, 'no Failed/DeadLettered rows');
+    Assert.isNull(
+      data.oldestPendingCreatedAt,
+      'no pending rows => MIN(CreatedDate) is null'
+    );
+    Assert.areEqual(0, data.pendingInvoiceCount, 'no invoices behind pending');
     Assert.isTrue(counts.isEmpty(), 'no rows => empty status-count map');
   }
 }

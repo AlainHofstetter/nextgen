@@ -12,16 +12,20 @@
 public without sharing class AbacusTransferNGHeaderController {
   // Rows awaiting approval; the only status the header counts and sums invoices for.
   private static final String PENDING_STATUS = 'PendingApproval';
+  // Statuses surfaced as "needs attention" on the header: stuck or exhausted transfers.
+  private static final String FAILED_STATUS = 'Failed';
+  private static final String DEAD_LETTERED_STATUS = 'DeadLettered';
 
   @AuraEnabled(cacheable=true)
   public static HeaderData getHeaderData() {
     HeaderData data = new HeaderData();
 
-    data.pendingCount = [
-      SELECT COUNT()
-      FROM AbacusTransferNG__c
-      WHERE Status__c = :PENDING_STATUS
-    ];
+    // One GROUP BY Status__c aggregate feeds both the pending count and the needs-attention
+    // count, so we don't fire a separate COUNT() per status.
+    Map<String, Integer> counts = countByStatus();
+    data.pendingCount = countFor(counts, PENDING_STATUS);
+    data.needsAttentionCount =
+      countFor(counts, FAILED_STATUS) + countFor(counts, DEAD_LETTERED_STATUS);
 
     List<AbacusTransferNG__c> pendingRows = [
       SELECT
@@ -34,11 +38,28 @@ public without sharing class AbacusTransferNGHeaderController {
     ];
     data.totalInvoiceGrossChf = sumGrossChf(pendingRows);
 
+    // Distinct invoices behind the pending rows just queried; same dedupe semantics as
+    // sumGrossChf (each invoice counted once), built inline to avoid a second SOQL.
+    Set<Id> pendingInvoiceIds = new Set<Id>();
+    for (AbacusTransferNG__c row : pendingRows) {
+      if (row.Invoice__c != null) {
+        pendingInvoiceIds.add(row.Invoice__c);
+      }
+    }
+    data.pendingInvoiceCount = pendingInvoiceIds.size();
+
     AggregateResult mx = [
       SELECT MAX(SentAt__c) lastSent
       FROM AbacusTransferNG__c
     ];
     data.lastTransferAt = (Datetime) mx.get('lastSent');
+
+    AggregateResult oldest = [
+      SELECT MIN(CreatedDate) oldestCreated
+      FROM AbacusTransferNG__c
+      WHERE Status__c = :PENDING_STATUS
+    ];
+    data.oldestPendingCreatedAt = (Datetime) oldest.get('oldestCreated');
 
     return data;
   }
@@ -48,6 +69,12 @@ public without sharing class AbacusTransferNGHeaderController {
   // no rows are absent from the map — callers treat a missing key as 0.
   @AuraEnabled(cacheable=true)
   public static Map<String, Integer> getStatusCounts() {
+    return countByStatus();
+  }
+
+  // Shared GROUP BY Status__c aggregate: a status => row-count map, statuses with no rows
+  // absent from the map. Backs both getStatusCounts() and getHeaderData().
+  private static Map<String, Integer> countByStatus() {
     Map<String, Integer> counts = new Map<String, Integer>();
     for (AggregateResult ar : [
       SELECT Status__c s, COUNT(Id) c
@@ -57,6 +84,11 @@ public without sharing class AbacusTransferNGHeaderController {
       counts.put((String) ar.get('s'), (Integer) ar.get('c'));
     }
     return counts;
+  }
+
+  // A missing status key means zero rows for that status.
+  private static Integer countFor(Map<String, Integer> counts, String status) {
+    return counts.containsKey(status) ? counts.get(status) : 0;
   }
 
   // Sums the CHF gross of the invoices behind the given transfer rows, deduping invoices
@@ -98,5 +130,11 @@ public without sharing class AbacusTransferNGHeaderController {
     public Decimal totalInvoiceGrossChf;
     @AuraEnabled
     public Datetime lastTransferAt;
+    @AuraEnabled
+    public Integer needsAttentionCount;
+    @AuraEnabled
+    public Datetime oldestPendingCreatedAt;
+    @AuraEnabled
+    public Integer pendingInvoiceCount;
   }
 }

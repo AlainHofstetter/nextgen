@@ -31,6 +31,12 @@
             currency-code="CHF"
             currency-display-as="code"
           ></lightning-formatted-number>
+          <template lwc:if={hasPendingInvoices}>
+            <span
+              class="slds-text-body_small slds-text-color_weak slds-m-left_x-small"
+              >{pendingInvoiceLabel}</span
+            >
+          </template>
         </div>
       </div>
 
@@ -48,6 +54,22 @@
             ></lightning-formatted-date-time>
           </template>
           <template lwc:else>&ndash;</template>
+        </div>
+      </div>
+
+      <div class="slds-col slds-p-horizontal_medium">
+        <div class="slds-text-title_caps">Needs Attention</div>
+        <div class={needsAttentionClass}>
+          <lightning-formatted-number
+            value={needsAttentionCount}
+          ></lightning-formatted-number>
+        </div>
+      </div>
+
+      <div class="slds-col slds-p-horizontal_medium">
+        <div class="slds-text-title_caps">Oldest Pending</div>
+        <div class="slds-text-heading_medium" title={oldestPendingCreatedAt}>
+          {oldestPendingAge}
         </div>
       </div>
     </template>

@@ -26,6 +26,46 @@ export default class AbacusTransferHeader extends LightningElement {
     return !!this.lastTransferAt;
   }
 
+  get needsAttentionCount() {
+    return this.wiredHeader?.data?.needsAttentionCount ?? 0;
+  }
+
+  get needsAttentionClass() {
+    return this.needsAttentionCount > 0
+      ? "slds-text-heading_medium slds-text-color_error"
+      : "slds-text-heading_medium";
+  }
+
+  get oldestPendingCreatedAt() {
+    return this.wiredHeader?.data?.oldestPendingCreatedAt ?? null;
+  }
+
+  get hasOldestPending() {
+    return !!this.oldestPendingCreatedAt;
+  }
+
+  get oldestPendingAge() {
+    if (!this.oldestPendingCreatedAt) {
+      return "–";
+    }
+    const created = new Date(this.oldestPendingCreatedAt).getTime();
+    const days = Math.floor((Date.now() - created) / 86400000);
+    return `${Math.max(0, days)} d`;
+  }
+
+  get pendingInvoiceCount() {
+    return this.wiredHeader?.data?.pendingInvoiceCount ?? 0;
+  }
+
+  get hasPendingInvoices() {
+    return this.pendingInvoiceCount > 0;
+  }
+
+  get pendingInvoiceLabel() {
+    const count = this.pendingInvoiceCount;
+    return count === 1 ? `(${count} invoice)` : `(${count} invoices)`;
+  }
+
   get errorMessage() {
     const error = this.wiredHeader?.error;
     if (!error) {

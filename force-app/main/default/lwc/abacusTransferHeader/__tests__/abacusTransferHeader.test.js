@@ -41,7 +41,10 @@ describe("c-abacus-transfer-header", () => {
     getHeaderData.emit({
       pendingCount: 2,
       totalInvoiceGrossChf: 1234.5,
-      lastTransferAt: "2026-07-01T10:00:00.000Z"
+      lastTransferAt: "2026-07-01T10:00:00.000Z",
+      needsAttentionCount: 0,
+      oldestPendingCreatedAt: null,
+      pendingInvoiceCount: 0
     });
 
     await flushPromises();
@@ -49,16 +52,135 @@ describe("c-abacus-transfer-header", () => {
     const numbers = element.shadowRoot.querySelectorAll(
       "lightning-formatted-number"
     );
-    expect(numbers.length).toBe(2);
+    // pendingCount, totalGrossChf, needsAttentionCount.
+    expect(numbers.length).toBe(3);
     expect(numbers[0].value).toBe(2);
     expect(numbers[1].value).toBe(1234.5);
     expect(numbers[1].currencyCode).toBe("CHF");
+    expect(numbers[2].value).toBe(0);
 
     const dateTime = element.shadowRoot.querySelector(
       "lightning-formatted-date-time"
     );
     expect(dateTime).not.toBeNull();
     expect(dateTime.value).toBe("2026-07-01T10:00:00.000Z");
+  });
+
+  it("colours the Needs Attention value red only when count > 0", async () => {
+    const element = createComponent();
+
+    getHeaderData.emit({
+      pendingCount: 0,
+      totalInvoiceGrossChf: 0,
+      lastTransferAt: null,
+      needsAttentionCount: 3,
+      oldestPendingCreatedAt: null,
+      pendingInvoiceCount: 0
+    });
+
+    await flushPromises();
+
+    let errorValue = element.shadowRoot.querySelector(
+      ".slds-text-heading_medium.slds-text-color_error"
+    );
+    expect(errorValue).not.toBeNull();
+    const numbers = element.shadowRoot.querySelectorAll(
+      "lightning-formatted-number"
+    );
+    // Last formatted-number is the Needs Attention count.
+    expect(numbers[numbers.length - 1].value).toBe(3);
+
+    getHeaderData.emit({
+      pendingCount: 0,
+      totalInvoiceGrossChf: 0,
+      lastTransferAt: null,
+      needsAttentionCount: 0,
+      oldestPendingCreatedAt: null,
+      pendingInvoiceCount: 0
+    });
+
+    await flushPromises();
+
+    errorValue = element.shadowRoot.querySelector(
+      ".slds-text-heading_medium.slds-text-color_error"
+    );
+    expect(errorValue).toBeNull();
+  });
+
+  it("renders Oldest Pending age in whole days, and a dash when null", async () => {
+    const element = createComponent();
+
+    // A timestamp two days ago should floor to "2 d".
+    const twoDaysAgo = new Date(Date.now() - 2 * 86400000).toISOString();
+    getHeaderData.emit({
+      pendingCount: 1,
+      totalInvoiceGrossChf: 0,
+      lastTransferAt: null,
+      needsAttentionCount: 0,
+      oldestPendingCreatedAt: twoDaysAgo,
+      pendingInvoiceCount: 0
+    });
+
+    await flushPromises();
+    expect(element.shadowRoot.textContent).toContain("2 d");
+
+    getHeaderData.emit({
+      pendingCount: 0,
+      totalInvoiceGrossChf: 0,
+      lastTransferAt: null,
+      needsAttentionCount: 0,
+      oldestPendingCreatedAt: null,
+      pendingInvoiceCount: 0
+    });
+
+    await flushPromises();
+    // Oldest Pending cell shows a dash; find it by the title-less heading text.
+    const cells = element.shadowRoot.querySelectorAll(".slds-text-title_caps");
+    const oldestCell = Array.from(cells).find(
+      (c) => c.textContent === "Oldest Pending"
+    );
+    expect(oldestCell.nextElementSibling.textContent.trim()).toBe("–");
+  });
+
+  it("appends a pluralized invoice count, omitted when zero", async () => {
+    const element = createComponent();
+
+    getHeaderData.emit({
+      pendingCount: 1,
+      totalInvoiceGrossChf: 500,
+      lastTransferAt: null,
+      needsAttentionCount: 0,
+      oldestPendingCreatedAt: null,
+      pendingInvoiceCount: 1
+    });
+
+    await flushPromises();
+    expect(element.shadowRoot.textContent).toContain("(1 invoice)");
+    expect(element.shadowRoot.textContent).not.toContain("(1 invoices)");
+
+    getHeaderData.emit({
+      pendingCount: 3,
+      totalInvoiceGrossChf: 500,
+      lastTransferAt: null,
+      needsAttentionCount: 0,
+      oldestPendingCreatedAt: null,
+      pendingInvoiceCount: 3
+    });
+
+    await flushPromises();
+    expect(element.shadowRoot.textContent).toContain("(3 invoices)");
+
+    getHeaderData.emit({
+      pendingCount: 0,
+      totalInvoiceGrossChf: 0,
+      lastTransferAt: null,
+      needsAttentionCount: 0,
+      oldestPendingCreatedAt: null,
+      pendingInvoiceCount: 0
+    });
+
+    await flushPromises();
+    expect(element.shadowRoot.textContent).not.toContain("invoice");
   });
 
   it("renders a dash when there is no last transfer", async () => {
