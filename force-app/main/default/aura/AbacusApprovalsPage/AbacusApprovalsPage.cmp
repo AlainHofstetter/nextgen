@@ -31,11 +31,91 @@
     default="{ 'pendingApproval': 'Pending Approval (0)', 'pending': 'Pending (0)', 'inFlight': 'In Flight (0)', 'failed': 'Failed (0)', 'deadLettered': 'Dead Lettered (0)', 'sent': 'Sent', 'all': 'All' }"
   />
 
+  <!-- whether the status-lifecycle help box is expanded -->
+  <aura:attribute name="showHelp" type="Boolean" default="false" />
+
   <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
 
   <c:abacusTransferHeader />
 
   <div class="slds-m-top_x-small">
+    <div class="slds-grid slds-grid_align-end slds-m-bottom_xx-small">
+      <!-- ignore needed: prettier treats onclick as native-HTML JS and mangles the Aura expression -->
+      <!-- prettier-ignore -->
+      <lightning:buttonIcon
+        iconName="utility:info"
+        variant="bare"
+        alternativeText="What do the statuses mean?"
+        title="What do the statuses mean?"
+        onclick="{!c.toggleHelp}"
+      />
+    </div>
+
+    <aura:if isTrue="{!v.showHelp}">
+      <div
+        class="slds-box slds-theme_shade slds-m-bottom_small slds-text-body_small"
+      >
+        <p class="slds-m-bottom_x-small">
+          <strong>Transfer lifecycle:</strong>
+          Pending Approval &#8594; Pending &#8594; In Flight &#8594; Sent
+          &nbsp;(on delivery problems: In Flight &#8594; Failed &#8594; Dead
+          Lettered)
+        </p>
+        <dl class="slds-dl_horizontal">
+          <dt class="slds-dl_horizontal__label slds-truncate">
+            <strong>Pending Approval</strong>
+          </dt>
+          <dd class="slds-dl_horizontal__detail">
+            Waiting for a finance approver &#8212; release via Approve &amp;
+            Push.
+          </dd>
+          <dt class="slds-dl_horizontal__label slds-truncate">
+            <strong>Pending</strong>
+          </dt>
+          <dd class="slds-dl_horizontal__detail">
+            Approved and queued; waiting for MuleSoft to pick it up.
+          </dd>
+          <dt class="slds-dl_horizontal__label slds-truncate">
+            <strong>In Flight</strong>
+          </dt>
+          <dd class="slds-dl_horizontal__detail">
+            MuleSoft is delivering the record to Abacus right now.
+          </dd>
+          <dt class="slds-dl_horizontal__label slds-truncate">
+            <strong>Sent</strong>
+          </dt>
+          <dd class="slds-dl_horizontal__detail">
+            Successfully booked in Abacus (see Sent At / Abacus Document Id).
+          </dd>
+          <dt class="slds-dl_horizontal__label slds-truncate">
+            <strong>Failed</strong>
+          </dt>
+          <dd class="slds-dl_horizontal__detail">
+            The last delivery attempt failed, but MuleSoft keeps retrying
+            automatically with increasing back-off (minutes &#8594; hours)
+            &#8212; rows here can still complete on their own. Check Last Error
+            on the record for details.
+          </dd>
+          <dt class="slds-dl_horizontal__label slds-truncate">
+            <strong>Dead Lettered</strong>
+          </dt>
+          <dd class="slds-dl_horizontal__detail">
+            All automatic retries are exhausted; nothing more happens without
+            manual action. Fix the cause, then re-queue the row via Approve
+            &amp; Push (replay keeps the original approval stamp). These rows
+            are finance/ops to-dos.
+          </dd>
+          <dt class="slds-dl_horizontal__label slds-truncate">
+            <strong>All</strong>
+          </dt>
+          <dd class="slds-dl_horizontal__detail">
+            Every row, including Cancelled (withdrawn before release) and
+            Dormant (parked, not yet queued).
+          </dd>
+        </dl>
+      </div>
+    </aura:if>
+
     <lightning:tabset selectedTabId="pendingApproval">
       <lightning:tab
         id="pendingApproval"

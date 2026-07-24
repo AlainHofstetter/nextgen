@@ -3,6 +3,10 @@
     helper.loadCounts(component);
   },
 
+  toggleHelp: function (component) {
+    component.set("v.showHelp", !component.get("v.showHelp"));
+  },
+
   onTabActive: function (component, event, helper) {
     // lazily instantiate this tab's list view on first activation
     var tabId = event.getSource().get("v.id");
