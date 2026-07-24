@@ -1,5 +1,4 @@
 import { LightningElement, wire } from "lwc";
-import { refreshApex } from "@salesforce/apex";
 import ABACUS_LOGO from "@salesforce/resourceUrl/abacus_logo";
 import getHeaderData from "@salesforce/apex/AbacusTransferNGHeaderController.getHeaderData";
 
@@ -77,9 +76,5 @@ export default class AbacusTransferHeader extends LightningElement {
     return (
       error.body?.message ?? error.statusText ?? "An unknown error occurred"
     );
-  }
-
-  handleRefresh() {
-    return refreshApex(this.wiredHeader);
   }
 }
