@@ -1,16 +1,22 @@
 ({
-  // Flip the lazy-instantiation flag for a tab so its list view renders. The
-  // default (pendingApproval) has no flag and needs no toggling.
+  // Render the activated tab's list view EXCLUSIVELY: all other flags go false so
+  // their list views are destroyed. Lightning cannot cope with more than one live
+  // lightning:listView per page ("Sorry to interrupt" GACK on the second instance).
   markRendered: function (component, tabId) {
-    var rendered;
-    if (!tabId || tabId === "pendingApproval") {
+    var rendered = {
+      pendingApproval: false,
+      pending: false,
+      inFlight: false,
+      failed: false,
+      deadLettered: false,
+      sent: false,
+      all: false
+    };
+    if (!tabId || !Object.prototype.hasOwnProperty.call(rendered, tabId)) {
       return;
     }
-    rendered = component.get("v.rendered");
-    if (rendered && rendered[tabId] !== true) {
-      rendered[tabId] = true;
-      component.set("v.rendered", rendered);
-    }
+    rendered[tabId] = true;
+    component.set("v.rendered", rendered);
   },
 
   // Fetch the status counts and rebuild the tab labels. On error, leave the

@@ -7,20 +7,21 @@
   The KPI header LWC sits on top, followed by a tabset of AbacusTransferNG__c list
   views. Tab labels carry live status counts fetched from
   AbacusTransferNGHeaderController.getStatusCounts (refreshed on init and on every
-  tab activation). Only the default PendingApproval tab renders its list view up
-  front; the other tabs are lazily instantiated via v.rendered.<tab> on activation,
-  so opening the page fires a single list load rather than seven.
+  tab activation). Exactly ONE lightning:listView is alive at any time: each tab
+  body is gated by v.rendered.<tab> and activation flips the flags exclusively.
+  Multiple concurrent lightning:listView instances on one page crash Lightning
+  ("Sorry to interrupt"), so the previous tab's list is destroyed on switch.
 -->
 <aura:component
   implements="force:appHostable"
   controller="AbacusTransferNGHeaderController"
   access="global"
 >
-  <!-- lazy-instantiation flags: which non-default tab bodies have been rendered -->
+  <!-- exclusive render flags: only the active tab's list view may be alive -->
   <aura:attribute
     name="rendered"
     type="Object"
-    default="{ 'pending': false, 'inFlight': false, 'failed': false, 'deadLettered': false, 'sent': false, 'all': false }"
+    default="{ 'pendingApproval': true, 'pending': false, 'inFlight': false, 'failed': false, 'deadLettered': false, 'sent': false, 'all': false }"
   />
 
   <!-- tab labels, computed from the status counts (safe defaults before data) -->
@@ -41,15 +42,17 @@
         label="{!v.labels.pendingApproval}"
         onactive="{!c.onTabActive}"
       >
-        <lightning:listView
-          objectApiName="AbacusTransferNG__c"
-          listName="PendingApproval"
-          rows="25"
-          showActionBar="true"
-          enableInlineEdit="true"
-          showRowLevelActions="true"
-          showSearchBar="true"
-        />
+        <aura:if isTrue="{!v.rendered.pendingApproval}">
+          <lightning:listView
+            objectApiName="AbacusTransferNG__c"
+            listName="PendingApproval"
+            rows="25"
+            showActionBar="true"
+            enableInlineEdit="true"
+            showRowLevelActions="true"
+            showSearchBar="true"
+          />
+        </aura:if>
       </lightning:tab>
 
       <lightning:tab
