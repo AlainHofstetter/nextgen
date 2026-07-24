@@ -1,0 +1,70 @@
+<template>
+  <div
+    class="slds-box slds-theme_default slds-grid slds-wrap slds-grid_vertical-align-center"
+  >
+    <div class="slds-col">
+      <img src={logoUrl} alt="Abacus" class="abacus-logo" />
+    </div>
+
+    <template lwc:if={errorMessage}>
+      <div class="slds-col slds-p-horizontal_medium">
+        <p class="slds-text-color_error">{errorMessage}</p>
+      </div>
+    </template>
+
+    <template lwc:else>
+      <div class="slds-col slds-p-horizontal_medium">
+        <div class="slds-text-title_caps">Current Pending Items</div>
+        <div class="slds-text-heading_medium">
+          <lightning-formatted-number
+            value={pendingCount}
+          ></lightning-formatted-number>
+        </div>
+      </div>
+
+      <div class="slds-col slds-p-horizontal_medium">
+        <div class="slds-text-title_caps">Total Amount Invoices</div>
+        <div class="slds-text-heading_medium">
+          <lightning-formatted-number
+            value={totalGrossChf}
+            format-style="currency"
+            currency-code="CHF"
+            currency-display-as="code"
+          ></lightning-formatted-number>
+        </div>
+      </div>
+
+      <div class="slds-col slds-p-horizontal_medium">
+        <div class="slds-text-title_caps">Last Transfer</div>
+        <div class="slds-text-heading_medium">
+          <template lwc:if={hasLastTransfer}>
+            <lightning-formatted-date-time
+              value={lastTransferAt}
+              year="numeric"
+              month="2-digit"
+              day="2-digit"
+              hour="2-digit"
+              minute="2-digit"
+            ></lightning-formatted-date-time>
+          </template>
+          <template lwc:else>&ndash;</template>
+        </div>
+      </div>
+    </template>
+
+    <div
+      class="slds-col slds-col_bump-left slds-grid slds-grid_vertical-align-center"
+    >
+      <lightning-button
+        label="Open full list"
+        onclick={handleOpenFullList}
+        class="slds-m-right_x-small"
+      ></lightning-button>
+      <lightning-button-icon
+        icon-name="utility:refresh"
+        alternative-text="Refresh"
+        onclick={handleRefresh}
+      ></lightning-button-icon>
+    </div>
+  </div>
+</template>

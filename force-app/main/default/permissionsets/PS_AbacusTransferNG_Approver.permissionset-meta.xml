@@ -1,10 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <classAccesses>
+        <apexClass>AbacusTransferNGHeaderController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <classAccesses>
         <apexClass>AbacusTransferNGReplayAction</apexClass>
         <enabled>true</enabled>
     </classAccesses>
-    <description>FinanceQueue approvers: approve and push AbacusTransferNG__c rows via the Approve &amp; Push actions. Modify All on the Private-OWD object (rows are owned by whoever triggered the queueing flow) plus read on the triage fields of the list views.</description>
+    <description
+  >FinanceQueue approvers: approve and push AbacusTransferNG__c rows via the Approve &amp; Push actions. Modify All on the Private-OWD object (rows are owned by whoever triggered the queueing flow) plus read on the triage fields of the list views.</description>
 
     <fieldPermissions>
         <editable>true</editable>
@@ -114,5 +119,9 @@
     <tabSettings>
         <tab>AbacusTransferNG__c</tab>
         <visibility>Available</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Abacus_Transfer_Approvals</tab>
+        <visibility>Visible</visibility>
     </tabSettings>
 </PermissionSet>

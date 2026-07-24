@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description
+  >KPI header and pending-approval list for Abacus Transfer NG. Bulk Approve &amp; Push (row selection) still requires the full object list view.</description>
+    <flexiPage>Abacus_Transfer_Approvals</flexiPage>
+    <label>Abacus Approvals</label>
+    <motif>Custom87: Safe</motif>
+</CustomTab>
