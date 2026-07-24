@@ -168,6 +168,7 @@ private class AbacusTransferNGHeaderControllerTest {
 
     Test.startTest();
     AbacusTransferNGHeaderController.HeaderData data = AbacusTransferNGHeaderController.getHeaderData();
+    Map<String, Integer> counts = AbacusTransferNGHeaderController.getStatusCounts();
     Test.stopTest();
 
     Assert.areEqual(2, data.pendingCount, 'two PendingApproval rows');
@@ -181,6 +182,18 @@ private class AbacusTransferNGHeaderControllerTest {
       data.totalInvoiceGrossChf,
       'no invoice-linked pending rows'
     );
+
+    Assert.areEqual(
+      2,
+      counts.get('PendingApproval'),
+      'two PendingApproval rows'
+    );
+    Assert.areEqual(1, counts.get('Pending'), 'one plain Pending row');
+    Assert.areEqual(2, counts.get('Sent'), 'two Sent rows');
+    Assert.isFalse(
+      counts.containsKey('Failed'),
+      'no Failed rows => key absent'
+    );
   }
 
   // ---------------------------------------------------------------------------------------
@@ -193,10 +206,12 @@ private class AbacusTransferNGHeaderControllerTest {
     // enqueue any (the Invoice flow only fires on update to InvoiceStatus__c = Ready).
     Test.startTest();
     AbacusTransferNGHeaderController.HeaderData data = AbacusTransferNGHeaderController.getHeaderData();
+    Map<String, Integer> counts = AbacusTransferNGHeaderController.getStatusCounts();
     Test.stopTest();
 
     Assert.areEqual(0, data.pendingCount, 'no pending rows');
     Assert.areEqual(0, data.totalInvoiceGrossChf, 'no invoices to sum');
     Assert.isNull(data.lastTransferAt, 'no Sent rows => MAX(SentAt) is null');
+    Assert.isTrue(counts.isEmpty(), 'no rows => empty status-count map');
   }
 }

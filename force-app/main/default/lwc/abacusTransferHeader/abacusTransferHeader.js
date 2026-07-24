@@ -1,12 +1,9 @@
 import { LightningElement, wire } from "lwc";
-import { NavigationMixin } from "lightning/navigation";
 import { refreshApex } from "@salesforce/apex";
 import ABACUS_LOGO from "@salesforce/resourceUrl/abacus_logo";
 import getHeaderData from "@salesforce/apex/AbacusTransferNGHeaderController.getHeaderData";
 
-export default class AbacusTransferHeader extends NavigationMixin(
-  LightningElement
-) {
+export default class AbacusTransferHeader extends LightningElement {
   @wire(getHeaderData) wiredHeader;
 
   get logoUrl() {
@@ -40,19 +37,6 @@ export default class AbacusTransferHeader extends NavigationMixin(
     return (
       error.body?.message ?? error.statusText ?? "An unknown error occurred"
     );
-  }
-
-  handleOpenFullList() {
-    this[NavigationMixin.Navigate]({
-      type: "standard__objectPage",
-      attributes: {
-        objectApiName: "AbacusTransferNG__c",
-        actionName: "list"
-      },
-      state: {
-        filterName: "PendingApproval"
-      }
-    });
   }
 
   handleRefresh() {

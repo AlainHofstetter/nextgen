@@ -3,18 +3,162 @@
   FlexiPage app page) renders without the automatic "Abacus Approvals" page-header bar,
   which would duplicate the logo/KPI header below. Aura is required here because
   lightning:listView has no LWC equivalent.
+
+  The KPI header LWC sits on top, followed by a tabset of AbacusTransferNG__c list
+  views. Tab labels carry live status counts fetched from
+  AbacusTransferNGHeaderController.getStatusCounts (refreshed on init and on every
+  tab activation). Only the default PendingApproval tab renders its list view up
+  front; the other tabs are lazily instantiated via v.rendered.<tab> on activation,
+  so opening the page fires a single list load rather than seven.
 -->
-<aura:component implements="force:appHostable" access="global">
+<aura:component
+  implements="force:appHostable"
+  controller="AbacusTransferNGHeaderController"
+  access="global"
+>
+  <!-- lazy-instantiation flags: which non-default tab bodies have been rendered -->
+  <aura:attribute
+    name="rendered"
+    type="Object"
+    default="{ 'pending': false, 'inFlight': false, 'failed': false, 'deadLettered': false, 'sent': false, 'all': false }"
+  />
+
+  <!-- tab labels, computed from the status counts (safe defaults before data) -->
+  <aura:attribute
+    name="labels"
+    type="Object"
+    default="{ 'pendingApproval': 'Pending Approval (0)', 'pending': 'Pending (0)', 'inFlight': 'In Flight (0)', 'failed': 'Failed (0)', 'deadLettered': 'Dead Lettered (0)', 'sent': 'Sent', 'all': 'All' }"
+  />
+
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
   <c:abacusTransferHeader />
+
   <div class="slds-m-top_x-small">
-    <lightning:listView
-      objectApiName="AbacusTransferNG__c"
-      listName="PendingApproval"
-      rows="25"
-      showActionBar="true"
-      enableInlineEdit="true"
-      showRowLevelActions="true"
-      showSearchBar="true"
-    />
+    <lightning:tabset selectedTabId="pendingApproval">
+      <lightning:tab
+        id="pendingApproval"
+        label="{!v.labels.pendingApproval}"
+        onactive="{!c.onTabActive}"
+      >
+        <lightning:listView
+          objectApiName="AbacusTransferNG__c"
+          listName="PendingApproval"
+          rows="25"
+          showActionBar="true"
+          enableInlineEdit="true"
+          showRowLevelActions="true"
+          showSearchBar="true"
+        />
+      </lightning:tab>
+
+      <lightning:tab
+        id="pending"
+        label="{!v.labels.pending}"
+        onactive="{!c.onTabActive}"
+      >
+        <aura:if isTrue="{!v.rendered.pending}">
+          <lightning:listView
+            objectApiName="AbacusTransferNG__c"
+            listName="Pending"
+            rows="25"
+            showActionBar="true"
+            enableInlineEdit="true"
+            showRowLevelActions="true"
+            showSearchBar="true"
+          />
+        </aura:if>
+      </lightning:tab>
+
+      <lightning:tab
+        id="inFlight"
+        label="{!v.labels.inFlight}"
+        onactive="{!c.onTabActive}"
+      >
+        <aura:if isTrue="{!v.rendered.inFlight}">
+          <lightning:listView
+            objectApiName="AbacusTransferNG__c"
+            listName="InFlight"
+            rows="25"
+            showActionBar="true"
+            enableInlineEdit="true"
+            showRowLevelActions="true"
+            showSearchBar="true"
+          />
+        </aura:if>
+      </lightning:tab>
+
+      <lightning:tab
+        id="failed"
+        label="{!v.labels.failed}"
+        onactive="{!c.onTabActive}"
+      >
+        <aura:if isTrue="{!v.rendered.failed}">
+          <lightning:listView
+            objectApiName="AbacusTransferNG__c"
+            listName="Failed"
+            rows="25"
+            showActionBar="true"
+            enableInlineEdit="true"
+            showRowLevelActions="true"
+            showSearchBar="true"
+          />
+        </aura:if>
+      </lightning:tab>
+
+      <lightning:tab
+        id="deadLettered"
+        label="{!v.labels.deadLettered}"
+        onactive="{!c.onTabActive}"
+      >
+        <aura:if isTrue="{!v.rendered.deadLettered}">
+          <lightning:listView
+            objectApiName="AbacusTransferNG__c"
+            listName="DeadLettered"
+            rows="25"
+            showActionBar="true"
+            enableInlineEdit="true"
+            showRowLevelActions="true"
+            showSearchBar="true"
+          />
+        </aura:if>
+      </lightning:tab>
+
+      <lightning:tab
+        id="sent"
+        label="{!v.labels.sent}"
+        onactive="{!c.onTabActive}"
+      >
+        <aura:if isTrue="{!v.rendered.sent}">
+          <lightning:listView
+            objectApiName="AbacusTransferNG__c"
+            listName="Sent"
+            rows="25"
+            showActionBar="true"
+            enableInlineEdit="true"
+            showRowLevelActions="true"
+            showSearchBar="true"
+          />
+        </aura:if>
+      </lightning:tab>
+
+      <lightning:tab
+        id="all"
+        label="{!v.labels.all}"
+        onactive="{!c.onTabActive}"
+      >
+        <aura:if isTrue="{!v.rendered.all}">
+          <lightning:listView
+            objectApiName="AbacusTransferNG__c"
+            listName="All"
+            rows="25"
+            showActionBar="true"
+            enableInlineEdit="true"
+            showRowLevelActions="true"
+            showSearchBar="true"
+          />
+        </aura:if>
+      </lightning:tab>
+    </lightning:tabset>
   </div>
 </aura:component>

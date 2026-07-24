@@ -43,6 +43,22 @@ public without sharing class AbacusTransferNGHeaderController {
     return data;
   }
 
+  // Feeds the per-status tab labels on the Abacus Approvals page: one row count per status,
+  // keyed by the raw Status__c API value (e.g. 'PendingApproval', 'Failed'). Statuses with
+  // no rows are absent from the map — callers treat a missing key as 0.
+  @AuraEnabled(cacheable=true)
+  public static Map<String, Integer> getStatusCounts() {
+    Map<String, Integer> counts = new Map<String, Integer>();
+    for (AggregateResult ar : [
+      SELECT Status__c s, COUNT(Id) c
+      FROM AbacusTransferNG__c
+      GROUP BY Status__c
+    ]) {
+      counts.put((String) ar.get('s'), (Integer) ar.get('c'));
+    }
+    return counts;
+  }
+
   // Sums the CHF gross of the invoices behind the given transfer rows, deduping invoices
   // (several rows can reference the same invoice — count each once). Mirrors the CHF
   // semantics of AbacusTransferNGApprovalSummaryAction.chfAmount(): the stored *CHF__c

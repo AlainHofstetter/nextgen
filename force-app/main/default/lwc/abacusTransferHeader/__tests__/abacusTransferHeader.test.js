@@ -1,33 +1,6 @@
 import { createElement } from "lwc";
-import { getNavigateCalledWith } from "lightning/navigation";
 import AbacusTransferHeader from "c/abacusTransferHeader";
 import getHeaderData from "@salesforce/apex/AbacusTransferNGHeaderController.getHeaderData";
-
-// The stock navigation stub exposes NavigationMixin.Navigate as a bare Symbol,
-// so wrap it in a spy-able mock that records the PageReference it is called with.
-jest.mock(
-  "lightning/navigation",
-  () => {
-    const Navigate = Symbol("Navigate");
-    const GenerateUrl = Symbol("GenerateUrl");
-    let lastConfig;
-    const NavigationMixin = (Base) =>
-      class extends Base {
-        [Navigate](config) {
-          lastConfig = config;
-        }
-        [GenerateUrl]() {}
-      };
-    NavigationMixin.Navigate = Navigate;
-    NavigationMixin.GenerateUrl = GenerateUrl;
-    return {
-      NavigationMixin,
-      CurrentPageReference: jest.fn(),
-      getNavigateCalledWith: () => lastConfig
-    };
-  },
-  { virtual: true }
-);
 
 // Force @salesforce/apex/... into an emit-able test wire adapter.
 jest.mock(
@@ -121,35 +94,6 @@ describe("c-abacus-transfer-header", () => {
     const errorEl = element.shadowRoot.querySelector(".slds-text-color_error");
     expect(errorEl).not.toBeNull();
     expect(errorEl.textContent).toContain("Something went wrong");
-  });
-
-  it("navigates to the full pending list on button click", async () => {
-    const element = createComponent();
-
-    getHeaderData.emit({
-      pendingCount: 2,
-      totalInvoiceGrossChf: 1234.5,
-      lastTransferAt: null
-    });
-
-    await flushPromises();
-
-    const buttons = element.shadowRoot.querySelectorAll("lightning-button");
-    const openButton = Array.from(buttons).find(
-      (b) => b.label === "Open full list"
-    );
-    expect(openButton).toBeDefined();
-    openButton.click();
-
-    await flushPromises();
-
-    const navigateHandler = getNavigateCalledWith();
-    expect(navigateHandler.type).toBe("standard__objectPage");
-    expect(navigateHandler.attributes.objectApiName).toBe(
-      "AbacusTransferNG__c"
-    );
-    expect(navigateHandler.attributes.actionName).toBe("list");
-    expect(navigateHandler.state.filterName).toBe("PendingApproval");
   });
 
   it("points the logo image at the abacus_logo static resource", async () => {
