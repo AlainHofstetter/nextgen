@@ -124,4 +124,11 @@
         <tab>Abacus_Transfer_Approvals</tab>
         <visibility>Visible</visibility>
     </tabSettings>
+
+    <!-- The Approve & Push actions are screen flows; without Run Flows a non-admin
+         profile (e.g. P120 Finance) could see the tab but not release anything. -->
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>RunFlow</name>
+    </userPermissions>
 </PermissionSet>
