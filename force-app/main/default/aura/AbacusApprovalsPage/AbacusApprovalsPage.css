@@ -1,0 +1,11 @@
+/* The embedded lightning:listView ignores the object's excludedStandardButtons for
+   Change Owner, and Assign Label cannot be excluded at all (org-wide Labels feature).
+   Hide both by their accessible titles, scoped to this page only. */
+.THIS a[title="Change Owner"],
+.THIS button[title="Change Owner"],
+.THIS li[title="Change Owner"],
+.THIS a[title="Assign Label"],
+.THIS button[title="Assign Label"],
+.THIS li[title="Assign Label"] {
+  display: none;
+}
