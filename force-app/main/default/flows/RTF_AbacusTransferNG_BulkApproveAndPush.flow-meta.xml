@@ -7,6 +7,8 @@
         <locationY>0</locationY>
         <actionName>AbacusTransferNGReplayAction</actionName>
         <actionType>apex</actionType>
+        <connector><targetReference
+      >checkReplayOutcome</targetReference></connector>
         <faultConnector><targetReference
       >errorScreen</targetReference></faultConnector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -15,6 +17,7 @@
             <value><elementReference
         >callSummary.eligibleIds</elementReference></value>
         </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <actionCalls>
         <name>callSummary</name>
@@ -34,6 +37,25 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>60.0</apiVersion>
+    <decisions>
+        <name>checkReplayOutcome</name>
+        <label>Any rows blocked?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>All released</defaultConnectorLabel>
+        <rules>
+            <name>someBlocked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>callReplay.blockedCount</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue><numberValue>0.0</numberValue></rightValue>
+            </conditions>
+            <connector><targetReference
+        >blockedScreen</targetReference></connector>
+            <label>Blocked rows</label>
+        </rules>
+    </decisions>
     <description
   >Bulk approval from the list view now shows a single confirmation page with the eligible-row count and the selected invoices' CHF amounts grouped by legal entity (via AbacusTransferNGApprovalSummaryAction), the Finish button reads "Send to Abacus", and on finish the flow releases the rows via AbacusTransferNGReplayAction and returns to the list view.</description>
     <label>RTF AbacusTransferNG Bulk Approve And Push</label>
@@ -59,6 +81,23 @@
             <fieldType>DisplayText</fieldType>
         </fields>
         <nextOrFinishButtonLabel>Send to Abacus</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>blockedScreen</name>
+        <label>Some rows not sent to Abacus</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>blockedText</name>
+            <fieldText
+      >&lt;p&gt;&lt;img src="/resource/abacus_logo" alt="Abacus" height="64" /&gt;&lt;/p&gt;&lt;p&gt;Released &lt;b&gt;{!callReplay.releasedCount}&lt;/b&gt; row(s) to Abacus. &lt;b&gt;{!callReplay.blockedCount}&lt;/b&gt; row(s) were &lt;b&gt;not&lt;/b&gt; sent because their customer does not exist in Abacus yet:&lt;/p&gt;&lt;p&gt;{!callReplay.blockedReason}&lt;/p&gt;&lt;p&gt;Blocked rows stay in Pending Approval. Approve &amp;amp; push them again once the customer has been transferred.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
