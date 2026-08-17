@@ -2,7 +2,7 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>60.0</apiVersion>
     <description
-  >NG path: enqueues an AbacusTransferNG__c row of type Cancellation Export at PendingApproval (FinanceQueue gate, per the approval table in Abacus_Transfer_NG.md) when AbacusInterfaceExport__c flips on for a cancellation invoice. Discriminator: CancellationDate__c set (the sibling RTF_Invoice_AbacusTransferNG excludes exactly these records). Shipped Draft — activate once finance confirms the cancellation cutover.</description>
+  >NG path: enqueues an AbacusTransferNG__c row of type Cancellation Export at PendingApproval (FinanceQueue gate, per the approval table in Abacus_Transfer_NG.md) as soon as the Cancel Invoice action creates a cancellation invoice. Discriminator: CancellationInvoiceRelation__c set on create — only the Apex cancel path writes it (the sibling RTF_Invoice_AbacusTransferNG excludes exactly these records).</description>
     <label>RTF Invoice AbacusTransferNG Cancellation</label>
     <processType>AutoLaunchedFlow</processType>
     <recordCreates>
@@ -41,9 +41,9 @@
         <locationY>0</locationY>
         <connector><targetReference>createNGRow</targetReference></connector>
         <filterFormula
-    >AND(PRIORVALUE($Record.AbacusInterfaceExport__c) = FALSE, $Record.AbacusInterfaceExport__c = TRUE, NOT(ISBLANK($Record.CancellationDate__c)), CONTAINS(&quot;|10|25|35|45|55|65|75|90|100|&quot;, &quot;|&quot; &amp; TEXT($Record.BillingViaCompany__r.LegalCode__c) &amp; &quot;|&quot;))</filterFormula>
+    >AND(NOT(ISBLANK($Record.CancellationInvoiceRelation__c)), CONTAINS(&quot;|10|25|35|45|55|65|75|90|100|&quot;, &quot;|&quot; &amp; TEXT($Record.BillingViaCompany__r.LegalCode__c) &amp; &quot;|&quot;))</filterFormula>
         <object>Invoice__c</object>
-        <recordTriggerType>Update</recordTriggerType>
+        <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Draft</status>
