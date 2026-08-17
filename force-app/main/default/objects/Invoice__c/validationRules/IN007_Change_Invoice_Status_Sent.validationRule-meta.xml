@@ -1,17 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>IN007_Change_Invoice_Status_Sent</fullName>
     <active>true</active>
-    <description>The invoice Status &quot;Sent&quot; can not be set because Abacus Transfer is not selected.</description>
+    <description
+  >The invoice Status &quot;Sent&quot; can not be set because Abacus Transfer is not selected. Guarded to the transition into Sent (or insert as Sent) so already-Sent invoices, e.g. from the Abacus NG path, can still be edited and cancelled.</description>
     <errorConditionFormula>AND(
 $User.PS480FunctionValidationRulesActive__c =true,
 ISPICKVAL(InvoiceStatus__c ,&quot;Sent&quot;),
+OR(ISNEW(), NOT(ISPICKVAL(PRIORVALUE(InvoiceStatus__c), &quot;Sent&quot;))),
 RecordType.DeveloperName &lt;&gt; &quot;ILV&quot;,
 OR(
 ISBLANK( AbacusTransfer__c ),
 AbacusInterfaceExport__c = false
 )
 )</errorConditionFormula>
-    <errorMessage>The invoice Status &quot;Sent&quot; can not be set because Abacus Transfer / Abacus Interface Export ist not correct.
+    <errorMessage
+  >The invoice Status &quot;Sent&quot; can not be set because Abacus Transfer / Abacus Interface Export ist not correct.
 (IN007)</errorMessage>
 </ValidationRule>
