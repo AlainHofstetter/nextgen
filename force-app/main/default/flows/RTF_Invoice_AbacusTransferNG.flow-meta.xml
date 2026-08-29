@@ -3,7 +3,7 @@
     <apiVersion>60.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description
-  >NG path: enqueues an AbacusTransferNG__c row when an Invoice&apos;s InvoiceStatus__c changes to Ready.</description>
+  >NG path: enqueues an AbacusTransferNG__c row when an Invoice&apos;s InvoiceStatus__c changes to Ready. Scope: only invoices billed via an allowlisted legal entity; excludes ILV invoices and cancellation invoices.</description>
     <label>RTF Invoice AbacusTransferNG</label>
     <processType>AutoLaunchedFlow</processType>
     <recordCreates>
@@ -56,7 +56,7 @@
             <targetReference>createNGRow</targetReference>
         </connector>
         <filterFormula
-    >AND(ISPICKVAL({!$Record.InvoiceStatus__c}, &quot;Ready&quot;), NOT(ISPICKVAL(PRIORVALUE({!$Record.InvoiceStatus__c}), &quot;Ready&quot;)), ISBLANK({!$Record.CancellationDate__c}), ISBLANK({!$Record.CancellationInvoiceRelation__c}), CONTAINS(&quot;|10|25|35|45|55|65|75|90|100|&quot;, &quot;|&quot; &amp; TEXT({!$Record.BillingViaCompany__r.LegalCode__c}) &amp; &quot;|&quot;))</filterFormula>
+    >AND(ISPICKVAL({!$Record.InvoiceStatus__c}, &quot;Ready&quot;), NOT(ISPICKVAL(PRIORVALUE({!$Record.InvoiceStatus__c}), &quot;Ready&quot;)), ISBLANK({!$Record.CancellationDate__c}), ISBLANK({!$Record.CancellationInvoiceRelation__c}), {!$Record.RecordType.DeveloperName} &lt;&gt; &quot;ILV&quot;, CONTAINS(&quot;|10|25|35|45|55|65|75|90|100|&quot;, &quot;|&quot; &amp; TEXT({!$Record.BillingViaCompany__r.LegalCode__c}) &amp; &quot;|&quot;))</filterFormula>
         <object>Invoice__c</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>

@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>60.0</apiVersion>
-    <description>NG path: enqueues an AbacusTransferNG__c row when an Account becomes (or remains) an Abacus Supplier with changed key details. Mirrors entry conditions of AbacusInterfaceAccountUpsertSupplier (legacy).</description>
+    <description
+  >NG path: enqueues an AbacusTransferNG__c row when an Account becomes (or remains) an Abacus Supplier with changed key details. Mirrors entry conditions of AbacusInterfaceAccountUpsertSupplier (legacy).</description>
     <label>RTF Account AbacusTransferNG Supplier</label>
     <processType>AutoLaunchedFlow</processType>
     <recordCreates>
@@ -39,7 +40,8 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector><targetReference>createNGRow</targetReference></connector>
-        <filterFormula>OR(AND(ISNEW(), $Record.AbacusSupplier__c = TRUE), AND(PRIORVALUE($Record.AbacusSupplier__c) = FALSE, $Record.AbacusSupplier__c = TRUE), AND($Record.AbacusSupplier__c = TRUE, OR(ISCHANGED($Record.Name), ISCHANGED($Record.BillingCity__c), ISCHANGED($Record.BillingZip__c), ISCHANGED($Record.BillingStreetNr__c), ISCHANGED($Record.BillingPoBox__c), ISCHANGED($Record.BillingAddressLine2__c), ISCHANGED($Record.BillingAddressLine3__c), ISCHANGED($Record.BillingCountryISO__c), ISCHANGED($Record.AbacusAccountNr__c), ISCHANGED($Record.FirstName__c), ISCHANGED($Record.BillingState__c), ISCHANGED($Record.Website), ISCHANGED($Record.Email__c), ISCHANGED($Record.Phone), ISCHANGED($Record.Fax), ISCHANGED($Record.AccountLanguage__c), ISCHANGED($Record.CurrencyIsoCode))))</filterFormula>
+        <filterFormula
+    >AND(OR(AND(ISNEW(), $Record.AbacusSupplier__c = TRUE), AND(PRIORVALUE($Record.AbacusSupplier__c) = FALSE, $Record.AbacusSupplier__c = TRUE), AND($Record.AbacusSupplier__c = TRUE, OR(ISCHANGED($Record.Name), ISCHANGED($Record.BillingCity__c), ISCHANGED($Record.BillingZip__c), ISCHANGED($Record.BillingStreetNr__c), ISCHANGED($Record.BillingPoBox__c), ISCHANGED($Record.BillingAddressLine2__c), ISCHANGED($Record.BillingAddressLine3__c), ISCHANGED($Record.BillingCountryISO__c), ISCHANGED($Record.AbacusAccountNr__c), ISCHANGED($Record.FirstName__c), ISCHANGED($Record.BillingState__c), ISCHANGED($Record.Website), ISCHANGED($Record.Email__c), ISCHANGED($Record.Phone), ISCHANGED($Record.Fax), ISCHANGED($Record.AccountLanguage__c), ISCHANGED($Record.CurrencyIsoCode)))), OR(ISBLANK($Record.LegalCode__c), CONTAINS("|10|25|35|45|55|65|75|90|100|", "|" &amp; TEXT($Record.LegalCode__c) &amp; "|")))</filterFormula>
         <object>Account</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
